@@ -1,0 +1,63 @@
+/* ===== Skeleton Shimmer ===== */
+.skeleton-block {
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.04) 25%,
+            rgba(0, 0, 0, 0.08) 50%,
+            rgba(0, 0, 0, 0.04) 75%);
+    background-size: 200% 100%;
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Section skeleton */
+.skeleton-section {
+    padding: 80px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skeleton-section__body {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.skeleton-section__body>* {
+    flex: 1;
+}
+
+/* Page skeleton */
+.skeleton-page {
+    padding: 120px 24px 60px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skeleton-page__hero {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 48px;
+}
+
+.skeleton-page__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .skeleton-section__body {
+        flex-direction: column;
+    }
+}

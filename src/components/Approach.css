@@ -1,0 +1,161 @@
+/* Approach Section */
+.approach {
+    background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-white) 100%);
+    position: relative;
+}
+
+.approach__header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+/* Timeline */
+.approach__timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Step */
+.approach__step {
+    display: flex;
+    gap: var(--space-8);
+    position: relative;
+    padding-bottom: var(--space-10);
+    transition: transform 0.3s ease;
+}
+
+.approach__step:hover {
+    transform: translateX(4px);
+}
+
+.approach__step:last-child {
+    padding-bottom: 0;
+}
+
+/* Step Number */
+.approach__step-number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gold-gradient);
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 12px rgba(212, 175, 55, 0.2);
+    transition: all 0.4s ease;
+}
+
+.approach__step:hover .approach__step-number {
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+    transform: scale(1.05);
+}
+
+.approach__step-number span {
+    font-family: var(--font-serif);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+/* Step Line */
+.approach__step-line {
+    position: absolute;
+    left: 23px;
+    top: 48px;
+    bottom: 0;
+    width: 1.5px;
+    background: linear-gradient(to bottom, var(--color-gold-primary), var(--color-gold-light));
+}
+
+/* Step Content */
+.approach__step-content {
+    padding-top: var(--space-3);
+}
+
+.approach__step-title {
+    font-size: var(--text-xl);
+    color: var(--color-navy);
+    margin-bottom: var(--space-2);
+}
+
+.approach__step-description {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Highlight Box */
+.approach__highlight {
+    display: flex;
+    gap: var(--space-6);
+    align-items: flex-start;
+    max-width: 800px;
+    margin: var(--space-12) auto 0;
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--color-white) 0%, rgba(212, 175, 55, 0.04) 100%);
+    border-radius: var(--border-radius-xl);
+    border: 2px solid var(--color-gold-light);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+}
+
+.approach__highlight:hover {
+    box-shadow: 0 12px 50px rgba(212, 175, 55, 0.15);
+    border-color: var(--color-gold-primary);
+    transform: translateY(-4px);
+}
+
+.approach__highlight-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold-primary);
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: var(--border-radius-md);
+}
+
+.approach__highlight-title {
+    font-size: var(--text-xl);
+    color: var(--color-navy);
+    margin-bottom: var(--space-2);
+}
+
+.approach__highlight-text {
+    color: var(--color-text-light);
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .approach__step {
+        gap: var(--space-4);
+    }
+
+    .approach__step-number {
+        width: 48px;
+        height: 48px;
+    }
+
+    .approach__step-number span {
+        font-size: var(--text-base);
+    }
+
+    .approach__step-line {
+        left: 23px;
+        top: 48px;
+    }
+
+    .approach__highlight {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}

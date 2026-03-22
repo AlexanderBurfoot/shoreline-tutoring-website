@@ -1,0 +1,39 @@
+/* ===== Page Transition ===== */
+.page-transition {
+    will-change: opacity, transform;
+}
+
+/* Enter animation */
+.page-transition--enter {
+    animation: pageEnter 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Exit animation */
+.page-transition--exit {
+    animation: pageExit 0.25s ease-in forwards;
+    pointer-events: none;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pageExit {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
