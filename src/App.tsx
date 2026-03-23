@@ -16,6 +16,7 @@ const Services = lazy(() => import('./components/Services'));
 const Approach = lazy(() => import('./components/Approach'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const CTA = lazy(() => import('./components/CTA'));
+const RecentArticles = lazy(() => import('./components/RecentArticles'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const Footer = lazy(() => import('./components/Footer'));
 const SubjectPage = lazy(() => import('./components/SubjectPage'));
@@ -62,6 +63,7 @@ function HomePage() {
         <Services />
         <Approach />
         <Testimonials />
+        <RecentArticles />
         <FAQ />
         <CTA />
       </Suspense>

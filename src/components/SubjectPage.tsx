@@ -1,10 +1,13 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getSubjectBySlug, subjects } from '../data/subjectData';
+import { blogPosts } from '../data/blogData';
 import subjectIcons from './SubjectIcons';
 import ScrollReveal from './ScrollReveal';
 import SEO from './SEO';
 import './SubjectPage.css';
+import './Resources.css';
+import './RecentArticles.css';
 
 const SubjectPage = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -65,6 +68,25 @@ const SubjectPage = () => {
             "sameAs": "https://shorelinetutoring.com.au"
         }
     };
+
+    const normalizedSubject = subject.title.toLowerCase();
+    const relatedPostsList = blogPosts.filter(post => {
+        const titleMatch = post.title.toLowerCase().includes(normalizedSubject);
+        const excerptMatch = post.excerpt.toLowerCase().includes(normalizedSubject);
+        
+        const isMath = normalizedSubject.includes('math');
+        const mathMatch = isMath && (post.title.toLowerCase().includes('math') || post.excerpt.toLowerCase().includes('math'));
+        
+        const isEnglish = normalizedSubject.includes('english');
+        const englishMatch = isEnglish && (post.title.toLowerCase().includes('english') || post.excerpt.toLowerCase().includes('english'));
+
+        const isScience = normalizedSubject.includes('chemistry') || normalizedSubject.includes('physics') || normalizedSubject.includes('science');
+        const scienceMatch = isScience && (post.title.toLowerCase().includes('science') || post.title.toLowerCase().includes('chemistry') || post.title.toLowerCase().includes('physics'));
+
+        return titleMatch || excerptMatch || mathMatch || englishMatch || scienceMatch;
+    }).slice(0, 2);
+
+    const displayPosts = relatedPostsList.length > 0 ? relatedPostsList : blogPosts.slice(0, 2);
 
     return (
         <main className={`subject-page subject-page--${pageState}`}>
@@ -283,6 +305,37 @@ const SubjectPage = () => {
                             </ScrollReveal>
                         </aside>
                     </div>
+
+                    {/* Related Study Guides */}
+                    {displayPosts.length > 0 && (
+                        <ScrollReveal delay={150} width="100%">
+                            <div className="subject-page__related-guides" style={{ marginTop: '2rem', marginBottom: '4rem' }}>
+                                <div className="subject-page__related-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+                                    <h2 className="subject-page__section-title" style={{ marginBottom: 0 }}>Related Study Guides</h2>
+                                    <Link to="/resources" className="subject-page__view-all-link" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
+                                        View All <span aria-hidden="true">→</span>
+                                    </Link>
+                                </div>
+                                <div className="recent-articles__grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                                    {displayPosts.map((post) => (
+                                        <Link to={`/resources/${post.slug}`} className="resource-card recent-articles__card" key={post.id} style={{ display: 'block', height: '100%', textDecoration: 'none' }}>
+                                            <div className="resource-card__image-wrapper">
+                                                <img src={post.imageUrl} alt={post.title} className="resource-card__image" loading="lazy" />
+                                            </div>
+                                            <div className="resource-card__content">
+                                                <div className="resource-card__meta">
+                                                    <span className="resource-card__category">{post.category}</span>
+                                                    <span className="resource-card__read-time">{post.readTime}</span>
+                                                </div>
+                                                <h3 className="resource-card__title" style={{ fontSize: '1.25rem' }}>{post.title}</h3>
+                                                <span className="resource-card__read-more">Read Guide <span className="arrow">→</span></span>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    )}
 
                     {/* Navigation */}
                     <ScrollReveal delay={200} width="100%">

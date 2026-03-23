@@ -1,0 +1,55 @@
+.recent-articles {
+    background-color: var(--color-bg);
+    position: relative;
+    z-index: 10;
+}
+
+.recent-articles__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+}
+
+.recent-articles__header .section-subtitle {
+    margin-bottom: 0;
+    max-width: 600px;
+}
+
+.recent-articles__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Leverage existing .resource-card styles from Resources.css */
+/* Overrides specifically for the homepage grid block if necessary */
+.recent-articles__card {
+    height: 100%;
+}
+
+.recent-articles__mobile-btn-container {
+    display: none;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .recent-articles__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    
+    .recent-articles__view-all {
+        display: none;
+    }
+    
+    .recent-articles__mobile-btn-container {
+        display: block;
+    }
+    
+    .recent-articles__grid {
+        grid-template-columns: 1fr;
+    }
+}
