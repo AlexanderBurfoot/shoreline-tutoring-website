@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../data/blogData';
 import ScrollReveal from './ScrollReveal';
-import './ScrollReveal.css';
 import './Resources.css';
 import './RecentArticles.css';
 
