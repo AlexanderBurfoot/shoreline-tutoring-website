@@ -304,6 +304,10 @@
         order: 1;
     }
 
+    .hero__content .scroll-reveal {
+        width: 100% !important;
+    }
+
     .hero__visual {
         order: 0;
         max-width: 400px;
