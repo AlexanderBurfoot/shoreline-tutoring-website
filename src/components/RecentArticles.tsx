@@ -12,7 +12,7 @@ const RecentArticles = () => {
     return (
         <section className="recent-articles section-padding">
             <div className="container">
-                <ScrollReveal>
+                <ScrollReveal width="100%">
                     <div className="recent-articles__header">
                         <div>
                             <span className="section-eyebrow">Resources</span>
