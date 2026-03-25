@@ -1,5 +1,6 @@
+"use client";
 import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import './Pricing.css';
 import PromoPopup from './PromoPopup';
 import SEO from './SEO';
@@ -53,11 +54,11 @@ const faqs = [
 ];
 
 const Pricing = () => {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const handleGetStarted = useCallback(() => {
-        navigate('/#contact');
-    }, [navigate]);
+        router.push('/#contact');
+    }, [router]);
 
     const pricingSchema = {
         "@context": "https://schema.org",

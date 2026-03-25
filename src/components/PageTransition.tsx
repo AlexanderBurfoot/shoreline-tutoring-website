@@ -1,5 +1,6 @@
+"use client";
 import { useEffect, useState, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 import './PageTransition.css';
 
 interface PageTransitionProps {
@@ -7,7 +8,7 @@ interface PageTransitionProps {
 }
 
 const PageTransition = ({ children }: PageTransitionProps) => {
-    const location = useLocation();
+    const pathname = usePathname();
     const [displayChildren, setDisplayChildren] = useState(children);
     const [transitionStage, setTransitionStage] = useState<'enter' | 'exit'>('enter');
     const isFirstRender = useRef(true);
@@ -32,7 +33,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
         }, 250); // Match CSS exit duration
 
         return () => clearTimeout(timeout);
-    }, [location.pathname]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className={`page-transition page-transition--${transitionStage}`}>

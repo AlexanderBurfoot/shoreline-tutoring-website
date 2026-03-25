@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+"use client";
+import Link from 'next/link';
 import './Services.css';
 import ScrollReveal from './ScrollReveal';
 import { subjects } from '../data/subjectData';
@@ -14,7 +15,7 @@ const Services = () => {
 
     const renderCard = (subject: typeof subjects[0], index: number) => (
         <ScrollReveal key={subject.slug} width="100%" delay={index * 100}>
-            <Link to={`/subjects/${subject.slug}`} className="subject-card" id={`subject-${subject.slug}`}>
+            <Link href={`/subjects/${subject.slug}`} className="subject-card" id={`subject-${subject.slug}`}>
                 <div className="subject-card__shimmer"></div>
                 <span className="subject-card__icon">{subjectIcons[subject.slug] ?? subject.icon}</span>
                 <h3 className="subject-card__title">{subject.title}</h3>

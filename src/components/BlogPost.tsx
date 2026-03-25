@@ -1,4 +1,6 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
+"use client";
+import Link from 'next/link';
+import { useRouter, useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { getPostBySlug } from '../data/blogData';
 import type { BlogPost as BlogPostType } from '../data/blogData';
@@ -8,7 +10,7 @@ import './BlogPost.css';
 
 const BlogPost = () => {
     const { slug } = useParams<{ slug: string }>();
-    const navigate = useNavigate();
+    const router = useRouter();
     const [pageState, setPageState] = useState<'enter' | 'visible' | 'exit'>('enter');
     const [displayedSlug, setDisplayedSlug] = useState(slug);
 
@@ -42,7 +44,7 @@ const BlogPost = () => {
                 <div className="container text-center py-5">
                     <h2>Article Not Found</h2>
                     <p>The article you are looking for does not exist or has been removed.</p>
-                    <Link to="/resources" className="btn btn-primary mt-4">Back to Resources</Link>
+                    <Link href="/resources" className="btn btn-primary mt-4">Back to Resources</Link>
                 </div>
             </main>
         );
@@ -83,7 +85,7 @@ const BlogPost = () => {
                 {/* Header */}
                 <header className="blog-post__header">
                     <div className="container blog-post__header-container">
-                        <Link to="/resources" className="blog-post__back-link">
+                        <Link href="/resources" className="blog-post__back-link">
                             <span className="arrow">←</span> Back to Resources
                         </Link>
 
@@ -116,8 +118,8 @@ const BlogPost = () => {
                         <div className="blog-post__cta-box">
                             <h3 className="gold-text">Ready to boost your marks?</h3>
                             <p>Get a free trial lesson with one of our expert tutors.</p>
-                            <Link to="/#contact" className="btn btn-primary" onClick={() => {
-                                navigate('/#contact');
+                            <Link href="/#contact" className="btn btn-primary" onClick={() => {
+                                router.push('/#contact');
                             }}>Book a Free Trial</Link>
                         </div>
                     </div>

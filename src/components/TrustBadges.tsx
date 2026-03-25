@@ -1,3 +1,4 @@
+"use client";
 import './TrustBadges.css';
 
 const badges = [

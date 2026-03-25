@@ -1,7 +1,9 @@
+"use client";
 import { useState, useEffect, useCallback } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import './Header.css';
-import logo from '../assets/ShorelineLogo.png';
+const logo = '/ShorelineLogo.png';
 import { subjects } from '../data/subjectData';
 import subjectIcons from './SubjectIcons';
 
@@ -9,7 +11,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSubjectsOpen, setIsSubjectsOpen] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,11 +31,11 @@ const Header = () => {
     return () => { document.body.style.overflow = ''; };
   }, [isMobileMenuOpen]);
 
-  const location = useLocation();
-  const isHome = location.pathname === '/';
-  const isSubjectPage = location.pathname.startsWith('/subjects');
-  const isPricingPage = location.pathname === '/pricing';
-  const isResourcesPage = location.pathname.startsWith('/resources');
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+  const isSubjectPage = pathname.startsWith('/subjects');
+  const isPricingPage = pathname === '/pricing';
+  const isResourcesPage = pathname.startsWith('/resources');
   const isDarkHeader = isSubjectPage || isPricingPage;
 
   // Handle hash-based navigation: scroll on same page, or navigate home then scroll
@@ -47,9 +49,9 @@ const Header = () => {
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else {
       // Simply navigate to home with the hash. App.tsx will handle the scrolling globally.
-      navigate(`/#${sectionId}`);
+      router.push(`/#${sectionId}`);
     }
-  }, [isHome, navigate]);
+  }, [isHome, router]);
 
   const navLinks = [
     { href: 'about', label: 'About' },
@@ -60,7 +62,7 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isDarkHeader && !isScrolled ? 'header--dark' : ''} ${isResourcesPage ? 'header--solid-navy' : ''} ${isMobileMenuOpen ? 'header--menu-open' : ''}`}>
       <div className="header__container container">
-        <Link to="/" className="header__logo">
+        <Link href="/" className="header__logo">
           <img src={logo} alt="Shoreline Tutoring" className="header__logo-image" />
           <span className="header__logo-text">Shoreline</span>
           <span className="header__logo-accent">Tutoring</span>
@@ -102,7 +104,7 @@ const Header = () => {
                   {subjects.map((subject) => (
                     <Link
                       key={subject.slug}
-                      to={`/subjects/${subject.slug}`}
+                      href={`/subjects/${subject.slug}`}
                       className="header__dropdown-item"
                       onClick={() => {
                         setIsSubjectsOpen(false);
@@ -134,8 +136,7 @@ const Header = () => {
 
             {/* Resources link */}
             <li className="header__nav-item" style={{ '--item-index': 4 } as React.CSSProperties}>
-              <Link
-                to="/resources"
+              <Link href="/resources"
                 className="header__nav-link"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -143,8 +144,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="header__nav-item" style={{ '--item-index': 5 } as React.CSSProperties}>
-              <Link
-                to="/pricing"
+              <Link href="/pricing"
                 className="header__nav-link"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

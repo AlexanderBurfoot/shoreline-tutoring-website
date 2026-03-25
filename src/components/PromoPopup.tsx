@@ -1,12 +1,13 @@
+"use client";
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import './PromoPopup.css';
 
 const PromoPopup = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
-    const navigate = useNavigate();
+    const router = useRouter();
 
     useEffect(() => {
         const dismissed = sessionStorage.getItem('promo_dismissed');
@@ -29,7 +30,7 @@ const PromoPopup = () => {
 
     const handleClaim = () => {
         sessionStorage.setItem('promo_dismissed', 'true');
-        navigate('/');
+        router.push('/');
         setTimeout(() => {
             const el = document.getElementById('contact');
             if (el) el.scrollIntoView({ behavior: 'smooth' });

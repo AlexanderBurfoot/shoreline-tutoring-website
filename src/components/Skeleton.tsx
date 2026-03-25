@@ -1,3 +1,4 @@
+"use client";
 import './Skeleton.css';
 
 /** Generic skeleton block with shimmer animation */

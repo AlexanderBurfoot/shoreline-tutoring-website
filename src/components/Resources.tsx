@@ -1,5 +1,6 @@
+"use client";
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { blogPosts, getAllCategories, getFeaturedPost } from '../data/blogData';
 import ScrollReveal from './ScrollReveal';
 import SEO from './SEO';
@@ -61,7 +62,7 @@ const Resources = () => {
                     {/* Featured Post (Only show if 'All' is selected, or if featured post matches category) */}
                     {(selectedCategory === 'All' || featuredPost.category === selectedCategory) && (
                         <ScrollReveal width="100%">
-                            <Link to={`/resources/${featuredPost.slug}`} className="featured-post">
+                            <Link href={`/resources/${featuredPost.slug}`} className="featured-post">
                                 <div className="featured-post__image-wrapper">
                                     <img src={featuredPost.imageUrl} alt={featuredPost.title} className="featured-post__image" />
                                 </div>
@@ -98,7 +99,7 @@ const Resources = () => {
                         {filteredPosts.length > 0 ? (
                             filteredPosts.map((post, index) => (
                                 <ScrollReveal key={post.id} delay={index * 100} width="100%">
-                                    <Link to={`/resources/${post.slug}`} className="resource-card">
+                                    <Link href={`/resources/${post.slug}`} className="resource-card">
                                         <div className="resource-card__image-wrapper">
                                             <img src={post.imageUrl} alt={post.title} className="resource-card__image" loading="lazy" />
                                         </div>

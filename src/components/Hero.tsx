@@ -1,5 +1,6 @@
+"use client";
 import './Hero.css';
-import logo from '../assets/ShorelineLogo.png';
+const logo = '/ShorelineLogo.png';
 import ScrollReveal from './ScrollReveal';
 
 const Hero = () => {

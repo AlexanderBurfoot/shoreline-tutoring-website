@@ -1,3 +1,4 @@
+"use client";
 import './Features.css';
 import ScrollReveal from './ScrollReveal';
 

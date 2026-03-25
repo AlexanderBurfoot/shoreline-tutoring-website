@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+"use client";
 
 interface SEOProps {
     title: string;
@@ -11,40 +11,11 @@ interface SEOProps {
     schema?: Record<string, any> | Record<string, any>[];
 }
 
-const SITE_NAME = 'Shoreline Tutoring';
-const BASE_URL = 'https://shorelinetutoring.com.au';
-
 const SEO = ({ title, description, keywords, ogTitle, ogDescription, canonical, schema }: SEOProps) => {
-    const fullTitle = title === SITE_NAME
-        ? `${SITE_NAME} | Premium One-on-One Tutoring | Sydney`
-        : `${title} | ${SITE_NAME}`;
-
-    return (
-        <Helmet>
-            <title>{fullTitle}</title>
-            <meta name="description" content={description} />
-            {keywords && <meta name="keywords" content={keywords} />}
-            {canonical && <link rel="canonical" href={`${BASE_URL}${canonical}`} />}
-
-            {/* Open Graph */}
-            <meta property="og:title" content={ogTitle || fullTitle} />
-            <meta property="og:description" content={ogDescription || description} />
-            <meta property="og:type" content="website" />
-            {canonical && <meta property="og:url" content={`${BASE_URL}${canonical}`} />}
-
-            {/* Twitter */}
-            <meta name="twitter:card" content="summary" />
-            <meta name="twitter:title" content={ogTitle || fullTitle} />
-            <meta name="twitter:description" content={ogDescription || description} />
-
-            {/* Schema Markup */}
-            {schema && (
-                <script type="application/ld+json">
-                    {JSON.stringify(schema)}
-                </script>
-            )}
-        </Helmet>
-    );
+    // Next.js App Router uses Server-Side \`export const metadata\` generation instead of React Helmet Client-Side injections.
+    // This component is intentionally nullified to prevent crash conflicts during the massive Server Migration.
+    // Full SEO logic has been elevated to the respective \`page.tsx\` wrappers.
+    return null;
 };
 
 export default SEO;

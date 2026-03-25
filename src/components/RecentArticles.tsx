@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+"use client";
+import Link from 'next/link';
 import { blogPosts } from '../data/blogData';
 import ScrollReveal from './ScrollReveal';
 import './Resources.css';
@@ -20,7 +21,7 @@ const RecentArticles = () => {
                                 Strategies, study guides, and expert advice to help you maximize your results.
                             </p>
                         </div>
-                        <Link to="/resources" className="btn btn-outline recent-articles__view-all">
+                        <Link href="/resources" className="btn btn-outline recent-articles__view-all">
                             View All Articles
                         </Link>
                     </div>
@@ -29,7 +30,7 @@ const RecentArticles = () => {
                 <div className="recent-articles__grid">
                     {recentPosts.map((post, index) => (
                         <ScrollReveal key={post.id} delay={index * 100} width="100%">
-                            <Link to={`/resources/${post.slug}`} className="resource-card recent-articles__card">
+                            <Link href={`/resources/${post.slug}`} className="resource-card recent-articles__card">
                                 <div className="resource-card__image-wrapper">
                                     <img src={post.imageUrl} alt={post.title} className="resource-card__image" loading="lazy" />
                                 </div>
@@ -48,7 +49,7 @@ const RecentArticles = () => {
                 </div>
                 
                 <div className="recent-articles__mobile-btn-container">
-                    <Link to="/resources" className="btn btn-outline recent-articles__mobile-view-all">
+                    <Link href="/resources" className="btn btn-outline recent-articles__mobile-view-all">
                         View All Articles
                     </Link>
                 </div>

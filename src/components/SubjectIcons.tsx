@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 
 /** SVG icon map keyed by subject slug, replaces emoji icons across the site */

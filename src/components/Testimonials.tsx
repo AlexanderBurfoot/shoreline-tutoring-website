@@ -1,3 +1,4 @@
+"use client";
 import './Testimonials.css';
 import ScrollReveal from './ScrollReveal';
 

@@ -1,3 +1,4 @@
+"use client";
 import './Approach.css';
 
 const steps = [

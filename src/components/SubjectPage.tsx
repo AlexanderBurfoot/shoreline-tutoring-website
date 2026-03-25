@@ -1,4 +1,6 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
+"use client";
+import Link from 'next/link';
+import { useRouter, useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { getSubjectBySlug, subjects } from '../data/subjectData';
 import { blogPosts } from '../data/blogData';
@@ -11,7 +13,7 @@ import './RecentArticles.css';
 
 const SubjectPage = () => {
     const { slug } = useParams<{ slug: string }>();
-    const navigate = useNavigate();
+    const router = useRouter();
     // displayedSlug controls which content is rendered, it only updates AFTER exit animation
     const [displayedSlug, setDisplayedSlug] = useState(slug);
     const [pageState, setPageState] = useState<'enter' | 'visible' | 'exit'>('enter');
@@ -48,7 +50,7 @@ const SubjectPage = () => {
             <div className="subject-page__not-found">
                 <h2>Subject not found</h2>
                 <p>The subject you're looking for doesn't exist.</p>
-                <Link to="/" className="btn btn-primary">Back to Home</Link>
+                <Link href="/" className="btn btn-primary">Back to Home</Link>
             </div>
         );
     }
@@ -105,7 +107,7 @@ const SubjectPage = () => {
                     <div className="subject-page__hero-mesh"></div>
                 </div>
                 <div className="container">
-                    <button onClick={() => navigate('/')} className="subject-page__back">
+                    <button onClick={() => router.push('/')} className="subject-page__back">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M19 12H5M12 19l-7-7 7-7" />
                         </svg>
@@ -119,7 +121,7 @@ const SubjectPage = () => {
                                 <span className="subject-page__level-badge">{subject.level}</span>
                                 <h1 className="subject-page__title">{subject.title}</h1>
                                 <p className="subject-page__tagline">{subject.heroTagline}</p>
-                                <button onClick={() => { navigate('/'); setTimeout(() => { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 150); }} className="btn btn-primary subject-page__hero-cta">
+                                <button onClick={() => { router.push('/'); setTimeout(() => { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 150); }} className="btn btn-primary subject-page__hero-cta">
                                     Book Your Free Trial Lesson
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M5 12h14M12 5l7 7-7 7" />
@@ -295,7 +297,7 @@ const SubjectPage = () => {
                                     <p className="subject-page__cta-description">
                                         Book a free trial lesson and experience the difference.
                                     </p>
-                                    <button onClick={() => { navigate('/'); setTimeout(() => { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 400); }} className="btn btn-primary subject-page__cta-btn">
+                                    <button onClick={() => { router.push('/'); setTimeout(() => { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 400); }} className="btn btn-primary subject-page__cta-btn">
                                         Book Your Free Trial Lesson
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -312,13 +314,13 @@ const SubjectPage = () => {
                             <div className="subject-page__related-guides" style={{ marginTop: '2rem', marginBottom: '4rem' }}>
                                 <div className="subject-page__related-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
                                     <h2 className="subject-page__section-title" style={{ marginBottom: 0 }}>Related Study Guides</h2>
-                                    <Link to="/resources" className="subject-page__view-all-link" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
+                                    <Link href="/resources" className="subject-page__view-all-link" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
                                         View All <span aria-hidden="true">→</span>
                                     </Link>
                                 </div>
                                 <div className="recent-articles__grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
                                     {displayPosts.map((post) => (
-                                        <Link to={`/resources/${post.slug}`} className="resource-card recent-articles__card" key={post.id} style={{ display: 'block', height: '100%', textDecoration: 'none' }}>
+                                        <Link href={`/resources/${post.slug}`} className="resource-card recent-articles__card" key={post.id} style={{ display: 'block', height: '100%', textDecoration: 'none' }}>
                                             <div className="resource-card__image-wrapper">
                                                 <img src={post.imageUrl} alt={post.title} className="resource-card__image" loading="lazy" />
                                             </div>
@@ -341,7 +343,7 @@ const SubjectPage = () => {
                     <ScrollReveal delay={200} width="100%">
                         <nav className="subject-page__nav">
                             {prevSubject ? (
-                                <Link to={`/subjects/${prevSubject.slug}`} className="subject-page__nav-link subject-page__nav-link--prev">
+                                <Link href={`/subjects/${prevSubject.slug}`} className="subject-page__nav-link subject-page__nav-link--prev">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M19 12H5M12 19l-7-7 7-7" />
                                     </svg>
@@ -352,7 +354,7 @@ const SubjectPage = () => {
                                 </Link>
                             ) : <div />}
                             {nextSubject ? (
-                                <Link to={`/subjects/${nextSubject.slug}`} className="subject-page__nav-link subject-page__nav-link--next">
+                                <Link href={`/subjects/${nextSubject.slug}`} className="subject-page__nav-link subject-page__nav-link--next">
                                     <div>
                                         <span className="subject-page__nav-label">Next</span>
                                         <span className="subject-page__nav-name">{nextSubject.title}</span>

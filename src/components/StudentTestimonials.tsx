@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, useCallback, useRef } from 'react';
 import './StudentTestimonials.css';
 import ScrollReveal from './ScrollReveal';
