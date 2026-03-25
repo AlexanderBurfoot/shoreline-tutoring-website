@@ -86,6 +86,11 @@
     }
 
     .trust-badges__item {
-        justify-content: flex-start;
+        justify-content: center;
+    }
+
+    .trust-badges__content {
+        align-items: center;
+        text-align: center;
     }
 }
