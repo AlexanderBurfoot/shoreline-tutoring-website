@@ -80,8 +80,12 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .trust-badges__grid {
         grid-template-columns: 1fr;
+    }
+
+    .trust-badges__item {
+        justify-content: flex-start;
     }
 }

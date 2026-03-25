@@ -306,18 +306,12 @@
         padding: calc(var(--header-height) + var(--space-12)) 0 var(--space-12);
     }
 
+    .pricing-hero__title {
+        font-size: var(--text-3xl);
+    }
+
     .pricing-table-title {
         font-size: var(--text-2xl);
-    }
-
-    /* Make table scroll horizontally on small screens */
-    .pricing-table-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .pricing-table {
-        min-width: 520px;
     }
 
     .pricing-value__inner {
@@ -335,19 +329,60 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    /* Convert table to stacked cards */
+    .pricing-table thead {
+        display: none;
+    }
 
-    .pricing-table th,
+    .pricing-table,
+    .pricing-table tbody,
+    .pricing-table tr,
     .pricing-table td {
-        padding: var(--space-3) var(--space-4);
+        display: block;
+        width: 100%;
+    }
+
+    .pricing-table tr {
+        padding: var(--space-5) var(--space-5);
+        border-bottom: 1px solid #f0f2f5;
+    }
+
+    .pricing-table tr:last-child {
+        border-bottom: none;
+    }
+
+    .pricing-table td {
+        padding: var(--space-1) 0;
+        text-align: left;
+    }
+
+    .pricing-table__level {
+        font-size: var(--text-base);
+        margin-bottom: var(--space-1);
     }
 
     .pricing-table__price {
-        font-size: var(--text-lg);
+        font-size: var(--text-xl);
+    }
+
+    .pricing-table__action {
+        text-align: left;
+        padding-top: var(--space-3);
     }
 
     .pricing-table__btn {
-        padding: 6px 16px;
-        font-size: var(--text-xs);
+        width: 100%;
+        text-align: center;
+        padding: 10px 24px;
+        font-size: var(--text-sm);
+    }
+
+    .pricing-table-wrapper {
+        overflow-x: visible;
+    }
+
+    .pricing-table {
+        min-width: 0;
     }
 }
