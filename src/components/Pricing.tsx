@@ -14,7 +14,7 @@ const bundlePricing: PricingRow[] = [
     { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$1400' },
     { yearLevel: 'Year 7 – Year 8', price: '$1,500' },
     { yearLevel: 'Year 9 – Year 10', price: '$1,600' },
-    { yearLevel: 'Year 11', price: '$1,700' },
+    { yearLevel: 'Year 11', price: '$1,800' },
     { yearLevel: 'Year 12', price: '$1,800' },
 ];
 
@@ -22,7 +22,7 @@ const hourlyPricing: PricingRow[] = [
     { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$80' },
     { yearLevel: 'Year 7 – Year 8', price: '$85' },
     { yearLevel: 'Year 9 – Year 10', price: '$90' },
-    { yearLevel: 'Year 11', price: '$95' },
+    { yearLevel: 'Year 11', price: '$100' },
     { yearLevel: 'Year 12', price: '$100' },
 ];
 
