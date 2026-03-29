@@ -540,7 +540,7 @@ export const subjects: SubjectData[] = [
             'Students leave every session feeling more confident',
         ],
         testimonial: {
-            quote: 'Our son actually looks forward to his sessions and that says everything. He got into OC and we really believe Shoreline made the difference.',
+            quote: 'Our son had completely given up and refused to do any OC practice at all. Since starting with Shoreline his confidence and marks have both improved so much that he actually looks forward to his sessions now. That says everything.',
             name: 'Parent of Ryan C.',
             result: 'Received OC placement offer',
         },
