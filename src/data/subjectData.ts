@@ -596,7 +596,7 @@ export const subjects: SubjectData[] = [
             'Parents receive clear progress updates after every session',
         ],
         testimonial: {
-            quote: 'Our daughter went from being anxious about NAPLAN to feeling really prepared. Her reading and writing scores improved significantly, and she actually felt calm on test day.',
+            quote: 'Two reasons for, one counterargument, use the PEEL structure. That\'s the structure her Shoreline tutor gave her for persuasive writing, after quickly realising it was her biggest weakness. Once she had that and the PEEL framework for structuring her paragraphs, language conventions stopped being scary and she actually started enjoying writing.',
             name: 'Parent of Amelia R.',
             result: 'Moved from Developing to Strong in Reading & Writing',
         },
