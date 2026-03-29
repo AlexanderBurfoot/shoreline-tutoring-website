@@ -8,10 +8,6 @@ export const metadata = {
   title: 'Shoreline Tutoring | Premium One-on-One Tutoring | Sydney',
   description: 'Premium one-on-one tutoring designed to dramatically improve your results through constant support.',
   keywords: 'tutoring, private tutor, HSC tutoring, IB tutoring, maths tutoring, English tutoring, Sydney tutor, one on one tutoring',
-  icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
-  },
   openGraph: {
     type: 'website',
     title: 'Shoreline Tutoring - Exclusive, Individualized, Effective',
