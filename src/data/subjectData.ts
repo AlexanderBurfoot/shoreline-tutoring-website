@@ -369,7 +369,7 @@ export const subjects: SubjectData[] = [
             'Students tell us business studies "clicked" after working with us',
         ],
         testimonial: {
-            quote: 'I never knew how to use case studies properly until Shoreline showed me. My essays went from generic to really specific, my teacher noticed the difference straight away.',
+            quote: 'Liquidity ratios, gearing ratios, efficiency ratios were just formulas I memorised without truly understanding. Shoreline taught me how to apply them to real financial statements and now when I look at a balance sheet or profit and loss statement I can actually interpret what\'s going on.',
             name: 'Mia W.',
             result: 'Ranked 28th → 6th in her cohort',
         },
