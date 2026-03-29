@@ -197,7 +197,7 @@ export const subjects: SubjectData[] = [
             'Students consistently tell us physics "finally makes sense"',
         ],
         testimonial: {
-            quote: 'Physics was my worst subject because I just couldn\'t connect the formulas to what was actually happening. Shoreline changed that completely. I ended up scoring 91 in my HSC.',
+            quote: 'I\'d read the textbook so many times but terms like Faraday\'s law, Lenz\'s law and induced EMF would never stick. My Shoreline tutor explained what\'s physically happening inside a circuit and suddenly electromagnetism went from impossible to the topic I\'m most confident in.',
             name: 'Anika R.',
             result: 'Went from 65% to 91 in HSC Physics',
         },
