@@ -312,7 +312,7 @@ export const subjects: SubjectData[] = [
             'Students often see their biggest essay improvement in economics',
         ],
         testimonial: {
-            quote: 'My economics essays went from 12/20 to consistently scoring 18+. Shoreline taught me a framework that works for any question and completely changed my approach.',
+            quote: 'Every essay I wrote on fiscal and monetary policy was just buzzwords and I didn\'t know how to work in evidence. My Shoreline tutor taught me how to reference actual RBA cash rate decisions, real budget measures and their impact on the current account. My essays actually say something now.',
             name: 'Daniel K.',
             result: '12/20 → 18/20 average essay marks',
         },
