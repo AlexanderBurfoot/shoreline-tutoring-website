@@ -83,7 +83,7 @@ export const subjects: SubjectData[] = [
         testimonial: {
             quote: 'My tutor got me to read my own essay back and gently asked \'so what\'s your actual argument here?\' That\'s when I realised I was dumping quotes without a proper argument. Shoreline taught me how to build sustained analysis for Paper 1 unseen texts where you can\'t just fall back on memorised notes.',
             name: 'Priya S.',
-            result: 'Developed sustained analytical writing skills',
+            result: 'Mastered sustained analysis for unseen texts',
         },
         sessionStructure: [
             { duration: '10 min', title: 'Text Discussion', description: 'Explore a key passage or idea from the set text, focusing on how language works' },
@@ -141,7 +141,7 @@ export const subjects: SubjectData[] = [
         testimonial: {
             quote: 'My Shoreline tutor quickly figured out it wasn\'t understanding holding me back, it was poor working out. Once we tightened up how I approach trigonometry equations and calculus optimisation problems, the silly mistakes just stopped.',
             name: 'James L.',
-            result: 'Built strong foundations and problem-solving technique',
+            result: 'Eliminated silly mistakes and mastered exam technique',
         },
         sessionStructure: [
             { duration: '10 min', title: 'Concept Review', description: 'Quick recap of the topic and identify any gaps from last session' },
@@ -199,7 +199,7 @@ export const subjects: SubjectData[] = [
         testimonial: {
             quote: 'I\'d read the textbook so many times but terms like Faraday\'s law, Lenz\'s law and induced EMF would never stick. My Shoreline tutor explained what\'s physically happening inside a circuit and suddenly electromagnetism went from impossible to the topic I\'m most confident in.',
             name: 'Anika R.',
-            result: 'Achieved confidence in complex physical concepts',
+            result: 'Turned rote-learning into genuine conceptual understanding',
         },
         sessionStructure: [
             { duration: '10 min', title: 'Concept Deep-Dive', description: 'Visual explanation of the core physics concept with real-world examples' },
@@ -257,7 +257,7 @@ export const subjects: SubjectData[] = [
         testimonial: {
             quote: 'I was completely lost with mole calculations and organic chemistry. Shoreline broke everything down so clearly. I went from struggling to actually enjoying chem.',
             name: 'Sophie T.',
-            result: 'Mastered complex calculations and chemical theory',
+            result: 'Mastered mole calculations and organic chemistry',
         },
         sessionStructure: [
             { duration: '10 min', title: 'Module Check-In', description: 'Review where we\'re up to in the syllabus and address any questions' },
@@ -314,7 +314,7 @@ export const subjects: SubjectData[] = [
         testimonial: {
             quote: 'Every essay I wrote on fiscal and monetary policy was just buzzwords and I didn\'t know how to work in evidence. My Shoreline tutor taught me how to reference actual RBA cash rate decisions, real budget measures and their impact on the current account. My essays actually say something now.',
             name: 'Daniel K.',
-            result: 'Learned to integrate real-world evidence into essays',
+            result: 'Mastered integrating real-world data into exam essays',
         },
         sessionStructure: [
             { duration: '10 min', title: 'Current Affairs Brief', description: 'Review recent economic news and data to use in essays' },
@@ -371,7 +371,7 @@ export const subjects: SubjectData[] = [
         testimonial: {
             quote: 'Liquidity ratios, gearing ratios, efficiency ratios were just formulas I memorised without truly understanding. Shoreline taught me how to apply them to real financial statements and now when I look at a balance sheet or profit and loss statement I can actually interpret what\'s going on.',
             name: 'Mia W.',
-            result: 'Mastered the application of financial ratios to case studies',
+            result: 'Learned to apply theory to real financial statements',
         },
         sessionStructure: [
             { duration: '10 min', title: 'Case Study Review', description: 'Build and refine your case study knowledge with real examples' },
@@ -429,7 +429,7 @@ export const subjects: SubjectData[] = [
         testimonial: {
             quote: 'I used to find Commerce really dry and confusing and I didn\'t get why any of it mattered. Shoreline changed that by tying topics like consumer law and financial literacy to things I actually deal with. It finally makes sense now and my marks have shown it.',
             name: 'Ethan B.',
-            result: 'Built a strong foundation in financial literacy',
+            result: 'Built practical, real-world financial literacy',
         },
         sessionStructure: [
             { duration: '10 min', title: 'Concept Check', description: 'Review recent class topics and identify any gaps in understanding' },
@@ -486,7 +486,7 @@ export const subjects: SubjectData[] = [
         testimonial: {
             quote: 'My daughter\'s speed and accuracy on the selective test have completely turned around. She used to make panicked mistakes under time pressure but Shoreline targeted that from session one and the improvement has been incredible.',
             name: 'Parent of Lily M.',
-            result: 'Developed targeted reasoning and time management skills',
+            result: 'Mastered time management and critical reasoning',
         },
         sessionStructure: [
             { duration: '10 min', title: 'Warm-Up Challenge', description: 'Quick-fire reasoning puzzles to get thinking sharp' },
@@ -542,7 +542,7 @@ export const subjects: SubjectData[] = [
         testimonial: {
             quote: 'Our son had completely given up and refused to do any OC practice at all. Since starting with Shoreline his confidence and marks have both improved so much that he actually looks forward to his sessions now. That says everything.',
             name: 'Parent of Ryan C.',
-            result: 'Built confidence and resilience in test environments',
+            result: 'Overcame test anxiety and rebuilt academic confidence',
         },
         sessionStructure: [
             { duration: '5 min', title: 'Fun Warm-Up', description: 'Engaging puzzle or word game to get focused and motivated' },
@@ -598,7 +598,7 @@ export const subjects: SubjectData[] = [
         testimonial: {
             quote: 'Two reasons for, one counterargument, use the PEEL structure. That\'s the structure her Shoreline tutor gave her for persuasive writing, after quickly realising it was her biggest weakness. Once she had that and the PEEL framework for structuring her paragraphs, language conventions stopped being scary and she actually started enjoying writing.',
             name: 'Parent of Amelia R.',
-            result: 'Strengthened core persuasive writing and literacy skills',
+            result: 'Mastered structural frameworks for persuasive writing',
         },
         sessionStructure: [
             { duration: '10 min', title: 'Check-In & Goals', description: 'Review progress and set focus areas for the session' },
