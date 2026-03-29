@@ -139,7 +139,7 @@ export const subjects: SubjectData[] = [
             'Students tell us maths is the subject they improve fastest in',
         ],
         testimonial: {
-            quote: 'I was getting low Band 4s and honestly dreading every maths test. After a term with Shoreline, I got a Band 6 in my trials. They made calculus actually make sense.',
+            quote: 'My Shoreline tutor quickly figured out it wasn\'t understanding holding me back, it was poor working out. Once we tightened up how I approach trigonometry equations and calculus optimisation problems, the silly mistakes just stopped.',
             name: 'James L.',
             result: 'Band 4 → Band 6 in HSC Advanced Maths',
         },
