@@ -81,7 +81,7 @@ export const subjects: SubjectData[] = [
             'Students consistently tell us their essays feel sharper and more confident',
         ],
         testimonial: {
-            quote: 'My English essays kept getting Band 4 no matter how hard I tried. Shoreline helped me understand what analysis actually means, now I\'m consistently scoring Band 6 in practice exams.',
+            quote: 'My tutor got me to read my own essay back and gently asked \'so what\'s your actual argument here?\' That\'s when I realised I was dumping quotes without a proper argument. Shoreline taught me how to build sustained analysis for Paper 1 unseen texts where you can\'t just fall back on memorised notes.',
             name: 'Priya S.',
             result: 'Band 4 → Band 6 in HSC English Advanced',
         },
