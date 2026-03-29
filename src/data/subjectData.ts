@@ -427,7 +427,7 @@ export const subjects: SubjectData[] = [
             'We tailor sessions to each student\'s school\'s specific assessment tasks and syllabus focus',
         ],
         testimonial: {
-            quote: 'I used to find Commerce really dry and confusing and I didn\'t get why any of it mattered. Shoreline made it relevant and actually interesting. My marks improved a lot and I now understand what I\'m learning.',
+            quote: 'I used to find Commerce really dry and confusing and I didn\'t get why any of it mattered. Shoreline changed that by tying topics like consumer law and financial literacy to things I actually deal with. It finally makes sense now and my marks have shown it.',
             name: 'Ethan B.',
             result: 'Moved from C to A in Year 9 Commerce',
         },
