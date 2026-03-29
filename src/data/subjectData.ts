@@ -484,7 +484,7 @@ export const subjects: SubjectData[] = [
             'Parents appreciate our honest, realistic progress feedback',
         ],
         testimonial: {
-            quote: 'My daughter was nervous about the test but Shoreline made preparation feel manageable. She got an offer from her first-choice school and actually enjoyed the process.',
+            quote: 'My daughter\'s speed and accuracy on the selective test have completely turned around. She used to make panicked mistakes under time pressure but Shoreline targeted that from session one and the improvement has been incredible.',
             name: 'Parent of Lily M.',
             result: 'Received offer from first-choice selective school',
         },
