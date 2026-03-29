@@ -492,7 +492,7 @@
 
     .header__dropdown--open {
         transform: none;
-        max-height: 500px;
+        max-height: 1200px;
         padding: var(--space-2);
         margin-top: var(--space-2);
         opacity: 1;
