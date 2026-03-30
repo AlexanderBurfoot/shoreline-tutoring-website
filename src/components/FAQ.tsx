@@ -22,7 +22,7 @@ const faqs = [
     },
     {
         question: 'How often should my child have tutoring?',
-        answer: 'We recommend at least once a week to build consistent momentum and keep concepts fresh between school lessons. That said, frequency is flexible, some students prefer with a single session per week, while others thrive from more regular tuition. We\'ll work with you to find a rhythm that suits your child\'s schedule and goals, and be flexible especially around exam periods.',
+        answer: 'We recommend at least once a week to build consistent momentum and keep concepts fresh between school lessons. That said, frequency is flexible, some students prefer with a single session per week, while others thrive from more regular tutoring. We\'ll work with you to find a rhythm that suits your child\'s schedule and goals, and be flexible especially around exam periods.',
     },
     {
         question: 'Do you provide homework and notes after each session?',
