@@ -11,7 +11,7 @@ interface FormData {
 }
 
 const SUBJECTS = [
-    'Mathematics', 'Physics', 'Chemistry', 'Economics',
+    'English', 'Mathematics', 'Physics', 'Chemistry', 'Economics',
     'Business Studies', 'Selective High School Exam', 'Opportunity Classes Exam', 'NAPLAN Preparation', 'Other',
 ];
 
