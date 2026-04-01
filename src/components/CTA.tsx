@@ -1,5 +1,6 @@
 "use client";
 import { useState, type FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import './CTA.css';
 
 interface FormData {
@@ -18,6 +19,7 @@ const SUBJECTS = [
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 const CTA = () => {
+    const router = useRouter();
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
@@ -67,6 +69,7 @@ const CTA = () => {
 
             setStatus('success');
             setFormData({ name: '', email: '', phone: '', subjects: [], message: '' });
+            router.push('/thank-you');
         } catch (err) {
             setStatus('error');
             setErrorMessage(
