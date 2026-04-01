@@ -76,9 +76,20 @@
 
 /* Icon */
 .promo-popup__icon {
-    font-size: 48px;
     margin-bottom: var(--space-3);
     line-height: 1;
+}
+
+.promo-popup__icon-img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    animation: promo-egg-bounce 2s ease-in-out infinite;
+}
+
+@keyframes promo-egg-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
 }
 
 /* Title */
