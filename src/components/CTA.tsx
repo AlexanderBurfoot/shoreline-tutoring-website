@@ -106,17 +106,10 @@ const CTA = () => {
                                     <polyline points="22 4 12 14.01 9 11.01" />
                                 </svg>
                             </div>
-                            <h3 className="cta__success-title">Thank You!</h3>
+                            <h3 className="cta__success-title">Redirecting...</h3>
                             <p className="cta__success-message">
-                                Your enquiry has been sent successfully. We'll be in touch within 24 hours to arrange your free trial lesson.
+                                Your enquiry has been sent successfully.
                             </p>
-                            <button
-                                className="btn btn-primary cta__submit"
-                                onClick={() => setStatus('idle')}
-                                type="button"
-                            >
-                                Send Another Enquiry
-                            </button>
                         </div>
                     ) : (
                         <form className="cta__form" onSubmit={handleSubmit}>

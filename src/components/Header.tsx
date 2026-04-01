@@ -36,7 +36,8 @@ const Header = () => {
   const isSubjectPage = pathname.startsWith('/subjects');
   const isPricingPage = pathname === '/pricing';
   const isResourcesPage = pathname.startsWith('/resources');
-  const isDarkHeader = isSubjectPage || isPricingPage;
+  const isThankYouPage = pathname === '/thank-you';
+  const isDarkHeader = isSubjectPage || isPricingPage || isThankYouPage;
 
   // Handle hash-based navigation: scroll on same page, or navigate home then scroll
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
