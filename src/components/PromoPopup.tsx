@@ -63,7 +63,7 @@ const PromoPopup = () => {
                 </div>
 
                 <p className="promo-popup__text">
-                    Hop into better grades this Easter! Sign up now and save <strong>10%</strong>  on your first paid lesson.
+                    Hop into better grades this Easter! Sign up now and save <strong>10%</strong> on your first paid lesson.
                     Limited spots available, so don&apos;t miss out!
                 </p>
 
