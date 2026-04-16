@@ -58,12 +58,12 @@ const PromoPopup = () => {
                 <h3 className="promo-popup__title">Easter Special</h3>
 
                 <div className="promo-popup__discount">
-                    <span className="promo-popup__percent">10%</span>
+                    <span className="promo-popup__percent">50%</span>
                     <span className="promo-popup__off">OFF</span>
                 </div>
 
                 <p className="promo-popup__text">
-                    Hop into better grades this Easter! Sign up now and save <strong>10%</strong>{' '}on your first paid lesson.
+                    Hop into better grades with our Easter Special! Sign up now and save <strong>50%</strong>{' '}on your first paid lesson.
                     Limited spots available, so don&apos;t miss out!
                 </p>
 
