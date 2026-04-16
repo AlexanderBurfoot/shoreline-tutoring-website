@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    font-family: var(--font-serif);
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: var(--text-2xl);
     font-weight: 600;
     z-index: 1001;
@@ -250,7 +250,7 @@
 
 .header__dropdown-name {
     display: block;
-    font-family: var(--font-serif);
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-navy);

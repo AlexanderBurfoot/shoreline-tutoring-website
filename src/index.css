@@ -3,6 +3,98 @@
    Premium Tutoring Website Styles
    =================================== */
 
+/* ===== Self-Hosted Font Faces ===== */
+
+/* Inter */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/inter-300.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-500.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-600.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter-700.ttf') format('truetype');
+}
+
+/* Cormorant Garamond */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-300.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-400-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-500.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-600.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-700.ttf') format('truetype');
+}
+
 /* ===== CSS Custom Properties (Design Tokens) ===== */
 :root {
   /* Colors */
@@ -22,8 +114,6 @@
   --color-charcoal: #333333;
   --color-text: #444444;
   --color-text-light: #666666;
-
-  /* Typography: --font-serif and --font-sans are set by next/font/local in layout.tsx */
 
   /* Font Sizes */
   --text-xs: 0.75rem;
@@ -95,7 +185,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1rem;
   line-height: 1.65;
   letter-spacing: -0.01em;
@@ -133,7 +223,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-serif);
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   font-weight: 500;
   line-height: 1.2;
   color: var(--color-navy);
@@ -245,7 +335,7 @@ ol {
   justify-content: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
-  font-family: var(--font-sans);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: var(--text-sm);
   font-weight: 600;
   letter-spacing: 0.3px;

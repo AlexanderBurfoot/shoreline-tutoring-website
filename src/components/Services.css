@@ -157,7 +157,7 @@
 
 /* Title */
 .subject-card__title {
-    font-family: var(--font-serif);
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: var(--text-xl);
     font-weight: 600;
     color: var(--color-navy);
@@ -192,7 +192,7 @@
 }
 
 .subject-card__level-value {
-    font-family: var(--font-serif);
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-navy);

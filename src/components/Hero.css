@@ -73,7 +73,7 @@
 }
 
 .hero__tagline-item {
-    font-family: var(--font-sans);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: var(--text-sm);
     font-weight: 600;
     letter-spacing: 3px;
@@ -135,7 +135,7 @@
 }
 
 .hero__stat-number {
-    font-family: var(--font-serif);
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: var(--text-2xl);
     font-weight: 600;
     color: var(--color-navy);
