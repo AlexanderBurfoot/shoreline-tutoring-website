@@ -183,7 +183,7 @@
 .thank-you__title {
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   font-size: var(--text-4xl);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-navy);
   margin-bottom: var(--space-4);
   line-height: 1.25;
@@ -218,7 +218,7 @@
 .thank-you__timeline-heading {
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   font-size: var(--text-lg);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-navy);
   margin-bottom: var(--space-6);
   text-align: center;
@@ -270,7 +270,7 @@
 .thank-you__step-content h3 {
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   font-size: var(--text-base);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-navy);
   margin-bottom: var(--space-1);
   line-height: 1.4;

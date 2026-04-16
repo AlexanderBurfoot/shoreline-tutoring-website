@@ -113,7 +113,7 @@
 .promo-popup__percent {
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: 64px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1;
     color: var(--color-gold-primary);
 }

@@ -30,9 +30,9 @@
 .header__logo {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-2);
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: var(--text-2xl);
+    font-size: var(--text-4xl);
     font-weight: 700;
     z-index: 1001;
 }
@@ -252,7 +252,7 @@
     display: block;
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: var(--text-sm);
-    font-weight: 700;
+    font-weight: 600;
     color: var(--color-navy);
 }
 

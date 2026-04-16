@@ -50,41 +50,41 @@
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 300;
   font-display: block;
-  src: url('/fonts/cormorant-garamond-700.ttf') format('truetype');
+  src: url('/fonts/cormorant-garamond-300.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-display: block;
-  src: url('/fonts/cormorant-garamond-700.ttf') format('truetype');
+  src: url('/fonts/cormorant-garamond-400.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style: italic;
-  font-weight: 700;
+  font-weight: 400;
   font-display: block;
-  src: url('/fonts/cormorant-garamond-700-italic.ttf') format('truetype');
+  src: url('/fonts/cormorant-garamond-400-italic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-display: block;
-  src: url('/fonts/cormorant-garamond-700.ttf') format('truetype');
+  src: url('/fonts/cormorant-garamond-500.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-display: block;
-  src: url('/fonts/cormorant-garamond-700.ttf') format('truetype');
+  src: url('/fonts/cormorant-garamond-600.ttf') format('truetype');
 }
 
 @font-face {
@@ -224,7 +224,7 @@ h4,
 h5,
 h6 {
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
   color: var(--color-navy);
 }

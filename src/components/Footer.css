@@ -24,7 +24,7 @@
     gap: var(--space-2);
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: var(--text-2xl);
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: var(--space-3);
 }
 
