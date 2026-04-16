@@ -54,12 +54,6 @@ const ScrollReveal = ({ children, width = 'fit-content', delay = 0 }: ScrollReve
             }}
             className="scroll-reveal"
         >
-            <style>{`
-                .scroll-reveal.visible {
-                    opacity: 1 !important;
-                    transform: translateY(0) !important;
-                }
-            `}</style>
             {children}
         </div>
     );
