@@ -22,7 +22,7 @@ const features = [
                 <circle cx="12" cy="12" r="2" />
             </svg>
         ),
-        title: 'Individualized',
+        title: 'Individualised',
         subtitle: 'Tailored Learning',
         description: 'Every learning plan is crafted specifically for your unique needs, learning style, and goals. No two students are alike, and neither are our approaches.',
         highlights: ['Custom curricula', 'Adaptive teaching', 'Personal roadmap'],

@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Shoreline Tutoring - Exclusive, Individualized, Effective"
+        title="Shoreline Tutoring - Exclusive, Individualised, Effective"
         description="Premium one-on-one tutoring in Sydney for Mathematics, English, Physics, Chemistry, Commerce, Economics, Business Studies, Selective High School Exam, Opportunity Classes Exam, and NAPLAN. Book your free trial lesson today."
         keywords="tutoring Sydney, HSC tutoring, english tutor, maths tutor, physics tutor, chemistry tutor, commerce tutor, economics tutor, business studies tutor, selective high school exam, opportunity classes exam, NAPLAN preparation, one on one tutoring, private tutor Sydney"
         canonical="/"

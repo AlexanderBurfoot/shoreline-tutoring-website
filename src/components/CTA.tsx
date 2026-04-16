@@ -94,7 +94,7 @@ const CTA = () => {
                         <span className="cta__title-accent"> Academic Potential?</span>
                     </h2>
                     <p className="cta__description">
-                        Book a free trial lesson today and discover how our exclusive, individualized
+                        Book a free trial lesson today and discover how our exclusive, individualised
                         approach can transform your academic journey. Limited spots available.
                     </p>
 
