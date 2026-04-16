@@ -58,7 +58,7 @@
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-display: block;
   src: url('/fonts/cormorant-garamond-400.ttf') format('truetype');
 }
@@ -66,7 +66,7 @@
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style: italic;
-  font-weight: 400;
+  font-weight: 700;
   font-display: block;
   src: url('/fonts/cormorant-garamond-400-italic.ttf') format('truetype');
 }
@@ -74,7 +74,7 @@
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-display: block;
   src: url('/fonts/cormorant-garamond-500.ttf') format('truetype');
 }
@@ -82,7 +82,7 @@
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-display: block;
   src: url('/fonts/cormorant-garamond-600.ttf') format('truetype');
 }
