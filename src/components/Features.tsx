@@ -47,7 +47,7 @@ const Features = () => {
             <div className="container">
                 <ScrollReveal width="100%">
                     <span className="section-eyebrow">Why Us</span>
-                    <h2 className="section-title">Why Choose Shoreline Tutoring?</h2>
+                    <h2 className="section-title">Why Choose <span className="gold-text">Shoreline Tutoring</span>?</h2>
                     <p className="section-subtitle">
                         Our three pillars of excellence ensure your success is not just possible; it is inevitable.
                     </p>

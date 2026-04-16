@@ -43,15 +43,13 @@ const Resources = () => {
             <section className="resources-hero">
                 <div className="resources-hero__bg"></div>
                 <div className="container resources-hero__content">
-                    <ScrollReveal>
-                        <span className="section-eyebrow">Blog</span>
-                        <h1 className="resources-hero__title gold-text">
-                            Resources & Insights
-                        </h1>
-                        <p className="resources-hero__subtitle">
-                            Expert advice on HSC strategy, study techniques, and subject-specific guides to help you achieve your academic goals.
-                        </p>
-                    </ScrollReveal>
+                    <span className="section-eyebrow">Blog</span>
+                    <h1 className="resources-hero__title">
+                        Resources & <span className="gold-text">Insights</span>
+                    </h1>
+                    <p className="resources-hero__subtitle">
+                        Expert advice on HSC strategy, study techniques, and subject-specific guides to help you achieve your academic goals.
+                    </p>
                 </div>
             </section>
 

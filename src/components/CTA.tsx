@@ -91,7 +91,7 @@ const CTA = () => {
                     <span className="cta__label">Start Your Journey</span>
                     <h2 className="cta__title">
                         Ready to Unlock Your
-                        <span className="cta__title-accent"> Academic Potential?</span>
+                        <span className="cta__title-accent"> Academic Potential!</span>
                     </h2>
                     <p className="cta__description">
                         Book a free trial lesson today and discover how our exclusive, individualised

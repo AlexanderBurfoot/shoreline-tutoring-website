@@ -40,7 +40,7 @@ export const subjects: SubjectData[] = [
         icon: '📖',
         title: 'English',
         shortDescription: 'From close analysis to persuasive writing, we build the analytical habits that push students from Band 5 to Band 6.',
-        level: 'Years 7–12',
+        level: 'Years 1–12',
         heroTagline: 'We don\'t just teach what a text means, we teach how to analyse it.',
         stats: [
             { label: 'Advanced, Standard & Extension', value: 'All Levels' },
@@ -98,7 +98,7 @@ export const subjects: SubjectData[] = [
         icon: '📐',
         title: 'Mathematics',
         shortDescription: 'From Year 7 foundations to HSC Extension 1, we build real understanding, not just memorisation.',
-        level: 'Years 7–12',
+        level: 'Years 1–12',
         heroTagline: 'We don\'t just teach formulas, we build the thinking behind them.',
         stats: [
             { label: 'Covers Standard, Advanced & Ext 1', value: 'All Levels' },

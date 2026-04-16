@@ -18,7 +18,7 @@ const Services = () => {
             <Link href={`/subjects/${subject.slug}`} className="subject-card" id={`subject-${subject.slug}`}>
                 <div className="subject-card__shimmer"></div>
                 <span className="subject-card__icon">{subjectIcons[subject.slug] ?? subject.icon}</span>
-                <h3 className="subject-card__title">{subject.title}</h3>
+                <h2 className="subject-card__title">{subject.title}</h2>
                 <p className="subject-card__description">{subject.shortDescription}</p>
                 <div className="subject-card__level">
                     <span className="subject-card__level-label">Level</span>
@@ -40,7 +40,7 @@ const Services = () => {
                 <ScrollReveal width="100%">
                     <div className="services__header">
                         <span className="section-eyebrow">What We Teach</span>
-                        <h2 className="section-title">Subject Expertise</h2>
+                        <h2 className="section-title">Subject <span className="gold-text">Expertise</span></h2>
                         <p className="section-subtitle">
                             Every lesson is mapped to the NSW syllabus and tailored to you.
                         </p>

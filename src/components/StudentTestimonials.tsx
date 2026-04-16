@@ -77,7 +77,7 @@ const StudentTestimonials = () => {
             <div className="container">
                 <ScrollReveal width="100%">
                     <span className="section-eyebrow">Student Stories</span>
-                    <h2 className="section-title">What Our Students Say</h2>
+                    <h2 className="section-title">What Our <span className="gold-text">Students Say</span></h2>
                     <p className="section-subtitle">
                         Real results from real students and families. Here's how Shoreline Tutoring has helped them achieve their goals.
                     </p>

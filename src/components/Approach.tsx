@@ -35,7 +35,7 @@ const Approach = () => {
             <div className="container">
                 <div className="approach__header">
                     <span className="section-eyebrow">How It Works</span>
-                    <h2 className="section-title">Our Approach</h2>
+                    <h2 className="section-title">Our <span className="gold-text">Approach</span></h2>
                     <p className="section-subtitle">
                         A proven methodology that transforms potential into achievement through structured, personalized guidance.
                     </p>

@@ -50,7 +50,7 @@ const FAQ = () => {
             <div className="container">
                 <ScrollReveal width="100%">
                     <span className="section-eyebrow">Common Questions</span>
-                    <h2 className="section-title">Frequently Asked Questions</h2>
+                    <h2 className="section-title">Frequently Asked <span className="gold-text">Questions</span></h2>
                     <p className="section-subtitle">
                         Everything parents and students ask before getting started.
                     </p>

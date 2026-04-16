@@ -81,7 +81,7 @@ const Testimonials = () => {
             <div className="container">
                 <ScrollReveal width="100%">
                     <span className="section-eyebrow">What You Get</span>
-                    <h2 className="section-title">Our Promise</h2>
+                    <h2 className="section-title">Our <span className="gold-text">Promise</span></h2>
                     <p className="section-subtitle">
                         We believe in earning your trust through action, not words. Here's what every student receives.
                     </p>

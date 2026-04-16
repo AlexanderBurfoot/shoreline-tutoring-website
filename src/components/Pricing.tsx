@@ -241,9 +241,9 @@ const Pricing = () => {
             <section className="pricing-bottom-cta">
                 <div className="container">
                     <div className="pricing-bottom-cta__inner">
-                        <h2 className="pricing-bottom-cta__title">
+                        <h1 className="pricing-bottom-cta__title">
                             Ready to Get Started?
-                        </h2>
+                        </h1>
                         <p className="pricing-bottom-cta__text">
                             Book a free trial lesson and discover the Shoreline difference. No obligation, no pressure; just results.
                         </p>

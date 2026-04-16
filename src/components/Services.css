@@ -1,6 +1,6 @@
 /* Services Section */
 .services {
-    background: var(--color-white);
+    background: var(--color-cream);
     position: relative;
     padding: var(--space-20) 0;
     overflow: hidden;
@@ -158,9 +158,9 @@
 /* Title */
 .subject-card__title {
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: var(--text-xl);
+    font-size: var(--text-3xl);
     font-weight: 600;
-    color: var(--color-navy);
+    color: var(--color-gold-primary);
     margin-bottom: var(--space-2);
 }
 

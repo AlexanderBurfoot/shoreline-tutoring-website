@@ -94,7 +94,7 @@
 
 /* Solid Navy Header (Resources Page overrides) */
 .header--solid-navy {
-    background: var(--color-navy) !important;
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-navy) 40%, #1a2744 70%, #253552 100%) !important;
 }
 
 .header--solid-navy .header__logo-text,

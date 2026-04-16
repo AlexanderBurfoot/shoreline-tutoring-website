@@ -1,5 +1,4 @@
 .resources-page {
-    padding-top: var(--header-height);
     background-color: var(--color-background);
     min-height: 100vh;
 }
@@ -7,9 +6,12 @@
 /* Hero Section */
 .resources-hero {
     position: relative;
-    padding: 6rem 0 4rem;
+    padding-top: var(--header-height);
+    min-height: 22rem;
+    display: flex;
+    align-items: center;
     overflow: hidden;
-    background-color: var(--color-navy);
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-navy) 40%, #1a2744 70%, #253552 100%);
     color: var(--color-white);
     text-align: center;
 }
@@ -17,10 +19,9 @@
 .resources-hero__bg {
     position: absolute;
     inset: 0;
-    opacity: 0.4;
     background-image:
-        radial-gradient(circle at 80% 0%, rgba(204, 163, 86, 0.15), transparent 50%),
-        radial-gradient(circle at 20% 100%, rgba(15, 36, 57, 0.8), transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
     z-index: 1;
 }
 
@@ -29,12 +30,14 @@
     z-index: 2;
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .resources-hero__title {
     font-size: clamp(2.5rem, 5vw, 4rem);
-    margin: 1rem 0;
+    margin-bottom: var(--space-4);
     font-weight: 700;
+    color: var(--color-white);
 }
 
 .resources-hero__subtitle {
