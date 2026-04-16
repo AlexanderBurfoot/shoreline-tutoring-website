@@ -43,7 +43,7 @@
 }
 
 .header__logo-text {
-    color: var(--color-navy);
+    color: var(--color-navy-light);
     transition: color var(--transition-base);
 }
 

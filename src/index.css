@@ -226,7 +226,7 @@ h6 {
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   font-weight: 500;
   line-height: 1.2;
-  color: var(--color-navy);
+  color: var(--color-navy-light);
 }
 
 h1 {
