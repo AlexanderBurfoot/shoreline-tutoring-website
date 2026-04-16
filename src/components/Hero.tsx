@@ -17,7 +17,7 @@ const Hero = () => {
                         <div className="hero__tagline animate-fade-in-up">
                             <span className="hero__tagline-item">EXCLUSIVE</span>
                             <span className="hero__tagline-dot">•</span>
-                            <span className="hero__tagline-item">INDIVIDUALIZED</span>
+                            <span className="hero__tagline-item">INDIVIDUALISED</span>
                             <span className="hero__tagline-dot">•</span>
                             <span className="hero__tagline-item">EFFECTIVE</span>
                         </div>
