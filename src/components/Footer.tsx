@@ -15,7 +15,7 @@ const Footer = () => {
                             <span className="footer__logo-accent">Tutoring</span>
                         </a>
                         <p className="footer__tagline">
-                            EXCLUSIVE • INDIVIDUALIZED • EFFECTIVE
+                            EXCLUSIVE • INDIVIDUALISED • EFFECTIVE
                         </p>
                         <p className="footer__description">
                             Premium one-on-one tutoring designed to dramatically improve student results
