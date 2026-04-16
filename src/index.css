@@ -224,7 +224,9 @@ h4,
 h5,
 h6 {
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  font-weight: 700;
+  font-weight: 900;
+  font-synthesis: weight;
+  -webkit-text-stroke: 0.4px currentColor;
   line-height: 1.2;
   color: var(--color-navy);
 }
