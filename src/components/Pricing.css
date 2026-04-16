@@ -156,7 +156,7 @@
 .pricing-table__price {
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: var(--text-2xl);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-navy);
 }
 
