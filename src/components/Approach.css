@@ -55,7 +55,7 @@
 }
 
 .approach__step-number span {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
     font-size: var(--text-base);
     font-weight: 600;
     color: var(--color-white);

@@ -1,9 +1,10 @@
 "use client";
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import './Pricing.css';
-import PromoPopup from './PromoPopup';
-import SEO from './SEO';
+
+const PromoPopup = dynamic(() => import('./PromoPopup'), { ssr: false });
 
 interface PricingRow {
     yearLevel: string;
@@ -60,38 +61,8 @@ const Pricing = () => {
         router.push('/#contact');
     }, [router]);
 
-    const pricingSchema = {
-        "@context": "https://schema.org",
-        "@type": "OfferCatalog",
-        "name": "Tutoring Pricing Packages",
-        "description": "Transparent pricing for one-on-one tutoring in Sydney, ranging from Year 1 to Year 12.",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "name": "Hourly Tutoring",
-                "description": "Pay-as-you-go hourly tutoring sessions.",
-                "priceCurrency": "AUD",
-                "price": "50.00"
-            },
-            {
-                "@type": "Offer",
-                "name": "20-Lesson Bundle",
-                "description": "Discounted bundle for committed students.",
-                "priceCurrency": "AUD",
-                "price": "900.00"
-            }
-        ]
-    };
-
     return (
         <div className="pricing-page">
-            <SEO
-                title="Pricing"
-                description="Transparent tutoring pricing for Year 1 through Year 12. Choose from per-hour sessions or save with our 20-Lesson Bundle. Every session includes personalised one-on-one tutoring."
-                keywords="tutoring prices Sydney, HSC tutoring cost, private tutor rates, tutoring packages, lesson bundles, affordable tutoring"
-                canonical="/pricing"
-                schema={pricingSchema}
-            />
             <PromoPopup />
             <section className="pricing-hero">
                 <div className="pricing-hero__bg"></div>

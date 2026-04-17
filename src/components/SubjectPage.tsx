@@ -1,12 +1,12 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter, useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { getSubjectBySlug, subjects } from '../data/subjectData';
 import { blogPosts } from '../data/blogData';
 import subjectIcons from './SubjectIcons';
 import ScrollReveal from './ScrollReveal';
-import SEO from './SEO';
 import './SubjectPage.css';
 import './Resources.css';
 import './RecentArticles.css';
@@ -59,18 +59,6 @@ const SubjectPage = () => {
     const prevSubject = currentIndex > 0 ? subjects[currentIndex - 1] : null;
     const nextSubject = currentIndex < subjects.length - 1 ? subjects[currentIndex + 1] : null;
 
-    const courseSchema = {
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": `${subject.title} Tutoring`,
-        "description": subject.shortDescription,
-        "provider": {
-            "@type": "Organization",
-            "name": "Shoreline Tutoring",
-            "sameAs": "https://shorelinetutoring.com.au"
-        }
-    };
-
     const normalizedSubject = subject.title.toLowerCase();
     const relatedPostsList = blogPosts.filter(post => {
         const titleMatch = post.title.toLowerCase().includes(normalizedSubject);
@@ -92,13 +80,6 @@ const SubjectPage = () => {
 
     return (
         <main className={`subject-page subject-page--${pageState}`}>
-            <SEO
-                title={`${subject.title} Tutoring Sydney`}
-                description={`${subject.title} tutoring for ${subject.level} in Sydney. ${subject.shortDescription} Book your free trial lesson with Shoreline Tutoring today.`}
-                keywords={`${subject.title.toLowerCase()} tutor, ${subject.title.toLowerCase()} tutoring Sydney, ${subject.level} ${subject.title.toLowerCase()}, private ${subject.title.toLowerCase()} tutor`}
-                canonical={`/subjects/${subject.slug}`}
-                schema={courseSchema}
-            />
             <section className="subject-page__hero">
                 <div className="subject-page__hero-bg">
                     <div className="subject-page__hero-gradient"></div>
@@ -311,25 +292,31 @@ const SubjectPage = () => {
                     {/* Related Study Guides */}
                     {displayPosts.length > 0 && (
                         <ScrollReveal delay={150} width="100%">
-                            <div className="subject-page__related-guides" style={{ marginTop: '2rem', marginBottom: '4rem' }}>
-                                <div className="subject-page__related-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-                                    <h2 className="subject-page__section-title" style={{ marginBottom: 0 }}>Related Study Guides</h2>
-                                    <Link href="/resources" className="subject-page__view-all-link" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
+                            <div className="subject-page__related-guides">
+                                <div className="subject-page__related-header">
+                                    <h2 className="subject-page__section-title">Related Study Guides</h2>
+                                    <Link href="/resources" className="subject-page__view-all-link">
                                         View All <span aria-hidden="true">→</span>
                                     </Link>
                                 </div>
-                                <div className="recent-articles__grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                                <div className="subject-page__related-grid">
                                     {displayPosts.map((post) => (
-                                        <Link href={`/resources/${post.slug}`} className="resource-card recent-articles__card" key={post.id} style={{ display: 'block', height: '100%', textDecoration: 'none' }}>
+                                        <Link href={`/resources/${post.slug}`} className="resource-card" key={post.id}>
                                             <div className="resource-card__image-wrapper">
-                                                <img src={post.imageUrl} alt={post.title} className="resource-card__image" loading="lazy" />
+                                                <Image
+                                                    src={post.imageUrl}
+                                                    alt={post.title}
+                                                    fill
+                                                    sizes="(max-width: 600px) 100vw, 400px"
+                                                    className="resource-card__image"
+                                                />
                                             </div>
                                             <div className="resource-card__content">
                                                 <div className="resource-card__meta">
                                                     <span className="resource-card__category">{post.category}</span>
                                                     <span className="resource-card__read-time">{post.readTime}</span>
                                                 </div>
-                                                <h3 className="resource-card__title" style={{ fontSize: '1.25rem' }}>{post.title}</h3>
+                                                <h3 className="resource-card__title">{post.title}</h3>
                                                 <span className="resource-card__read-more">Read Guide <span className="arrow">→</span></span>
                                             </div>
                                         </Link>

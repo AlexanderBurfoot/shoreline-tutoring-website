@@ -1,15 +1,10 @@
 "use client";
 import Link from 'next/link';
 import './NotFound.css';
-import SEO from './SEO';
 
 const NotFound = () => {
     return (
         <main className="not-found">
-            <SEO
-                title="Page Not Found"
-                description="The page you're looking for doesn't exist. Return to Shoreline Tutoring's homepage to find what you need."
-            />
             <div className="not-found__container">
                 <span className="not-found__code">404</span>
                 <h1 className="not-found__title">Page Not Found</h1>

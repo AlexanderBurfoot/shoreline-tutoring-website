@@ -107,6 +107,7 @@ const Header = () => {
                       key={subject.slug}
                       href={`/subjects/${subject.slug}`}
                       className="header__dropdown-item"
+                      prefetch={false}
                       onClick={() => {
                         setIsSubjectsOpen(false);
                         setIsMobileMenuOpen(false);

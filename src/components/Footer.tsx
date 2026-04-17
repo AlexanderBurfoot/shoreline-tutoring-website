@@ -1,4 +1,3 @@
-"use client";
 import Link from 'next/link';
 import './Footer.css';
 
@@ -32,8 +31,8 @@ const Footer = () => {
                                 <li><Link href="/#approach">Our Approach</Link></li>
                                 <li><Link href="/#testimonials">Our Promise</Link></li>
                                 <li><Link href="/#contact">Contact</Link></li>
-                                <li><Link href="/resources">Resources</Link></li>
-                                <li><Link href="/pricing">Pricing</Link></li>
+                                <li><Link href="/resources" prefetch={false}>Resources</Link></li>
+                                <li><Link href="/pricing" prefetch={false}>Pricing</Link></li>
                             </ul>
                         </div>
 

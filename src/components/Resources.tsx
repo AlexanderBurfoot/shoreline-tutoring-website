@@ -1,9 +1,9 @@
 "use client";
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { blogPosts, getAllCategories, getFeaturedPost } from '../data/blogData';
 import ScrollReveal from './ScrollReveal';
-import SEO from './SEO';
 import './Resources.css';
 
 const Resources = () => {
@@ -21,24 +21,8 @@ const Resources = () => {
         return isNotFeatured && matchesCategory;
     });
 
-    const resourcesSchema = {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "Shoreline Tutoring Resources & Insights",
-        "description": "Expert advice on HSC strategy, study techniques, and subject-specific guides.",
-        "url": "https://shorelinetutoring.com.au/resources"
-    };
-
     return (
         <main className="resources-page">
-            <SEO
-                title="Resources & Insights"
-                description="Expert advice on HSC strategy, study techniques, and subject-specific guides from Shoreline Tutoring."
-                keywords="HSC study tips, tutoring blog, HSC strategy, selective school prep, study guides"
-                canonical="/resources"
-                schema={resourcesSchema}
-            />
-
             {/* Hero Section */}
             <section className="resources-hero">
                 <div className="resources-hero__bg"></div>
@@ -62,7 +46,14 @@ const Resources = () => {
                         <ScrollReveal width="100%">
                             <Link href={`/resources/${featuredPost.slug}`} className="featured-post">
                                 <div className="featured-post__image-wrapper">
-                                    <img src={featuredPost.imageUrl} alt={featuredPost.title} className="featured-post__image" />
+                                    <Image
+                                        src={featuredPost.imageUrl}
+                                        alt={featuredPost.title}
+                                        fill
+                                        priority
+                                        sizes="(max-width: 900px) 100vw, 55vw"
+                                        className="featured-post__image"
+                                    />
                                 </div>
                                 <div className="featured-post__content">
                                     <div className="featured-post__meta">
@@ -99,7 +90,13 @@ const Resources = () => {
                                 <ScrollReveal key={post.id} delay={index * 100} width="100%">
                                     <Link href={`/resources/${post.slug}`} className="resource-card">
                                         <div className="resource-card__image-wrapper">
-                                            <img src={post.imageUrl} alt={post.title} className="resource-card__image" loading="lazy" />
+                                            <Image
+                                                src={post.imageUrl}
+                                                alt={post.title}
+                                                fill
+                                                sizes="(max-width: 600px) 100vw, 400px"
+                                                className="resource-card__image"
+                                            />
                                         </div>
                                         <div className="resource-card__content">
                                             <div className="resource-card__meta">

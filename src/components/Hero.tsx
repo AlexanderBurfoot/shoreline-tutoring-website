@@ -1,4 +1,3 @@
-"use client";
 import './Hero.css';
 const logo = '/ShorelineLogo.png';
 import ScrollReveal from './ScrollReveal';

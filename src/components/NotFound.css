@@ -15,7 +15,7 @@
 
 .not-found__code {
     display: block;
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
     font-size: 8rem;
     font-weight: 700;
     line-height: 1;
@@ -28,7 +28,7 @@
 }
 
 .not-found__title {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
     font-size: var(--text-3xl);
     font-weight: 600;
     color: var(--color-navy);

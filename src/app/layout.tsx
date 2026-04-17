@@ -1,8 +1,10 @@
 import '../index.css';
+import 'katex/dist/katex.min.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BackToTop from '../components/BackToTop';
 import ScrollProgress from '../components/ScrollProgress';
+import { inter, cormorant } from './fonts';
 
 export const metadata = {
   title: 'Shoreline Tutoring | Premium One-on-One Tutoring | Sydney',
@@ -24,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${cormorant.variable}`}>
       <body>
         <ScrollProgress />
         <Header />

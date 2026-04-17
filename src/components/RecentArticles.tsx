@@ -1,5 +1,5 @@
-"use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import { blogPosts } from '../data/blogData';
 import ScrollReveal from './ScrollReveal';
 import './Resources.css';
@@ -32,7 +32,13 @@ const RecentArticles = () => {
                         <ScrollReveal key={post.id} delay={index * 100} width="100%">
                             <Link href={`/resources/${post.slug}`} className="resource-card recent-articles__card">
                                 <div className="resource-card__image-wrapper">
-                                    <img src={post.imageUrl} alt={post.title} className="resource-card__image" loading="lazy" />
+                                    <Image
+                                        src={post.imageUrl}
+                                        alt={post.title}
+                                        fill
+                                        sizes="(max-width: 600px) 100vw, 400px"
+                                        className="resource-card__image"
+                                    />
                                 </div>
                                 <div className="resource-card__content">
                                     <div className="resource-card__meta">

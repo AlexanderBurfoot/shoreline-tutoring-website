@@ -124,7 +124,7 @@
 }
 
 .blog-post__content {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1.15rem;
     line-height: 1.8;
     color: #333;
@@ -136,7 +136,7 @@
 .blog-post__content h2,
 .blog-post__content h3,
 .blog-post__content h4 {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
     color: var(--color-navy);
     margin: 3rem 0 1rem;
     line-height: 1.3;

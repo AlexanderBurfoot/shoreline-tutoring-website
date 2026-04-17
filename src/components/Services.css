@@ -157,7 +157,7 @@
 
 /* Title */
 .subject-card__title {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
     font-size: var(--text-3xl);
     font-weight: 600;
     color: var(--color-gold-primary);
@@ -192,7 +192,7 @@
 }
 
 .subject-card__level-value {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-navy);
