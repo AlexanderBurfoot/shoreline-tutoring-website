@@ -36,6 +36,7 @@ const Header = () => {
   const isSubjectPage = pathname.startsWith('/subjects');
   const isPricingPage = pathname === '/pricing';
   const isResourcesPage = pathname.startsWith('/resources');
+  const isBlogPost = pathname.startsWith('/resources/');
   const isThankYouPage = pathname === '/thank-you';
   const isDarkHeader = isSubjectPage || isPricingPage || isResourcesPage || isThankYouPage;
 
@@ -61,7 +62,7 @@ const Header = () => {
   ];
 
   return (
-    <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isDarkHeader && !isScrolled ? 'header--dark' : ''} ${''} ${isMobileMenuOpen ? 'header--menu-open' : ''}`}>
+    <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isDarkHeader && !isScrolled ? 'header--dark' : ''} ${isBlogPost ? 'header--solid-navy' : ''} ${isMobileMenuOpen ? 'header--menu-open' : ''}`}>
       <div className="header__container container">
         <Link href="/" className="header__logo">
           <img src={logo} alt="Shoreline Tutoring" className="header__logo-image" />
