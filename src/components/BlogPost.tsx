@@ -71,7 +71,7 @@ const BlogPost = ({ post, contentHtml }: BlogPostProps) => {
                     />
                 </div>
 
-                {/* Content — pre-compiled HTML from remark (server-rendered) */}
+                {/* Content: pre-compiled HTML from remark (server-rendered) */}
                 <div className="container blog-post__content-container">
                     <div
                         className="blog-post__content"

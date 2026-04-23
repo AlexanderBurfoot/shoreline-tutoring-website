@@ -1,4 +1,4 @@
-# Shoreline Tutoring — Web
+# Shoreline Tutoring: Web
 
 Marketing and content site for Shoreline Tutoring, built with [Next.js](https://nextjs.org) (App Router), React 19, and TypeScript.
 

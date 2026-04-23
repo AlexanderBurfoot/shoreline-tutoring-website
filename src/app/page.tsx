@@ -4,6 +4,7 @@ import TrustBadges from '../components/TrustBadges';
 import Features from '../components/Features';
 import Services from '../components/Services';
 import Approach from '../components/Approach';
+import HeadTutor from '../components/HeadTutor';
 import Testimonials from '../components/Testimonials';
 import RecentArticles from '../components/RecentArticles';
 import CTA from '../components/CTA';
@@ -21,6 +22,7 @@ export default function HomePage() {
       <StudentTestimonials />
       <Services />
       <Approach />
+      <HeadTutor />
       <Testimonials />
       <RecentArticles />
       <FAQ />

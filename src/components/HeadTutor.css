@@ -1,0 +1,331 @@
+/* ===== Meet the Head Tutor ===== */
+.head-tutor {
+    background: var(--color-white);
+    position: relative;
+}
+
+.head-tutor__inner {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: var(--space-16);
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* ---- Portrait ---- */
+.head-tutor__portrait-wrapper {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    background: var(--color-cream);
+}
+
+.head-tutor__portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.head-tutor__portrait-wrapper:hover .head-tutor__portrait {
+    transform: scale(1.03);
+}
+
+/* ---- Content ---- */
+.head-tutor__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.head-tutor__title {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-5xl);
+    font-weight: 500;
+    color: var(--color-navy-light);
+    line-height: 1.15;
+    margin: 0;
+}
+
+.head-tutor__bio {
+    font-size: var(--text-lg);
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ---- Credentials ---- */
+.head-tutor__credentials {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    list-style: none;
+    padding: 0;
+    margin: var(--space-2) 0 0;
+}
+
+.head-tutor__credential {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.head-tutor__credential-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--color-gold-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+/* ---- Cross-disciplinary Insight Callout ---- */
+.head-tutor__insight {
+    max-width: 780px;
+    margin: var(--space-20) auto 0;
+    padding: var(--space-10);
+    background: var(--color-cream);
+    border-radius: var(--border-radius-xl);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    text-align: center;
+}
+
+.head-tutor__insight-title {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-3xl);
+    font-weight: 500;
+    color: var(--color-navy-light);
+    line-height: 1.2;
+    margin: var(--space-3) 0 var(--space-5);
+}
+
+.head-tutor__insight-body {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: 1.8;
+    margin: 0;
+    text-align: left;
+}
+
+.head-tutor__insight-body em {
+    font-style: italic;
+    color: var(--color-gold-dark);
+    font-weight: 500;
+}
+
+/* ---- Teaching Philosophy ---- */
+.head-tutor__philosophy-header {
+    text-align: center;
+    margin-top: var(--space-16);
+    margin-bottom: var(--space-12);
+}
+
+.head-tutor__philosophy-title {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-3xl);
+    font-weight: 500;
+    color: var(--color-navy-light);
+    line-height: 1.2;
+    margin: var(--space-3) 0 0;
+}
+
+.head-tutor__philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.head-tutor__philosophy-card {
+    background: var(--color-cream);
+    border-radius: var(--border-radius-xl);
+    padding: var(--space-8);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    height: 100%;
+}
+
+.head-tutor__philosophy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+    border-color: rgba(212, 175, 55, 0.2);
+    background: var(--color-white);
+}
+
+.head-tutor__philosophy-number {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    color: var(--color-gold-primary);
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.head-tutor__philosophy-card-title {
+    font-size: var(--text-xl);
+    font-weight: 500;
+    color: var(--color-navy);
+    margin: 0;
+}
+
+.head-tutor__philosophy-card-description {
+    font-size: var(--text-base);
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ---- Availability Signal ---- */
+.head-tutor__availability {
+    max-width: 640px;
+    margin: var(--space-12) auto 0;
+    padding: var(--space-3) var(--space-6);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: var(--border-radius-full);
+    text-align: center;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-gold-dark);
+    letter-spacing: 0.2px;
+}
+
+/* ---- Outcomes Stats ---- */
+.head-tutor__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    max-width: 960px;
+    margin: var(--space-20) auto 0;
+    padding-top: var(--space-12);
+    border-top: 1px solid rgba(212, 175, 55, 0.18);
+    text-align: center;
+}
+
+
+.head-tutor__stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+.head-tutor__stat-value {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-5xl);
+    font-weight: 600;
+    color: var(--color-gold-primary);
+    line-height: 1;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.head-tutor__stat-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    line-height: 1.5;
+    max-width: 260px;
+}
+
+/* ---- Closing CTA ---- */
+.head-tutor__cta-block {
+    margin: var(--space-16) auto 0;
+    max-width: 560px;
+    text-align: center;
+}
+
+.head-tutor__cta-title {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-3xl);
+    font-weight: 500;
+    color: var(--color-navy-light);
+    margin: 0 0 var(--space-3);
+    line-height: 1.2;
+}
+
+.head-tutor__cta-text {
+    font-size: var(--text-base);
+    color: var(--color-text-light);
+    margin: 0 0 var(--space-6);
+    line-height: 1.7;
+}
+
+.head-tutor__cta-btn {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-base);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .head-tutor__inner {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+        gap: var(--space-10);
+    }
+
+    .head-tutor__portrait-wrapper {
+        max-width: 320px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .head-tutor__philosophy-grid {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+    }
+
+    .head-tutor__philosophy-header {
+        margin-top: var(--space-12);
+    }
+
+    .head-tutor__insight {
+        margin-top: var(--space-16);
+        padding: var(--space-8);
+    }
+
+    .head-tutor__insight-title {
+        font-size: var(--text-2xl);
+    }
+
+    .head-tutor__stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        margin-top: var(--space-16);
+    }
+
+    .head-tutor__cta-block {
+        margin-top: var(--space-12);
+    }
+
+    .head-tutor__cta-title {
+        font-size: var(--text-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .head-tutor__title {
+        font-size: var(--text-4xl);
+    }
+
+    .head-tutor__bio {
+        font-size: var(--text-base);
+    }
+}
