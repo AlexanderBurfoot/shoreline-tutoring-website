@@ -44,6 +44,45 @@
     line-height: 1.7;
 }
 
+/* ===== Category Heading (One-on-One / Group) ===== */
+.pricing-category-heading {
+    background: var(--color-cream);
+    padding: var(--space-20) 0 0;
+}
+
+.pricing-category-heading--alt {
+    background: var(--color-white);
+}
+
+.pricing-category-heading__inner {
+    text-align: center;
+    max-width: 720px;
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.pricing-category-heading__title {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-5xl);
+    font-weight: 500;
+    color: var(--color-navy);
+    line-height: 1.15;
+    margin: var(--space-3) 0 var(--space-4);
+}
+
+.pricing-category-heading__text {
+    font-size: var(--text-lg);
+    color: var(--color-text-light);
+    max-width: 560px;
+    margin: 0 auto var(--space-6);
+    line-height: 1.6;
+}
+
+/* The table section immediately after a category heading shouldn't double the top padding */
+.pricing-category-heading + .pricing-table-section {
+    padding-top: var(--space-12);
+}
+
 /* ===== Pricing Table Section ===== */
 .pricing-table-section {
     background: var(--color-cream);
@@ -51,6 +90,15 @@
 
 .pricing-table-section--alt {
     background: var(--color-white);
+}
+
+/* Tighten the gap between two consecutive pricing tables within the same category */
+.pricing-table-section:has(+ .pricing-table-section) {
+    padding-bottom: var(--space-10);
+}
+
+.pricing-table-section + .pricing-table-section {
+    padding-top: var(--space-10);
 }
 
 .pricing-table-header {

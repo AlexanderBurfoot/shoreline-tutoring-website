@@ -52,10 +52,16 @@ const PromoPopup = () => {
 
                 <div className="promo-popup__badge">Limited Time</div>
                 <div className="promo-popup__icon">
-                    <img src="/easter-egg.png" alt="Easter Egg with Study Cap" className="promo-popup__icon-img" />
+                    <span
+                        className="promo-popup__icon-img"
+                        role="img"
+                        aria-label="Graduation cap"
+                    >
+                        🎓
+                    </span>
                 </div>
 
-                <h3 className="promo-popup__title">Easter Special</h3>
+                <h3 className="promo-popup__title">Start of Term Offer</h3>
 
                 <div className="promo-popup__discount">
                     <span className="promo-popup__percent">50%</span>
@@ -63,8 +69,8 @@ const PromoPopup = () => {
                 </div>
 
                 <p className="promo-popup__text">
-                    Hop into better grades with our Easter Special! Sign up now and save <strong>50%</strong>{' '}on your first paid lesson.
-                    Limited spots available, so don&apos;t miss out!
+                    Start the new term with real momentum. Sign up now and save <strong>50%</strong>{' '}on your first paid lesson.
+                    Limited spots available for new students.
                 </p>
 
                 <button className="btn btn-primary promo-popup__cta" onClick={handleClaim}>

@@ -83,13 +83,13 @@
 }
 
 .promo-popup__icon-img {
-    width: 100px;
-    height: auto;
-    object-fit: contain;
-    animation: promo-egg-bounce 2s ease-in-out infinite;
+    display: inline-block;
+    font-size: 80px;
+    line-height: 1;
+    animation: promo-cap-bounce 2s ease-in-out infinite;
 }
 
-@keyframes promo-egg-bounce {
+@keyframes promo-cap-bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-6px); }
 }

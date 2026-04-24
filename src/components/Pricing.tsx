@@ -12,19 +12,35 @@ interface PricingRow {
 }
 
 const bundlePricing: PricingRow[] = [
-    { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$1500' },
+    { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$1600' },
     { yearLevel: 'Year 7 – Year 8', price: '$1,600' },
     { yearLevel: 'Year 9 – Year 10', price: '$1,600' },
     { yearLevel: 'Year 11', price: '$1,800' },
-    { yearLevel: 'Year 12', price: '$1,800' },
+    { yearLevel: 'Year 12', price: '$2,000' },
 ];
 
 const hourlyPricing: PricingRow[] = [
-    { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$85' },
+    { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$90' },
     { yearLevel: 'Year 7 – Year 8', price: '$90' },
     { yearLevel: 'Year 9 – Year 10', price: '$90' },
     { yearLevel: 'Year 11', price: '$100' },
-    { yearLevel: 'Year 12', price: '$100' },
+    { yearLevel: 'Year 12', price: '$110' },
+];
+
+const groupBundlePricing: PricingRow[] = [
+    { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$1000' },
+    { yearLevel: 'Year 7 – Year 8', price: '$1000' },
+    { yearLevel: 'Year 9 – Year 10', price: '$1000' },
+    { yearLevel: 'Year 11', price: '$1200' },
+    { yearLevel: 'Year 12', price: '$1400' },
+];
+
+const groupHourlyPricing: PricingRow[] = [
+    { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$60' },
+    { yearLevel: 'Year 7 – Year 8', price: '$60' },
+    { yearLevel: 'Year 9 – Year 10', price: '$60' },
+    { yearLevel: 'Year 11', price: '$70' },
+    { yearLevel: 'Year 12', price: '$80' },
 ];
 
 const faqs = [
@@ -78,12 +94,24 @@ const Pricing = () => {
                 </div>
             </section>
 
+            {/* One-on-One Category Heading */}
+            <section className="pricing-category-heading pricing-category-heading--alt">
+                <div className="container pricing-category-heading__inner">
+                    <span className="section-eyebrow">Option 1</span>
+                    <h2 className="pricing-category-heading__title">One-on-One Tutoring</h2>
+                    <p className="pricing-category-heading__text">
+                        Dedicated sessions focused entirely on your child, at the pace and
+                        depth they need.
+                    </p>
+                </div>
+            </section>
+
             {/* 20-Lesson Bundle Pricing */}
-            <section className="pricing-table-section section">
+            <section className="pricing-table-section pricing-table-section--alt section">
                 <div className="container">
                     <div className="pricing-table-header">
                         <span className="pricing-table-badge">Best Value</span>
-                        <h2 className="pricing-table-title">20-Lesson Bundle</h2>
+                        <h3 className="pricing-table-title">20-Lesson Bundle</h3>
                         <p className="pricing-table-subtitle">
                             Save more with our lesson bundles, the most popular choice for families committed to long-term results.
                         </p>
@@ -126,7 +154,7 @@ const Pricing = () => {
                 <div className="container">
                     <div className="pricing-table-header">
                         <span className="pricing-table-badge pricing-table-badge--secondary">Flexible</span>
-                        <h2 className="pricing-table-title">Per-Hour Pricing</h2>
+                        <h3 className="pricing-table-title">Per-Hour Pricing</h3>
                         <p className="pricing-table-subtitle">
                             Prefer flexibility? Pay as you go with our per-hour rates, no commitment required.
                         </p>
@@ -142,6 +170,100 @@ const Pricing = () => {
                             </thead>
                             <tbody>
                                 {hourlyPricing.map((row) => (
+                                    <tr key={row.yearLevel}>
+                                        <td className="pricing-table__level">{row.yearLevel}</td>
+                                        <td className="pricing-table__price">{row.price}/hr</td>
+                                        <td className="pricing-table__action">
+                                            <button onClick={handleGetStarted} className="btn btn-secondary pricing-table__btn">
+                                                Get Started
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            {/* Group Classes Category Heading */}
+            <section className="pricing-category-heading">
+                <div className="container pricing-category-heading__inner">
+                    <span className="section-eyebrow">Option 2</span>
+                    <h2 className="pricing-category-heading__title">Small-Group Classes</h2>
+                    <p className="pricing-category-heading__text">
+                        Sessions shared with a small number of peers working at a similar level,
+                        at a lower per-student rate.
+                    </p>
+                </div>
+            </section>
+
+            {/* Group Class 20-Lesson Bundle */}
+            <section className="pricing-table-section section">
+                <div className="container">
+                    <div className="pricing-table-header">
+                        <span className="pricing-table-badge">Best Value</span>
+                        <h3 className="pricing-table-title">20-Lesson Group Bundle</h3>
+                        <p className="pricing-table-subtitle">
+                            Save more with our group-class bundles. The most popular choice for
+                            families comfortable with peer-based learning.
+                        </p>
+                    </div>
+                    <div className="pricing-table-wrapper">
+                        <table className="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Year Level</th>
+                                    <th>Bundle Price</th>
+                                    <th>Per Lesson</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {groupBundlePricing.map((row) => {
+                                    const bundleNum = parseInt(row.price.replace(/[$,]/g, ''));
+                                    const perLesson = `$${(bundleNum / 20).toFixed(0)}`;
+                                    return (
+                                        <tr key={row.yearLevel}>
+                                            <td className="pricing-table__level">{row.yearLevel}</td>
+                                            <td className="pricing-table__price">{row.price}</td>
+                                            <td><span className="pricing-table__per-lesson">{perLesson}/hr</span></td>
+                                            <td className="pricing-table__action">
+                                                <button onClick={handleGetStarted} className="btn btn-primary pricing-table__btn">
+                                                    Get Started
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            {/* Group Class Per-Hour Pricing */}
+            <section className="pricing-table-section section">
+                <div className="container">
+                    <div className="pricing-table-header">
+                        <span className="pricing-table-badge pricing-table-badge--secondary">Flexible</span>
+                        <h3 className="pricing-table-title">Group Per-Hour Pricing</h3>
+                        <p className="pricing-table-subtitle">
+                            Prefer flexibility with the group-class rate? Pay as you go with our
+                            per-hour group rates, no commitment required.
+                        </p>
+                    </div>
+                    <div className="pricing-table-wrapper">
+                        <table className="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Year Level</th>
+                                    <th>Hourly Rate</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {groupHourlyPricing.map((row) => (
                                     <tr key={row.yearLevel}>
                                         <td className="pricing-table__level">{row.yearLevel}</td>
                                         <td className="pricing-table__price">{row.price}/hr</td>
