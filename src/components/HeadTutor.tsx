@@ -22,8 +22,8 @@ const philosophyPillars = [
 
 const outcomeStats = [
     { value: '100+', label: 'students tutored since 2020' },
-    { value: '43 → 90+', label: 'mark transformations seen in multiple students after sustained one-on-one work' },
-    { value: '7+ years', label: 'of applied CS, finance, and tutoring experience' },
+    { value: '43 → 90+', label: 'mark transformations seen in multiple students after sustained one-on-one tutorials' },
+    { value: '7+ years', label: 'of tutoring experience' },
 ];
 
 const HeadTutor = () => {
