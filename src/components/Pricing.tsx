@@ -261,8 +261,8 @@ const Pricing = () => {
                         <div className="pricing-value__item">
                             <span className="pricing-value__icon">📋</span>
                             <div>
-                                <strong>No Lock-in Contracts</strong>
-                                <p>Flexible term-by-term arrangements, cancel anytime.</p>
+                                <strong>Personalised Homework</strong>
+                                <p>Homework is created after each lesson, targeting weak areas.</p>
                             </div>
                         </div>
                         <div className="pricing-value__divider"></div>
