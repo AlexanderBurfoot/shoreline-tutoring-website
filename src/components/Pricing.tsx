@@ -35,6 +35,7 @@ const groupBundlePricing: PricingRow[] = [
     { yearLevel: 'Year 12', price: '$1400' },
 ];
 
+/*
 const groupHourlyPricing: PricingRow[] = [
     { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$60' },
     { yearLevel: 'Year 7 – Year 8', price: '$60' },
@@ -42,6 +43,7 @@ const groupHourlyPricing: PricingRow[] = [
     { yearLevel: 'Year 11', price: '$70' },
     { yearLevel: 'Year 12', price: '$80' },
 ];
+*/
 
 const faqs = [
     {
