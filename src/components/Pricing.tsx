@@ -64,7 +64,7 @@ const faqs = [
     },
     {
         question: 'What subjects do you offer?',
-        answer: 'We offer tutoring in Mathematics, Physics, Chemistry, Economics, Business Studies, NAPLAN Preparation, as well as Selective High School exam and Opportunity Classes exam preparation.',
+        answer: 'We offer tutoring in English, Mathematics, Physics, Chemistry, Economics, Business Studies, NAPLAN Preparation, as well as Selective High School exam and Opportunity Classes exam preparation.',
     },
     {
         question: 'How do I get started?',

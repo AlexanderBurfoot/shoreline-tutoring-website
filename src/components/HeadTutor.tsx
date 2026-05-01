@@ -9,12 +9,12 @@ const philosophyPillars = [
             'Students plateau at every level: a Year 8 stuck at 75%, a Year 10 at 82%, an HSC student at Band 5. The pattern is almost never effort; it is a specific reasoning gap that routine practice does not surface. Our first session is entirely diagnostic: we find the exact step where understanding breaks down, and rebuild from there. Marks lift when the underlying reasoning does, not before.',
     },
     {
-        title: 'Learn and Understand instead of Memorise',
+        title: 'Learn and Understand instead of memorise',
         description:
             'Students who memorise past-paper answers ace any question they have already seen and fail any question that has been rephrased. HSC/IB examiners know this and rephrase every year. The fix is teaching the structure beneath the content, so that an unfamiliar question reveals a familiar pattern. Slower in the first fortnight, dramatically faster after that.',
     },
     {
-        title: 'Train Exam-day performance',
+        title: 'Train exam-day performance',
         description:
             'Preparing for exams by studying content instead of also for the exam itself results in students who know the material but can not retrieve it on the important day. We regularly run sessions under exam conditions (time pressure, sequential question difficulty, the specific feeling of seeing something unexpected) so that exam day is familiar rather than foreign.',
     },
