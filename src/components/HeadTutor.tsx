@@ -65,7 +65,7 @@ const HeadTutor = () => {
                                 </li>
                                 <li className="head-tutor__credential">
                                     <span className="head-tutor__credential-icon" aria-hidden="true">✓</span>
-                                    Founder of AurumQuanta, an AI-focused software engineering firm;
+                                    Founder of Aurum Quanta, an AI-focused software engineering firm;
                                     the active industry practice keeps the ML thinking in sessions
                                     current
                                 </li>
