@@ -22,7 +22,7 @@ const philosophyPillars = [
 
 const outcomeStats = [
     { value: '100+', label: 'students tutored since 2020' },
-    { value: '43 → 90+', label: 'mark transformations seen in multiple students after sustained one-on-one tutorials' },
+    { value: '43 → 90+', label: 'mark transformations seen in multiple students after sustained tutoring' },
     { value: '7+ years', label: 'of tutoring experience' },
 ];
 
@@ -44,7 +44,7 @@ const HeadTutor = () => {
                         <div className="head-tutor__content">
                             <span className="section-eyebrow">Meet the Head Tutor</span>
                             <h2 className="head-tutor__title">
-                                Led by <span className="gold-text">Alexander Burfoot</span>
+                                Led by <span className="gold-text">Alexander</span>
                             </h2>
                             <p className="head-tutor__bio">
                                 Over seven years of tutoring experience, a dual degree in Finance
@@ -65,9 +65,10 @@ const HeadTutor = () => {
                                 </li>
                                 <li className="head-tutor__credential">
                                     <span className="head-tutor__credential-icon" aria-hidden="true">✓</span>
-                                    Founder of Aurum Quanta, an AI-focused software engineering firm;
-                                    the active industry practice keeps the ML thinking in sessions
-                                    current
+                                    This background allows complex, technical concepts
+                                    to be broken down into clear, practical steps, 
+                                    so students not only understand the material 
+                                    but see how it applies to real-world problems.
                                 </li>
                                 <li className="head-tutor__credential">
                                     <span className="head-tutor__credential-icon" aria-hidden="true">✓</span>

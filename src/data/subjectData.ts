@@ -44,7 +44,7 @@ export const subjects: SubjectData[] = [
         heroTagline: 'We don\'t just teach what a text means, we teach how to analyse it.',
         stats: [
             { label: 'Advanced, Standard & Extension', value: 'All Levels' },
-            { label: 'Tailored to Each Student', value: '1-on-1' },
+            { label: 'Tailored to Each Student', value: '1-on-1 & Group' },
             { label: 'NSW Syllabus Aligned', value: '100%' },
         ],
         overview: [
@@ -102,7 +102,7 @@ export const subjects: SubjectData[] = [
         heroTagline: 'We don\'t just teach formulas, we build the thinking behind them.',
         stats: [
             { label: 'Covers Standard, Advanced & Ext 1', value: 'All Levels' },
-            { label: 'Tailored to Each Student', value: '1-on-1' },
+            { label: 'Tailored to Each Student', value: '1-on-1 & Group' },
             { label: 'NSW Syllabus Aligned', value: '100%' },
         ],
         overview: [
@@ -161,7 +161,7 @@ export const subjects: SubjectData[] = [
         heroTagline: 'Physics isn\'t about memorising equations, it\'s about understanding how things work.',
         stats: [
             { label: 'Real HSC Question Practice', value: 'Every Session' },
-            { label: 'Tailored to Each Student', value: '1-on-1' },
+            { label: 'Tailored to Each Student', value: '1-on-1 & Group' },
             { label: 'Session Notes Included', value: 'Always' },
         ],
         overview: [
@@ -219,7 +219,7 @@ export const subjects: SubjectData[] = [
         heroTagline: 'We turn confusing reactions into clear, logical steps you can actually remember.',
         stats: [
             { label: 'Modules 1–8 Covered', value: 'Full Syllabus' },
-            { label: 'Tailored to Each Student', value: '1-on-1' },
+            { label: 'Tailored to Each Student', value: '1-on-1 & Group' },
             { label: 'Session Notes Included', value: 'Always' },
         ],
         overview: [
@@ -333,7 +333,7 @@ export const subjects: SubjectData[] = [
         heroTagline: 'We teach you to think like a business strategist and write like one too.',
         stats: [
             { label: 'Case Study Driven', value: 'Every Lesson' },
-            { label: 'Tailored to Each Student', value: '1-on-1' },
+            { label: 'Tailored to Each Student', value: '1-on-1 & Group' },
             { label: 'HSC Marking Criteria Used', value: '100%' },
         ],
         overview: [
@@ -390,7 +390,7 @@ export const subjects: SubjectData[] = [
         heroTagline: 'We build the business foundations that make Years 11–12 Business Studies and Economics feel easy.',
         stats: [
             { label: 'Years 7–10 Syllabus Aligned', value: '100%' },
-            { label: 'Tailored to Each Student', value: '1-on-1' },
+            { label: 'Tailored to Each Student', value: '1-on-1 & Group' },
             { label: 'Prepares for HSC Subjects', value: 'Always' },
         ],
         overview: [
@@ -449,7 +449,7 @@ export const subjects: SubjectData[] = [
         heroTagline: 'We prepare students for selective with genuine skill-building, not just test drilling.',
         stats: [
             { label: 'Reading, Maths, Thinking & Writing', value: 'All Areas' },
-            { label: 'Tailored to Each Student', value: '1-on-1' },
+            { label: 'Tailored to Each Student', value: '1-on-1 & Group' },
             { label: 'Regular Parent Updates', value: 'Always' },
         ],
         overview: [
@@ -561,7 +561,7 @@ export const subjects: SubjectData[] = [
         heroTagline: 'We build the skills behind the scores so your child walks in confident and prepared.',
         stats: [
             { label: 'All Four NAPLAN Domains', value: 'Full Coverage' },
-            { label: 'Tailored to Each Student', value: '1-on-1' },
+            { label: 'Tailored to Each Student', value: '1-on-1 & Group' },
             { label: 'Online Format Preparation', value: 'Included' },
         ],
         overview: [

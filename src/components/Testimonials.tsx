@@ -24,7 +24,7 @@ const commitments = [
             </svg>
         ),
         title: 'Free Trial Lesson',
-        description: 'Experience our approach risk-free. See the difference personalised, one-on-one attention makes from day one.',
+        description: 'Experience our approach risk-free. See the difference personalised attention makes from day one, one-on-one or in a small group.',
     },
     {
         id: 3,

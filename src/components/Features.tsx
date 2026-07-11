@@ -10,8 +10,8 @@ const features = [
         ),
         title: 'Exclusive',
         subtitle: 'Premium Education',
-        description: 'Limited enrollment ensures every student receives the elite attention they deserve. Our selective approach guarantees exceptional quality and dedicated support.',
-        highlights: ['Strictly limited spots', 'Handpicked resources', 'Premium attention'],
+        description: 'Whether one-on-one or in a small group, classes are kept deliberately small so every student receives the attention they deserve. Our selective approach guarantees exceptional quality and dedicated support.',
+        highlights: ['Small class sizes', 'Handpicked resources', 'Premium attention'],
     },
     {
         icon: (

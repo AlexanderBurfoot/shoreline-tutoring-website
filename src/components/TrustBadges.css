@@ -2,8 +2,8 @@
 .trust-badges {
     background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
     padding: var(--space-8) 0;
-    border-top: 1px solid rgba(212, 175, 55, 0.3);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    border-top: 1px solid rgba(234, 197, 77, 0.3);
+    border-bottom: 1px solid rgba(234, 197, 77, 0.3);
     overflow: hidden;
 }
 
@@ -34,13 +34,13 @@
     align-items: center;
     justify-content: center;
     color: var(--color-gold-primary);
-    background: rgba(212, 175, 55, 0.12);
+    background: rgba(234, 197, 77, 0.12);
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 .trust-badges__item:hover .trust-badges__icon {
-    background: rgba(212, 175, 55, 0.25);
+    background: rgba(234, 197, 77, 0.25);
     transform: scale(1.08);
 }
 

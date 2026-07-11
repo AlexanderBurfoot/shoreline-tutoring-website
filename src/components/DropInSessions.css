@@ -1,0 +1,139 @@
+/* Free Drop-In Web Sessions */
+.drop-in {
+    background: var(--color-navy);
+    position: relative;
+    overflow: hidden;
+}
+
+.drop-in__header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-12);
+}
+
+.drop-in__title {
+    color: var(--color-white);
+    margin-bottom: var(--space-4);
+}
+
+.drop-in__subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+}
+
+/* Schedule card */
+.drop-in__schedule-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    max-width: 800px;
+    margin: 0 auto var(--space-16);
+    padding: var(--space-6) var(--space-8);
+    background: var(--color-navy-light);
+    border: 1px solid rgba(234, 197, 77, 0.3);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.drop-in__schedule-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-navy);
+    background: var(--color-gold-gradient);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 12px rgba(234, 197, 77, 0.25);
+}
+
+.drop-in__schedule-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin-right: auto;
+}
+
+.drop-in__schedule-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-gold-primary);
+}
+
+.drop-in__schedule-time {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+.drop-in__join-btn {
+    flex-shrink: 0;
+}
+
+/* Highlights */
+.drop-in__highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.drop-in__highlight {
+    text-align: center;
+    padding: 0 var(--space-4);
+}
+
+.drop-in__highlight-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-bottom: var(--space-4);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-navy);
+    background: var(--color-gold-gradient);
+    border-radius: var(--border-radius-full);
+}
+
+.drop-in__highlight-title {
+    color: var(--color-white);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+}
+
+.drop-in__highlight-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-base);
+    line-height: 1.65;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .drop-in__schedule-card {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-4);
+    }
+
+    .drop-in__schedule-content {
+        margin-right: 0;
+        align-items: center;
+    }
+
+    .drop-in__join-btn {
+        width: 100%;
+    }
+
+    .drop-in__highlights {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+    }
+}

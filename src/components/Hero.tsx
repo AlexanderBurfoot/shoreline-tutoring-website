@@ -31,8 +31,9 @@ const Hero = () => {
 
                     <ScrollReveal delay={200}>
                         <p className="hero__description animate-fade-in-up delay-200">
-                            Experience transformative one-on-one tutoring designed to dramatically
-                            improve your results through personalized attention and constant support.
+                            Experience transformative tutoring, one-on-one or in small groups,
+                            designed to dramatically improve your results through personalized
+                            attention and constant support.
                         </p>
                     </ScrollReveal>
 

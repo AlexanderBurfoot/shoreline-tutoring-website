@@ -15,8 +15,8 @@
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(circle at 10% 90%, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.15) 0%, transparent 40%);
+        radial-gradient(circle at 10% 90%, rgba(234, 197, 77, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, rgba(234, 197, 77, 0.15) 0%, transparent 40%);
 }
 
 .cta__content {
@@ -37,7 +37,7 @@
     color: var(--color-gold-primary);
     margin-bottom: var(--space-4);
     padding: var(--space-2) var(--space-4);
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(234, 197, 77, 0.1);
     border-radius: var(--border-radius-md);
 }
 
@@ -66,6 +66,16 @@
     text-align: left;
     border-top: 3px solid var(--color-gold-primary);
     position: relative;
+}
+
+/* Honeypot: removed from layout and assistive tech, but still in the DOM for bots. */
+.cta__honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .cta__form::before {
@@ -125,7 +135,7 @@
 .cta__input:focus {
     outline: none;
     border-color: var(--color-gold-primary);
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 0 3px rgba(234, 197, 77, 0.1);
     background: var(--color-white);
 }
 
@@ -158,18 +168,18 @@
 .cta__subject-chip:hover {
     border-color: var(--color-gold-primary);
     color: var(--color-gold-primary);
-    background: rgba(212, 175, 55, 0.06);
+    background: rgba(234, 197, 77, 0.06);
 }
 
 .cta__subject-chip--active {
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(234, 197, 77, 0.1);
     border-color: var(--color-gold-primary);
     color: var(--color-gold-primary);
     font-weight: 600;
 }
 
 .cta__subject-chip--active:hover {
-    background: rgba(212, 175, 55, 0.15);
+    background: rgba(234, 197, 77, 0.15);
     border-color: var(--color-gold-dark);
     color: var(--color-gold-dark);
 }

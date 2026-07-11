@@ -6,7 +6,7 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    border: 1px solid rgba(234, 197, 77, 0.25);
     background: var(--color-navy);
     color: var(--color-gold-primary);
     cursor: pointer;
@@ -32,7 +32,7 @@
     color: var(--color-white);
     border-color: var(--color-gold-primary);
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 30px rgba(234, 197, 77, 0.3);
 }
 
 .back-to-top:active {

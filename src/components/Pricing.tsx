@@ -68,7 +68,7 @@ const faqs = [
     },
     {
         question: 'How do I get started?',
-        answer: 'Simply book a free trial lesson through our contact form, ring us at 0478 898 516 or email us at contact@shorelinetutoring.com.au. We\'ll assess your child\'s needs and recommend the best approach to achieve their academic goals. We know our results will speak for themselves.',
+        answer: 'Simply book a free trial lesson through our contact form, ring us at 0452 360 688 or email us at contact@shorelinetutoring.com.au. We\'ll assess your child\'s needs and recommend the best approach to achieve their academic goals. We know our results will speak for themselves.',
     },
 ];
 
@@ -90,8 +90,8 @@ const Pricing = () => {
                         Invest in Your <span className="gold-text">Academic Future</span>
                     </h1>
                     <p className="pricing-hero__subtitle">
-                        Transparent pricing based on your year level. Every session includes personalised,
-                        one-on-one tutoring tailored to your goals.
+                        Transparent pricing based on your year level. Choose one-on-one tutoring or
+                        small-group classes, both tailored to your goals.
                     </p>
                 </div>
             </section>
@@ -215,8 +215,8 @@ const Pricing = () => {
                             Contact us to secure your place.
                         </p>
                     </div>
-                    <div className="pricing-table-wrapper">
-                        <table className="pricing-table">
+                    <div className="pricing-table-wrapper pricing-table-wrapper--group">
+                        <table className="pricing-table pricing-table--group">
                             <thead>
                                 <tr>
                                     <th>Year Level</th>

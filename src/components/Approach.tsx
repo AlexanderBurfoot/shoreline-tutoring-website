@@ -13,8 +13,8 @@ const steps = [
     },
     {
         number: '03',
-        title: 'One-on-One Sessions',
-        description: 'Engage in focused, distraction-free tutoring sessions where every minute is dedicated to your progress and understanding.',
+        title: 'Focused Sessions',
+        description: 'Engage in focused, distraction-free sessions, one-on-one or in a small group, where the time is dedicated to your progress and understanding.',
     },
     {
         number: '04',

@@ -28,7 +28,7 @@
     background: var(--color-cream);
     border-radius: var(--border-radius-xl);
     padding: var(--space-8);
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(234, 197, 77, 0.1);
     position: relative;
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 1;
@@ -41,7 +41,7 @@
 }
 
 .student-testimonial-card:hover {
-    border-color: rgba(212, 175, 55, 0.2);
+    border-color: rgba(234, 197, 77, 0.2);
 }
 
 /* Top bar with identity + result */
@@ -51,7 +51,7 @@
     gap: var(--space-3);
     margin-bottom: var(--space-5);
     padding-bottom: var(--space-5);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    border-bottom: 1px solid rgba(234, 197, 77, 0.12);
 }
 
 .student-testimonial-card__icon {
@@ -61,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(234, 197, 77, 0.1);
     border-radius: 12px;
     flex-shrink: 0;
 }
@@ -91,7 +91,7 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: var(--color-gold-primary);
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(234, 197, 77, 0.1);
     padding: 6px 14px;
     border-radius: var(--border-radius-full);
     white-space: nowrap;
@@ -131,7 +131,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    border: 2px solid rgba(212, 175, 55, 0.5);
+    border: 2px solid rgba(234, 197, 77, 0.5);
     background: transparent;
     cursor: pointer;
     padding: 0;
@@ -140,7 +140,7 @@
 
 .student-testimonials__dot:hover {
     border-color: var(--color-gold-primary);
-    background: rgba(212, 175, 55, 0.2);
+    background: rgba(234, 197, 77, 0.2);
 }
 
 .student-testimonials__dot--active {
@@ -157,8 +157,8 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(234, 197, 77, 0.4);
+    background: rgba(234, 197, 77, 0.1);
     color: var(--color-gold-primary);
     cursor: pointer;
     padding: 0;
@@ -166,7 +166,7 @@
 }
 
 .student-testimonials__pause-btn:hover {
-    background: rgba(212, 175, 55, 0.15);
+    background: rgba(234, 197, 77, 0.15);
     border-color: var(--color-gold-primary);
 }
 
@@ -174,14 +174,14 @@
 .student-testimonials__progress {
     margin-top: var(--space-4);
     height: 3px;
-    background: rgba(212, 175, 55, 0.2);
+    background: rgba(234, 197, 77, 0.2);
     border-radius: 3px;
     overflow: hidden;
 }
 
 .student-testimonials__progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, var(--color-gold-primary), #c9a020);
+    background: linear-gradient(90deg, var(--color-gold-primary), var(--color-gold-dark));
     border-radius: 3px;
     animation: progressFill 8s linear forwards;
 }
@@ -228,7 +228,7 @@
     height: 48px;
     border-radius: 50%;
     background: var(--color-white);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(234, 197, 77, 0.2);
     color: var(--color-gold-primary);
     display: flex;
     align-items: center;
@@ -243,7 +243,7 @@
     background: var(--color-gold-primary);
     color: var(--color-white);
     border-color: var(--color-gold-primary);
-    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 6px 16px rgba(234, 197, 77, 0.2);
 }
 
 .student-testimonials__nav-btn--prev {

@@ -37,7 +37,7 @@
     border-radius: var(--border-radius-xl);
     padding: var(--space-8);
     position: relative;
-    border: 1px solid rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(234, 197, 77, 0.08);
     transition: all var(--transition-base);
     opacity: 0;
     transform: translateY(40px);
@@ -65,7 +65,7 @@
 
 .features__card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(212, 175, 55, 0.12);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(234, 197, 77, 0.12);
 }
 
 .features__card:hover::before {
@@ -96,7 +96,7 @@
     position: absolute;
     inset: -6px;
     border-radius: 50%;
-    border: 1.5px solid rgba(212, 175, 55, 0.2);
+    border: 1.5px solid rgba(234, 197, 77, 0.2);
     transition: all var(--transition-base);
 }
 

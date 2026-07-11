@@ -12,7 +12,7 @@ interface FormData {
 }
 
 const SUBJECTS = [
-    'English', 'Mathematics', 'Physics', 'Chemistry', 'Economics',
+    'Mathematics Group Classes', 'English', 'Mathematics', 'Physics', 'Chemistry', 'Economics',
     'Business Studies', 'Selective High School Exam', 'Opportunity Classes Exam', 'NAPLAN Preparation', 'Other',
 ];
 
@@ -29,6 +29,8 @@ const CTA = () => {
     });
     const [status, setStatus] = useState<FormStatus>('idle');
     const [errorMessage, setErrorMessage] = useState('');
+    // Honeypot: hidden from real users; bots that fill it are rejected server-side.
+    const [honeypot, setHoneypot] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData(prev => ({ ...prev, [e.target.id]: e.target.value }));
@@ -58,7 +60,7 @@ const CTA = () => {
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, company: honeypot }),
             });
 
             const data = await response.json();
@@ -113,6 +115,17 @@ const CTA = () => {
                         </div>
                     ) : (
                         <form className="cta__form" onSubmit={handleSubmit}>
+                            {/* Honeypot field: visually hidden, ignored by humans, filled by bots. */}
+                            <input
+                                type="text"
+                                name="company"
+                                className="cta__honeypot"
+                                tabIndex={-1}
+                                autoComplete="off"
+                                aria-hidden="true"
+                                value={honeypot}
+                                onChange={(e) => setHoneypot(e.target.value)}
+                            />
                             <div className="cta__form-row cta__form-row--two">
                                 <div className="cta__input-group">
                                     <label htmlFor="name" className="cta__label-text">Your Name</label>
@@ -224,7 +237,7 @@ const CTA = () => {
                                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                                     </svg>
                                 </span>
-                                <span>0478 898 516</span>
+                                <span>0452 360 688</span>
                             </a>
                             <a href="mailto:contact@shorelinetutoring.com.au" className="cta__option">
                                 <span className="cta__option-icon">

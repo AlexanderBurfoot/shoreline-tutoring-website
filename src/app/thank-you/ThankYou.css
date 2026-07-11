@@ -35,7 +35,7 @@
 .thank-you__bg-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(234, 197, 77, 0.12) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -173,9 +173,9 @@
   letter-spacing: 3px;
   color: var(--color-gold-primary);
   padding: var(--space-2) var(--space-4);
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(234, 197, 77, 0.08);
   border-radius: var(--border-radius-full);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(234, 197, 77, 0.15);
   margin-bottom: var(--space-5);
 }
 
@@ -190,7 +190,7 @@
 }
 
 .thank-you__title-accent {
-  background: linear-gradient(135deg, var(--color-gold-primary), #B8860B);
+  background: linear-gradient(135deg, var(--color-gold-primary), var(--color-gold-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -246,7 +246,7 @@
   top: 40px;
   width: 2px;
   height: calc(100% + var(--space-6) - 8px);
-  background: linear-gradient(to bottom, var(--color-gold-primary), rgba(212, 175, 55, 0.2));
+  background: linear-gradient(to bottom, var(--color-gold-primary), rgba(234, 197, 77, 0.2));
 }
 
 .thank-you__step-number {
@@ -262,7 +262,7 @@
   font-size: var(--text-sm);
   font-weight: 700;
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 12px rgba(234, 197, 77, 0.2);
   position: relative;
   z-index: 1;
 }
@@ -316,7 +316,7 @@
 
 .thank-you__btn-resources:hover {
   color: var(--color-gold-primary);
-  background: rgba(212, 175, 55, 0.06);
+  background: rgba(234, 197, 77, 0.06);
 }
 
 .thank-you__btn-resources svg {

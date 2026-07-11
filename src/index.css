@@ -8,11 +8,11 @@
 /* ===== CSS Custom Properties (Design Tokens) ===== */
 :root {
   /* Colors */
-  --color-gold-primary: #D4AF37;
-  --color-gold-dark: #B8962E;
-  --color-gold-light: #F4E4C1;
-  --color-gold-shimmer: linear-gradient(135deg, #D4AF37 0%, #F4E4C1 50%, #D4AF37 100%);
-  --color-gold-gradient: linear-gradient(135deg, #D4AF37 0%, #C5A028 50%, #D4AF37 100%);
+  --color-gold-primary: #EAC54D;
+  --color-gold-dark: #D4A82E;
+  --color-gold-light: #F8EBC1;
+  --color-gold-shimmer: linear-gradient(135deg, #EAC54D 0%, #F8EBC1 50%, #EAC54D 100%);
+  --color-gold-gradient: linear-gradient(135deg, #EAC54D 0%, #D4A82E 50%, #EAC54D 100%);
 
   --color-white: #FFFFFF;
   --color-off-white: #FAFAFA;
@@ -24,6 +24,12 @@
   --color-charcoal: #333333;
   --color-text: #444444;
   --color-text-light: #666666;
+
+  /* Semantic aliases (referenced across component stylesheets) */
+  --color-background: var(--color-cream);
+  --color-text-secondary: var(--color-text-light);
+  --color-text-body: var(--color-text);
+  --color-primary: var(--color-navy);
 
   /* Font Sizes */
   --text-xs: 0.75rem;
@@ -70,7 +76,7 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
-  --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.25);
+  --shadow-gold: 0 8px 32px rgba(234, 197, 77, 0.25);
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -278,7 +284,7 @@ ol {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 12px 40px rgba(234, 197, 77, 0.35);
 }
 
 .btn-secondary {
@@ -491,7 +497,7 @@ ol {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--color-gold);
+  background: var(--color-gold-primary);
   color: var(--color-navy);
   padding: 8px 16px;
   z-index: 9999;

@@ -10,7 +10,7 @@ const faqs = [
     },
     {
         question: 'What subjects and year levels do you cover?',
-        answer: 'We offer one-on-one tutoring in Mathematics, Physics, Chemistry, Economics, and Business Studies for Years 7–12 (including HSC). We also provide targeted preparation programs for Selective High School entry, Opportunity Classes (OC), and NAPLAN across all tested year levels.',
+        answer: 'We offer both one-on-one tutoring and small-group classes in Mathematics, Physics, Chemistry, Economics, and Business Studies for Years 7–12 (including HSC). We also provide targeted preparation programs for Selective High School entry, Opportunity Classes (OC), and NAPLAN across all tested year levels.',
     },
     {
         question: 'Are lessons online or in person?',

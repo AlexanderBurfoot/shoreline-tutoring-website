@@ -3,8 +3,10 @@ import Hero from '../components/Hero';
 import TrustBadges from '../components/TrustBadges';
 import Features from '../components/Features';
 import Services from '../components/Services';
+import WaysToLearn from '../components/WaysToLearn';
 import Approach from '../components/Approach';
 import HeadTutor from '../components/HeadTutor';
+// import DropInSessions from '../components/DropInSessions'; // Free "Watch Me Teach, Live & Free" sessions — re-enable when able to run them.
 import Testimonials from '../components/Testimonials';
 import RecentArticles from '../components/RecentArticles';
 import CTA from '../components/CTA';
@@ -21,8 +23,11 @@ export default function HomePage() {
       <Features />
       <StudentTestimonials />
       <Services />
+      <WaysToLearn />
       <Approach />
       <HeadTutor />
+      {/* Free live sessions — hidden for now; uncomment to bring back "Watch Me Teach, Live & Free". */}
+      {/* <DropInSessions /> */}
       <Testimonials />
       <RecentArticles />
       <FAQ />

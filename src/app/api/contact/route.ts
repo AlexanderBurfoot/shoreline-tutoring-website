@@ -1,5 +1,28 @@
 import { NextResponse } from 'next/server';
 
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX_REQUESTS = 5;
+
+// Best-effort in-memory rate limiter, scoped to a single server instance.
+// For multi-instance or serverless deployments, back this with a shared
+// store (e.g. Redis) so limits hold across instances.
+const requestTimestamps = new Map<string, number[]>();
+
+function getClientIp(request: Request) {
+    const forwarded = request.headers.get('x-forwarded-for');
+    return forwarded?.split(',')[0]?.trim() || 'unknown';
+}
+
+function isRateLimited(ip: string) {
+    const now = Date.now();
+    const recent = (requestTimestamps.get(ip) || []).filter(
+        (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS
+    );
+    recent.push(now);
+    requestTimestamps.set(ip, recent);
+    return recent.length > RATE_LIMIT_MAX_REQUESTS;
+}
+
 let cachedToken: string | null = null;
 let tokenExpiry = 0;
 
@@ -45,8 +68,21 @@ function escapeHtml(text: string) {
 
 export async function POST(request: Request) {
     try {
+        const ip = getClientIp(request);
+        if (isRateLimited(ip)) {
+            return NextResponse.json(
+                { error: 'Too many requests. Please wait a minute and try again.' },
+                { status: 429 }
+            );
+        }
+
         const body = await request.json();
-        const { name, email, phone, subjects, message } = body;
+        const { name, email, phone, subjects, message, company } = body;
+
+        // Honeypot: real users never fill this. Pretend success so bots get no signal.
+        if (company) {
+            return NextResponse.json({ success: true, message: 'Your enquiry has been sent! We\'ll be in touch soon.' });
+        }
 
         if (!name || !name.trim()) return NextResponse.json({ error: 'Name is required.' }, { status: 400 });
         if (!email || !email.trim()) return NextResponse.json({ error: 'Email is required.' }, { status: 400 });
@@ -60,7 +96,7 @@ export async function POST(request: Request) {
         const htmlBody = `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb;">
             <div style="background: linear-gradient(135deg, #1a2332 0%, #243447 100%); padding: 32px; text-align: center;">
-                <h1 style="color: #d4af37; margin: 0; font-size: 22px; font-weight: 600;">New Trial Lesson Enquiry</h1>
+                <h1 style="color: #EAC54D; margin: 0; font-size: 22px; font-weight: 600;">New Trial Lesson Enquiry</h1>
                 <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0; font-size: 14px;">Submitted via shorelinetutoring.com.au</p>
             </div>
             <div style="padding: 32px;">
@@ -71,12 +107,12 @@ export async function POST(request: Request) {
                     </tr>
                     <tr>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Email</td>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;"><a href="mailto:${escapeHtml(email)}" style="color: #d4af37; text-decoration: none;">${escapeHtml(email)}</a></td>
+                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;"><a href="mailto:${escapeHtml(email)}" style="color: #EAC54D; text-decoration: none;">${escapeHtml(email)}</a></td>
                     </tr>
                     ${phone ? `
                     <tr>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Phone</td>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;"><a href="tel:${escapeHtml(phone)}" style="color: #d4af37; text-decoration: none;">${escapeHtml(phone)}</a></td>
+                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;"><a href="tel:${escapeHtml(phone)}" style="color: #EAC54D; text-decoration: none;">${escapeHtml(phone)}</a></td>
                     </tr>` : ''}
                     ${subjectsList ? `
                     <tr>

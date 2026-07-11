@@ -20,7 +20,7 @@
     border-radius: var(--border-radius-xl);
     overflow: hidden;
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(234, 197, 77, 0.15);
     background: var(--color-cream);
 }
 
@@ -83,7 +83,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: rgba(212, 175, 55, 0.15);
+    background: rgba(234, 197, 77, 0.15);
     color: var(--color-gold-primary);
     display: flex;
     align-items: center;
@@ -100,7 +100,7 @@
     padding: var(--space-10);
     background: var(--color-cream);
     border-radius: var(--border-radius-xl);
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(234, 197, 77, 0.15);
     text-align: center;
 }
 
@@ -166,7 +166,7 @@
 .head-tutor__philosophy-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
-    border-color: rgba(212, 175, 55, 0.2);
+    border-color: rgba(234, 197, 77, 0.2);
     background: var(--color-white);
 }
 
@@ -198,8 +198,8 @@
     max-width: 640px;
     margin: var(--space-12) auto 0;
     padding: var(--space-3) var(--space-6);
-    background: rgba(212, 175, 55, 0.08);
-    border: 1px solid rgba(212, 175, 55, 0.22);
+    background: rgba(234, 197, 77, 0.08);
+    border: 1px solid rgba(234, 197, 77, 0.22);
     border-radius: var(--border-radius-full);
     text-align: center;
     font-size: var(--text-sm);
@@ -216,7 +216,7 @@
     max-width: 960px;
     margin: var(--space-20) auto 0;
     padding-top: var(--space-12);
-    border-top: 1px solid rgba(212, 175, 55, 0.18);
+    border-top: 1px solid rgba(234, 197, 77, 0.18);
     text-align: center;
 }
 
