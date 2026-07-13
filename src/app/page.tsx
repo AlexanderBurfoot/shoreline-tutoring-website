@@ -5,7 +5,7 @@ import Features from '../components/Features';
 import Services from '../components/Services';
 import WaysToLearn from '../components/WaysToLearn';
 import Approach from '../components/Approach';
-import HeadTutor from '../components/HeadTutor';
+// import HeadTutor from '../components/HeadTutor'; // "Meet the Head Tutor" section — hidden for now; re-enable to bring it back.
 // import DropInSessions from '../components/DropInSessions'; // Free "Watch Me Teach, Live & Free" sessions — re-enable when able to run them.
 import Testimonials from '../components/Testimonials';
 import RecentArticles from '../components/RecentArticles';
@@ -25,7 +25,8 @@ export default function HomePage() {
       <Services />
       <WaysToLearn />
       <Approach />
-      <HeadTutor />
+      {/* "Meet the Head Tutor" section — hidden for now; uncomment to bring it back. */}
+      {/* <HeadTutor /> */}
       {/* Free live sessions — hidden for now; uncomment to bring back "Watch Me Teach, Live & Free". */}
       {/* <DropInSessions /> */}
       <Testimonials />

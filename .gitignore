@@ -29,4 +29,4 @@ test-results/
 .playwright-mcp/
 
 # Claude Code
-.claude/
+.claude/tsconfig.tsbuildinfo
