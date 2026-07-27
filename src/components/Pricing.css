@@ -233,30 +233,7 @@
     white-space: nowrap;
 }
 
-/* Featured Group Bundle table — gold-framed, elevated "premium" treatment */
-.pricing-table-wrapper--group {
-    position: relative;
-    /* Gold gradient frame via layered padding-box / border-box backgrounds */
-    border: 2px solid transparent;
-    background:
-        linear-gradient(var(--color-white), var(--color-white)) padding-box,
-        var(--color-gold-gradient) border-box;
-    box-shadow:
-        0 24px 60px rgba(234, 197, 77, 0.20),
-        0 8px 24px rgba(0, 0, 0, 0.08);
-}
-
-/* Gold accent bar across the top of the card */
-.pricing-table-wrapper--group::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--color-gold-gradient);
-    z-index: 2;
-}
+/* Featured Group Bundle table — uses the standard clean wrapper (gold frame removed) */
 
 /* Warm the header and lift the pricing so the table reads as the standout option */
 .pricing-table--group thead {

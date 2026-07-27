@@ -12,19 +12,19 @@ interface PricingRow {
 }
 
 const bundlePricing: PricingRow[] = [
-    { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$1600' },
-    { yearLevel: 'Year 7 – Year 8', price: '$1,600' },
-    { yearLevel: 'Year 9 – Year 10', price: '$1,600' },
-    { yearLevel: 'Year 11', price: '$1,800' },
-    { yearLevel: 'Year 12', price: '$2,000' },
+    { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$2,000' },
+    { yearLevel: 'Year 7 – Year 8', price: '$2,000' },
+    { yearLevel: 'Year 9 – Year 10', price: '$2,000' },
+    { yearLevel: 'Year 11', price: '$2,200' },
+    { yearLevel: 'Year 12', price: '$2,400' },
 ];
 
 const hourlyPricing: PricingRow[] = [
-    { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$90' },
-    { yearLevel: 'Year 7 – Year 8', price: '$90' },
-    { yearLevel: 'Year 9 – Year 10', price: '$90' },
-    { yearLevel: 'Year 11', price: '$100' },
-    { yearLevel: 'Year 12', price: '$110' },
+    { yearLevel: 'Year 1 – Year 6 / Selective High School / Opportunity Classes', price: '$100' },
+    { yearLevel: 'Year 7 – Year 8', price: '$110' },
+    { yearLevel: 'Year 9 – Year 10', price: '$110' },
+    { yearLevel: 'Year 11', price: '$120' },
+    { yearLevel: 'Year 12', price: '$130' },
 ];
 
 const groupBundlePricing: PricingRow[] = [
