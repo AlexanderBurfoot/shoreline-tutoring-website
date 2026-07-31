@@ -14,6 +14,14 @@ import CTA from '../components/CTA';
 const StudentTestimonials = dynamic(() => import('../components/StudentTestimonials'));
 const FAQ = dynamic(() => import('../components/FAQ'));
 
+// Title and description are inherited from the root layout; only the canonical
+// is declared here, resolved against `metadataBase`.
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
+
 // Next.js automatically Server-Side Renders these imports by default!
 export default function HomePage() {
   return (

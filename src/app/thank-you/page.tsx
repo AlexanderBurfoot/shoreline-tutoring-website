@@ -1,9 +1,20 @@
 import Link from 'next/link';
 import './ThankYou.css';
 
+// Brand suffix comes from the root layout's title template.
 export const metadata = {
-  title: 'Thank You | Shoreline Tutoring',
+  title: 'Thank You',
   description: 'Thank you for reaching out to Shoreline Tutoring. We will be in contact shortly.',
+  alternates: {
+    canonical: '/thank-you',
+  },
+  // A form-confirmation page has no search value and reads as a dead end if
+  // landed on cold. Crawling stays allowed so the directive is actually seen —
+  // a robots.txt Disallow here would hide it and risk a bare URL being indexed.
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function ThankYouPage() {
