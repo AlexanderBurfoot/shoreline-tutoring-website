@@ -1,181 +1,216 @@
 "use client";
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import './Header.css';
-const logo = '/ShorelineLogo.png';
 import { subjects } from '../data/subjectData';
+import { GROUP_CLASSES_PATH, HOMEPAGE_LEADS_WITH_GROUP, ONE_ON_ONE_PATH } from '../data/groupClassLaunch';
 import subjectIcons from './SubjectIcons';
+import { EnquiryLink, TrackedLink, type NavLocation } from './NavLinks';
+
+const LOGO_SRC = '/ShorelineLogo.png';
+const LOGO_WIDTH = 1966;
+const LOGO_HEIGHT = 1289;
+
+/** Scroll distance after which the header turns solid. */
+const SOLID_HEADER_SCROLL_PX = 50;
+
+interface PageLink {
+  href: string;
+  label: string;
+}
+
+/** The two ways to learn lead the menu, group classes first while the launch runs. */
+const FORMAT_LINKS: PageLink[] = [
+  { href: GROUP_CLASSES_PATH, label: 'Group Classes' },
+  { href: ONE_ON_ONE_PATH, label: 'One-on-One' },
+];
+
+/** Pages listed after the Subjects dropdown. */
+const TRAILING_LINKS: PageLink[] = [
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/resources', label: 'Resources' },
+];
+
+/** Staggers the mobile menu's entrance animation. */
+const itemIndexStyle = (index: number) => ({ '--item-index': index }) as CSSProperties;
+
+const isCurrentPage = (pathname: string, href: string) =>
+  pathname === href || pathname.startsWith(`${href}/`);
+
+/** Pages that open on a navy section, where the header starts light-on-dark. */
+const hasDarkOpening = (pathname: string) =>
+  pathname.startsWith('/subjects') ||
+  pathname.startsWith('/resources') ||
+  pathname === '/pricing' ||
+  pathname === '/thank-you' ||
+  pathname === GROUP_CLASSES_PATH ||
+  pathname === ONE_ON_ONE_PATH ||
+  // A group-first homepage opens on the navy group hero.
+  (pathname === '/' && HOMEPAGE_LEADS_WITH_GROUP);
+
+interface NavItemProps {
+  link: PageLink;
+  index: number;
+  pathname: string;
+  location: NavLocation;
+  onNavigate: () => void;
+}
+
+const NavItem = ({ link, index, pathname, location, onNavigate }: NavItemProps) => (
+  <li className="header__nav-item" style={itemIndexStyle(index)}>
+    <TrackedLink
+      href={link.href}
+      label={link.label}
+      location={location}
+      className="header__nav-link"
+      aria-current={isCurrentPage(pathname, link.href) ? 'page' : undefined}
+      onClick={onNavigate}
+    />
+  </li>
+);
+
+const ChevronIcon = ({ isOpen }: { isOpen: boolean }) => (
+  <svg
+    className={`header__dropdown-chevron ${isOpen ? 'header__dropdown-chevron--open' : ''}`}
+    width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
+  >
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+);
+
+interface SubjectsMenuProps {
+  index: number;
+  location: NavLocation;
+  onNavigate: () => void;
+}
+
+/** Opens on hover on desktop and on tap in the mobile menu. */
+const SubjectsMenu = ({ index, location, onNavigate }: SubjectsMenuProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <li
+      className="header__nav-item header__nav-item--dropdown"
+      style={itemIndexStyle(index)}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <button
+        className="header__nav-link header__nav-link--dropdown"
+        onClick={() => setIsOpen((open) => !open)}
+        aria-expanded={isOpen}
+      >
+        Subjects
+        <ChevronIcon isOpen={isOpen} />
+      </button>
+
+      <div className={`header__dropdown ${isOpen ? 'header__dropdown--open' : ''}`}>
+        <div className="header__dropdown-inner">
+          {subjects.map((subject) => (
+            <TrackedLink
+              key={subject.slug}
+              href={`/subjects/${subject.slug}`}
+              label={subject.title}
+              location={location}
+              className="header__dropdown-item"
+              prefetch={false}
+              onClick={() => {
+                setIsOpen(false);
+                onNavigate();
+              }}
+            >
+              <span className="header__dropdown-icon">{subjectIcons[subject.slug] ?? subject.icon}</span>
+              <div>
+                <span className="header__dropdown-name">{subject.title}</span>
+                <span className="header__dropdown-level">{subject.level}</span>
+              </div>
+            </TrackedLink>
+          ))}
+        </div>
+      </div>
+    </li>
+  );
+};
+
+interface HeaderNavProps {
+  pathname: string;
+  isMobileMenuOpen: boolean;
+  onNavigate: () => void;
+}
+
+/** The page links, inline on desktop and a slide-in panel on phones. */
+const HeaderNav = ({ pathname, isMobileMenuOpen, onNavigate }: HeaderNavProps) => {
+  const location: NavLocation = isMobileMenuOpen ? 'mobile_menu' : 'header';
+  const trailingStartIndex = FORMAT_LINKS.length + 1;
+
+  return (
+    <nav id="mobile-navigation" className={`header__nav ${isMobileMenuOpen ? 'header__nav--open' : ''}`}>
+      <ul className="header__nav-list">
+        {FORMAT_LINKS.map((link, index) => (
+          <NavItem key={link.href} link={link} index={index} pathname={pathname} location={location} onNavigate={onNavigate} />
+        ))}
+        <SubjectsMenu index={FORMAT_LINKS.length} location={location} onNavigate={onNavigate} />
+        {TRAILING_LINKS.map((link, index) => (
+          <NavItem
+            key={link.href}
+            link={link}
+            index={trailingStartIndex + index}
+            pathname={pathname}
+            location={location}
+            onNavigate={onNavigate}
+          />
+        ))}
+      </ul>
+      <EnquiryLink location="mobile_menu" className="btn btn-primary header__cta-mobile" onNavigate={onNavigate} />
+    </nav>
+  );
+};
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSubjectsOpen, setIsSubjectsOpen] = useState(false);
-  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > SOLID_HEADER_SCROLL_PX);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll while the mobile menu is open.
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isMobileMenuOpen]);
 
-  const pathname = usePathname();
-  const isHome = pathname === '/';
-  const isSubjectPage = pathname.startsWith('/subjects');
-  const isPricingPage = pathname === '/pricing';
-  const isResourcesPage = pathname.startsWith('/resources');
-  const isBlogPost = pathname.startsWith('/resources/');
-  const isThankYouPage = pathname === '/thank-you';
-  const isDarkHeader = isSubjectPage || isPricingPage || isResourcesPage || isThankYouPage;
-
-  // Handle hash-based navigation: scroll on same page, or navigate home then scroll
-  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-
-    if (isHome) {
-      window.history.pushState(null, '', `/#${sectionId}`);
-      const el = document.getElementById(sectionId);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // Simply navigate to home with the hash. App.tsx will handle the scrolling globally.
-      router.push(`/#${sectionId}`);
-    }
-  }, [isHome, router]);
-
-  const navLinks = [
-    { href: 'about', label: 'About' },
-    { href: 'approach', label: 'Our Approach' },
-    { href: 'testimonials', label: 'Our Promise' },
-  ];
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const headerClassName = [
+    'header',
+    isScrolled && 'header--scrolled',
+    hasDarkOpening(pathname) && !isScrolled && 'header--dark',
+    pathname.startsWith('/resources/') && 'header--solid-navy',
+    isMobileMenuOpen && 'header--menu-open',
+  ].filter(Boolean).join(' ');
 
   return (
-    <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isDarkHeader && !isScrolled ? 'header--dark' : ''} ${isBlogPost ? 'header--solid-navy' : ''} ${isMobileMenuOpen ? 'header--menu-open' : ''}`}>
+    <header className={headerClassName}>
       <div className="header__container container">
         <Link href="/" className="header__logo">
-          <img src={logo} alt="Shoreline Tutoring" className="header__logo-image" />
+          <img src={LOGO_SRC} alt="Shoreline Tutoring" className="header__logo-image" width={LOGO_WIDTH} height={LOGO_HEIGHT} />
           <span className="header__logo-text">Shoreline</span>
           <span className="header__logo-accent">Tutoring</span>
         </Link>
 
-        <nav id="mobile-navigation" className={`header__nav ${isMobileMenuOpen ? 'header__nav--open' : ''}`}>
-          <ul className="header__nav-list">
-            {/* About link */}
-            <li className="header__nav-item" style={{ '--item-index': 0 } as React.CSSProperties}>
-              <a
-                href="#about"
-                className="header__nav-link"
-                onClick={(e) => handleNavClick(e, 'about')}
-              >
-                About
-              </a>
-            </li>
+        <HeaderNav pathname={pathname} isMobileMenuOpen={isMobileMenuOpen} onNavigate={closeMobileMenu} />
 
-            {/* Subjects dropdown */}
-            <li
-              className="header__nav-item header__nav-item--dropdown"
-              style={{ '--item-index': 1 } as React.CSSProperties}
-              onMouseEnter={() => setIsSubjectsOpen(true)}
-              onMouseLeave={() => setIsSubjectsOpen(false)}
-            >
-              <button
-                className="header__nav-link header__nav-link--dropdown"
-                onClick={() => setIsSubjectsOpen(!isSubjectsOpen)}
-                aria-expanded={isSubjectsOpen}
-              >
-                Subjects
-                <svg className={`header__dropdown-chevron ${isSubjectsOpen ? 'header__dropdown-chevron--open' : ''}`} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </button>
-
-              <div className={`header__dropdown ${isSubjectsOpen ? 'header__dropdown--open' : ''}`}>
-                <div className="header__dropdown-inner">
-                  {subjects.map((subject) => (
-                    <Link
-                      key={subject.slug}
-                      href={`/subjects/${subject.slug}`}
-                      className="header__dropdown-item"
-                      prefetch={false}
-                      onClick={() => {
-                        setIsSubjectsOpen(false);
-                        setIsMobileMenuOpen(false);
-                      }}
-                    >
-                      <span className="header__dropdown-icon">{subjectIcons[subject.slug] ?? subject.icon}</span>
-                      <div>
-                        <span className="header__dropdown-name">{subject.title}</span>
-                        <span className="header__dropdown-level">{subject.level}</span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </li>
-
-            {navLinks.slice(1).map((link, i) => (
-              <li key={link.href} className="header__nav-item" style={{ '--item-index': i + 2 } as React.CSSProperties}>
-                <a
-                  href={`#${link.href}`}
-                  className="header__nav-link"
-                  onClick={(e) => handleNavClick(e, link.href)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-
-            {/* Resources link */}
-            <li className="header__nav-item" style={{ '--item-index': 4 } as React.CSSProperties}>
-              <Link href="/resources"
-                className="header__nav-link"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Resources
-              </Link>
-            </li>
-            <li className="header__nav-item" style={{ '--item-index': 5 } as React.CSSProperties}>
-              <Link href="/pricing"
-                className="header__nav-link"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Pricing
-              </Link>
-            </li>
-          </ul>
-          <a
-            href="#contact"
-            className="btn btn-primary header__cta-mobile"
-            onClick={(e) => handleNavClick(e, 'contact')}
-          >
-            Book Trial Lesson
-          </a>
-        </nav>
-
-        <a
-          href="#contact"
-          className="btn btn-primary header__cta"
-          onClick={(e) => handleNavClick(e, 'contact')}
-        >
-          Book Trial Lesson
-        </a>
+        <EnquiryLink location="header" className="btn btn-primary header__cta" />
 
         <button
           className={`header__hamburger ${isMobileMenuOpen ? 'header__hamburger--open' : ''}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setIsMobileMenuOpen((open) => !open)}
+          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-navigation"
         >
@@ -188,11 +223,10 @@ const Header = () => {
       {/* Mobile backdrop overlay */}
       <div
         className={`header__backdrop ${isMobileMenuOpen ? 'header__backdrop--visible' : ''}`}
-        onClick={() => setIsMobileMenuOpen(false)}
+        onClick={closeMobileMenu}
       />
     </header>
   );
 };
 
 export default Header;
-

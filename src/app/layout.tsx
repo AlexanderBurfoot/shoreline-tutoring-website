@@ -1,5 +1,7 @@
 import '../index.css';
 import 'katex/dist/katex.min.css';
+import AnnouncementBar from '../components/AnnouncementBar';
+import PromoPopup from '../components/PromoPopup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BackToTop from '../components/BackToTop';
@@ -7,8 +9,16 @@ import ScrollProgress from '../components/ScrollProgress';
 import { inter, cormorant } from './fonts';
 import { SITE_URL } from '../lib/site';
 import Script from 'next/script';
+import { ANNOUNCEMENT_DISMISSED_KEY, ANNOUNCEMENT_HIDDEN_CLASS } from '../data/groupClassLaunch';
 
 const GTM_CONTAINER_ID = 'GTM-K83P5GHL';
+
+/**
+ * Runs before first paint so a visitor who already dismissed the announcement
+ * bar this session never sees it flash in and disappear. The bar itself is
+ * server-rendered, which keeps the launch in the HTML for every first visit.
+ */
+const ANNOUNCEMENT_DISMISS_SCRIPT = `try{if(sessionStorage.getItem('${ANNOUNCEMENT_DISMISSED_KEY}'))document.documentElement.classList.add('${ANNOUNCEMENT_HIDDEN_CLASS}')}catch(e){}`;
 
 // Note: `alternates` is deliberately absent here. Next.js inherits whole
 // metadata objects into child segments, so a canonical set at the root would
@@ -37,8 +47,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // suppressHydrationWarning on <html>: the pre-paint script below may add the
+  // announcement-dismissed class before React hydrates, which would otherwise be
+  // reported as a className mismatch. It covers only this element's own
+  // attributes, not the tree beneath it.
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${cormorant.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${inter.variable} ${cormorant.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         {/* Google Tag Manager. Google asks for this as high in the <head> as
             possible; `beforeInteractive` is the closest App Router equivalent.
@@ -64,13 +83,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+        <script
+          id="announcement-dismiss-state"
+          dangerouslySetInnerHTML={{ __html: ANNOUNCEMENT_DISMISS_SCRIPT }}
+        />
         <ScrollProgress />
+        <AnnouncementBar />
         <Header />
         <div id="main-content">
           {children}
         </div>
         <Footer />
         <BackToTop />
+        <PromoPopup />
       </body>
     </html>
   );

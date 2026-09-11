@@ -3,7 +3,7 @@ import Resources from '../../components/Resources';
 
 const TITLE = 'Study Resources & HSC Guides';
 const DESCRIPTION =
-    'Free study guides, HSC strategy and subject breakdowns written by Shoreline Tutoring — practical advice on exams, study habits and university pathways.';
+    'Free study guides, HSC strategy and subject breakdowns written by Shoreline Tutoring, with practical advice on exams, study habits and university pathways.';
 
 export const metadata: Metadata = {
     title: TITLE,

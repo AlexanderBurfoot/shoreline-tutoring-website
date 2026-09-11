@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from '../data/blogData';
 import { subjects } from '../data/subjectData';
-import { SITE_URL } from '../lib/site';
+import { PRIVACY_PATH, SITE_URL } from '../lib/site';
 import { toIsoDate } from '../lib/metadata';
 
 /**
@@ -14,6 +14,8 @@ import { toIsoDate } from '../lib/metadata';
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
+    '/one-on-one',
+    '/group-classes',
     '/pricing',
     '/resources',
   ].map((route) => ({
@@ -21,6 +23,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'weekly' as const,
     priority: route === '' ? 1 : 0.8,
   }));
+
+  // Rarely changes and carries little search value, so it ranks lowest.
+  const legalRoutes = [
+    {
+      url: `${SITE_URL}${PRIVACY_PATH}`,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+  ];
 
   const blogRoutes = blogPosts.map((post) => ({
     url: `${SITE_URL}/resources/${post.slug}`,
@@ -35,5 +46,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes, ...subjectRoutes];
+  return [...staticRoutes, ...legalRoutes, ...blogRoutes, ...subjectRoutes];
 }

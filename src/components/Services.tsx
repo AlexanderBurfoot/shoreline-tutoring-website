@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import './Services.css';
 import ScrollReveal from './ScrollReveal';
+import { GROUP_SCOPE_SUMMARY } from '../data/groupClassLaunch';
 import { subjects } from '../data/subjectData';
 import subjectIcons from './SubjectIcons';
 
@@ -41,7 +42,9 @@ const Services = () => {
                         <span className="section-eyebrow">What We Teach</span>
                         <h2 className="section-title">Subject <span className="gold-text">Expertise</span></h2>
                         <p className="section-subtitle">
-                            Every lesson is mapped to the NSW syllabus and tailored to you.
+                            Every lesson is mapped to the NSW syllabus and tailored to you. All of
+                            these are available one-on-one; small-group classes currently run{' '}
+                            {GROUP_SCOPE_SUMMARY}.
                         </p>
                     </div>
                 </ScrollReveal>

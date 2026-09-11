@@ -19,7 +19,7 @@ const NotFound = () => {
                         </svg>
                         Back to Home
                     </Link>
-                    <a href="#contact" onClick={() => window.location.href = '/#contact'} className="not-found__btn not-found__btn--secondary">
+                    <a href="/#contact" onClick={() => window.location.href = '/#contact'} className="not-found__btn not-found__btn--secondary">
                         Contact Us
                     </a>
                 </div>

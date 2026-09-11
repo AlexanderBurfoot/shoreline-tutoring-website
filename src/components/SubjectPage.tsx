@@ -103,7 +103,7 @@ const SubjectPage = () => {
                                 <h1 className="subject-page__title">{subject.title}</h1>
                                 <p className="subject-page__tagline">{subject.heroTagline}</p>
                                 <button onClick={() => { router.push('/'); setTimeout(() => { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 150); }} className="btn btn-primary subject-page__hero-cta">
-                                    Book Your Free Trial Lesson
+                                    Book Your Free Session
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M5 12h14M12 5l7 7-7 7" />
                                     </svg>
@@ -279,7 +279,7 @@ const SubjectPage = () => {
                                         Book a free trial lesson and experience the difference.
                                     </p>
                                     <button onClick={() => { router.push('/'); setTimeout(() => { const el = document.getElementById('contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 400); }} className="btn btn-primary subject-page__cta-btn">
-                                        Book Your Free Trial Lesson
+                                        Book Your Free Session
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                             <path d="M5 12h14M12 5l7 7-7 7" />
                                         </svg>

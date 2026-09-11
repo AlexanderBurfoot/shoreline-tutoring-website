@@ -31,7 +31,7 @@ const badges = [
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
         ),
-        title: 'Free Trial Lesson',
+        title: 'Free First Session',
         description: 'Experience the difference risk-free',
     },
     {

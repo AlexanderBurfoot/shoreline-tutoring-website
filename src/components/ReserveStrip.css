@@ -1,0 +1,56 @@
+/* Reserve strip: a compact navy band closing the group half of the homepage. */
+.reserve-strip {
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-navy) 50%, #253552 100%);
+    border-top: 1px solid rgba(234, 197, 77, 0.35);
+    padding: var(--space-10) 0;
+}
+
+.reserve-strip__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+}
+
+.reserve-strip__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin: 0;
+}
+
+.reserve-strip__headline {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+}
+
+.reserve-strip__detail {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-gold-primary);
+}
+
+.reserve-strip__cta {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .reserve-strip__inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .reserve-strip__headline {
+        font-size: var(--text-2xl);
+    }
+
+    .reserve-strip__cta {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,235 @@
+/* Announcement Bar
+   Fixed above the header. The --announcement-height custom property (declared
+   in index.css, taller on narrow screens) shifts the header and page flow down
+   to make room; the .announcement-dismissed class on <html> zeroes it out. */
+
+.announcement {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: var(--announcement-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--space-14);
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-navy) 50%, #253552 100%);
+    border-bottom: 2px solid var(--color-gold-primary);
+    box-shadow: 0 4px 18px rgba(10, 22, 40, 0.35);
+}
+
+/* A slow gold sheen across the bar, so it catches the eye without flashing. */
+.announcement::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent 30%, rgba(234, 197, 77, 0.16) 50%, transparent 70%);
+    transform: translateX(-100%);
+    animation: announcementSheen 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes announcementSheen {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    55%,
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.announcement__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    min-width: 0;
+    color: var(--color-white);
+    line-height: 1.25;
+    text-align: center;
+}
+
+.announcement__badge {
+    flex-shrink: 0;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--border-radius-full);
+    background: var(--color-gold-gradient);
+    color: var(--color-navy);
+    font-size: var(--text-xs);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.announcement__headline {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.announcement__offer {
+    flex-shrink: 0;
+    padding: var(--space-1) var(--space-3);
+    border: 1px solid var(--color-gold-primary);
+    border-radius: var(--border-radius-full);
+    background: rgba(234, 197, 77, 0.16);
+    color: var(--color-gold-primary);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.announcement__countdown {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-white);
+    white-space: nowrap;
+}
+
+.announcement__pulse {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-gold-primary);
+}
+
+.announcement__pulse::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--color-gold-primary);
+    animation: announcementPulse 1.8s ease-out infinite;
+}
+
+@keyframes announcementPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* A real button rather than an underlined link, so the action is unmissable. */
+.announcement__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--border-radius-full);
+    background: var(--color-gold-gradient);
+    color: var(--color-navy);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(234, 197, 77, 0.35);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.announcement__link:hover .announcement__cta {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(234, 197, 77, 0.5);
+}
+
+.announcement__close {
+    position: absolute;
+    right: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.7);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.announcement__close:hover {
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .announcement::before,
+    .announcement__pulse::after {
+        animation: none;
+    }
+
+    .announcement__link:hover .announcement__cta {
+        transform: none;
+    }
+}
+
+/* Mid-width: drop the badge and the program length before anything wraps. */
+@media (max-width: 1100px) {
+    .announcement__badge,
+    .announcement__headline-detail {
+        display: none;
+    }
+
+    .announcement__headline {
+        font-size: var(--text-base);
+    }
+}
+
+/* Narrow screens use two rows: the headline, then the offer, the day and the
+   button. The close control stays pinned to the right edge. */
+@media (max-width: 768px) {
+    .announcement {
+        padding: 0 var(--space-12) 0 var(--space-3);
+    }
+
+    .announcement__link {
+        gap: var(--space-2) var(--space-3);
+    }
+
+    .announcement__headline {
+        flex-basis: 100%;
+        font-size: var(--text-sm);
+    }
+
+    .announcement__offer,
+    .announcement__countdown {
+        font-size: var(--text-xs);
+    }
+
+    .announcement__cta {
+        padding: var(--space-1) var(--space-4);
+        font-size: var(--text-xs);
+    }
+
+    .announcement__close {
+        right: var(--space-2);
+    }
+}
+
+/* Very narrow: the day phrase goes last, so the offer and button still fit on
+   the second row. */
+@media (max-width: 400px) {
+    .announcement__countdown {
+        display: none;
+    }
+}

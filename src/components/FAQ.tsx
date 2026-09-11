@@ -14,7 +14,7 @@ const faqs = [
     },
     {
         question: 'Are lessons online or in person?',
-        answer: 'Lessons are conducted in-person at the student\'s home, at a public location such as a library, or online, whichever option suits each student best.',
+        answer: 'One-on-one tutoring runs online, live with your tutor, which keeps scheduling flexible and removes travel either side of a lesson. Our Year 12 small-group HSC maths program runs both ways: in person at 558 Pacific Highway, St Leonards on Saturdays, or live online on Sundays.',
     },
     {
         question: 'How long is each session?',

@@ -23,7 +23,7 @@ export async function generateMetadata(
     const { slug } = await params;
     const post = getPostBySlug(slug);
 
-    // No canonical for an unknown slug — it must not claim to be a real page.
+    // No canonical for an unknown slug, since it must not claim to be a real page.
     if (!post) {
         return { title: 'Article Not Found' };
     }

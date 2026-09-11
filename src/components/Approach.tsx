@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import './Approach.css';
+import { GROUP_CLASSES_PATH, PROGRAM_LENGTH } from '../data/groupClassLaunch';
 
 const steps = [
     {
@@ -9,12 +11,12 @@ const steps = [
     {
         number: '02',
         title: 'Custom Learning Plan',
-        description: 'Your dedicated tutor crafts a personalized curriculum designed specifically for you, targeting weak areas while building on your strengths.',
+        description: 'Your tutor builds the plan around your goals and your gaps, targeting weak areas while building on strengths, and rewrites it as you improve.',
     },
     {
         number: '03',
         title: 'Focused Sessions',
-        description: 'Engage in focused, distraction-free sessions, one-on-one or in a small group, where the time is dedicated to your progress and understanding.',
+        description: 'Engage in focused, distraction-free sessions where the whole hour is dedicated to your progress and understanding.',
     },
     {
         number: '04',
@@ -37,6 +39,11 @@ const Approach = () => {
                     <h2 className="section-title">Our <span className="gold-text">Approach</span></h2>
                     <p className="section-subtitle">
                         A proven methodology that transforms potential into achievement through structured, personalized guidance.
+                        This is how one-on-one tutoring runs; our small-group programs follow a
+                        fixed {PROGRAM_LENGTH} plan set before the first session.{' '}
+                        <Link href={GROUP_CLASSES_PATH} className="section-subtitle__link">
+                            See the group program
+                        </Link>.
                     </p>
                 </div>
 

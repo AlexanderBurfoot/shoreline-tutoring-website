@@ -1,0 +1,614 @@
+/* ===== Learning-format landing pages =====
+   Shared by /one-on-one and /group-classes so the two formats are presented
+   identically; only their content differs. */
+
+/* The hero matches the pricing page's dark treatment so the two read as a set. */
+.format-hero {
+    position: relative;
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-navy) 40%, #1a2744 70%, #253552 100%);
+    padding: calc(var(--header-height) + var(--space-16)) 0 var(--space-16);
+    text-align: center;
+    overflow: hidden;
+}
+
+.format-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(234, 197, 77, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(234, 197, 77, 0.1) 0%, transparent 50%);
+}
+
+.format-hero__content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo centrepiece behind the hero content. Kept faint so the white text and
+   gold accents on top stay fully readable; the hero's overflow: hidden clips
+   whatever extends past its edges. */
+.format-hero__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(78vw, 980px);
+    max-width: none;
+    height: auto;
+    transform: translate(-50%, -46%);
+    opacity: 0.12;
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    .format-hero__logo {
+        width: 130vw;
+        opacity: 0.1;
+    }
+}
+
+.format-hero__badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-4);
+    border-radius: var(--border-radius-full);
+    background: var(--color-gold-gradient);
+    color: var(--color-navy);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-5);
+}
+
+.format-hero__title {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 600;
+    line-height: 1.12;
+    color: var(--color-white);
+    margin-bottom: var(--space-5);
+}
+
+.format-hero__subtitle {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 620px;
+    margin: 0 auto var(--space-10);
+    line-height: 1.7;
+}
+
+/* Facts strip showing the four things a parent needs before they will enquire. */
+.format-hero__facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-4);
+    max-width: 880px;
+    margin: 0 auto var(--space-10);
+    text-align: left;
+}
+
+.format-hero__fact {
+    padding: var(--space-4) var(--space-5);
+    border: 1px solid rgba(234, 197, 77, 0.25);
+    border-radius: var(--border-radius-lg);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.format-hero__fact dt {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-gold-primary);
+    margin-bottom: var(--space-1);
+}
+
+.format-hero__fact dd {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-white);
+    line-height: 1.45;
+}
+
+.format-hero__cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+}
+
+.format-hero__reassurance {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== Shared section shell ===== */
+.format-section {
+    background: var(--color-white);
+}
+
+.format-section--alt {
+    background: var(--color-cream);
+}
+
+.format-section__header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto var(--space-12);
+}
+
+.format-section__title {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-5xl);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--color-navy);
+    margin: var(--space-3) 0 var(--space-4);
+}
+
+.format-section__subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+/* ===== Benefits ===== */
+/* Two columns rather than auto-fit: four cards across three columns leaves a
+   lone card on the second row. */
+.format-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .format-benefits {
+        grid-template-columns: 1fr;
+    }
+}
+
+.format-benefit {
+    height: 100%;
+    padding: var(--space-8);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.format-benefit:hover {
+    transform: translateY(-4px);
+    border-color: rgba(234, 197, 77, 0.5);
+    box-shadow: var(--shadow-lg);
+}
+
+.format-benefit__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(234, 197, 77, 0.18);
+    color: var(--color-gold-dark);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+}
+
+.format-benefit__title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: var(--space-3);
+}
+
+.format-benefit__description {
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+/* ===== First-session steps ===== */
+.format-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    list-style: none;
+}
+
+.format-step {
+    height: 100%;
+    padding: var(--space-8);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.format-step__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-navy);
+    color: var(--color-gold-primary);
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+}
+
+.format-step__title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: var(--space-3);
+}
+
+.format-step__description {
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+/* ===== FAQs ===== */
+.format-faqs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.format-faq {
+    padding: var(--space-6);
+    border-left: 3px solid var(--color-gold-primary);
+    background: var(--color-cream);
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+}
+
+.format-faq__question {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: var(--space-2);
+}
+
+.format-faq__answer {
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .format-hero {
+        padding: calc(var(--header-height) + var(--space-10)) 0 var(--space-12);
+    }
+
+    .format-hero__facts {
+        grid-template-columns: 1fr;
+    }
+
+    .format-hero__cta-group .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .format-benefit,
+    .format-step {
+        padding: var(--space-6);
+    }
+}
+
+/* ===== Pricing ===== */
+.format-pricing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.format-pricing__card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--space-8);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+}
+
+.format-pricing__card--featured {
+    border-color: rgba(234, 197, 77, 0.6);
+    box-shadow: var(--shadow-gold);
+}
+
+.format-pricing__label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-gold-dark);
+    margin-bottom: var(--space-2);
+}
+
+.format-pricing__note {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+}
+
+/* No margin-top: auto here. The bundle rows are taller than the hourly ones, so
+   bottom-aligning them would start the two columns at different heights. */
+.format-pricing__rows {
+    list-style: none;
+}
+
+.format-pricing__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.format-pricing__level {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: 1.4;
+}
+
+.format-pricing__price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-navy);
+    white-space: nowrap;
+}
+
+.format-pricing__price small {
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-gold-dark);
+}
+
+.format-pricing__footnote {
+    max-width: 960px;
+    margin: var(--space-8) auto 0;
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+}
+
+.format-pricing__footnote a {
+    color: var(--color-gold-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .format-pricing {
+        grid-template-columns: 1fr;
+    }
+
+    .format-pricing__card {
+        padding: var(--space-6);
+    }
+}
+
+/* ===== Attendance options (in person / online) ===== */
+.format-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.format-option {
+    height: 100%;
+    padding: var(--space-8);
+    border: 1px solid var(--color-light-gray);
+    border-left: 3px solid var(--color-gold-primary);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.format-option__name {
+    display: inline-block;
+    padding: var(--space-1) var(--space-4);
+    border-radius: var(--border-radius-full);
+    background: var(--color-navy);
+    color: var(--color-gold-primary);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+}
+
+.format-option__tagline {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1.35;
+    margin-bottom: var(--space-3);
+}
+
+.format-option__description {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: var(--space-5);
+}
+
+.format-option__points {
+    list-style: none;
+}
+
+.format-option__point {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.format-option__check {
+    flex-shrink: 0;
+    color: var(--color-gold-dark);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .format-options {
+        grid-template-columns: 1fr;
+    }
+
+    .format-option {
+        padding: var(--space-6);
+    }
+}
+
+/* ===== Course streams ===== */
+.format-courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.format-course {
+    height: 100%;
+    padding: var(--space-7);
+    border: 1px solid var(--color-light-gray);
+    border-top: 4px solid var(--color-gold-primary);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.format-course__name {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--border-radius-full);
+    background: var(--color-navy);
+    color: var(--color-gold-primary);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+}
+
+.format-course__title {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: var(--space-3);
+}
+
+.format-course__covers {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    font-size: var(--text-sm);
+}
+
+/* ===== Fixed-price program ===== */
+.format-program {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: var(--space-10);
+    text-align: center;
+    border: 2px solid rgba(234, 197, 77, 0.6);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+    box-shadow: var(--shadow-gold);
+}
+
+.format-program__label {
+    display: inline-block;
+    padding: var(--space-1) var(--space-4);
+    border-radius: var(--border-radius-full);
+    background: var(--color-gold-gradient);
+    color: var(--color-navy);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-5);
+}
+
+.format-program__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-navy);
+    margin-bottom: var(--space-7);
+}
+
+.format-program__price small {
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-light);
+}
+
+.format-program__inclusions {
+    list-style: none;
+    text-align: left;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.format-program__inclusion {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.format-program__check {
+    flex-shrink: 0;
+    color: var(--color-gold-dark);
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .format-courses {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .format-program {
+        padding: var(--space-7) var(--space-5);
+    }
+
+    .format-program__price {
+        font-size: 56px;
+    }
+}

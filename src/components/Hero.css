@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - var(--announcement-height));
     display: flex;
     align-items: center;
     position: relative;
@@ -65,11 +65,12 @@
 }
 
 /* Tagline */
+/* Brand tagline, sitting directly above the launch banner. */
 .hero__tagline {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
 }
 
 .hero__tagline-item {
@@ -83,6 +84,77 @@
 .hero__tagline-dot {
     color: var(--color-gold-primary);
     font-size: var(--text-lg);
+}
+
+/* Temporary launch banner for the group-class launch window. */
+.hero__launch {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid rgba(234, 197, 77, 0.5);
+    border-radius: var(--border-radius-full);
+    background: rgba(234, 197, 77, 0.12);
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.hero__launch:hover {
+    background: rgba(234, 197, 77, 0.22);
+    border-color: var(--color-gold-primary);
+}
+
+.hero__launch-pulse {
+    position: relative;
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-gold-dark);
+}
+
+.hero__launch-pulse::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--color-gold-dark);
+    animation: heroLaunchPulse 2s ease-out infinite;
+}
+
+@keyframes heroLaunchPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__launch-pulse::after {
+        animation: none;
+    }
+}
+
+.hero__launch-text {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--color-navy);
+}
+
+.hero__launch-offer {
+    padding: 2px var(--space-2);
+    border-radius: var(--border-radius-full);
+    background: var(--color-navy);
+    color: var(--color-gold-primary);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 /* Title */
@@ -318,6 +390,12 @@
         justify-content: center;
     }
 
+    .hero__launch {
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
     .hero__cta-group {
         justify-content: center;
     }
@@ -355,6 +433,15 @@
     .hero__tagline-item {
         font-size: var(--text-xs);
         letter-spacing: 2px;
+    }
+
+    .hero__launch {
+        gap: var(--space-2);
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .hero__launch-text {
+        font-size: var(--text-xs);
     }
 
     .hero__title {
@@ -408,5 +495,25 @@
 
     .hero__image-wrapper {
         max-width: 200px;
+    }
+}
+/* Mid-page variant: on a group-first homepage the hero opens the one-on-one
+   half rather than the page, so it drops the full-screen height and the header
+   offset, and a gold rule marks where that half begins. */
+.hero--section {
+    min-height: auto;
+    padding-top: 0;
+    border-top: 3px solid var(--color-gold-primary);
+}
+
+.hero--section .hero__container {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+}
+
+@media (max-width: 768px) {
+    .hero--section .hero__container {
+        padding-top: var(--space-12);
+        padding-bottom: var(--space-12);
     }
 }

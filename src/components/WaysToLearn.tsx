@@ -1,6 +1,14 @@
 import Link from 'next/link';
 import './WaysToLearn.css';
 import ScrollReveal from './ScrollReveal';
+import {
+    GROUP_CLASSES_PATH,
+    ONE_ON_ONE_PATH,
+    GROUP_SCOPE_SUMMARY,
+    LAUNCH_DATE_LONG,
+    MAX_CLASS_SIZE,
+    PROGRAM_LENGTH,
+} from '../data/groupClassLaunch';
 
 interface LearningFormat {
     eyebrow: string;
@@ -9,6 +17,12 @@ interface LearningFormat {
     description: string;
     points: string[];
     icon: React.ReactNode;
+    /** Corner badge naming what this format offers to start with. */
+    flash?: string;
+    /** Lifts a card out of the pair. Reserved for a dated, time-limited offer. */
+    featured?: boolean;
+    /** Where the card's link goes, and what it says. */
+    link: { href: string; label: string };
 }
 
 const formats: LearningFormat[] = [
@@ -17,12 +31,14 @@ const formats: LearningFormat[] = [
         title: 'One-on-One Tutoring',
         tagline: 'The whole session, built entirely around one student.',
         description:
-            'Private sessions where every minute is spent on your goals, at your pace. The most personalised way to learn, with a plan shaped around exactly where you are and where you want to be.',
+            'Private online sessions where every minute is spent on your goals, at your pace. The most personalised way to learn, with a plan shaped around exactly where you are and where you want to be.',
         points: [
+            'Live online, one to one with your tutor',
             'Completely tailored lesson plans',
             'Flexible scheduling to suit you',
-            'Maximum one-on-one attention',
         ],
+        flash: 'Free trial lesson',
+        link: { href: ONE_ON_ONE_PATH, label: 'See one-on-one tutoring' },
         icon: (
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -31,16 +47,19 @@ const formats: LearningFormat[] = [
         ),
     },
     {
-        eyebrow: 'Learn Together',
-        title: 'Small-Group Classes',
-        tagline: 'Learn alongside a small group of peers at a similar level.',
+        eyebrow: 'Year 12 Maths',
+        title: 'Small-Group HSC Program',
+        tagline: 'Four weeks to cover the whole Year 12 maths course.',
         description:
-            'Structured termly classes that keep groups small, so students still get real attention while learning from shared discussion, healthy motivation, and a lower per-student rate.',
+            `A ${PROGRAM_LENGTH} program for Year 12 Mathematics Standard, Advanced and Extension 1, capped at ${MAX_CLASS_SIZE} students per class and built around the exam rather than the term.`,
         points: [
-            'Small classes grouped by level',
-            'Lower cost per student',
-            'Peer motivation and discussion',
+            `Starts ${LAUNCH_DATE_LONG}`,
+            'Standard, Advanced and Extension 1',
+            'In person on Saturdays or online on Sundays',
         ],
+        flash: 'Week 1 free',
+        featured: true,
+        link: { href: GROUP_CLASSES_PATH, label: 'See the HSC maths program' },
         icon: (
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -63,9 +82,9 @@ const WaysToLearn = () => {
                             Two Ways to <span className="gold-text">Learn With Us</span>
                         </h2>
                         <p className="ways__subtitle">
-                            Every student is different, so we offer two formats built on the same
-                            syllabus expertise and support. Choose the one that fits, or ask us
-                            which suits your child best.
+                            One-on-one tutoring runs all year, across every year level and subject.
+                            Small-group classes run as focused programs. Right now, that means{' '}
+                            {GROUP_SCOPE_SUMMARY}. Ask us which suits your child best.
                         </p>
                     </div>
                 </ScrollReveal>
@@ -73,7 +92,10 @@ const WaysToLearn = () => {
                 <div className="ways__grid">
                     {formats.map((format, index) => (
                         <ScrollReveal key={format.title} width="100%" delay={index * 120}>
-                            <div className="ways__card">
+                            <div className={`ways__card ${format.featured ? 'ways__card--featured' : ''}`}>
+                                {format.flash && (
+                                    <span className="ways__card-flash">{format.flash}</span>
+                                )}
                                 <div className="ways__card-icon" aria-hidden="true">
                                     {format.icon}
                                 </div>
@@ -89,8 +111,8 @@ const WaysToLearn = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link href="/pricing" className="ways__card-link">
-                                    View pricing
+                                <Link href={format.link.href} className="ways__card-link">
+                                    {format.link.label}
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                         <path d="M5 12h14M12 5l7 7-7 7" />
                                     </svg>

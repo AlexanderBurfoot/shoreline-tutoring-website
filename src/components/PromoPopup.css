@@ -1,12 +1,13 @@
-/* ===== Promo Popup ===== */
+/* ===== Launch Popup =====
+   A near-full-screen dialog: a navy panel carrying the offer and countdown,
+   and a light panel where the visitor picks a day and year level. */
 
-/* Overlay */
 .promo-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(26, 35, 50, 0.6);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(10, 22, 40, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: 9998;
     animation: promo-fade-in 0.3s ease;
 }
@@ -15,105 +16,134 @@
     animation: promo-fade-out 0.3s ease forwards;
 }
 
-/* Popup Container */
 .promo-popup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
-    width: 90%;
-    max-width: 420px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: min(96vw, 1180px);
+    max-height: 94vh;
     background: var(--color-white);
     border-radius: var(--border-radius-xl);
-    padding: var(--space-10) var(--space-8) var(--space-8);
-    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    animation: promo-pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    border-top: 4px solid var(--color-gold-primary);
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
+    animation: promo-pop-in 0.45s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
 .promo-popup--closing {
     animation: promo-pop-out 0.3s ease forwards;
 }
 
-/* Close Button */
 .promo-popup__close {
     position: absolute;
     top: var(--space-4);
     right: var(--space-4);
-    width: 32px;
-    height: 32px;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
+    height: 40px;
     border-radius: var(--border-radius-full);
     color: var(--color-text-light);
-    transition: all var(--transition-fast);
-    background: transparent;
-    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--color-light-gray);
     cursor: pointer;
+    transition: all var(--transition-fast);
 }
 
 .promo-popup__close:hover {
-    background: #f0f2f5;
+    background: var(--color-white);
     color: var(--color-navy);
+    transform: rotate(90deg);
 }
 
-/* Badge */
-.promo-popup__badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--color-white);
-    background: var(--color-gold-gradient);
-    padding: 4px 16px;
-    border-radius: var(--border-radius-full);
-    margin-bottom: var(--space-4);
+/* ===== Panels ===== */
+.promo-panel {
+    padding: var(--space-10);
+    overflow-y: auto;
 }
 
-/* Icon */
-.promo-popup__icon {
+.promo-panel--brand {
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-bottom: var(--space-3);
-    line-height: 1;
+    text-align: center;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(234, 197, 77, 0.18) 0%, transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(234, 197, 77, 0.12) 0%, transparent 55%),
+        linear-gradient(135deg, #0a1628 0%, var(--color-navy) 45%, #253552 100%);
 }
 
-.promo-popup__icon-img {
-    display: inline-block;
-    font-size: 80px;
-    line-height: 1;
-    animation: promo-cap-bounce 2s ease-in-out infinite;
+/* With a photo set, the image is the background and a navy wash keeps the
+   white and gold text legible over whatever is in the shot. */
+.promo-panel--photo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-@keyframes promo-cap-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+.promo-panel--photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10, 22, 40, 0.92) 0%, rgba(26, 35, 50, 0.86) 50%, rgba(37, 53, 82, 0.9) 100%);
 }
 
-/* Title */
+.promo-panel__inner {
+    position: relative;
+    z-index: 1;
+}
+
+.promo-panel--choose {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+    justify-content: center;
+    background: var(--color-white);
+}
+
+/* ===== Offer side ===== */
+.promo-popup__logo {
+    height: 68px;
+    width: auto;
+    margin: 0 auto var(--space-5);
+    display: block;
+}
+
 .promo-popup__title {
-    font-size: var(--text-2xl);
-    color: var(--color-navy);
-    margin-bottom: var(--space-4);
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    line-height: 1.12;
+    color: var(--color-white);
+    margin-bottom: var(--space-5);
 }
 
-/* Discount Display */
+.promo-popup__title-accent {
+    display: block;
+    background: var(--color-gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .promo-popup__discount {
     display: flex;
     align-items: baseline;
     justify-content: center;
-    gap: var(--space-2);
-    margin-bottom: var(--space-4);
+    gap: var(--space-3);
+    margin-bottom: var(--space-7);
 }
 
 .promo-popup__percent {
     font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
-    font-size: 64px;
-    font-weight: 600;
+    font-size: 84px;
+    font-weight: 700;
     line-height: 1;
     color: var(--color-gold-primary);
 }
@@ -122,80 +152,348 @@
     font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--color-gold-dark);
+    color: var(--color-white);
 }
 
-/* Body Text */
-.promo-popup__text {
-    font-size: var(--text-base);
-    color: var(--color-text-light);
-    line-height: 1.7;
-    margin-bottom: var(--space-6);
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
+/* Live countdown */
+.promo-popup__countdown {
+    margin-bottom: var(--space-7);
 }
 
-.promo-popup__text strong {
-    color: var(--color-navy);
-}
-
-/* CTA Button */
-.promo-popup__cta {
-    width: 100%;
-    padding: var(--space-4);
-    font-size: var(--text-base);
+.promo-popup__countdown-label {
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-gold-primary);
     margin-bottom: var(--space-3);
 }
 
-/* Fine Print */
-.promo-popup__fine-print {
+.promo-popup__countdown-units {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.promo-popup__unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 72px;
+    padding: var(--space-3) var(--space-2);
+    border: 1px solid rgba(234, 197, 77, 0.35);
+    border-radius: var(--border-radius-md);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.promo-popup__unit-value {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-gold-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.promo-popup__unit-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.promo-popup__points {
+    list-style: none;
+    text-align: left;
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+.promo-popup__point {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.promo-popup__point-check {
+    flex-shrink: 0;
+    color: var(--color-gold-primary);
+    font-weight: 700;
+}
+
+/* ===== Choice side ===== */
+.promo-step__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: var(--space-4);
+}
+
+.promo-step__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--color-navy);
+    color: var(--color-gold-primary);
+    font-size: var(--text-sm);
+    font-weight: 700;
+}
+
+.promo-popup__days {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+}
+
+.promo-popup__day {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-4);
+    padding-right: var(--space-10);
+    border: 2px solid var(--color-light-gray);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.promo-popup__day:hover {
+    border-color: var(--color-gold-primary);
+    background: rgba(234, 197, 77, 0.08);
+    transform: translateY(-2px);
+}
+
+.promo-popup__day--active {
+    border-color: var(--color-gold-dark);
+    background: rgba(234, 197, 77, 0.16);
+}
+
+.promo-popup__day-tick {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--color-light-gray);
+    background: var(--color-white);
+    color: var(--color-navy);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.promo-popup__day--active .promo-popup__day-tick {
+    background: var(--color-gold-gradient);
+    border-color: var(--color-gold-dark);
+}
+
+.promo-popup__day-label {
     font-size: var(--text-xs);
-    color: #b0b5be;
-    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-gold-dark);
+}
+
+.promo-popup__day-when {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1.35;
+}
+
+.promo-popup__day-start {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+}
+
+/* Year level chips */
+.promo-popup__years {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.promo-popup__year {
+    padding: var(--space-2) var(--space-4);
+    border: 2px solid var(--color-light-gray);
+    border-radius: var(--border-radius-full);
+    background: var(--color-white);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.promo-popup__year:hover {
+    border-color: var(--color-gold-primary);
+    background: rgba(234, 197, 77, 0.08);
+}
+
+.promo-popup__year--active {
+    border-color: var(--color-gold-dark);
+    background: var(--color-gold-gradient);
+    color: var(--color-navy);
+}
+
+.promo-popup__rate {
+    margin-top: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--border-radius-md);
+    background: var(--color-cream);
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    transition: background var(--transition-base), color var(--transition-base);
+}
+
+.promo-popup__rate--shown {
+    background: rgba(234, 197, 77, 0.16);
+    color: var(--color-navy);
+}
+
+.promo-popup__rate strong {
+    font-size: var(--text-lg);
+    color: var(--color-gold-dark);
+}
+
+/* Actions */
+.promo-popup__actions {
+    text-align: center;
+}
+
+.promo-popup__cta {
+    width: 100%;
+    justify-content: center;
+    font-size: var(--text-lg);
+    padding: var(--space-4) var(--space-8);
+}
+
+.promo-popup__secondary {
+    display: block;
+    margin: var(--space-4) auto 0;
+    padding: var(--space-1) var(--space-2);
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.promo-popup__secondary:hover {
+    color: var(--color-navy);
+}
+
+.promo-popup__fine-print {
+    margin-top: var(--space-3);
+    font-size: var(--text-xs);
+    color: var(--color-text-light);
 }
 
 /* ===== Animations ===== */
 @keyframes promo-fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes promo-fade-out {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
 @keyframes promo-pop-in {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.94); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
 @keyframes promo-pop-out {
-    from {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
+    from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    to { opacity: 0; transform: translate(-50%, -50%) scale(0.96); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .promo-popup,
+    .promo-overlay {
+        animation: none;
     }
 
-    to {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.9);
+    .promo-popup__day:hover,
+    .promo-popup__close:hover {
+        transform: none;
+    }
+}
+
+/* ===== Narrow screens: one column, the offer above the choices ===== */
+@media (max-width: 900px) {
+    .promo-popup {
+        grid-template-columns: 1fr;
+        width: 94vw;
+        overflow-y: auto;
+    }
+
+    .promo-panel {
+        overflow: visible;
+        padding: var(--space-8) var(--space-6);
+    }
+
+    .promo-panel--brand {
+        padding-top: var(--space-10);
+    }
+
+    .promo-popup__title {
+        font-size: var(--text-3xl);
+    }
+
+    .promo-popup__percent {
+        font-size: 64px;
+    }
+
+    .promo-popup__points {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .promo-popup__logo {
+        height: 52px;
+    }
+
+    .promo-popup__unit {
+        min-width: 0;
+        flex: 1;
+        padding: var(--space-2) var(--space-1);
+    }
+
+    .promo-popup__unit-value {
+        font-size: var(--text-2xl);
+    }
+
+    .promo-popup__days {
+        grid-template-columns: 1fr;
     }
 }

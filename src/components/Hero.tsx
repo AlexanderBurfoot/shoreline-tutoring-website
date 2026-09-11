@@ -1,10 +1,42 @@
+import { Fragment } from 'react';
+import Link from 'next/link';
 import './Hero.css';
 const logo = '/ShorelineLogo.png';
 import ScrollReveal from './ScrollReveal';
+import {
+    GROUP_CLASSES_PATH,
+    LAUNCH_DATE_LONG,
+    ONE_ON_ONE_PATH,
+} from '../data/groupClassLaunch';
 
-const Hero = () => {
+interface HeroProps {
+    /**
+     * Render as the opening of the one-on-one half of a group-first homepage
+     * rather than as the page hero: no full-screen height, no launch pill (the
+     * group program already sits above it), an h2 so the page keeps a single
+     * h1, and calls to action aimed at one-on-one tutoring.
+     */
+    asSection?: boolean;
+}
+
+const PAGE_TAGLINE = ['EXCLUSIVE', 'INDIVIDUALISED', 'EFFECTIVE'];
+const SECTION_TAGLINE = ['ONE-ON-ONE TUTORING', 'ALL YEARS', 'ALL SUBJECTS'];
+
+const ArrowIcon = () => (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+    </svg>
+);
+
+const Hero = ({ asSection = false }: HeroProps) => {
+    const TitleTag = asSection ? 'h2' : 'h1';
+    const taglineItems = asSection ? SECTION_TAGLINE : PAGE_TAGLINE;
+
     return (
-        <section className="hero">
+        <section
+            className={`hero ${asSection ? 'hero--section' : ''}`}
+            id={asSection ? 'one-on-one-tutoring' : undefined}
+        >
             <div className="hero__background">
                 <div className="hero__gradient"></div>
                 <div className="hero__pattern"></div>
@@ -14,40 +46,62 @@ const Hero = () => {
                 <div className="hero__content">
                     <ScrollReveal delay={0}>
                         <div className="hero__tagline animate-fade-in-up">
-                            <span className="hero__tagline-item">EXCLUSIVE</span>
-                            <span className="hero__tagline-dot">•</span>
-                            <span className="hero__tagline-item">INDIVIDUALISED</span>
-                            <span className="hero__tagline-dot">•</span>
-                            <span className="hero__tagline-item">EFFECTIVE</span>
+                            {taglineItems.map((item, index) => (
+                                <Fragment key={item}>
+                                    {index > 0 && <span className="hero__tagline-dot">•</span>}
+                                    <span className="hero__tagline-item">{item}</span>
+                                </Fragment>
+                            ))}
                         </div>
+                        {!asSection && (
+                            <Link href={GROUP_CLASSES_PATH} className="hero__launch animate-fade-in-up">
+                                <span className="hero__launch-pulse" aria-hidden="true"></span>
+                                <span className="hero__launch-text">
+                                    Year 12 HSC maths program starts {LAUNCH_DATE_LONG}
+                                </span>
+                                <span className="hero__launch-offer">Week 1 free</span>
+                            </Link>
+                        )}
                     </ScrollReveal>
 
                     <ScrollReveal delay={100}>
-                        <h1 className="hero__title animate-fade-in-up delay-100">
+                        <TitleTag className="hero__title animate-fade-in-up delay-100">
                             Unlock Your
                             <span className="hero__title-accent"> Academic Potential</span>
-                        </h1>
+                        </TitleTag>
                     </ScrollReveal>
 
                     <ScrollReveal delay={200}>
                         <p className="hero__description animate-fade-in-up delay-200">
-                            Experience transformative tutoring, one-on-one or in small groups,
-                            designed to dramatically improve your results through personalized
-                            attention and constant support.
+                            {asSection
+                                ? 'Private one-on-one tutoring, live online, across every year level and subject, with a learning plan shaped entirely around your child.'
+                                : 'Experience transformative tutoring, one-on-one or in small groups, designed to dramatically improve your results through personalized attention and constant support.'}
                         </p>
                     </ScrollReveal>
 
                     <ScrollReveal delay={300}>
                         <div className="hero__cta-group animate-fade-in-up delay-300">
-                            <a href="#contact" className="btn btn-primary btn-lg">
-                                Book Your Free Trial Lesson
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg>
-                            </a>
-                            <a href="#about" className="btn btn-secondary">
-                                Learn More
-                            </a>
+                            {asSection ? (
+                                <>
+                                    <a href="#contact" className="btn btn-primary btn-lg">
+                                        Book a Free Trial Lesson
+                                        <ArrowIcon />
+                                    </a>
+                                    <Link href={ONE_ON_ONE_PATH} className="btn btn-secondary">
+                                        See One-on-One Tutoring
+                                    </Link>
+                                </>
+                            ) : (
+                                <>
+                                    <a href="#contact" className="btn btn-primary btn-lg">
+                                        Book Your Free Session
+                                        <ArrowIcon />
+                                    </a>
+                                    <a href="#ways-to-learn" className="btn btn-secondary">
+                                        Compare Both Formats
+                                    </a>
+                                </>
+                            )}
                         </div>
                     </ScrollReveal>
 
@@ -76,7 +130,7 @@ const Hero = () => {
                         <div className="hero__image-decoration hero__image-decoration--1"></div>
                         <div className="hero__image-decoration hero__image-decoration--2"></div>
                         <div className="hero__image-placeholder">
-                            <img src={logo} alt="Shoreline Tutoring Logo" className="hero__main-logo" />
+                            <img src={logo} alt="Shoreline Tutoring Logo" className="hero__main-logo" width={1966} height={1289} />
                             <div className="hero__float-card hero__float-card--1">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-primary)" strokeWidth="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
                                 <span className="hero__float-text">Expert Tutors</span>
@@ -94,12 +148,14 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="hero__scroll-indicator">
-                <div className="hero__scroll-mouse">
-                    <div className="hero__scroll-wheel"></div>
+            {!asSection && (
+                <div className="hero__scroll-indicator">
+                    <div className="hero__scroll-mouse">
+                        <div className="hero__scroll-wheel"></div>
+                    </div>
+                    <span>Scroll to explore</span>
                 </div>
-                <span>Scroll to explore</span>
-            </div>
+            )}
         </section>
     );
 };

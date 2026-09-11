@@ -65,6 +65,11 @@
   --max-width: 1200px;
   --header-height: 80px;
 
+  /* Height reserved at the top of the viewport for the announcement bar. The
+     header, the page flow and any full-height section read from this, so the
+     bar can be removed by zeroing the one value. */
+  --announcement-height: 76px;
+
   /* Borders & Shadows */
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
@@ -108,6 +113,23 @@ body {
   color: var(--color-text);
   background-color: var(--color-white);
   overflow-x: hidden;
+  /* Makes room for the fixed announcement bar without every section needing
+     to know about it. */
+  padding-top: var(--announcement-height);
+}
+
+/* Set by the pre-paint script in the root layout and by the bar's own dismiss
+   button, so the layout collapses back to its original geometry. */
+html.announcement-dismissed {
+  --announcement-height: 0px;
+}
+
+/* On narrow screens the bar wraps to two rows. The dismissed rule above still
+   wins, since html.class outranks :root. */
+@media (max-width: 768px) {
+  :root {
+    --announcement-height: 84px;
+  }
 }
 
 /* Glassmorphism Utility */
@@ -509,4 +531,23 @@ ol {
 .skip-link:focus {
   top: 0;
   outline: 3px solid var(--color-white);
+}
+/* Inline link inside a section subtitle, used where a section needs to point
+   at the other learning format. */
+.section-subtitle__link {
+  color: var(--color-gold-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.section-subtitle__link:hover {
+  color: var(--color-navy);
+}
+
+/* In-page jumps (#contact, #format-pricing and the like) land below the fixed
+   announcement bar and header instead of underneath them. */
+section[id] {
+  scroll-margin-top: calc(var(--announcement-height) + var(--header-height));
 }
