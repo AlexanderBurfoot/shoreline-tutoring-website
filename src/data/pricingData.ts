@@ -32,8 +32,9 @@ export const hourlyPricing: PricingRow[] = [
 ];
 
 /*
- * Group rates are no longer priced per year level. Small-group classes are now
- * a single fixed-price Year 12 Mathematics program; see PROGRAM_PRICE in
+ * Group rates are not priced per year level. Small-group classes run for Year 12
+ * only and cost the same per lesson whichever course a student takes, so the one
+ * rate lives with the rest of the class settings; see SESSION_PRICE in
  * groupClassLaunch.ts.
  */
 

@@ -4,15 +4,16 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import './Pricing.css';
 import {
+    COURSES,
+    FIRST_LESSON_DATE_LONG,
     GROUP_CLASSES_PATH,
-    LAUNCH_DATE_LONG,
     LESSON_TEACHING_HOURS,
-    MATHS_COURSES,
-    MAX_CLASS_SIZE,
-    PROGRAM_HOURLY_RATE,
-    PROGRAM_PRICE,
-    PROGRAM_LENGTH,
-    PROGRAM_LENGTH_TITLE,
+    SESSION_HOURLY_RATE,
+    SESSION_PRICE,
+    TERM_LABEL,
+    TERM_PAID_SESSIONS,
+    TERM_PRICE,
+    TRIAL_OFFER,
 } from '../data/groupClassLaunch';
 import {
     LESSONS_PER_BUNDLE,
@@ -37,7 +38,7 @@ const faqs = [
     },
     {
         question: 'Who are the small-group classes for?',
-        answer: `Small-group classes are a ${PROGRAM_LENGTH} HSC program for Year 12 Mathematics Standard, Advanced and Extension 1, starting ${LAUNCH_DATE_LONG}. Each course runs as its own class, capped at ${MAX_CLASS_SIZE} students. Week 1 is free. One-on-one tutoring remains available across Years 1 to 12 in all our subjects.`,
+        answer: `Small-group classes run weekly for Year 12 Mathematics Standard, Advanced and Extension 1, Physics and Chemistry, from ${FIRST_LESSON_DATE_LONG}. Each course runs as its own class, so nobody sits through content meant for a different course. The first lesson is free. One-on-one tutoring remains available across Years 1 to 12 in all our subjects.`,
     },
     {
         question: 'Do you offer sibling discounts?',
@@ -45,7 +46,7 @@ const faqs = [
     },
     {
         question: 'What subjects do you offer?',
-        answer: 'We offer tutoring in English, Mathematics, Physics, Chemistry, Economics, Business Studies, NAPLAN Preparation, as well as Selective High School exam and Opportunity Classes exam preparation.',
+        answer: 'We offer tutoring in English, Mathematics, Physics, Chemistry, Economics, Business Studies, NAPLAN Preparation, as well as Selective High School exam and Opportunity Classes exam preparation. Small-group classes currently run for Year 12 maths, physics and chemistry.',
     },
     {
         question: 'How do I get started?',
@@ -125,24 +126,23 @@ const Pricing = () => {
                         Invest in Your <span className="gold-text">Academic Future</span>
                     </h1>
                     <p className="pricing-hero__subtitle">
-                        Transparent pricing. One-on-one tutoring across Years 1 to 12, and a
-                        {' '}{PROGRAM_LENGTH} small-group HSC program for Year 12 Mathematics.
+                        Transparent pricing. One-on-one tutoring across Years 1 to 12, and
+                        weekly small-group classes for Year 12 maths, physics and chemistry.
                     </p>
                 </div>
             </section>
 
-            {/* Year 12 maths program. Group leads the page for the launch;
-                swap the two category blocks to put one-on-one first. */}
+            {/* Year 12 small-group classes. Group leads the page; swap the two
+                category blocks to put one-on-one first. */}
             <section className="pricing-category-heading">
                 <div className="container pricing-category-heading__inner">
                     <span className="section-eyebrow">Option 1</span>
-                    <h2 className="pricing-category-heading__title">Year 12 HSC Maths Program</h2>
+                    <h2 className="pricing-category-heading__title">Year 12 Small-Group Classes</h2>
                     <p className="pricing-category-heading__text">
-                        A {PROGRAM_LENGTH} small-group program covering the whole Year 12 course
-                        before the HSC, for Mathematics Standard, Advanced and Extension 1. Each
-                        course runs as its own class of no more than {MAX_CLASS_SIZE} students,
-                        with one {LESSON_TEACHING_HOURS}-hour lesson a week starting{' '}
-                        {LAUNCH_DATE_LONG}.
+                        One {LESSON_TEACHING_HOURS}-hour lesson a week working through the Year 12
+                        course alongside school, for Mathematics Standard, Advanced and Extension 1,
+                        Physics and Chemistry. Every course runs as its own class, weekly from{' '}
+                        {FIRST_LESSON_DATE_LONG}.
                     </p>
                 </div>
             </section>
@@ -150,22 +150,26 @@ const Pricing = () => {
             <section className="pricing-table-section section">
                 <div className="container">
                     <div className="pricing-table-header">
-                        <span className="pricing-table-badge">Week 1 free</span>
-                        <h3 className="pricing-table-title">{PROGRAM_LENGTH_TITLE} Program</h3>
+                        <span className="pricing-table-badge">{TRIAL_OFFER}</span>
+                        <h3 className="pricing-table-title">Weekly Classes</h3>
                         <p className="pricing-table-subtitle">
-                            One price for the whole program, the same whether you attend in person
-                            on Saturdays or online on Sundays. Sit week 1 free and only pay if you
+                            One price per lesson, the same whether you attend in person on Saturdays
+                            or online on Sundays. Sit the first lesson free and only pay if you
                             decide to stay.
                         </p>
                     </div>
 
                     <div className="pricing-program">
                         <div className="pricing-program__price">
-                            {PROGRAM_PRICE}
-                            <small>for the rest of the {PROGRAM_LENGTH} program · {PROGRAM_HOURLY_RATE} an hour · week 1 free</small>
+                            {SESSION_PRICE}
+                            <small>
+                                per {LESSON_TEACHING_HOURS}-hour lesson · {SESSION_HOURLY_RATE} an
+                                hour · {TERM_PRICE} for the {TERM_PAID_SESSIONS} paid lessons left
+                                in {TERM_LABEL}
+                            </small>
                         </div>
                         <ul className="pricing-program__courses">
-                            {MATHS_COURSES.map((course) => (
+                            {COURSES.map((course) => (
                                 <li key={course.id} className="pricing-program__course">
                                     <span className="pricing-program__check" aria-hidden="true">✓</span>
                                     Year 12 {course.name}
@@ -176,7 +180,7 @@ const Pricing = () => {
                             Reserve a Free Seat
                         </button>
                         <Link href={GROUP_CLASSES_PATH} className="pricing-program__link">
-                            See what the program covers
+                            See what the classes cover
                         </Link>
                     </div>
                 </div>
@@ -295,7 +299,7 @@ const Pricing = () => {
                             Ready to Get Started?
                         </h1>
                         <p className="pricing-bottom-cta__text">
-                            Book a free session in whichever format suits, one-on-one or small-group, and discover the Shoreline difference. No obligation, no pressure; just results.
+                            Book a free lesson in whichever format suits, one-on-one or small-group, and discover the Shoreline difference. No obligation, no pressure; just results.
                         </p>
                         <button onClick={handleGetStarted} className="btn btn-primary pricing-bottom-cta__btn">
                             Book Your Free Session

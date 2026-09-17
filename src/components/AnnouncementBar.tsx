@@ -5,30 +5,37 @@ import './AnnouncementBar.css';
 import {
     ANNOUNCEMENT_DISMISSED_KEY,
     ANNOUNCEMENT_HIDDEN_CLASS,
+    FIRST_LESSON_DATE_SHORT,
     GROUP_CLASSES_PATH,
-    LAUNCH_DATE_SHORT,
-    PROGRAM_LENGTH,
-    launchDayPhrase,
+    IN_PERSON_DAY,
+    ONLINE_DAY,
+    TRIAL_OFFER,
+    firstLessonDayPhrase,
 } from '../data/groupClassLaunch';
 
 /**
- * The launch phrase only needs to be read once per page view, so there is
+ * The day phrase only needs to be read once per page view, so there is
  * nothing to subscribe to; the unsubscribe callback is a no-op.
  */
 const subscribeToNothing = () => () => { };
 
+/** Shown once the first lesson has passed, and in the prerendered HTML. */
+const ONGOING_DETAIL = `${IN_PERSON_DAY} in person or ${ONLINE_DAY} online`;
+
 const AnnouncementBar = () => {
-    // Rendered server-side so the launch is in the HTML for every first visit;
+    // Rendered server-side so the bar is in the HTML for every first visit;
     // the pre-paint script handles the already-dismissed case without a flash.
     const [isDismissed, setIsDismissed] = useState(false);
 
     // The page is prerendered at build time, so a build-time phrase would be
     // stale and would not match what the browser computes on hydration. The
-    // server snapshot is therefore null and the phrase appears on the client;
-    // the date and the offer carry the bar until it does.
+    // server snapshot is therefore null, which renders the ongoing wording.
+    // That wording is true whatever the date, so nothing stale is ever baked
+    // into the HTML; the client upgrades it to the countdown while the first
+    // lesson is still ahead, and leaves it alone once the date has passed.
     const dayPhrase = useSyncExternalStore(
         subscribeToNothing,
-        () => launchDayPhrase(),
+        () => firstLessonDayPhrase(),
         () => null,
     );
 
@@ -45,24 +52,28 @@ const AnnouncementBar = () => {
     if (isDismissed) return null;
 
     return (
-        <aside className="announcement" aria-label="Year 12 HSC maths program announcement">
+        <aside className="announcement" aria-label="Year 12 small-group classes announcement">
             <Link href={GROUP_CLASSES_PATH} className="announcement__link">
                 <span className="announcement__badge">New</span>
 
                 <span className="announcement__headline">
-                    Year 12 HSC Maths
-                    <span className="announcement__headline-detail"> · {PROGRAM_LENGTH} program</span>
-                    {' '}starts {LAUNCH_DATE_SHORT}
+                    Year 12 Small-Group Classes
+                    {dayPhrase ? (
+                        <>
+                            <span className="announcement__headline-detail"> · maths, physics and chemistry</span>
+                            {' '}start {FIRST_LESSON_DATE_SHORT}
+                        </>
+                    ) : (
+                        <span className="announcement__headline-detail"> · {ONGOING_DETAIL}</span>
+                    )}
                 </span>
 
-                <span className="announcement__offer">Week 1 free</span>
+                <span className="announcement__offer">{TRIAL_OFFER}</span>
 
-                {dayPhrase && (
-                    <span className="announcement__countdown">
-                        <span className="announcement__pulse" aria-hidden="true"></span>
-                        {dayPhrase}
-                    </span>
-                )}
+                <span className="announcement__countdown">
+                    <span className="announcement__pulse" aria-hidden="true"></span>
+                    {dayPhrase ?? 'Enrolling now'}
+                </span>
 
                 <span className="announcement__cta">
                     Reserve a spot

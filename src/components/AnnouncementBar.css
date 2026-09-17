@@ -183,7 +183,7 @@
     }
 }
 
-/* Mid-width: drop the badge and the program length before anything wraps. */
+/* Mid-width: drop the badge and the course detail before anything wraps. */
 @media (max-width: 1100px) {
     .announcement__badge,
     .announcement__headline-detail {

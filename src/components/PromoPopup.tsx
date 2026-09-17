@@ -8,18 +8,16 @@ import {
     type ClassPreference,
     GROUP_CLASSES_PATH,
     GROUP_CLASS_DAYS,
-    MATHS_COURSES,
-    MAX_CLASS_SIZE,
-    PROGRAM_HOURLY_RATE,
-    PROGRAM_PRICE,
-    PROGRAM_LENGTH,
-    PROGRAM_LENGTH_TITLE,
-    PROGRAM_SESSIONS,
+    COURSES,
+    type Course,
+    LESSON_TEACHING_HOURS,
     PROMO_BACKGROUND_IMAGE,
+    SESSION_HOURLY_RATE,
+    SESSION_PRICE,
+    TRIAL_OFFER,
     VENUE_SUBURB,
-    launchCountdown,
+    firstLessonCountdown,
     type GroupClassDay,
-    type MathsCourse,
 } from '../data/groupClassLaunch';
 
 import { trackEvent } from '../lib/analytics';
@@ -48,8 +46,8 @@ const FOCUSABLE_SELECTOR = 'button, [href], input, select, textarea, [tabindex]:
 const pad = (value: number) => String(value).padStart(2, '0');
 
 const SELLING_POINTS = [
-    'Covers the whole Year 12 course before the HSC',
-    `Never more than ${MAX_CLASS_SIZE} students in the room`,
+    'Works through the Year 12 course alongside school',
+    'Every course runs as its own class',
     `In person at ${VENUE_SUBURB} or live online`,
     'No payment up front, no obligation to continue',
 ];
@@ -58,10 +56,10 @@ const PromoPopup = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const [selectedDay, setSelectedDay] = useState<GroupClassDay['id'] | null>(null);
-    const [selectedCourse, setSelectedCourse] = useState<MathsCourse['id'] | null>(null);
+    const [selectedCourse, setSelectedCourse] = useState<Course['id'] | null>(null);
     // Safe to compute directly: the popup renders nothing until a trigger
     // fires on the client, so there is no server output to mismatch.
-    const [countdown, setCountdown] = useState(() => launchCountdown());
+    const [countdown, setCountdown] = useState(() => firstLessonCountdown());
     const dialogRef = useRef<HTMLDivElement>(null);
     const router = useRouter();
     const pathname = usePathname();
@@ -117,7 +115,7 @@ const PromoPopup = () => {
 
     useEffect(() => {
         if (!isOpen) return;
-        const tick = setInterval(() => setCountdown(launchCountdown()), COUNTDOWN_TICK_MS);
+        const tick = setInterval(() => setCountdown(firstLessonCountdown()), COUNTDOWN_TICK_MS);
         return () => clearInterval(tick);
     }, [isOpen]);
 
@@ -181,7 +179,7 @@ const PromoPopup = () => {
         if (next) trackEvent('promo_day_selected', { day: day.id });
     };
 
-    const handleCourseSelect = (course: MathsCourse) => {
+    const handleCourseSelect = (course: Course) => {
         const next = selectedCourse === course.id ? null : course.id;
         setSelectedCourse(next);
         if (next) trackEvent('promo_course_selected', { course: course.id });
@@ -235,7 +233,7 @@ const PromoPopup = () => {
         { value: countdown.seconds, label: 'Sec' },
     ];
 
-    const chosenCourse = MATHS_COURSES.find(option => option.id === selectedCourse) ?? null;
+    const chosenCourse = COURSES.find(option => option.id === selectedCourse) ?? null;
 
     return createPortal(
         <>
@@ -267,18 +265,18 @@ const PromoPopup = () => {
                         <img src={logo} alt="Shoreline Tutoring" className="promo-popup__logo" width={1966} height={1289} />
 
                         <h2 className="promo-popup__title" id="promo-popup-title">
-                            Year 12 HSC Maths
-                            <span className="promo-popup__title-accent">{PROGRAM_LENGTH_TITLE} Program</span>
+                            Year 12 Small-Group
+                            <span className="promo-popup__title-accent">Weekly Classes</span>
                         </h2>
 
                         <div className="promo-popup__discount">
                             <span className="promo-popup__percent">FREE</span>
-                            <span className="promo-popup__off">week&nbsp;1</span>
+                            <span className="promo-popup__off">first&nbsp;lesson</span>
                         </div>
 
                         {!countdown.hasStarted && (
                             <div className="promo-popup__countdown">
-                                <span className="promo-popup__countdown-label">First class starts in</span>
+                                <span className="promo-popup__countdown-label">First lesson starts in</span>
                                 <div className="promo-popup__countdown-units">
                                     {countdownUnits.map(unit => (
                                         <div key={unit.label} className="promo-popup__unit">
@@ -336,8 +334,8 @@ const PromoPopup = () => {
                             <span className="promo-step__number">2</span>
                             Pick your course
                         </h3>
-                        <div className="promo-popup__years" role="group" aria-label="Choose your HSC maths course">
-                            {MATHS_COURSES.map(course => {
+                        <div className="promo-popup__years" role="group" aria-label="Choose your Year 12 course">
+                            {COURSES.map(course => {
                                 const isActive = selectedCourse === course.id;
                                 return (
                                     <button
@@ -356,8 +354,8 @@ const PromoPopup = () => {
 
                         <p className={`promo-popup__rate ${chosenCourse ? 'promo-popup__rate--shown' : ''}`} aria-live="polite">
                             {chosenCourse
-                                ? <>Year 12 {chosenCourse.name}: <strong>{PROGRAM_PRICE}</strong> for the rest of the {PROGRAM_LENGTH} program ({PROGRAM_HOURLY_RATE} an hour), week 1 free.</>
-                                : `${PROGRAM_SESSIONS} weekly sessions covering the whole Year 12 course. Week 1 free.`}
+                                ? <>Year 12 {chosenCourse.name}: <strong>{SESSION_PRICE}</strong> per {LESSON_TEACHING_HOURS}-hour lesson ({SESSION_HOURLY_RATE} an hour), first lesson free.</>
+                                : `One ${LESSON_TEACHING_HOURS}-hour lesson a week, working through the Year 12 course alongside school. ${TRIAL_OFFER}.`}
                         </p>
                     </div>
 
@@ -374,7 +372,8 @@ const PromoPopup = () => {
                         </button>
 
                         <p className="promo-popup__fine-print">
-                            Places are limited to {MAX_CLASS_SIZE} students per class.
+                            Every course runs as its own class, so you are never sitting through
+                            content meant for a different one.
                         </p>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 import './ReserveStrip.css';
 import {
+    FIRST_LESSON_DATE_LONG,
     GROUP_CLASSES_PATH,
-    LAUNCH_DATE_LONG,
-    MAX_CLASS_SIZE,
+    TRIAL_OFFER,
 } from '../data/groupClassLaunch';
 import { TrackedLink } from './NavLinks';
 
@@ -17,12 +17,12 @@ const CTA_LABEL = 'Reserve a Free Seat';
  * are tracked, so they can be compared with the group enquiries that follow.
  */
 const ReserveStrip = () => (
-    <section className="reserve-strip" aria-label="Reserve a place in the HSC maths program">
+    <section className="reserve-strip" aria-label="Reserve a place in a small-group class">
         <div className="container reserve-strip__inner">
             <p className="reserve-strip__text">
-                <strong className="reserve-strip__headline">Classes start {LAUNCH_DATE_LONG}</strong>
+                <strong className="reserve-strip__headline">Weekly classes from {FIRST_LESSON_DATE_LONG}</strong>
                 <span className="reserve-strip__detail">
-                    Week 1 free · Places limited to {MAX_CLASS_SIZE} students per class
+                    {TRIAL_OFFER} · Every course runs as its own class
                 </span>
             </p>
             <TrackedLink

@@ -43,7 +43,7 @@ const Services = () => {
                         <h2 className="section-title">Subject <span className="gold-text">Expertise</span></h2>
                         <p className="section-subtitle">
                             Every lesson is mapped to the NSW syllabus and tailored to you. All of
-                            these are available one-on-one; small-group classes currently run{' '}
+                            these are available one-on-one; small-group classes currently run for{' '}
                             {GROUP_SCOPE_SUMMARY}.
                         </p>
                     </div>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import './Approach.css';
-import { GROUP_CLASSES_PATH, PROGRAM_LENGTH } from '../data/groupClassLaunch';
+import { GROUP_CLASSES_PATH } from '../data/groupClassLaunch';
 
 const steps = [
     {
@@ -39,10 +39,10 @@ const Approach = () => {
                     <h2 className="section-title">Our <span className="gold-text">Approach</span></h2>
                     <p className="section-subtitle">
                         A proven methodology that transforms potential into achievement through structured, personalized guidance.
-                        This is how one-on-one tutoring runs; our small-group programs follow a
-                        fixed {PROGRAM_LENGTH} plan set before the first session.{' '}
+                        This is how one-on-one tutoring runs; small-group classes follow a
+                        weekly course plan shared by everyone in the room.{' '}
                         <Link href={GROUP_CLASSES_PATH} className="section-subtitle__link">
-                            See the group program
+                            See small-group classes
                         </Link>.
                     </p>
                 </div>

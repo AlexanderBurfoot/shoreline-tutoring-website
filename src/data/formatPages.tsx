@@ -5,23 +5,20 @@ import {
     IN_PERSON_FIRST_CLASS,
     LESSON_BREAK_MINUTES,
     LESSON_TEACHING_HOURS,
-    LAUNCH_DATE_LONG,
-    LAUNCH_OFFER,
+    FIRST_LESSON_DATE_LONG,
+    TRIAL_OFFER,
     SESSION_SLOTS,
     SESSION_START_TIMES,
     SESSION_TIME_NOTE,
-    MATHS_COURSES,
-    MAX_CLASS_SIZE,
+    COURSES,
     ONE_ON_ONE_FORMAT,
     ONE_ON_ONE_PATH,
     ONLINE_FIRST_CLASS,
-    PROGRAM_HOURLY_RATE,
-    PROGRAM_PAID_LESSONS,
-    PROGRAM_PRICE,
-    PROGRAM_LENGTH,
-    PROGRAM_LENGTH_TITLE,
-    PROGRAM_SESSIONS,
-    PROGRAM_SESSIONS_WORD,
+    SESSION_HOURLY_RATE,
+    SESSION_PRICE,
+    TERM_LABEL,
+    TERM_PAID_SESSIONS,
+    TERM_PRICE,
     VENUE_ADDRESS,
 } from './groupClassLaunch';
 import {
@@ -114,7 +111,7 @@ export interface FormatPageContent {
     benefits: { header: SectionHeader; items: FormatBenefit[] };
     steps: { header: SectionHeader; items: FormatStep[] };
     /** Course streams, where the format runs more than one. */
-    courses?: { header: SectionHeader; items: typeof MATHS_COURSES };
+    courses?: { header: SectionHeader; items: typeof COURSES };
     /** The teaching space, shown only by formats that actually meet in it. */
     facilities?: { header: SectionHeader };
     pricing: {
@@ -286,8 +283,8 @@ export const oneOnOnePage: FormatPageContent = {
         ],
         footnote: (
             <>
-                Family discounts apply when you enrol more than one student. Year 12 Mathematics
-                students can also join our {PROGRAM_LENGTH} HSC small-group program.
+                Family discounts apply when you enrol more than one student. Year 12 students
+                can also join our weekly small-group classes.
             </>
         ),
     },
@@ -324,7 +321,7 @@ export const oneOnOnePage: FormatPageContent = {
             {
                 question: 'How does this compare with small-group classes?',
                 answer:
-                    'One-on-one gives your child the whole session and a plan built only for them. Group classes cost substantially less per hour and add peer discussion, capped at a handful of students. Many families start with one and add the other.',
+                    'One-on-one gives your child the whole session and a plan built only for them. Group classes cost substantially less per hour, add peer discussion, and run one class per course. Many families start with one and add the other.',
             },
         ],
     },
@@ -343,37 +340,37 @@ export const oneOnOnePage: FormatPageContent = {
 
 export const groupClassesPage: FormatPageContent = {
     hero: {
-        badge: 'Year 12 Maths · Now enrolling',
-        title: { lead: `A ${PROGRAM_LENGTH_TITLE} HSC Maths Program`, accent: `From ${LAUNCH_DATE_LONG}` },
+        badge: 'Year 12 · Now enrolling',
+        title: { lead: 'Year 12 Small-Group Classes', accent: `Weekly from ${FIRST_LESSON_DATE_LONG}` },
         subtitle: (
             <>
-                For Year 12 <strong>Mathematics Standard, Advanced and Extension 1</strong>:{' '}
-                {PROGRAM_SESSIONS_WORD} weekly sessions covering the whole course before your HSC exams, capped at{' '}
-                {MAX_CLASS_SIZE} students, in person at {VENUE_ADDRESS} on Saturdays or live online
-                on Sundays. <strong>Week 1 is free.</strong>
+                For Year 12 <strong>Mathematics Standard, Advanced and Extension 1, Physics and
+                Chemistry</strong>: one {LESSON_TEACHING_HOURS}-hour lesson a week working through
+                the course alongside school, in person at {VENUE_ADDRESS} on Saturdays or live
+                online on Sundays. <strong>The first lesson is free.</strong>
             </>
         ),
         facts: [
-            { label: 'Program length', value: `${PROGRAM_SESSIONS} weeks · one ${LESSON_TEACHING_HOURS}-hour lesson a week` },
+            { label: 'Each week', value: `One ${LESSON_TEACHING_HOURS}-hour lesson · ${LESSON_BREAK_MINUTES}-minute break` },
             { label: 'In person · St Leonards', value: `From ${IN_PERSON_FIRST_CLASS}, ${SESSION_START_TIMES}` },
             { label: 'Online · live from home', value: `From ${ONLINE_FIRST_CLASS}, ${SESSION_START_TIMES}` },
-            { label: 'Price', value: `Week 1 free, then ${PROGRAM_PRICE} (${PROGRAM_HOURLY_RATE} an hour)` },
+            { label: 'Price', value: `${TRIAL_OFFER}, then ${SESSION_PRICE} a lesson (${SESSION_HOURLY_RATE} an hour)` },
         ],
-        primaryCta: { href: GROUP_ENQUIRY_HREF, label: 'Reserve a Free Seat' },
+        primaryCta: { href: GROUP_ENQUIRY_HREF, label: 'Book a Free Lesson' },
         // A route plus anchor rather than a bare anchor, so the same button works
         // on the homepage (which opens this page) and here (which jumps down).
         secondaryCta: { href: `${GROUP_CLASSES_PATH}#${PRICING_SECTION_ID}`, label: 'See Pricing & What’s Included' },
-        reassurance: 'Week 1 is free. No payment up front, and no obligation to continue.',
+        reassurance: 'The first lesson is free. No payment up front, and no obligation to continue.',
         logoBackdrop: true,
     },
     courses: {
         header: {
-            eyebrow: 'Three Courses',
+            eyebrow: 'Five Courses',
             title: { lead: 'One class per', accent: 'course' },
             subtitle:
-                'Standard, Advanced and Extension 1 each run as their own class. Nobody sits through content that is not on their paper, and nothing is watered down to suit a mixed room.',
+                'Standard, Advanced, Extension 1, Physics and Chemistry each run as their own class. Nobody sits through content that is not on their paper, and nothing is watered down to suit a mixed room.',
         },
-        items: MATHS_COURSES,
+        items: COURSES,
     },
     facilities: {
         header: {
@@ -388,7 +385,7 @@ export const groupClassesPage: FormatPageContent = {
             eyebrow: 'Two Ways to Attend',
             title: { lead: 'Saturdays', accent: 'or', trail: 'Sundays' },
             subtitle:
-                `The same ${PROGRAM_LENGTH} program, the same content and the same price, on two different days. In person at ${VENUE_ADDRESS} on Saturdays, or live online on Sundays.`,
+                `The same classes, the same content and the same price, on two different days. In person at ${VENUE_ADDRESS} on Saturdays, or live online on Sundays.`,
         },
         options: [
             {
@@ -417,26 +414,26 @@ export const groupClassesPage: FormatPageContent = {
     },
     benefits: {
         header: {
-            eyebrow: 'Why This Program',
-            title: { lead: 'The whole course,', accent: 'before the exam' },
+            eyebrow: 'Why These Classes',
+            title: { lead: 'Your course,', accent: 'every week' },
             subtitle:
-                `${PROGRAM_SESSIONS_WORD.charAt(0).toUpperCase()}${PROGRAM_SESSIONS_WORD.slice(1)} focused sessions can cover every topic, provided the room is small and the plan is built around the paper.`,
+                'A class that follows one course and one plan, week after week, rather than a room of students working on five different things.',
         },
         items: [
             {
-                title: 'Full course coverage in four weeks',
+                title: 'Every course runs as its own class',
                 description:
-                    `A fixed plan across the ${PROGRAM_SESSIONS_WORD} sessions that works through every Year 12 topic in your course, so nothing is left to chance in the last fortnight.`,
+                    'Standard, Advanced, Extension 1, Physics and Chemistry each have their own room and their own plan. Nobody sits through content that is not on their paper.',
             },
             {
-                title: `Never more than ${MAX_CLASS_SIZE} students`,
+                title: 'Alongside school, week by week',
                 description:
-                    'Small enough that every student is asked questions and gets their working checked. This close to the HSC, quietly misunderstanding something is expensive.',
+                    'Each lesson consolidates what school has just covered and gets ahead of what is coming, so the work compounds across the year instead of being crammed at the end.',
             },
             {
-                title: 'Built around the exam, not the term',
+                title: 'Past HSC questions from the first lesson',
                 description:
-                    'Past HSC questions, marking criteria and the traps that cost marks every year, rather than a rerun of what school already covered.',
+                    'Marking criteria and the traps that cost marks every year, worked in from the start rather than saved for a revision block in October.',
             },
             {
                 title: 'The same tutors as our one-on-one students',
@@ -447,51 +444,52 @@ export const groupClassesPage: FormatPageContent = {
     },
     steps: {
         header: {
-            eyebrow: 'Week 1 Is Free',
+            eyebrow: 'First Lesson Free',
             title: { lead: 'What actually', accent: 'happens' },
             subtitle:
-                'No trial-lesson theatre. Week 1 is a real session of the program, and you decide before week 2 whether to continue.',
+                'No trial-lesson theatre. Your first lesson is an ordinary week of the class, and you decide afterwards whether to keep coming.',
         },
         items: [
             {
                 step: '1',
                 title: 'Tell us your course',
                 description:
-                    'Standard, Advanced or Extension 1, and where you currently feel weakest. That determines which class you join and what we watch for in the first session.',
+                    'Standard, Advanced, Extension 1, Physics or Chemistry, and where you currently feel weakest. That determines which class you join and what we watch for in the first lesson.',
             },
             {
                 step: '2',
-                title: 'Sit week 1, free',
+                title: 'Sit your first lesson, free',
                 description:
-                    'A full session of the program, not a demo. Real content, real past-paper work, and real feedback alongside the other students.',
+                    'An ordinary week of the class, not a demo. Real content, real past-paper work, and real feedback alongside the other students.',
             },
             {
                 step: '3',
-                title: 'Decide before week 2',
+                title: 'Decide afterwards',
                 description:
-                    'We send a short note on how the session went and what the remaining weeks cover. If it is not right, that is genuinely the end of it.',
+                    'We send a short note on how the lesson went and what the class covers next. If it is not right, that is genuinely the end of it.',
             },
         ],
     },
     pricing: {
         header: {
             eyebrow: 'What It Costs',
-            title: { lead: 'One price,', accent: 'whole program' },
+            title: { lead: 'One price,', accent: 'every lesson' },
             subtitle: (
                 <>
-                    Week 1 is free. If you continue, {PROGRAM_PRICE} covers the remaining{' '}
-                    {PROGRAM_PAID_LESSONS} lessons, which works out to {PROGRAM_HOURLY_RATE} an hour.
-                    The price is the same whether you attend in person or online.
+                    The first lesson is free. After that each lesson is {SESSION_PRICE}, which works
+                    out to {SESSION_HOURLY_RATE} an hour, or {TERM_PRICE} for the{' '}
+                    {TERM_PAID_SESSIONS} paid lessons left in {TERM_LABEL}. The price is the same
+                    whether you attend in person or online.
                 </>
             ),
         },
         program: {
-            label: `${PROGRAM_LENGTH_TITLE} HSC program`,
-            price: PROGRAM_PRICE,
-            caption: `${PROGRAM_HOURLY_RATE} an hour for the remaining ${PROGRAM_PAID_LESSONS} lessons · week 1 free`,
+            label: `Per ${LESSON_TEACHING_HOURS}-hour lesson`,
+            price: SESSION_PRICE,
+            caption: `${SESSION_HOURLY_RATE} an hour · ${TERM_PRICE} for the ${TERM_PAID_SESSIONS} paid lessons left in ${TERM_LABEL}`,
             inclusions: [
-                `All ${PROGRAM_SESSIONS_WORD} lessons, ${LESSON_TEACHING_HOURS} hours of teaching each`,
-                `A class of no more than ${MAX_CLASS_SIZE} students`,
+                `${LESSON_TEACHING_HOURS} hours of teaching every lesson`,
+                'A class that runs only your course',
                 'Past HSC papers and worked solutions',
                 'Personalised homework after every session',
                 'Saturdays in person or Sundays online, same price',
@@ -514,26 +512,26 @@ export const groupClassesPage: FormatPageContent = {
             {
                 question: 'Who are these classes for?',
                 answer:
-                    'Year 12 students sitting Mathematics Standard, Advanced or Extension 1 in the upcoming HSC. Each course runs as its own class. We do not currently run group classes for other year levels or subjects, though one-on-one tutoring is available across Years 1 to 12.',
+                    'Year 12 students sitting Mathematics Standard, Advanced or Extension 1, Physics or Chemistry. Each course runs as its own class. We do not currently run group classes for other year levels or subjects, though one-on-one tutoring is available across Years 1 to 12.',
             },
             {
-                question: 'Is week 1 really free?',
+                question: 'Is the first lesson really free?',
                 answer:
-                    `Yes. The first of the ${PROGRAM_SESSIONS_WORD} sessions costs nothing, with nothing to pay up front. You only pay if you decide to stay for the rest of the program.`,
+                    'Yes. Your first lesson costs nothing, with nothing to pay up front. You only pay if you decide to keep coming.',
             },
             {
-                question: 'Can you really cover the whole course in four weeks?',
+                question: 'How do the classes fit around school?',
                 answer:
-                    `The program is planned across the ${PROGRAM_SESSIONS_WORD} sessions to work through every Year 12 topic in your course, at revision pace rather than teaching it from scratch. It is built for students who have seen the content at school and need it consolidated and drilled against past papers before the exam.`,
+                    'Each week follows the Year 12 course your school is teaching, consolidating what has just been covered and getting ahead of what is coming next. The aim is that school and class reinforce each other across the year, rather than the class becoming a second set of homework.',
             },
             {
                 question: 'Can I choose between in person and online?',
                 answer:
-                    'Yes. Both run the same program at the same price, so pick whichever suits your week when you enquire. Saturdays are in person at St Leonards, Sundays are live online.',
+                    'Yes. Both cover the same material at the same price, so pick whichever suits your week when you enquire. Saturdays are in person at St Leonards, Sundays are live online.',
             },
             {
-                question: 'What if the class fills up?',
-                answer: `Because we cap classes at ${MAX_CLASS_SIZE} students, places genuinely run out. If your course is full we will let you know rather than squeezing another student in.`,
+                question: 'Can I join partway through the term?',
+                answer: 'Yes. Classes run every week through the term, so you can start whenever suits and still sit your first lesson free. Tell us which course you are in and we will let you know what the class has covered so far.',
             },
             {
                 question: 'What time is my class?',
@@ -547,14 +545,14 @@ export const groupClassesPage: FormatPageContent = {
         ],
     },
     finalCta: {
-        title: `The program starts ${LAUNCH_DATE_LONG}`,
+        title: `Classes run weekly from ${FIRST_LESSON_DATE_LONG}`,
         text: (
             <>
                 Tell us which course you are sitting and whether Saturdays or Sundays suit, and we
-                will save you a seat. {LAUNCH_OFFER}.
+                will save you a seat. {TRIAL_OFFER}.
             </>
         ),
         format: GROUP_FORMAT,
-        note: `Places are limited to ${MAX_CLASS_SIZE} students per class.`,
+        note: 'Every course runs as its own class, so tell us which one you are sitting.',
     },
 };

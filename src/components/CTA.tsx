@@ -17,7 +17,7 @@ import {
     GROUP_CLASS_DAYS,
     GROUP_FORMAT,
     LEARNING_FORMATS,
-    MATHS_COURSES,
+    COURSES,
     VENUE_ADDRESS,
     VENUE_MAP_URL,
     type ClassPreference,
@@ -48,7 +48,7 @@ const toOptions = (values: string[]): ChoiceOption[] => values.map((value) => ({
 
 const FORMAT_OPTIONS = toOptions(LEARNING_FORMATS);
 const SUBJECT_OPTIONS = toOptions(SUBJECTS);
-const COURSE_OPTIONS: ChoiceOption[] = MATHS_COURSES.map((course) => ({ value: course.id, label: course.shortName }));
+const COURSE_OPTIONS: ChoiceOption[] = COURSES.map((course) => ({ value: course.id, label: course.shortName }));
 const DAY_OPTIONS: ChoiceOption[] = GROUP_CLASS_DAYS.map((day) => ({ value: day.id, label: day.shortLabel }));
 
 const emptyForm = (format: string): FormData => ({
@@ -82,7 +82,7 @@ function readClassPreference(): ClassPreference | null {
         if (!stored) return null;
         const parsed = JSON.parse(stored) as Partial<ClassPreference>;
         return {
-            course: MATHS_COURSES.find((course) => course.id === parsed.course)?.id ?? null,
+            course: COURSES.find((course) => course.id === parsed.course)?.id ?? null,
             day: GROUP_CLASS_DAYS.find((day) => day.id === parsed.day)?.id ?? null,
         };
     } catch {
@@ -142,7 +142,7 @@ function findMissingChoice(form: FormData): MissingChoice | null {
  */
 function buildPayload(form: FormData, honeypot: string) {
     const isGroup = form.format === GROUP_FORMAT;
-    const course = MATHS_COURSES.find((option) => option.id === form.course);
+    const course = COURSES.find((option) => option.id === form.course);
     const day = GROUP_CLASS_DAYS.find((option) => option.id === form.day);
 
     return {
@@ -396,13 +396,13 @@ const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, descript
                                 isSelected={(value) => formData.format === value}
                                 onToggle={(value) => update((prev) => ({ format: toggleSingle(prev.format, value) }))}
                             />
-                            {/* Group classes are Year 12 maths only, so asking for subjects
-                                would be a question with one right answer. The course and day
-                                say which class to place the student in instead. */}
+                            {/* Group classes are Year 12 only and each course is its own
+                                class, so the course and day say which class to place the
+                                student in, and asking for subjects would duplicate that. */}
                             {isGroupEnquiry ? (
                                 <>
                                     <ChoiceChips
-                                        label="Which Year 12 maths course?"
+                                        label="Which Year 12 course?"
                                         options={COURSE_OPTIONS}
                                         isSelected={(value) => formData.course === value}
                                         onToggle={(value) => update((prev) => ({ course: toggleSingle(prev.course, value) }))}

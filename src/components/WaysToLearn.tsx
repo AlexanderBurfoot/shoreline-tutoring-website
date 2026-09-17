@@ -5,9 +5,9 @@ import {
     GROUP_CLASSES_PATH,
     ONE_ON_ONE_PATH,
     GROUP_SCOPE_SUMMARY,
-    LAUNCH_DATE_LONG,
-    MAX_CLASS_SIZE,
-    PROGRAM_LENGTH,
+    FIRST_LESSON_DATE_LONG,
+    LESSON_TEACHING_HOURS,
+    TRIAL_OFFER,
 } from '../data/groupClassLaunch';
 
 interface LearningFormat {
@@ -19,7 +19,7 @@ interface LearningFormat {
     icon: React.ReactNode;
     /** Corner badge naming what this format offers to start with. */
     flash?: string;
-    /** Lifts a card out of the pair. Reserved for a dated, time-limited offer. */
+    /** Lifts a card out of the pair. Marks whichever format the site is leading with. */
     featured?: boolean;
     /** Where the card's link goes, and what it says. */
     link: { href: string; label: string };
@@ -47,19 +47,19 @@ const formats: LearningFormat[] = [
         ),
     },
     {
-        eyebrow: 'Year 12 Maths',
-        title: 'Small-Group HSC Program',
-        tagline: 'Four weeks to cover the whole Year 12 maths course.',
+        eyebrow: 'Year 12',
+        title: 'Small-Group Classes',
+        tagline: 'One course, one class, every week of the term.',
         description:
-            `A ${PROGRAM_LENGTH} program for Year 12 Mathematics Standard, Advanced and Extension 1, capped at ${MAX_CLASS_SIZE} students per class and built around the exam rather than the term.`,
+            `Weekly ${LESSON_TEACHING_HOURS}-hour classes working through the Year 12 course alongside school. Every course runs as its own class, so nobody sits through content meant for a different one.`,
         points: [
-            `Starts ${LAUNCH_DATE_LONG}`,
-            'Standard, Advanced and Extension 1',
+            `Weekly from ${FIRST_LESSON_DATE_LONG}`,
+            'Maths Standard, Advanced and Extension 1, Physics and Chemistry',
             'In person on Saturdays or online on Sundays',
         ],
-        flash: 'Week 1 free',
+        flash: TRIAL_OFFER,
         featured: true,
-        link: { href: GROUP_CLASSES_PATH, label: 'See the HSC maths program' },
+        link: { href: GROUP_CLASSES_PATH, label: 'See small-group classes' },
         icon: (
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -83,7 +83,7 @@ const WaysToLearn = () => {
                         </h2>
                         <p className="ways__subtitle">
                             One-on-one tutoring runs all year, across every year level and subject.
-                            Small-group classes run as focused programs. Right now, that means{' '}
+                            Small-group classes run weekly through the term, currently for{' '}
                             {GROUP_SCOPE_SUMMARY}. Ask us which suits your child best.
                         </p>
                     </div>

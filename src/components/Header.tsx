@@ -20,7 +20,7 @@ interface PageLink {
   label: string;
 }
 
-/** The two ways to learn lead the menu, group classes first while the launch runs. */
+/** The two ways to learn lead the menu, group classes first while they lead the site. */
 const FORMAT_LINKS: PageLink[] = [
   { href: GROUP_CLASSES_PATH, label: 'Group Classes' },
   { href: ONE_ON_ONE_PATH, label: 'One-on-One' },

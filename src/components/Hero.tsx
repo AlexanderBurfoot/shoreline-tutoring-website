@@ -4,9 +4,10 @@ import './Hero.css';
 const logo = '/ShorelineLogo.png';
 import ScrollReveal from './ScrollReveal';
 import {
+    FIRST_LESSON_DATE_LONG,
     GROUP_CLASSES_PATH,
-    LAUNCH_DATE_LONG,
     ONE_ON_ONE_PATH,
+    TRIAL_OFFER,
 } from '../data/groupClassLaunch';
 
 interface HeroProps {
@@ -57,9 +58,9 @@ const Hero = ({ asSection = false }: HeroProps) => {
                             <Link href={GROUP_CLASSES_PATH} className="hero__launch animate-fade-in-up">
                                 <span className="hero__launch-pulse" aria-hidden="true"></span>
                                 <span className="hero__launch-text">
-                                    Year 12 HSC maths program starts {LAUNCH_DATE_LONG}
+                                    Year 12 small-group classes, weekly from {FIRST_LESSON_DATE_LONG}
                                 </span>
-                                <span className="hero__launch-offer">Week 1 free</span>
+                                <span className="hero__launch-offer">{TRIAL_OFFER}</span>
                             </Link>
                         )}
                     </ScrollReveal>

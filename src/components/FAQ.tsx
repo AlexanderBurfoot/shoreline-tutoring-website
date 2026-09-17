@@ -10,11 +10,11 @@ const faqs = [
     },
     {
         question: 'What subjects and year levels do you cover?',
-        answer: 'We offer both one-on-one tutoring and small-group classes in Mathematics, Physics, Chemistry, Economics, and Business Studies for Years 7–12 (including HSC). We also provide targeted preparation programs for Selective High School entry, Opportunity Classes (OC), and NAPLAN across all tested year levels.',
+        answer: 'We offer one-on-one tutoring in Mathematics, Physics, Chemistry, Economics, and Business Studies for Years 7 to 12 (including HSC), and weekly small-group classes for Year 12 maths, physics and chemistry. We also provide targeted preparation programs for Selective High School entry, Opportunity Classes (OC), and NAPLAN across all tested year levels.',
     },
     {
         question: 'Are lessons online or in person?',
-        answer: 'One-on-one tutoring runs online, live with your tutor, which keeps scheduling flexible and removes travel either side of a lesson. Our Year 12 small-group HSC maths program runs both ways: in person at 558 Pacific Highway, St Leonards on Saturdays, or live online on Sundays.',
+        answer: 'One-on-one tutoring runs online, live with your tutor, which keeps scheduling flexible and removes travel either side of a lesson. Our Year 12 small-group classes run both ways: in person at 558 Pacific Highway, St Leonards on Saturdays, or live online on Sundays.',
     },
     {
         question: 'How long is each session?',
