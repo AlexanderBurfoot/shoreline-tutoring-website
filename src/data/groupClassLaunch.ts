@@ -252,7 +252,7 @@ export interface FacilityHighlight {
  */
 export const FACILITY_HIGHLIGHTS: FacilityHighlight[] = [
     {
-        title: 'Minutes from St Leonards station',
+        title: 'Minutes from St Leonards train station and Crows Nest metro station',
         description:
             'On the Pacific Highway and a short walk from the station, so students can get themselves to and from class without a lift.',
     },

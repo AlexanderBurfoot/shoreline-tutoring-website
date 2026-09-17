@@ -396,7 +396,7 @@ export const groupClassesPage: FormatPageContent = {
                 points: [
                     `First session ${IN_PERSON_FIRST_CLASS}`,
                     ...SESSION_SLOTS.map((slot) => `${slot.name} ${slot.time}`),
-                    'Quiet teaching rooms, minutes from Crows Nest metro station and St Leonards train station',
+                    'Quiet teaching rooms, minutes from St Leonards train station and Crows Nest metro station',
                 ],
             },
             {
