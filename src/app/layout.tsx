@@ -10,6 +10,7 @@ import { inter, cormorant } from './fonts';
 import { SITE_URL } from '../lib/site';
 import Script from 'next/script';
 import { ANNOUNCEMENT_DISMISSED_KEY, ANNOUNCEMENT_HIDDEN_CLASS } from '../data/groupClassLaunch';
+import { GOOGLE_ADS_ID } from '../lib/analytics';
 
 const GTM_CONTAINER_ID = 'GTM-K83P5GHL';
 
@@ -83,6 +84,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+        {/* Google Ads tag, identifying the account on every page so conversions
+            and remarketing work. It is loaded here rather than through Tag
+            Manager: adding an Ads tag in the container as well would count
+            every conversion twice. */}
+        <Script
+          id="google-ads-tag"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-config" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GOOGLE_ADS_ID}');`}
+        </Script>
         <script
           id="announcement-dismiss-state"
           dangerouslySetInnerHTML={{ __html: ANNOUNCEMENT_DISMISS_SCRIPT }}

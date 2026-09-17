@@ -11,7 +11,7 @@ import {
 import { useRouter } from 'next/navigation';
 import './CTA.css';
 import ChoiceChips, { type ChoiceOption } from './ChoiceChips';
-import { trackEvent } from '../lib/analytics';
+import { trackAdsConversion, trackEvent } from '../lib/analytics';
 import {
     CLASS_PREFERENCE_KEY,
     GROUP_CLASS_DAYS,
@@ -343,6 +343,7 @@ const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, descript
             // Fired here rather than on /thank-you so a visitor who bookmarks
             // that page cannot inflate the count.
             trackEvent('enquiry_success', enquiryShape);
+            trackAdsConversion();
             setFormData(emptyForm(defaultFormat));
             router.push('/thank-you');
         } catch (err) {
