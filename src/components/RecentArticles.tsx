@@ -18,10 +18,10 @@ const RecentArticles = () => {
                             <span className="section-eyebrow">Resources</span>
                             <h2 className="section-title">Latest <span className="gold-text">Insights</span></h2>
                             <p className="section-subtitle">
-                                Strategies, study guides, and expert advice to help you maximize your results.
+                                Strategies, study guides, and expert advice to help you maximise your results.
                             </p>
                         </div>
-                        <Link href="/resources" className="btn btn-outline recent-articles__view-all">
+                        <Link href="/resources" className="btn btn-secondary recent-articles__view-all">
                             View All Articles
                         </Link>
                     </div>
@@ -55,7 +55,7 @@ const RecentArticles = () => {
                 </div>
                 
                 <div className="recent-articles__mobile-btn-container">
-                    <Link href="/resources" className="btn btn-outline recent-articles__mobile-view-all">
+                    <Link href="/resources" className="btn btn-secondary recent-articles__mobile-view-all">
                         View All Articles
                     </Link>
                 </div>

@@ -44,6 +44,12 @@
     transition: all 0.3s ease;
 }
 
+/* The item clips its overflow, which would hide a focus ring drawn outside
+   the question, so this one sits just inside its edge. */
+.faq__question:focus-visible {
+    outline-offset: -3px;
+}
+
 .faq__question:hover {
     background: rgba(234, 197, 77, 0.03);
 }

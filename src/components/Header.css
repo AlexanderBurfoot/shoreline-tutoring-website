@@ -15,10 +15,25 @@
 }
 
 .header--scrolled {
+    /* Slims the header once the page is scrolled. Overriding the variable here,
+       not on :root, means the mobile menu and backdrop inside the header move
+       up with it, while page spacing elsewhere keeps the full height. */
+    --header-height: var(--header-height-compact);
     background: rgba(255, 255, 255, 0.98);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(234, 197, 77, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header {
+        transition: background var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .header__logo,
+    .header__cta {
+        transition: none;
+    }
 }
 
 .header__container {
@@ -41,6 +56,14 @@
     font-size: var(--text-4xl);
     font-weight: 700;
     z-index: 1001;
+    transform-origin: left center;
+    transition: transform var(--transition-base);
+}
+
+/* Scaled rather than resized, so each breakpoint's logo size shrinks in
+   proportion without restating every size. */
+.header--scrolled .header__logo {
+    transform: scale(0.85);
 }
 
 .header__logo-image {
@@ -280,6 +303,11 @@
     font-size: var(--text-sm);
     white-space: nowrap;
     flex-shrink: 0;
+}
+
+.header--scrolled .header__cta {
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
 }
 
 .header__cta-mobile {
@@ -541,6 +569,12 @@
     .header__logo {
         font-size: var(--text-lg);
         gap: var(--space-2);
+    }
+
+    /* Already compact at this size and fits the slim header as it is;
+       shrinking it further would make the name hard to read. */
+    .header--scrolled .header__logo {
+        transform: none;
     }
 
     .header__logo-image {

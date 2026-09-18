@@ -269,7 +269,7 @@ The ATAR is then calculated using a student's best ten units of scaled marks, wh
 
 ## What to prioritise, and when
 
-Understanding the mechanics leads directly to a clear prioritisation strategy. In the first half of Year 12, internal assessment tasks determine rank, and rank is most fluid, consistent, competitive performance across school tasks is the best use of effort. In the second half of Year 12, attention should shift progressively toward external exam preparation, because that mark is 50% of the result and cannot be influenced by anything other than performance on the day.
+Understanding the mechanics leads directly to a clear prioritisation strategy. In the first half of Year 12, internal assessment tasks determine rank, and rank is most fluid, consistent, competitive performance across school tasks is the best use of effort. In the second half of Year 12, attention should shift progressively towards external exam preparation, because that mark is 50% of the result and cannot be influenced by anything other than performance on the day.
 
 The trial exam occupies a particular position in this framework. It is typically the highest-weighted internal assessment task and the last significant opportunity to move rank before the final external exams. A strong trial performance does two things simultaneously: it improves rank at the most consequential moment in the internal cycle, and it provides the most direct and realistic preparation available for the external exam itself.
 
@@ -317,7 +317,7 @@ English Advanced is the appropriate choice for students who are confident, engag
 
 ## How many units, and which combinations
 
-Students must study a minimum of ten units in Year 12, and only the best ten units count toward the ATAR. Most students study ten or twelve units, ten if they want to focus deeply on fewer subjects, twelve if they want a safety net in case one subject underperforms expectations.
+Students must study a minimum of ten units in Year 12, and only the best ten units count towards the ATAR. Most students study ten or twelve units, ten if they want to focus deeply on fewer subjects, twelve if they want a safety net in case one subject underperforms expectations.
 
 Studying twelve units is a reasonable hedge, but only if the additional subject is one the student can genuinely manage alongside the others. Adding a twelfth unit that competes for study time with the other eleven is not automatically a good decision. The hedge only works if the student can perform in the additional subject without compromising their performance in the rest.
 
@@ -369,7 +369,7 @@ A home where there is a reliable quiet space to work, where meals happen at cons
 
 How parents respond to HSC results, assessment marks, rankings and trial exam outcomes, shapes how their child experiences the year far more than most parents realise. A parent whose first response to a disappointing result is visible distress, criticism, or comparison to other students communicates that their child's value is conditional on academic performance. A parent who responds with curiosity ("What do you think happened there?"), perspective ("This is one mark in one subject in one assessment, it is not the year"), and genuine support ("What can I help with?") communicates something different and more durable.
 
-This does not mean pretending that results do not matter or that underperformance has no consequences. It means responding to difficulty in a way that keeps the student oriented toward the work ahead rather than collapsing under the weight of the result just received. The HSC is long enough that how a student recovers from setbacks matters as much as how they perform on their best days.
+This does not mean pretending that results do not matter or that underperformance has no consequences. It means responding to difficulty in a way that keeps the student oriented towards the work ahead rather than collapsing under the weight of the result just received. The HSC is long enough that how a student recovers from setbacks matters as much as how they perform on their best days.
 
 > **What to say after a difficult result:** The most useful response is brief, calm, and forward-looking: acknowledge the disappointment without amplifying it, ask what the student thinks went wrong, and focus on what comes next. The least useful responses are those that centre the parent's feelings: visible distress, expressions of worry about the ATAR, or comparisons to siblings or other students. The student already knows the result was disappointing. What they need from you is steadiness, not additional weight.
 
@@ -423,7 +423,7 @@ The assumption most students operate on is that learning happens during study an
 
 During sleep, particularly the deep slow-wave sleep and REM sleep that occur predominantly in the final hours of a full night, the hippocampus replays the day's learning and transfers it to the neocortex for long-term storage. This process is called memory consolidation, and it cannot be meaningfully replicated while awake. Cut the sleep short, and the transfer is incomplete. The study happened; the learning did not.
 
-The practical implication is stark. A student who studies a concept at 11pm and sleeps for five hours retains significantly less of it the following week than one who studied the same concept at 9pm and slept for eight hours. The extra two hours of sleep outperformed the extra two hours of study. Research on sleep deprivation and recall consistently puts the retention deficit from a single poor night at around 40 percent. Not a marginal difference, a decisive one.
+The practical implication is stark. A student who studies a concept at 11pm and sleeps for five hours retains significantly less of it the following week than one who studied the same concept at 9pm and slept for eight hours. The extra two hours of sleep outperformed the extra two hours of study. Research on sleep deprivation and recall consistently puts the retention deficit from a single poor night at around 40 per cent. Not a marginal difference, a decisive one.
 
 ## Three ways sleep deprivation undermines HSC performance specifically
 
@@ -436,7 +436,7 @@ Sleep deprivation impairs a person's ability to assess their own cognitive state
 ### 3. It accumulates in ways that cannot be reversed quickly
 A single disrupted night is recoverable within a day or two. A consistent pattern of five or six hours across the weeks of trial exams and HSC preparation creates a sleep debt that does not clear within the exam period. Cognitive performance degrades progressively and cumulates. A student who has been under-sleeping for six weeks is not the same student who begins the exam well-rested, they are sitting the same paper in a meaningfully diminished state, and no amount of last-minute cramming changes that.
 
-> **The night before an exam:** By the evening before an exam, the material is either consolidated or it is not. A few more hours of review will not change that, but they will reduce the sleep that determines how much of what is already consolidated can actually be accessed under exam conditions. A well-rested student retrieving 90 percent of what they know will outperform an exhausted student who nominally knows more but can reach less of it when it counts.
+> **The night before an exam:** By the evening before an exam, the material is either consolidated or it is not. A few more hours of review will not change that, but they will reduce the sleep that determines how much of what is already consolidated can actually be accessed under exam conditions. A well-rested student retrieving 90 per cent of what they know will outperform an exhausted student who nominally knows more but can reach less of it when it counts.
 
 ## What protecting sleep actually looks like
 
@@ -466,7 +466,7 @@ At Shoreline, when a student arrives at a session visibly exhausted, the session
         id: '6',
         slug: 'the-pomodoro-technique-for-hsc',
         title: 'Burnout Prevention: Adapting the Pomodoro Technique for the HSC',
-        excerpt: 'Studying for 4 hours straight is inefficient and leads to burnout. Learn how to structure your study sessions using the Pomodoro technique to maximize retention.',
+        excerpt: 'Studying for 4 hours straight is inefficient and leads to burnout. Learn how to structure your study sessions using the Pomodoro technique to maximise retention.',
         content: `
 # The Myth of the Marathon Study Session
 
@@ -676,11 +676,11 @@ The difficulty is that HSC exam questions are written to identify students who u
  
 The HSC Chemistry syllabus is large, but it is not as varied as it appears. Most of what students encounter is a specific instance of a small number of deep principles. Mastering those principles, rather than cataloguing their applications, is what makes the subject manageable and the exam tractable.
  
-### 1. Electrons move toward greater stability
+### 1. Electrons move towards greater stability
 This single idea drives acid-base chemistry, redox reactions, and the mechanics of nearly every organic reaction pathway. When a base accepts a proton, it does so because the resulting arrangement is more stable for the electron pair involved. When a metal is oxidised, its electrons move to a species that holds them more tightly. When evaluating any unfamiliar reaction, the most productive first question is: which species has the electrons, which would hold them more stably, and is there a pathway for the transfer to occur?
  
-### 2. Systems shift toward lower free energy
-Thermodynamics and equilibrium are taught in separate parts of the course, but they describe the same reality. Any system will move spontaneously toward the state that minimises its Gibbs free energy, the balance of enthalpy and entropy at a given temperature. Le Chatelier's Principle is a qualitative way of expressing this: a disturbance shifts the equilibrium position because one direction of the reaction now leads to a lower free energy state than the other. Students who understand the thermodynamic foundation never need to memorise which way a shift goes, they can derive it.
+### 2. Systems shift towards lower free energy
+Thermodynamics and equilibrium are taught in separate parts of the course, but they describe the same reality. Any system will move spontaneously towards the state that minimises its Gibbs free energy, the balance of enthalpy and entropy at a given temperature. Le Chatelier's Principle is a qualitative way of expressing this: a disturbance shifts the equilibrium position because one direction of the reaction now leads to a lower free energy state than the other. Students who understand the thermodynamic foundation never need to memorise which way a shift goes, they can derive it.
  
 $$\\Delta G = \\Delta H - T\\Delta S$$
  
@@ -693,7 +693,7 @@ Every question about boiling points, solubility, conductivity, acidity, or react
  
 ## Equilibrium: understanding the mechanism, not applying the rule
  
-Le Chatelier's Principle is usually taught as a set of rules: add a reactant, shift right; increase pressure, shift toward fewer moles of gas. For simple questions this is sufficient. For questions about temperature, among the most commonly mishandled in the HSC, it regularly leads students astray, because they confuse the direction of the equilibrium shift with the effect on reaction rate.
+Le Chatelier's Principle is usually taught as a set of rules: add a reactant, shift right; increase pressure, shift towards fewer moles of gas. For simple questions this is sufficient. For questions about temperature, among the most commonly mishandled in the HSC, it regularly leads students astray, because they confuse the direction of the equilibrium shift with the effect on reaction rate.
  
 The more reliable approach is to think in terms of what the change does to each reaction direction separately. Adding a reactant increases the rate of the forward reaction only, so the system shifts forward until the rates rebalance. Increasing temperature increases both rates, but by different amounts, the endothermic direction gains more, so the equilibrium shifts that way. The rule and the mechanism give the same answer. The mechanism gives it for every case, including the ones that trip up students who only know the rule.
  
@@ -782,7 +782,7 @@ At Shoreline, Economics is the subject where we spend the most session time on c
         id: '12',
         slug: 'mastering-the-economics-essay',
         title: 'Mastering the Economics Essay: Structure, Stats, and Synthesis',
-        excerpt: 'Writing a Band 6 Economics essay isn\'t just about knowing the theory. It requires synthesizing current data, structured arguments, and demonstrating cause-and-effect.',
+        excerpt: 'Writing a Band 6 Economics essay isn\'t just about knowing the theory. It requires synthesising current data, structured arguments, and demonstrating cause-and-effect.',
         content: `
 # Writing Like an Economist
 
@@ -806,7 +806,7 @@ Keep a dedicated "Stats Bank" document that you update monthly with figures from
 ### 3. Synthesis and Evaluation
 Top students don't just list effects; they evaluate them. Are the effects of a policy mostly short-term or long-term? Does fiscal policy conflict with monetary policy in the current environment? Showing that you understand the *limitations* of economic theory is crucial for top marks.
 
-At Shoreline, we dedicate significant session time to reviewing current affairs and practicing essay plans under timed conditions to ensure our students are always exam-ready.
+At Shoreline, we dedicate significant session time to reviewing current affairs and practising essay plans under timed conditions to ensure our students are always exam-ready.
         `,
         category: 'HSC Strategy',
         readTime: '5 min read',
@@ -984,7 +984,7 @@ CS50x, Harvard's Introduction to Computer Science, available free on edX, is amo
 
 ## 3. Develop comfort with being stuck
 
-In the HSC, a student who cannot solve a problem within a few minutes moves on or looks at the solution. This is a reasonable strategy for a time-pressured exam. It is a damaging habit for university STEM, where problem sets are designed to be difficult and the expectation is that students will sit with a hard problem, trying different approaches, identifying why each fails, and building toward a solution over hours rather than minutes.
+In the HSC, a student who cannot solve a problem within a few minutes moves on or looks at the solution. This is a reasonable strategy for a time-pressured exam. It is a damaging habit for university STEM, where problem sets are designed to be difficult and the expectation is that students will sit with a hard problem, trying different approaches, identifying why each fails, and building towards a solution over hours rather than minutes.
 
 The students who struggle most in first-year STEM are often not the least mathematically capable. They are the ones who have never developed tolerance for sustained confusion, who treat being stuck as a signal to stop rather than the normal condition of working on something genuinely difficult. That tolerance is built by exposure: by choosing, repeatedly, to engage with problems harder than the syllabus requires.
 
@@ -1008,7 +1008,7 @@ The most effective preparation for this in high school is practising explanation
 
 At university, no one checks whether the lecture was attended, the reading completed, or the problem set attempted before the tutorial. The structure assumes self-direction in a way that high school, with its daily timetable and regular accountability, does not. Students who have never managed their own learning without external structure discover this at the worst possible moment: when the content is new, the pace is fast, and falling behind compounds faster than it can be reversed.
 
-The habit worth building in Year 11 and 12 is not studying more, it is studying without being prompted. Working through an additional chapter because the topic is genuinely interesting. Returning to something confusing from last week without a teacher flagging it. Allocating time to learning that is not attached to an upcoming assessment. The specific activity matters less than the pattern: developing, before university begins, the capacity to direct your own attention toward something difficult for reasons that come from inside rather than outside.
+The habit worth building in Year 11 and 12 is not studying more, it is studying without being prompted. Working through an additional chapter because the topic is genuinely interesting. Returning to something confusing from last week without a teacher flagging it. Allocating time to learning that is not attached to an upcoming assessment. The specific activity matters less than the pattern: developing, before university begins, the capacity to direct your own attention towards something difficult for reasons that come from inside rather than outside.
 
 At Shoreline, the students we work with who go on to thrive in university STEM share something that is visible well before their ATAR is finalised: they are genuinely interested in the ideas behind their subjects, not only in performing well on assessments about them. That interest is what drives the extra reading, the programming projects, the competition problems worked through on a weekend with nothing at stake. We cannot create that curiosity, but we can help students identify where it already exists and build the habits around it that make the leap to university feel like the next step rather than a sudden drop.
     `,
@@ -1162,7 +1162,7 @@ HSC Plus is UNSW's scheme for rewarding strong performance in HSC subjects that 
 
 When you apply to UNSW through UAC, UNSW calculates a selection rank for each of your UNSW preferences. That selection rank is your ATAR plus any adjustment factors you are eligible for. HSC Plus is one source of those adjustment factors, it adds points based on the performance bands you achieved in HSC subjects that UNSW has identified as relevant to your chosen degree.
 
-The key distinction is that HSC Plus is preference-specific, not universal. The bonus points attached to a given HSC subject depend on which degree you have listed as a preference, the same result in a subject might earn more points toward one degree and fewer toward another, because UNSW weights relevance differently for each program. If you list multiple UNSW degrees in your UAC preferences, your selection rank will be calculated separately for each, and the HSC Plus points applied will reflect the subjects UNSW considers relevant to that specific program.
+The key distinction is that HSC Plus is preference-specific, not universal. The bonus points attached to a given HSC subject depend on which degree you have listed as a preference, the same result in a subject might earn more points towards one degree and fewer towards another, because UNSW weights relevance differently for each program. If you list multiple UNSW degrees in your UAC preferences, your selection rank will be calculated separately for each, and the HSC Plus points applied will reflect the subjects UNSW considers relevant to that specific program.
 
 > **How the scheme works in practice:** A student receives an ATAR of 88 and has listed a Bachelor of Engineering as their first UNSW preference, with a published cut-off above their raw ATAR. Because they performed strongly in Mathematics and Physics, subjects UNSW considers directly relevant to Engineering, they receive HSC Plus adjustment factors that bring their selection rank above the cut-off, and they receive an offer. The specific points awarded depend on the bands achieved and the degree in question; the exact figures for any subject-degree combination are available through UNSW's HSC Plus calculator at hscplus.unsw.edu.au.
 
@@ -1170,9 +1170,9 @@ The key distinction is that HSC Plus is preference-specific, not universal. The 
 
 The number of HSC Plus points awarded for a given subject depends on two things: the performance band achieved, and the degree being applied to. Higher bands attract more points, and the subjects that attract points, and how many, vary by program. UNSW publishes the full table of eligible subjects and their associated point values at hscplus.unsw.edu.au, where students can look up either their intended degree or the specific subjects they are sitting to see what they might be eligible for.
 
-The maximum awarded through HSC Plus is five points per UNSW preference, regardless of how many eligible subjects a student has studied. Points from multiple subjects accumulate toward that cap, but once five points are reached, no further points are added. This means a student with strong results across several relevant subjects may hit the cap through their best-performing subject alone, with additional eligible subjects contributing nothing further.
+The maximum awarded through HSC Plus is five points per UNSW preference, regardless of how many eligible subjects a student has studied. Points from multiple subjects accumulate towards that cap, but once five points are reached, no further points are added. This means a student with strong results across several relevant subjects may hit the cap through their best-performing subject alone, with additional eligible subjects contributing nothing further.
 
-It is worth checking the HSC Plus calculator in Year 11 rather than waiting until Year 12. Not to drive subject selection decisions, UNSW explicitly advises against this, since eligible subjects and point values are reviewed regularly and can change, but because knowing which of your planned subjects are relevant to your preferred degree helps you understand where strong performance matters most. The calculator at hscplus.unsw.edu.au can also be used in reverse: entering an HSC subject to see which UNSW degrees it attracts points toward.
+It is worth checking the HSC Plus calculator in Year 11 rather than waiting until Year 12. Not to drive subject selection decisions, UNSW explicitly advises against this, since eligible subjects and point values are reviewed regularly and can change, but because knowing which of your planned subjects are relevant to your preferred degree helps you understand where strong performance matters most. The calculator at hscplus.unsw.edu.au can also be used in reverse: entering an HSC subject to see which UNSW degrees it attracts points towards.
 
 ## What HSC Plus does not cover
 
@@ -1375,7 +1375,7 @@ The 2021 overhaul also extended Writing from 20 to 30 minutes, broadened Reading
 
 ## What changed in 2025, equal weighting
 
-Before 2025, the four sections were weighted unequally. Thinking Skills carried 35% of the total score, Writing carried only 15%, and Reading and Mathematical Reasoning each carried 25%. The consequence was that preparation time migrated toward Thinking Skills and away from Writing, a rational allocation given the marks available, but one that left many students significantly underprepared in the section that, for most students, responds most readily to deliberate practice.
+Before 2025, the four sections were weighted unequally. Thinking Skills carried 35% of the total score, Writing carried only 15%, and Reading and Mathematical Reasoning each carried 25%. The consequence was that preparation time migrated towards Thinking Skills and away from Writing, a rational allocation given the marks available, but one that left many students significantly underprepared in the section that, for most students, responds most readily to deliberate practice.
 
 From 2025, all four sections carry equal weight at 25% each. This changes the preparation calculus entirely. A weak Writing performance now costs exactly as much as a weak performance in any other section. A strong one gains equally. For students who had been treating Writing as a supplementary concern, the new weighting demands a genuine reallocation, not because Writing is now more important than it was, but because the scoring finally reflects what good preparation should have prioritised all along.
 

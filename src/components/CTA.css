@@ -121,6 +121,14 @@
     letter-spacing: 0.5px;
 }
 
+/* Sits inside an uppercase label, so it undoes that styling to read as an aside. */
+.cta__label-optional {
+    font-weight: 400;
+    color: var(--color-text-light);
+    text-transform: none;
+    letter-spacing: normal;
+}
+
 .cta__input {
     width: 100%;
     padding: var(--space-3) var(--space-4);
@@ -141,6 +149,36 @@
 
 .cta__input::placeholder {
     color: #b0b5be;
+}
+
+/* A phone number that looks wrong: amber once the visitor leaves the field,
+   red once they have tried to send the enquiry with it. */
+.cta__input--gentle,
+.cta__input--gentle:focus {
+    border-color: var(--color-gold-dark);
+}
+
+.cta__input--firm,
+.cta__input--firm:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.cta__field-note {
+    font-size: var(--text-xs);
+    line-height: 1.5;
+}
+
+.cta__field-note:not(:empty) {
+    margin-top: var(--space-1);
+}
+
+.cta__field-note--gentle {
+    color: #a16207;
+}
+
+.cta__field-note--firm {
+    color: #dc2626;
 }
 
 /* Subject Multi-Select Chips */

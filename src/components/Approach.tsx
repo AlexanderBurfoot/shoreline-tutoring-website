@@ -38,7 +38,7 @@ const Approach = () => {
                     <span className="section-eyebrow">How It Works</span>
                     <h2 className="section-title">Our <span className="gold-text">Approach</span></h2>
                     <p className="section-subtitle">
-                        A proven methodology that transforms potential into achievement through structured, personalized guidance.
+                        A proven methodology that transforms potential into achievement through structured, personalised guidance.
                         This is how one-on-one tutoring runs; small-group classes follow a
                         weekly course plan shared by everyone in the room.{' '}
                         <Link href={GROUP_CLASSES_PATH} className="section-subtitle__link">

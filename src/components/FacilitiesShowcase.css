@@ -1,22 +1,27 @@
 /* ===== Facilities showcase =====
    Shared by the two learning-format pages and the homepage band. */
 
+/* The address card, which the map opens inside. The border and background
+   sit on this wrapper so the map reads as part of the same card. */
+.facilities__venue {
+    max-width: 780px;
+    margin: 0 auto var(--space-10);
+    border: 1px solid rgba(234, 197, 77, 0.45);
+    border-radius: var(--border-radius-lg);
+    background: rgba(234, 197, 77, 0.08);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+}
+
+.facilities__venue--open {
+    border-color: var(--color-gold-primary);
+}
+
 .facilities__address {
     display: flex;
     align-items: center;
     gap: var(--space-5);
-    max-width: 780px;
-    margin: 0 auto var(--space-10);
     padding: var(--space-5) var(--space-6);
-    border: 1px solid rgba(234, 197, 77, 0.45);
-    border-radius: var(--border-radius-lg);
-    background: rgba(234, 197, 77, 0.08);
-    transition: border-color var(--transition-fast), background var(--transition-fast);
-}
-
-.facilities__address:hover {
-    border-color: var(--color-gold-primary);
-    background: rgba(234, 197, 77, 0.15);
 }
 
 .facilities__address-icon {
@@ -55,15 +60,105 @@
     line-height: 1.25;
 }
 
+.facilities__address-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-2);
+    flex-shrink: 0;
+}
+
+.facilities__map-toggle {
+    padding: var(--space-2) var(--space-4);
+    border: 1.5px solid var(--color-gold-primary);
+    border-radius: var(--border-radius-full);
+    background: var(--color-white);
+    color: var(--color-navy);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.facilities__map-toggle:hover,
+.facilities__venue--open .facilities__map-toggle {
+    background: var(--color-gold-primary);
+}
+
 .facilities__address-cta {
     display: inline-flex;
     align-items: center;
     gap: var(--space-1);
-    flex-shrink: 0;
     color: var(--color-gold-dark);
     font-size: var(--text-sm);
     font-weight: 700;
     white-space: nowrap;
+}
+
+.facilities__address-cta:hover {
+    color: var(--color-navy);
+}
+
+/* Opens by growing its grid row from nothing to the content's height, which,
+   unlike a height transition, needs no fixed height to animate towards. */
+.facilities__map-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transition-slow);
+}
+
+.facilities__venue--open .facilities__map-panel {
+    grid-template-rows: 1fr;
+}
+
+.facilities__map-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* The background shows through while Google's map is still loading. */
+.facilities__map-frame {
+    display: block;
+    width: 100%;
+    height: 360px;
+    border: 0;
+    border-top: 1px solid rgba(234, 197, 77, 0.45);
+    background: var(--color-cream);
+}
+
+.facilities__walking {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+    border-top: 1px solid rgba(234, 197, 77, 0.45);
+}
+
+.facilities__walking-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--border-radius-full);
+    background: var(--color-navy);
+    color: var(--color-white);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    transition: background var(--transition-fast);
+}
+
+.facilities__walking-link:hover {
+    background: var(--color-navy-light);
+}
+
+.facilities__walking-link svg {
+    color: var(--color-gold-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .facilities__map-panel {
+        transition: none;
+    }
 }
 
 /* The gallery is only rendered once photographs have been added. */
@@ -152,8 +247,19 @@
         font-size: var(--text-xl);
     }
 
-    .facilities__address-cta {
+    .facilities__address-actions {
         width: 100%;
-        justify-content: flex-end;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Short enough that a thumb scrolling the page is unlikely to land on it. */
+    .facilities__map-frame {
+        height: 260px;
+    }
+
+    .facilities__walking {
+        padding: var(--space-3) var(--space-4);
     }
 }

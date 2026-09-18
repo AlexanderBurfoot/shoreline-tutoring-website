@@ -270,6 +270,33 @@
     animation: float 6s ease-in-out infinite;
 }
 
+/* Parallax depths (see ParallaxScene.css). The rings sit furthest back, the
+   bird in the middle, and the cards in front, each card at its own speed so
+   they drift apart from one another as well as from the bird. */
+.hero__image-decoration--1 {
+    --parallax-depth: 48px;
+}
+
+.hero__image-decoration--2 {
+    --parallax-depth: 32px;
+}
+
+.hero__main-logo {
+    --parallax-depth: 16px;
+}
+
+.hero__float-card--1 {
+    --parallax-depth: -40px;
+}
+
+.hero__float-card--2 {
+    --parallax-depth: -24px;
+}
+
+.hero__float-card--3 {
+    --parallax-depth: -56px;
+}
+
 /* Floating Cards */
 .hero__float-card {
     position: absolute;

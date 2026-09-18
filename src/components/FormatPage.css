@@ -38,6 +38,11 @@
     opacity: 0.12;
     pointer-events: none;
     user-select: none;
+    /* Parallax (see ParallaxScene.css). Far deeper than other layers: the hero
+       starts at the top of the page, so the logo only travels through the
+       second half of its pass, and it needs to visibly lag the text to read as
+       a backdrop. It is faint enough that the larger movement stays calm. */
+    --parallax-depth: 200px;
 }
 
 @media (max-width: 768px) {

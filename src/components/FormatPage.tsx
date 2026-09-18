@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import ScrollReveal from './ScrollReveal';
+import ParallaxScene from './ParallaxScene';
 import CTA from './CTA';
 import FacilitiesShowcase from './FacilitiesShowcase';
 import './FormatPage.css';
@@ -28,7 +29,7 @@ interface PageSection {
 }
 
 const ArrowIcon = ({ size }: { size: number }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    <svg className="icon-arrow" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
         <path d="M5 12h14M12 5l7 7-7 7" />
     </svg>
 );
@@ -80,7 +81,7 @@ const FormatHero = ({ hero }: { hero: FormatPageContent['hero'] }) => {
     const secondaryClass = 'btn btn-secondary';
 
     return (
-        <section className="format-hero">
+        <ParallaxScene as="section" className="format-hero">
             <div className="format-hero__bg" aria-hidden="true"></div>
             {hero.logoBackdrop && (
                 // Decorative only: the logo is already named in the header.
@@ -88,7 +89,7 @@ const FormatHero = ({ hero }: { hero: FormatPageContent['hero'] }) => {
                     src={LOGO_SRC}
                     alt=""
                     aria-hidden="true"
-                    className="format-hero__logo"
+                    className="format-hero__logo parallax-layer"
                     width={LOGO_WIDTH}
                     height={LOGO_HEIGHT}
                 />
@@ -124,7 +125,7 @@ const FormatHero = ({ hero }: { hero: FormatPageContent['hero'] }) => {
 
                 <p className="format-hero__reassurance">{hero.reassurance}</p>
             </div>
-        </section>
+        </ParallaxScene>
     );
 };
 

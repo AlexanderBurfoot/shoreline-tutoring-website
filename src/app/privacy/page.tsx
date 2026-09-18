@@ -4,7 +4,7 @@ import { VENUE_ADDRESS } from '../../data/groupClassLaunch';
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, PRIVACY_PATH } from '../../lib/site';
 
 /** Change whenever the substance of the policy changes. */
-const LAST_UPDATED = '12 September 2026';
+const LAST_UPDATED = '18 September 2026';
 
 const OAIC_URL = 'https://www.oaic.gov.au';
 const GOOGLE_AD_CENTER_URL = 'https://myadcenter.google.com';
@@ -32,7 +32,8 @@ interface PolicySection {
 /**
  * Describes what the site actually does: the enquiry form fields, the services
  * that receive enquiries (see src/app/api/contact/route.ts), session storage
- * and Google Tag Manager. Update this whenever any of those change.
+ * Google Tag Manager, and the Google Maps embed in the venue card
+ * (src/components/VenueMap.tsx). Update this whenever any of those change.
  */
 const SECTIONS: PolicySection[] = [
     {
@@ -104,6 +105,10 @@ const SECTIONS: PolicySection[] = [
                     enquiries. Our website does not send them the details you type into the enquiry form. You can
                     block or delete cookies in your browser settings, and control how Google uses your information
                     for ads at <ExternalLink href={GOOGLE_AD_CENTER_URL}>myadcenter.google.com</ExternalLink>.
+                </p>
+                <p>
+                    The map of our St Leonards rooms is provided by Google Maps. It loads only if you choose to show
+                    it, and Google may then set its own cookies.
                 </p>
             </>
         ),

@@ -163,6 +163,7 @@ export const oneOnOnePage: FormatPageContent = {
         primaryCta: { href: ONE_ON_ONE_ENQUIRY_HREF, label: 'Book a Free Trial Lesson' },
         secondaryCta: { href: `#${PRICING_SECTION_ID}`, label: 'See Tutoring Pricing' },
         reassurance: 'No payment up front. No obligation to continue after the trial lesson.',
+        logoBackdrop: true,
     },
     attendance: {
         header: {

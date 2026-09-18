@@ -1,0 +1,29 @@
+/* ===== Parallax layers =====
+   A layer moves by its scene's scroll progress (-1 to 1, written by
+   ParallaxScene) times its own --parallax-depth. A positive depth lags behind
+   the page and reads as further away; a negative depth runs ahead of it and
+   reads as closer.
+
+   The individual `translate` property is used rather than `transform`, so a
+   layer keeps any transform animation it already has (floating, pulsing) and
+   the parallax offset is added on top. */
+
+.parallax-layer {
+    --parallax-strength: 1;
+    translate: 0 calc(var(--parallax-progress, 0) * var(--parallax-depth, 0px) * var(--parallax-strength));
+    will-change: translate;
+}
+
+/* Smaller screens get half the movement: less room, and less to gain. */
+@media (max-width: 768px) {
+    .parallax-layer {
+        --parallax-strength: 0.5;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .parallax-layer {
+        translate: none;
+        will-change: auto;
+    }
+}

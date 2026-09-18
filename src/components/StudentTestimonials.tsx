@@ -2,6 +2,10 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import './StudentTestimonials.css';
 import ScrollReveal from './ScrollReveal';
+import { useSwipe } from '../lib/useSwipe';
+
+/** How long a testimonial takes to fade out before the next one replaces it. */
+const SLIDE_FADE_MS = 300;
 
 const testimonials = [
     {
@@ -43,7 +47,7 @@ const StudentTestimonials = () => {
         setTimeout(() => {
             setActiveIndex(index);
             setTimeout(() => setIsTransitioning(false), 50);
-        }, 300);
+        }, SLIDE_FADE_MS);
     }, [activeIndex]);
 
     const nextSlide = useCallback(() => {
@@ -69,6 +73,15 @@ const StudentTestimonials = () => {
     // Pause on hover
     const handleMouseEnter = () => setIsPaused(true);
     const handleMouseLeave = () => setIsPaused(false);
+
+    // Swipe on touchscreens: left for the next story, right for the previous.
+    const swipe = useSwipe({
+        onSwipeLeft: nextSlide,
+        onSwipeRight: prevSlide,
+        onTouchBegin: () => setIsPaused(true),
+        onTouchFinish: () => setIsPaused(false),
+        releaseDelayMs: SLIDE_FADE_MS,
+    });
 
     const t = testimonials[activeIndex];
 
@@ -109,7 +122,15 @@ const StudentTestimonials = () => {
                         </svg>
                     </button>
 
-                    <div className={`student-testimonial-card ${isTransitioning ? 'student-testimonial-card--fading' : ''}`}>
+                    <div
+                        className={[
+                            'student-testimonial-card',
+                            isTransitioning && 'student-testimonial-card--fading',
+                            swipe.isDragging && 'student-testimonial-card--dragging',
+                        ].filter(Boolean).join(' ')}
+                        style={{ translate: `${swipe.offsetX}px 0` }}
+                        {...swipe.handlers}
+                    >
                         <div className="student-testimonial-card__top">
                             <span className="student-testimonial-card__icon">{t.icon}</span>
                             <div className="student-testimonial-card__meta">

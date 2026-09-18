@@ -64,6 +64,9 @@
   /* Layout */
   --max-width: 1200px;
   --header-height: 80px;
+  /* The header once the page is scrolled. Page spacing keeps using the full
+     height above; only the header and what hangs from it follow this one. */
+  --header-height-compact: 64px;
 
   /* Height reserved at the top of the viewport for the announcement bar. The
      header, the page flow and any full-height section read from this, so the
@@ -318,6 +321,79 @@ ol {
 .btn-secondary:hover {
   background: var(--color-gold-primary);
   color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(234, 197, 77, 0.25);
+}
+
+/* Right-pointing arrows inside links and buttons nudge forward on hover. Only
+   icons tagged icon-arrow move, so chevrons, back arrows and other trailing
+   icons stay put. */
+.icon-arrow {
+  transition: transform var(--transition-base);
+}
+
+a:hover .icon-arrow,
+button:hover .icon-arrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover,
+  a:hover .icon-arrow,
+  button:hover .icon-arrow {
+    transform: none;
+  }
+}
+
+/* ===== Keyboard focus =====
+   A visible ring for keyboard navigation only; mouse and touch clicks do not
+   trigger :focus-visible. Navy reads on the light sections; the dark sections
+   below switch it to gold. The white card on the thank-you page switches back. */
+:root {
+  --focus-ring-color: var(--color-navy);
+}
+
+/* The ring's colour, width and offset are set on everything at rest, and focus
+   only switches it on. Many elements transition `all`, which would otherwise
+   animate the ring in from the browser's default outline. */
+* {
+  outline-color: var(--focus-ring-color);
+  outline-width: 2px;
+  outline-offset: 3px;
+}
+
+:focus-visible {
+  outline-style: solid;
+}
+
+.announcement,
+.header--dark,
+.header--solid-navy,
+.format-hero,
+.reserve-strip,
+.trust-badges,
+.ways,
+.student-testimonials,
+.testimonials,
+.pricing-hero,
+.resources-hero,
+.subject-page__cta-card,
+.blog-post__cta-box,
+.thank-you,
+.footer {
+  --focus-ring-color: var(--color-gold-primary);
+}
+
+.thank-you__card,
+.header__dropdown {
+  --focus-ring-color: var(--color-navy);
+}
+
+/* Below this width the header's links sit in a white slide-in panel. */
+@media (max-width: 900px) {
+  .header__nav {
+    --focus-ring-color: var(--color-navy);
+  }
 }
 
 .btn-white {

@@ -1,6 +1,7 @@
 "use client";
 import {
     useEffect,
+    useRef,
     useState,
     type ChangeEvent,
     type Dispatch,
@@ -11,7 +12,9 @@ import {
 import { useRouter } from 'next/navigation';
 import './CTA.css';
 import ChoiceChips, { type ChoiceOption } from './ChoiceChips';
+import ContactFields, { OptionalTag, phoneLooksWrong, type PhoneAttention } from './ContactFields';
 import { trackAdsConversion, trackEvent } from '../lib/analytics';
+import { onEnquiryFormatRequest } from '../lib/enquiryFormat';
 import {
     CLASS_PREFERENCE_KEY,
     GROUP_CLASS_DAYS,
@@ -174,40 +177,16 @@ function analyticsShape(form: FormData) {
     };
 }
 
-interface ContactFieldsProps {
-    form: FormData;
-    onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-}
-
-const ContactFields = ({ form, onChange }: ContactFieldsProps) => (
-    <>
-        <div className="cta__form-row cta__form-row--two">
-            <div className="cta__input-group">
-                <label htmlFor="name" className="cta__label-text">Your Name</label>
-                <input type="text" id="name" className="cta__input" placeholder="John Smith" value={form.name} onChange={onChange} required />
-            </div>
-            <div className="cta__input-group">
-                <label htmlFor="phone" className="cta__label-text">Phone Number</label>
-                <input type="tel" id="phone" className="cta__input" placeholder="0400 000 000" value={form.phone} onChange={onChange} />
-            </div>
-        </div>
-        <div className="cta__input-group cta__input-group--full">
-            <label htmlFor="email" className="cta__label-text">Email Address</label>
-            <input type="email" id="email" className="cta__input" placeholder="john@example.com" value={form.email} onChange={onChange} required />
-        </div>
-    </>
-);
-
 const SuccessNotice = () => (
-    <div className="cta__success">
+    <div className="cta__success" role="status">
         <div className="cta__success-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                 <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
         </div>
-        <h3 className="cta__success-title">Redirecting...</h3>
-        <p className="cta__success-message">Your enquiry has been sent successfully.</p>
+        <h3 className="cta__success-title">Thank you, your enquiry is on its way</h3>
+        <p className="cta__success-message">Taking you to what happens next.</p>
     </div>
 );
 
@@ -236,7 +215,7 @@ const SubmitButton = ({ isSubmitting }: { isSubmitting: boolean }) => (
         ) : (
             <>
                 Book Your Free Session
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
             </>
@@ -296,7 +275,11 @@ const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, descript
     const [errorMessage, setErrorMessage] = useState('');
     // Honeypot: hidden from real users; bots that fill it are rejected server-side.
     const [honeypot, setHoneypot] = useState('');
+    const [phoneAttention, setPhoneAttention] = useState<PhoneAttention>('none');
+    const phoneInputRef = useRef<HTMLInputElement>(null);
     useClassPreference(setFormData);
+    // A booking button further up the page has said which format it is for.
+    useEffect(() => onEnquiryFormatRequest((format) => setFormData((prev) => ({ ...prev, format }))), []);
 
     const isGroupEnquiry = formData.format === GROUP_FORMAT;
     const update = (changes: (prev: FormData) => Partial<FormData>) =>
@@ -319,6 +302,16 @@ const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, descript
 
         const enquiryShape = analyticsShape(formData);
         trackEvent('enquiry_submitted', enquiryShape);
+
+        // The field's own note explains the problem; a second message below
+        // the form would only repeat it.
+        if (phoneLooksWrong(formData.phone)) {
+            setStatus('idle');
+            setPhoneAttention('submitted');
+            phoneInputRef.current?.focus();
+            trackEvent('enquiry_failed', { ...enquiryShape, reason: 'phone_implausible' });
+            return;
+        }
 
         const missing = findMissingChoice(formData);
         if (missing) {
@@ -345,6 +338,7 @@ const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, descript
             trackEvent('enquiry_success', enquiryShape);
             trackAdsConversion();
             setFormData(emptyForm(defaultFormat));
+            setPhoneAttention('none');
             router.push('/thank-you');
         } catch (err) {
             setStatus('error');
@@ -389,7 +383,13 @@ const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, descript
                                 value={honeypot}
                                 onChange={(e) => setHoneypot(e.target.value)}
                             />
-                            <ContactFields form={formData} onChange={handleChange} />
+                            <ContactFields
+                                values={formData}
+                                onChange={handleChange}
+                                phoneAttention={phoneAttention}
+                                onPhoneBlur={() => setPhoneAttention((prev) => (prev === 'none' ? 'blurred' : prev))}
+                                phoneInputRef={phoneInputRef}
+                            />
                             <ChoiceChips
                                 label="How would you like to learn?"
                                 options={FORMAT_OPTIONS}
@@ -423,11 +423,13 @@ const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, descript
                                 />
                             )}
                             <div className="cta__input-group cta__input-group--full">
-                                <label htmlFor="message" className="cta__label-text">Tell us about your goals</label>
+                                <label htmlFor="message" className="cta__label-text">
+                                    Tell us about your goals <OptionalTag />
+                                </label>
                                 <textarea
                                     id="message"
                                     className="cta__input cta__textarea"
-                                    placeholder="Share your academic goals and any specific areas you'd like to improve..."
+                                    placeholder="A sentence or two is plenty, e.g. struggling with calculus before the trials"
                                     rows={4}
                                     value={formData.message}
                                     onChange={handleChange}

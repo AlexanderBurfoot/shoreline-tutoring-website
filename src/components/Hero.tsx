@@ -3,9 +3,12 @@ import Link from 'next/link';
 import './Hero.css';
 const logo = '/ShorelineLogo.png';
 import ScrollReveal from './ScrollReveal';
+import ParallaxScene from './ParallaxScene';
+import EnquiryLink from './EnquiryLink';
 import {
     FIRST_LESSON_DATE_LONG,
     GROUP_CLASSES_PATH,
+    ONE_ON_ONE_FORMAT,
     ONE_ON_ONE_PATH,
     TRIAL_OFFER,
 } from '../data/groupClassLaunch';
@@ -24,7 +27,7 @@ const PAGE_TAGLINE = ['EXCLUSIVE', 'INDIVIDUALISED', 'EFFECTIVE'];
 const SECTION_TAGLINE = ['ONE-ON-ONE TUTORING', 'ALL YEARS', 'ALL SUBJECTS'];
 
 const ArrowIcon = () => (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg className="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M5 12h14M12 5l7 7-7 7" />
     </svg>
 );
@@ -76,7 +79,7 @@ const Hero = ({ asSection = false }: HeroProps) => {
                         <p className="hero__description animate-fade-in-up delay-200">
                             {asSection
                                 ? 'Private one-on-one tutoring, live online, across every year level and subject, with a learning plan shaped entirely around your child.'
-                                : 'Experience transformative tutoring, one-on-one or in small groups, designed to dramatically improve your results through personalized attention and constant support.'}
+                                : 'Experience transformative tutoring, one-on-one or in small groups, designed to dramatically improve your results through personalised attention and constant support.'}
                         </p>
                     </ScrollReveal>
 
@@ -84,10 +87,10 @@ const Hero = ({ asSection = false }: HeroProps) => {
                         <div className="hero__cta-group animate-fade-in-up delay-300">
                             {asSection ? (
                                 <>
-                                    <a href="#contact" className="btn btn-primary btn-lg">
+                                    <EnquiryLink format={ONE_ON_ONE_FORMAT} className="btn btn-primary btn-lg">
                                         Book a Free Trial Lesson
                                         <ArrowIcon />
-                                    </a>
+                                    </EnquiryLink>
                                     <Link href={ONE_ON_ONE_PATH} className="btn btn-secondary">
                                         See One-on-One Tutoring
                                     </Link>
@@ -126,27 +129,27 @@ const Hero = ({ asSection = false }: HeroProps) => {
                     </ScrollReveal>
                 </div>
 
-                <div className="hero__visual animate-fade-in-up delay-200">
+                <ParallaxScene className="hero__visual animate-fade-in-up delay-200">
                     <div className="hero__image-wrapper">
-                        <div className="hero__image-decoration hero__image-decoration--1"></div>
-                        <div className="hero__image-decoration hero__image-decoration--2"></div>
+                        <div className="hero__image-decoration hero__image-decoration--1 parallax-layer"></div>
+                        <div className="hero__image-decoration hero__image-decoration--2 parallax-layer"></div>
                         <div className="hero__image-placeholder">
-                            <img src={logo} alt="Shoreline Tutoring Logo" className="hero__main-logo" width={1966} height={1289} />
-                            <div className="hero__float-card hero__float-card--1">
+                            <img src={logo} alt="Shoreline Tutoring Logo" className="hero__main-logo parallax-layer" width={1966} height={1289} />
+                            <div className="hero__float-card hero__float-card--1 parallax-layer">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-primary)" strokeWidth="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
                                 <span className="hero__float-text">Expert Tutors</span>
                             </div>
-                            <div className="hero__float-card hero__float-card--2">
+                            <div className="hero__float-card hero__float-card--2 parallax-layer">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-primary)" strokeWidth="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>
                                 <span className="hero__float-text">Proven Methods</span>
                             </div>
-                            <div className="hero__float-card hero__float-card--3">
+                            <div className="hero__float-card hero__float-card--3 parallax-layer">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-primary)" strokeWidth="2"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
-                                <span className="hero__float-text">Personalized</span>
+                                <span className="hero__float-text">Personalised</span>
                             </div>
                         </div>
                     </div>
-                </div>
+                </ParallaxScene>
             </div>
 
             {!asSection && (

@@ -92,9 +92,49 @@ export const VENUE_POSTAL_ADDRESS = {
     addressCountry: 'AU',
 };
 
+/** The venue as Google Maps should look it up, for every map link below. */
+const VENUE_MAP_QUERY = encodeURIComponent(`${VENUE_ADDRESS}, ${VENUE_STATE}, Australia`);
+
 /** Google Maps link for the venue, used wherever the address is shown. */
-export const VENUE_MAP_URL =
-    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${VENUE_ADDRESS}, NSW, Australia`)}`;
+export const VENUE_MAP_URL = `https://www.google.com/maps/search/?api=1&query=${VENUE_MAP_QUERY}`;
+
+/** Street level: close enough to read the nearby streets and both stations. */
+const VENUE_MAP_ZOOM = 16;
+
+/**
+ * A map pinned on the venue, for embedding in the page. This is Google's
+ * keyless embed form, so no API key or billing account is needed.
+ */
+export const VENUE_MAP_EMBED_URL = `https://www.google.com/maps?q=${VENUE_MAP_QUERY}&z=${VENUE_MAP_ZOOM}&output=embed`;
+
+export interface WalkingRoute {
+    label: string;
+    url: string;
+}
+
+const walkingDirectionsUrl = (origin: string) =>
+    `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${VENUE_MAP_QUERY}&travelmode=walking`;
+
+/**
+ * Walking directions to the venue from the two stations named in
+ * FACILITY_HIGHLIGHTS, and from the nearest bus stop on the venue's side of the
+ * Pacific Highway that the 144 serves.
+ *
+ * The 144 is by far the most frequent route here: about 85 buses each way on a
+ * Saturday between 7am and 7pm, against 35 for the next busiest, the 114
+ * (Transport for NSW timetable for Saturday 3 October 2026, checked September
+ * 2026). Stand C is 53 m from the venue on the same side, with no road to
+ * cross. Stand D is closer but has no Saturday services. Riders coming from
+ * Chatswood arrive at Stand A, across the highway.
+ */
+export const VENUE_WALKING_ROUTES: WalkingRoute[] = [
+    { label: 'Walk from St Leonards station', url: walkingDirectionsUrl('St Leonards Station, NSW, Australia') },
+    { label: 'Walk from Crows Nest metro', url: walkingDirectionsUrl('Crows Nest Station, NSW, Australia') },
+    {
+        label: 'Walk from the bus stop (144 and more)',
+        url: walkingDirectionsUrl('St Leonards Station, Pacific Hwy, Stand C, St Leonards NSW'),
+    },
+];
 
 /**
  * What small-group classes currently cover, as one clause that reads inside a

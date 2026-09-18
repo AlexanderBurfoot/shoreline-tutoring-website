@@ -30,14 +30,27 @@
     padding: var(--space-8);
     border: 1px solid rgba(234, 197, 77, 0.1);
     position: relative;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, translate 0.3s ease;
     opacity: 1;
     transform: translateY(0);
+    /* The browser keeps vertical scrolling; sideways drags go to the swipe. */
+    touch-action: pan-y;
 }
 
 .student-testimonial-card--fading {
     opacity: 0;
     transform: translateY(8px);
+}
+
+/* While following a finger, and while swapping stories out of sight, the
+   sideways offset changes instantly rather than easing. */
+.student-testimonial-card--dragging,
+.student-testimonial-card--fading {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.student-testimonial-card--dragging {
+    user-select: none;
 }
 
 .student-testimonial-card:hover {
