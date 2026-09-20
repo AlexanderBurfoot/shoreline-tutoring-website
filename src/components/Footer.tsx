@@ -22,7 +22,7 @@ const FORMAT_LINKS: FooterLink[] = [
 const ABOUT_LINKS: FooterLink[] = [
     { href: '/#about', label: 'About Us' },
     { href: '/#approach', label: 'Our Approach' },
-    { href: '/#testimonials', label: 'Our Promise' },
+    { href: '/#faq', label: 'FAQ' },
     { href: '/resources', label: 'Resources' },
 ];
 

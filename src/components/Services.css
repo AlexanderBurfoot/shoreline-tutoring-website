@@ -29,43 +29,15 @@
     margin-bottom: var(--space-3);
 }
 
-/* ---- Grid Rows ---- */
+/* ---- Grid ----
+   Five across on wide screens and two below, so the ten subjects always
+   fill complete rows. */
 .services-grid {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-6);
-    margin-bottom: var(--space-6);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-5);
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.services-grid:last-child {
-    margin-bottom: 0;
-}
-
-.services-grid--row-1 {
-    max-width: 500px;
-}
-
-.services-grid--row-1>* {
-    flex: 0 1 500px;
-}
-
-.services-grid--row-2 {
-    max-width: 1020px;
-}
-
-.services-grid--row-2>* {
-    flex: 0 1 500px;
-}
-
-.services-grid--row-3 {
-    max-width: 1200px;
-}
-
-.services-grid--row-3>* {
-    flex: 0 1 370px;
+    margin: 0 auto;
 }
 
 /* ---- Card ---- */
@@ -75,8 +47,8 @@
     flex-direction: column;
     background: var(--color-white);
     border-radius: var(--border-radius-xl);
-    padding: var(--space-8) var(--space-8) var(--space-6);
-    min-height: 310px;
+    height: 100%;
+    padding: var(--space-6) var(--space-5) var(--space-5);
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -144,7 +116,7 @@
     background: linear-gradient(135deg,
             rgba(234, 197, 77, 0.08) 0%,
             rgba(244, 228, 193, 0.2) 100%);
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-4);
     transition: all 0.5s ease;
 }
 
@@ -187,52 +159,27 @@
 /* Title */
 .subject-card__title {
     font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
-    font-size: var(--text-3xl);
+    font-size: var(--text-2xl);
     font-weight: 600;
+    line-height: 1.2;
     color: var(--color-gold-primary);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-1);
 }
 
-/* Description */
-.subject-card__description {
-    font-size: var(--text-sm);
-    color: var(--color-text-light);
-    line-height: 1.7;
-    flex-grow: 1;
-    margin-bottom: 0;
-}
-
-/* Level badge at bottom */
-.subject-card__level {
-    margin-top: auto;
-    padding-top: var(--space-4);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-}
-
-.subject-card__level-label {
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-    color: var(--color-gold-dark);
-}
-
+/* Year levels, under the title */
 .subject-card__level-value {
-    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
     font-size: var(--text-sm);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--color-navy);
+    flex-grow: 1;
 }
 
-/* Explore Subject link */
+/* Explore link, pinned to the bottom so it lines up across a row */
 .subject-card__link {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    margin-top: var(--space-3);
+    margin-top: var(--space-4);
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-gold-primary);
@@ -253,35 +200,34 @@
 }
 
 /* ---- Responsive ---- */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     .services-grid {
-        flex-wrap: wrap;
-    }
-
-    .services-grid--row-1>*,
-    .services-grid--row-2>*,
-    .services-grid--row-3>* {
-        flex: 0 1 calc(50% - var(--space-3));
-    }
-
-    .subject-card {
-        min-height: 280px;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 600px) {
     .services-grid {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .services-grid--row-1>*,
-    .services-grid--row-2>*,
-    .services-grid--row-3>* {
-        flex: 1 1 auto;
+        gap: var(--space-3);
     }
 
     .subject-card {
-        min-height: auto;
+        padding: var(--space-4);
+        border-radius: var(--border-radius-lg);
+    }
+
+    .subject-card__icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.25rem;
+        margin-bottom: var(--space-3);
+    }
+
+    .subject-card__title {
+        font-size: var(--text-xl);
+    }
+
+    .subject-card__level-value {
+        font-size: var(--text-xs);
     }
 }

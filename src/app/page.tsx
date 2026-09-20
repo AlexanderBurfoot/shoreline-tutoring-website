@@ -8,7 +8,6 @@ import Services from '../components/Services';
 import WaysToLearn from '../components/WaysToLearn';
 import Facilities from '../components/Facilities';
 import Approach from '../components/Approach';
-import Testimonials from '../components/Testimonials';
 import RecentArticles from '../components/RecentArticles';
 import CTA from '../components/CTA';
 import JsonLd from '../components/JsonLd';
@@ -69,7 +68,6 @@ export default function HomePage() {
       {!HOMEPAGE_LEADS_WITH_GROUP && <Facilities />}
       <StudentTestimonials />
       <Approach />
-      <Testimonials />
       <RecentArticles />
       <FAQ />
       <CTA />
