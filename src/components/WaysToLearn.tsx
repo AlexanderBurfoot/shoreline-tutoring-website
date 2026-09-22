@@ -31,9 +31,9 @@ const formats: LearningFormat[] = [
         title: 'One-on-One Tutoring',
         tagline: 'The whole session, built entirely around one student.',
         description:
-            'Private online sessions where every minute is spent on your goals, at your pace. The most personalised way to learn, with a plan shaped around exactly where you are and where you want to be.',
+            'Private sessions at your home or online, where every minute is spent on your goals, at your pace. The most personalised way to learn, with a plan shaped around exactly where you are and where you want to be.',
         points: [
-            'Live online, one to one with your tutor',
+            'At your home or live online',
             'Completely tailored lesson plans',
             'Flexible scheduling to suit you',
         ],

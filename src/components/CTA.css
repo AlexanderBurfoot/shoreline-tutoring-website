@@ -34,7 +34,7 @@
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     margin-bottom: var(--space-4);
     padding: var(--space-2) var(--space-4);
     background: rgba(234, 197, 77, 0.1);
@@ -48,7 +48,7 @@
 }
 
 .cta__title-accent {
-    color: var(--color-gold-primary);
+    color: var(--label-color);
 }
 
 .cta__description {
@@ -205,21 +205,21 @@
 
 .cta__subject-chip:hover {
     border-color: var(--color-gold-primary);
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     background: rgba(234, 197, 77, 0.06);
 }
 
 .cta__subject-chip--active {
     background: rgba(234, 197, 77, 0.1);
     border-color: var(--color-gold-primary);
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     font-weight: 600;
 }
 
 .cta__subject-chip--active:hover {
     background: rgba(234, 197, 77, 0.15);
     border-color: var(--color-gold-dark);
-    color: var(--color-gold-dark);
+    color: var(--label-color);
 }
 
 .cta__chip-check {
@@ -263,7 +263,7 @@
     align-items: center;
     gap: var(--space-2);
     font-weight: 500;
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     transition: color var(--transition-fast);
 }
 

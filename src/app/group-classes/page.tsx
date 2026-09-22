@@ -6,12 +6,15 @@ import {
     FIRST_LESSON_DATE_ISO,
     FIRST_LESSON_DATE_LONG,
     LESSON_TEACHING_HOURS,
+    FOUNDING_TERM_PRICE_DOLLARS,
     ONLINE_FIRST_LESSON_DATE_ISO,
     SESSION_PRICE_DOLLARS,
+    TERM_PRICE_DOLLARS,
     VENUE_POSTAL_ADDRESS,
+    anyFoundingPlaces,
     VENUE_SUBURB,
 } from '../../data/groupClassLaunch';
-import { SITE_URL } from '../../lib/site';
+import { SHARE_IMAGE, SITE_URL } from '../../lib/site';
 
 const TITLE = 'Year 12 Small-Group Classes';
 const DESCRIPTION =
@@ -28,6 +31,7 @@ export const metadata: Metadata = {
         title: TITLE,
         description: DESCRIPTION,
         url: '/group-classes',
+        images: [SHARE_IMAGE],
     },
 };
 
@@ -64,6 +68,17 @@ const courseInstance = (mode: 'Onsite' | 'Online', startDate: string, day: 'Satu
 });
 
 /** Course details for search results, built from the same class data as the page. */
+/** One way of paying for the classes, as schema.org describes a price. */
+const offer = (name: string, price: number, unitText: 'term' | 'lesson') => ({
+    '@type': 'Offer',
+    name,
+    category: 'Paid',
+    price,
+    priceCurrency: 'AUD',
+    priceSpecification: { '@type': 'UnitPriceSpecification', price, priceCurrency: 'AUD', unitText },
+    url: PAGE_URL,
+});
+
 const COURSE_SCHEMA = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -71,19 +86,13 @@ const COURSE_SCHEMA = {
     description: DESCRIPTION,
     url: PAGE_URL,
     provider: { '@type': 'EducationalOrganization', name: 'Shoreline Tutoring', url: SITE_URL },
-    offers: {
-        '@type': 'Offer',
-        category: 'Paid',
-        price: SESSION_PRICE_DOLLARS,
-        priceCurrency: 'AUD',
-        priceSpecification: {
-            '@type': 'UnitPriceSpecification',
-            price: SESSION_PRICE_DOLLARS,
-            priceCurrency: 'AUD',
-            unitText: 'lesson',
-        },
-        url: PAGE_URL,
-    },
+    // Every way of paying that is currently open, so search results never show
+    // a price the page no longer offers.
+    offers: [
+        ...(anyFoundingPlaces() ? [offer('Founding place, whole term', FOUNDING_TERM_PRICE_DOLLARS, 'term')] : []),
+        offer('Whole term, paid up front', TERM_PRICE_DOLLARS, 'term'),
+        offer('Pay weekly', SESSION_PRICE_DOLLARS, 'lesson'),
+    ],
     hasCourseInstance: [
         courseInstance('Onsite', FIRST_LESSON_DATE_ISO, 'Saturday'),
         courseInstance('Online', ONLINE_FIRST_LESSON_DATE_ISO, 'Sunday'),

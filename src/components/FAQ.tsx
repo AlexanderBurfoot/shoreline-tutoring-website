@@ -14,7 +14,7 @@ const faqs = [
     },
     {
         question: 'Are lessons online or in person?',
-        answer: 'One-on-one tutoring runs online, live with your tutor, which keeps scheduling flexible and removes travel either side of a lesson. Our Year 12 small-group classes run both ways: in person at 558 Pacific Highway, St Leonards on Saturdays, or live online on Sundays.',
+        answer: 'One-on-one tutoring happens at your home or live online, whichever suits you, and the price is the same either way. Our Year 12 small-group classes run both ways too: in person at 558 Pacific Highway, St Leonards on Saturdays, or live online on Sundays.',
     },
     {
         question: 'How long is each session?',

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Pricing from '../../components/Pricing';
+import { SHARE_IMAGE } from '../../lib/site';
 
 const TITLE = 'Tutoring Prices & Rates';
 const DESCRIPTION =
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
         title: TITLE,
         description: DESCRIPTION,
         url: '/pricing',
+        images: [SHARE_IMAGE],
     },
 };
 

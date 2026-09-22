@@ -12,8 +12,13 @@ import {
     type Course,
     LESSON_TEACHING_HOURS,
     PROMO_BACKGROUND_IMAGE,
-    SESSION_HOURLY_RATE,
+    FOUNDING_HOURLY_RATE,
+    FOUNDING_TERM_PRICE,
     SESSION_PRICE,
+    TERM_HOURLY_RATE,
+    TERM_LABEL,
+    TERM_PRICE,
+    hasFoundingPlaces,
     TRIAL_OFFER,
     VENUE_SUBURB,
     firstLessonCountdown,
@@ -22,7 +27,7 @@ import {
 
 import { trackEvent } from '../lib/analytics';
 
-const logo = '/ShorelineLogo.png';
+const logo = '/Shoreline-Logo.png';
 
 const DISMISSED_KEY = 'promo_dismissed';
 const CLOSE_ANIMATION_MS = 300;
@@ -354,7 +359,9 @@ const PromoPopup = () => {
 
                         <p className={`promo-popup__rate ${chosenCourse ? 'promo-popup__rate--shown' : ''}`} aria-live="polite">
                             {chosenCourse
-                                ? <>Year 12 {chosenCourse.name}: <strong>{SESSION_PRICE}</strong> per {LESSON_TEACHING_HOURS}-hour lesson ({SESSION_HOURLY_RATE} an hour), first lesson free.</>
+                                ? hasFoundingPlaces(chosenCourse.id)
+                                    ? <>Year 12 {chosenCourse.name}: founding place <strong>{FOUNDING_TERM_PRICE}</strong> for {TERM_LABEL} ({FOUNDING_HOURLY_RATE} an hour), first lesson free.</>
+                                    : <>Year 12 {chosenCourse.name}: <strong>{TERM_PRICE}</strong> for {TERM_LABEL} ({TERM_HOURLY_RATE} an hour) or {SESSION_PRICE} a lesson, first lesson free.</>
                                 : `One ${LESSON_TEACHING_HOURS}-hour lesson a week, working through the Year 12 course alongside school. ${TRIAL_OFFER}.`}
                         </p>
                     </div>

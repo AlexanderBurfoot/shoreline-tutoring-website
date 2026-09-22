@@ -1,0 +1,64 @@
+/* ===== Subjects index =====
+   The landing page above every subject page. The hero matches the resources
+   hero so the two listing pages read as a pair. */
+
+.subjects-hero {
+    position: relative;
+    padding-top: var(--header-height);
+    min-height: 22rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-navy) 40%, #1a2744 70%, #253552 100%);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.subjects-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+}
+
+.subjects-hero__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: var(--space-4);
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.subjects-hero__subtitle {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.subjects-list {
+    background: var(--color-cream);
+    padding: var(--space-20) 0;
+}
+
+.subjects-list__note {
+    max-width: 640px;
+    margin: var(--space-12) auto 0;
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: var(--text-base);
+}
+
+@media (max-width: 768px) {
+    .subjects-hero {
+        min-height: 16rem;
+    }
+
+    .subjects-hero__title {
+        font-size: 2rem;
+    }
+
+    .subjects-list {
+        padding: var(--space-12) 0;
+    }
+}

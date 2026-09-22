@@ -249,7 +249,7 @@ ol {
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--color-gold-primary);
+  color: var(--label-color);
   margin-bottom: var(--space-3);
 }
 
@@ -261,8 +261,18 @@ ol {
   margin: 0 auto var(--space-16);
 }
 
+/* ===== Accent text =====
+   The brand gold is 9.5:1 against the navy sections but only 1.7:1 against
+   white, under the 4.5:1 (normal) and 3:1 (large) contrast standards. On light
+   backgrounds the accent word is navy under a gold underline, and small labels
+   are navy. The dark sections switch both back to gold, where it reads well. */
 .gold-text {
-  color: var(--color-gold-primary);
+  color: var(--accent-text-color);
+  background-image: var(--accent-underline);
+  background-size: 100% 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 0.1em;
 }
 
 .text-center {
@@ -351,6 +361,9 @@ button:hover .icon-arrow {
    below switch it to gold. The white card on the thank-you page switches back. */
 :root {
   --focus-ring-color: var(--color-navy);
+  --accent-text-color: var(--color-navy);
+  --accent-underline: linear-gradient(var(--color-gold-primary), var(--color-gold-primary));
+  --label-color: var(--color-navy);
 }
 
 /* The ring's colour, width and offset are set on everything at rest, and focus
@@ -376,11 +389,15 @@ button:hover .icon-arrow {
 .student-testimonials,
 .pricing-hero,
 .resources-hero,
+.subjects-hero,
 .subject-page__cta-card,
 .blog-post__cta-box,
 .thank-you,
 .footer {
   --focus-ring-color: var(--color-gold-primary);
+  --accent-text-color: var(--color-gold-primary);
+  --accent-underline: none;
+  --label-color: var(--color-gold-primary);
 }
 
 .thank-you__card,
@@ -610,7 +627,7 @@ button:hover .icon-arrow {
 /* Inline link inside a section subtitle, used where a section needs to point
    at the other learning format. */
 .section-subtitle__link {
-  color: var(--color-gold-dark);
+  color: var(--label-color);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;

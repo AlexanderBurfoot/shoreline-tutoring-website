@@ -171,7 +171,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: var(--color-gold-primary);
+  color: var(--label-color);
   padding: var(--space-2) var(--space-4);
   background: rgba(234, 197, 77, 0.08);
   border-radius: var(--border-radius-full);

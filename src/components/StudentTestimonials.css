@@ -25,6 +25,9 @@
 
 /* Testimonial Card */
 .student-testimonial-card {
+    /* Light card inside a dark section, so the accent tokens go back to navy. */
+    --accent-text-color: var(--color-navy);
+    --label-color: var(--color-navy);
     background: var(--color-cream);
     border-radius: var(--border-radius-xl);
     padding: var(--space-8);
@@ -103,7 +106,7 @@
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     background: rgba(234, 197, 77, 0.1);
     padding: 6px 14px;
     border-radius: var(--border-radius-full);

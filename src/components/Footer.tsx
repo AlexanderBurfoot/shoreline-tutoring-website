@@ -92,8 +92,8 @@ const FooterBrand = () => (
         </Link>
         <p className="footer__tagline">EXCLUSIVE • INDIVIDUALISED • EFFECTIVE</p>
         <p className="footer__description">
-            Online one-on-one tutoring for every year level and subject, plus small-group HSC
-            classes in St Leonards and online.
+            One-on-one tutoring at home or online for every year level and subject, plus
+            small-group HSC classes in St Leonards and online.
         </p>
         <ContactDetails />
     </div>

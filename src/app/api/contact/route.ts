@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 
+import { CONTACT_EMAIL } from '../../../lib/site';
+import { ownerEnquiryEmailHtml, parentConfirmationEmailHtml, type ConfirmationFields } from '../../../lib/enquiryEmails';
+
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 
@@ -39,6 +42,12 @@ const TOTAL_OUTBOUND_BUDGET_MS = 8000;
 const WEBHOOK_RESERVE_MS = 2500;
 const GRAPH_TOKEN_TIMEOUT_MS = 3000;
 const GRAPH_SEND_TIMEOUT_MS = 3000;
+
+/**
+ * The confirmation to the parent is a courtesy, not the enquiry itself, so it
+ * gets one attempt on whatever time is left and never holds up the response.
+ */
+const AUTO_REPLY_TIMEOUT_MS = 2500;
 
 /**
  * fetch with a hard timeout. Without this, a hanging endpoint (as opposed to
@@ -184,24 +193,46 @@ async function notifyWebhook(
     }
 }
 
-function escapeHtml(text: string) {
-    if (!text) return '';
-    return String(text)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-}
 
-/** One label and value row of the enquiry email, or nothing when the value is empty. */
-function emailDetailRow(label: string, value: string) {
-    if (!value) return '';
-    return `
-                    <tr>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">${escapeHtml(label)}</td>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;">${escapeHtml(value)}</td>
-                    </tr>`;
+/**
+ * Confirms to the parent that their enquiry arrived, so they are not left
+ * wondering whether the form worked.
+ *
+ * Deliberately echoes only their name and the choices they ticked, never their
+ * free-text message: this endpoint will send to any address given to it, and a
+ * mostly fixed body makes it useless for relaying content to someone else.
+ * Failure is logged and ignored, because the enquiry itself is already safe.
+ */
+async function sendParentConfirmation(
+    token: string,
+    { email, ...fields }: ConfirmationFields & { email: string },
+    timeoutMs: number,
+): Promise<boolean> {
+    const html = parentConfirmationEmailHtml(fields);
+
+    try {
+        const response = await fetchWithTimeout(
+            `https://graph.microsoft.com/v1.0/users/${process.env.EMAIL_FROM}/sendMail`,
+            {
+                method: 'POST',
+                headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message: {
+                        subject: 'Thank you for contacting Shoreline Tutoring',
+                        body: { contentType: 'HTML', content: html },
+                        toRecipients: [{ emailAddress: { address: email } }],
+                        // Replies land in the enquiry mailbox, not the sending account.
+                        replyTo: [{ emailAddress: { address: process.env.EMAIL_TO || CONTACT_EMAIL } }],
+                    },
+                    saveToSentItems: false,
+                }),
+            },
+            timeoutMs,
+        );
+        return response.ok;
+    } catch {
+        return false;
+    }
 }
 
 export async function POST(request: Request) {
@@ -254,43 +285,7 @@ export async function POST(request: Request) {
         const enquiryDetail = [courseChoice, dayChoice].filter(Boolean).join(', ') || subjectsList;
         const subjectLine = `New ${enquiryLabel} Enquiry: ${name}${enquiryDetail ? ` (${enquiryDetail})` : ''}`;
 
-        const htmlBody = `
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb;">
-            <div style="background: linear-gradient(135deg, #1a2332 0%, #243447 100%); padding: 32px; text-align: center;">
-                <h1 style="color: #EAC54D; margin: 0; font-size: 22px; font-weight: 600;">New ${escapeHtml(enquiryLabel)} Enquiry</h1>
-                <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0; font-size: 14px;">Submitted via shorelinetutoring.com.au</p>
-            </div>
-            <div style="padding: 32px;">
-                <table style="width: 100%; border-collapse: collapse;">
-                    <tr>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; width: 140px;">Name</td>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;">${escapeHtml(name)}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Email</td>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;"><a href="mailto:${escapeHtml(email)}" style="color: #EAC54D; text-decoration: none;">${escapeHtml(email)}</a></td>
-                    </tr>
-                    ${phone ? `
-                    <tr>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Phone</td>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;"><a href="tel:${escapeHtml(phone)}" style="color: #EAC54D; text-decoration: none;">${escapeHtml(phone)}</a></td>
-                    </tr>` : ''}
-                    ${emailDetailRow('Format', learningFormat)}
-                    ${emailDetailRow('Course', courseChoice)}
-                    ${emailDetailRow('Day', dayChoice)}
-                    ${emailDetailRow('Subjects', subjectsList)}
-                </table>
-                ${message ? `
-                <div style="margin-top: 24px;">
-                    <p style="color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 8px;">Goals & Message</p>
-                    <div style="background: #f9fafb; border-radius: 8px; padding: 16px; color: #1a2332; font-size: 15px; line-height: 1.6; white-space: pre-wrap;">${escapeHtml(message)}</div>
-                </div>` : ''}
-            </div>
-            <div style="padding: 16px 32px; background: #f9fafb; border-top: 1px solid #e5e7eb; text-align: center;">
-                <p style="margin: 0; color: #9ca3af; font-size: 12px;">Shoreline Tutoring: Contact Form</p>
-            </div>
-        </div>
-        `;
+        const htmlBody = ownerEnquiryEmailHtml({ enquiryLabel, name, email, phone, learningFormat, courseChoice, dayChoice, subjectsList, message });
 
         const token = await getGraphToken();
 
@@ -345,6 +340,20 @@ export async function POST(request: Request) {
 
         if (lastError) {
             throw lastError;
+        }
+
+        // Only with time left over: the enquiry is delivered either way, and
+        // the webhook's reserve is not spent on a courtesy email.
+        const replyBudget = Math.min(AUTO_REPLY_TIMEOUT_MS, deadline - Date.now());
+        if (replyBudget > 0 && token) {
+            const confirmed = await sendParentConfirmation(
+                token,
+                { name, email, learningFormat, subjectsList, courseChoice, dayChoice },
+                replyBudget,
+            );
+            if (!confirmed) {
+                console.warn('[ENQUIRY_CONFIRMATION_FAILED] Enquiry delivered; the confirmation to the enquirer was not.');
+            }
         }
 
         // Mirrored on every enquiry, not just failures, so each lead has two

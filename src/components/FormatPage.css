@@ -198,7 +198,7 @@
     height: 32px;
     border-radius: 50%;
     background: rgba(234, 197, 77, 0.18);
-    color: var(--color-gold-dark);
+    color: var(--label-color);
     font-weight: 700;
     margin-bottom: var(--space-4);
 }
@@ -340,7 +340,7 @@
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-gold-dark);
+    color: var(--label-color);
     margin-bottom: var(--space-2);
 }
 
@@ -387,7 +387,7 @@
     font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-xs);
     font-weight: 600;
-    color: var(--color-gold-dark);
+    color: var(--label-color);
 }
 
 .format-pricing__footnote {
@@ -399,7 +399,7 @@
 }
 
 .format-pricing__footnote a {
-    color: var(--color-gold-dark);
+    color: var(--label-color);
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -477,7 +477,7 @@
 
 .format-option__check {
     flex-shrink: 0;
-    color: var(--color-gold-dark);
+    color: var(--label-color);
     font-weight: 700;
 }
 
@@ -598,7 +598,7 @@
 
 .format-program__check {
     flex-shrink: 0;
-    color: var(--color-gold-dark);
+    color: var(--label-color);
     font-weight: 700;
 }
 

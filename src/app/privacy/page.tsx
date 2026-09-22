@@ -40,8 +40,8 @@ const SECTIONS: PolicySection[] = [
         heading: 'Who we are',
         body: (
             <p>
-                Shoreline Tutoring provides online one-on-one tutoring and small-group classes, with
-                in-person classes at {VENUE_ADDRESS}. For any privacy question, email <EmailLink /> or
+                Shoreline Tutoring provides one-on-one tutoring at home and online, and small-group
+                classes, with in-person classes at {VENUE_ADDRESS}. For any privacy question, email <EmailLink /> or
                 call <a href={`tel:${CONTACT_PHONE_E164}`}>{CONTACT_PHONE_DISPLAY}</a>.
             </p>
         ),

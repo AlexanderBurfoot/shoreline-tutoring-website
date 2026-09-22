@@ -6,14 +6,19 @@ import './Pricing.css';
 import {
     COURSES,
     FIRST_LESSON_DATE_LONG,
+    FOUNDING_HOURLY_RATE,
+    FOUNDING_PLACES_PER_CLASS,
+    FOUNDING_TERM_PRICE,
     GROUP_CLASSES_PATH,
     LESSON_TEACHING_HOURS,
-    SESSION_HOURLY_RATE,
     SESSION_PRICE,
+    TERM_HOURLY_RATE,
     TERM_LABEL,
     TERM_PAID_SESSIONS,
     TERM_PRICE,
+    TERM_SAVING,
     TRIAL_OFFER,
+    anyFoundingPlaces,
 } from '../data/groupClassLaunch';
 import {
     LESSONS_PER_BUNDLE,
@@ -153,21 +158,28 @@ const Pricing = () => {
                         <span className="pricing-table-badge">{TRIAL_OFFER}</span>
                         <h3 className="pricing-table-title">Weekly Classes</h3>
                         <p className="pricing-table-subtitle">
-                            One price per lesson, the same whether you attend in person on Saturdays
-                            or online on Sundays. Sit the first lesson free and only pay if you
-                            decide to stay.
+                            Pay for the term or week by week, the same whether you attend in person
+                            on Saturdays or online on Sundays. Sit the first lesson free and only pay
+                            if you decide to stay.
                         </p>
                     </div>
 
                     <div className="pricing-program">
+                        {/* Leads with founding places while any class has them. */}
                         <div className="pricing-program__price">
-                            {SESSION_PRICE}
+                            {anyFoundingPlaces() ? FOUNDING_TERM_PRICE : TERM_PRICE}
                             <small>
-                                per {LESSON_TEACHING_HOURS}-hour lesson · {SESSION_HOURLY_RATE} an
-                                hour · {TERM_PRICE} for the {TERM_PAID_SESSIONS} paid lessons left
-                                in {TERM_LABEL}
+                                {anyFoundingPlaces()
+                                    ? `founding place for ${TERM_LABEL} · first ${FOUNDING_PLACES_PER_CLASS} students per class · ${FOUNDING_HOURLY_RATE} an hour`
+                                    : `for ${TERM_LABEL}, paid up front · ${TERM_HOURLY_RATE} an hour`}
                             </small>
                         </div>
+                        <p className="pricing-program__alternatives">
+                            {anyFoundingPlaces()
+                                ? `Then ${TERM_PRICE} for the term, saving ${TERM_SAVING}, or ${SESSION_PRICE} a lesson paid weekly.`
+                                : `Saves ${TERM_SAVING} on paying ${SESSION_PRICE} a lesson each week.`}{' '}
+                            {TERM_PAID_SESSIONS} paid {LESSON_TEACHING_HOURS}-hour lessons in {TERM_LABEL}.
+                        </p>
                         <ul className="pricing-program__courses">
                             {COURSES.map((course) => (
                                 <li key={course.id} className="pricing-program__course">

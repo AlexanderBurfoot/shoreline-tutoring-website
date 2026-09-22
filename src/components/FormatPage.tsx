@@ -18,7 +18,7 @@ const COURSES_SECTION_ID = 'courses';
 const FACILITIES_SECTION_ID = 'facilities';
 
 /** The Shoreline logo and its intrinsic size, for the hero backdrop. */
-const LOGO_SRC = '/ShorelineLogo.png';
+const LOGO_SRC = '/Shoreline-Logo.png';
 const LOGO_WIDTH = 1966;
 const LOGO_HEIGHT = 1289;
 
@@ -37,7 +37,8 @@ const ArrowIcon = ({ size }: { size: number }) => (
 const HeadingText = ({ lead, accent, trail }: Heading) => (
     <>
         {lead}
-        {accent && <span className="gold-text"> {accent}</span>}
+        {/* The space sits outside the span so the underline covers only the words. */}
+        {accent && <>{' '}<span className="gold-text">{accent}</span></>}
         {trail && ` ${trail}`}
     </>
 );

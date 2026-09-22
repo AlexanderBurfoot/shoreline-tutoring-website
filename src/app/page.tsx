@@ -12,8 +12,8 @@ import RecentArticles from '../components/RecentArticles';
 import CTA from '../components/CTA';
 import JsonLd from '../components/JsonLd';
 import { groupClassesPage } from '../data/formatPages';
-import { HOMEPAGE_LEADS_WITH_GROUP, VENUE_POSTAL_ADDRESS } from '../data/groupClassLaunch';
-import { CONTACT_EMAIL, CONTACT_PHONE_E164, SITE_URL } from '../lib/site';
+import { HOMEPAGE_LEADS_WITH_GROUP } from '../data/groupClassLaunch';
+import { ORGANIZATION_SCHEMA } from '../lib/structuredData';
 
 const StudentTestimonials = dynamic(() => import('../components/StudentTestimonials'));
 const FAQ = dynamic(() => import('../components/FAQ'));
@@ -24,18 +24,6 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-};
-
-/** The business itself, for search results and map listings. */
-const ORGANIZATION_SCHEMA = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'Shoreline Tutoring',
-  url: SITE_URL,
-  logo: `${SITE_URL}/ShorelineLogo.png`,
-  email: CONTACT_EMAIL,
-  telephone: CONTACT_PHONE_E164,
-  address: VENUE_POSTAL_ADDRESS,
 };
 
 // Next.js automatically Server-Side Renders these imports by default!

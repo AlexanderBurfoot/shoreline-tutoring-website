@@ -20,8 +20,8 @@ const steps = [
     },
     {
         number: '04',
-        title: 'Constant Support',
-        description: 'Between sessions, receive ongoing guidance, homework help, and encouragement. Your tutor is always just a message away.',
+        title: 'Support Between Sessions',
+        description: 'Message your tutor any time in your WhatsApp group for a quick question or help with homework, and get a reply within 24 hours.',
     },
     {
         number: '05',
@@ -62,21 +62,6 @@ const Approach = () => {
                     ))}
                 </div>
 
-                <div className="approach__highlight">
-                    <div className="approach__highlight-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                        </svg>
-                    </div>
-                    <div className="approach__highlight-content">
-                        <h3 className="approach__highlight-title">Constant Support Guarantee</h3>
-                        <p className="approach__highlight-text">
-                            Unlike other tutoring services, our commitment doesn't end when the session does.
-                            Students can reach their tutors anytime for quick questions, homework help, or just
-                            encouragement before a big test.
-                        </p>
-                    </div>
-                </div>
             </div>
         </section>
     );

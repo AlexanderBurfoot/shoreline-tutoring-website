@@ -78,11 +78,11 @@
     font-size: var(--text-sm);
     font-weight: 600;
     letter-spacing: 3px;
-    color: var(--color-gold-primary);
+    color: var(--label-color);
 }
 
 .hero__tagline-dot {
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     font-size: var(--text-lg);
 }
 
@@ -167,10 +167,13 @@
 
 .hero__title-accent {
     display: block;
-    background: var(--color-gold-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-text-color);
+    background-image: var(--accent-underline);
+    background-size: 100% 4px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 0.08em;
+    width: fit-content;
 }
 
 /* Description */

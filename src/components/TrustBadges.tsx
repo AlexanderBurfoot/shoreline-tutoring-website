@@ -40,7 +40,7 @@ const badges = [
             </svg>
         ),
         title: 'Between-Session Support',
-        description: 'Reach your tutor anytime with questions',
+        description: 'Message your tutor any time, reply within 24 hours',
     },
     {
         icon: (

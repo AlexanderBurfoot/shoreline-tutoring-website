@@ -41,10 +41,23 @@ const subjectIcons: Record<string, React.ReactNode> = {
             <path pathLength={1} d="M10 14h4" />
         </svg>
     ),
+    /* Commerce is not offered at the moment; see subjectData.ts.
     commerce: (
         <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path pathLength={1} d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
             <line pathLength={1} x1="7" y1="7" x2="7.01" y2="7" />
+        </svg>
+    ),
+    */
+    biology: (
+        <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path pathLength={1} d="M7 3c0 4.5 10 6 10 10.5S7 19.5 7 21" />
+            <path pathLength={1} d="M17 3c0 4.5-10 6-10 10.5S17 19.5 17 21" />
+            {/* Rungs sit in the widest loop, between the crossings at y 8.2 and
+                18.4, each running from one strand to the other. */}
+            <line pathLength={1} x1="8.14" y1="11" x2="15.86" y2="11" />
+            <line pathLength={1} x1="7" y1="13.5" x2="17" y2="13.5" />
+            <line pathLength={1} x1="8.16" y1="16" x2="15.84" y2="16" />
         </svg>
     ),
     economics: (

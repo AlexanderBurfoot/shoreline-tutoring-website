@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Resources from '../../components/Resources';
+import { SHARE_IMAGE } from '../../lib/site';
 
 const TITLE = 'Study Resources & HSC Guides';
 const DESCRIPTION =
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
         title: TITLE,
         description: DESCRIPTION,
         url: '/resources',
+        images: [SHARE_IMAGE],
     },
 };
 

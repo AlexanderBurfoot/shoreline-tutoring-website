@@ -43,7 +43,7 @@ interface FormData {
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 const SUBJECTS = [
-    'English', 'Mathematics', 'Physics', 'Chemistry', 'Economics',
+    'English', 'Mathematics', 'Physics', 'Chemistry', 'Biology', 'Economics',
     'Business Studies', 'Selective High School Exam', 'Opportunity Classes Exam', 'NAPLAN Preparation', 'Other',
 ];
 

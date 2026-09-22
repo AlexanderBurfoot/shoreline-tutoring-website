@@ -1,0 +1,74 @@
+/* ===== Mobile booking bar =====
+   Only below the width where the header's own button moves into the menu. */
+
+.mobile-cta {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .mobile-cta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 950;
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        /* Clears the home indicator on phones without a physical button. */
+        padding: var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(234, 197, 77, 0.35);
+        box-shadow: 0 -6px 24px rgba(26, 35, 50, 0.12);
+        transform: translateY(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform var(--transition-base), opacity var(--transition-base), visibility var(--transition-base);
+    }
+
+    .mobile-cta--visible {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-cta__call {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        /* Comfortably above the 44px minimum for a touch target. */
+        width: 48px;
+        height: 48px;
+        border-radius: var(--border-radius-md);
+        border: 1.5px solid var(--color-gold-primary);
+        color: var(--color-navy);
+        background: var(--color-white);
+    }
+
+    .mobile-cta__book {
+        flex: 1;
+        justify-content: center;
+        padding-top: var(--space-3);
+        padding-bottom: var(--space-3);
+    }
+
+    /* Room so the bar never sits over the last of the page. */
+    .footer {
+        padding-bottom: calc(var(--space-8) + 72px);
+    }
+
+    /* Lifted clear of the bar. */
+    .back-to-top {
+        bottom: 88px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mobile-cta {
+        transition: opacity var(--transition-base), visibility var(--transition-base);
+        transform: none;
+    }
+}

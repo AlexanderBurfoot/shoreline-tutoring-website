@@ -28,7 +28,8 @@ export interface SubjectData {
     whatYouLearn: string[];
     examTips: string[];
     whyUs: string[];
-    testimonial: SubjectTestimonial;
+    /** Omitted until a real student quote exists for the subject. */
+    testimonial?: SubjectTestimonial;
     sessionStructure: SessionStep[];
     ctaText: string;
 }
@@ -381,6 +382,11 @@ export const subjects: SubjectData[] = [
         ],
         ctaText: 'Ready to think like a strategist?',
     },
+    /* Commerce is not offered at the moment. Kept here, commented out, so it can
+       be restored by deleting this comment wrapper: everything that lists
+       subjects (the homepage grid, /subjects, the header menu, the footer, the
+       sitemap) is built from this array, so it returns everywhere at once.
+       Its icon is commented out in SubjectIcons.tsx for the same reason.
     {
         slug: 'commerce',
         icon: '🏷️',
@@ -438,6 +444,61 @@ export const subjects: SubjectData[] = [
             { duration: '5 min', title: 'Summary & Tasks', description: 'Review what was covered and set a targeted homework activity' },
         ],
         ctaText: 'Build the foundations for Years 7–10 Commerce subjects.',
+    },
+    */
+    {
+        slug: 'biology',
+        icon: '🧬',
+        title: 'Biology',
+        shortDescription: 'Understand how living systems work, then write the answers that turn that understanding into marks.',
+        level: 'Years 11–12',
+        heroTagline: 'Biology rewards precise writing as much as knowledge. We build both.',
+        stats: [
+            { label: 'Modules 1–8 Covered', value: 'Full Syllabus' },
+            { label: 'Tailored to Each Student', value: '1-on-1 & Group' },
+            { label: 'Session Notes Included', value: 'Always' },
+        ],
+        overview: [
+            'Biology carries more content than any other science, which is why students who simply read their notes plateau. Marks are usually lost in the writing rather than the knowing: an answer that describes when the question said assess, or that never names the process it is talking about.',
+            'We work through the syllabus module by module, then spend the rest of every session on written responses and unfamiliar stimulus, which is where the harder marks sit. You leave each session with notes and a short set of targeted questions.',
+        ],
+        topicsCovered: [
+            'Cells as the basis of life',
+            'Organisation of living things',
+            'Biological diversity and adaptation',
+            'Ecosystem dynamics',
+            'Heredity and reproduction',
+            'Genetic change and biotechnology',
+            'Infectious disease and immunity',
+            'Non-infectious disease and disorders',
+        ],
+        whatYouLearn: [
+            'Answering to the syllabus verb, so describe, explain and assess each get what they ask for',
+            'Structuring extended responses that hold a line of argument to the end',
+            'Reading graphs, tables and experimental data under time pressure',
+            'Applying familiar biology to unfamiliar scenarios in the exam',
+            'Using correct terminology instead of everyday paraphrase',
+        ],
+        examTips: [
+            'Underline the verb before you write a word',
+            'Name the process: photosynthesis, meiosis, natural selection, not "it"',
+            'Use the stimulus in your answer, since it is there for a reason',
+            'Link structure to function whenever a question mentions both',
+            'In assess and evaluate questions, reach a judgement rather than listing both sides',
+        ],
+        whyUs: [
+            'Every session is mapped to the NSW Stage 6 syllabus, module by module',
+            'Written responses are marked the way HSC markers mark them, with the reasons explained',
+            'Regular practice with unfamiliar stimulus, which is where students lose the most marks',
+            'Notes after every session so revision does not start from a blank page',
+        ],
+        sessionStructure: [
+            { duration: '10 min', title: 'Module Check-In', description: 'Review where we are in the syllabus and clear up anything from class' },
+            { duration: '25 min', title: 'Concept Building', description: 'Work through the biology with diagrams, examples and questions that test understanding' },
+            { duration: '15 min', title: 'Written Response Practice', description: 'Answer HSC-style questions and mark them together against the criteria' },
+            { duration: '10 min', title: 'Notes & Next Steps', description: 'Receive session notes and a targeted set of revision questions' },
+        ],
+        ctaText: 'Ready to get on top of Biology?',
     },
     // ─── Row 4 (Test Prep) ───
     {

@@ -112,7 +112,7 @@
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     margin-bottom: var(--space-2);
 }
 

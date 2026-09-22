@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/group-classes',
     '/pricing',
     '/resources',
+    '/subjects',
   ].map((route) => ({
     url: `${SITE_URL}${route}`,
     changeFrequency: 'weekly' as const,

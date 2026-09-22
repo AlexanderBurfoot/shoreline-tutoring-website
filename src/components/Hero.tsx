@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
 import './Hero.css';
-const logo = '/ShorelineLogo.png';
+const logo = '/Shoreline-Logo.png';
 import ScrollReveal from './ScrollReveal';
 import ParallaxScene from './ParallaxScene';
 import EnquiryLink from './EnquiryLink';
@@ -70,15 +70,15 @@ const Hero = ({ asSection = false }: HeroProps) => {
 
                     <ScrollReveal delay={100}>
                         <TitleTag className="hero__title animate-fade-in-up delay-100">
-                            Unlock Your
-                            <span className="hero__title-accent"> Academic Potential</span>
+                            Unlock Your{' '}
+                            <span className="hero__title-accent">Academic Potential</span>
                         </TitleTag>
                     </ScrollReveal>
 
                     <ScrollReveal delay={200}>
                         <p className="hero__description animate-fade-in-up delay-200">
                             {asSection
-                                ? 'Private one-on-one tutoring, live online, across every year level and subject, with a learning plan shaped entirely around your child.'
+                                ? 'Private one-on-one tutoring at your home or live online, across every year level and subject, with a learning plan shaped entirely around your child.'
                                 : 'Experience transformative tutoring, one-on-one or in small groups, designed to dramatically improve your results through personalised attention and constant support.'}
                         </p>
                     </ScrollReveal>
@@ -122,8 +122,8 @@ const Hero = ({ asSection = false }: HeroProps) => {
                             </div>
                             <div className="hero__stat-divider"></div>
                             <div className="hero__stat">
-                                <span className="hero__stat-number">24/7</span>
-                                <span className="hero__stat-label">Student Support</span>
+                                <span className="hero__stat-number">24 hours</span>
+                                <span className="hero__stat-label">Message Replies</span>
                             </div>
                         </div>
                     </ScrollReveal>

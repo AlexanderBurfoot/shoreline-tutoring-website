@@ -14,12 +14,17 @@ import {
     ONE_ON_ONE_FORMAT,
     ONE_ON_ONE_PATH,
     ONLINE_FIRST_CLASS,
-    SESSION_HOURLY_RATE,
+    FOUNDING_HOURLY_RATE,
+    FOUNDING_PLACES_PER_CLASS,
+    FOUNDING_TERM_PRICE,
     SESSION_PRICE,
+    TERM_HOURLY_RATE,
     TERM_LABEL,
     TERM_PAID_SESSIONS,
     TERM_PRICE,
+    TERM_SAVING,
     VENUE_ADDRESS,
+    anyFoundingPlaces,
 } from './groupClassLaunch';
 import {
     LESSONS_PER_BUNDLE,
@@ -149,7 +154,7 @@ export const oneOnOnePage: FormatPageContent = {
         title: { lead: 'Every Session, Built Around', accent: 'One Student' },
         subtitle: (
             <>
-                Private tutoring <strong>online, live with your tutor</strong>, with a plan shaped
+                Private tutoring <strong>at your home or live online</strong>, with a plan shaped
                 entirely around where your child is and where they want to get to. Start with a
                 free trial lesson and decide afterwards.
             </>
@@ -157,7 +162,7 @@ export const oneOnOnePage: FormatPageContent = {
         facts: [
             { label: 'Session length', value: 'One hour or longer, your choice' },
             { label: 'When', value: 'Scheduled around your week' },
-            { label: 'Where', value: 'Online, live with your tutor' },
+            { label: 'Where', value: 'At your home or live online' },
             { label: 'Attention', value: 'One student, the whole session' },
         ],
         primaryCta: { href: ONE_ON_ONE_ENQUIRY_HREF, label: 'Book a Free Trial Lesson' },
@@ -168,31 +173,31 @@ export const oneOnOnePage: FormatPageContent = {
     attendance: {
         header: {
             eyebrow: 'How It Works',
-            title: { lead: 'Live online,', accent: 'one to one' },
+            title: { lead: 'At home or online,', accent: 'one to one' },
             subtitle:
-                'Every lesson is a live video session with your tutor. It is not a recording, a chatbot or a worksheet emailed over. It is the same lesson you would get across a table, without the travel.',
+                'Your tutor comes to your home, or teaches your child in a live video lesson. Either way it is the same tutor, the same plan and the same price, so choose whichever fits your week.',
         },
         options: [
             {
-                name: 'Live video',
-                tagline: 'Face to face, wherever you are.',
+                name: 'At your home',
+                tagline: 'Your tutor comes to you.',
                 description:
-                    'Your tutor and your child talk through the work in real time, so a misunderstanding gets caught the moment it appears rather than at the end of a worksheet.',
+                    'Lessons happen wherever your child studies best, so there is nothing to organise beyond being home. The tutor works through problems on paper beside them and marks as they go.',
                 points: [
-                    'Questions asked and answered as they come up',
-                    'No travel, so no time lost either side of the lesson',
-                    'Easier to fit around sport, work and family schedules',
+                    'No travel for your child, before or after the lesson',
+                    'Past papers and textbooks worked through side by side',
+                    'The same price as learning online',
                 ],
             },
             {
-                name: 'Shared whiteboard',
-                tagline: 'Working shown, and marked as you go.',
+                name: 'Live online',
+                tagline: 'Face to face, wherever you are.',
                 description:
-                    'Both of you write on the same screen, so your child shows their working and the tutor marks it live. That is the part that matters most for maths, science and long-form writing.',
+                    'A live video lesson with a shared whiteboard, so your child shows their working and the tutor marks it in real time. It is not a recording or a worksheet emailed over.',
                 points: [
-                    'Diagrams, proofs and full worked solutions',
+                    'Diagrams, proofs and full worked solutions on screen',
                     'Every board saved and sent after the lesson',
-                    'Session notes and personalised homework each time',
+                    'Easy to fit around sport, work and family schedules',
                 ],
             },
         ],
@@ -355,7 +360,12 @@ export const groupClassesPage: FormatPageContent = {
             { label: 'Each week', value: `One ${LESSON_TEACHING_HOURS}-hour lesson · ${LESSON_BREAK_MINUTES}-minute break` },
             { label: 'In person · St Leonards', value: `From ${IN_PERSON_FIRST_CLASS}, ${SESSION_START_TIMES}` },
             { label: 'Online · live from home', value: `From ${ONLINE_FIRST_CLASS}, ${SESSION_START_TIMES}` },
-            { label: 'Price', value: `${TRIAL_OFFER}, then ${SESSION_PRICE} a lesson (${SESSION_HOURLY_RATE} an hour)` },
+            {
+                label: 'Price',
+                value: anyFoundingPlaces()
+                    ? `${TRIAL_OFFER}. Founding places ${FOUNDING_TERM_PRICE} for the term`
+                    : `${TRIAL_OFFER}, then ${TERM_PRICE} for the term`,
+            },
         ],
         primaryCta: { href: GROUP_ENQUIRY_HREF, label: 'Book a Free Lesson' },
         // A route plus anchor rather than a bare anchor, so the same button works
@@ -474,20 +484,35 @@ export const groupClassesPage: FormatPageContent = {
     pricing: {
         header: {
             eyebrow: 'What It Costs',
-            title: { lead: 'One price,', accent: 'every lesson' },
+            title: { lead: 'Pay for the term,', accent: 'or week by week' },
             subtitle: (
                 <>
-                    The first lesson is free. After that each lesson is {SESSION_PRICE}, which works
-                    out to {SESSION_HOURLY_RATE} an hour, or {TERM_PRICE} for the{' '}
-                    {TERM_PAID_SESSIONS} paid lessons left in {TERM_LABEL}. The price is the same
-                    whether you attend in person or online.
+                    The first lesson is free.{' '}
+                    {anyFoundingPlaces() && (
+                        <>
+                            The first {FOUNDING_PLACES_PER_CLASS} students in each class take a founding
+                            place at {FOUNDING_TERM_PRICE} for the rest of {TERM_LABEL}.{' '}
+                        </>
+                    )}
+                    After that it is {TERM_PRICE} for the {TERM_PAID_SESSIONS} paid lessons,
+                    saving {TERM_SAVING} on paying {SESSION_PRICE} a lesson each week. The price
+                    is the same in person or online.
                 </>
             ),
         },
         program: {
-            label: `Per ${LESSON_TEACHING_HOURS}-hour lesson`,
-            price: SESSION_PRICE,
-            caption: `${SESSION_HOURLY_RATE} an hour · ${TERM_PRICE} for the ${TERM_PAID_SESSIONS} paid lessons left in ${TERM_LABEL}`,
+            // Leads with founding places while any class has them, then the term rate.
+            ...(anyFoundingPlaces()
+                ? {
+                    label: `Founding place · first ${FOUNDING_PLACES_PER_CLASS} students per class`,
+                    price: FOUNDING_TERM_PRICE,
+                    caption: `for ${TERM_LABEL} · ${FOUNDING_HOURLY_RATE} an hour · then ${TERM_PRICE} a term or ${SESSION_PRICE} a lesson`,
+                }
+                : {
+                    label: `${TERM_LABEL}, paid up front`,
+                    price: TERM_PRICE,
+                    caption: `${TERM_HOURLY_RATE} an hour · saves ${TERM_SAVING} · or ${SESSION_PRICE} a lesson weekly`,
+                }),
             inclusions: [
                 `${LESSON_TEACHING_HOURS} hours of teaching every lesson`,
                 'A class that runs only your course',

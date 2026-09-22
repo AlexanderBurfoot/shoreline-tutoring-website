@@ -108,7 +108,7 @@
 }
 
 .featured-post__category {
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     font-weight: 600;
 }
 
@@ -131,7 +131,7 @@
 
 .featured-post__read-more {
     font-weight: 600;
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -250,7 +250,7 @@
 }
 
 .resource-card__category {
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     font-weight: 600;
 }
 
@@ -278,7 +278,7 @@
 
 .resource-card__read-more {
     font-weight: 600;
-    color: var(--color-gold-primary);
+    color: var(--label-color);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;

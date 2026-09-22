@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { getSubjectBySlug, subjects } from '../data/subjectData';
 import { blogPosts } from '../data/blogData';
 import subjectIcons from './SubjectIcons';
+import { SUBJECTS_PATH } from '../lib/site';
 import ScrollReveal from './ScrollReveal';
 import './SubjectPage.css';
 import './Resources.css';
@@ -88,7 +89,7 @@ const SubjectPage = () => {
                     <div className="subject-page__hero-mesh"></div>
                 </div>
                 <div className="container">
-                    <button onClick={() => router.push('/')} className="subject-page__back">
+                    <button onClick={() => router.push(SUBJECTS_PATH)} className="subject-page__back">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M19 12H5M12 19l-7-7 7-7" />
                         </svg>
@@ -255,7 +256,8 @@ const SubjectPage = () => {
                                 </div>
                             </ScrollReveal>
 
-                            {/* Testimonial */}
+                            {/* Testimonial, where the subject has one */}
+                            {subject.testimonial && (
                             <ScrollReveal delay={300} width="100%">
                                 <div className="subject-page__testimonial-card">
                                     <svg className="subject-page__quote-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" opacity="0.15">
@@ -270,6 +272,7 @@ const SubjectPage = () => {
                                     </div>
                                 </div>
                             </ScrollReveal>
+                            )}
 
                             {/* CTA Card */}
                             <ScrollReveal delay={350} width="100%">

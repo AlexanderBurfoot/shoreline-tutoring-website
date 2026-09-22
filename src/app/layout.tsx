@@ -5,9 +5,10 @@ import PromoPopup from '../components/PromoPopup';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BackToTop from '../components/BackToTop';
+import MobileCTABar from '../components/MobileCTABar';
 import ScrollProgress from '../components/ScrollProgress';
 import { inter, cormorant } from './fonts';
-import { SITE_URL } from '../lib/site';
+import { SHARE_IMAGE, SITE_URL } from '../lib/site';
 import Script from 'next/script';
 import { ANNOUNCEMENT_DISMISSED_KEY, ANNOUNCEMENT_HIDDEN_CLASS } from '../data/groupClassLaunch';
 import { GOOGLE_ADS_ID } from '../lib/analytics';
@@ -40,6 +41,11 @@ export const metadata = {
     type: 'website',
     title: 'Shoreline Tutoring - Exclusive, Individualised, Effective',
     description: 'Premium one-on-one tutoring and small-group classes designed to dramatically improve your results through constant support.',
+    images: [SHARE_IMAGE],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [SHARE_IMAGE.url],
   }
 };
 
@@ -111,6 +117,7 @@ gtag('config', '${GOOGLE_ADS_ID}');`}
         </div>
         <Footer />
         <BackToTop />
+        <MobileCTABar />
         <PromoPopup />
       </body>
     </html>

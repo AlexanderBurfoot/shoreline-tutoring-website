@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import SubjectPage from '../../../components/SubjectPage';
+import JsonLd from '../../../components/JsonLd';
 import { getSubjectBySlug, subjects } from '../../../data/subjectData';
 import { truncateForMeta } from '../../../lib/metadata';
+import { SHARE_IMAGE } from '../../../lib/site';
+import { breadcrumbSchema } from '../../../lib/structuredData';
 
 export function generateStaticParams() {
     return subjects.map((subject) => ({ slug: subject.slug }));
@@ -38,16 +41,27 @@ export async function generateMetadata(
             title,
             description,
             url,
+            images: [SHARE_IMAGE],
         },
     };
 }
 
 export default async function SubjectRoute({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
+    const subject = getSubjectBySlug(slug);
 
-    if (!getSubjectBySlug(slug)) {
+    if (!subject) {
         notFound();
     }
 
-    return <SubjectPage />;
+    return (
+        <>
+            <JsonLd data={breadcrumbSchema([
+                { name: 'Home', path: '/' },
+                { name: 'Subjects', path: '/subjects' },
+                { name: subject.title, path: `/subjects/${subject.slug}` },
+            ])} />
+            <SubjectPage />
+        </>
+    );
 }

@@ -8,7 +8,7 @@ import { GROUP_CLASSES_PATH, HOMEPAGE_LEADS_WITH_GROUP, ONE_ON_ONE_PATH } from '
 import subjectIcons from './SubjectIcons';
 import { EnquiryLink, TrackedLink, type NavLocation } from './NavLinks';
 
-const LOGO_SRC = '/ShorelineLogo.png';
+const LOGO_SRC = '/Shoreline-Logo.png';
 const LOGO_WIDTH = 1966;
 const LOGO_HEIGHT = 1289;
 

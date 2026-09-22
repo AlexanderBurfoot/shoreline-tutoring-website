@@ -23,8 +23,8 @@ export const FIRST_LESSON_DATE_SHORT = 'Sat 3 Oct';
 
 /**
  * Classes run on different days by format: in person at St Leonards on
- * Saturdays, and online the following day on Sundays. One-on-one tutoring is
- * scheduled around the family and has no fixed day.
+ * Saturdays, and online the following day on Sundays. One-on-one tutoring,
+ * at home or online, is scheduled around the family and has no fixed day.
  */
 export const IN_PERSON_DAY = 'Saturdays';
 export const IN_PERSON_FIRST_CLASS = 'Saturday 3 October';
@@ -151,23 +151,70 @@ export const TERM_LAST_LESSON_LONG = 'Saturday 12 December';
 /** Lessons in the published schedule, counting the free first one. */
 export const TERM_SESSIONS = 11;
 
-/** Price of a single lesson, in whole dollars. */
+/*
+ * Group class pricing: three ways to pay for the same term.
+ *
+ *  - Founding places: the first FOUNDING_PLACES_PER_CLASS students in each
+ *    class pay FOUNDING_TERM_PRICE for the term. Offered to fill the first
+ *    classes; switch it off with FOUNDING_OFFER_OPEN, or per course with
+ *    FOUNDING_FULL_COURSES once a class has taken its founding students.
+ *  - The term rate: TERM_PRICE paid up front, the main price once founding
+ *    places are gone.
+ *  - Weekly: SESSION_PRICE per lesson, for families who would rather not
+ *    commit to the term.
+ *
+ * The site cannot see enrolments, so it never shows a count of places left;
+ * a number it cannot keep accurate would mislead parents.
+ */
+
+/** Price of a single lesson paid weekly, in whole dollars. */
 export const SESSION_PRICE_DOLLARS = 250;
 
 /** The first lesson is free, so every other lesson in the term is paid. */
 export const TERM_PAID_SESSIONS = TERM_SESSIONS - 1;
 
-/** Cost of the published schedule, with the free first lesson excluded. */
-export const TERM_PRICE_DOLLARS = SESSION_PRICE_DOLLARS * TERM_PAID_SESSIONS;
+/** The whole term paid up front, in whole dollars. */
+export const TERM_PRICE_DOLLARS = 2000;
+
+/** Founding places: the reduced term price for each class's first students. */
+export const FOUNDING_TERM_PRICE_DOLLARS = 1500;
+export const FOUNDING_PLACES_PER_CLASS = 5;
+
+/** Turns the founding offer off everywhere, for when it has run its course. */
+export const FOUNDING_OFFER_OPEN = true;
+
+/**
+ * Courses whose founding places are all taken. Add a course's id here when
+ * its fifth founding student enrols, and it shows the term rate instead.
+ */
+export const FOUNDING_FULL_COURSES: Course['id'][] = [];
+
+/** Whether a course still has founding places to offer. */
+export const hasFoundingPlaces = (courseId: Course['id']) =>
+    FOUNDING_OFFER_OPEN && !FOUNDING_FULL_COURSES.includes(courseId);
+
+const dollars = (amount: number) => `$${amount.toLocaleString('en-AU')}`;
+const perTeachingHour = (lessonCost: number) => dollars(Math.round(lessonCost / LESSON_TEACHING_HOURS));
 
 /** A single lesson, e.g. "$250". */
-export const SESSION_PRICE = `$${SESSION_PRICE_DOLLARS}`;
+export const SESSION_PRICE = dollars(SESSION_PRICE_DOLLARS);
 
-/** The whole term, e.g. "$2,500". */
-export const TERM_PRICE = `$${TERM_PRICE_DOLLARS.toLocaleString('en-AU')}`;
+/** The term paid up front, e.g. "$2,000". */
+export const TERM_PRICE = dollars(TERM_PRICE_DOLLARS);
 
-/** A lesson spread across its teaching hours, e.g. "$83". */
-export const SESSION_HOURLY_RATE = `$${Math.round(SESSION_PRICE_DOLLARS / LESSON_TEACHING_HOURS)}`;
+/** The founding term price, e.g. "$1,500". */
+export const FOUNDING_TERM_PRICE = dollars(FOUNDING_TERM_PRICE_DOLLARS);
+
+/** Paying weekly for the whole term, e.g. "$2,500", which the term rate is compared with. */
+export const WEEKLY_TERM_TOTAL = dollars(SESSION_PRICE_DOLLARS * TERM_PAID_SESSIONS);
+
+/** What the term rate saves over paying weekly, e.g. "$500". */
+export const TERM_SAVING = dollars(SESSION_PRICE_DOLLARS * TERM_PAID_SESSIONS - TERM_PRICE_DOLLARS);
+
+/** Per teaching hour for each way of paying, e.g. "$83", "$67", "$50". */
+export const SESSION_HOURLY_RATE = perTeachingHour(SESSION_PRICE_DOLLARS);
+export const TERM_HOURLY_RATE = perTeachingHour(TERM_PRICE_DOLLARS / TERM_PAID_SESSIONS);
+export const FOUNDING_HOURLY_RATE = perTeachingHour(FOUNDING_TERM_PRICE_DOLLARS / TERM_PAID_SESSIONS);
 
 /** The trial offer, phrased consistently everywhere it appears. */
 export const TRIAL_OFFER = 'First lesson free';
@@ -224,6 +271,9 @@ export const COURSES: Course[] = [
             'Equilibrium and acid reactions, acid and base reactions including titration and buffers, organic chemistry from hydrocarbons to polymers, and applying chemical ideas through qualitative and instrumental analysis.',
     },
 ];
+
+/** Whether any class still has founding places, for copy about all classes at once. */
+export const anyFoundingPlaces = () => COURSES.some((course) => hasFoundingPlaces(course.id));
 
 export interface GroupClassDay {
     id: 'in-person' | 'online';
