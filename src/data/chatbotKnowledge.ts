@@ -151,7 +151,11 @@ const ASSISTANT_ENTRIES: KnowledgeEntry[] = [
     {
         id: 'subjects',
         question: 'Which subjects do you tutor?',
-        keywords: ['subject', 'english', 'maths', 'mathematics', 'physics', 'chemistry', 'biology', 'economics', 'business', 'commerce', 'selective', 'naplan', 'oc'],
+        keywords: [
+            'subject', 'subjects', 'english', 'maths', 'mathematics', 'physics', 'chemistry', 'biology',
+            'economics', 'business', 'commerce', 'selective', 'naplan', 'oc', 'offer', 'primary', 'years',
+            'what year levels', 'do you teach primary', 'age groups',
+        ],
         answer: subjectListAnswer(),
         link: { label: 'Browse subjects', href: SUBJECTS_PATH },
     },

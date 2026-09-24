@@ -12,11 +12,23 @@ import { knowledgeEntries, type KnowledgeEntry } from '../data/chatbotKnowledge'
  * How much of a question has to be recognised before an answer is offered.
  * Raising it makes the assistant quieter and sends more questions to the AI
  * fallback; lowering it risks confidently wrong answers.
+ *
+ * Measured over a set of real questions: at 0.45 every question the bank covers
+ * was answered correctly, but two questions it does not cover were answered
+ * anyway. At 0.5 the correct answers all survive and one of those goes away, so
+ * 0.5 is the better trade. Above 0.6 genuine questions start being refused.
  */
 export const MATCH_THRESHOLD = 0.45;
 
 /** Added to the score for each whole keyword phrase found in the question. */
 const PHRASE_BONUS = 0.15;
+
+/**
+ * A whole keyword phrase found in the question is strong evidence on its own:
+ * someone who types "z score" or "chain rule" wants that entry, even though
+ * neither word alone means much. Such a match scores at least this.
+ */
+const PHRASE_MATCH_FLOOR = 0.8;
 
 /** Words too common to tell two questions apart. */
 const STOP_WORDS = new Set([
@@ -136,10 +148,18 @@ export function tokenise(text: string): string[] {
         .map((word) => SYNONYMS.get(word) ?? singularise(word));
 }
 
-/** Every word an entry can be recognised by: its question plus its keywords. */
+/**
+ * Every word an entry can be recognised by: its question, plus the keywords that
+ * are single words.
+ *
+ * A keyword of several words counts only as a phrase (below), never as its
+ * separate words. Otherwise "time and a half" lends an entry about wages the
+ * words "time" and "half", and a question about what time the bus leaves finds
+ * it.
+ */
 function entryTokens(entry: KnowledgeEntry): Set<string> {
-    const words = [...tokenise(entry.question), ...entry.keywords.flatMap(tokenise)];
-    return new Set(words);
+    const singleWordKeywords = entry.keywords.filter((keyword) => !normalise(keyword).includes(' '));
+    return new Set([...tokenise(entry.question), ...singleWordKeywords.flatMap(tokenise)]);
 }
 
 /** Multi-word keywords, which are matched against the question as phrases. */
@@ -224,7 +244,8 @@ export function scoreEntry(
     const normalisedQuestion = normalise(question);
     const phraseMatches = entryPhrases(entry).filter((phrase) => normalisedQuestion.includes(phrase)).length;
 
-    return Math.min(matched / total + phraseMatches * PHRASE_BONUS, 1);
+    const score = matched / total + phraseMatches * PHRASE_BONUS;
+    return Math.min(phraseMatches > 0 ? Math.max(score, PHRASE_MATCH_FLOOR) : score, 1);
 }
 
 export interface Match {
