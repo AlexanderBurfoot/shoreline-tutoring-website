@@ -149,22 +149,43 @@ export function tokenise(text: string): string[] {
 }
 
 /**
- * Every word an entry can be recognised by: its question, plus the keywords that
- * are single words.
+ * What an entry can be recognised by, worked out once and kept.
  *
- * A keyword of several words counts only as a phrase (below), never as its
- * separate words. Otherwise "time and a half" lends an entry about wages the
- * words "time" and "half", and a question about what time the bus leaves finds
- * it.
+ * Scoring compares a question against every entry in the bank, so without this
+ * the same entry is tokenised hundreds of times per keystroke. The bank is now
+ * large enough for that to be felt.
  */
-function entryTokens(entry: KnowledgeEntry): Set<string> {
-    const singleWordKeywords = entry.keywords.filter((keyword) => !normalise(keyword).includes(' '));
-    return new Set([...tokenise(entry.question), ...singleWordKeywords.flatMap(tokenise)]);
+interface EntryIndex {
+    /**
+     * Every word: the question, plus the keywords that are single words.
+     *
+     * A keyword of several words counts only as a phrase, never as its separate
+     * words. Otherwise "time and a half" lends an entry about wages the words
+     * "time" and "half", and a question about what time the bus leaves finds it.
+     */
+    tokens: Set<string>;
+    /** Multi-word keywords, matched against the question as whole phrases. */
+    phrases: string[];
 }
 
-/** Multi-word keywords, which are matched against the question as phrases. */
-function entryPhrases(entry: KnowledgeEntry): string[] {
-    return entry.keywords.map(normalise).filter((keyword) => keyword.includes(' '));
+const entryIndexCache = new WeakMap<KnowledgeEntry, EntryIndex>();
+
+function indexOf(entry: KnowledgeEntry): EntryIndex {
+    const cached = entryIndexCache.get(entry);
+    if (cached) {
+        return cached;
+    }
+
+    const normalisedKeywords = entry.keywords.map(normalise);
+    const index: EntryIndex = {
+        tokens: new Set([
+            ...tokenise(entry.question),
+            ...normalisedKeywords.filter((keyword) => !keyword.includes(' ')).flatMap(tokenise),
+        ]),
+        phrases: normalisedKeywords.filter((keyword) => keyword.includes(' ')),
+    };
+    entryIndexCache.set(entry, index);
+    return index;
 }
 
 /**
@@ -185,7 +206,7 @@ const indexCache = new WeakMap<KnowledgeEntry[], SearchIndex>();
 function buildIndex(entries: KnowledgeEntry[]): SearchIndex {
     const entryCounts = new Map<string, number>();
     for (const entry of entries) {
-        for (const token of entryTokens(entry)) {
+        for (const token of indexOf(entry).tokens) {
             entryCounts.set(token, (entryCounts.get(token) ?? 0) + 1);
         }
     }
@@ -229,7 +250,7 @@ export function scoreEntry(
     }
 
     const index = indexFor(entries);
-    const recognised = entryTokens(entry);
+    const { tokens: recognised, phrases } = indexOf(entry);
 
     let matched = 0;
     let total = 0;
@@ -242,7 +263,7 @@ export function scoreEntry(
     }
 
     const normalisedQuestion = normalise(question);
-    const phraseMatches = entryPhrases(entry).filter((phrase) => normalisedQuestion.includes(phrase)).length;
+    const phraseMatches = phrases.filter((phrase) => normalisedQuestion.includes(phrase)).length;
 
     const score = matched / total + phraseMatches * PHRASE_BONUS;
     return Math.min(phraseMatches > 0 ? Math.max(score, PHRASE_MATCH_FLOOR) : score, 1);

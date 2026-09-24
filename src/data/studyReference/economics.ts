@@ -230,4 +230,167 @@ export const economicsEntries: StudyEntry[] = [
             'They conflict: growth that lowers unemployment can raise inflation and imports, which is why policy is ' +
             'a balancing act rather than a formula.',
     },
+    {
+        id: 'econ-opportunity-cost',
+        subject: 'economics',
+        question: 'What is opportunity cost?',
+        aliases: ['opportunity cost', 'scarcity', 'economic problem', 'production possibility frontier', 'trade off'],
+        answer:
+            'The value of the next best alternative given up when a choice is made. ' +
+            'It exists because resources are scarce and wants are unlimited, which is the economic problem. ' +
+            'A production possibility frontier shows it graphically: producing more of one good means less of the ' +
+            'other.',
+    },
+    {
+        id: 'econ-market-types',
+        subject: 'economics',
+        question: 'What are the types of market structure?',
+        aliases: ['market structures', 'perfect competition', 'monopoly', 'oligopoly', 'monopolistic competition'],
+        answer:
+            'Perfect competition has many small firms selling identical products and no price-setting power. ' +
+            'Monopoly has one firm and substantial power. ' +
+            'Oligopoly has a few large firms whose decisions depend on each other. ' +
+            'Monopolistic competition has many firms with differentiated products.',
+    },
+    {
+        id: 'econ-firm-behaviour',
+        subject: 'economics',
+        question: 'How does a firm decide what to produce?',
+        aliases: ['profit maximisation', 'marginal cost', 'marginal revenue', 'economies of scale', 'firm output'],
+        answer:
+            'A firm maximises profit where marginal revenue equals marginal cost, since beyond that point each extra ' +
+            'unit costs more than it earns. ' +
+            'Economies of scale lower average cost as output grows, until diseconomies set in through complexity and ' +
+            'coordination costs.',
+    },
+    {
+        id: 'econ-demand-factors',
+        subject: 'economics',
+        question: 'What shifts the demand curve?',
+        aliases: ['factors affecting demand', 'shift in demand', 'substitutes and complements', 'income effect', 'tastes'],
+        answer:
+            'Income, the price of substitutes and complements, tastes and preferences, population, and expectations ' +
+            'about future prices. ' +
+            'A price change moves along the curve; anything else shifts it. ' +
+            'For a normal good, demand rises with income; for an inferior good, it falls.',
+    },
+    {
+        id: 'econ-supply-factors',
+        subject: 'economics',
+        question: 'What shifts the supply curve?',
+        aliases: ['factors affecting supply', 'shift in supply', 'input costs', 'technology supply', 'producer expectations'],
+        answer:
+            'Input costs, technology, the number of producers, the prices of related goods, taxes and subsidies, and ' +
+            'expectations. ' +
+            'Cheaper inputs or better technology shift supply right, so more is offered at every price, and the ' +
+            'equilibrium price falls.',
+    },
+    {
+        id: 'econ-price-controls',
+        subject: 'economics',
+        question: 'What happens with a price ceiling or floor?',
+        aliases: ['price ceiling', 'price floor', 'rent control', 'minimum price', 'shortage surplus'],
+        answer:
+            'A price ceiling set below equilibrium, such as rent control, creates a shortage and often a queue or a ' +
+            'black market. ' +
+            'A price floor set above it, such as a minimum wage, creates a surplus, which in labour markets means ' +
+            'unemployment among the least experienced.',
+    },
+    {
+        id: 'econ-taxation-types',
+        subject: 'economics',
+        question: 'What are progressive, regressive and proportional taxes?',
+        aliases: ['progressive tax', 'regressive tax', 'proportional tax', 'direct and indirect tax', 'gst regressive'],
+        answer:
+            'A progressive tax takes a larger share as income rises, like income tax. ' +
+            'A regressive tax takes a larger share from lower incomes, which is the criticism of the GST. ' +
+            'A proportional tax takes the same share from everyone. ' +
+            'Direct taxes fall on income, indirect ones on spending.',
+    },
+    {
+        id: 'econ-budget-outcomes',
+        subject: 'economics',
+        question: 'What do a budget deficit and surplus mean?',
+        aliases: ['budget deficit', 'budget surplus', 'government debt', 'structural deficit', 'cyclical deficit'],
+        answer:
+            'A deficit means spending exceeds revenue in a year, adding to debt; a surplus is the reverse. ' +
+            'A cyclical deficit comes from a downturn, since revenue falls and welfare spending rises; a structural ' +
+            'one remains even at full employment and signals a longer-term imbalance.',
+    },
+    {
+        id: 'econ-crowding-out',
+        subject: 'economics',
+        question: 'What is crowding out?',
+        aliases: ['crowding out', 'government borrowing effect', 'private investment', 'fiscal policy limits'],
+        answer:
+            'Heavy government borrowing can raise interest rates and absorb funds that would otherwise finance ' +
+            'private investment, reducing the stimulus the spending was meant to provide. ' +
+            'It matters most when the economy is near capacity, and least in a deep downturn.',
+    },
+    {
+        id: 'econ-unconventional-policy',
+        subject: 'economics',
+        question: 'What happens when interest rates cannot fall further?',
+        aliases: ['quantitative easing', 'zero lower bound', 'unconventional monetary policy', 'liquidity trap'],
+        answer:
+            'Near zero, cutting the cash rate loses its power. ' +
+            'Central banks then buy government bonds to lower longer-term rates and expand the money supply, which is ' +
+            'quantitative easing, or give forward guidance about how long rates will stay low.',
+    },
+    {
+        id: 'econ-protection-methods',
+        subject: 'economics',
+        question: 'What are the methods of protection?',
+        aliases: ['tariff', 'quota', 'subsidy', 'local content rules', 'protection methods'],
+        answer:
+            'A tariff taxes imports, raising their price. ' +
+            'A quota limits the quantity allowed in. ' +
+            'A subsidy lowers local producers\u2019 costs. ' +
+            'All three shift activity towards domestic producers at the cost of higher prices and less efficiency for ' +
+            'consumers.',
+    },
+    {
+        id: 'econ-globalisation-effects',
+        subject: 'economics',
+        question: 'What are the effects of globalisation?',
+        aliases: ['globalisation effects', 'trade liberalisation', 'foreign investment', 'global supply chains', 'inequality globalisation'],
+        answer:
+            'Trade, investment, technology and labour move more freely, which raises efficiency and lowers prices, ' +
+            'and has lifted many out of poverty. ' +
+            'The costs fall unevenly: some industries and regions lose, inequality within countries can widen, and ' +
+            'shocks transmit faster.',
+    },
+    {
+        id: 'econ-development-measures',
+        subject: 'economics',
+        question: 'How is economic development different from growth?',
+        aliases: ['economic development', 'growth vs development', 'developing economies', 'hdi measure', 'poverty'],
+        answer:
+            'Growth is an increase in output; development is a broader improvement in living standards, including ' +
+            'health, education and equality. ' +
+            'A country can grow without developing if the gains concentrate narrowly, which is why the Human ' +
+            'Development Index is used alongside GDP.',
+    },
+    {
+        id: 'econ-australia-economy',
+        subject: 'economics',
+        question: 'What are the main features of the Australian economy?',
+        aliases: ['australian economy', 'commodity dependence', 'services sector', 'two speed economy', 'structural change'],
+        answer:
+            'A high-income, services-dominated economy that exports commodities and education, floats its currency, ' +
+            'and runs an independent central bank. ' +
+            'Structural change has moved employment from manufacturing to services, and commodity prices remain a ' +
+            'major influence on national income.',
+    },
+    {
+        id: 'econ-market-failure-examples',
+        subject: 'economics',
+        question: 'What are examples of market failure in Australia?',
+        aliases: ['market failure examples', 'negative externality', 'public good example', 'natural monopoly', 'asymmetric information'],
+        answer:
+            'Pollution is a negative externality whose cost the price ignores. ' +
+            'Defence and street lighting are public goods nobody would supply privately. ' +
+            'Electricity networks are natural monopolies, so they are regulated. ' +
+            'Health insurance suffers asymmetric information, which is why it is regulated too.',
+    },
 ];

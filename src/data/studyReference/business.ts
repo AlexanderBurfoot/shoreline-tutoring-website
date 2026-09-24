@@ -221,4 +221,133 @@ export const businessEntries: StudyEntry[] = [
             'A situational analysis, such as SWOT, sets out strengths, weaknesses, opportunities and threats. ' +
             'The plan then sets goals, chooses strategies and defines how performance will be measured.',
     },
+    {
+        id: 'bus-stakeholders-detail',
+        subject: 'business-studies',
+        question: 'Who are a business\u2019s stakeholders and what do they want?',
+        aliases: ['stakeholders', 'shareholders', 'employees interests', 'community expectations', 'competing interests'],
+        answer:
+            'Shareholders want returns, employees want pay and security, customers want quality and price, suppliers ' +
+            'want reliable orders, government wants compliance and tax, and the community wants responsible ' +
+            'behaviour. ' +
+            'Their interests conflict, which is why management is a balancing act rather than a formula.',
+    },
+    {
+        id: 'bus-management-roles',
+        subject: 'business-studies',
+        question: 'What do managers actually do?',
+        aliases: ['management roles', 'planning organising leading controlling', 'management skills', 'levels of management'],
+        answer:
+            'Plan what to achieve, organise the resources, lead the people, and control by comparing results against ' +
+            'the plan. ' +
+            'Senior managers set direction, middle managers turn it into programs, and frontline managers run daily ' +
+            'operations. The skills needed shift from technical to strategic as you move up.',
+    },
+    {
+        id: 'bus-management-styles',
+        subject: 'business-studies',
+        question: 'What are the management styles?',
+        aliases: ['management style', 'autocratic', 'democratic', 'participative', 'laissez faire'],
+        answer:
+            'Autocratic managers decide alone, which is fast and suits a crisis but can demotivate. ' +
+            'Participative or democratic managers involve staff, which builds commitment and takes longer. ' +
+            'Laissez-faire leaves decisions to the team, which works with experts and fails without them.',
+    },
+    {
+        id: 'bus-quality-management',
+        subject: 'business-studies',
+        question: 'What is quality management?',
+        aliases: ['quality control', 'quality assurance', 'total quality management', 'continuous improvement', 'six sigma'],
+        answer:
+            'Quality control inspects output and rejects failures at the end. ' +
+            'Quality assurance builds standards into the process so failures are prevented. ' +
+            'Total quality management makes it everyone\u2019s responsibility, with continuous improvement as the ' +
+            'goal rather than a fixed standard.',
+    },
+    {
+        id: 'bus-inventory-management',
+        subject: 'business-studies',
+        question: 'How do businesses manage inventory?',
+        aliases: ['inventory management', 'just in time', 'stock control', 'holding costs', 'supply chain risk'],
+        answer:
+            'Holding stock ties up cash and risks obsolescence; holding too little risks stockouts and lost sales. ' +
+            'Just-in-time ordering minimises holding costs but depends on reliable suppliers, which is why supply ' +
+            'shocks hit JIT businesses hardest.',
+    },
+    {
+        id: 'bus-break-even-business',
+        subject: 'business-studies',
+        question: 'How do I calculate break-even for a business?',
+        aliases: ['break even analysis business', 'contribution margin', 'fixed and variable costs business', 'break even units'],
+        answer:
+            'Break-even units = fixed costs ÷ (price − variable cost per unit), where that bracket is the ' +
+            'contribution margin. ' +
+            'Above that volume the business profits; below it, it loses. ' +
+            'Raising price or cutting variable cost lowers the break-even point.',
+    },
+    {
+        id: 'bus-cash-flow-management',
+        subject: 'business-studies',
+        question: 'How do businesses manage cash flow?',
+        aliases: ['cash flow management', 'distribution of payments', 'discounts for early payment', 'factoring cash flow', 'working capital'],
+        answer:
+            'Match the timing of receipts and payments: spread large outgoings, offer discounts for early payment, ' +
+            'and negotiate longer terms from suppliers. ' +
+            'Factoring sells receivables for immediate cash at a discount. ' +
+            'A profitable business can still fail if cash runs out before the money arrives.',
+    },
+    {
+        id: 'bus-motivation-theories',
+        subject: 'business-studies',
+        question: 'What motivates employees?',
+        aliases: ['motivation', 'maslow', 'herzberg', 'financial rewards', 'non financial rewards'],
+        answer:
+            'Financial rewards include wages, bonuses, profit sharing and share plans. ' +
+            'Non-financial ones include job enrichment, flexibility, recognition and career development. ' +
+            'Maslow ranks needs from basic to self-fulfilment; Herzberg separates factors that prevent dissatisfaction ' +
+            'from those that genuinely motivate.',
+    },
+    {
+        id: 'bus-training-development',
+        subject: 'business-studies',
+        question: 'Why do businesses invest in training?',
+        aliases: ['training and development', 'induction', 'on the job training', 'staff turnover', 'skills gap'],
+        answer:
+            'Training lifts productivity and quality, reduces errors and accidents, and supports retention, since ' +
+            'people stay where they are developed. ' +
+            'The risk is cost and staff leaving afterwards, which is why development is often paired with career ' +
+            'paths.',
+    },
+    {
+        id: 'bus-performance-measures',
+        subject: 'business-studies',
+        question: 'How is business performance measured?',
+        aliases: ['performance indicators', 'kpi', 'benchmarking', 'market share', 'measuring success'],
+        answer:
+            'Financial indicators include profitability, liquidity, gearing and growth in sales. ' +
+            'Non-financial ones include market share, staff turnover, customer satisfaction and environmental ' +
+            'measures. ' +
+            'Benchmarking compares them against competitors or an industry standard, which gives the figures meaning.',
+    },
+    {
+        id: 'bus-legal-compliance',
+        subject: 'business-studies',
+        question: 'What legal obligations does a business have?',
+        aliases: ['legal compliance', 'work health and safety', 'anti discrimination', 'consumer law business', 'privacy obligations'],
+        answer:
+            'Work health and safety duties, anti-discrimination and equal opportunity, fair work standards, consumer ' +
+            'guarantees, privacy of customer data, and environmental regulation. ' +
+            'Compliance is the minimum; corporate social responsibility is what a business chooses beyond it.',
+    },
+    {
+        id: 'bus-expansion-risks',
+        subject: 'business-studies',
+        question: 'What are the risks of growth?',
+        aliases: ['business growth risks', 'overtrading', 'expansion', 'franchising risk', 'losing control'],
+        answer:
+            'Growth consumes cash before it produces it, which is overtrading, and it strains systems, culture and ' +
+            'management attention. ' +
+            'Expanding overseas adds exchange rate, regulatory and cultural risk. ' +
+            'Franchising grows fast with less capital, at the cost of direct control over quality.',
+    },
 ];
