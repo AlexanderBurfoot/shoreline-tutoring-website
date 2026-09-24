@@ -120,7 +120,7 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
         id: 'maths-ext-conditional-probability',
         subject: 'mathematics',
         question: 'How does conditional probability work with tables and trees?',
-        aliases: ['conditional probability', 'bayes', 'dependent events', 'probability tree extension'],
+        aliases: ['bayes theorem', 'reversing a conditional', 'harder conditional probability'],
         answer:
             'P(A|B) = P(A and B)/P(B): restrict attention to the outcomes where B happened, then ask how often A did too. ' +
             'On a tree, the second set of branches already carries the conditioning. ' +

@@ -10,11 +10,15 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
     {
         id: 'maths-sphere-volume',
         subject: 'mathematics',
-        question: 'What is the formula for the volume of a sphere?',
-        aliases: ['volume of a sphere', 'sphere volume', 'sphere formula', 'volume sphere'],
+        question: 'What are the volume and surface area of a sphere?',
+        aliases: [
+            'volume of a sphere', 'sphere volume', 'sphere formula', 'volume sphere',
+            'surface area of a sphere', 'sphere surface area', 'area of a sphere', '4 pi r squared',
+        ],
         answer:
-            'V = 4/3 × π × r³, where r is the radius. The surface area of the same sphere is A = 4πr². ' +
-            'A common slip is using the diameter instead of the radius, so halve it first.',
+            'Volume is V = 4/3 × π × r³ and surface area is A = 4πr², where r is the radius. ' +
+            'A common slip is using the diameter instead of the radius, so halve it first. ' +
+            'For a hemisphere, halve the volume, but the surface area is 2πr² curved plus πr² for the flat face.',
     },
     {
         id: 'maths-cone-volume',
@@ -38,10 +42,17 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-prism-pyramid-volume',
         subject: 'mathematics',
         question: 'How do I find the volume of a prism or a pyramid?',
-        aliases: ['volume of a prism', 'volume of a pyramid', 'prism volume', 'pyramid volume'],
+        aliases: [
+            'volume of a prism', 'volume of a pyramid', 'prism volume', 'pyramid volume',
+            'rectangular prism', 'volume of a box', 'cuboid', 'length times width times height',
+            'volume of a rectangular prism', 'triangular prism',
+        ],
         answer:
-            'A prism is V = A × h, the area of the cross-section times the length. A pyramid or cone is a third ' +
-            'of that: V = 1/3 × A × h. The height is always perpendicular to the base, not the slant.',
+            'A rectangular prism is V = length × width × height. ' +
+            'Any prism is V = A × h, the area of the cross-section times the length, so a triangular prism is the ' +
+            'triangle\u2019s area times its length. ' +
+            'A pyramid or cone is a third of the prism that contains it: V = 1/3 × A × h. ' +
+            'The height is always perpendicular to the base, never the slant.',
     },
     {
         id: 'maths-circle',
@@ -196,7 +207,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-pythagoras-3d',
         subject: 'mathematics',
         question: 'How do I use Pythagoras and trigonometry in three dimensions?',
-        aliases: ['3d trigonometry', 'pythagoras in 3d', 'angle of elevation', 'angle of depression', 'bearings'],
+        aliases: ['3d trigonometry', 'pythagoras in 3d', 'trigonometry in a solid', 'diagonal of a box'],
         answer:
             'Find a right-angled triangle inside the solid, often using a diagonal of the base first. ' +
             'Angles of elevation and depression are measured from the horizontal and are equal to each other. ' +
@@ -254,11 +265,12 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
     {
         id: 'maths-two-way-tables',
         subject: 'mathematics',
-        question: 'How do I use two-way tables and tree diagrams?',
-        aliases: ['two way table', 'tree diagram', 'venn diagram', 'without replacement'],
+        question: 'How do I use a two-way table?',
+        aliases: ['two way table', 'reading a table of counts', 'frequency table probability'],
         answer:
-            'A two-way table splits a group by two categories, and the totals check your work. ' +
-            'On a tree diagram, multiply along the branches and add between them. ' +
-            'Without replacement, the second set of branches changes, since one item has been removed.',
+            'A two-way table splits a group by two categories, with the row and column totals meeting at the grand ' +
+            'total, which is how you check your work. ' +
+            'Read a probability straight from the counts, and for a conditional one use the row or column total as ' +
+            'the denominator rather than the grand total.',
     },
 ];
