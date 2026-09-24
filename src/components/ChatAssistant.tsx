@@ -10,8 +10,14 @@ import { trackEvent } from '../lib/analytics';
 import { MAX_QUESTION_LENGTH } from '../lib/chatbotFallback';
 import { REDACTION_NOTICE, resolveQuestion } from '../lib/chatbotConversation';
 
+/**
+ * Archimedes is the cockatoo in the logo, and the launcher shows him, so the
+ * greeting introduces him by name. It says what he is in the same breath: a
+ * parent should never be left wondering whether they are talking to a person.
+ */
 const GREETING =
-    'Hello! I can answer questions about our tutoring, prices and classes. Pick a topic or type a question.';
+    "Hello! I'm Archimedes, the cockatoo from our logo. I can help with prices, subjects and " +
+    'classes. Pick a topic or type a question.';
 
 /** Sits next to the message box, where it is read rather than scrolled past. */
 const PRIVACY_NOTICE = 'Please do not share names or personal details here.';
@@ -123,7 +129,7 @@ const ChatAssistant = () => {
                 aria-expanded={isOpen}
                 aria-controls="chat-assistant-panel"
             >
-                <span className="sr-only">{isOpen ? 'Close chat' : 'Ask us a question'}</span>
+                <span className="sr-only">{isOpen ? 'Close chat' : 'Ask Archimedes'}</span>
                 {isOpen ? (
                     <span className="chat-assistant__launcher-close" aria-hidden="true">&times;</span>
                 ) : (
@@ -141,12 +147,12 @@ const ChatAssistant = () => {
                 id="chat-assistant-panel"
                 className={`chat-assistant ${isOpen ? 'chat-assistant--open' : ''}`}
                 role="dialog"
-                aria-label="Ask Shoreline Tutoring"
+                aria-label="Ask Archimedes"
                 aria-hidden={!isOpen}
                 hidden={!isOpen}
             >
                 <div className="chat-assistant__header">
-                    <p className="chat-assistant__title">Ask us anything</p>
+                    <p className="chat-assistant__title">Ask Archimedes</p>
                     <button type="button" className="chat-assistant__close" onClick={() => setIsOpen(false)}>
                         <span className="sr-only">Close chat</span>
                         <span aria-hidden="true">&times;</span>

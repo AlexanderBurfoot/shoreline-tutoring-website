@@ -34,11 +34,12 @@ export interface ResolvedQuestion {
 export const ENQUIRY_FALLBACK_LINK: KnowledgeLink = { label: 'Send an enquiry', href: '/#contact' };
 
 /** Said when nothing matches and the AI cannot help either. */
-export const FALLBACK_TEXT = 'I am not sure about that one. Our team can answer it properly:';
+export const FALLBACK_TEXT =
+    'That one is beyond me, I am afraid. Our team can answer it properly:';
 
 /** Shown once when contact details were taken out of a question. */
 export const REDACTION_NOTICE =
-    'I removed the contact details from your message. Please send those through the enquiry form instead.';
+    'I have taken the contact details out of your message. Please send those through the enquiry form instead.';
 
 const TOO_LONG_TEXT = `Could you shorten that to under ${MAX_QUESTION_LENGTH} characters? Or send it to our team as it is:`;
 
