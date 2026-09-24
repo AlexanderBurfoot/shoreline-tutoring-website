@@ -43,7 +43,7 @@ const faqs = [
     },
     {
         question: 'Who are the small-group classes for?',
-        answer: `Small-group classes run weekly for Year 12 Mathematics Standard, Advanced and Extension 1, Physics and Chemistry, from ${FIRST_LESSON_DATE_LONG}. Each course runs as its own class, so nobody sits through content meant for a different course. The first lesson is free. One-on-one tutoring remains available across Years 1 to 12 in all our subjects.`,
+        answer: `Small-group classes run weekly for Year 12 Mathematics Standard, Advanced and Extension 1, Physics, Chemistry and Biology, from ${FIRST_LESSON_DATE_LONG}. Each course runs as its own class, so nobody sits through content meant for a different course. The first lesson is free. One-on-one tutoring remains available across Years 1 to 12 in all our subjects.`,
     },
     {
         question: 'Do you offer sibling discounts?',
@@ -51,7 +51,7 @@ const faqs = [
     },
     {
         question: 'What subjects do you offer?',
-        answer: 'We offer tutoring in English, Mathematics, Physics, Chemistry, Economics, Business Studies, NAPLAN Preparation, as well as Selective High School exam and Opportunity Classes exam preparation. Small-group classes currently run for Year 12 maths, physics and chemistry.',
+        answer: 'We offer tutoring in English, Mathematics, Physics, Chemistry, Biology, Economics, Business Studies, NAPLAN Preparation, as well as Selective High School exam and Opportunity Classes exam preparation. Small-group classes currently run for Year 12 maths, physics, chemistry and biology.',
     },
     {
         question: 'How do I get started?',
@@ -132,7 +132,7 @@ const Pricing = () => {
                     </h1>
                     <p className="pricing-hero__subtitle">
                         Transparent pricing. One-on-one tutoring across Years 1 to 12, and
-                        weekly small-group classes for Year 12 maths, physics and chemistry.
+                        weekly small-group classes for Year 12 maths, physics, chemistry and biology.
                     </p>
                 </div>
             </section>
@@ -146,7 +146,7 @@ const Pricing = () => {
                     <p className="pricing-category-heading__text">
                         One {LESSON_TEACHING_HOURS}-hour lesson a week working through the Year 12
                         course alongside school, for Mathematics Standard, Advanced and Extension 1,
-                        Physics and Chemistry. Every course runs as its own class, weekly from{' '}
+                        Physics, Chemistry and Biology. Every course runs as its own class, weekly from{' '}
                         {FIRST_LESSON_DATE_LONG}.
                     </p>
                 </div>

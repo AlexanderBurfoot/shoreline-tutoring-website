@@ -60,7 +60,7 @@ const AnnouncementBar = () => {
                     Year 12 Small-Group Classes
                     {dayPhrase ? (
                         <>
-                            <span className="announcement__headline-detail"> · maths, physics and chemistry</span>
+                            <span className="announcement__headline-detail"> · maths and science</span>
                             {' '}start {FIRST_LESSON_DATE_SHORT}
                         </>
                     ) : (

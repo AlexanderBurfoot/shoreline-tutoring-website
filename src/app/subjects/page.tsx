@@ -6,7 +6,7 @@ import { breadcrumbSchema } from '../../lib/structuredData';
 
 const TITLE = 'Subjects We Tutor';
 const DESCRIPTION =
-    'Every subject Shoreline Tutoring covers, from English and Mathematics to Physics, Chemistry and selective school preparation, one-on-one or in small groups.';
+    'Every subject Shoreline Tutoring covers, from English and Mathematics to Physics, Chemistry, Biology and selective school preparation, one-on-one or in small groups.';
 
 export const metadata: Metadata = {
     title: TITLE,

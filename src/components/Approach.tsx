@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import './Approach.css';
+import ApproachTimeline, { type ApproachStep } from './ApproachTimeline';
 import { GROUP_CLASSES_PATH } from '../data/groupClassLaunch';
 
-const steps = [
+const steps: ApproachStep[] = [
     {
         number: '01',
         title: 'Initial Assessment',
@@ -47,20 +48,7 @@ const Approach = () => {
                     </p>
                 </div>
 
-                <div className="approach__timeline">
-                    {steps.map((step, index) => (
-                        <div key={step.number} className="approach__step">
-                            <div className="approach__step-number">
-                                <span>{step.number}</span>
-                            </div>
-                            <div className="approach__step-content">
-                                <h3 className="approach__step-title">{step.title}</h3>
-                                <p className="approach__step-description">{step.description}</p>
-                            </div>
-                            {index < steps.length - 1 && <div className="approach__step-line"></div>}
-                        </div>
-                    ))}
-                </div>
+                <ApproachTimeline steps={steps} />
 
             </div>
         </section>

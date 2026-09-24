@@ -129,6 +129,31 @@
     white-space: pre-line;
 }
 
+/* The preview: every card shows the same number of lines, so moving between
+   stories never changes the carousel's height. */
+.student-testimonial-card {
+    --quote-lines: 8;
+}
+
+.student-testimonial-card__text--clamped {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--quote-lines);
+    line-clamp: var(--quote-lines);
+    overflow: hidden;
+}
+
+.student-testimonial-card__more {
+    margin-top: var(--space-3);
+    padding: 0;
+    background: none;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--label-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 /* ===== Carousel Controls ===== */
 .student-testimonials__controls {
     display: flex;
@@ -232,6 +257,11 @@
 
     .student-testimonial-card__text {
         font-size: var(--text-sm);
+    }
+
+    /* Narrower lines hold less, so the preview runs a little longer. */
+    .student-testimonial-card {
+        --quote-lines: 10;
     }
 }
 

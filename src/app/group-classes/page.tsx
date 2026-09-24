@@ -18,7 +18,7 @@ import { SHARE_IMAGE, SITE_URL } from '../../lib/site';
 
 const TITLE = 'Year 12 Small-Group Classes';
 const DESCRIPTION =
-    `Weekly small-group classes for Year 12 Mathematics Standard, Advanced and Extension 1, Physics and Chemistry. In person at St Leonards on Saturdays or online on Sundays, from ${FIRST_LESSON_DATE_LONG}. The first lesson is free.`;
+    `Weekly small-group classes for Year 12 Mathematics Standard, Advanced and Extension 1, Physics, Chemistry and Biology. In person at St Leonards on Saturdays or online on Sundays, from ${FIRST_LESSON_DATE_LONG}. The first lesson is free.`;
 
 export const metadata: Metadata = {
     title: TITLE,

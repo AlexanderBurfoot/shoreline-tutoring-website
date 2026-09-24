@@ -2,29 +2,16 @@ import { NextResponse } from 'next/server';
 
 import { CONTACT_EMAIL } from '../../../lib/site';
 import { ownerEnquiryEmailHtml, parentConfirmationEmailHtml, type ConfirmationFields } from '../../../lib/enquiryEmails';
+import { verifyHuman } from '../../../lib/turnstile';
+import { createRateLimiter, getClientIp } from '../../../lib/rateLimit';
 
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 
-// Best-effort in-memory rate limiter, scoped to a single server instance.
-// For multi-instance or serverless deployments, back this with a shared
-// store (e.g. Redis) so limits hold across instances.
-const requestTimestamps = new Map<string, number[]>();
-
-function getClientIp(request: Request) {
-    const forwarded = request.headers.get('x-forwarded-for');
-    return forwarded?.split(',')[0]?.trim() || 'unknown';
-}
-
-function isRateLimited(ip: string) {
-    const now = Date.now();
-    const recent = (requestTimestamps.get(ip) || []).filter(
-        (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS
-    );
-    recent.push(now);
-    requestTimestamps.set(ip, recent);
-    return recent.length > RATE_LIMIT_MAX_REQUESTS;
-}
+const isRateLimited = createRateLimiter({
+    windowMs: RATE_LIMIT_WINDOW_MS,
+    maxRequests: RATE_LIMIT_MAX_REQUESTS,
+});
 
 /** Transient failures worth retrying: throttling and gateway errors. */
 const RETRYABLE_STATUSES = new Set([408, 429, 500, 502, 503, 504]);
@@ -48,6 +35,9 @@ const GRAPH_SEND_TIMEOUT_MS = 3000;
  * gets one attempt on whatever time is left and never holds up the response.
  */
 const AUTO_REPLY_TIMEOUT_MS = 2500;
+
+/** Runs alongside the Graph token request, so it adds no waiting of its own. */
+const HUMAN_CHECK_TIMEOUT_MS = 2500;
 
 /**
  * fetch with a hard timeout. Without this, a hanging endpoint (as opposed to
@@ -254,7 +244,7 @@ export async function POST(request: Request) {
         }
 
         const body = await request.json();
-        const { name, email, phone, format, subjects, course, day, message, company } = body;
+        const { name, email, phone, format, subjects, course, day, message, company, turnstileToken } = body;
         submitted = { name, email, phone, format, subjects, course, day, message };
 
         // Honeypot: real users never fill this. Pretend success so bots get no signal.
@@ -287,11 +277,19 @@ export async function POST(request: Request) {
 
         const htmlBody = ownerEnquiryEmailHtml({ enquiryLabel, name, email, phone, learningFormat, courseChoice, dayChoice, subjectsList, message });
 
-        const token = await getGraphToken();
+        // A failed check never turns an enquiry away, since a blocked script or a
+        // slow connection must not cost a real lead. It is delivered marked as
+        // unverified, and the confirmation email, the one thing a bot could use
+        // to send mail to a stranger, is not sent.
+        const [token, humanCheck] = await Promise.all([
+            getGraphToken(),
+            verifyHuman(turnstileToken, ip, HUMAN_CHECK_TIMEOUT_MS),
+        ]);
+        const isUnverified = humanCheck === 'failed';
 
         const msg = {
             message: {
-                subject: subjectLine,
+                subject: isUnverified ? `[Unverified] ${subjectLine}` : subjectLine,
                 body: {
                     contentType: 'HTML',
                     content: htmlBody,
@@ -345,7 +343,7 @@ export async function POST(request: Request) {
         // Only with time left over: the enquiry is delivered either way, and
         // the webhook's reserve is not spent on a courtesy email.
         const replyBudget = Math.min(AUTO_REPLY_TIMEOUT_MS, deadline - Date.now());
-        if (replyBudget > 0 && token) {
+        if (replyBudget > 0 && token && !isUnverified) {
             const confirmed = await sendParentConfirmation(
                 token,
                 { name, email, learningFormat, subjectsList, courseChoice, dayChoice },

@@ -7,6 +7,9 @@ import { useSwipe } from '../lib/useSwipe';
 /** How long a testimonial takes to fade out before the next one replaces it. */
 const SLIDE_FADE_MS = 300;
 
+/** Applied while a quote is cut to its preview length. */
+const QUOTE_CLAMPED_CLASS = 'student-testimonial-card__text--clamped';
+
 const testimonials = [
     {
         id: 1,
@@ -34,15 +37,72 @@ const testimonials = [
     },
 ];
 
+interface ExpandableQuoteProps {
+    id: string;
+    text: string;
+    isExpanded: boolean;
+    onToggle: () => void;
+}
+
+/**
+ * A quote clamped to a set number of lines (see --quote-lines), so every card
+ * is the same height and the carousel does not jump between stories. The
+ * toggle appears only when the text is actually cut off.
+ */
+const ExpandableQuote = ({ id, text, isExpanded, onToggle }: ExpandableQuoteProps) => {
+    const textRef = useRef<HTMLParagraphElement>(null);
+    const [isCutOff, setIsCutOff] = useState(false);
+
+    // Measured on every resize and every new quote. Observing fires once
+    // straight away, which covers a quote replacing one of the same height.
+    useEffect(() => {
+        const element = textRef.current;
+        if (!element) return;
+        const observer = new ResizeObserver(() => {
+            // Only meaningful while clamped; expanded text is never cut off.
+            if (element.classList.contains(QUOTE_CLAMPED_CLASS)) {
+                setIsCutOff(element.scrollHeight > element.clientHeight + 1);
+            }
+        });
+        observer.observe(element);
+        return () => observer.disconnect();
+    }, [text]);
+
+    return (
+        <>
+            <p
+                id={id}
+                ref={textRef}
+                className={`student-testimonial-card__text ${isExpanded ? '' : QUOTE_CLAMPED_CLASS}`}
+            >
+                {text}
+            </p>
+            {isCutOff && (
+                <button
+                    type="button"
+                    className="student-testimonial-card__more"
+                    aria-expanded={isExpanded}
+                    aria-controls={id}
+                    onClick={onToggle}
+                >
+                    {isExpanded ? 'Show less' : 'Read more'}
+                </button>
+            )}
+        </>
+    );
+};
+
 const StudentTestimonials = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const [isTransitioning, setIsTransitioning] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
     const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
     const goToSlide = useCallback((index: number) => {
         if (index === activeIndex) return;
+        setIsExpanded(false);
         setIsTransitioning(true);
         setTimeout(() => {
             setActiveIndex(index);
@@ -58,9 +118,10 @@ const StudentTestimonials = () => {
         goToSlide((activeIndex - 1 + testimonials.length) % testimonials.length);
     }, [activeIndex, goToSlide]);
 
-    // Auto-rotation
+    // Auto-rotation, held while a story is expanded so it is not whisked away mid-read
+    const isHeld = isPaused || isExpanded;
     useEffect(() => {
-        if (isPaused) {
+        if (isHeld) {
             if (timerRef.current) clearInterval(timerRef.current);
             return;
         }
@@ -68,7 +129,7 @@ const StudentTestimonials = () => {
         return () => {
             if (timerRef.current) clearInterval(timerRef.current);
         };
-    }, [isPaused, nextSlide]);
+    }, [isHeld, nextSlide]);
 
     // Pause on hover
     const handleMouseEnter = () => setIsPaused(true);
@@ -82,6 +143,19 @@ const StudentTestimonials = () => {
         onTouchFinish: () => setIsPaused(false),
         releaseDelayMs: SLIDE_FADE_MS,
     });
+
+    /**
+     * Collapsing a long story on a phone can leave the reader below the card, so
+     * the card is brought back into view when that happens.
+     */
+    const toggleExpanded = () => {
+        const collapsing = isExpanded;
+        setIsExpanded(!collapsing);
+        const card = containerRef.current;
+        if (collapsing && card && card.getBoundingClientRect().top < 0) {
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
     const t = testimonials[activeIndex];
 
@@ -144,7 +218,12 @@ const StudentTestimonials = () => {
                                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z" />
                             </svg>
                         </div>
-                        <p className="student-testimonial-card__text">{t.quote}</p>
+                        <ExpandableQuote
+                            id={`testimonial-quote-${t.id}`}
+                            text={t.quote}
+                            isExpanded={isExpanded}
+                            onToggle={toggleExpanded}
+                        />
                     </div>
 
                     {/* Controls */}
@@ -164,7 +243,7 @@ const StudentTestimonials = () => {
                     {/* Progress bar */}
                     <div className="student-testimonials__progress">
                         <div
-                            className={`student-testimonials__progress-bar ${isPaused ? 'student-testimonials__progress-bar--paused' : ''}`}
+                            className={`student-testimonials__progress-bar ${isHeld ? 'student-testimonials__progress-bar--paused' : ''}`}
                             key={activeIndex}
                         />
                     </div>

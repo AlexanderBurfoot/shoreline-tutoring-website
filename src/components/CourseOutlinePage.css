@@ -1,0 +1,264 @@
+/* ===== Course plan pages (/group-classes/<course>) =====
+   Built on the format page shell in FormatPage.css; only the sections unique
+   to a single course's plan are styled here. */
+
+/* ===== Term plan ===== */
+.course-plan {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.course-plan__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-2) var(--space-4);
+    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-6);
+    border-bottom: 2px solid var(--color-gold-primary);
+}
+
+.course-plan__range {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+}
+
+.course-plan__topic {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    color: var(--color-navy);
+}
+
+.course-plan__lessons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    list-style: none;
+    padding: 0;
+}
+
+/* ===== One lesson ===== */
+.course-lesson {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--space-6);
+    padding: var(--space-6) var(--space-7);
+    border: 1px solid var(--color-light-gray);
+    border-left: 4px solid var(--color-gold-primary);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.course-lesson__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.course-lesson__number {
+    align-self: flex-start;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--border-radius-full);
+    background: var(--color-navy);
+    color: var(--color-gold-primary);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.course-lesson__dates {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.course-lesson__title {
+    font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: var(--space-3);
+}
+
+.course-lesson__refs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--space-4);
+}
+
+.course-lesson__ref {
+    padding: 2px var(--space-2);
+    border-radius: var(--border-radius-sm);
+    background: var(--color-gold-light);
+    color: var(--color-navy);
+    font-size: var(--text-xs);
+    font-weight: 700;
+}
+
+.course-lesson__points {
+    list-style: disc;
+    padding-left: var(--space-5);
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+.course-lesson__points li + li {
+    margin-top: var(--space-1);
+}
+
+.course-lesson__skill {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--border-radius-md);
+    background: var(--color-cream);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.course-lesson__skill strong {
+    color: var(--color-navy);
+}
+
+@media (max-width: 768px) {
+    .course-lesson {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        padding: var(--space-5);
+    }
+}
+
+/* ===== Lesson stages ===== */
+.course-stages {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-5);
+    list-style: none;
+    padding: 0;
+}
+
+.course-stage {
+    padding: var(--space-6);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+}
+
+.course-stage__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-gold-gradient);
+    color: var(--color-navy);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+}
+
+.course-stage__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: var(--space-2);
+}
+
+.course-stage__description {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+@media (max-width: 1100px) {
+    .course-stages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .course-stages {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Rest of Year 12 ===== */
+.course-later {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    max-width: 1040px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+}
+
+.course-later__term {
+    padding: var(--space-7);
+    border-top: 4px solid var(--color-navy);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.course-later__label {
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-navy);
+    margin-bottom: var(--space-3);
+}
+
+.course-later__focus {
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .course-later {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Other courses ===== */
+.course-others {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+    list-style: none;
+    padding: 0;
+}
+
+.course-others__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--border-radius-full);
+    background: var(--color-white);
+    color: var(--color-navy);
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.course-others__link:hover {
+    border-color: var(--color-gold-primary);
+    box-shadow: var(--shadow-md);
+}

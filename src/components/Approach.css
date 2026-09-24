@@ -22,11 +22,6 @@
     gap: var(--space-8);
     position: relative;
     padding-bottom: var(--space-10);
-    transition: transform 0.3s ease;
-}
-
-.approach__step:hover {
-    transform: translateX(4px);
 }
 
 .approach__step:last-child {
@@ -41,12 +36,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-gold-gradient);
+    background: var(--color-white);
+    border: 2px solid var(--color-gold-primary);
     border-radius: 50%;
     position: relative;
     z-index: 1;
-    box-shadow: 0 2px 12px rgba(234, 197, 77, 0.2);
-    transition: all 0.4s ease;
+    transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.approach__step--lit .approach__step-number {
+    background: var(--color-gold-gradient);
+    box-shadow: 0 2px 12px rgba(234, 197, 77, 0.3);
 }
 
 .approach__step:hover .approach__step-number {
@@ -58,17 +58,37 @@
     font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
     font-size: var(--text-base);
     font-weight: 600;
-    color: var(--color-white);
+    color: var(--color-navy);
 }
 
-/* Step Line */
-.approach__step-line {
+/* The track runs from the first number's centre to the last's, and fills as
+   the page scrolls. ApproachTimeline.tsx sets both custom properties. */
+.approach__track {
     position: absolute;
     left: 23px;
-    top: 48px;
-    bottom: 0;
-    width: 1.5px;
-    background: linear-gradient(to bottom, var(--color-gold-primary), var(--color-gold-light));
+    top: 24px;
+    width: 2px;
+    height: var(--track-length, 0px);
+    background: var(--color-light-gray);
+    border-radius: 1px;
+}
+
+.approach__track-fill {
+    height: 100%;
+    background: var(--color-gold-gradient);
+    border-radius: 1px;
+    transform-origin: top;
+    transform: scaleY(var(--timeline-progress, 0));
+}
+
+/* Steps ahead of the line are muted, and come to full strength as it arrives. */
+.approach__step-content {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+}
+
+.approach__step--lit .approach__step-content {
+    opacity: 1;
 }
 
 /* Step Content */
@@ -102,9 +122,21 @@
     .approach__step-number span {
         font-size: var(--text-base);
     }
+}
 
-    .approach__step-line {
-        left: 23px;
-        top: 48px;
+/* Reduced motion: the whole timeline shown finished, with nothing moving. */
+@media (prefers-reduced-motion: reduce) {
+    .approach__track-fill {
+        transform: none;
+    }
+
+    .approach__step-content {
+        opacity: 1;
+        transition: none;
+    }
+
+    .approach__step-number {
+        background: var(--color-gold-gradient);
+        transition: none;
     }
 }

@@ -140,7 +140,7 @@ export const VENUE_WALKING_ROUTES: WalkingRoute[] = [
  * What small-group classes currently cover, as one clause that reads inside a
  * sentence. Update it here and every section that scopes the offer follows.
  */
-export const GROUP_SCOPE_SUMMARY = 'Year 12 maths, physics and chemistry';
+export const GROUP_SCOPE_SUMMARY = 'Year 12 maths, physics, chemistry and biology';
 
 /** The term the published schedule runs to. */
 export const TERM_LABEL = 'Term 4';
@@ -220,7 +220,7 @@ export const FOUNDING_HOURLY_RATE = perTeachingHour(FOUNDING_TERM_PRICE_DOLLARS 
 export const TRIAL_OFFER = 'First lesson free';
 
 export interface Course {
-    id: 'maths-standard' | 'maths-advanced' | 'maths-extension-1' | 'physics' | 'chemistry';
+    id: 'maths-standard' | 'maths-advanced' | 'maths-extension-1' | 'physics' | 'chemistry' | 'biology';
     /** Full HSC course name. */
     name: string;
     /** Short form for chips and badges. */
@@ -230,9 +230,13 @@ export interface Course {
 }
 
 /**
- * The Year 12 courses classes run for. Each is a separate class, so each needs
- * its own session time once confirmed. A course that draws no interest is
- * removed from this list rather than advertised and quietly not run.
+ * The Year 12 courses classes run for. The maths descriptions follow the 2024
+ * syllabuses, first examined in the 2027 HSC; the science descriptions follow
+ * the 2017 syllabuses, which still apply to that HSC.
+ *
+ * Each is a separate class, so each needs its own session time once
+ * confirmed. A course that draws no interest is removed from this list rather
+ * than advertised and quietly not run.
  */
 export const COURSES: Course[] = [
     {
@@ -240,21 +244,21 @@ export const COURSES: Course[] = [
         name: 'Mathematics Standard',
         shortName: 'Standard',
         covers:
-            'Financial mathematics and annuities, bivariate data and the normal distribution, non-right-angled trigonometry, rates and ratios, and network diagrams including critical path analysis.',
+            'Investment, loans and annuities, probability, bivariate data and the normal distribution, trigonometry with the sine and cosine rules, algebraic models, rates and ratios, and network flow and critical path analysis.',
     },
     {
         id: 'maths-advanced',
         name: 'Mathematics Advanced',
         shortName: 'Advanced',
         covers:
-            'Graphing techniques and functions, trigonometric functions, differential and integral calculus, series and annuities, and statistical analysis including random variables and the normal distribution.',
+            'Graph transformations and modelling, sequences and series, differential and integral calculus and their applications, loans and annuities, and random variables including the normal distribution.',
     },
     {
         id: 'maths-extension-1',
         name: 'Mathematics Extension 1',
         shortName: 'Extension 1',
         covers:
-            'Proof by mathematical induction, vectors, trigonometric identities, further integration and differential equations, and the binomial distribution.',
+            'Proof by mathematical induction, vectors and projectile motion, inverse trigonometric functions, further calculus including volumes and differential equations, and the binomial and sampling distributions.',
     },
     {
         id: 'physics',
@@ -269,6 +273,13 @@ export const COURSES: Course[] = [
         shortName: 'Chemistry',
         covers:
             'Equilibrium and acid reactions, acid and base reactions including titration and buffers, organic chemistry from hydrocarbons to polymers, and applying chemical ideas through qualitative and instrumental analysis.',
+    },
+    {
+        id: 'biology',
+        name: 'Biology',
+        shortName: 'Biology',
+        covers:
+            'Heredity and reproduction, genetic change and biotechnology, infectious disease and how the body defends itself, and non-infectious disease, disorders and their treatment.',
     },
 ];
 
@@ -328,7 +339,7 @@ export interface ClassPreference {
  */
 export const ONE_ON_ONE_FORMAT = 'One-on-one tutoring';
 export const GROUP_FORMAT = 'Small-group classes';
-export const LEARNING_FORMATS = [ONE_ON_ONE_FORMAT, GROUP_FORMAT, 'Not sure yet'];
+export const LEARNING_FORMATS = [GROUP_FORMAT, ONE_ON_ONE_FORMAT, 'Not sure yet'];
 
 export interface FacilityHighlight {
     title: string;

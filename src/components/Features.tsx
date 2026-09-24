@@ -8,10 +8,10 @@ const features = [
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
         ),
-        title: 'Exclusive',
-        subtitle: 'Premium Education',
-        description: 'Whether one-on-one or in a small group, classes are kept deliberately small so every student receives the attention they deserve. Our selective approach guarantees exceptional quality and dedicated support.',
-        highlights: ['Small class sizes', 'Handpicked resources', 'Premium attention'],
+        title: 'Attention that is never spread thin',
+        subtitle: 'Exclusive',
+        description: 'One-on-one means one tutor and one student for the whole lesson, at your home or online. Group classes stay small and run one course per class, so nobody sits through content meant for someone else.',
+        highlights: ['One tutor, one student, one-on-one', 'One course per group class', 'A tutor who knows your child\'s work'],
     },
     {
         icon: (
@@ -21,10 +21,10 @@ const features = [
                 <circle cx="12" cy="12" r="2" />
             </svg>
         ),
-        title: 'Individualised',
-        subtitle: 'Tailored Learning',
-        description: 'Every learning plan is crafted specifically for your unique needs, learning style, and goals. No two students are alike, and neither are our approaches.',
-        highlights: ['Custom curricula', 'Adaptive teaching', 'Personal roadmap'],
+        title: 'A plan built from where they are',
+        subtitle: 'Individualised',
+        description: 'We start by finding where marks are actually being lost, then build the plan from there. As your child improves the plan changes with them, rather than following a script written for everyone.',
+        highlights: ['Starts with a look at their real work', 'Updated as they improve', 'Homework aimed at their own gaps'],
     },
     {
         icon: (
@@ -33,10 +33,10 @@ const features = [
                 <polyline points="17 6 23 6 23 12" />
             </svg>
         ),
-        title: 'Effective',
-        subtitle: 'Proven Strategies',
-        description: 'Our methodology is built on the latest syllabus requirements and exam techniques. We focus on high-yield strategies to help you achieve your personal best.',
-        highlights: ['Syllabus mastery', 'Exam technique', 'Continuous feedback'],
+        title: 'Taught the way exams are marked',
+        subtitle: 'Effective',
+        description: 'Every lesson follows the NSW syllabus and practises what markers reward: answering to the question\'s verb, structuring a full-mark response, and past papers under time. Between lessons, questions get an answer within 24 hours.',
+        highlights: ['Mapped to the NSW syllabus', 'Past papers and worked solutions', 'Session notes after every lesson'],
     },
 ];
 
@@ -48,14 +48,14 @@ const Features = () => {
                     <span className="section-eyebrow">Why Us</span>
                     <h2 className="section-title">Why Choose <span className="gold-text">Shoreline Tutoring</span>?</h2>
                     <p className="section-subtitle">
-                        Our three pillars of excellence ensure your success is not just possible; it is inevitable.
+                        Three things we hold to with every student, whichever way they learn with us.
                     </p>
                 </ScrollReveal>
 
                 <div className="features__grid">
                     {features.map((feature, index) => (
                         <ScrollReveal key={feature.title} delay={index * 150}>
-                            <div className="features__card features__card--visible">
+                            <div className="features__card features__card--visible spotlight">
                                 <div className="features__icon-wrapper">
                                     <span className="features__icon">{feature.icon}</span>
                                 </div>
