@@ -159,4 +159,34 @@ export const mathematicsTrigonometryEntries: StudyEntry[] = [
             'sin²θ + cos²θ = 1 to substitute. ' +
             'Never move terms across, since that assumes the identity you are trying to prove.',
     },
+    {
+        id: 'maths-trig-finding-sides',
+        subject: 'mathematics',
+        question: 'How do I find a missing side with trigonometry?',
+        aliases: ['finding a side', 'trig missing side', 'using sin cos tan', 'labelling a triangle'],
+        answer:
+            'Label the sides relative to the angle you know: opposite, adjacent and hypotenuse. ' +
+            'Choose the ratio that uses the side you know and the side you want, write the equation, then rearrange. ' +
+            'Keep the calculator in degrees unless the question uses radians.',
+    },
+    {
+        id: 'maths-trig-finding-angles',
+        subject: 'mathematics',
+        question: 'How do I find a missing angle with trigonometry?',
+        aliases: ['finding an angle', 'inverse sin', 'sin inverse button', 'angle from two sides'],
+        answer:
+            'Write the ratio of the two sides you know, then apply the inverse function: sin⁻¹, cos⁻¹ or tan⁻¹. ' +
+            'The calculator gives the acute answer; in a non-right triangle with the sine rule, check whether an ' +
+            'obtuse angle also fits.',
+    },
+    {
+        id: 'maths-area-sector-applications',
+        subject: 'mathematics',
+        question: 'How do I find arc length and sector area in degrees?',
+        aliases: ['arc length degrees', 'sector area degrees', 'fraction of a circle', 'pizza slice area'],
+        answer:
+            'Take the fraction of the full turn the angle represents, θ/360, then multiply by the circumference for ' +
+            'arc length or by the area for sector area. ' +
+            'In radians the shortcuts are l = rθ and A = ½r²θ, which is why senior courses switch to radians.',
+    },
 ];

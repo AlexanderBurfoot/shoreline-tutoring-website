@@ -185,4 +185,25 @@ export const mathematicsFunctionsEntries: StudyEntry[] = [
             'For the range, think about what the graph can actually reach, including any maximum or minimum and any ' +
             'horizontal asymptote it approaches but never touches.',
     },
+    {
+        id: 'maths-function-transform-order',
+        subject: 'mathematics',
+        question: 'In what order do I apply transformations?',
+        aliases: ['order of transformations', 'stretch then shift', 'combined transformations', 'transformation sequence'],
+        answer:
+            'Work from the inside out: horizontal changes happen inside the function and behave opposite to how they ' +
+            'read, while vertical changes happen outside and behave as they read. ' +
+            'For y = 2f(x − 3) + 1, shift right 3, stretch vertically by 2, then shift up 1.',
+    },
+    {
+        id: 'maths-simple-limits',
+        subject: 'mathematics',
+        question: 'What is a limit?',
+        aliases: ['limit', 'approaching a value', 'continuity', 'discontinuity', 'limit notation'],
+        answer:
+            'A limit is the value a function approaches as x approaches something, whether or not it is defined ' +
+            'there. ' +
+            'A function is continuous where its graph has no break. ' +
+            'Limits underpin the derivative, which is the limit of a gradient as the interval shrinks to zero.',
+    },
 ];

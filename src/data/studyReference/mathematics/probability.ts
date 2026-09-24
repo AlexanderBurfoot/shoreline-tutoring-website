@@ -203,4 +203,45 @@ export const mathematicsProbabilityEntries: StudyEntry[] = [
             'The same trick helps with "at most" and "more than", where counting the other side is quicker and less ' +
             'error-prone.',
     },
+    {
+        id: 'maths-frequency-tables',
+        subject: 'mathematics',
+        question: 'How do I find the mean from a frequency table?',
+        aliases: ['frequency table', 'mean from a table', 'grouped data mean', 'fx column', 'modal class'],
+        answer:
+            'Multiply each value by its frequency, add those products, then divide by the total frequency. ' +
+            'For grouped data, use the midpoint of each class as the value, which makes the answer an estimate. ' +
+            'The modal class is simply the one with the highest frequency.',
+    },
+    {
+        id: 'maths-comparing-datasets',
+        subject: 'mathematics',
+        question: 'How do I compare two data sets?',
+        aliases: ['comparing data sets', 'comparing box plots', 'centre and spread', 'which group performed better'],
+        answer:
+            'Compare a measure of centre and a measure of spread, and say what each means in context. ' +
+            'A higher median with a smaller interquartile range means better and more consistent. ' +
+            'Quote actual figures from the data rather than describing the shapes in words alone.',
+    },
+    {
+        id: 'maths-misleading-graphs',
+        subject: 'mathematics',
+        question: 'How can a graph be misleading?',
+        aliases: ['misleading graph', 'truncated axis', 'scale distortion', 'statistical bias', 'interpreting statistics'],
+        answer:
+            'An axis that does not start at zero exaggerates differences, uneven scales distort trends, and pictures ' +
+            'scaled in two dimensions overstate a one-dimensional change. ' +
+            'Check the axes and the sample before trusting a conclusion.',
+    },
+    {
+        id: 'maths-probability-simulations',
+        subject: 'mathematics',
+        question: 'How do I design a simulation?',
+        aliases: ['simulation', 'random numbers', 'modelling probability', 'using a die to model'],
+        answer:
+            'Choose a device whose outcomes have the same probabilities as the situation: a coin for a half, a die ' +
+            'for sixths, random digits for tenths. ' +
+            'Define what counts as a success, run many trials, and use the relative frequency as the estimate. ' +
+            'More trials give a closer estimate.',
+    },
 ];

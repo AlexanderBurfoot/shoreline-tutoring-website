@@ -138,4 +138,47 @@ export const mathematicsCalculusEntries: StudyEntry[] = [
             'Find the intersections first, and split the integral wherever the curves swap over. ' +
             'For a region bounded on the sides rather than above and below, integrate with respect to y instead.',
     },
+    {
+        id: 'maths-derivative-meaning',
+        subject: 'mathematics',
+        question: 'What does the derivative actually mean?',
+        aliases: ['meaning of the derivative', 'gradient function', 'rate of change meaning', 'what is differentiation'],
+        answer:
+            'The derivative is the gradient of the curve at a point, which is also the instantaneous rate of change ' +
+            'of y with respect to x. ' +
+            'Where it is positive the curve rises, where negative it falls, and where zero the curve is momentarily ' +
+            'flat.',
+    },
+    {
+        id: 'maths-second-derivative-meaning',
+        subject: 'mathematics',
+        question: 'What does the second derivative tell me?',
+        aliases: ['second derivative meaning', 'rate of change of gradient', 'acceleration from displacement', 'concave meaning'],
+        answer:
+            'It is the rate at which the gradient itself changes, so it describes the bend of the curve. ' +
+            'Positive means concave up, negative concave down. ' +
+            'In motion, differentiating displacement twice gives acceleration.',
+    },
+    {
+        id: 'maths-integration-meaning',
+        subject: 'mathematics',
+        question: 'What does integration mean?',
+        aliases: ['meaning of integration', 'antiderivative meaning', 'accumulation', 'reverse of differentiation'],
+        answer:
+            'Integration reverses differentiation, recovering a function from its rate of change, which is why the ' +
+            'constant of integration appears: many functions share a derivative. ' +
+            'A definite integral accumulates the quantity over an interval, which is why it gives area, distance ' +
+            'travelled or total change.',
+    },
+    {
+        id: 'maths-calculus-in-context',
+        subject: 'mathematics',
+        question: 'How do I answer a calculus question set in context?',
+        aliases: ['calculus in context', 'interpreting a derivative', 'units of a derivative', 'practical calculus'],
+        answer:
+            'Ask what the derivative means in the units of the question: dollars per item, litres per minute, metres ' +
+            'per second. ' +
+            'Setting it to zero finds a maximum or minimum of the real quantity, so check whether that point makes ' +
+            'sense in the context before quoting it.',
+    },
 ];
