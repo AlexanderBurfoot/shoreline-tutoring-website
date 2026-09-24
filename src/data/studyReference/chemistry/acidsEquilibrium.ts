@@ -294,4 +294,57 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
             'solution, then divided by the moles of the limiting species to give kJ mol⁻¹. ' +
             'Dissolving can be exothermic or endothermic depending on whether bond breaking or hydration wins.',
     },
+    {
+        id: 'chem-acid-base-definitions',
+        subject: 'chemistry',
+        question: 'How have definitions of acids and bases changed?',
+        aliases: ['history of acid theory', 'lavoisier', 'davy', 'arrhenius definition', 'bronsted lowry history'],
+        answer:
+            'Lavoisier thought oxygen made an acid; Davy showed hydrogen was the common element instead. ' +
+            'Arrhenius defined acids as producing H⁺ in water and bases OH⁻. ' +
+            'Brønsted and Lowry generalised it to proton transfer, which covers reactions outside water and explains ' +
+            'amphiprotic behaviour.',
+    },
+    {
+        id: 'chem-ph-scale-meaning',
+        subject: 'chemistry',
+        question: 'What does the pH scale actually measure?',
+        aliases: ['ph scale meaning', 'logarithmic scale', 'ten times more acidic', 'ph of common substances'],
+        answer:
+            'It measures hydrogen ion concentration on a logarithmic scale, so each unit is a tenfold change: pH 3 ' +
+            'has ten times the H⁺ of pH 4 and a hundred times that of pH 5. ' +
+            'Below 7 is acidic at 25°C, above is basic, and 7 is neutral only at that temperature.',
+    },
+    {
+        id: 'chem-neutralisation-uses',
+        subject: 'chemistry',
+        question: 'Where is neutralisation used in everyday life?',
+        aliases: ['neutralisation uses', 'antacid', 'soil ph', 'treating a sting', 'lime on soil'],
+        answer:
+            'Antacids neutralise excess stomach acid, agricultural lime raises the pH of acidic soil, and bases treat ' +
+            'acidic stings while a weak acid treats alkaline ones. ' +
+            'Wastewater is neutralised before release so it does not harm waterways.',
+    },
+    {
+        id: 'chem-equilibrium-temperature',
+        subject: 'chemistry',
+        question: 'Why does only temperature change the value of K?',
+        aliases: ['temperature and k', 'why k changes', 'shifting vs changing k', 'endothermic equilibrium'],
+        answer:
+            'Concentration and pressure changes shift the position of equilibrium, but the system returns to the same ' +
+            'ratio, so K is unchanged. ' +
+            'Temperature changes the rates of the forward and reverse reactions by different amounts, so the ratio ' +
+            'itself changes. Heating favours the endothermic direction.',
+    },
+    {
+        id: 'chem-volumetric-errors',
+        subject: 'chemistry',
+        question: 'What errors affect a titration result?',
+        aliases: ['titration errors', 'overshooting the end point', 'parallax burette', 'wet conical flask', 'improving accuracy titration'],
+        answer:
+            'Overshooting the end point, misreading the meniscus, an air bubble in the burette tip, or a burette ' +
+            'rinsed with water rather than the solution. ' +
+            'Repeating until titres are concordant improves reliability; using the right indicator and careful ' +
+            'technique improves accuracy.',
+    },
 ];

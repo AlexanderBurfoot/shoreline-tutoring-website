@@ -366,4 +366,130 @@ export const chemistryYear11Entries: StudyEntry[] = [
             'controlled. ' +
             'Name which one a change improves. Round to the least precise measurement and always give the unit.',
     },
+    {
+        id: 'chem-states-of-matter',
+        subject: 'chemistry',
+        question: 'How do the states of matter differ?',
+        aliases: ['states of matter', 'solid liquid gas', 'particle model', 'melting boiling', 'sublimation'],
+        answer:
+            'In a solid, particles vibrate in fixed positions; in a liquid they are close but mobile; in a gas they ' +
+            'are far apart and fast. ' +
+            'Changing state changes the arrangement, not the particles themselves, and takes energy without changing ' +
+            'temperature. Sublimation goes straight from solid to gas.',
+    },
+    {
+        id: 'chem-physical-chemical-change',
+        subject: 'chemistry',
+        question: 'What is the difference between a physical and a chemical change?',
+        aliases: ['physical change', 'chemical change', 'signs of a chemical reaction', 'reversible change'],
+        answer:
+            'A physical change alters form but not identity, and is usually reversible, such as melting. ' +
+            'A chemical change makes new substances, shown by a colour change, gas produced, a precipitate, a ' +
+            'temperature change or light.',
+    },
+    {
+        id: 'chem-elements-compounds',
+        subject: 'chemistry',
+        question: 'What is the difference between elements, compounds and mixtures?',
+        aliases: ['element compound mixture', 'pure substance', 'homogeneous', 'heterogeneous', 'alloy mixture'],
+        answer:
+            'An element has one kind of atom, a compound has different elements chemically bonded in fixed ' +
+            'proportions, and a mixture has substances physically combined in any proportion. ' +
+            'Only a mixture can be separated physically. Homogeneous mixtures look uniform; heterogeneous ones do ' +
+            'not.',
+    },
+    {
+        id: 'chem-ions-formation',
+        subject: 'chemistry',
+        question: 'How do atoms form ions?',
+        aliases: ['ions', 'cation', 'anion', 'forming an ion', 'charge on an ion', 'valency'],
+        answer:
+            'Atoms gain or lose electrons to reach a full outer shell. ' +
+            'Metals lose them and become positive cations; non-metals gain them and become negative anions. ' +
+            'The group number predicts the charge: group 1 forms 1+, group 2 forms 2+, group 17 forms 1−.',
+    },
+    {
+        id: 'chem-naming-compounds',
+        subject: 'chemistry',
+        question: 'How do I name and write formulas for ionic compounds?',
+        aliases: ['naming ionic compounds', 'chemical formula', 'polyatomic ions', 'writing formulas', 'roman numerals'],
+        answer:
+            'Name the metal first, then the non-metal with an -ide ending, or the polyatomic ion by its own name. ' +
+            'Balance the charges so the compound is neutral, using subscripts, and put brackets around a polyatomic ' +
+            'ion you need more than one of. Roman numerals show the charge on a transition metal.',
+    },
+    {
+        id: 'chem-conservation-mass',
+        subject: 'chemistry',
+        question: 'What is the law of conservation of mass?',
+        aliases: ['conservation of mass', 'mass before and after', 'closed system reaction', 'why equations balance'],
+        answer:
+            'Atoms are rearranged in a reaction, not created or destroyed, so the total mass is unchanged. ' +
+            'That is why equations must balance. ' +
+            'An open system can appear to lose mass when a gas escapes, or gain it when a gas is absorbed.',
+    },
+    {
+        id: 'chem-precipitation-detail',
+        subject: 'chemistry',
+        question: 'How do I predict whether a precipitate forms?',
+        aliases: ['will a precipitate form', 'predicting precipitation', 'mixing two solutions', 'insoluble product'],
+        answer:
+            'Write the ions present, pair each cation with the other solution\u2019s anion, then check the solubility ' +
+            'rules for each possible pair. ' +
+            'Any insoluble combination is the precipitate; the rest stay dissolved as spectator ions and are left out ' +
+            'of the net ionic equation.',
+    },
+    {
+        id: 'chem-reactivity-metals',
+        subject: 'chemistry',
+        question: 'How reactive are different metals?',
+        aliases: ['reactivity of metals', 'metal and acid', 'metal and water', 'displacement of metals', 'potassium sodium calcium'],
+        answer:
+            'The most reactive metals react with cold water, less reactive ones only with acid, and the least, such ' +
+            'as gold, with neither. ' +
+            'A more reactive metal displaces a less reactive one from its compound, which is the basis of ' +
+            'displacement reactions and of how metals are extracted.',
+    },
+    {
+        id: 'chem-catalysts-detail',
+        subject: 'chemistry',
+        question: 'How does a catalyst work?',
+        aliases: ['catalyst', 'activation energy lowered', 'enzyme catalyst', 'catalyst not consumed', 'alternative pathway'],
+        answer:
+            'A catalyst provides a different reaction pathway with a lower activation energy, so a larger fraction of ' +
+            'collisions succeed. ' +
+            'It speeds both directions equally, so it reaches equilibrium sooner without changing the yield, and it ' +
+            'is recovered unchanged.',
+    },
+    {
+        id: 'chem-exo-endo-profiles',
+        subject: 'chemistry',
+        question: 'How do I tell an exothermic reaction from an endothermic one on a graph?',
+        aliases: ['exothermic graph', 'endothermic graph', 'energy diagram', 'reading an energy profile'],
+        answer:
+            'If the products sit lower than the reactants, energy was released, so ΔH is negative and the reaction is ' +
+            'exothermic. ' +
+            'If they sit higher, energy was absorbed and ΔH is positive. ' +
+            'The hump between them is the activation energy either way.',
+    },
+    {
+        id: 'chem-molar-mass',
+        subject: 'chemistry',
+        question: 'How do I calculate molar mass?',
+        aliases: ['molar mass', 'formula mass', 'relative molecular mass', 'adding atomic masses'],
+        answer:
+            'Add the relative atomic masses of every atom in the formula, multiplying by each subscript, and include ' +
+            'anything inside brackets the right number of times. ' +
+            'The answer is in grams per mole, so one mole of water is 18.02 g.',
+    },
+    {
+        id: 'chem-concentration-units',
+        subject: 'chemistry',
+        question: 'What are the units of concentration?',
+        aliases: ['concentration units', 'mol per litre', 'grams per litre', 'percentage by mass', 'molarity'],
+        answer:
+            'The usual unit is mol L⁻¹, calculated as moles divided by volume in litres. ' +
+            'Concentration can also be grams per litre, percentage by mass or volume, or parts per million for trace ' +
+            'amounts. Convert to mol L⁻¹ before using it in a stoichiometry calculation.',
+    },
 ];

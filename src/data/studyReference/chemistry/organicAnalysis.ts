@@ -437,4 +437,89 @@ export const chemistryOrganicAnalysisEntries: StudyEntry[] = [
             'Excess nutrients cause eutrophication: algae bloom, then decay and consume the oxygen, killing fish. ' +
             'Metal ions at trace levels are measured by AAS in parts per million.',
     },
+    {
+        id: 'chem-alkanes-properties',
+        subject: 'chemistry',
+        question: 'What are alkanes and why are they unreactive?',
+        aliases: ['alkanes', 'saturated hydrocarbon', 'cnh2n+2', 'why alkanes are unreactive', 'natural gas'],
+        answer:
+            'Alkanes are saturated hydrocarbons with only single bonds, general formula CₙH₂ₙ₊₂. ' +
+            'The C-C and C-H bonds are strong and non-polar, so few reagents attack them, which is why they are ' +
+            'useful as fuels and solvents but poor starting materials.',
+    },
+    {
+        id: 'chem-alkenes-alkynes',
+        subject: 'chemistry',
+        question: 'What are alkenes and alkynes?',
+        aliases: ['alkene', 'alkyne', 'unsaturated', 'double bond', 'triple bond', 'cnh2n'],
+        answer:
+            'Alkenes contain a carbon-carbon double bond, general formula CₙH₂ₙ; alkynes contain a triple bond, ' +
+            'CₙH₂ₙ₋₂. ' +
+            'Both are unsaturated and far more reactive than alkanes, since the extra bonds open readily in addition ' +
+            'reactions.',
+    },
+    {
+        id: 'chem-fractional-distillation',
+        subject: 'chemistry',
+        question: 'How is crude oil separated?',
+        aliases: ['fractional distillation crude oil', 'fractions', 'petroleum', 'cracking', 'refinery'],
+        answer:
+            'Crude oil is heated and fed into a column that is hotter at the bottom. ' +
+            'Each fraction condenses where the temperature matches its boiling range, so shorter chains rise higher. ' +
+            'Cracking then breaks long chains into the shorter, more valuable ones, including alkenes for plastics.',
+    },
+    {
+        id: 'chem-addition-polymerisation',
+        subject: 'chemistry',
+        question: 'How does addition polymerisation work?',
+        aliases: ['addition polymerisation', 'monomer to polymer', 'repeating unit', 'polyethene formation'],
+        answer:
+            'Many alkene monomers open their double bonds and join end to end, losing nothing in the process. ' +
+            'The repeating unit is drawn with the bonds extending beyond the brackets and n outside. ' +
+            'Polyethene, polypropene, PVC and polystyrene are all made this way.',
+    },
+    {
+        id: 'chem-condensation-polymers-detail',
+        subject: 'chemistry',
+        question: 'How do condensation polymers form?',
+        aliases: ['condensation polymerisation', 'nylon formation', 'polyester formation', 'losing water polymer', 'monomers with two groups'],
+        answer:
+            'Each monomer carries two reactive groups, so a chain can grow at both ends, and a small molecule, ' +
+            'usually water, is released at each link. ' +
+            'A diacid with a diol gives a polyester; a diacid with a diamine gives a polyamide such as nylon. ' +
+            'Proteins form the same way from amino acids.',
+    },
+    {
+        id: 'chem-safety-organic',
+        subject: 'chemistry',
+        question: 'What safety precautions matter in organic chemistry?',
+        aliases: ['safety organic chemistry', 'flammable', 'fume cupboard', 'risk assessment chemistry', 'msds'],
+        answer:
+            'Most organic solvents are volatile and flammable, so heat with a water bath rather than a flame and work ' +
+            'in a fume cupboard. ' +
+            'Concentrated acids are corrosive and their dilution is strongly exothermic. ' +
+            'A risk assessment names each hazard, its risk and the control for it.',
+    },
+    {
+        id: 'chem-calibration-curves',
+        subject: 'chemistry',
+        question: 'How do I use a calibration curve?',
+        aliases: ['calibration curve', 'standards', 'absorbance concentration graph', 'reading an unknown', 'beer lambert'],
+        answer:
+            'Measure the absorbance of several standards of known concentration and plot absorbance against ' +
+            'concentration, which should be a straight line through the origin. ' +
+            'Read the unknown\u2019s concentration from its absorbance on that line, and dilute any sample that ' +
+            'falls beyond the highest standard.',
+    },
+    {
+        id: 'chem-identifying-unknown',
+        subject: 'chemistry',
+        question: 'How do I identify an unknown organic compound?',
+        aliases: ['identifying an unknown', 'combining spectra', 'structure determination', 'deducing a structure'],
+        answer:
+            'Take the molecular mass from the mass spectrum, the functional group from infrared, and the carbon and ' +
+            'hydrogen environments from NMR, using integration and splitting to place them. ' +
+            'Combine the three: no single technique settles a structure, and the answer should cite evidence from ' +
+            'each.',
+    },
 ];
