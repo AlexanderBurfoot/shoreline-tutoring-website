@@ -1,8 +1,9 @@
 /* ===== Back to Top Button ===== */
 .back-to-top {
     position: fixed;
-    bottom: 32px;
-    right: 32px;
+    /* Above the chat launcher, which owns the corner (see ChatAssistant.css). */
+    bottom: 100px;
+    right: 36px;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -42,8 +43,9 @@
 /* Position adjustment on mobile */
 @media (max-width: 768px) {
     .back-to-top {
-        bottom: 20px;
-        right: 20px;
+        bottom: 152px;
+        /* Centred above the 56px chat launcher, which sits 20px from the edge. */
+        right: 27px;
         width: 42px;
         height: 42px;
     }

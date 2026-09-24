@@ -1,27 +1,33 @@
 /* ===== Chat assistant =====
-   Anchored bottom-left. The bottom-right corner is taken by the back-to-top
-   button, and on phones the bottom edge is taken by the booking bar, so both
-   the launcher and the panel lift clear of it below 900px. */
+   Anchored bottom-right, where visitors look for a chat. The back-to-top button
+   moves up to sit above it (see BackToTop.css), and on phones both lift clear
+   of the booking bar. Navy behind the logo's gold bird: the bird is a pale gold
+   gradient that all but disappears on white, and navy matches the other fixed
+   controls. */
 
 .chat-assistant__launcher {
     position: fixed;
     bottom: 32px;
-    left: 32px;
+    right: 32px;
     z-index: 940;
     display: inline-flex;
     align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-3) var(--space-5);
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    padding: 0;
     border: 1px solid rgba(234, 197, 77, 0.35);
-    border-radius: 999px;
+    border-radius: 16px;
     background: var(--color-navy);
     color: var(--color-gold-primary);
-    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: var(--text-sm);
-    font-weight: 600;
     cursor: pointer;
     box-shadow: var(--shadow-lg);
     transition: transform var(--transition-base), background var(--transition-base);
+}
+
+.chat-assistant__launcher-close {
+    font-size: 1.75rem;
+    line-height: 1;
 }
 
 .chat-assistant__launcher:hover {
@@ -31,8 +37,8 @@
 
 .chat-assistant {
     position: fixed;
-    bottom: 96px;
-    left: 32px;
+    bottom: 100px;
+    right: 32px;
     z-index: 945;
     display: flex;
     flex-direction: column;
@@ -186,15 +192,15 @@
 @media (max-width: 900px) {
     .chat-assistant__launcher {
         bottom: 88px;
-        left: 20px;
+        right: 20px;
     }
 
     .chat-assistant {
         left: 20px;
         right: 20px;
-        bottom: 148px;
+        bottom: 156px;
         width: auto;
-        max-height: min(70vh, calc(100vh - 220px));
+        max-height: min(70vh, calc(100vh - 230px));
     }
 }
 

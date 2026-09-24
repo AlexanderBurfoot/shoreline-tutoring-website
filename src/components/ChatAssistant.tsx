@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import './ChatAssistant.css';
@@ -14,6 +15,10 @@ const GREETING =
 
 /** Sits next to the message box, where it is read rather than scrolled past. */
 const PRIVACY_NOTICE = 'Please do not share names or personal details here.';
+
+/** The bird from the logo, cut out of it so the two cannot diverge. */
+const LAUNCHER_ICON = '/chat-bird.png';
+const LAUNCHER_ICON_SIZE = 38;
 
 const assistantMessage = (text: string) => createMessage({ author: 'assistant', text });
 
@@ -118,7 +123,18 @@ const ChatAssistant = () => {
                 aria-expanded={isOpen}
                 aria-controls="chat-assistant-panel"
             >
-                {isOpen ? 'Close chat' : 'Questions?'}
+                <span className="sr-only">{isOpen ? 'Close chat' : 'Ask us a question'}</span>
+                {isOpen ? (
+                    <span className="chat-assistant__launcher-close" aria-hidden="true">&times;</span>
+                ) : (
+                    <Image
+                        src={LAUNCHER_ICON}
+                        alt=""
+                        width={LAUNCHER_ICON_SIZE}
+                        height={LAUNCHER_ICON_SIZE}
+                        aria-hidden="true"
+                    />
+                )}
             </button>
 
             <div
