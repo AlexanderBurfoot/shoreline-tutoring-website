@@ -15,6 +15,14 @@ export const FIRST_LESSON_DATE_ISO = '2026-10-03';
 /** First online lesson in ISO form. Keep one day after the in-person date. */
 export const ONLINE_FIRST_LESSON_DATE_ISO = '2026-10-04';
 
+/**
+ * First day of the NSW school term the classes run alongside (Term 4 2026,
+ * eastern division). Classes start before school goes back, so the copy that
+ * says how many lessons fall in the holidays counts from this rather than
+ * asserting a number that a change of start date would quietly falsify.
+ */
+export const SCHOOL_TERM_START_ISO = '2026-10-12';
+
 /** Human-readable first lesson, used in body copy. */
 export const FIRST_LESSON_DATE_LONG = 'Saturday 3 October';
 

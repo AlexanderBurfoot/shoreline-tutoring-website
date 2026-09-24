@@ -7,7 +7,7 @@ import type { CourseOutline } from './types';
 export const physicsOutline: CourseOutline = {
     courseId: 'physics',
     overview:
-        'Module 5, Advanced Mechanics, from the first projectile to satellites in orbit, then a head start on Module 6, Electromagnetism. The first two lessons fall in the school holidays, so students start Term 4 already ahead of their class.',
+        'Module 5, Advanced Mechanics, from the first projectile to satellites in orbit, then a head start on Module 6, Electromagnetism.',
     metaFocus: 'Advanced Mechanics, from projectile motion to satellites in orbit',
     syllabusNote:
         'Follows the NESA Physics Stage 6 Syllabus (2017), which the 2027 HSC examines, in the order most schools teach it.',
@@ -132,9 +132,9 @@ export const physicsOutline: CourseOutline = {
             title: 'Consolidation and term test',
             syllabusRefs: ['Module 5', 'Module 6'],
             points: [
-                'HSC-style multiple choice and extended response questions across the term',
+                'HSC-style multiple choice and extended response on projectile and circular motion, gravitation and the start of electromagnetism',
                 'A short test under exam conditions, marked with written feedback',
-                'A plan for the summer holidays based on the test results',
+                'A plan for the summer holidays, built around the Module 6 work that opens Term 1',
             ],
             keySkill: 'Exam technique: showing working and reading what a question is really asking.',
         },

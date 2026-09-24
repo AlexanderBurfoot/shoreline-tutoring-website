@@ -8,7 +8,7 @@ import type { CourseOutline } from './types';
 export const biologyOutline: CourseOutline = {
     courseId: 'biology',
     overview:
-        'Module 5, Heredity, from how living things reproduce to how DNA is copied, read and passed on, with a first look at Module 6. The first two lessons fall in the school holidays, so students start Term 4 already ahead of their class.',
+        'Module 5, Heredity, from how living things reproduce to how DNA is copied, read and passed on, with a first look at Module 6.',
     metaFocus: 'Heredity, from reproduction to how DNA is copied and passed on',
     syllabusNote:
         'Follows the NESA Biology Stage 6 Syllabus (2017), which the 2027 HSC examines, in the order most schools teach it.',
@@ -32,6 +32,7 @@ export const biologyOutline: CourseOutline = {
             points: [
                 'Fertilisation, implantation, and the hormones that control pregnancy and birth',
                 'How farmers manipulate reproduction: artificial insemination, artificial pollination and selective breeding',
+                'Why those methods are used, and the trade-off of narrowing a population\u2019s genetic diversity',
             ],
             keySkill: 'Reading hormone level graphs and linking each change to a stage of pregnancy.',
         },
@@ -108,6 +109,7 @@ export const biologyOutline: CourseOutline = {
             points: [
                 'Large collaborative projects such as the Human Genome Project',
                 'Using genetic data in conservation, the study of inherited disease and human evolution',
+                'How allele frequencies shift in a population, and what a shift suggests about selection',
             ],
             keySkill: 'Evaluating the reliability and usefulness of secondary sources.',
         },
@@ -118,6 +120,7 @@ export const biologyOutline: CourseOutline = {
             points: [
                 'Analysing secondary data for a Module 5 depth study',
                 'Mutagens, and point mutations compared with chromosomal mutations, ready for Term 1',
+                'Reading the genetic code table to work out how one base change alters a protein',
             ],
             keySkill: 'Identifying trends and limitations in a data set.',
         },
@@ -126,9 +129,9 @@ export const biologyOutline: CourseOutline = {
             title: 'Consolidation and term test',
             syllabusRefs: ['Module 5'],
             points: [
-                'HSC-style multiple choice and extended response questions across the module',
+                'HSC-style multiple choice and extended response on reproduction, DNA replication and expression, biotechnology and population genetics',
                 'A short test under exam conditions, marked with written feedback',
-                'A plan for the summer holidays based on the test results',
+                'A plan for the summer holidays, built around the genetic change work that opens Term 1',
             ],
             keySkill: 'Exam technique: answering the verb, whether it asks you to explain, assess or evaluate.',
         },

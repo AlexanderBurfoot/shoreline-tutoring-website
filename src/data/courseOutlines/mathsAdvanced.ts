@@ -10,7 +10,7 @@ import type { CourseOutline } from './types';
 export const mathsAdvancedOutline: CourseOutline = {
     courseId: 'maths-advanced',
     overview:
-        'Transformed trigonometric graphs and modelling, sequences and series, and differentiating exponential, logarithmic and trigonometric functions. The first two lessons fall in the school holidays, so students start Term 4 already ahead of their class.',
+        'Transformed trigonometric graphs and modelling, sequences and series, and differentiating exponential, logarithmic and trigonometric functions.',
     metaFocus: 'trigonometric graphs, sequences and series, and calculus',
     syllabusNote:
         'Follows the new NESA Mathematics Advanced 11–12 Syllabus (2024), which this cohort is the first to sit in the 2027 HSC, in the order most schools teach it.',
@@ -137,9 +137,9 @@ export const mathsAdvancedOutline: CourseOutline = {
             title: 'Consolidation and term test',
             syllabusRefs: ['MAV-12-01 to MAV-12-04'],
             points: [
-                'Mixed HSC-style questions across the term, including the mistakes that cost marks most often',
+                'Mixed HSC-style questions on graph transformations, sequences and series, and calculus, including the mistakes that cost marks most often',
                 'A short test under exam conditions, marked with written feedback',
-                'A plan for the summer holidays based on the test results',
+                'A plan for the summer holidays, built around the integration work that opens Term 1',
             ],
             keySkill: 'Working accurately under time pressure.',
         },

@@ -13,7 +13,7 @@ import type { CourseOutline } from './types';
 export const mathsExtension1Outline: CourseOutline = {
     courseId: 'maths-extension-1',
     overview:
-        'Proof by mathematical induction and vectors in two and three dimensions, with a head start on inverse trigonometric functions. The first two lessons fall in the school holidays, so students start Term 4 already ahead of their class.',
+        'Proof by mathematical induction and vectors in two and three dimensions, with a head start on inverse trigonometric functions.',
     metaFocus: 'proof by induction, vectors, and inverse trigonometric functions',
     syllabusNote:
         'Follows the new NESA Mathematics Extension 1 11–12 Syllabus (2024), which this cohort is the first to sit in the 2027 HSC, in the order most schools teach it.',
@@ -133,9 +133,9 @@ export const mathsExtension1Outline: CourseOutline = {
             title: 'Consolidation and term test',
             syllabusRefs: ['ME1-12-01 to ME1-12-03'],
             points: [
-                'Mixed HSC-style questions on induction and vectors',
+                'Mixed HSC-style questions on proof by induction, vectors and inverse trigonometric functions, including the mistakes that cost marks most often',
                 'A short test under exam conditions, marked with written feedback',
-                'A plan for the summer holidays based on the test results',
+                'A plan for the summer holidays, built around the further calculus that opens Term 1',
             ],
             keySkill: 'Writing rigorous proofs under time pressure.',
         },

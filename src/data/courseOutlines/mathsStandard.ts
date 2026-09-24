@@ -9,7 +9,7 @@ import type { CourseOutline } from './types';
 export const mathsStandardOutline: CourseOutline = {
     courseId: 'maths-standard',
     overview:
-        'Probability, trigonometry with the sine and cosine rules and bearings, and network flow, with a head start on investment. The first two lessons fall in the school holidays, so students start Term 4 already ahead of their class.',
+        'Probability, trigonometry with the sine and cosine rules and bearings, and network flow, with a head start on investment.',
     metaFocus: 'probability, trigonometry and bearings, and network flow',
     syllabusNote:
         'Follows the new NESA Mathematics Standard 11–12 Syllabus (2024) for Standard 2, which this cohort is the first to sit in the 2027 HSC, in the order most schools teach it.',
@@ -130,11 +130,11 @@ export const mathsStandardOutline: CourseOutline = {
         {
             topic: 'Term review',
             title: 'Consolidation and term test',
-            syllabusRefs: ['MST-12-S2-02, 04, 06, 09'],
+            syllabusRefs: ['MST-12-S2-02', 'MST-12-S2-04', 'MST-12-S2-06', 'MST-12-S2-09'],
             points: [
-                'Mixed HSC-style questions across the term, including the mistakes that cost marks most often',
+                'Mixed HSC-style questions on probability, the sine and cosine rules, bearings and network flow, including the mistakes that cost marks most often',
                 'A short test under exam conditions, marked with written feedback',
-                'A plan for the summer holidays based on the test results',
+                'A plan for the summer holidays, built around the investment and annuities work that opens Term 1',
             ],
             keySkill: 'Setting out working clearly enough to earn every mark.',
         },

@@ -10,7 +10,7 @@ import type { CourseOutline } from './types';
 export const chemistryOutline: CourseOutline = {
     courseId: 'chemistry',
     overview:
-        'Module 5, Equilibrium and Acid Reactions, from why some reactions never finish to calculating Keq and Ksp, with a first look at Module 6. The first two lessons fall in the school holidays, so students start Term 4 already ahead of their class.',
+        'Module 5, Equilibrium and Acid Reactions, from why some reactions never finish to calculating Keq and Ksp, with a first look at Module 6.',
     metaFocus: 'Equilibrium and Acid Reactions, including Keq and Ksp calculations',
     syllabusNote:
         'Follows the NESA Chemistry Stage 6 Syllabus (2017), which the 2027 HSC examines, in the order most schools teach it.',
@@ -131,9 +131,9 @@ export const chemistryOutline: CourseOutline = {
             title: 'Consolidation and term test',
             syllabusRefs: ['Module 5'],
             points: [
-                'HSC-style multiple choice and extended response questions across the module',
+                'HSC-style multiple choice and extended response on equilibrium, Keq and Ksp, and acid and base reactions',
                 'A short test under exam conditions, marked with written feedback',
-                'A plan for the summer holidays based on the test results',
+                'A plan for the summer holidays, built around the titration and buffer work that opens Term 1',
             ],
             keySkill: 'Exam technique: setting out calculations so every step earns its mark.',
         },

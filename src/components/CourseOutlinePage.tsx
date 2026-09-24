@@ -6,18 +6,19 @@ import './FormatPage.css';
 import './CourseOutlinePage.css';
 import { groupClassesPage, groupHeroFacts, type FormatPageContent } from '../data/formatPages';
 import {
+    GROUP_CLASSES_PATH,
     GROUP_FORMAT,
     TERM_LABEL,
-    TERM_LAST_LESSON_LONG,
     TERM_SESSIONS,
-    FIRST_LESSON_DATE_LONG,
     TRIAL_OFFER,
 } from '../data/groupClassLaunch';
 import {
     COURSES_WITH_OUTLINES,
     COURSE_PLAN_SECTION_ID,
     courseOutlinePath,
+    courseOverview,
     lessonDates,
+    termRangeSummary,
     type CourseLesson,
     type CourseWithOutline,
     type LaterTerm,
@@ -89,7 +90,7 @@ const TermPlan = ({ lessons }: { lessons: CourseLesson[] }) => (
     <div className="course-plan">
         {groupByTopic(lessons).map((block) => (
             <ScrollReveal key={block.firstIndex} width="100%">
-                <section className="course-plan__block" aria-label={block.topic}>
+                <section aria-label={block.topic}>
                     <header className="course-plan__header">
                         <span className="course-plan__range">{lessonRangeLabel(block)}</span>
                         <h3 className="course-plan__topic">{block.topic}</h3>
@@ -137,7 +138,7 @@ const OtherCourses = ({ currentId }: { currentId: CourseWithOutline['id'] }) => 
         {COURSES_WITH_OUTLINES.filter((course) => course.id !== currentId).map((course) => (
             <li key={course.id}>
                 <Link href={courseOutlinePath(course.id)} className="course-others__link">
-                    <span className="course-others__name">{course.name}</span>
+                    <span>{course.name}</span>
                     <ArrowIcon size={16} />
                 </Link>
             </li>
@@ -148,7 +149,7 @@ const OtherCourses = ({ currentId }: { currentId: CourseWithOutline['id'] }) => 
 const buildHero = (course: CourseWithOutline): FormatPageContent['hero'] => ({
     badge: `Year 12 · ${TERM_LABEL} course plan`,
     title: { lead: 'Year 12', accent: course.name },
-    subtitle: course.outline.overview,
+    subtitle: courseOverview(course),
     /* This course's own facts: the price follows whether this class still has
        founding places, not whether any class does. */
     facts: groupHeroFacts(course.id),
@@ -164,7 +165,7 @@ const buildSections = (course: CourseWithOutline): PageSection[] => [
         header: {
             eyebrow: `${TERM_LABEL} · ${TERM_SESSIONS} Lessons`,
             title: { lead: 'The term,', accent: 'lesson by lesson' },
-            subtitle: `${FIRST_LESSON_DATE_LONG} to ${TERM_LAST_LESSON_LONG}. ${course.outline.syllabusNote}`,
+            subtitle: `${termRangeSummary()} ${course.outline.syllabusNote}`,
         },
         body: <TermPlan lessons={course.outline.lessons} />,
     },
@@ -194,9 +195,24 @@ const buildSections = (course: CourseWithOutline): PageSection[] => [
     },
 ];
 
+/**
+ * A way back to the page that lists every class. The structured data carries a
+ * breadcrumb trail, but a visitor who lands here from search has no route back
+ * in the page itself, and these plans are deep pages people arrive at directly.
+ */
+const BackToClasses = () => (
+    <nav className="course-breadcrumb" aria-label="Breadcrumb">
+        <Link href={GROUP_CLASSES_PATH} className="course-breadcrumb__link">
+            <ArrowIcon size={14} />
+            All Year 12 small-group classes
+        </Link>
+    </nav>
+);
+
 const CourseOutlinePage = ({ course }: { course: CourseWithOutline }) => (
     <div className="format-page">
         <FormatHero hero={buildHero(course)} />
+        <BackToClasses />
         <SectionList sections={buildSections(course)} />
         <CTA
             title={`Join the ${course.name} class`}

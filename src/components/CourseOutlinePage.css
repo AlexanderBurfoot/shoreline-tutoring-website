@@ -57,6 +57,13 @@
     box-shadow: var(--shadow-sm);
 }
 
+/* The second column of the lesson grid. Grid items refuse to shrink below
+   their content by default, so without this a long syllabus code or title
+   pushes the card wider than its container instead of wrapping. */
+.course-lesson__body {
+    min-width: 0;
+}
+
 .course-lesson__meta {
     display: flex;
     flex-direction: column;
@@ -261,4 +268,33 @@
 .course-others__link:hover {
     border-color: var(--color-gold-primary);
     box-shadow: var(--shadow-md);
+}
+
+/* ===== Back to the class list =====
+   A visible route back for visitors who arrive on a plan straight from search.
+   The arrow points back, so it is flipped from its usual forward direction. */
+.course-breadcrumb {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-6) 0;
+}
+
+.course-breadcrumb__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-navy-light);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.course-breadcrumb__link svg {
+    transform: rotate(180deg);
+}
+
+.course-breadcrumb__link:hover {
+    color: var(--color-navy);
+    text-decoration: underline;
+    text-decoration-color: var(--color-gold-primary);
 }
