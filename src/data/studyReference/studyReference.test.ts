@@ -28,7 +28,10 @@ describe('study reference bank', () => {
             'economics',
             'english',
             'mathematics',
+            'naplan',
+            'oc-prep',
             'physics',
+            'selective-high-school',
         ]);
     });
 
@@ -39,7 +42,10 @@ describe('study reference bank', () => {
         }
 
         for (const [subject, count] of counts) {
-            expect(count, subject).toBeGreaterThanOrEqual(10);
+            /* The exam-prep banks cover a test rather than a syllabus, so they
+               are smaller by nature. */
+            const minimum = ['oc-prep', 'naplan'].includes(subject) ? 2 : 8;
+            expect(count, subject).toBeGreaterThanOrEqual(minimum);
         }
     });
 

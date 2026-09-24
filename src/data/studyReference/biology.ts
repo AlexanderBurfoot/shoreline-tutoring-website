@@ -267,4 +267,126 @@ export const biologyEntries: StudyEntry[] = [
             'Control every other variable, use a control group, and keep the sample large enough for the result to ' +
             'mean something. Living things vary, so repeats matter more here than in physics.',
     },
+    {
+        id: 'bio-organisation-levels',
+        subject: 'biology',
+        question: 'What are the levels of biological organisation?',
+        aliases: ['levels of organisation', 'cells tissues organs', 'organ systems', 'unicellular multicellular'],
+        answer:
+            'Cells form tissues, tissues form organs, organs form systems, and systems form an organism. ' +
+            'Multicellular organisms specialise cells for different jobs, which is why they need transport and ' +
+            'coordination systems that a single-celled organism does not.',
+    },
+    {
+        id: 'bio-gas-exchange',
+        subject: 'biology',
+        question: 'What makes a good exchange surface?',
+        aliases: ['gas exchange', 'alveoli', 'surface area to volume', 'diffusion distance', 'lungs gills'],
+        answer:
+            'A large surface area, a short diffusion distance, a moist surface and a maintained concentration ' +
+            'gradient, usually by a blood supply. ' +
+            'Surface area to volume ratio falls as an organism grows, which is why larger animals need specialised ' +
+            'exchange organs such as lungs or gills.',
+    },
+    {
+        id: 'bio-nutrient-transport',
+        subject: 'biology',
+        question: 'How does the circulatory system transport nutrients?',
+        aliases: ['circulatory system', 'blood vessels', 'heart structure', 'haemoglobin', 'double circulation'],
+        answer:
+            'Arteries carry blood from the heart under pressure, veins return it with valves to stop backflow, and ' +
+            'capillaries exchange materials with tissues. ' +
+            'Haemoglobin in red cells carries oxygen, and a double circulation keeps oxygenated and deoxygenated ' +
+            'blood separate.',
+    },
+    {
+        id: 'bio-classification',
+        subject: 'biology',
+        question: 'How are organisms classified?',
+        aliases: ['classification', 'taxonomy', 'binomial nomenclature', 'dichotomous key', 'species definition'],
+        answer:
+            'From broad to narrow: kingdom, phylum, class, order, family, genus, species. ' +
+            'Binomial nomenclature names each species by genus and species, italicised. ' +
+            'A species is usually defined as a group that can interbreed and produce fertile offspring.',
+    },
+    {
+        id: 'bio-evidence-evolution',
+        subject: 'biology',
+        question: 'What is the evidence for evolution?',
+        aliases: ['evidence for evolution', 'fossil record', 'comparative anatomy', 'homologous structures', 'biogeography', 'dna evidence'],
+        answer:
+            'The fossil record shows change over time and transitional forms. Comparative anatomy shows homologous ' +
+            'structures from a common ancestor. Embryology shows shared early development. ' +
+            'Biogeography explains distribution, and DNA comparison gives the most precise relationships.',
+    },
+    {
+        id: 'bio-population-dynamics',
+        subject: 'biology',
+        question: 'What affects population size?',
+        aliases: ['population dynamics', 'carrying capacity', 'limiting factors', 'predator prey', 'exponential growth population'],
+        answer:
+            'Births and immigration raise it; deaths and emigration lower it. ' +
+            'Growth is exponential while resources allow, then levels off at the carrying capacity. ' +
+            'Limiting factors may be density-dependent, such as disease and competition, or independent, such as fire.',
+    },
+    {
+        id: 'bio-genetic-engineering',
+        subject: 'biology',
+        question: 'How does genetic engineering work?',
+        aliases: ['genetic engineering', 'recombinant dna', 'transgenic', 'restriction enzymes', 'gmo', 'gene therapy'],
+        answer:
+            'Restriction enzymes cut DNA at specific sequences, leaving ends that ligase joins to DNA from another ' +
+            'organism, making recombinant DNA. A vector such as a plasmid carries it into a host cell. ' +
+            'Applications include insulin production, transgenic crops and gene therapy.',
+    },
+    {
+        id: 'bio-dna-sequencing',
+        subject: 'biology',
+        question: 'What is DNA sequencing used for?',
+        aliases: ['dna sequencing', 'genome', 'bioinformatics', 'human genome project', 'genetic screening'],
+        answer:
+            'Sequencing reads the order of bases in DNA. It identifies mutations behind genetic disease, traces ' +
+            'evolutionary relationships, and guides treatment by matching a drug to a genotype. ' +
+            'Bioinformatics handles the sheer volume of data that results.',
+    },
+    {
+        id: 'bio-antibiotic-resistance',
+        subject: 'biology',
+        question: 'How does antibiotic resistance develop?',
+        aliases: ['antibiotic resistance', 'superbug', 'resistant bacteria', 'selection pressure antibiotics'],
+        answer:
+            'Random mutation gives a few bacteria resistance. The antibiotic kills the rest, so the resistant ones ' +
+            'reproduce and come to dominate: natural selection in a matter of days. ' +
+            'Finishing a course and prescribing only when needed slow it down.',
+    },
+    {
+        id: 'bio-genetic-disorders',
+        subject: 'biology',
+        question: 'What causes genetic disorders?',
+        aliases: ['genetic disorders', 'down syndrome', 'cystic fibrosis', 'nondisjunction', 'carrier', 'karyotype'],
+        answer:
+            'Single-gene disorders come from one faulty allele, such as cystic fibrosis, which is recessive, so ' +
+            'carriers show nothing. Chromosomal disorders come from nondisjunction, where chromosomes fail to ' +
+            'separate in meiosis. A karyotype displays the chromosomes to check number and structure.',
+    },
+    {
+        id: 'bio-hormonal-coordination',
+        subject: 'biology',
+        question: 'How do hormones coordinate the body?',
+        aliases: ['hormones', 'insulin glucagon', 'blood glucose', 'adrenaline', 'thyroxine', 'negative feedback hormone'],
+        answer:
+            'Glands release hormones into the blood, and only cells with the matching receptor respond. ' +
+            'Insulin lowers blood glucose and glucagon raises it, a negative feedback pair. ' +
+            'Adrenaline prepares the body for action; thyroxine sets metabolic rate.',
+    },
+    {
+        id: 'bio-depth-study-data',
+        subject: 'biology',
+        question: 'How do I present and analyse biological data?',
+        aliases: ['analysing data biology', 'graph choice', 'mean and range', 'anomalous results', 'trend'],
+        answer:
+            'Put the independent variable on the x-axis. Use a line graph for continuous data and a column graph for ' +
+            'categories. Describe the trend, quote figures from the data, and explain it with biology. ' +
+            'Identify anomalies rather than quietly dropping them.',
+    },
 ];

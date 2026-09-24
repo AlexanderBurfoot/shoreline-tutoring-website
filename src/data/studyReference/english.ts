@@ -171,7 +171,7 @@ export const englishEntries: StudyEntry[] = [
         id: 'eng-comparative-essay',
         subject: 'english',
         question: 'How do I write a comparative essay on two texts?',
-        aliases: ['comparative essay', 'textual conversations', 'two texts', 'intertextuality', 'module a'],
+        aliases: ['comparative essay', 'comparing two texts', 'two texts essay', 'intertextuality'],
         answer:
             'Compare in every paragraph rather than handling one text then the other. ' +
             'Use the same idea as the hinge, and show how each composer treats it differently and why, which usually ' +
@@ -196,5 +196,99 @@ export const englishEntries: StudyEntry[] = [
             'Read it aloud: anything you stumble over needs rewriting. Cut adverbs and filler, and replace vague ' +
             'verbs with precise ones. Check each paragraph answers the question rather than retelling the text, ' +
             'and check every quote is punctuated and integrated.',
+    },
+    {
+        id: 'eng-common-module',
+        subject: 'english',
+        question: 'What is the Common Module, Texts and Human Experiences, about?',
+        aliases: ['common module', 'human experiences', 'paper 1 module', 'anomalies and paradoxes'],
+        answer:
+            'It asks how texts represent individual and collective human experiences, and what they reveal about ' +
+            'human behaviour and motivation. ' +
+            'Strong responses deal with the anomalies and paradoxes in those experiences rather than treating them ' +
+            'as simple lessons.',
+    },
+    {
+        id: 'eng-module-a',
+        subject: 'english',
+        question: 'What does Module A, Textual Conversations, require?',
+        aliases: ['module a', 'textual conversations', 'resonances dissonances', 'comparative study of texts'],
+        answer:
+            'It compares a pair of texts and asks how the later one reshapes the earlier. ' +
+            'Look for resonances, where values carry over, and dissonances, where context has shifted them. ' +
+            'Every paragraph should hold both texts, not alternate between them.',
+    },
+    {
+        id: 'eng-module-b',
+        subject: 'english',
+        question: 'What does Module B, Critical Study of Literature, require?',
+        aliases: ['module b', 'critical study', 'textual integrity', 'personal response', 'reception of a text'],
+        answer:
+            'A sustained, close study of one text, arguing for its value and textual integrity: how its parts work ' +
+            'as a whole. ' +
+            'It expects an informed personal response, supported by close analysis rather than by other critics.',
+    },
+    {
+        id: 'eng-module-c',
+        subject: 'english',
+        question: 'What does Module C, The Craft of Writing, require?',
+        aliases: ['module c', 'craft of writing', 'reflection statement', 'stimulus writing', 'writing techniques'],
+        answer:
+            'You write your own imaginative, discursive or persuasive piece, often from a stimulus, then may be asked ' +
+            'to reflect on your choices. ' +
+            'The reflection should explain why a technique was used and what effect it was for, referring to the ' +
+            'texts that influenced you.',
+    },
+    {
+        id: 'eng-related-text',
+        subject: 'english',
+        question: 'How do I choose a related text?',
+        aliases: ['related text', 'ort', 'own choice text', 'picking a related text'],
+        answer:
+            'Choose something short enough to analyse closely and different enough in form to give you something to ' +
+            'say. It must genuinely fit the module concept, not merely share a topic. ' +
+            'Avoid prescribed texts from the course and anything you cannot quote precisely.',
+    },
+    {
+        id: 'eng-essay-planning',
+        subject: 'english',
+        question: 'How do I plan an essay in an exam?',
+        aliases: ['essay planning', 'exam technique english', 'unseen question', 'adapting an essay', 'timed essay'],
+        answer:
+            'Spend the first few minutes underlining the key words and verbs, then sketch a thesis and three topic ' +
+            'sentences that answer them. ' +
+            'Adapt your prepared material to the question rather than writing it out unchanged, which markers spot ' +
+            'immediately.',
+    },
+    {
+        id: 'eng-speech-writing',
+        subject: 'english',
+        question: 'How do I write and deliver a speech?',
+        aliases: ['speech writing', 'oral presentation', 'delivery', 'audience engagement', 'public speaking'],
+        answer:
+            'Open with something that earns attention, signpost your argument, and use short sentences that are easy ' +
+            'to say aloud. ' +
+            'Direct address and rhetorical questions bring the audience in. ' +
+            'Rehearse for pace and pause deliberately at the turns in the argument.',
+    },
+    {
+        id: 'eng-reading-strategies',
+        subject: 'english',
+        question: 'How do I read a text closely for study?',
+        aliases: ['close reading', 'annotating', 'note taking english', 'study a novel', 'quote bank'],
+        answer:
+            'Annotate as you read, marking technique, effect and how it links to the module idea. ' +
+            'Build a quote bank grouped by idea rather than by chapter, since essays are organised by argument. ' +
+            'Ten well-understood quotes beat fifty half-remembered ones.',
+    },
+    {
+        id: 'eng-punctuation',
+        subject: 'english',
+        question: 'What are the common punctuation and expression mistakes?',
+        aliases: ['punctuation', 'apostrophe', 'comma splice', 'semicolon', 'its vs its', 'expression marks'],
+        answer:
+            'Apostrophes show possession or omission, never plurals. A comma cannot join two sentences: use a full ' +
+            'stop, a semicolon or a conjunction. "Its" is possessive, "it\u2019s" means it is. ' +
+            'Vary sentence length, and cut words that add nothing.',
     },
 ];

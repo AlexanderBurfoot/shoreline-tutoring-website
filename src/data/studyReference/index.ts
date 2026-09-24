@@ -9,6 +9,7 @@ import { biologyEntries } from './biology';
 import { businessEntries } from './business';
 import { chemistryEntries } from './chemistry';
 import { economicsEntries } from './economics';
+import { examPrepEntries } from './examPrep';
 import { englishEntries } from './english';
 import { mathematicsEntries } from './mathematics';
 import { physicsEntries } from './physics';
@@ -25,6 +26,7 @@ export const studyEntries: StudyEntry[] = [
     ...englishEntries,
     ...economicsEntries,
     ...businessEntries,
+    ...examPrepEntries,
 ];
 
 /** The page to send a student to after an answer, by subject. */
@@ -40,6 +42,9 @@ const SUBJECT_LABELS: Record<StudySubject, string> = {
     english: 'English tutoring',
     economics: 'Economics tutoring',
     'business-studies': 'Business Studies tutoring',
+    'selective-high-school': 'Selective High School preparation',
+    'oc-prep': 'Opportunity Class preparation',
+    naplan: 'NAPLAN preparation',
 };
 
 export function subjectLinkLabel(subject: StudySubject): string {

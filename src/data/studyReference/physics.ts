@@ -311,4 +311,125 @@ export const physicsEntries: StudyEntry[] = [
             'Repeat trials for reliability, and use fine instruments for accuracy. ' +
             'Systematic errors shift every reading the same way; random errors scatter them, and repeats reduce those.',
     },
+    {
+        id: 'phys-thermodynamics',
+        subject: 'physics',
+        question: 'What are the laws of thermodynamics?',
+        aliases: ['thermodynamics', 'specific heat capacity', 'latent heat', 'heat transfer', 'conduction convection radiation'],
+        answer:
+            'Energy is conserved, and heat flows from hot to cold until thermal equilibrium. ' +
+            'Q = mcΔT for a temperature change, and Q = mL for a change of state, where temperature stays constant. ' +
+            'Heat transfers by conduction, convection and radiation.',
+    },
+    {
+        id: 'phys-wave-properties',
+        subject: 'physics',
+        question: 'What are the properties of waves?',
+        aliases: ['wave properties', 'transverse longitudinal', 'amplitude', 'superposition', 'standing wave', 'resonance'],
+        answer:
+            'Transverse waves vibrate across the direction of travel, longitudinal along it, as sound does. ' +
+            'Waves reflect, refract, diffract and interfere. ' +
+            'A standing wave forms when two identical waves travel in opposite directions, giving fixed nodes and antinodes.',
+    },
+    {
+        id: 'phys-sound',
+        subject: 'physics',
+        question: 'How does sound behave?',
+        aliases: ['sound waves', 'doppler effect', 'pitch', 'echo', 'speed of sound', 'harmonics'],
+        answer:
+            'Sound is a longitudinal wave needing a medium, travelling at about 343 m/s in air. ' +
+            'Pitch is frequency and loudness is amplitude. The Doppler effect raises the observed frequency as a ' +
+            'source approaches and lowers it as it recedes.',
+    },
+    {
+        id: 'phys-static-electricity',
+        subject: 'physics',
+        question: 'What is static electricity and charge?',
+        aliases: ['static electricity', 'charging by friction', 'conductor insulator', 'earthing', 'coulomb charge'],
+        answer:
+            'Charge is conserved and comes in positive and negative, with like charges repelling. ' +
+            'Objects charge by friction, contact or induction, moving electrons rather than protons. ' +
+            'Conductors let charge move freely; insulators hold it in place, which is why static builds on them.',
+    },
+    {
+        id: 'phys-circuits',
+        subject: 'physics',
+        question: 'How do I analyse a circuit?',
+        aliases: ['circuit analysis', 'kirchhoff', 'voltage divider', 'ammeter voltmeter', 'emf internal resistance'],
+        answer:
+            'Kirchhoff\u2019s current law: current into a junction equals current out. ' +
+            'Kirchhoff\u2019s voltage law: voltages around any loop sum to zero. ' +
+            'An ammeter goes in series and a voltmeter in parallel. A real cell has internal resistance, so terminal ' +
+            'voltage falls as current rises.',
+    },
+    {
+        id: 'phys-magnetism-basics',
+        subject: 'physics',
+        question: 'What produces a magnetic field?',
+        aliases: ['magnetic field', 'solenoid', 'field lines', 'electromagnet', 'right hand grip rule'],
+        answer:
+            'Moving charge produces a magnetic field. Around a straight wire it circles the wire, given by the ' +
+            'right-hand grip rule, with B = μ₀I/2πr. ' +
+            'A solenoid makes a uniform field inside, B = μ₀nI, and adding an iron core makes an electromagnet.',
+    },
+    {
+        id: 'phys-energy-efficiency',
+        subject: 'physics',
+        question: 'What is efficiency and where does energy go?',
+        aliases: ['efficiency', 'energy transformation', 'useful energy', 'dissipated energy', 'sankey diagram'],
+        answer:
+            'Efficiency = useful energy out ÷ total energy in, as a percentage. ' +
+            'The rest is not destroyed but dissipated, usually as heat and sound. ' +
+            'A Sankey diagram shows the split by the width of each arrow.',
+    },
+    {
+        id: 'phys-michelson-morley',
+        subject: 'physics',
+        question: 'What did the Michelson-Morley experiment show?',
+        aliases: ['michelson morley', 'aether', 'null result', 'postulates of special relativity', 'inertial frame'],
+        answer:
+            'It looked for the Earth\u2019s motion through a supposed aether and found nothing, a famous null result. ' +
+            'That supported Einstein\u2019s postulates: the laws of physics are the same in every inertial frame, and ' +
+            'the speed of light is the same for every observer.',
+    },
+    {
+        id: 'phys-relativistic-momentum',
+        subject: 'physics',
+        question: 'What happens to mass and momentum near light speed?',
+        aliases: ['relativistic momentum', 'mass energy equivalence', 'relativistic mass', 'particle accelerator'],
+        answer:
+            'Momentum becomes p = mv/√(1 − v²/c²), so it grows without limit as v approaches c, which is why no ' +
+            'object with mass can reach light speed. ' +
+            'The energy put in appears as mass through E = mc², which particle accelerators use to create new particles.',
+    },
+    {
+        id: 'phys-black-body',
+        subject: 'physics',
+        question: 'What is black body radiation and the ultraviolet catastrophe?',
+        aliases: ['black body radiation', 'ultraviolet catastrophe', 'wiens law', 'plancks hypothesis', 'quantisation'],
+        answer:
+            'A hot object emits a spectrum whose peak shifts to shorter wavelengths as it heats, by Wien\u2019s law. ' +
+            'Classical physics predicted infinite energy at short wavelengths, the ultraviolet catastrophe. ' +
+            'Planck fixed it by proposing energy comes in quanta, E = hf.',
+    },
+    {
+        id: 'phys-bohr-model',
+        subject: 'physics',
+        question: 'What is the Bohr model and its limitations?',
+        aliases: ['bohr model', 'hydrogen spectrum', 'balmer series', 'energy levels hydrogen', 'limitations of bohr'],
+        answer:
+            'Bohr proposed electrons occupy fixed orbits with quantised angular momentum, emitting a photon when they ' +
+            'drop between them, which explains hydrogen\u2019s spectral lines. ' +
+            'It fails for atoms with more than one electron and does not explain line intensities or splitting.',
+    },
+    {
+        id: 'phys-semiconductors',
+        subject: 'physics',
+        question: 'How do semiconductors and diodes work?',
+        aliases: ['semiconductor', 'doping', 'p type n type', 'diode', 'band structure', 'transistor'],
+        answer:
+            'A semiconductor has a small band gap, so some electrons reach the conduction band. ' +
+            'Doping adds impurities: n-type contributes electrons, p-type contributes holes. ' +
+            'A p-n junction conducts in one direction only, which is a diode.',
+    },
 ];

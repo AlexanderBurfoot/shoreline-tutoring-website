@@ -13,7 +13,7 @@ export const businessEntries: StudyEntry[] = [
         id: 'bus-business-functions',
         subject: 'business-studies',
         question: 'What are the four key business functions?',
-        aliases: ['key business functions', 'operations marketing finance human resources', 'business functions'],
+        aliases: ['key business functions', 'four functions of business', 'business functions', 'interdependence'],
         answer:
             'Operations turns inputs into outputs, marketing identifies and satisfies customer needs, finance manages ' +
             'the money, and human resources manages the people. ' +
@@ -138,5 +138,87 @@ export const businessEntries: StudyEntry[] = [
             'Your pay rate comes from an award or agreement, and casual work pays a loading instead of leave. ' +
             'You need a tax file number, and your employer must pay superannuation on top of wages. ' +
             'A payslip should show hours, rate, tax withheld and super paid.',
+    },
+    {
+        id: 'bus-nature-of-business',
+        subject: 'business-studies',
+        question: 'What are the types and sizes of business?',
+        aliases: ['nature of business', 'small to medium enterprise', 'sme', 'industry sectors', 'business role'],
+        answer:
+            'Businesses are classified by size, by legal structure and by sector: primary extracts, secondary ' +
+            'manufactures, tertiary provides services, quaternary handles information and quinary personal services. ' +
+            'Small and medium enterprises employ fewer than 200 people and dominate by number.',
+    },
+    {
+        id: 'bus-influences',
+        subject: 'business-studies',
+        question: 'What influences a business?',
+        aliases: ['influences on business', 'external influences', 'internal influences', 'stakeholders', 'pestle'],
+        answer:
+            'External influences include economic conditions, financial markets, geography, social attitudes, legal ' +
+            'and political settings, institutions, technology and competition. ' +
+            'Internal ones include products, location, resources, management and business culture. ' +
+            'Stakeholders are everyone affected, from shareholders to the community.',
+    },
+    {
+        id: 'bus-marketing-strategies',
+        subject: 'business-studies',
+        question: 'What are the marketing strategies?',
+        aliases: ['marketing strategies', 'positioning', 'branding', 'product life cycle', 'e marketing', 'market research'],
+        answer:
+            'Segment the market, target a group and position the product in their minds. ' +
+            'Strategies cover the product life cycle, branding, packaging, pricing methods, promotion mix and ' +
+            'distribution channels. Market research informs each one, and ethics limits what is acceptable.',
+    },
+    {
+        id: 'bus-finance-sources',
+        subject: 'business-studies',
+        question: 'Where can a business get finance?',
+        aliases: ['sources of finance', 'debt vs equity', 'overdraft', 'leasing', 'factoring', 'venture capital'],
+        answer:
+            'Internal finance is retained profit and owner\u2019s funds. External debt is short-term, such as ' +
+            'overdrafts and factoring, or long-term, such as mortgages and leasing. ' +
+            'Equity means new owners and no repayments, but the profit is shared and control diluted.',
+    },
+    {
+        id: 'bus-employment-relations',
+        subject: 'business-studies',
+        question: 'How are employment relations managed?',
+        aliases: ['employment relations', 'industrial relations', 'award', 'enterprise agreement', 'dispute resolution', 'unfair dismissal'],
+        answer:
+            'Pay and conditions come from the National Employment Standards, awards and enterprise agreements. ' +
+            'Disputes are resolved by negotiation, mediation, grievance procedures, conciliation or arbitration. ' +
+            'Dismissal must follow a fair process, or it may be found unfair.',
+    },
+    {
+        id: 'bus-global-business',
+        subject: 'business-studies',
+        question: 'What does global business involve?',
+        aliases: ['global business', 'exporting', 'global sourcing', 'transnational corporation', 'exchange rate business'],
+        answer:
+            'Ways in include exporting, licensing, franchising, joint ventures and direct investment, each trading ' +
+            'control against risk. ' +
+            'Global businesses must manage exchange rate movements, differing regulations and cultural expectations, ' +
+            'and decide whether to standardise or customise for each market.',
+    },
+    {
+        id: 'bus-ethics-csr',
+        subject: 'business-studies',
+        question: 'What is corporate social responsibility?',
+        aliases: ['corporate social responsibility', 'csr', 'business ethics', 'triple bottom line', 'greenwashing'],
+        answer:
+            'Going beyond legal compliance to consider the effect on people and the environment, often summarised as ' +
+            'the triple bottom line of profit, people and planet. ' +
+            'It can raise costs in the short term while building reputation and staff loyalty over time.',
+    },
+    {
+        id: 'bus-planning-decision',
+        subject: 'business-studies',
+        question: 'How does business planning work?',
+        aliases: ['business planning', 'swot analysis', 'strategic planning', 'situational analysis', 'business plan'],
+        answer:
+            'Planning runs from strategic, over years, through tactical to operational, over days. ' +
+            'A situational analysis, such as SWOT, sets out strengths, weaknesses, opportunities and threats. ' +
+            'The plan then sets goals, chooses strategies and defines how performance will be measured.',
     },
 ];

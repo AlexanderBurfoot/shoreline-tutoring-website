@@ -256,7 +256,7 @@ export const chemistryEntries: StudyEntry[] = [
         id: 'chem-organic-naming',
         subject: 'chemistry',
         question: 'How does IUPAC naming work?',
-        aliases: ['iupac naming', 'naming organic compounds', 'prefixes meth eth prop', 'isomers'],
+        aliases: ['iupac naming', 'naming organic compounds', 'prefixes meth eth prop', 'alkane alkene names'],
         answer:
             'Count the longest carbon chain for the stem: meth, eth, prop, but, pent, hex. ' +
             'The ending gives the functional group, such as -ane, -ene, -ol or -oic acid. ' +
@@ -301,5 +301,125 @@ export const chemistryEntries: StudyEntry[] = [
             'It plots energy through a reaction: the hump is the activation energy and its peak the transition state. ' +
             'The difference between reactants and products is ΔH, below zero for exothermic. ' +
             'A catalyst lowers the hump without moving the ends, so it speeds the reaction without changing ΔH.',
+    },
+    {
+        id: 'chem-atomic-structure',
+        subject: 'chemistry',
+        question: 'What is the structure of an atom?',
+        aliases: ['atomic structure', 'electron configuration', 'isotopes', 'subatomic particles', 'valence electrons'],
+        answer:
+            'Protons and neutrons sit in the nucleus; electrons occupy shells and subshells around it. ' +
+            'The atomic number is the proton count and defines the element; isotopes differ in neutrons. ' +
+            'Electron configuration fills 1s, 2s, 2p and so on, and the outer shell decides the chemistry.',
+    },
+    {
+        id: 'chem-mixtures-separation',
+        subject: 'chemistry',
+        question: 'How are mixtures separated?',
+        aliases: ['separating mixtures', 'filtration', 'distillation', 'chromatography separation', 'pure substance'],
+        answer:
+            'Choose the technique by the difference you can exploit: filtration for particle size, evaporation and ' +
+            'crystallisation for solubility, distillation for boiling point, chromatography for how strongly parts ' +
+            'are carried, and a magnet or density for physical properties.',
+    },
+    {
+        id: 'chem-reaction-types',
+        subject: 'chemistry',
+        question: 'What are the main types of chemical reaction?',
+        aliases: ['types of reactions', 'combustion', 'synthesis decomposition', 'displacement reaction', 'activity series'],
+        answer:
+            'Synthesis combines, decomposition breaks apart, displacement swaps a more reactive element in, and ' +
+            'combustion reacts with oxygen. ' +
+            'The activity series predicts displacement: a metal displaces any metal below it from a solution.',
+    },
+    {
+        id: 'chem-hess-law',
+        subject: 'chemistry',
+        question: 'What is Hess\u2019s law?',
+        aliases: ['hess law', 'enthalpy cycle', 'heat of formation', 'bond energy calculation'],
+        answer:
+            'The enthalpy change of a reaction is the same whatever route it takes, so equations can be added and ' +
+            'their ΔH values added with them. Reversing an equation reverses the sign; doubling it doubles ΔH. ' +
+            'It lets you find a ΔH you cannot measure directly.',
+    },
+    {
+        id: 'chem-dilution',
+        subject: 'chemistry',
+        question: 'How do I calculate a dilution?',
+        aliases: ['dilution', 'c1v1 = c2v2', 'standard solution preparation', 'parts per million'],
+        answer:
+            'c₁V₁ = c₂V₂: the moles do not change, only the volume. ' +
+            'Concentration is usually mol/L, and parts per million is milligrams per litre for dilute solutions. ' +
+            'Add concentrated acid to water, never the reverse, because the mixing is strongly exothermic.',
+    },
+    {
+        id: 'chem-equilibrium-graphs',
+        subject: 'chemistry',
+        question: 'How do I read a concentration-time graph for equilibrium?',
+        aliases: ['equilibrium graph', 'concentration time graph', 'reaching equilibrium', 'dynamic equilibrium'],
+        answer:
+            'Concentrations change quickly at first, then level off where the forward and reverse rates are equal. ' +
+            'Equilibrium is dynamic: both reactions continue at the same rate. ' +
+            'A sudden jump then a new plateau shows a disturbance and the shift that followed it.',
+    },
+    {
+        id: 'chem-salts-hydrolysis',
+        subject: 'chemistry',
+        question: 'Why are some salt solutions not neutral?',
+        aliases: ['salt hydrolysis', 'acidic salt', 'basic salt', 'conjugate base ph', 'amphiprotic'],
+        answer:
+            'A salt from a strong acid and strong base is neutral. From a weak acid and strong base, the conjugate ' +
+            'base reacts with water and the solution is basic; the reverse gives an acidic solution. ' +
+            'Amphiprotic species, such as hydrogencarbonate, can act as either.',
+    },
+    {
+        id: 'chem-alcohols-reactions',
+        subject: 'chemistry',
+        question: 'What reactions do alcohols undergo?',
+        aliases: ['alcohol reactions', 'oxidation of alcohols', 'dehydration', 'substitution reaction', 'primary secondary tertiary'],
+        answer:
+            'Primary alcohols oxidise to aldehydes then carboxylic acids; secondary give ketones; tertiary resist ' +
+            'oxidation. Dehydration with acid gives an alkene. ' +
+            'Alcohols also react with carboxylic acids to form esters, and burn completely to carbon dioxide and water.',
+    },
+    {
+        id: 'chem-isomers',
+        subject: 'chemistry',
+        question: 'What are isomers?',
+        aliases: ['isomers', 'structural isomers', 'chain isomer', 'positional isomer', 'functional group isomer'],
+        answer:
+            'Isomers share a molecular formula but differ in structure. ' +
+            'Chain isomers branch differently, positional isomers move the functional group along the chain, and ' +
+            'functional group isomers have a different group entirely. Isomers can have very different properties.',
+    },
+    {
+        id: 'chem-soaps-detergents',
+        subject: 'chemistry',
+        question: 'How do soaps and detergents work?',
+        aliases: ['soap', 'detergent', 'saponification', 'hydrophilic hydrophobic', 'surfactant', 'hard water'],
+        answer:
+            'A surfactant has a hydrophobic tail and a hydrophilic head, so it surrounds grease and lets water carry ' +
+            'it away. Soap is made by saponification, boiling a fat with a strong base. ' +
+            'Soap forms a scum in hard water, where synthetic detergents do not.',
+    },
+    {
+        id: 'chem-radioisotopes',
+        subject: 'chemistry',
+        question: 'What are radioisotopes used for?',
+        aliases: ['radioisotopes', 'medical isotopes', 'carbon dating', 'tracer', 'nuclear chemistry'],
+        answer:
+            'Short half-life isotopes act as medical tracers and treatments; longer ones date materials, as carbon-14 ' +
+            'dates once-living remains. ' +
+            'Choose the isotope by half-life and radiation type: the dose should do the job and then decay quickly.',
+    },
+    {
+        id: 'chem-monitoring-environment',
+        subject: 'chemistry',
+        question: 'How is water quality monitored?',
+        aliases: ['water quality', 'monitoring the environment', 'eutrophication', 'heavy metals', 'dissolved oxygen'],
+        answer:
+            'Tests cover pH, dissolved oxygen, turbidity, hardness, phosphate and nitrate, and heavy metal ions. ' +
+            'Excess nutrients cause eutrophication: algae bloom, then decay and strip the oxygen. ' +
+            'AAS measures metal ions at very low concentrations.',
     },
 ];

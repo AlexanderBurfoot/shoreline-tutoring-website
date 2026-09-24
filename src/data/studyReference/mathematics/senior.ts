@@ -223,11 +223,15 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
         id: 'maths-rates-of-change',
         subject: 'mathematics',
         question: 'How do I use calculus for rates of change?',
-        aliases: ['rates of change', 'related rates', 'displacement velocity acceleration', 'motion calculus'],
+        aliases: [
+            'rates of change', 'related rates', 'displacement velocity acceleration', 'motion calculus',
+            'rate of change of volume', 'chain rule rates', 'filling a tank',
+        ],
         answer:
             'The derivative is the instantaneous rate of change. In motion, differentiating displacement gives ' +
             'velocity and differentiating again gives acceleration; integrating reverses it. ' +
-            'For related rates, link the quantities in one equation, then differentiate with respect to time.',
+            'For related rates, link the quantities in one equation, differentiate every term with respect to time, ' +
+            'and substitute the known rate only at the end.',
     },
     {
         id: 'maths-stationary-points',

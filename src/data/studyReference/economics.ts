@@ -127,4 +127,107 @@ export const economicsEntries: StudyEntry[] = [
             'Pollution is a negative externality: a cost borne by others and not priced by the market, which is a ' +
             'market failure. Governments respond with taxes, permits or regulation.',
     },
+    {
+        id: 'econ-business-cycle',
+        subject: 'economics',
+        question: 'What is the business cycle?',
+        aliases: ['business cycle', 'boom and bust', 'recession recovery', 'aggregate demand', 'output gap'],
+        answer:
+            'The swing of economic activity around its long-run trend: expansion, peak, contraction, trough. ' +
+            'Aggregate demand is C + I + G + (X − M). ' +
+            'Governments use fiscal and monetary policy to smooth the cycle rather than to remove it.',
+    },
+    {
+        id: 'econ-multiplier',
+        subject: 'economics',
+        question: 'What is the multiplier effect?',
+        aliases: ['multiplier', 'marginal propensity to consume', 'injection multiplier', 'mpc mps'],
+        answer:
+            'A new injection is spent, and part of that spending becomes someone else\u2019s income, which is spent ' +
+            'again. The multiplier is 1/(1 − MPC), or 1/MPS. ' +
+            'The more of each dollar people spend rather than save, the larger the final effect on output.',
+    },
+    {
+        id: 'econ-labour-market',
+        subject: 'economics',
+        question: 'How does the labour market work?',
+        aliases: ['labour market', 'wage determination', 'derived demand', 'trade unions', 'minimum wage', 'enterprise bargaining'],
+        answer:
+            'Demand for labour is derived from demand for what it produces. ' +
+            'Wages are set by awards, enterprise agreements or individual contracts, with the Fair Work Commission ' +
+            'setting the minimum. Productivity growth is what allows real wages to rise without inflation.',
+    },
+    {
+        id: 'econ-exchange-rates',
+        subject: 'economics',
+        question: 'What determines the exchange rate?',
+        aliases: ['exchange rate', 'appreciation depreciation', 'floating exchange rate', 'currency demand', 'twi'],
+        answer:
+            'Under a float, the rate is set by demand for and supply of the currency, driven by trade, interest rate ' +
+            'differences, commodity prices and expectations. ' +
+            'Appreciation makes imports cheaper and exports dearer; depreciation does the reverse.',
+    },
+    {
+        id: 'econ-financial-markets',
+        subject: 'economics',
+        question: 'What do financial markets do?',
+        aliases: ['financial markets', 'share market', 'bond market', 'financial intermediaries', 'apra asic'],
+        answer:
+            'They channel savings to borrowers. Primary markets issue new securities; secondary markets trade ' +
+            'existing ones. ' +
+            'Regulation is shared: the Reserve Bank for stability and monetary policy, APRA for institutions, and ' +
+            'ASIC for market conduct.',
+    },
+    {
+        id: 'econ-microeconomic-reform',
+        subject: 'economics',
+        question: 'What is microeconomic reform?',
+        aliases: ['microeconomic reform', 'deregulation', 'privatisation', 'competition policy', 'productivity'],
+        answer:
+            'Policies aimed at how markets work rather than at overall demand: deregulation, privatisation, ' +
+            'competition policy and tariff reduction. ' +
+            'The goal is higher productivity and efficiency, though the adjustment can cost jobs in protected industries.',
+    },
+    {
+        id: 'econ-government-intervention',
+        subject: 'economics',
+        question: 'Why do governments intervene in markets?',
+        aliases: ['market failure', 'public goods', 'externalities', 'merit goods', 'monopoly regulation'],
+        answer:
+            'To correct market failure: public goods nobody would supply privately, externalities the price ignores, ' +
+            'merit goods that are under-consumed, and market power that lets a firm raise prices. ' +
+            'Tools include taxes, subsidies, regulation and direct provision.',
+    },
+    {
+        id: 'econ-australia-trade',
+        subject: 'economics',
+        question: 'What does Australia trade, and with whom?',
+        aliases: ['australias trade', 'trade patterns', 'terms of trade', 'commodity exports', 'free trade agreements'],
+        answer:
+            'Australia exports mostly commodities, such as iron ore, coal and gas, plus services including education ' +
+            'and tourism, and trades most with Asia. ' +
+            'The terms of trade is export prices over import prices, and a rise lifts national income.',
+    },
+    {
+        id: 'econ-living-standards',
+        subject: 'economics',
+        question: 'How are living standards measured?',
+        aliases: ['living standards', 'material and non material', 'hdi', 'gdp limitations', 'wellbeing'],
+        answer:
+            'Material living standards depend on income and consumption; non-material ones cover health, environment ' +
+            'and leisure. ' +
+            'GDP per capita misses both distribution and unpaid work, so measures such as the Human Development Index ' +
+            'add life expectancy and education.',
+    },
+    {
+        id: 'econ-economic-objectives',
+        subject: 'economics',
+        question: 'What are the government\u2019s economic objectives, and how do they conflict?',
+        aliases: ['economic objectives', 'policy conflict', 'phillips curve', 'growth and inflation tradeoff'],
+        answer:
+            'Sustainable growth, low inflation, full employment, external stability, fair distribution and ' +
+            'environmental sustainability. ' +
+            'They conflict: growth that lowers unemployment can raise inflation and imports, which is why policy is ' +
+            'a balancing act rather than a formula.',
+    },
 ];

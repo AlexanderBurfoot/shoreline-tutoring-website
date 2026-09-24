@@ -18,7 +18,10 @@ export type StudySubject =
     | 'biology'
     | 'english'
     | 'economics'
-    | 'business-studies';
+    | 'business-studies'
+    | 'selective-high-school'
+    | 'oc-prep'
+    | 'naplan';
 
 export interface StudyEntry {
     /** Unique across every subject, e.g. 'maths-sphere-volume'. */
