@@ -24,7 +24,7 @@ const PRIVACY_NOTICE = 'Please do not share names or personal details here.';
 
 /** The bird from the logo, cut out of it so the two cannot diverge. */
 const LAUNCHER_ICON = '/chat-bird-navy.png';
-const LAUNCHER_ICON_SIZE = 34;
+const LAUNCHER_ICON_SIZE = 44;
 
 const assistantMessage = (text: string) => createMessage({ author: 'assistant', text });
 
@@ -148,6 +148,11 @@ const ChatAssistant = () => {
                 aria-controls="chat-assistant-panel"
             >
                 <span className="sr-only">{isOpen ? 'Close chat' : 'Ask Archimedes'}</span>
+                {!isOpen && (
+                    <span className="chat-assistant__launcher-label" aria-hidden="true">
+                        Ask Archimedes
+                    </span>
+                )}
                 {isOpen ? (
                     <span className="chat-assistant__launcher-close" aria-hidden="true">&times;</span>
                 ) : (

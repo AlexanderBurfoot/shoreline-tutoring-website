@@ -63,7 +63,7 @@
     /* Lifted clear of the bar and of the chat launcher above it, which sits in
        the corner at this width (see ChatAssistant.css). */
     .back-to-top {
-        bottom: 152px;
+        bottom: 172px;
     }
 }
 

@@ -13,11 +13,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
     padding: 0;
     border: none;
-    border-radius: 16px;
+    border-radius: 20px;
     /* Gold rather than navy: the button floats over both white and navy
        sections, and navy on navy all but disappears. Gold is also the colour
        of every other action on the site. */
@@ -37,16 +37,16 @@
    rather than an app icon. Dropped while the panel is open, where the button
    is a plain close control. */
 .chat-assistant__launcher--bubble {
-    border-bottom-left-radius: 6px;
+    border-bottom-left-radius: 8px;
 }
 
 .chat-assistant__launcher--bubble::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -7px;
-    width: 13px;
-    height: 13px;
+    bottom: -9px;
+    width: 17px;
+    height: 17px;
     background: var(--color-gold-primary);
     clip-path: polygon(0 0, 100% 0, 0 100%);
 }
@@ -55,13 +55,46 @@
     background: var(--color-gold-dark);
 }
 
+/* The name, shown on hover and on keyboard focus. Hidden from screen readers,
+   which already get it from the button's own label, and never shown on touch
+   screens, where there is no hover and the panel opens on the first tap. */
+.chat-assistant__launcher-label {
+    position: absolute;
+    right: calc(100% + 12px);
+    padding: var(--space-2) var(--space-4);
+    border-radius: 999px;
+    background: var(--color-navy);
+    color: var(--color-gold-primary);
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: translateX(8px);
+    pointer-events: none;
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.chat-assistant__launcher:hover .chat-assistant__launcher-label,
+.chat-assistant__launcher:focus-visible .chat-assistant__launcher-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (hover: none) {
+    .chat-assistant__launcher-label {
+        display: none;
+    }
+}
+
 /* Just outside the bubble's top-right corner, so it never sits on Archimedes'
    crest. The ring is the page behind it, which keeps the star legible on both
    white and navy sections. */
 .chat-assistant__sparkle {
     position: absolute;
-    top: -4px;
-    right: -4px;
+    top: -5px;
+    right: -5px;
     color: var(--color-navy);
     background: var(--color-gold-primary);
     border-radius: 50%;
@@ -75,7 +108,7 @@
 
 .chat-assistant {
     position: fixed;
-    bottom: 100px;
+    bottom: 116px;
     right: 32px;
     z-index: 945;
     display: flex;
@@ -236,9 +269,9 @@
     .chat-assistant {
         left: 20px;
         right: 20px;
-        bottom: 156px;
+        bottom: 172px;
         width: auto;
-        max-height: min(70vh, calc(100vh - 230px));
+        max-height: min(70vh, calc(100vh - 250px));
     }
 }
 
