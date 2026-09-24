@@ -1,69 +1,12 @@
 /**
- * Chemistry, Year 12 (Modules 5 to 8).
+ * Chemistry, Year 12 Modules 7 and 8.
  *
- * Equilibrium and acid reactions, acid/base reactions, organic chemistry, and
- * applying chemical ideas.
+ * Organic chemistry, and applying chemical ideas: synthesis, spectroscopy and
+ * quantitative analysis.
  */
 import type { StudyEntry } from '../types';
 
-export const chemistryYear12Entries: StudyEntry[] = [
-    {
-        id: 'chem-equilibrium-constant',
-        subject: 'chemistry',
-        question: 'What is the equilibrium constant Keq?',
-        aliases: ['keq', 'equilibrium constant', 'kc', 'k expression', 'equilibrium expression'],
-        answer:
-            'For aA + bB ⇌ cC + dD, Keq = [C]^c[D]^d / ([A]^a[B]^b), using equilibrium concentrations. ' +
-            'A large K means products are favoured, a small K means reactants are. Pure solids and liquids are left out.',
-    },
-    {
-        id: 'chem-le-chatelier',
-        subject: 'chemistry',
-        question: 'What is Le Chatelier’s principle?',
-        aliases: ['le chatelier', 'shift equilibrium', 'disturbing equilibrium', 'pressure change equilibrium'],
-        answer:
-            'If a system at equilibrium is disturbed, it shifts to partly oppose the change. ' +
-            'Adding reactant shifts it right, raising pressure shifts it towards fewer gas particles, and raising ' +
-            'temperature shifts it in the endothermic direction. Only temperature changes the value of K.',
-    },
-    {
-        id: 'chem-ksp',
-        subject: 'chemistry',
-        question: 'What is Ksp?',
-        aliases: ['ksp', 'solubility product', 'precipitate', 'saturated solution'],
-        answer:
-            'Ksp is the solubility product: the equilibrium constant for a sparingly soluble salt dissolving. ' +
-            'For AgCl(s) ⇌ Ag⁺ + Cl⁻, Ksp = [Ag⁺][Cl⁻]. If the ionic product exceeds Ksp, a precipitate forms.',
-    },
-    {
-        id: 'chem-ph',
-        subject: 'chemistry',
-        question: 'How do I calculate pH?',
-        aliases: ['ph formula', 'poh', 'hydrogen ion concentration', 'ph scale'],
-        answer:
-            'pH = −log₁₀[H⁺], and pOH = −log₁₀[OH⁻]. At 25°C, pH + pOH = 14. ' +
-            'Each whole pH unit is a tenfold change in [H⁺], so pH 3 is ten times more acidic than pH 4.',
-    },
-    {
-        id: 'chem-ka-kb',
-        subject: 'chemistry',
-        question: 'What are Ka and Kb?',
-        aliases: ['ka', 'kb', 'acid dissociation constant', 'weak acid', 'pka'],
-        answer:
-            'Ka is the acid dissociation constant: for HA ⇌ H⁺ + A⁻, Ka = [H⁺][A⁻]/[HA]. ' +
-            'A larger Ka means a stronger acid. pKa = −log₁₀Ka, so a smaller pKa is the stronger acid. ' +
-            'For a conjugate pair, Ka × Kb = Kw = 1.0 × 10⁻¹⁴ at 25°C.',
-    },
-    {
-        id: 'chem-titration',
-        subject: 'chemistry',
-        question: 'How does a titration calculation work?',
-        aliases: ['titration', 'equivalence point', 'standard solution', 'c1v1', 'concentration calculation'],
-        answer:
-            'Use n = cV to find moles of the known solution, apply the mole ratio from the balanced equation, ' +
-            'then divide by the unknown volume to get its concentration. ' +
-            'The equivalence point is where the moles match the ratio; the end point is where the indicator changes.',
-    },
+export const chemistryOrganicAnalysisEntries: StudyEntry[] = [
     {
         id: 'chem-functional-groups',
         subject: 'chemistry',
@@ -82,26 +25,6 @@ export const chemistryYear12Entries: StudyEntry[] = [
         answer:
             'A carboxylic acid plus an alcohol makes an ester and water, with concentrated sulfuric acid as catalyst. ' +
             'It is reversible and slow, so it is run under reflux to heat the mixture without losing volatile reactants.',
-    },
-    {
-        id: 'chem-buffers',
-        subject: 'chemistry',
-        question: 'What is a buffer?',
-        aliases: ['buffer', 'buffer solution', 'conjugate pair buffer', 'blood buffer'],
-        answer:
-            'A buffer is a weak acid with its conjugate base, or a weak base with its conjugate acid, in similar ' +
-            'amounts. Added acid reacts with the base and added base with the acid, so the pH barely moves. ' +
-            'Blood is buffered by the carbonic acid and hydrogencarbonate pair.',
-    },
-    {
-        id: 'chem-indicators',
-        subject: 'chemistry',
-        question: 'How do I choose an indicator?',
-        aliases: ['indicator', 'phenolphthalein', 'methyl orange', 'titration curve', 'equivalence point ph'],
-        answer:
-            'Choose one whose colour change spans the pH at the equivalence point. ' +
-            'Strong acid with strong base is neutral there, so most indicators work. Weak acid with strong base ends ' +
-            'basic, suiting phenolphthalein; strong acid with weak base ends acidic, suiting methyl orange.',
     },
     {
         id: 'chem-organic-naming',
@@ -132,26 +55,6 @@ export const chemistryYear12Entries: StudyEntry[] = [
             'Match the technique to the question. Molar mass and fragments: mass spectrometry. Functional groups: ' +
             'infrared. Carbon and hydrogen skeleton: NMR. Concentration of a metal ion: AAS. ' +
             'Separating a mixture first: chromatography. Structure questions usually need two of them together.',
-    },
-    {
-        id: 'chem-equilibrium-graphs',
-        subject: 'chemistry',
-        question: 'How do I read a concentration-time graph for equilibrium?',
-        aliases: ['equilibrium graph', 'concentration time graph', 'reaching equilibrium', 'dynamic equilibrium'],
-        answer:
-            'Concentrations change quickly at first, then level off where the forward and reverse rates are equal. ' +
-            'Equilibrium is dynamic: both reactions continue at the same rate. ' +
-            'A sudden jump then a new plateau shows a disturbance and the shift that followed it.',
-    },
-    {
-        id: 'chem-salts-hydrolysis',
-        subject: 'chemistry',
-        question: 'Why are some salt solutions not neutral?',
-        aliases: ['salt hydrolysis', 'acidic salt', 'basic salt', 'conjugate base ph', 'amphiprotic'],
-        answer:
-            'A salt from a strong acid and strong base is neutral. From a weak acid and strong base, the conjugate ' +
-            'base reacts with water and the solution is basic; the reverse gives an acidic solution. ' +
-            'Amphiprotic species, such as hydrogencarbonate, can act as either.',
     },
     {
         id: 'chem-alcohols-reactions',
@@ -194,89 +97,6 @@ export const chemistryYear12Entries: StudyEntry[] = [
             'AAS measures metal ions at very low concentrations.',
     },
     {
-        id: 'chem-conjugate-pairs',
-        subject: 'chemistry',
-        question: 'What are conjugate acid-base pairs?',
-        aliases: ['conjugate pair', 'conjugate base', 'conjugate acid', 'bronsted lowry', 'proton donor acceptor'],
-        answer:
-            'Brønsted-Lowry defines an acid as a proton donor and a base as a proton acceptor, so every acid has a ' +
-            'conjugate base differing by one proton. ' +
-            'The stronger the acid, the weaker its conjugate base. Arrhenius only described H⁺ and OH⁻ in water, ' +
-            'which is why Brønsted-Lowry replaced it.',
-    },
-    {
-        id: 'chem-strong-weak-acids',
-        subject: 'chemistry',
-        question: 'What is the difference between a strong acid and a concentrated one?',
-        aliases: ['strong vs weak acid', 'degree of ionisation', 'concentrated acid', 'dilute acid', 'weak acid ph'],
-        answer:
-            'Strength is how completely an acid ionises; concentration is how much acid is in the solution. ' +
-            'A strong acid ionises essentially completely, so [H⁺] equals its concentration. ' +
-            'A weak acid ionises partially, so its pH is higher than a strong acid at the same concentration.',
-    },
-    {
-        id: 'chem-kw-poh',
-        subject: 'chemistry',
-        question: 'What is Kw?',
-        aliases: ['kw', 'ionic product of water', 'poh', 'ph plus poh', 'self ionisation'],
-        answer:
-            'Water self-ionises, and Kw = [H₃O⁺][OH⁻] = 1.00 × 10⁻¹⁴ at 25°C. ' +
-            'So pH + pOH = 14 at that temperature. ' +
-            'Kw rises with temperature, which is why neutral pH is below 7 in hot water while still being neutral.',
-    },
-    {
-        id: 'chem-titration-curves',
-        subject: 'chemistry',
-        question: 'What does a titration curve show?',
-        aliases: ['titration curve', 'equivalence point ph', 'buffer region', 'strong acid weak base curve', 'half equivalence'],
-        answer:
-            'pH against volume added. The steep section is the equivalence point: pH 7 only for strong acid with ' +
-            'strong base, above 7 for weak acid with strong base, below 7 for strong acid with weak base. ' +
-            'The flat stretch before it is the buffer region, and at half-equivalence pH = pKa.',
-    },
-    {
-        id: 'chem-amphiprotic',
-        subject: 'chemistry',
-        question: 'What does amphiprotic mean?',
-        aliases: ['amphiprotic', 'amphoteric', 'hydrogencarbonate', 'can act as acid or base'],
-        answer:
-            'An amphiprotic species can either donate or accept a proton, such as hydrogencarbonate or water. ' +
-            'Amphoteric is the wider term for reacting with both acids and bases, which includes species that do so ' +
-            'without proton transfer, such as aluminium oxide.',
-    },
-    {
-        id: 'chem-reaction-quotient',
-        subject: 'chemistry',
-        question: 'What is the reaction quotient Q?',
-        aliases: ['reaction quotient', 'q vs k', 'predicting shift', 'not at equilibrium'],
-        answer:
-            'Q has the same form as Keq but uses concentrations at any moment, not just at equilibrium. ' +
-            'If Q < K the reaction runs forward, if Q > K it runs in reverse, and if Q = K it is already at ' +
-            'equilibrium. For solubility, Q above Ksp means a precipitate forms.',
-    },
-    {
-        id: 'chem-standard-solutions',
-        subject: 'chemistry',
-        question: 'What makes a good primary standard?',
-        aliases: ['primary standard', 'standard solution', 'volumetric flask', 'standardisation'],
-        answer:
-            'It must be pure, stable in air, not hygroscopic, of known composition and ideally high molar mass, so ' +
-            'weighing errors matter less. ' +
-            'Dissolve a weighed mass and make up to the mark in a volumetric flask. ' +
-            'A solution that cannot meet this, such as sodium hydroxide, is standardised against one that can.',
-    },
-    {
-        id: 'chem-back-titration',
-        subject: 'chemistry',
-        question: 'What is a back titration?',
-        aliases: ['back titration', 'excess reagent titration', 'indirect titration'],
-        answer:
-            'React the sample with a measured excess of standard reagent, then titrate what is left over. ' +
-            'Moles reacted with the sample are the difference. ' +
-            'It is used when the sample is insoluble, impure or reacts too slowly to titrate directly, such as ' +
-            'antacid tablets.',
-    },
-    {
         id: 'chem-gravimetric',
         subject: 'chemistry',
         question: 'How does gravimetric analysis work?',
@@ -295,8 +115,10 @@ export const chemistryYear12Entries: StudyEntry[] = [
         answer:
             'The number of signals gives the number of distinct environments: hydrogen environments in ¹H NMR, ' +
             'carbon environments in ¹³C. ' +
-            'Chemical shift indicates what is nearby, read from the data sheet. ' +
-            'In ¹H, integration gives how many hydrogens, and splitting follows the n + 1 rule for neighbours.',
+            'Chemical shift, in ppm relative to tetramethylsilane at 0, indicates what is nearby; read the ranges ' +
+            'from the data sheet. ' +
+            'In ¹H, integration gives how many hydrogens are in each environment, and a signal splits into n + 1 ' +
+            'peaks where n is the number of hydrogens on the adjacent carbon.',
     },
     {
         id: 'chem-infrared',
@@ -305,7 +127,8 @@ export const chemistryYear12Entries: StudyEntry[] = [
         aliases: ['infrared spectroscopy', 'ir spectrum', 'absorption bands', 'functional group identification', 'wavenumber'],
         answer:
             'Bonds absorb infrared at characteristic wavenumbers, listed on the data sheet. ' +
-            'A broad band near 3300 cm⁻¹ suggests O-H, a strong sharp one near 1700 cm⁻¹ suggests C=O. ' +
+            'A broad band around 3200 to 3550 cm⁻¹ suggests an alcohol O-H, a strong one around 1680 to 1750 cm⁻¹ ' +
+            'suggests C=O, and a very broad band from about 2500 to 3400 cm⁻¹ is the O-H of a carboxylic acid. ' +
             'Use it to identify functional groups, then another technique for the full structure.',
     },
     {
@@ -423,5 +246,195 @@ export const chemistryYear12Entries: StudyEntry[] = [
             'Ultraviolet light splits chlorine from CFCs, and each chlorine radical destroys many ozone molecules ' +
             'before it is removed, which is why the Montreal Protocol banned them. ' +
             'Acid rain comes from sulfur and nitrogen oxides dissolving to form sulfuric and nitric acids.',
+    },
+    {
+        id: 'chem-tests',
+        subject: 'chemistry',
+        question: 'What are the common qualitative tests?',
+        aliases: ['flame test', 'test for gases', 'qualitative analysis', 'precipitation test'],
+        answer:
+            'Flame tests identify metal ions by colour, such as lithium red, sodium yellow, potassium lilac and copper ' +
+            'blue-green. Limewater turning milky shows carbon dioxide, a glowing splint relighting shows oxygen, and a ' +
+            'popping splint shows hydrogen.',
+    },
+    {
+        id: 'chem-ppm',
+        subject: 'chemistry',
+        question: 'What does parts per million mean?',
+        aliases: ['ppm', 'parts per million', 'trace concentration', 'mg per litre'],
+        answer:
+            'One part per million is one milligram per litre in a dilute water solution, or one milligram per ' +
+            'kilogram by mass. ' +
+            'It is the usual unit for trace analysis, such as metal ions in drinking water measured by AAS.',
+    },
+    {
+        id: 'chem-percentage-yield',
+        subject: 'chemistry',
+        question: 'How do I calculate percentage yield?',
+        aliases: ['percentage yield', 'theoretical yield', 'actual yield', 'atom economy'],
+        answer:
+            'Percentage yield = actual ÷ theoretical × 100. ' +
+            'Yields fall short because of side reactions, incomplete reaction, and losses in transferring and ' +
+            'purifying. Atom economy asks a different question: what fraction of the reactant mass ends up in the ' +
+            'product you want.',
+    },
+    {
+        id: 'chem-structural-formulae',
+        subject: 'chemistry',
+        question: 'How do I read a structural formula?',
+        aliases: ['structural formula', 'condensed formula', 'skeletal structure', 'drawing organic structures', 'general formula'],
+        answer:
+            'Find the longest continuous carbon chain, then the functional group hanging off it: those two give the ' +
+            'name. A condensed formula groups each carbon with its hydrogens, and a skeletal one shows bonds as lines ' +
+            'with carbons at the corners. Members of a homologous series differ by one CH₂ and share a general formula.',
+    },
+    {
+        id: 'chem-reaction-pathways',
+        subject: 'chemistry',
+        question: 'How do I answer a reaction pathway question?',
+        aliases: ['reaction pathway', 'flowchart organic', 'synthesis route', 'converting one compound to another', 'reagents and conditions'],
+        answer:
+            'Each arrow needs a reagent and a condition. The standard steps: alkene to alcohol by hydration with ' +
+            'acid, alkane to haloalkane by halogen with ultraviolet light, haloalkane to alcohol by aqueous base, ' +
+            'alcohol to aldehyde or acid by acidified dichromate, and acid plus alcohol to ester with concentrated ' +
+            'sulfuric acid under reflux.',
+    },
+    {
+        id: 'chem-oxidising-organics',
+        subject: 'chemistry',
+        question: 'What oxidises alcohols, and what do you see?',
+        aliases: ['acidified dichromate', 'permanganate', 'oxidising agent organic', 'colour change oxidation', 'orange to green'],
+        answer:
+            'Acidified potassium dichromate turns from orange to green as it oxidises; acidified permanganate turns ' +
+            'from purple to colourless. ' +
+            'Primary alcohols oxidise to an aldehyde then a carboxylic acid, secondary to a ketone, and tertiary do ' +
+            'not oxidise, which is how the three classes are told apart.',
+    },
+    {
+        id: 'chem-functional-group-tests',
+        subject: 'chemistry',
+        question: 'How do I test which functional group a compound has?',
+        aliases: ['chemical test functional group', 'bromine water test', 'test for an acid', 'distinguishing compounds', 'wet test'],
+        answer:
+            'Bromine water decolourising shows a carbon-carbon double bond. ' +
+            'Fizzing with a carbonate shows a carboxylic acid. ' +
+            'Acidified dichromate changing colour shows a primary or secondary alcohol, and no change points to ' +
+            'tertiary. Say what you would observe, not just the reagent.',
+    },
+    {
+        id: 'chem-boiling-point-classes',
+        subject: 'chemistry',
+        question: 'Why do boiling points differ between functional groups?',
+        aliases: ['compare boiling points', 'boiling point across classes', 'why alcohols boil higher', 'solubility comparison'],
+        answer:
+            'At similar size, the order is alkane below aldehyde and ketone, below alcohol, below carboxylic acid. ' +
+            'Alkanes have only dispersion forces, carbonyls add dipole-dipole, alcohols hydrogen bond, and acids ' +
+            'hydrogen bond in pairs. Water solubility follows the same order and falls as the carbon chain lengthens.',
+    },
+    {
+        id: 'chem-emission-spectra',
+        subject: 'chemistry',
+        question: 'What do emission and absorption spectra show in chemistry?',
+        aliases: ['emission spectrum chemistry', 'absorption spectrum', 'spectral lines element', 'energy levels electron'],
+        answer:
+            'Electrons occupy discrete energy levels, so an atom emits or absorbs only certain wavelengths. ' +
+            'The pattern is unique to the element, which is what flame tests show qualitatively and AAS measures ' +
+            'quantitatively.',
+    },
+    {
+        id: 'chem-complex-ions',
+        subject: 'chemistry',
+        question: 'What are complex ions and ligands?',
+        aliases: ['complex ion', 'ligand', 'coloured solution', 'coordination', 'colorimetry colour'],
+        answer:
+            'A metal cation surrounded by ligands, which donate a lone pair to it. ' +
+            'Many are strongly coloured, which is why forming one deliberately gives a solution enough colour to ' +
+            'measure by colorimetry. Complex formation can also keep an ion in solution that would otherwise ' +
+            'precipitate.',
+    },
+    {
+        id: 'chem-first-nations-chemistry',
+        subject: 'chemistry',
+        question: 'How is Aboriginal and Torres Strait Islander Peoples\u2019 chemical knowledge examined?',
+        aliases: ['aboriginal chemical knowledge', 'first nations chemistry', 'traditional processes', 'indigenous knowledge chemistry'],
+        answer:
+            'The syllabus asks you to analyse traditional practices as chemistry. ' +
+            'Examples include leaching and repeated washing to remove toxic components from plant foods, and using ' +
+            'naturally acidic or basic materials in preparation. ' +
+            'Answer with the chemical process involved, such as dissolution or neutralisation, not just the practice.',
+    },
+    {
+        id: 'chem-polymer-uses',
+        subject: 'chemistry',
+        question: 'Why is a particular polymer chosen for a use?',
+        aliases: ['named polymers', 'hdpe ldpe', 'pvc', 'polystyrene', 'thermoplastic thermoset', 'recycling polymers', 'biodegradable'],
+        answer:
+            'Structure decides properties. Tightly packed straight chains, as in HDPE, give strength and rigidity; ' +
+            'branched chains, as in LDPE, give flexibility. ' +
+            'Thermoplastics soften on heating and can be remelted and recycled; thermosets are cross-linked and ' +
+            'cannot. Most addition polymers resist breakdown, which is why disposal is the problem.',
+    },
+    {
+        id: 'chem-alloys',
+        subject: 'chemistry',
+        question: 'Why is an alloy stronger than a pure metal?',
+        aliases: ['alloy', 'steel', 'brass', 'metal properties', 'malleability alloy'],
+        answer:
+            'A pure metal has identical atoms in neat layers that slide easily, which is why it is soft and ductile. ' +
+            'Adding atoms of a different size disrupts those layers, so they resist sliding and the alloy is harder ' +
+            'and stronger, though usually less malleable.',
+    },
+    {
+        id: 'chem-combustion-greenhouse',
+        subject: 'chemistry',
+        question: 'What is the difference between complete and incomplete combustion?',
+        aliases: ['complete combustion', 'incomplete combustion', 'carbon monoxide', 'soot', 'greenhouse gas'],
+        answer:
+            'Complete combustion in plenty of oxygen gives carbon dioxide and water. ' +
+            'Limited oxygen gives carbon monoxide, which is toxic, and carbon as soot, releasing less energy. ' +
+            'Carbon dioxide, methane and water vapour absorb infrared radiation, which is the greenhouse effect.',
+    },
+    {
+        id: 'chem-ester-hydrolysis',
+        subject: 'chemistry',
+        question: 'What is ester hydrolysis?',
+        aliases: ['ester hydrolysis', 'breaking an ester', 'base hydrolysis', 'uses of esters'],
+        answer:
+            'Acid hydrolysis reverses esterification, giving back the carboxylic acid and alcohol, and is reversible. ' +
+            'Base hydrolysis gives the carboxylate salt and the alcohol, and is not reversible because the salt will ' +
+            'not react back. Esters are used as flavours, fragrances and solvents.',
+    },
+    {
+        id: 'chem-substitution-alkanes',
+        subject: 'chemistry',
+        question: 'How do alkanes react?',
+        aliases: ['substitution reaction alkane', 'halogenation', 'uv light reaction', 'radical substitution'],
+        answer:
+            'Alkanes are unreactive apart from combustion and substitution. ' +
+            'With a halogen and ultraviolet light, a hydrogen is replaced by a halogen atom, and because any hydrogen ' +
+            'can go, a mixture of products forms. That is the contrast with addition to an alkene, which is fast and ' +
+            'gives one product.',
+    },
+    {
+        id: 'chem-precipitation-titration',
+        subject: 'chemistry',
+        question: 'What is a precipitation titration?',
+        aliases: ['precipitation titration', 'silver nitrate titration', 'halide content', 'end point precipitate'],
+        answer:
+            'The titrant forms an insoluble product with the analyte, and the end point shows as a colour or ' +
+            'precipitate change. ' +
+            'Silver nitrate against a halide is the usual case. Convert the titre to moles, apply the ratio, then ' +
+            'work back to the mass and percentage in the sample.',
+    },
+    {
+        id: 'chem-water-quality',
+        subject: 'chemistry',
+        question: 'What is tested in water quality analysis?',
+        aliases: ['water quality', 'dissolved oxygen', 'eutrophication', 'turbidity', 'total dissolved solids', 'hardness'],
+        answer:
+            'pH, dissolved oxygen, turbidity, total dissolved solids, hardness, and phosphate, nitrate and heavy ' +
+            'metal ions. ' +
+            'Excess nutrients cause eutrophication: algae bloom, then decay and consume the oxygen, killing fish. ' +
+            'Metal ions at trace levels are measured by AAS in parts per million.',
     },
 ];

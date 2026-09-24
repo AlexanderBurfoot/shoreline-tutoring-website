@@ -97,16 +97,6 @@ export const chemistryYear11Entries: StudyEntry[] = [
             'the molar masses.',
     },
     {
-        id: 'chem-tests',
-        subject: 'chemistry',
-        question: 'What are the common qualitative tests?',
-        aliases: ['flame test', 'test for gases', 'qualitative analysis', 'precipitation test'],
-        answer:
-            'Flame tests identify metal ions by colour, such as lithium red, sodium yellow, potassium lilac and copper ' +
-            'blue-green. Limewater turning milky shows carbon dioxide, a glowing splint relighting shows oxygen, and a ' +
-            'popping splint shows hydrogen.',
-    },
-    {
         id: 'chem-periodic-trends',
         subject: 'chemistry',
         question: 'What are the periodic trends?',
@@ -132,9 +122,10 @@ export const chemistryYear11Entries: StudyEntry[] = [
         question: 'What are the gas laws?',
         aliases: ['ideal gas law', 'pv = nrt', 'boyles law', 'charles law', 'molar volume'],
         answer:
-            'PV = nRT, with R = 8.314 J K⁻¹ mol⁻¹, P in pascals, V in cubic metres and T in kelvin. ' +
-            'At constant temperature, P and V are inversely related; at constant pressure, V rises with T. ' +
-            'At 25°C and 100 kPa, one mole of gas occupies 24.79 L.',
+            'PV = nRT, with R = 8.314 J K⁻¹ mol⁻¹, P in kPa, V in litres and T in kelvin, which is how NSW ' +
+            'worked solutions set it out. At constant temperature P and V are inversely related; at constant ' +
+            'pressure V rises with T. Molar volume is 24.79 L mol⁻¹ at 25°C (298.15 K) and 100 kPa, and ' +
+            '22.71 L mol⁻¹ at 0°C (273.15 K) and 100 kPa. Never use 22.4 L.',
     },
     {
         id: 'chem-solubility-rules',
@@ -200,11 +191,13 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-reaction-types',
         subject: 'chemistry',
         question: 'What are the main types of chemical reaction?',
-        aliases: ['types of reactions', 'combustion', 'synthesis decomposition', 'displacement reaction', 'activity series'],
+        aliases: ['types of reactions', 'combustion', 'synthesis decomposition', 'displacement reaction', 'order of reactivity', 'metal reactivity'],
         answer:
             'Synthesis combines, decomposition breaks apart, displacement swaps a more reactive element in, and ' +
             'combustion reacts with oxygen. ' +
-            'The activity series predicts displacement: a metal displaces any metal below it from a solution.',
+            'The order of reactivity of metals predicts displacement: a more reactive metal displaces a less ' +
+            'reactive one from its solution. Reactivity is tested by how a metal reacts with water, with acid and ' +
+            'with the solutions of other metal ions.',
     },
     {
         id: 'chem-hess-law',
@@ -268,45 +261,15 @@ export const chemistryYear11Entries: StudyEntry[] = [
             'Everything else is in excess. Work the product amount from the limiting reagent only.',
     },
     {
-        id: 'chem-percentage-yield',
-        subject: 'chemistry',
-        question: 'How do I calculate percentage yield?',
-        aliases: ['percentage yield', 'theoretical yield', 'actual yield', 'atom economy'],
-        answer:
-            'Percentage yield = actual ÷ theoretical × 100. ' +
-            'Yields fall short because of side reactions, incomplete reaction, and losses in transferring and ' +
-            'purifying. Atom economy asks a different question: what fraction of the reactant mass ends up in the ' +
-            'product you want.',
-    },
-    {
-        id: 'chem-ppm',
-        subject: 'chemistry',
-        question: 'What does parts per million mean?',
-        aliases: ['ppm', 'parts per million', 'trace concentration', 'mg per litre'],
-        answer:
-            'One part per million is one milligram per litre in a dilute water solution, or one milligram per ' +
-            'kilogram by mass. ' +
-            'It is the usual unit for trace analysis, such as metal ions in drinking water measured by AAS.',
-    },
-    {
         id: 'chem-calorimetry',
         subject: 'chemistry',
         question: 'How does calorimetry work?',
         aliases: ['calorimetry', 'q = mc delta t', 'heat of combustion', 'specific heat capacity of water', 'enthalpy experiment'],
         answer:
-            'q = mcΔT, with m the mass of water in grams and c = 4.18 J K⁻¹ g⁻¹, so q comes out in joules. ' +
-            'The molar enthalpy change is ΔH = −q/n, negative when heat is released. ' +
-            'Measured values fall short of data-book ones because heat escapes to the surroundings.',
-    },
-    {
-        id: 'chem-electrolysis',
-        subject: 'chemistry',
-        question: 'How does electrolysis differ from a galvanic cell?',
-        aliases: ['electrolysis', 'electrolytic cell', 'electroplating', 'anode cathode electrolysis'],
-        answer:
-            'A galvanic cell releases energy from a spontaneous reaction; electrolysis supplies energy to force a ' +
-            'non-spontaneous one. Oxidation still happens at the anode and reduction at the cathode, but the signs ' +
-            'reverse: in electrolysis the cathode is negative.',
+            'q = mcΔT. The data sheet gives water as c = 4.18 × 10³ J kg⁻¹ K⁻¹, so m must be in kilograms; ' +
+            'the same value is 4.18 J g⁻¹ K⁻¹ if you work in grams, and mixing the two is out by a thousand. ' +
+            'If the question supplies a specific heat capacity for the solution, use that one. ' +
+            'The molar enthalpy change is ΔH = −q/n, negative when heat is released.',
     },
     {
         id: 'chem-electrode-potentials',
@@ -314,18 +277,93 @@ export const chemistryYear11Entries: StudyEntry[] = [
         question: 'How do I use standard electrode potentials?',
         aliases: ['standard electrode potential', 'e cell', 'reduction potential table', 'spontaneous redox'],
         answer:
-            'Read each half-cell from the standard reduction potential table on the data sheet, then ' +
-            'E°cell = E°cathode − E°anode. ' +
-            'A positive E°cell means the reaction is spontaneous. The more positive half-reaction runs as reduction.',
+            'The data sheet tabulates standard reduction potentials, written E° or ε. ' +
+            'The more positive half-reaction runs forward as reduction; the other is reversed, which reverses the ' +
+            'sign of its potential. E°cell is then the reduction value minus the value of the reversed half-reaction. ' +
+            'A positive E°cell means the reaction is spontaneous.',
     },
     {
-        id: 'chem-corrosion',
+        id: 'chem-half-equations',
         subject: 'chemistry',
-        question: 'How does corrosion happen and how is it prevented?',
-        aliases: ['corrosion', 'rusting', 'galvanising', 'sacrificial anode', 'cathodic protection'],
+        question: 'How do I balance a half-equation?',
+        aliases: ['half equation', 'balancing redox', 'acidic solution redox', 'electrons in an equation'],
         answer:
-            'Iron corrodes when it is oxidised in the presence of oxygen and water, faster with salt present. ' +
-            'Barrier coatings keep those out. Galvanising and sacrificial anodes go further: a more reactive metal ' +
-            'such as zinc is oxidised instead, protecting the iron even where the coating is scratched.',
+            'Balance the main atoms first, then oxygen with water, then hydrogen with H⁺, then charge with electrons. ' +
+            'Combine the two halves so the electrons cancel, scaling one or both if needed. ' +
+            'The electrons lost must equal the electrons gained.',
+    },
+    {
+        id: 'chem-oxidation-numbers',
+        subject: 'chemistry',
+        question: 'How do I assign oxidation numbers?',
+        aliases: ['oxidation number', 'oxidation state', 'assigning oxidation numbers', 'what is oxidised'],
+        answer:
+            'An uncombined element is 0, a simple ion equals its charge, oxygen is usually −2 and hydrogen +1, ' +
+            'and the numbers sum to the overall charge. ' +
+            'Peroxides and metal hydrides are the exceptions. ' +
+            'Compare before and after: a rise is oxidation, a fall is reduction.',
+    },
+    {
+        id: 'chem-ionisation-energy',
+        subject: 'chemistry',
+        question: 'What do successive ionisation energies tell me?',
+        aliases: ['successive ionisation energy', 'ionisation energy jump', 'evidence for shells', 'valence electrons number'],
+        answer:
+            'Each electron removed costs more, since the remaining ones are held by the same nucleus. ' +
+            'A sudden large jump marks the point where an inner shell is broken into. ' +
+            'Counting the electrons removed before that jump gives the number of valence electrons, and so the group.',
+    },
+    {
+        id: 'chem-electron-dot',
+        subject: 'chemistry',
+        question: 'How do I draw an electron dot diagram?',
+        aliases: ['electron dot', 'lewis structure', 'octet rule', 'bonding pairs', 'lone pairs'],
+        answer:
+            'Count the valence electrons of every atom, place a bonding pair between bonded atoms, then add lone ' +
+            'pairs until each atom has eight, or two for hydrogen. ' +
+            'If there are not enough, form a double or triple bond. The diagram is the step before predicting shape.',
+    },
+    {
+        id: 'chem-network-molecular',
+        subject: 'chemistry',
+        question: 'What is the difference between a covalent network and a covalent molecular solid?',
+        aliases: ['covalent network', 'covalent molecular', 'diamond graphite', 'allotropes', 'lattice types'],
+        answer:
+            'A network is covalently bonded all the way through, so melting means breaking covalent bonds: very high ' +
+            'melting point and hardness, as in diamond. ' +
+            'A molecular solid has strong bonds inside each molecule but weak forces between them, so it melts ' +
+            'easily. Graphite is a network with layers that slide, which is why it is soft and conducts.',
+    },
+    {
+        id: 'chem-conductivity',
+        subject: 'chemistry',
+        question: 'What does electrical conductivity tell me about a substance?',
+        aliases: ['conductivity', 'conducts electricity', 'molten ionic', 'electrolyte strength', 'weak electrolyte'],
+        answer:
+            'Metals conduct in every state, through delocalised electrons. ' +
+            'Ionic solids do not conduct, but molten or dissolved they do, because the ions can move. ' +
+            'Molecular substances generally do not. ' +
+            'A weak acid conducts poorly compared with a strong acid at the same concentration, since fewer ions form.',
+    },
+    {
+        id: 'chem-bond-energy',
+        subject: 'chemistry',
+        question: 'How do I calculate enthalpy from bond energies?',
+        aliases: ['bond energy', 'bond enthalpy', 'breaking and forming bonds', 'average bond energy'],
+        answer:
+            'ΔH ≈ energy to break all the bonds in the reactants minus the energy released forming the bonds in the ' +
+            'products. Breaking costs energy, forming releases it. ' +
+            'The answer is approximate, because tabulated values are averages across many compounds.',
+    },
+    {
+        id: 'chem-accuracy-reliability',
+        subject: 'chemistry',
+        question: 'What is the difference between accuracy, precision, validity and reliability?',
+        aliases: ['accuracy', 'precision', 'validity', 'reliability', 'improving an experiment', 'significant figures chemistry'],
+        answer:
+            'Accuracy is closeness to the true value, precision is how tightly repeats cluster, reliability is ' +
+            'whether repeats agree, and validity is whether the method tests what the question asks with variables ' +
+            'controlled. ' +
+            'Name which one a change improves. Round to the least precise measurement and always give the unit.',
     },
 ];
