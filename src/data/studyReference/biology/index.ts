@@ -1,0 +1,23 @@
+/** Biology, gathered from the module banks. */
+import { biologyCellsEntries } from './cells';
+import { biologyOrganisationEntries } from './organisation';
+import { biologyDiversityEntries } from './diversity';
+import { biologyEcosystemsEntries } from './ecosystems';
+import { biologyHeredityEntries } from './heredity';
+import { biologyGeneticChangeEntries } from './geneticChange';
+import { biologyInfectiousDiseaseEntries } from './infectiousDisease';
+import { biologyNonInfectiousEntries } from './nonInfectious';
+import { biologySkillsEntries } from './skills';
+import type { StudyEntry } from '../types';
+
+export const biologyEntries: StudyEntry[] = [
+    ...biologyCellsEntries,
+    ...biologyOrganisationEntries,
+    ...biologyDiversityEntries,
+    ...biologyEcosystemsEntries,
+    ...biologyHeredityEntries,
+    ...biologyGeneticChangeEntries,
+    ...biologyInfectiousDiseaseEntries,
+    ...biologyNonInfectiousEntries,
+    ...biologySkillsEntries,
+];
