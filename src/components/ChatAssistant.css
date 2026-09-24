@@ -16,10 +16,13 @@
     width: 56px;
     height: 56px;
     padding: 0;
-    border: 1px solid rgba(234, 197, 77, 0.35);
+    border: none;
     border-radius: 16px;
-    background: var(--color-navy);
-    color: var(--color-gold-primary);
+    /* Gold rather than navy: the button floats over both white and navy
+       sections, and navy on navy all but disappears. Gold is also the colour
+       of every other action on the site. */
+    background: var(--color-gold-primary);
+    color: var(--color-navy);
     cursor: pointer;
     box-shadow: var(--shadow-lg);
     transition: transform var(--transition-base), background var(--transition-base);
@@ -30,9 +33,44 @@
     line-height: 1;
 }
 
+/* A tail on the bottom-left corner, so the button reads as a speech bubble
+   rather than an app icon. Dropped while the panel is open, where the button
+   is a plain close control. */
+.chat-assistant__launcher--bubble {
+    border-bottom-left-radius: 6px;
+}
+
+.chat-assistant__launcher--bubble::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 13px;
+    height: 13px;
+    background: var(--color-gold-primary);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.chat-assistant__launcher:hover.chat-assistant__launcher--bubble::after {
+    background: var(--color-gold-dark);
+}
+
+/* Just outside the bubble's top-right corner, so it never sits on Archimedes'
+   crest. The ring is the page behind it, which keeps the star legible on both
+   white and navy sections. */
+.chat-assistant__sparkle {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    color: var(--color-navy);
+    background: var(--color-gold-primary);
+    border-radius: 50%;
+    padding: 2px;
+}
+
 .chat-assistant__launcher:hover {
     transform: translateY(-2px);
-    background: var(--color-navy-light);
+    background: var(--color-gold-dark);
 }
 
 .chat-assistant {

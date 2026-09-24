@@ -23,10 +23,28 @@ const GREETING =
 const PRIVACY_NOTICE = 'Please do not share names or personal details here.';
 
 /** The bird from the logo, cut out of it so the two cannot diverge. */
-const LAUNCHER_ICON = '/chat-bird.png';
-const LAUNCHER_ICON_SIZE = 38;
+const LAUNCHER_ICON = '/chat-bird-navy.png';
+const LAUNCHER_ICON_SIZE = 34;
 
 const assistantMessage = (text: string) => createMessage({ author: 'assistant', text });
+
+/**
+ * The four-pointed star that has become the shorthand for an AI feature. With
+ * the bubble tail on the button, it says "AI chat" at a glance, which a brand
+ * mark alone cannot.
+ */
+const SparkleMark = () => (
+    <svg
+        className="chat-assistant__sparkle"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+    >
+        <path d="M12 0c.6 5.7 5.7 10.8 12 12-6.3 1.2-11.4 6.3-12 12-.6-5.7-5.7-10.8-12-12C6.3 10.8 11.4 5.7 12 0z" />
+    </svg>
+);
 
 const ChatAssistant = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -124,7 +142,7 @@ const ChatAssistant = () => {
         <>
             <button
                 type="button"
-                className="chat-assistant__launcher"
+                className={`chat-assistant__launcher ${isOpen ? '' : 'chat-assistant__launcher--bubble'}`}
                 onClick={toggleOpen}
                 aria-expanded={isOpen}
                 aria-controls="chat-assistant-panel"
@@ -133,13 +151,16 @@ const ChatAssistant = () => {
                 {isOpen ? (
                     <span className="chat-assistant__launcher-close" aria-hidden="true">&times;</span>
                 ) : (
-                    <Image
-                        src={LAUNCHER_ICON}
-                        alt=""
-                        width={LAUNCHER_ICON_SIZE}
-                        height={LAUNCHER_ICON_SIZE}
-                        aria-hidden="true"
-                    />
+                    <>
+                        <Image
+                            src={LAUNCHER_ICON}
+                            alt=""
+                            width={LAUNCHER_ICON_SIZE}
+                            height={LAUNCHER_ICON_SIZE}
+                            aria-hidden="true"
+                        />
+                        <SparkleMark />
+                    </>
                 )}
             </button>
 
