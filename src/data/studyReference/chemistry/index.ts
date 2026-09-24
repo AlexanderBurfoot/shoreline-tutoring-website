@@ -1,11 +1,13 @@
-/** Chemistry, Years 11 and 12. */
+/** Chemistry, gathered from the module banks. */
 import { chemistryAcidsEquilibriumEntries } from './acidsEquilibrium';
-import { chemistryOrganicAnalysisEntries } from './organicAnalysis';
+import { chemistryAnalysisEntries } from './analysis';
+import { chemistryOrganicEntries } from './organic';
 import { chemistryYear11Entries } from './year11';
 import type { StudyEntry } from '../types';
 
 export const chemistryEntries: StudyEntry[] = [
     ...chemistryYear11Entries,
     ...chemistryAcidsEquilibriumEntries,
-    ...chemistryOrganicAnalysisEntries,
+    ...chemistryOrganicEntries,
+    ...chemistryAnalysisEntries,
 ];
