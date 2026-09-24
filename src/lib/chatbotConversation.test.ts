@@ -137,7 +137,7 @@ describe('requestAiAnswerId shortlisting', () => {
         const fetchImpl = vi.fn();
 
         await expect(
-            requestAiAnswerId('do you offer a discount for two siblings?', fetchImpl as unknown as typeof fetch),
+            requestAiAnswerId('kerfuffle wobbegong zzzz', fetchImpl as unknown as typeof fetch),
         ).resolves.toBeNull();
 
         /* No candidates means no choice to make, so the daily allowance is spared. */

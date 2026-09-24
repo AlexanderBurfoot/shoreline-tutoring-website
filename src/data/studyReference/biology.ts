@@ -147,4 +147,124 @@ export const biologyEntries: StudyEntry[] = [
             'so their alleles become more common over generations. ' +
             'When populations stop interbreeding and diverge far enough, speciation occurs.',
     },
+    {
+        id: 'bio-cell-structure',
+        subject: 'biology',
+        question: 'What do the parts of a cell do?',
+        aliases: ['cell organelles', 'mitochondria', 'ribosome', 'prokaryote eukaryote', 'cell membrane'],
+        answer:
+            'The nucleus holds DNA, mitochondria release energy as ATP, ribosomes build proteins, and the membrane ' +
+            'controls what enters and leaves. Plant cells add a cell wall, chloroplasts and a large vacuole. ' +
+            'Prokaryotes, such as bacteria, have no nucleus or membrane-bound organelles.',
+    },
+    {
+        id: 'bio-transport-membrane',
+        subject: 'biology',
+        question: 'How do substances move in and out of cells?',
+        aliases: ['diffusion', 'osmosis', 'active transport', 'facilitated diffusion', 'concentration gradient'],
+        answer:
+            'Diffusion moves particles down a concentration gradient, and osmosis is that for water across a ' +
+            'partially permeable membrane. Facilitated diffusion uses a protein channel but no energy. ' +
+            'Active transport moves substances against the gradient and costs ATP.',
+    },
+    {
+        id: 'bio-plant-transport',
+        subject: 'biology',
+        question: 'How do plants transport water and sugar?',
+        aliases: ['xylem phloem', 'transpiration', 'translocation', 'stomata', 'plant transport'],
+        answer:
+            'Xylem carries water and minerals upward, pulled by transpiration from the leaves. ' +
+            'Phloem carries sugars from source to sink in both directions, which is translocation. ' +
+            'Stomata open to let carbon dioxide in, and water is lost through them at the same time.',
+    },
+    {
+        id: 'bio-nervous-endocrine',
+        subject: 'biology',
+        question: 'How do the nervous and endocrine systems differ?',
+        aliases: ['nervous system', 'endocrine system', 'hormones', 'neuron', 'synapse', 'reflex arc'],
+        answer:
+            'The nervous system sends fast electrical impulses along neurons for short-lived responses; a reflex arc ' +
+            'bypasses the brain for speed. The endocrine system releases hormones into the blood, which act more ' +
+            'slowly but last longer, such as insulin controlling blood glucose.',
+    },
+    {
+        id: 'bio-dna-structure',
+        subject: 'biology',
+        question: 'What is the structure of DNA?',
+        aliases: ['dna structure', 'double helix', 'base pairing', 'nucleotide', 'chromosome gene'],
+        answer:
+            'DNA is a double helix of nucleotides, each a sugar, a phosphate and a base. ' +
+            'A pairs with T and C with G, so the strands are complementary. ' +
+            'A gene is a length of DNA coding for a protein, and a chromosome is one long DNA molecule with its proteins.',
+    },
+    {
+        id: 'bio-polypeptide-synthesis',
+        subject: 'biology',
+        question: 'How does a gene control a characteristic?',
+        aliases: ['gene expression', 'polypeptide synthesis', 'protein function', 'one gene one protein'],
+        answer:
+            'A gene is transcribed and translated into a polypeptide, which folds into a protein. ' +
+            'That protein does the work: an enzyme, a structural fibre, a receptor or a hormone. ' +
+            'A change in the DNA can change the protein, and so the characteristic it produces.',
+    },
+    {
+        id: 'bio-variation',
+        subject: 'biology',
+        question: 'Where does genetic variation come from?',
+        aliases: ['genetic variation', 'crossing over', 'independent assortment', 'random fertilisation'],
+        answer:
+            'Crossing over swaps sections between homologous chromosomes, independent assortment shuffles which ' +
+            'chromosome goes to which gamete, and fertilisation combines two random gametes. ' +
+            'Mutation supplies entirely new alleles, which is the ultimate source.',
+    },
+    {
+        id: 'bio-epidemiology-study',
+        subject: 'biology',
+        question: 'What are the types of epidemiological study?',
+        aliases: ['epidemiological study', 'cohort study', 'case control', 'cross sectional', 'correlation causation'],
+        answer:
+            'A descriptive study reports patterns, an analytical study tests a hypothesis, and an intervention study ' +
+            'changes something and measures the effect. Cohort studies follow groups forward; case-control studies ' +
+            'look back. A correlation alone does not establish cause.',
+    },
+    {
+        id: 'bio-prevention-treatment',
+        subject: 'biology',
+        question: 'How are infectious diseases prevented and treated?',
+        aliases: ['vaccination', 'herd immunity', 'antibiotics', 'antivirals', 'quarantine', 'public health'],
+        answer:
+            'Prevention uses hygiene, quarantine, vector control and vaccination, which trains memory cells before ' +
+            'exposure. Herd immunity protects those who cannot be vaccinated. ' +
+            'Antibiotics treat bacterial infections only, and overuse drives resistance.',
+    },
+    {
+        id: 'bio-plant-animal-disease',
+        subject: 'biology',
+        question: 'How do plants defend themselves against disease?',
+        aliases: ['plant defence', 'plant disease', 'physical barriers plants', 'agricultural disease'],
+        answer:
+            'Physical barriers come first: bark, waxy cuticles and closed stomata. ' +
+            'Chemical defences include toxins and enzymes that attack pathogens. ' +
+            'Plants have no circulating immune cells, so infected tissue is often sealed off and sacrificed instead.',
+    },
+    {
+        id: 'bio-biodiversity-ecosystems',
+        subject: 'biology',
+        question: 'How do ecosystems and food chains work?',
+        aliases: ['food chain', 'food web', 'trophic levels', 'ecosystem', 'biodiversity', 'energy flow'],
+        answer:
+            'Producers capture light energy, and each trophic level passes on roughly ten per cent of it, which is ' +
+            'why chains are short. Decomposers return nutrients to the soil. ' +
+            'Greater biodiversity generally makes an ecosystem more resilient to change.',
+    },
+    {
+        id: 'bio-scientific-method-bio',
+        subject: 'biology',
+        question: 'How do I write a hypothesis and design a biology experiment?',
+        aliases: ['hypothesis', 'controlled experiment', 'depth study', 'variables biology', 'sample size'],
+        answer:
+            'A hypothesis is a testable prediction linking the independent and dependent variables. ' +
+            'Control every other variable, use a control group, and keep the sample large enough for the result to ' +
+            'mean something. Living things vary, so repeats matter more here than in physics.',
+    },
 ];

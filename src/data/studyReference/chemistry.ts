@@ -182,4 +182,124 @@ export const chemistryEntries: StudyEntry[] = [
             'blue-green. Limewater turning milky shows carbon dioxide, a glowing splint relighting shows oxygen, and a ' +
             'popping splint shows hydrogen.',
     },
+    {
+        id: 'chem-periodic-trends',
+        subject: 'chemistry',
+        question: 'What are the periodic trends?',
+        aliases: ['periodic table trends', 'electronegativity', 'atomic radius', 'ionisation energy', 'groups periods'],
+        answer:
+            'Across a period, atomic radius falls while electronegativity and ionisation energy rise, because the ' +
+            'nuclear charge grows with no new shell. Down a group the reverse happens, as each shell added sits ' +
+            'further out and shields the nucleus.',
+    },
+    {
+        id: 'chem-balancing-equations',
+        subject: 'chemistry',
+        question: 'How do I balance a chemical equation?',
+        aliases: ['balancing equations', 'stoichiometry', 'mole ratio', 'limiting reagent'],
+        answer:
+            'Adjust coefficients only, never subscripts, until each element has the same count on both sides. ' +
+            'Those coefficients are the mole ratio. The limiting reagent is whichever runs out first, found by ' +
+            'dividing each reagent\u2019s moles by its coefficient and taking the smallest.',
+    },
+    {
+        id: 'chem-gas-laws',
+        subject: 'chemistry',
+        question: 'What are the gas laws?',
+        aliases: ['ideal gas law', 'pv = nrt', 'boyles law', 'charles law', 'molar volume'],
+        answer:
+            'PV = nRT, with R = 8.314 J K⁻¹ mol⁻¹, P in pascals, V in cubic metres and T in kelvin. ' +
+            'At constant temperature, P and V are inversely related; at constant pressure, V rises with T. ' +
+            'At 25°C and 100 kPa, one mole of gas occupies 24.79 L.',
+    },
+    {
+        id: 'chem-solubility-rules',
+        subject: 'chemistry',
+        question: 'What are the solubility rules?',
+        aliases: ['solubility rules', 'precipitation reaction', 'net ionic equation', 'spectator ions'],
+        answer:
+            'All nitrates and Group 1 and ammonium salts dissolve. Most chlorides dissolve except silver and lead. ' +
+            'Most sulfates dissolve except barium, lead and calcium. Most carbonates and hydroxides do not dissolve ' +
+            'except Group 1 and ammonium. Leave spectator ions out of a net ionic equation.',
+    },
+    {
+        id: 'chem-acid-base-reactions',
+        subject: 'chemistry',
+        question: 'What are the common acid reactions?',
+        aliases: ['acid reactions', 'neutralisation', 'acid plus carbonate', 'acid plus metal', 'salt'],
+        answer:
+            'Acid plus base gives salt and water. Acid plus metal gives salt and hydrogen. ' +
+            'Acid plus carbonate gives salt, water and carbon dioxide. ' +
+            'Neutralisation is exothermic, and the salt takes its name from the acid used.',
+    },
+    {
+        id: 'chem-buffers',
+        subject: 'chemistry',
+        question: 'What is a buffer?',
+        aliases: ['buffer', 'buffer solution', 'conjugate pair buffer', 'blood buffer'],
+        answer:
+            'A buffer is a weak acid with its conjugate base, or a weak base with its conjugate acid, in similar ' +
+            'amounts. Added acid reacts with the base and added base with the acid, so the pH barely moves. ' +
+            'Blood is buffered by the carbonic acid and hydrogencarbonate pair.',
+    },
+    {
+        id: 'chem-indicators',
+        subject: 'chemistry',
+        question: 'How do I choose an indicator?',
+        aliases: ['indicator', 'phenolphthalein', 'methyl orange', 'titration curve', 'equivalence point ph'],
+        answer:
+            'Choose one whose colour change spans the pH at the equivalence point. ' +
+            'Strong acid with strong base is neutral there, so most indicators work. Weak acid with strong base ends ' +
+            'basic, suiting phenolphthalein; strong acid with weak base ends acidic, suiting methyl orange.',
+    },
+    {
+        id: 'chem-organic-naming',
+        subject: 'chemistry',
+        question: 'How does IUPAC naming work?',
+        aliases: ['iupac naming', 'naming organic compounds', 'prefixes meth eth prop', 'isomers'],
+        answer:
+            'Count the longest carbon chain for the stem: meth, eth, prop, but, pent, hex. ' +
+            'The ending gives the functional group, such as -ane, -ene, -ol or -oic acid. ' +
+            'Number from the end that gives the group the lowest number, and list branches alphabetically.',
+    },
+    {
+        id: 'chem-polymers',
+        subject: 'chemistry',
+        question: 'What is the difference between addition and condensation polymers?',
+        aliases: ['polymers', 'addition polymer', 'condensation polymer', 'monomer', 'polyethylene', 'nylon'],
+        answer:
+            'Addition polymers form when monomers with a C=C bond open and join, losing nothing, as in polyethylene. ' +
+            'Condensation polymers form when two functional groups react and release a small molecule, usually water, ' +
+            'as in nylon and polyesters.',
+    },
+    {
+        id: 'chem-analysis-techniques',
+        subject: 'chemistry',
+        question: 'What do the instrumental analysis techniques do?',
+        aliases: ['aas', 'mass spectrometry', 'infrared spectroscopy', 'nmr', 'chromatography', 'uv visible'],
+        answer:
+            'AAS measures metal ion concentration by the light a sample absorbs. Mass spectrometry gives molecular ' +
+            'mass and fragments. Infrared identifies functional groups by bond vibrations. NMR shows the carbon and ' +
+            'hydrogen environments. Chromatography separates a mixture by how strongly each part is carried.',
+    },
+    {
+        id: 'chem-galvanic-cells',
+        subject: 'chemistry',
+        question: 'How does a galvanic cell work?',
+        aliases: ['galvanic cell', 'electrochemistry', 'anode cathode', 'standard electrode potential', 'electrolysis'],
+        answer:
+            'Oxidation happens at the anode and reduction at the cathode, with electrons flowing through the wire and ' +
+            'ions through the salt bridge. Cell potential is E°(cathode) − E°(anode), and a positive value means the ' +
+            'reaction is spontaneous. Electrolysis forces the reverse with an external supply.',
+    },
+    {
+        id: 'chem-collision-energy-profile',
+        subject: 'chemistry',
+        question: 'What does an energy profile diagram show?',
+        aliases: ['energy profile', 'activation energy', 'catalyst diagram', 'transition state'],
+        answer:
+            'It plots energy through a reaction: the hump is the activation energy and its peak the transition state. ' +
+            'The difference between reactants and products is ΔH, below zero for exothermic. ' +
+            'A catalyst lowers the hump without moving the ends, so it speeds the reaction without changing ΔH.',
+    },
 ];

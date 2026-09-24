@@ -107,4 +107,94 @@ export const englishEntries: StudyEntry[] = [
             'they relate. Evaluate means make a judgement against criteria. Discuss means argue the points for and ' +
             'against. Answering a lower verb than the one asked is the most common reason for lost marks.',
     },
+    {
+        id: 'eng-visual-techniques',
+        subject: 'english',
+        question: 'What are the visual techniques?',
+        aliases: ['visual techniques', 'salience', 'vectors', 'gaze', 'framing', 'colour symbolism', 'image analysis'],
+        answer:
+            'Salience is what draws the eye first, through size, colour or contrast. Vectors are lines that lead the ' +
+            'eye. Gaze is where a subject looks, and demand gaze meets the viewer directly. ' +
+            'Also consider framing, angle, where low angles empower, and colour.',
+    },
+    {
+        id: 'eng-film-techniques',
+        subject: 'english',
+        question: 'What are the film techniques?',
+        aliases: ['film techniques', 'camera angles', 'mise en scene', 'diegetic sound', 'editing', 'close up'],
+        answer:
+            'Shot types: close-up for emotion, long shot for context. Angles: high to diminish, low to empower. ' +
+            'Mise en scène is everything arranged in the frame. Diegetic sound exists in the world of the film, ' +
+            'non-diegetic does not, such as a soundtrack.',
+    },
+    {
+        id: 'eng-poetry-techniques',
+        subject: 'english',
+        question: 'How do I analyse a poem?',
+        aliases: ['poetry analysis', 'stanza', 'rhyme scheme', 'meter', 'volta', 'sonnet', 'free verse'],
+        answer:
+            'Read for the shift: where the argument or feeling turns, which in a sonnet is the volta. ' +
+            'Then look at form, rhyme and rhythm, line breaks and enjambment, and sound patterns. ' +
+            'Always link a formal choice to meaning, never list features on their own.',
+    },
+    {
+        id: 'eng-shakespeare',
+        subject: 'english',
+        question: 'How do I analyse a Shakespeare play?',
+        aliases: ['shakespeare', 'soliloquy', 'dramatic irony', 'aside', 'blank verse', 'iambic pentameter'],
+        answer:
+            'A soliloquy reveals private thought to the audience, an aside is a quick remark others do not hear, and ' +
+            'dramatic irony lets the audience know what a character does not. ' +
+            'Verse and prose signal status and state of mind, so a shift between them is worth noticing.',
+    },
+    {
+        id: 'eng-narrative-techniques',
+        subject: 'english',
+        question: 'What are the narrative techniques?',
+        aliases: ['narrative techniques', 'point of view', 'unreliable narrator', 'flashback', 'characterisation'],
+        answer:
+            'Point of view shapes what a reader can know: first person is intimate but limited, third person ' +
+            'omniscient sees everything. An unreliable narrator makes the reader question the account. ' +
+            'Structure devices include flashback, foreshadowing and a non-linear order.',
+    },
+    {
+        id: 'eng-creative-writing',
+        subject: 'english',
+        question: 'How do I write a strong creative piece?',
+        aliases: ['creative writing', 'short story', 'imaginative response', 'show dont tell', 'story structure'],
+        answer:
+            'Show rather than tell: give the detail that implies the feeling instead of naming it. ' +
+            'Keep the scope small, since a moment handled well beats a whole life rushed. ' +
+            'Vary sentence length for pace, and make the ending land on an image rather than an explanation.',
+    },
+    {
+        id: 'eng-comparative-essay',
+        subject: 'english',
+        question: 'How do I write a comparative essay on two texts?',
+        aliases: ['comparative essay', 'textual conversations', 'two texts', 'intertextuality', 'module a'],
+        answer:
+            'Compare in every paragraph rather than handling one text then the other. ' +
+            'Use the same idea as the hinge, and show how each composer treats it differently and why, which usually ' +
+            'comes back to their context and purpose.',
+    },
+    {
+        id: 'eng-language-grammar',
+        subject: 'english',
+        question: 'What grammar terms come up in analysis?',
+        aliases: ['grammar', 'modality', 'nominalisation', 'imperative', 'syntax', 'cumulative listing'],
+        answer:
+            'High modality words, such as "must", show certainty; low modality, such as "might", hedges. ' +
+            'Nominalisation turns a verb into a noun, which makes writing formal and impersonal. ' +
+            'Imperatives command, and cumulative listing piles detail to overwhelm or emphasise.',
+    },
+    {
+        id: 'eng-editing-checklist',
+        subject: 'english',
+        question: 'How do I edit my own writing?',
+        aliases: ['editing', 'proofreading', 'drafting', 'improve my writing', 'word choice'],
+        answer:
+            'Read it aloud: anything you stumble over needs rewriting. Cut adverbs and filler, and replace vague ' +
+            'verbs with precise ones. Check each paragraph answers the question rather than retelling the text, ' +
+            'and check every quote is punctuated and integrated.',
+    },
 ];

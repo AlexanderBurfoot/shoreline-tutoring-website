@@ -6,7 +6,9 @@
  * student who wanted the formula is one click from the tutoring that explains it.
  */
 import { biologyEntries } from './biology';
+import { businessEntries } from './business';
 import { chemistryEntries } from './chemistry';
+import { economicsEntries } from './economics';
 import { englishEntries } from './english';
 import { mathematicsEntries } from './mathematics';
 import { physicsEntries } from './physics';
@@ -21,6 +23,8 @@ export const studyEntries: StudyEntry[] = [
     ...chemistryEntries,
     ...biologyEntries,
     ...englishEntries,
+    ...economicsEntries,
+    ...businessEntries,
 ];
 
 /** The page to send a student to after an answer, by subject. */
@@ -34,6 +38,8 @@ const SUBJECT_LABELS: Record<StudySubject, string> = {
     chemistry: 'Chemistry tutoring',
     biology: 'Biology tutoring',
     english: 'English tutoring',
+    economics: 'Economics tutoring',
+    'business-studies': 'Business Studies tutoring',
 };
 
 export function subjectLinkLabel(subject: StudySubject): string {

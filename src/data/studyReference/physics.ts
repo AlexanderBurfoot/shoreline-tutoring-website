@@ -191,4 +191,124 @@ export const physicsEntries: StudyEntry[] = [
             'Round the final answer to the fewest significant figures of the data you used, not at each step, and ' +
             'always write the unit. Marks are lost more often for units than for arithmetic.',
     },
+    {
+        id: 'phys-vectors-scalars',
+        subject: 'physics',
+        question: 'What is the difference between a vector and a scalar?',
+        aliases: ['vector scalar', 'displacement vs distance', 'speed vs velocity', 'resultant vector'],
+        answer:
+            'A scalar has size only, such as distance, speed, mass or energy. A vector has size and direction, such ' +
+            'as displacement, velocity, acceleration and force. Add vectors head to tail, or by components, and the ' +
+            'resultant is the single vector with the same effect.',
+    },
+    {
+        id: 'phys-forces-friction',
+        subject: 'physics',
+        question: 'How do I work with forces on an inclined plane?',
+        aliases: ['inclined plane', 'friction', 'normal force', 'free body diagram', 'net force'],
+        answer:
+            'Draw a free body diagram and resolve the weight into components: mg sin θ down the slope and mg cos θ ' +
+            'into it. The normal force balances the second, and friction is F = μN opposing motion. ' +
+            'Net force along the slope gives the acceleration through F = ma.',
+    },
+    {
+        id: 'phys-torque',
+        subject: 'physics',
+        question: 'What is torque?',
+        aliases: ['torque', 'moment', 'lever arm', 'rotational equilibrium'],
+        answer:
+            'τ = rF sin θ, where r is the distance from the pivot and θ the angle between the force and the lever arm. ' +
+            'A force through the pivot gives no torque. For rotational equilibrium, clockwise and anticlockwise ' +
+            'torques balance.',
+    },
+    {
+        id: 'phys-satellites',
+        subject: 'physics',
+        question: 'How do satellites and orbits work?',
+        aliases: ['satellite motion', 'geostationary', 'orbital period', 'low earth orbit', 'escape speed'],
+        answer:
+            'Gravity supplies the centripetal force, so GMm/r² = mv²/r, giving v = √(GM/r): the closer the orbit, ' +
+            'the faster the satellite. A geostationary orbit has a period of 24 hours above the equator. ' +
+            'Escape speed is v = √(2GM/r).',
+    },
+    {
+        id: 'phys-motors-generators',
+        subject: 'physics',
+        question: 'How does a motor differ from a generator?',
+        aliases: ['dc motor', 'generator', 'back emf', 'commutator', 'slip rings'],
+        answer:
+            'A motor turns electrical energy into motion using the force on a current in a field, F = BIL. ' +
+            'A generator does the reverse, inducing an emf by turning a coil in a field. ' +
+            'A motor also generates a back emf as it spins, which is why the current drops once it is up to speed.',
+    },
+    {
+        id: 'phys-electromagnetic-spectrum',
+        subject: 'physics',
+        question: 'What is the electromagnetic spectrum?',
+        aliases: ['electromagnetic spectrum', 'radio waves', 'gamma rays', 'speed of light', 'em waves'],
+        answer:
+            'From longest wavelength to shortest: radio, microwave, infrared, visible, ultraviolet, X-ray, gamma. ' +
+            'All travel at c = 3.00 × 10⁸ m/s in a vacuum. Shorter wavelength means higher frequency and higher ' +
+            'photon energy, which is why gamma rays ionise and radio waves do not.',
+    },
+    {
+        id: 'phys-refraction',
+        subject: 'physics',
+        question: 'What are reflection, refraction and total internal reflection?',
+        aliases: ['snells law', 'refraction', 'refractive index', 'total internal reflection', 'critical angle'],
+        answer:
+            'Snell\u2019s law is n₁ sin θ₁ = n₂ sin θ₂, and the refractive index is n = c/v. ' +
+            'Light bends towards the normal entering a denser medium. Past the critical angle, where sin θc = n₂/n₁, ' +
+            'it reflects entirely instead, which is how optical fibres work.',
+    },
+    {
+        id: 'phys-interference',
+        subject: 'physics',
+        question: 'What is interference and diffraction?',
+        aliases: ['interference', 'diffraction', 'double slit', 'youngs experiment', 'path difference'],
+        answer:
+            'Waves superpose: in phase they reinforce, out of phase they cancel. ' +
+            'In a double-slit experiment, bright fringes appear where the path difference is a whole number of ' +
+            'wavelengths. The fringe spacing is Δy = λL/d, which is evidence that light behaves as a wave.',
+    },
+    {
+        id: 'phys-spectra',
+        subject: 'physics',
+        question: 'What do emission and absorption spectra show?',
+        aliases: ['emission spectrum', 'absorption spectrum', 'spectral lines', 'bohr model', 'energy levels'],
+        answer:
+            'Electrons occupy fixed energy levels. Falling between levels emits a photon of exactly that energy ' +
+            'difference, giving bright lines; absorbing one lifts an electron and leaves dark lines. ' +
+            'The pattern identifies the element, which is how stars are analysed from their light.',
+    },
+    {
+        id: 'phys-nuclear-energy',
+        subject: 'physics',
+        question: 'What are fission, fusion and mass defect?',
+        aliases: ['nuclear fission', 'fusion', 'mass defect', 'binding energy', 'chain reaction'],
+        answer:
+            'Fission splits a heavy nucleus, fusion joins light ones, and both release energy because the products ' +
+            'have less mass than the reactants. That missing mass becomes energy through E = mc², and the binding ' +
+            'energy per nucleon peaks around iron.',
+    },
+    {
+        id: 'phys-standard-model',
+        subject: 'physics',
+        question: 'What is the standard model of matter?',
+        aliases: ['standard model', 'quarks', 'leptons', 'fundamental forces', 'particle physics'],
+        answer:
+            'Matter is built from quarks, which make protons and neutrons, and leptons, which include the electron. ' +
+            'Forces are carried by bosons: the photon for electromagnetism, gluons for the strong force, W and Z for ' +
+            'the weak force. Gravity is not part of the model.',
+    },
+    {
+        id: 'phys-experiment-design',
+        subject: 'physics',
+        question: 'How do I design a valid, reliable experiment?',
+        aliases: ['validity reliability accuracy', 'controlled variables', 'independent variable', 'systematic error'],
+        answer:
+            'Change one independent variable, measure the dependent one, and hold the rest constant: that is validity. ' +
+            'Repeat trials for reliability, and use fine instruments for accuracy. ' +
+            'Systematic errors shift every reading the same way; random errors scatter them, and repeats reduce those.',
+    },
 ];

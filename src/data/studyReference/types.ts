@@ -6,8 +6,19 @@
  * Adding a question means adding an entry to one of the subject files.
  */
 
-/** The subjects the bank covers, each mapping to a page on the site. */
-export type StudySubject = 'mathematics' | 'physics' | 'chemistry' | 'biology' | 'english';
+/**
+ * The subjects the bank covers. Each must be a published subject page, which
+ * the tests check: a bank for a subject the site does not offer would link
+ * students to a page that is not there.
+ */
+export type StudySubject =
+    | 'mathematics'
+    | 'physics'
+    | 'chemistry'
+    | 'biology'
+    | 'english'
+    | 'economics'
+    | 'business-studies';
 
 export interface StudyEntry {
     /** Unique across every subject, e.g. 'maths-sphere-volume'. */

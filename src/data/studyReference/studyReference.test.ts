@@ -19,9 +19,28 @@ describe('study reference bank', () => {
         }
     });
 
-    it('covers every subject the bank claims', () => {
+    it('covers every subject it declares, so no subject is listed but empty', () => {
         const covered = new Set(studyEntries.map((entry) => entry.subject));
-        expect([...covered].sort()).toEqual(['biology', 'chemistry', 'english', 'mathematics', 'physics']);
+        expect([...covered].sort()).toEqual([
+            'biology',
+            'business-studies',
+            'chemistry',
+            'economics',
+            'english',
+            'mathematics',
+            'physics',
+        ]);
+    });
+
+    it('holds enough of each subject to be worth offering', () => {
+        const counts = new Map<string, number>();
+        for (const entry of studyEntries) {
+            counts.set(entry.subject, (counts.get(entry.subject) ?? 0) + 1);
+        }
+
+        for (const [subject, count] of counts) {
+            expect(count, subject).toBeGreaterThanOrEqual(10);
+        }
     });
 
     it('links each entry to a subject page that exists', () => {
