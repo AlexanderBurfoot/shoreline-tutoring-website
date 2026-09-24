@@ -1,0 +1,212 @@
+/**
+ * Matches a typed question against the assistant's own answers.
+ *
+ * This runs in the browser, so a question that matches never leaves the
+ * visitor's device. Only questions with no confident match are sent on to the
+ * server, which keeps both the daily AI allowance and what parents type to a
+ * minimum.
+ */
+import { knowledgeEntries, type KnowledgeEntry } from '../data/chatbotKnowledge';
+
+/**
+ * How much of a question has to be recognised before an answer is offered.
+ * Raising it makes the assistant quieter and sends more questions to the AI
+ * fallback; lowering it risks confidently wrong answers.
+ */
+export const MATCH_THRESHOLD = 0.45;
+
+/** Added to the score for each whole keyword phrase found in the question. */
+const PHRASE_BONUS = 0.15;
+
+/** Words too common to tell two questions apart. */
+const STOP_WORDS = new Set([
+    'a', 'about', 'am', 'an', 'and', 'any', 'are', 'as', 'at', 'be', 'been', 'by', 'can', 'could',
+    'did', 'do', 'does', 'for', 'from', 'get', 'go', 'had', 'has', 'have', 'he', 'her', 'his', 'how',
+    'i', 'if', 'in', 'is', 'it', 'its', 'me', 'my', 'of', 'on', 'or', 'our', 'out', 'she', 'should',
+    'so', 'the', 'their', 'them', 'there', 'they', 'this', 'to', 'up', 'us', 'was', 'we', 'what',
+    'when', 'where', 'which', 'who', 'why', 'will', 'with', 'would', 'you', 'your',
+]);
+
+/** Parents' wordings mapped onto the words the answers are written with. */
+const SYNONYMS = new Map<string, string>([
+    ['cost', 'price'],
+    ['costs', 'price'],
+    ['charge', 'price'],
+    ['charges', 'price'],
+    ['fee', 'price'],
+    ['fees', 'price'],
+    ['rate', 'price'],
+    ['rates', 'price'],
+    ['expensive', 'price'],
+    ['cheap', 'price'],
+    ['tutor', 'tutoring'],
+    ['tutors', 'tutoring'],
+    ['teach', 'tutoring'],
+    ['teaches', 'tutoring'],
+    ['teaching', 'tutoring'],
+    ['cover', 'tutoring'],
+    ['covers', 'tutoring'],
+    ['lessons', 'lesson'],
+    ['classes', 'class'],
+    ['sessions', 'session'],
+    ['kid', 'child'],
+    ['kids', 'child'],
+    ['son', 'child'],
+    ['daughter', 'child'],
+    ['children', 'child'],
+    ['student', 'child'],
+    ['maths', 'mathematics'],
+    ['math', 'mathematics'],
+    ['book', 'booking'],
+    ['enrol', 'booking'],
+    ['enroll', 'booking'],
+    ['signup', 'booking'],
+    ['start', 'starting'],
+    ['begin', 'starting'],
+    ['begins', 'starting'],
+    ['zoom', 'online'],
+    ['located', 'location'],
+    ['locate', 'location'],
+    ['based', 'location'],
+    ['remote', 'online'],
+    ['virtual', 'online'],
+    ['face-to-face', 'person'],
+    ['home', 'house'],
+    ['free', 'trial'],
+]);
+
+/** Lowercase, drop punctuation, and collapse runs of whitespace. */
+export function normalise(text: string): string {
+    return text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+/** Trailing plural "s" is dropped so "prices" and "price" match. */
+function singularise(word: string): string {
+    return word.length > 3 && word.endsWith('s') && !word.endsWith('ss') ? word.slice(0, -1) : word;
+}
+
+/** The meaning-carrying words of a phrase, with wordings folded together. */
+export function tokenise(text: string): string[] {
+    return normalise(text)
+        .split(' ')
+        .filter((word) => word.length > 0 && !STOP_WORDS.has(word))
+        .map((word) => SYNONYMS.get(word) ?? singularise(word))
+        .filter((word) => word.length > 1);
+}
+
+/** Every word an entry can be recognised by: its question plus its keywords. */
+function entryTokens(entry: KnowledgeEntry): Set<string> {
+    const words = [...tokenise(entry.question), ...entry.keywords.flatMap(tokenise)];
+    return new Set(words);
+}
+
+/** Multi-word keywords, which are matched against the question as phrases. */
+function entryPhrases(entry: KnowledgeEntry): string[] {
+    return entry.keywords.map(normalise).filter((keyword) => keyword.includes(' '));
+}
+
+/**
+ * How telling each word is. A word in nearly every answer, such as "lesson",
+ * says little about which answer is wanted; one in a single answer, such as
+ * "booking", says almost everything. Without this, a question like "when do
+ * group classes start" matches whichever answer happens to mention classes
+ * first rather than the one about start dates.
+ */
+interface SearchIndex {
+    weights: Map<string, number>;
+    /** Weight for a word no answer contains, which is as telling as a word can be. */
+    unknownWeight: number;
+}
+
+const indexCache = new WeakMap<KnowledgeEntry[], SearchIndex>();
+
+function buildIndex(entries: KnowledgeEntry[]): SearchIndex {
+    const entryCounts = new Map<string, number>();
+    for (const entry of entries) {
+        for (const token of entryTokens(entry)) {
+            entryCounts.set(token, (entryCounts.get(token) ?? 0) + 1);
+        }
+    }
+
+    const weights = new Map<string, number>();
+    for (const [token, count] of entryCounts) {
+        weights.set(token, Math.log(entries.length / count) + 1);
+    }
+
+    return { weights, unknownWeight: Math.log(entries.length) + 1 };
+}
+
+function indexFor(entries: KnowledgeEntry[]): SearchIndex {
+    const cached = indexCache.get(entries);
+    if (cached) {
+        return cached;
+    }
+
+    const index = buildIndex(entries);
+    indexCache.set(entries, index);
+    return index;
+}
+
+function weightOf(token: string, index: SearchIndex): number {
+    return index.weights.get(token) ?? index.unknownWeight;
+}
+
+/**
+ * How much of a question an entry accounts for, from 0 to 1, counting each word
+ * by how telling it is. A whole keyword phrase found in the question adds a
+ * further bonus, so "group classes" beats an entry that merely mentions classes.
+ */
+export function scoreEntry(
+    question: string,
+    entry: KnowledgeEntry,
+    entries: KnowledgeEntry[] = knowledgeEntries,
+): number {
+    const queryTokens = tokenise(question);
+    if (queryTokens.length === 0) {
+        return 0;
+    }
+
+    const index = indexFor(entries);
+    const recognised = entryTokens(entry);
+
+    let matched = 0;
+    let total = 0;
+    for (const token of queryTokens) {
+        const weight = weightOf(token, index);
+        total += weight;
+        if (recognised.has(token)) {
+            matched += weight;
+        }
+    }
+
+    const normalisedQuestion = normalise(question);
+    const phraseMatches = entryPhrases(entry).filter((phrase) => normalisedQuestion.includes(phrase)).length;
+
+    return Math.min(matched / total + phraseMatches * PHRASE_BONUS, 1);
+}
+
+export interface Match {
+    entry: KnowledgeEntry;
+    score: number;
+}
+
+/**
+ * The best answer for a typed question, or null when nothing is a confident
+ * enough match and the question should go to the AI fallback instead.
+ */
+export function findBestMatch(question: string, entries: KnowledgeEntry[] = knowledgeEntries): Match | null {
+    let best: Match | null = null;
+
+    for (const entry of entries) {
+        const score = scoreEntry(question, entry, entries);
+        if (!best || score > best.score) {
+            best = { entry, score };
+        }
+    }
+
+    return best && best.score >= MATCH_THRESHOLD ? best : null;
+}

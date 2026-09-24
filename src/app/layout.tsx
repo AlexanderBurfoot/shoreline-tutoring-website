@@ -6,6 +6,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BackToTop from '../components/BackToTop';
 import MobileCTABar from '../components/MobileCTABar';
+import Spotlight from '../components/Spotlight';
+import ChatAssistant from '../components/ChatAssistant';
 import ScrollProgress from '../components/ScrollProgress';
 import { inter, cormorant } from './fonts';
 import { SHARE_IMAGE, SITE_URL } from '../lib/site';
@@ -118,7 +120,9 @@ gtag('config', '${GOOGLE_ADS_ID}');`}
         <Footer />
         <BackToTop />
         <MobileCTABar />
+        <Spotlight />
         <PromoPopup />
+        <ChatAssistant />
       </body>
     </html>
   );

@@ -1,0 +1,209 @@
+/* ===== Chat assistant =====
+   Anchored bottom-left. The bottom-right corner is taken by the back-to-top
+   button, and on phones the bottom edge is taken by the booking bar, so both
+   the launcher and the panel lift clear of it below 900px. */
+
+.chat-assistant__launcher {
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
+    z-index: 940;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    border: 1px solid rgba(234, 197, 77, 0.35);
+    border-radius: 999px;
+    background: var(--color-navy);
+    color: var(--color-gold-primary);
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-base), background var(--transition-base);
+}
+
+.chat-assistant__launcher:hover {
+    transform: translateY(-2px);
+    background: var(--color-navy-light);
+}
+
+.chat-assistant {
+    position: fixed;
+    bottom: 96px;
+    left: 32px;
+    z-index: 945;
+    display: flex;
+    flex-direction: column;
+    width: min(380px, calc(100vw - 48px));
+    max-height: min(560px, calc(100vh - 160px));
+    padding: var(--space-4);
+    gap: var(--space-3);
+    border: 1px solid rgba(26, 35, 50, 0.12);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: var(--shadow-xl);
+}
+
+.chat-assistant[hidden] {
+    display: none;
+}
+
+.chat-assistant__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid rgba(26, 35, 50, 0.1);
+}
+
+.chat-assistant__title {
+    margin: 0;
+    font-family: var(--font-heading), Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--color-navy);
+}
+
+.chat-assistant__close {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--color-navy);
+    cursor: pointer;
+}
+
+.chat-assistant__messages {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    overflow-y: auto;
+    /* Holds the scroll inside the panel rather than the page behind it. */
+    overscroll-behavior: contain;
+}
+
+.chat-assistant__message {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: 92%;
+}
+
+.chat-assistant__message--visitor {
+    align-self: flex-end;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.chat-assistant__bubble {
+    margin: 0;
+    padding: var(--space-3);
+    border-radius: 12px;
+    background: rgba(26, 35, 50, 0.06);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--color-navy-light);
+}
+
+.chat-assistant__message--visitor .chat-assistant__bubble {
+    background: var(--color-navy);
+    color: #fff;
+}
+
+.chat-assistant__answer-link {
+    align-self: flex-start;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-navy);
+    text-decoration: underline;
+    text-decoration-color: var(--color-gold-primary);
+}
+
+.chat-assistant__ai-label,
+.chat-assistant__waiting,
+.chat-assistant__privacy {
+    margin: 0;
+    font-size: 0.75rem;
+    color: rgba(45, 58, 79, 0.7);
+}
+
+.chat-assistant__choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.chat-assistant__chip {
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid rgba(26, 35, 50, 0.2);
+    border-radius: 999px;
+    background: #fff;
+    font-size: 0.8rem;
+    color: var(--color-navy);
+    cursor: pointer;
+    text-align: left;
+    transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.chat-assistant__chip:hover {
+    border-color: var(--color-gold-primary);
+    background: rgba(234, 197, 77, 0.1);
+}
+
+.chat-assistant__composer {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.chat-assistant__input {
+    flex: 1;
+    min-width: 0;
+    padding: var(--space-3);
+    border: 1px solid rgba(26, 35, 50, 0.2);
+    border-radius: 10px;
+    font-size: var(--text-sm);
+    color: var(--color-navy);
+}
+
+.chat-assistant__send {
+    padding: var(--space-3) var(--space-4);
+    border: none;
+    border-radius: 10px;
+    background: var(--color-gold-primary);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-navy);
+    cursor: pointer;
+}
+
+.chat-assistant__send:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+/* Clear of the booking bar, which appears at this width. */
+@media (max-width: 900px) {
+    .chat-assistant__launcher {
+        bottom: 88px;
+        left: 20px;
+    }
+
+    .chat-assistant {
+        left: 20px;
+        right: 20px;
+        bottom: 148px;
+        width: auto;
+        max-height: min(70vh, calc(100vh - 220px));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chat-assistant__launcher {
+        transition: none;
+    }
+
+    .chat-assistant__launcher:hover {
+        transform: none;
+    }
+}
