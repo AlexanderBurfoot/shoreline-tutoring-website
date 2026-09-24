@@ -17,7 +17,7 @@
  * One question is sent at a time, with no conversation history, so the least
  * possible text leaves the site.
  */
-import { knowledgeEntries } from '../data/chatbotKnowledge';
+import { knowledgeEntries, type KnowledgeEntry } from '../data/chatbotKnowledge';
 
 /** Longer than any real question, and short enough to keep the cost down. */
 export const MAX_QUESTION_LENGTH = 300;
@@ -61,15 +61,18 @@ function apiUrl(accountId: string): string {
     return `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${MODEL}`;
 }
 
+/** The most a shortlist may hold, so one request can never grow unbounded. */
+export const MAX_CANDIDATES = 12;
+
 /**
- * The questions the site can answer, each with the name to reply with. The
- * answers themselves are not sent: the model's whole job is to name one.
+ * The candidate questions, each with the name to reply with. The answers
+ * themselves are not sent: the model's whole job is to name one.
  */
-function answerList(): string {
-    return knowledgeEntries.map((entry) => `${entry.id}: ${entry.question}`).join('\n');
+function answerList(candidates: KnowledgeEntry[]): string {
+    return candidates.map((entry) => `${entry.id}: ${entry.question}`).join('\n');
 }
 
-export function buildRouterPrompt(): string {
+export function buildRouterPrompt(candidates: KnowledgeEntry[]): string {
     return [
         'You match a parent\'s question to one answer on a tutoring website. You never write an answer yourself.',
         '',
@@ -86,7 +89,7 @@ export function buildRouterPrompt(): string {
         'Question: do you set homework -> faq-homework-and-notes',
         '',
         'Answers available:',
-        answerList(),
+        answerList(candidates),
     ].join('\n');
 }
 
@@ -94,14 +97,27 @@ interface WorkersAiResponse {
     result?: { response?: string };
 }
 
-/** The model's reply is only useful if it names an answer that exists. */
-function validEntryId(reply: string | undefined): string | null {
+/** The model's reply is only useful if it names one of the offered answers. */
+function validEntryId(reply: string | undefined, candidates: KnowledgeEntry[]): string | null {
     if (!reply) {
         return null;
     }
 
     const cleaned = reply.trim().toLowerCase().replace(/[^a-z0-9-]/g, '');
-    return knowledgeEntries.some((entry) => entry.id === cleaned) ? cleaned : null;
+    return candidates.some((entry) => entry.id === cleaned) ? cleaned : null;
+}
+
+/** The shortlisted entries for these names, ignoring anything unrecognised. */
+export function candidatesFromIds(ids: unknown): KnowledgeEntry[] {
+    if (!Array.isArray(ids)) {
+        return [];
+    }
+
+    return ids
+        .filter((id): id is string => typeof id === 'string')
+        .map((id) => knowledgeEntries.find((entry) => entry.id === id))
+        .filter((entry): entry is KnowledgeEntry => entry !== undefined)
+        .slice(0, MAX_CANDIDATES);
 }
 
 /**
@@ -109,10 +125,13 @@ function validEntryId(reply: string | undefined): string | null {
  * none fits or an answer cannot be produced for any reason: unconfigured keys,
  * a spent daily allowance, a timeout, an error status, or an unusable reply.
  */
-export async function chooseAnswerId(question: string): Promise<string | null> {
+export async function chooseAnswerId(
+    question: string,
+    candidates: KnowledgeEntry[],
+): Promise<string | null> {
     const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
     const apiToken = process.env.CLOUDFLARE_AI_API_TOKEN;
-    if (!accountId || !apiToken) {
+    if (!accountId || !apiToken || candidates.length === 0) {
         return null;
     }
 
@@ -128,7 +147,7 @@ export async function chooseAnswerId(question: string): Promise<string | null> {
             },
             body: JSON.stringify({
                 messages: [
-                    { role: 'system', content: buildRouterPrompt() },
+                    { role: 'system', content: buildRouterPrompt(candidates) },
                     { role: 'user', content: question },
                 ],
                 max_tokens: MAX_OUTPUT_TOKENS,
@@ -142,7 +161,7 @@ export async function chooseAnswerId(question: string): Promise<string | null> {
         }
 
         const payload = (await response.json()) as WorkersAiResponse;
-        return validEntryId(payload.result?.response);
+        return validEntryId(payload.result?.response, candidates);
     } catch {
         /* Timeouts, aborts and network failures all mean the same thing here. */
         return null;

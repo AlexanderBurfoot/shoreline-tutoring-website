@@ -13,11 +13,19 @@ vi.mock('../../../lib/chatbotFallback', async (importOriginal) => ({
 /** A fresh address per test, so one test's rate limit does not affect the next. */
 let visitorCount = 0;
 
+/** The browser always sends a shortlist alongside the question. */
+const CANDIDATE_IDS = ['trial', 'contact'];
+
 function chatRequest(body: unknown, ip = `203.0.113.${(visitorCount += 1)}`) {
+    const payload =
+        typeof body === 'string' || body === null || typeof body !== 'object'
+            ? body
+            : { candidateIds: CANDIDATE_IDS, ...body };
+
     return new Request('https://shorelinetutoring.com.au/api/chat', {
         method: 'POST',
         headers: { 'content-type': 'application/json', 'x-forwarded-for': ip },
-        body: typeof body === 'string' ? body : JSON.stringify(body),
+        body: typeof payload === 'string' ? payload : JSON.stringify(payload),
     });
 }
 
@@ -41,7 +49,10 @@ describe('POST /api/chat', () => {
     it('strips contact details before the question is sent on', async () => {
         await POST(chatRequest({ question: 'Call me on 0452 360 688 about Year 9 maths' }));
 
-        expect(chooseAnswerId).toHaveBeenCalledWith('Call me on [phone removed] about Year 9 maths');
+        expect(chooseAnswerId).toHaveBeenCalledWith(
+            'Call me on [phone removed] about Year 9 maths',
+            expect.arrayContaining([expect.objectContaining({ id: 'trial' })]),
+        );
     });
 
     it.each([
@@ -91,6 +102,14 @@ describe('POST /api/chat', () => {
 
         chooseAnswerId.mockClear();
         const response = await POST(chatRequest({ question: 'Do you offer sibling discounts?' }));
+
+        expect(response.status).toBe(200);
+        await expect(response.json()).resolves.toEqual({ entryId: null });
+        expect(chooseAnswerId).not.toHaveBeenCalled();
+    });
+
+    it('asks about nothing when the browser shortlists nothing', async () => {
+        const response = await POST(chatRequest({ question: 'zzzz', candidateIds: [] }));
 
         expect(response.status).toBe(200);
         await expect(response.json()).resolves.toEqual({ entryId: null });

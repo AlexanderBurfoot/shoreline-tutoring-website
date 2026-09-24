@@ -6,8 +6,9 @@
  * enquiry form.
  */
 import { findEntryById, type KnowledgeLink } from '../data/chatbotKnowledge';
-import { findBestMatch } from './chatbotMatching';
-import { MAX_QUESTION_LENGTH } from './chatbotFallback';
+import { findBestMatch, shortlist } from './chatbotMatching';
+import { MAX_CANDIDATES, MAX_QUESTION_LENGTH } from './chatbotFallback';
+import { looksLikeAssessmentRequest } from './assessmentGuard';
 import { redactPersonalDetails } from './redactPersonalDetails';
 
 /**
@@ -33,6 +34,15 @@ export interface ResolvedQuestion {
 
 export const ENQUIRY_FALLBACK_LINK: KnowledgeLink = { label: 'Send an enquiry', href: '/#contact' };
 
+/**
+ * Said to a student who asks for assessed work to be done. It offers the thing
+ * that actually helps, which is the concept behind the question, and the lesson
+ * where a tutor would work through it with them.
+ */
+export const ASSESSMENT_TEXT =
+    'I will not answer assessment work, sorry. Ask me about the idea behind it, such as a formula or a ' +
+    'definition, and I will explain that. For the question itself, a tutor can work through it with you:';
+
 /** Said when nothing matches and the AI cannot help either. */
 export const FALLBACK_TEXT =
     'That one is beyond me, I am afraid. Our team can answer it properly:';
@@ -49,11 +59,16 @@ const TOO_LONG_TEXT = `Could you shorten that to under ${MAX_QUESTION_LENGTH} ch
  * model wrote can reach the page.
  */
 export async function requestAiAnswerId(question: string, fetchImpl: typeof fetch = fetch): Promise<string | null> {
+    const candidateIds = shortlist(question, MAX_CANDIDATES).map((entry) => entry.id);
+    if (candidateIds.length === 0) {
+        return null;
+    }
+
     try {
         const response = await fetchImpl('/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question }),
+            body: JSON.stringify({ question, candidateIds }),
         });
 
         if (!response.ok) {
@@ -83,6 +98,16 @@ export async function resolveQuestion(
     { askAi = requestAiAnswerId }: ResolveOptions = {},
 ): Promise<ResolvedQuestion> {
     const { text: question, redacted } = redactPersonalDetails(rawQuestion.trim());
+
+    /* Checked before matching, so a request to complete a task is never answered
+       just because it happens to mention a formula we hold. */
+    if (looksLikeAssessmentRequest(question)) {
+        return {
+            question,
+            redacted,
+            reply: { text: ASSESSMENT_TEXT, link: ENQUIRY_FALLBACK_LINK, source: 'fallback' },
+        };
+    }
 
     if (question.length > MAX_QUESTION_LENGTH) {
         return {

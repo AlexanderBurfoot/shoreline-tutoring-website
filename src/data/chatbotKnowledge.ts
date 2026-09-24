@@ -35,6 +35,7 @@ import {
 } from './groupClassLaunch';
 import { bundlePricing, hourlyPricing, LESSONS_PER_BUNDLE, perLessonRate } from './pricingData';
 import { faqs } from './faqData';
+import { studyEntries, subjectLinkLabel, subjectPath } from './studyReference';
 import { subjects } from './subjectData';
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, SUBJECTS_PATH } from '../lib/site';
 
@@ -194,7 +195,28 @@ const FAQ_ENTRIES: KnowledgeEntry[] = faqs.map((faq) => ({
     answer: faq.answer,
 }));
 
-export const knowledgeEntries: KnowledgeEntry[] = [...ASSISTANT_ENTRIES, ...FAQ_ENTRIES];
+/**
+ * The study reference bank: formulas and definitions for the subjects we tutor.
+ * Each answer is quoted exactly as written in src/data/studyReference, and each
+ * offers the subject page, so a student who wanted a formula can see the
+ * tutoring that teaches it.
+ */
+const STUDY_ENTRIES: KnowledgeEntry[] = studyEntries.map((entry) => ({
+    id: entry.id,
+    question: entry.question,
+    keywords: entry.aliases,
+    answer: entry.answer,
+    link: { label: subjectLinkLabel(entry.subject), href: subjectPath(entry.subject) },
+}));
+
+export const knowledgeEntries: KnowledgeEntry[] = [
+    ...ASSISTANT_ENTRIES,
+    ...FAQ_ENTRIES,
+    ...STUDY_ENTRIES,
+];
+
+/** Just the study answers, for the chat's "what can you help with" suggestions. */
+export const studyKnowledgeEntries: KnowledgeEntry[] = STUDY_ENTRIES;
 
 /** The opening choices, each holding the entries parents pick between. */
 export const knowledgeTopics: KnowledgeTopic[] = [
@@ -204,6 +226,9 @@ export const knowledgeTopics: KnowledgeTopic[] = [
     { id: 'format', label: 'Home or online', entryIds: ['one-on-one-format', 'location'] },
     { id: 'getting-started', label: 'Getting started', entryIds: ['trial', 'faq-how-often', 'contact'] },
     { id: 'during', label: 'How lessons work', entryIds: ['faq-session-length', 'faq-homework-and-notes', 'faq-progress-updates'] },
+    /* A sample of the study bank, so students see that formulas and definitions
+       can be asked for. The bank holds far more than these three. */
+    { id: 'study', label: 'Study help', entryIds: ['maths-sphere-volume', 'chem-gibbs-free-energy', 'eng-essay-structure'] },
 ];
 
 export function findEntryById(id: string): KnowledgeEntry | undefined {

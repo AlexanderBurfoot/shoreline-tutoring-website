@@ -16,8 +16,8 @@ import { REDACTION_NOTICE, resolveQuestion } from '../lib/chatbotConversation';
  * parent should never be left wondering whether they are talking to a person.
  */
 const GREETING =
-    "Hello! I'm Archimedes, the cockatoo from our logo. I can help with prices, subjects and " +
-    'classes. Pick a topic or type a question.';
+    "Hello! I'm Archimedes, the cockatoo from our logo. Ask me about prices, subjects and classes, " +
+    'or for a formula or definition from the subjects we tutor. Pick a topic or type a question.';
 
 /** Sits next to the message box, where it is read rather than scrolled past. */
 const PRIVACY_NOTICE = 'Please do not share names or personal details here.';

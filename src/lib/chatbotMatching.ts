@@ -75,9 +75,42 @@ const SYNONYMS = new Map<string, string>([
     ['free', 'trial'],
 ]);
 
-/** Lowercase, drop punctuation, and collapse runs of whitespace. */
+/**
+ * Symbols students type, spelled out so they survive the strip below. Without
+ * this, "ΔG" becomes "g" and "πr²" becomes "r", and a question about Gibbs free
+ * energy or the area of a circle matches nothing.
+ */
+const SYMBOL_WORDS = new Map<string, string>([
+    ['Δ', ' delta '],
+    ['δ', ' delta '],
+    ['π', ' pi '],
+    ['θ', ' theta '],
+    ['λ', ' lambda '],
+    ['μ', ' mu '],
+    ['σ', ' sigma '],
+    ['Σ', ' sum '],
+    ['ω', ' omega '],
+    ['Ω', ' ohms '],
+    ['α', ' alpha '],
+    ['β', ' beta '],
+    ['γ', ' gamma '],
+    ['√', ' root '],
+    ['∫', ' integral '],
+    ['∞', ' infinity '],
+    ['°', ' degrees '],
+    ['±', ' plus minus '],
+    ['²', '2'],
+    ['³', '3'],
+    ['⁻', '-'],
+]);
+
+/** Lowercase, spell out symbols, drop punctuation, collapse whitespace. */
 export function normalise(text: string): string {
-    return text
+    const spelled = [...text]
+        .map((character) => SYMBOL_WORDS.get(character) ?? character)
+        .join('');
+
+    return spelled
         .toLowerCase()
         .replace(/[^a-z0-9\s-]/g, ' ')
         .replace(/\s+/g, ' ')
@@ -89,13 +122,18 @@ function singularise(word: string): string {
     return word.length > 3 && word.endsWith('s') && !word.endsWith('ss') ? word.slice(0, -1) : word;
 }
 
-/** The meaning-carrying words of a phrase, with wordings folded together. */
+/**
+ * The meaning-carrying words of a phrase, with wordings folded together.
+ *
+ * Single characters are kept: in this bank "g", "h" and "s" are the difference
+ * between ΔG, ΔH and ΔS. On their own they are weak signals, which the weighting
+ * further down already accounts for.
+ */
 export function tokenise(text: string): string[] {
     return normalise(text)
         .split(' ')
         .filter((word) => word.length > 0 && !STOP_WORDS.has(word))
-        .map((word) => SYNONYMS.get(word) ?? singularise(word))
-        .filter((word) => word.length > 1);
+        .map((word) => SYNONYMS.get(word) ?? singularise(word));
 }
 
 /** Every word an entry can be recognised by: its question plus its keywords. */
@@ -209,4 +247,24 @@ export function findBestMatch(question: string, entries: KnowledgeEntry[] = know
     }
 
     return best && best.score >= MATCH_THRESHOLD ? best : null;
+}
+
+/**
+ * The entries worth asking the model about, best first.
+ *
+ * Only these are sent to the server, and only their names: a shortlist keeps the
+ * request small and the choice accurate, where a list of every answer would make
+ * a small model guess.
+ */
+export function shortlist(
+    question: string,
+    limit: number,
+    entries: KnowledgeEntry[] = knowledgeEntries,
+): KnowledgeEntry[] {
+    return entries
+        .map((entry) => ({ entry, score: scoreEntry(question, entry, entries) }))
+        .filter((candidate) => candidate.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, limit)
+        .map((candidate) => candidate.entry);
 }

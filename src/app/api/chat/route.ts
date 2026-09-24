@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server';
 
-import { chooseAnswerId, DAILY_ANSWER_LIMIT, MAX_QUESTION_LENGTH } from '../../../lib/chatbotFallback';
+import {
+    candidatesFromIds,
+    chooseAnswerId,
+    DAILY_ANSWER_LIMIT,
+    MAX_QUESTION_LENGTH,
+} from '../../../lib/chatbotFallback';
 import { createRateLimiter, getClientIp } from '../../../lib/rateLimit';
 import { redactPersonalDetails } from '../../../lib/redactPersonalDetails';
 
@@ -94,6 +99,13 @@ export async function POST(request: Request) {
         return refused(400);
     }
 
+    /* The browser has already scored every answer, so it sends the handful worth
+       asking about. Nothing to choose between means nothing to ask. */
+    const candidates = candidatesFromIds((body as { candidateIds?: unknown }).candidateIds);
+    if (candidates.length === 0) {
+        return noAnswer();
+    }
+
     if (!withinDailyLimit()) {
         return noAnswer();
     }
@@ -102,7 +114,7 @@ export async function POST(request: Request) {
        not something the server can rely on. */
     const { text } = redactPersonalDetails(question);
 
-    const entryId = await chooseAnswerId(text);
+    const entryId = await chooseAnswerId(text, candidates);
     if (!entryId) {
         return noAnswer();
     }
