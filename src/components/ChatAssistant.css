@@ -49,6 +49,9 @@
     height: 17px;
     background: var(--color-gold-primary);
     clip-path: polygon(0 0, 100% 0, 0 100%);
+    /* The same easing as the bubble it belongs to, so the two change together
+       rather than the tail snapping while the bubble fades. */
+    transition: background var(--transition-base);
 }
 
 .chat-assistant__launcher:hover.chat-assistant__launcher--bubble::after {
@@ -99,6 +102,12 @@
     background: var(--color-gold-primary);
     border-radius: 50%;
     padding: 2px;
+    /* Darkens with the bubble and the tail, so the three never disagree. */
+    transition: background var(--transition-base);
+}
+
+.chat-assistant__launcher:hover .chat-assistant__sparkle {
+    background: var(--color-gold-dark);
 }
 
 .chat-assistant__launcher:hover {
@@ -276,7 +285,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .chat-assistant__launcher {
+    .chat-assistant__launcher,
+    .chat-assistant__launcher--bubble::after,
+    .chat-assistant__launcher-label,
+    .chat-assistant__sparkle {
         transition: none;
     }
 
