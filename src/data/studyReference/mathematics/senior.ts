@@ -74,10 +74,11 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
         id: 'maths-compound-interest',
         subject: 'mathematics',
         question: 'What is the compound interest formula?',
-        aliases: ['compound interest', 'simple interest', 'investment formula', 'depreciation'],
+        aliases: ['compound interest', 'investment formula', 'interest on interest', 'future value'],
         answer:
-            'Compound interest is A = P(1 + r)ⁿ, where r is the rate per period as a decimal and n the number of ' +
-            'periods. Simple interest is I = Prn. For depreciation, use A = P(1 − r)ⁿ.',
+            'A = P(1 + r)ⁿ, where r is the rate per period as a decimal and n the number of periods. ' +
+            'Interest is earned on interest already added, so the balance curves upward. ' +
+            'Divide an annual rate by the number of compounding periods a year, and multiply n by the same.',
     },
     {
         id: 'maths-differentiation-rules',
@@ -146,7 +147,7 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
         id: 'maths-vectors',
         subject: 'mathematics',
         question: 'How do I work with vectors?',
-        aliases: ['vectors', 'vector magnitude', 'dot product', 'scalar product', 'unit vector'],
+        aliases: ['vectors', 'vector magnitude', 'component form', 'adding vectors', 'direction of a vector'],
         answer:
             'A vector in component form is (x, y). Its magnitude is |v| = √(x² + y²) and its direction comes from tan θ = y/x. ' +
             'The dot product is a·b = x₁x₂ + y₁y₂ = |a||b| cos θ, so a dot product of zero means the vectors are perpendicular.',
@@ -224,7 +225,7 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
         subject: 'mathematics',
         question: 'How do I use calculus for rates of change?',
         aliases: [
-            'rates of change', 'related rates', 'displacement velocity acceleration', 'motion calculus',
+            'rates of change', 'related rates', 'motion calculus',
             'rate of change of volume', 'chain rule rates', 'filling a tank',
         ],
         answer:
@@ -237,7 +238,7 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
         id: 'maths-stationary-points',
         subject: 'mathematics',
         question: 'How do I find and classify stationary points?',
-        aliases: ['stationary points', 'maximum minimum', 'second derivative test', 'point of inflection', 'concavity'],
+        aliases: ['stationary points', 'maximum minimum', 'turning point', 'classify stationary points'],
         answer:
             'Solve f′(x) = 0 for the stationary points. The second derivative classifies them: f″(x) < 0 is a maximum, ' +
             'f″(x) > 0 is a minimum. Where f″(x) = 0 and concavity changes, there is a point of inflection.',
@@ -256,7 +257,7 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
         id: 'maths-integration-applications',
         subject: 'mathematics',
         question: 'What can integration be used for?',
-        aliases: ['area between curves', 'volumes of revolution', 'trapezoidal rule', 'simpsons rule'],
+        aliases: ['applications of integration', 'volumes of revolution', 'trapezoidal rule', 'approximating an integral'],
         answer:
             'Area between two curves is the integral of the upper minus the lower. ' +
             'A volume of revolution about the x-axis is π∫y² dx. ' +
@@ -276,7 +277,7 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
         id: 'maths-correlation',
         subject: 'mathematics',
         question: 'What do correlation and the least-squares line mean?',
-        aliases: ['correlation coefficient', 'scatterplot', 'line of best fit', 'least squares', 'bivariate data'],
+        aliases: ['correlation coefficient', 'scatterplot', 'line of best fit', 'least squares', 'bivariate data', 'extrapolation'],
         answer:
             'The correlation coefficient r runs from −1 to 1: the sign gives the direction and the size the strength. ' +
             'The least-squares line is the line of best fit used to predict. ' +
@@ -321,5 +322,192 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
             'Permutations count arrangements, where order matters: ⁿPᵣ = n!/(n − r)!. ' +
             'Combinations count selections, where order does not: ⁿCᵣ = n!/(r!(n − r)!). ' +
             'If you could swap two chosen items and call it the same result, it is a combination.',
+    },
+    {
+        id: 'maths-motion-line',
+        subject: 'mathematics',
+        question: 'How do I answer motion in a straight line questions?',
+        aliases: ['motion in a straight line', 'displacement velocity acceleration', 'at rest', 'initially', 'change of direction'],
+        answer:
+            'Displacement x, velocity v = dx/dt, acceleration a = dv/dt. ' +
+            '"At rest" means v = 0, "initially" means t = 0, and the object changes direction where v changes sign. ' +
+            'Distance travelled is not displacement: split the journey at every turning point and add the parts.',
+    },
+    {
+        id: 'maths-concavity',
+        subject: 'mathematics',
+        question: 'What is concavity and a point of inflection?',
+        aliases: ['concavity', 'point of inflection', 'second derivative test', 'concave up', 'horizontal inflection'],
+        answer:
+            'f″(x) > 0 is concave up, f″(x) < 0 is concave down. ' +
+            'A point of inflection is where concavity changes, so f″(x) = 0 AND the sign changes across it. ' +
+            'A stationary point of inflection also has f′(x) = 0, which is why the second derivative test is ' +
+            'inconclusive there.',
+    },
+    {
+        id: 'maths-tangent-normal',
+        subject: 'mathematics',
+        question: 'How do I find the tangent and normal to a curve?',
+        aliases: ['tangent to a curve', 'normal to a curve', 'gradient at a point', 'equation of a tangent'],
+        answer:
+            'The gradient of the tangent at x = a is f′(a). ' +
+            'The normal is perpendicular, so its gradient is −1/f′(a). ' +
+            'Use point-gradient form y − y₁ = m(x − x₁) with the point on the curve, which you get by substituting ' +
+            'into the original function, not the derivative.',
+    },
+    {
+        id: 'maths-radians-arc-sector',
+        subject: 'mathematics',
+        question: 'What are the arc length and sector area formulas?',
+        aliases: ['radians', 'arc length', 'sector area', 'segment area', 'degrees to radians'],
+        answer:
+            'With θ in radians, arc length l = rθ and sector area A = ½r²θ. ' +
+            'A segment is the sector minus the triangle: A = ½r²(θ − sin θ). ' +
+            'Convert with π radians = 180°, and check your calculator is in the right mode.',
+    },
+    {
+        id: 'maths-trig-equations',
+        subject: 'mathematics',
+        question: 'How do I solve a trigonometric equation?',
+        aliases: ['solving trig equations', 'astc', 'related angle', 'general solution', 'trig equation in a domain'],
+        answer:
+            'Find the related acute angle from the positive value, then use ASTC to place every solution in the given ' +
+            'domain: All, Sine, Tangent, Cosine positive in quadrants one to four. ' +
+            'Check whether the domain is in degrees or radians, and watch for a double angle, which doubles the ' +
+            'number of solutions.',
+    },
+    {
+        id: 'maths-circle-equation',
+        subject: 'mathematics',
+        question: 'What is the equation of a circle?',
+        aliases: ['equation of a circle', 'centre radius form', 'completing the square circle', 'semicircle'],
+        answer:
+            '(x − h)² + (y − k)² = r², with centre (h, k) and radius r. ' +
+            'If the equation is expanded, complete the square in x and in y to find them. ' +
+            'A circle is not a function, but y = √(r² − x²) is the upper semicircle, which is.',
+    },
+    {
+        id: 'maths-first-principles',
+        subject: 'mathematics',
+        question: 'How do I differentiate from first principles?',
+        aliases: ['first principles', 'limit definition of derivative', 'f(x+h) - f(x) over h', 'differentiation from first principles'],
+        answer:
+            'f′(x) = limit as h → 0 of [f(x + h) − f(x)]/h. ' +
+            'Expand the numerator, cancel the h that divides through, then let h → 0. ' +
+            'Marks go for writing the limit statement each line, not just the final derivative.',
+    },
+    {
+        id: 'maths-curve-sketching',
+        subject: 'mathematics',
+        question: 'What should I check when sketching a curve?',
+        aliases: ['curve sketching', 'asymptotes', 'vertical asymptote', 'horizontal asymptote', 'sketching a rational function'],
+        answer:
+            'Domain, intercepts, any asymptotes, stationary points and their nature, concavity, and behaviour for ' +
+            'large x. ' +
+            'A vertical asymptote sits where the denominator is zero; a horizontal one comes from the limit as x ' +
+            'grows. Mark the key points on the sketch rather than drawing a vague shape.',
+    },
+    {
+        id: 'maths-odd-even-absolute',
+        subject: 'mathematics',
+        question: 'What are odd, even and absolute value functions?',
+        aliases: ['odd and even functions', 'absolute value', 'modulus function', 'symmetry of a function'],
+        answer:
+            'Even functions satisfy f(−x) = f(x) and are symmetric about the y-axis; odd functions satisfy ' +
+            'f(−x) = −f(x) and have rotational symmetry about the origin. ' +
+            '|x| is the distance from zero, so |f(x)| reflects anything below the x-axis upwards.',
+    },
+    {
+        id: 'maths-discrete-random-variables',
+        subject: 'mathematics',
+        question: 'How do I work with a discrete random variable?',
+        aliases: ['discrete random variable', 'expected value', 'probability distribution table', 'variance of x', 'e(x)'],
+        answer:
+            'List the outcomes with their probabilities, which must sum to 1. ' +
+            'The expected value is E(X) = Σ x·P(X = x), the long-run average. ' +
+            'Variance is E(X²) − [E(X)]², and the standard deviation is its square root.',
+    },
+    {
+        id: 'maths-continuous-distributions',
+        subject: 'mathematics',
+        question: 'How do continuous probability distributions work?',
+        aliases: ['continuous random variable', 'probability density function', 'pdf', 'cumulative distribution function', 'cdf'],
+        answer:
+            'Probability is area under the density function, so the total area is 1 and the probability of any single ' +
+            'value is zero. ' +
+            'The cumulative function gives P(X ≤ x), so the median is where it reaches 0.5, and quartiles where it ' +
+            'reaches 0.25 and 0.75.',
+    },
+    {
+        id: 'maths-standard-deviation',
+        subject: 'mathematics',
+        question: 'What does standard deviation measure?',
+        aliases: ['standard deviation', 'population vs sample standard deviation', 'spread of data', 'sigma statistics'],
+        answer:
+            'The typical distance of a value from the mean, so a larger standard deviation means more spread. ' +
+            'Use σ for a whole population and s for a sample. ' +
+            'Adding a constant to every value leaves it unchanged; multiplying by a constant multiplies it by the ' +
+            'same amount.',
+    },
+    {
+        id: 'maths-outliers-skew',
+        subject: 'mathematics',
+        question: 'How do I identify outliers and describe the shape of data?',
+        aliases: ['outlier', '1.5 iqr rule', 'skewed data', 'positively skewed', 'symmetric distribution', 'bimodal'],
+        answer:
+            'An outlier lies below Q₁ − 1.5 × IQR or above Q₃ + 1.5 × IQR. ' +
+            'Data is positively skewed when the tail stretches right, which pulls the mean above the median, and ' +
+            'negatively skewed the other way. Symmetric data has mean and median together.',
+    },
+    {
+        id: 'maths-at-least-one',
+        subject: 'mathematics',
+        question: 'How do I calculate "at least one" probability?',
+        aliases: ['at least one', 'complement probability', 'none of them', 'probability of at least'],
+        answer:
+            'P(at least one) = 1 − P(none). ' +
+            'Listing every case that counts as "at least one" is slow and easy to get wrong, so work out the single ' +
+            'case that does not and subtract from 1.',
+    },
+    {
+        id: 'maths-venn-independence',
+        subject: 'mathematics',
+        question: 'How do Venn diagrams and independent events work?',
+        aliases: ['venn diagram', 'independent events', 'mutually exclusive', 'with and without replacement', 'union and intersection'],
+        answer:
+            'P(A ∪ B) = P(A) + P(B) − P(A ∩ B), subtracting the overlap counted twice. ' +
+            'Mutually exclusive events have no overlap. ' +
+            'Independent events satisfy P(A ∩ B) = P(A) × P(B); drawing without replacement makes events dependent, ' +
+            'since the denominator changes.',
+    },
+    {
+        id: 'maths-area-between-curves',
+        subject: 'mathematics',
+        question: 'How do I find the area between two curves?',
+        aliases: ['area between curves', 'upper minus lower', 'area enclosed', 'region between graphs'],
+        answer:
+            'Integrate the upper curve minus the lower one across the region: ∫(top − bottom) dx. ' +
+            'Find the intersections first, and split the integral wherever the curves swap over. ' +
+            'For a region bounded on the sides rather than above and below, integrate with respect to y instead.',
+    },
+    {
+        id: 'maths-parametric',
+        subject: 'mathematics',
+        question: 'What is a parametric equation?',
+        aliases: ['parametric form', 'parameter t', 'eliminating the parameter', 'cartesian equation from parametric'],
+        answer:
+            'Both coordinates are given in terms of a third variable, usually t: x = f(t), y = g(t). ' +
+            'To get the Cartesian equation, solve one for t and substitute into the other, or use an identity such as ' +
+            'sin²t + cos²t = 1. Parametric form also carries the direction and timing of the motion.',
+    },
+    {
+        id: 'maths-logs-with-gp',
+        subject: 'mathematics',
+        question: 'How do I find how many terms or years using logarithms?',
+        aliases: ['smallest n such that', 'how many years', 'solving exponential equations', 'logs to solve for n'],
+        answer:
+            'Set up the inequality, isolate the power, then take logarithms of both sides and divide. ' +
+            'Because n counts whole terms or years, round up to the next whole number rather than to the nearest, and ' +
+            'check by substituting that value back in.',
     },
 ];

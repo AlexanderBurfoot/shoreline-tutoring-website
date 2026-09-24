@@ -1,12 +1,12 @@
 /**
- * Chemistry reference, Years 9 to 12.
+ * Chemistry, Year 11 (Modules 1 to 4).
  *
- * Weighted towards the Year 12 modules: equilibrium, acids and bases, organic
- * chemistry and analysis, with the general ideas students revisit throughout.
+ * Properties and structure of matter, quantitative chemistry, reactive
+ * chemistry, and the drivers of reactions.
  */
-import type { StudyEntry } from './types';
+import type { StudyEntry } from '../types';
 
-export const chemistryEntries: StudyEntry[] = [
+export const chemistryYear11Entries: StudyEntry[] = [
     {
         id: 'chem-gibbs-free-energy',
         subject: 'chemistry',
@@ -38,63 +38,6 @@ export const chemistryEntries: StudyEntry[] = [
             'opposite happens. It sits in ΔG = ΔH − TΔS.',
     },
     {
-        id: 'chem-equilibrium-constant',
-        subject: 'chemistry',
-        question: 'What is the equilibrium constant Keq?',
-        aliases: ['keq', 'equilibrium constant', 'kc', 'k expression', 'equilibrium expression'],
-        answer:
-            'For aA + bB ⇌ cC + dD, Keq = [C]^c[D]^d / ([A]^a[B]^b), using equilibrium concentrations. ' +
-            'A large K means products are favoured, a small K means reactants are. Pure solids and liquids are left out.',
-    },
-    {
-        id: 'chem-le-chatelier',
-        subject: 'chemistry',
-        question: 'What is Le Chatelier’s principle?',
-        aliases: ['le chatelier', 'shift equilibrium', 'disturbing equilibrium', 'pressure change equilibrium'],
-        answer:
-            'If a system at equilibrium is disturbed, it shifts to partly oppose the change. ' +
-            'Adding reactant shifts it right, raising pressure shifts it towards fewer gas particles, and raising ' +
-            'temperature shifts it in the endothermic direction. Only temperature changes the value of K.',
-    },
-    {
-        id: 'chem-ksp',
-        subject: 'chemistry',
-        question: 'What is Ksp?',
-        aliases: ['ksp', 'solubility product', 'precipitate', 'saturated solution'],
-        answer:
-            'Ksp is the solubility product: the equilibrium constant for a sparingly soluble salt dissolving. ' +
-            'For AgCl(s) ⇌ Ag⁺ + Cl⁻, Ksp = [Ag⁺][Cl⁻]. If the ionic product exceeds Ksp, a precipitate forms.',
-    },
-    {
-        id: 'chem-ph',
-        subject: 'chemistry',
-        question: 'How do I calculate pH?',
-        aliases: ['ph formula', 'poh', 'hydrogen ion concentration', 'ph scale'],
-        answer:
-            'pH = −log₁₀[H⁺], and pOH = −log₁₀[OH⁻]. At 25°C, pH + pOH = 14. ' +
-            'Each whole pH unit is a tenfold change in [H⁺], so pH 3 is ten times more acidic than pH 4.',
-    },
-    {
-        id: 'chem-ka-kb',
-        subject: 'chemistry',
-        question: 'What are Ka and Kb?',
-        aliases: ['ka', 'kb', 'acid dissociation constant', 'weak acid', 'pka'],
-        answer:
-            'Ka is the acid dissociation constant: for HA ⇌ H⁺ + A⁻, Ka = [H⁺][A⁻]/[HA]. ' +
-            'A larger Ka means a stronger acid. pKa = −log₁₀Ka, so a smaller pKa is the stronger acid. ' +
-            'For a conjugate pair, Ka × Kb = Kw = 1.0 × 10⁻¹⁴ at 25°C.',
-    },
-    {
-        id: 'chem-titration',
-        subject: 'chemistry',
-        question: 'How does a titration calculation work?',
-        aliases: ['titration', 'equivalence point', 'standard solution', 'c1v1', 'concentration calculation'],
-        answer:
-            'Use n = cV to find moles of the known solution, apply the mole ratio from the balanced equation, ' +
-            'then divide by the unknown volume to get its concentration. ' +
-            'The equivalence point is where the moles match the ratio; the end point is where the indicator changes.',
-    },
-    {
         id: 'chem-moles',
         subject: 'chemistry',
         question: 'What are the mole formulas?',
@@ -112,25 +55,6 @@ export const chemistryEntries: StudyEntry[] = [
             'Temperature, concentration or pressure, surface area, and catalysts. ' +
             'Collision theory explains why: reactions need collisions with enough energy and the right orientation, ' +
             'and a catalyst lowers the activation energy without being consumed.',
-    },
-    {
-        id: 'chem-functional-groups',
-        subject: 'chemistry',
-        question: 'What are the main organic functional groups?',
-        aliases: ['functional groups', 'alcohol', 'carboxylic acid', 'ester', 'amine', 'homologous series'],
-        answer:
-            'Alkane (C−C), alkene (C=C), alkyne (C≡C), alcohol (−OH), aldehyde (−CHO), ketone (C=O in the chain), ' +
-            'carboxylic acid (−COOH), ester (−COO−), amine (−NH₂) and amide (−CONH₂). ' +
-            'The group decides the reactions and, with chain length, the boiling point.',
-    },
-    {
-        id: 'chem-esterification',
-        subject: 'chemistry',
-        question: 'What is esterification?',
-        aliases: ['esterification', 'making an ester', 'reflux', 'condensation reaction'],
-        answer:
-            'A carboxylic acid plus an alcohol makes an ester and water, with concentrated sulfuric acid as catalyst. ' +
-            'It is reversible and slow, so it is run under reflux to heat the mixture without losing volatile reactants.',
     },
     {
         id: 'chem-bonding',
@@ -233,56 +157,6 @@ export const chemistryEntries: StudyEntry[] = [
             'Neutralisation is exothermic, and the salt takes its name from the acid used.',
     },
     {
-        id: 'chem-buffers',
-        subject: 'chemistry',
-        question: 'What is a buffer?',
-        aliases: ['buffer', 'buffer solution', 'conjugate pair buffer', 'blood buffer'],
-        answer:
-            'A buffer is a weak acid with its conjugate base, or a weak base with its conjugate acid, in similar ' +
-            'amounts. Added acid reacts with the base and added base with the acid, so the pH barely moves. ' +
-            'Blood is buffered by the carbonic acid and hydrogencarbonate pair.',
-    },
-    {
-        id: 'chem-indicators',
-        subject: 'chemistry',
-        question: 'How do I choose an indicator?',
-        aliases: ['indicator', 'phenolphthalein', 'methyl orange', 'titration curve', 'equivalence point ph'],
-        answer:
-            'Choose one whose colour change spans the pH at the equivalence point. ' +
-            'Strong acid with strong base is neutral there, so most indicators work. Weak acid with strong base ends ' +
-            'basic, suiting phenolphthalein; strong acid with weak base ends acidic, suiting methyl orange.',
-    },
-    {
-        id: 'chem-organic-naming',
-        subject: 'chemistry',
-        question: 'How does IUPAC naming work?',
-        aliases: ['iupac naming', 'naming organic compounds', 'prefixes meth eth prop', 'alkane alkene names'],
-        answer:
-            'Count the longest carbon chain for the stem: meth, eth, prop, but, pent, hex. ' +
-            'The ending gives the functional group, such as -ane, -ene, -ol or -oic acid. ' +
-            'Number from the end that gives the group the lowest number, and list branches alphabetically.',
-    },
-    {
-        id: 'chem-polymers',
-        subject: 'chemistry',
-        question: 'What is the difference between addition and condensation polymers?',
-        aliases: ['polymers', 'addition polymer', 'condensation polymer', 'monomer', 'polyethylene', 'nylon'],
-        answer:
-            'Addition polymers form when monomers with a C=C bond open and join, losing nothing, as in polyethylene. ' +
-            'Condensation polymers form when two functional groups react and release a small molecule, usually water, ' +
-            'as in nylon and polyesters.',
-    },
-    {
-        id: 'chem-analysis-techniques',
-        subject: 'chemistry',
-        question: 'What do the instrumental analysis techniques do?',
-        aliases: ['aas', 'mass spectrometry', 'infrared spectroscopy', 'nmr', 'chromatography', 'uv visible'],
-        answer:
-            'AAS measures metal ion concentration by the light a sample absorbs. Mass spectrometry gives molecular ' +
-            'mass and fragments. Infrared identifies functional groups by bond vibrations. NMR shows the carbon and ' +
-            'hydrogen environments. Chromatography separates a mixture by how strongly each part is carried.',
-    },
-    {
         id: 'chem-galvanic-cells',
         subject: 'chemistry',
         question: 'How does a galvanic cell work?',
@@ -353,73 +227,105 @@ export const chemistryEntries: StudyEntry[] = [
             'Add concentrated acid to water, never the reverse, because the mixing is strongly exothermic.',
     },
     {
-        id: 'chem-equilibrium-graphs',
+        id: 'chem-electron-configuration',
         subject: 'chemistry',
-        question: 'How do I read a concentration-time graph for equilibrium?',
-        aliases: ['equilibrium graph', 'concentration time graph', 'reaching equilibrium', 'dynamic equilibrium'],
+        question: 'How do I write an electron configuration?',
+        aliases: ['electron configuration', 'subshells', 'orbital filling', 'valence shell', 'aufbau'],
         answer:
-            'Concentrations change quickly at first, then level off where the forward and reverse rates are equal. ' +
-            'Equilibrium is dynamic: both reactions continue at the same rate. ' +
-            'A sudden jump then a new plateau shows a disturbance and the shift that followed it.',
+            'Fill subshells in order of energy: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p. ' +
+            'Each s holds 2 electrons, p holds 6 and d holds 10. ' +
+            'The outer shell decides the chemistry, and a large jump in successive ionisation energies marks the ' +
+            'point where a full shell is broken into.',
     },
     {
-        id: 'chem-salts-hydrolysis',
+        id: 'chem-vsepr',
         subject: 'chemistry',
-        question: 'Why are some salt solutions not neutral?',
-        aliases: ['salt hydrolysis', 'acidic salt', 'basic salt', 'conjugate base ph', 'amphiprotic'],
+        question: 'How do I predict the shape of a molecule?',
+        aliases: ['vsepr', 'molecular shape', 'bond angle', 'tetrahedral', 'polar molecule', 'lone pair'],
         answer:
-            'A salt from a strong acid and strong base is neutral. From a weak acid and strong base, the conjugate ' +
-            'base reacts with water and the solution is basic; the reverse gives an acidic solution. ' +
-            'Amphiprotic species, such as hydrogencarbonate, can act as either.',
+            'Electron pairs around the central atom repel and spread as far apart as possible: two give linear, three ' +
+            'trigonal planar, four tetrahedral at about 109.5°. Lone pairs repel more, so they squeeze the angle. ' +
+            'A molecule is polar unless its bond dipoles cancel by symmetry.',
     },
     {
-        id: 'chem-alcohols-reactions',
+        id: 'chem-isotopes-ram',
         subject: 'chemistry',
-        question: 'What reactions do alcohols undergo?',
-        aliases: ['alcohol reactions', 'oxidation of alcohols', 'dehydration', 'substitution reaction', 'primary secondary tertiary'],
+        question: 'How do I calculate relative atomic mass from isotopes?',
+        aliases: ['relative atomic mass', 'isotopes', 'weighted average mass', 'mass spectrum abundance'],
         answer:
-            'Primary alcohols oxidise to aldehydes then carboxylic acids; secondary give ketones; tertiary resist ' +
-            'oxidation. Dehydration with acid gives an alkene. ' +
-            'Alcohols also react with carboxylic acids to form esters, and burn completely to carbon dioxide and water.',
+            'Relative atomic mass is the weighted mean of the isotope masses: multiply each isotopic mass by its ' +
+            'fractional abundance and add. ' +
+            'A mass spectrum gives both, with peak height showing abundance and position showing mass.',
     },
     {
-        id: 'chem-isomers',
+        id: 'chem-limiting-reagent',
         subject: 'chemistry',
-        question: 'What are isomers?',
-        aliases: ['isomers', 'structural isomers', 'chain isomer', 'positional isomer', 'functional group isomer'],
+        question: 'How do I find the limiting reagent?',
+        aliases: ['limiting reagent', 'limiting reactant', 'excess reagent', 'theoretical yield'],
         answer:
-            'Isomers share a molecular formula but differ in structure. ' +
-            'Chain isomers branch differently, positional isomers move the functional group along the chain, and ' +
-            'functional group isomers have a different group entirely. Isomers can have very different properties.',
+            'Convert each reactant to moles, divide by its coefficient in the balanced equation, and the smallest ' +
+            'result is the limiting reagent. ' +
+            'Everything else is in excess. Work the product amount from the limiting reagent only.',
     },
     {
-        id: 'chem-soaps-detergents',
+        id: 'chem-percentage-yield',
         subject: 'chemistry',
-        question: 'How do soaps and detergents work?',
-        aliases: ['soap', 'detergent', 'saponification', 'hydrophilic hydrophobic', 'surfactant', 'hard water'],
+        question: 'How do I calculate percentage yield?',
+        aliases: ['percentage yield', 'theoretical yield', 'actual yield', 'atom economy'],
         answer:
-            'A surfactant has a hydrophobic tail and a hydrophilic head, so it surrounds grease and lets water carry ' +
-            'it away. Soap is made by saponification, boiling a fat with a strong base. ' +
-            'Soap forms a scum in hard water, where synthetic detergents do not.',
+            'Percentage yield = actual ÷ theoretical × 100. ' +
+            'Yields fall short because of side reactions, incomplete reaction, and losses in transferring and ' +
+            'purifying. Atom economy asks a different question: what fraction of the reactant mass ends up in the ' +
+            'product you want.',
     },
     {
-        id: 'chem-radioisotopes',
+        id: 'chem-ppm',
         subject: 'chemistry',
-        question: 'What are radioisotopes used for?',
-        aliases: ['radioisotopes', 'medical isotopes', 'carbon dating', 'tracer', 'nuclear chemistry'],
+        question: 'What does parts per million mean?',
+        aliases: ['ppm', 'parts per million', 'trace concentration', 'mg per litre'],
         answer:
-            'Short half-life isotopes act as medical tracers and treatments; longer ones date materials, as carbon-14 ' +
-            'dates once-living remains. ' +
-            'Choose the isotope by half-life and radiation type: the dose should do the job and then decay quickly.',
+            'One part per million is one milligram per litre in a dilute water solution, or one milligram per ' +
+            'kilogram by mass. ' +
+            'It is the usual unit for trace analysis, such as metal ions in drinking water measured by AAS.',
     },
     {
-        id: 'chem-monitoring-environment',
+        id: 'chem-calorimetry',
         subject: 'chemistry',
-        question: 'How is water quality monitored?',
-        aliases: ['water quality', 'monitoring the environment', 'eutrophication', 'heavy metals', 'dissolved oxygen'],
+        question: 'How does calorimetry work?',
+        aliases: ['calorimetry', 'q = mc delta t', 'heat of combustion', 'specific heat capacity of water', 'enthalpy experiment'],
         answer:
-            'Tests cover pH, dissolved oxygen, turbidity, hardness, phosphate and nitrate, and heavy metal ions. ' +
-            'Excess nutrients cause eutrophication: algae bloom, then decay and strip the oxygen. ' +
-            'AAS measures metal ions at very low concentrations.',
+            'q = mcΔT, with m the mass of water in grams and c = 4.18 J K⁻¹ g⁻¹, so q comes out in joules. ' +
+            'The molar enthalpy change is ΔH = −q/n, negative when heat is released. ' +
+            'Measured values fall short of data-book ones because heat escapes to the surroundings.',
+    },
+    {
+        id: 'chem-electrolysis',
+        subject: 'chemistry',
+        question: 'How does electrolysis differ from a galvanic cell?',
+        aliases: ['electrolysis', 'electrolytic cell', 'electroplating', 'anode cathode electrolysis'],
+        answer:
+            'A galvanic cell releases energy from a spontaneous reaction; electrolysis supplies energy to force a ' +
+            'non-spontaneous one. Oxidation still happens at the anode and reduction at the cathode, but the signs ' +
+            'reverse: in electrolysis the cathode is negative.',
+    },
+    {
+        id: 'chem-electrode-potentials',
+        subject: 'chemistry',
+        question: 'How do I use standard electrode potentials?',
+        aliases: ['standard electrode potential', 'e cell', 'reduction potential table', 'spontaneous redox'],
+        answer:
+            'Read each half-cell from the standard reduction potential table on the data sheet, then ' +
+            'E°cell = E°cathode − E°anode. ' +
+            'A positive E°cell means the reaction is spontaneous. The more positive half-reaction runs as reduction.',
+    },
+    {
+        id: 'chem-corrosion',
+        subject: 'chemistry',
+        question: 'How does corrosion happen and how is it prevented?',
+        aliases: ['corrosion', 'rusting', 'galvanising', 'sacrificial anode', 'cathodic protection'],
+        answer:
+            'Iron corrodes when it is oxidised in the presence of oxygen and water, faster with salt present. ' +
+            'Barrier coatings keep those out. Galvanising and sacrificial anodes go further: a more reactive metal ' +
+            'such as zinc is oxidised instead, protecting the iron even where the coating is scratched.',
     },
 ];

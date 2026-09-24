@@ -20,7 +20,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-cone-volume',
         subject: 'mathematics',
         question: 'What is the formula for the volume of a cone?',
-        aliases: ['volume of a cone', 'cone volume', 'cone surface area'],
+        aliases: ['volume of a cone', 'cone volume', 'volume cone'],
         answer:
             'V = 1/3 × π × r² × h, where h is the perpendicular height. The curved surface area is πrl, ' +
             'where l is the slant height, which you often find with Pythagoras from r and h.',
@@ -29,7 +29,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-cylinder-volume',
         subject: 'mathematics',
         question: 'What is the formula for the volume of a cylinder?',
-        aliases: ['volume of a cylinder', 'cylinder volume', 'cylinder surface area'],
+        aliases: ['volume of a cylinder', 'cylinder volume', 'volume cylinder'],
         answer:
             'V = π × r² × h. The total surface area is 2πr² + 2πrh: the two circular ends plus the curved side, ' +
             'which unrolls into a rectangle of width 2πr and height h.',
@@ -101,7 +101,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-probability-basics',
         subject: 'mathematics',
         question: 'What are the basic probability rules?',
-        aliases: ['probability rules', 'complement', 'mutually exclusive', 'conditional probability'],
+        aliases: ['probability rules', 'complement', 'basic probability', 'probability of an event'],
         answer:
             'P(not A) = 1 − P(A). For either event, P(A or B) = P(A) + P(B) − P(A and B). For independent events, ' +
             'P(A and B) = P(A) × P(B). Conditional probability is P(A|B) = P(A and B)/P(B).',
@@ -110,7 +110,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-statistics-measures',
         subject: 'mathematics',
         question: 'What is the difference between mean, median and mode?',
-        aliases: ['mean median mode', 'average', 'range', 'interquartile range', 'outlier'],
+        aliases: ['mean median mode', 'average', 'range', 'measures of centre'],
         answer:
             'The mean is the total divided by the count, the median is the middle value in order, and the mode is the ' +
             'most common value. The median is the one to quote when outliers would drag the mean, such as house prices.',
@@ -128,7 +128,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-surface-area-vs-volume',
         subject: 'mathematics',
         question: 'What is the difference between surface area and volume?',
-        aliases: ['surface area vs volume', 'what is surface area', 'units for volume'],
+        aliases: ['surface area vs volume', 'difference between area and volume', 'units for volume'],
         answer:
             'Surface area is how much material covers the outside, measured in square units such as cm². ' +
             'Volume is how much space is inside, measured in cubic units such as cm³. The units tell you which one a question wants.',
@@ -245,7 +245,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-box-plots',
         subject: 'mathematics',
         question: 'How do I read a box plot and find the quartiles?',
-        aliases: ['box plot', 'quartiles', 'interquartile range', 'five number summary', 'skew'],
+        aliases: ['box plot', 'quartiles', 'interquartile range', 'five number summary'],
         answer:
             'The five-number summary is minimum, lower quartile, median, upper quartile and maximum. ' +
             'The box spans the quartiles, so its width is the interquartile range, IQR = Q₃ − Q₁. ' +

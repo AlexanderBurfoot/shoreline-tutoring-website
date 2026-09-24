@@ -31,7 +31,7 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
         id: 'maths-ext-trig-sum-difference',
         subject: 'mathematics',
         question: 'What are the sum and difference trig formulas?',
-        aliases: ['sum and difference formulas', 'compound angle', 'auxiliary angle', 't formulae', 'sin(a+b)'],
+        aliases: ['sum and difference formulas', 'compound angle', 'auxiliary angle', 'sin(a+b)', 'cos(a-b)'],
         answer:
             'sin(A ± B) = sin A cos B ± cos A sin B, and cos(A ± B) = cos A cos B ∓ sin A sin B. ' +
             'The auxiliary angle method rewrites a sin x + b cos x as R sin(x + α), where R = √(a² + b²), which turns ' +
@@ -70,7 +70,7 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
         id: 'maths-ext-differential-equations',
         subject: 'mathematics',
         question: 'How do I solve a differential equation?',
-        aliases: ['differential equations', 'separation of variables', 'exponential growth model', 'newtons law of cooling'],
+        aliases: ['differential equations', 'separation of variables', 'exponential growth model', 'newtons law of cooling', 'solving a de'],
         answer:
             'Separate the variables so each side holds one only, then integrate both sides and include the constant. ' +
             'Use the initial condition to find that constant. ' +
@@ -90,7 +90,7 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
         id: 'maths-ext-vectors-proofs',
         subject: 'mathematics',
         question: 'How do I use vectors in geometric proofs?',
-        aliases: ['vector proofs', 'vector geometry', 'parallel vectors', 'projection vector'],
+        aliases: ['vector proofs', 'vector geometry', 'parallel vectors', 'geometric proof with vectors'],
         answer:
             'Write each side as a vector from a common point. Parallel vectors are scalar multiples of each other; ' +
             'perpendicular vectors have a dot product of zero. ' +
@@ -135,5 +135,119 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
             'For ax² + bx + c = 0, the roots sum to −b/a and multiply to c/a. ' +
             'For a cubic ax³ + bx² + cx + d, the roots sum to −b/a, the pairs sum to c/a, and all three multiply to −d/a. ' +
             'They let you answer questions about roots without finding them.',
+    },
+    {
+        id: 'maths-ext-double-angle',
+        subject: 'mathematics',
+        question: 'What are the double angle formulas?',
+        aliases: ['double angle', 'sin 2a', 'cos 2a', 'tan 2a', 'half angle'],
+        answer:
+            'sin 2A = 2 sin A cos A. cos 2A = cos²A − sin²A = 2cos²A − 1 = 1 − 2sin²A. ' +
+            'tan 2A = 2 tan A/(1 − tan²A). ' +
+            'The three forms of cos 2A matter: pick the one that leaves only the function you want, which is how ' +
+            'sin²A and cos²A are integrated.',
+    },
+    {
+        id: 'maths-ext-t-formula',
+        subject: 'mathematics',
+        question: 'What is the t-formula?',
+        aliases: ['t formula', 'half angle substitution', 'tan half x', 'weierstrass substitution'],
+        answer:
+            'With t = tan(x/2): sin x = 2t/(1 + t²), cos x = (1 − t²)/(1 + t²), tan x = 2t/(1 − t²). ' +
+            'It turns a trigonometric equation into an algebraic one. ' +
+            'Check x = 180° separately, since tan(x/2) is undefined there and that solution can be lost.',
+    },
+    {
+        id: 'maths-ext-vector-projection',
+        subject: 'mathematics',
+        question: 'What is the projection of one vector onto another?',
+        aliases: ['vector projection', 'scalar projection', 'component of a vector', 'resolving a vector'],
+        answer:
+            'The scalar projection of u onto v is (u·v)/|v|: how far u reaches along v. ' +
+            'The vector projection multiplies that by the unit vector: ((u·v)/|v|²)v. ' +
+            'Subtracting it from u leaves the component perpendicular to v.',
+    },
+    {
+        id: 'maths-ext-dot-product',
+        subject: 'mathematics',
+        question: 'How does the dot product work?',
+        aliases: ['dot product', 'scalar product', 'angle between vectors', 'perpendicular vectors', 'unit vector'],
+        answer:
+            'u·v = x₁x₂ + y₁y₂ = |u||v| cos θ, so the angle follows from cos θ = (u·v)/(|u||v|). ' +
+            'A dot product of zero means perpendicular. ' +
+            'A unit vector is u/|u|, which keeps the direction and sets the length to 1.',
+    },
+    {
+        id: 'maths-ext-slope-fields',
+        subject: 'mathematics',
+        question: 'How do I read a slope field?',
+        aliases: ['slope field', 'direction field', 'sketching a solution curve', 'matching a differential equation'],
+        answer:
+            'Each short line shows dy/dx at that point. ' +
+            'To match a field to an equation, test a few points: where dy/dx depends only on x the slopes are constant ' +
+            'down each column, and only on y constant along each row. ' +
+            'A solution curve follows the slopes without crossing them.',
+    },
+    {
+        id: 'maths-ext-projectile',
+        subject: 'mathematics',
+        question: 'How is projectile motion set up in Extension 1?',
+        aliases: ['projectile extension 1', 'projectile in maths', 'time of flight maths', 'range of a projectile', 'cartesian path'],
+        answer:
+            'Start from acceleration: ẍ = 0 and ÿ = −g, then integrate, using the initial velocity components ' +
+            'v cos θ and v sin θ as the constants. ' +
+            'Maximum height is where ẏ = 0; time of flight is where y returns to its starting height; the Cartesian ' +
+            'path comes from eliminating t.',
+    },
+    {
+        id: 'maths-ext-inequalities',
+        subject: 'mathematics',
+        question: 'How do I solve harder inequalities?',
+        aliases: ['rational inequality', 'absolute value inequality', 'inequality with x in the denominator', 'harder inequalities'],
+        answer:
+            'For an unknown in the denominator, multiply by the square of the denominator, which is always positive, ' +
+            'then solve the resulting polynomial inequality and exclude values that make the denominator zero. ' +
+            'For |ax + b| < c, write −c < ax + b < c; for > c, solve the two cases separately.',
+    },
+    {
+        id: 'maths-ext-binomial-term',
+        subject: 'mathematics',
+        question: 'How do I find a specific term in a binomial expansion?',
+        aliases: ['coefficient of x', 'term independent of x', 'specific term binomial', 'greatest coefficient'],
+        answer:
+            'The general term is Tₖ₊₁ = ⁿCₖ aⁿ⁻ᵏ bᵏ. ' +
+            'Write the power of x in that term, set it equal to the power you want, and solve for k. ' +
+            'The term independent of x is the case where that power is zero.',
+    },
+    {
+        id: 'maths-ext-binomial-mean',
+        subject: 'mathematics',
+        question: 'What are the mean and variance of a binomial distribution?',
+        aliases: ['binomial mean', 'binomial variance', 'bernoulli trial', 'np', 'sample proportion'],
+        answer:
+            'For n independent trials with probability p: mean np, variance np(1 − p), standard deviation the square ' +
+            'root of that. ' +
+            'For a sample proportion, the mean is p and the standard deviation is √(p(1 − p)/n), which is the basis ' +
+            'of the normal approximation for large n.',
+    },
+    {
+        id: 'maths-ext-pigeonhole',
+        subject: 'mathematics',
+        question: 'What is the pigeonhole principle?',
+        aliases: ['pigeonhole principle', 'at least two in the same', 'counting argument'],
+        answer:
+            'If n objects go into k boxes and n > k, some box holds at least two. ' +
+            'More generally some box holds at least ⌈n/k⌉. ' +
+            'The work in these questions is choosing what the objects and boxes are, then the conclusion follows.',
+    },
+    {
+        id: 'maths-ext-logistic',
+        subject: 'mathematics',
+        question: 'What is the logistic equation?',
+        aliases: ['logistic equation', 'carrying capacity', 'population model', 'limited growth'],
+        answer:
+            'dP/dt = kP(1 − P/M), where M is the carrying capacity. ' +
+            'Growth is nearly exponential while P is small, slows as P approaches M, and stops at P = M. ' +
+            'The curve is S-shaped, with its steepest point at half the carrying capacity.',
     },
 ];
