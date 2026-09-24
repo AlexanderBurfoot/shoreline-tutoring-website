@@ -107,6 +107,13 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${GOOGLE_ADS_ID}');`}
         </Script>
+        {/* Applies the dismissed state before the announcement bar paints, so a
+            visitor who closed it does not see it flash back on the next page.
+            Deliberately a raw tag rather than next/script: it has to run
+            synchronously where it sits, and `beforeInteractive` only queues a
+            stub that Next's runtime executes later, by which time the bar may
+            have painted. React only runs this during the initial HTML parse,
+            never on a client render, which is all this needs. */}
         <script
           id="announcement-dismiss-state"
           dangerouslySetInnerHTML={{ __html: ANNOUNCEMENT_DISMISS_SCRIPT }}
