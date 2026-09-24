@@ -1,6 +1,23 @@
-/** Physics, Years 11 and 12. */
-import { physicsYear11Entries } from './year11';
-import { physicsYear12Entries } from './year12';
+/** Physics, gathered from the module banks. */
+import { physicsAtomEntries } from './atom';
+import { physicsDynamicsEntries } from './dynamics';
+import { physicsElectricityEntries } from './electricity';
+import { physicsElectromagnetismEntries } from './electromagnetism';
+import { physicsKinematicsEntries } from './kinematics';
+import { physicsLightEntries } from './light';
+import { physicsMechanicsEntries } from './mechanics';
+import { physicsSkillsEntries } from './skills';
+import { physicsWavesEntries } from './waves';
 import type { StudyEntry } from '../types';
 
-export const physicsEntries: StudyEntry[] = [...physicsYear11Entries, ...physicsYear12Entries];
+export const physicsEntries: StudyEntry[] = [
+    ...physicsKinematicsEntries,
+    ...physicsDynamicsEntries,
+    ...physicsWavesEntries,
+    ...physicsElectricityEntries,
+    ...physicsMechanicsEntries,
+    ...physicsElectromagnetismEntries,
+    ...physicsLightEntries,
+    ...physicsAtomEntries,
+    ...physicsSkillsEntries,
+];
