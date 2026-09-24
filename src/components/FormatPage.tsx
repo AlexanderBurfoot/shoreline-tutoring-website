@@ -206,9 +206,21 @@ const ProgramPrice = ({ program }: { program: NonNullable<FormatPageContent['pri
         <div className="format-program">
             <span className="format-program__label">{program.label}</span>
             <div className="format-program__price">
-                {program.price}
+                {/* An offer price keeps the price it replaces beside it, struck through. */}
+                {program.wasPrice ? (
+                    <span className="format-program__amounts">
+                        {program.price}
+                        <s className="format-program__was">
+                            <span className="sr-only">Usually </span>
+                            {program.wasPrice}
+                        </s>
+                    </span>
+                ) : (
+                    program.price
+                )}
                 <small>{program.caption}</small>
             </div>
+            {program.note && <p className="format-program__note">{program.note}</p>}
             <ul className="format-program__inclusions">
                 {program.inclusions.map((item) => (
                     <li key={item} className="format-program__inclusion">

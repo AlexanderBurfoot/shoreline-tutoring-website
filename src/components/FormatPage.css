@@ -597,6 +597,29 @@
     color: var(--color-text-light);
 }
 
+/* The offer price and the price it replaces, on one baseline. */
+.format-program__amounts {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--space-3);
+}
+
+.format-program__was {
+    font-size: 0.42em;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-decoration-thickness: 2px;
+}
+
+/* Who the offer price applies to, between the price and the inclusions. */
+.format-program__note {
+    max-width: 440px;
+    margin: calc(var(--space-4) * -1) auto var(--space-6);
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+}
+
 .format-program__inclusions {
     list-style: none;
     text-align: left;

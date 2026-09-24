@@ -6,10 +6,12 @@ import {
     ANNOUNCEMENT_DISMISSED_KEY,
     ANNOUNCEMENT_HIDDEN_CLASS,
     FIRST_LESSON_DATE_SHORT,
+    FOUNDING_OFFER_SHORT,
     GROUP_CLASSES_PATH,
     IN_PERSON_DAY,
     ONLINE_DAY,
     TRIAL_OFFER,
+    anyFoundingPlaces,
     firstLessonDayPhrase,
 } from '../data/groupClassLaunch';
 
@@ -69,6 +71,14 @@ const AnnouncementBar = () => {
                 </span>
 
                 <span className="announcement__offer">{TRIAL_OFFER}</span>
+
+                {/* The bar is a fixed height, so the founding pill is the first
+                    thing dropped when the row runs out of room. */}
+                {anyFoundingPlaces() && (
+                    <span className="announcement__offer announcement__offer--founding">
+                        {FOUNDING_OFFER_SHORT}
+                    </span>
+                )}
 
                 <span className="announcement__countdown">
                     <span className="announcement__pulse" aria-hidden="true"></span>

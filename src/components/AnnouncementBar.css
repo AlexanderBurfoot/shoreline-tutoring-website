@@ -190,6 +190,12 @@
         display: none;
     }
 
+    /* The founding pill goes too, rather than let the two rows overflow the
+       bar's fixed height; the pricing and class pages still carry the offer. */
+    .announcement__offer--founding {
+        display: none;
+    }
+
     .announcement__headline {
         font-size: var(--text-base);
     }

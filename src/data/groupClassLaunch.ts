@@ -213,6 +213,25 @@ export const TERM_PRICE = dollars(TERM_PRICE_DOLLARS);
 /** The founding term price, e.g. "$1,500". */
 export const FOUNDING_TERM_PRICE = dollars(FOUNDING_TERM_PRICE_DOLLARS);
 
+/** What a founding place saves against the term rate, e.g. "$500". */
+export const FOUNDING_SAVING = dollars(TERM_PRICE_DOLLARS - FOUNDING_TERM_PRICE_DOLLARS);
+
+/*
+ * The founding offer in words. Every surface uses one of these three, so the
+ * price, the number of places and the price they replace never drift apart:
+ *  - FOUNDING_OFFER_LINE for a sentence, and it reads correctly mid-sentence.
+ *  - FOUNDING_OFFER_SHORT where only a phrase fits, such as a pill or a chip.
+ *  - FOUNDING_SAVING_BADGE for the label above a price.
+ */
+export const FOUNDING_OFFER_LINE =
+    `the first ${FOUNDING_PLACES_PER_CLASS} students in each class pay ${FOUNDING_TERM_PRICE} ` +
+    `for ${TERM_LABEL} instead of ${TERM_PRICE}`;
+
+export const FOUNDING_OFFER_SHORT =
+    `${FOUNDING_TERM_PRICE} a term for the first ${FOUNDING_PLACES_PER_CLASS} per class`;
+
+export const FOUNDING_SAVING_BADGE = `Founding offer · save ${FOUNDING_SAVING}`;
+
 /** Paying weekly for the whole term, e.g. "$2,500", which the term rate is compared with. */
 export const WEEKLY_TERM_TOTAL = dollars(SESSION_PRICE_DOLLARS * TERM_PAID_SESSIONS);
 

@@ -10,9 +10,9 @@
 import {
     COURSES,
     FACILITY_HIGHLIGHTS,
+    FOUNDING_OFFER_LINE,
     FOUNDING_OFFER_OPEN,
-    FOUNDING_PLACES_PER_CLASS,
-    FOUNDING_TERM_PRICE,
+    FOUNDING_SAVING,
     GROUP_CLASSES_PATH,
     GROUP_SCOPE_SUMMARY,
     IN_PERSON_DAY,
@@ -79,7 +79,7 @@ function hourlyAndBundleLines(): string {
 
 function groupPriceAnswer(): string {
     const founding = FOUNDING_OFFER_OPEN
-        ? ` The first ${FOUNDING_PLACES_PER_CLASS} students in each class pay ${FOUNDING_TERM_PRICE} for the term instead.`
+        ? ` As a founding offer, ${FOUNDING_OFFER_LINE}, a saving of ${FOUNDING_SAVING}.`
         : '';
     return (
         `Small-group classes are ${SESSION_PRICE} a session, or ${TERM_PRICE} for the ${TERM_LABEL} term of ` +

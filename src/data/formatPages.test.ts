@@ -20,20 +20,28 @@ const { groupHeroFacts } = await import('./formatPages');
 const priceOf = (courseId?: string) =>
     groupHeroFacts(courseId as never).find((fact) => fact.label === 'Price')?.value ?? '';
 
+/* The offer only reads as a discount if both prices and the number of places
+   are in the fact, so each is asserted rather than the sentence as a whole. */
+const OFFER_PARTS = ['$1,500', '$2,000', 'first 5 students in each class'];
+
 describe('groupHeroFacts', () => {
     it('shows the term rate on the page of a class whose founding places are gone', () => {
         expect(priceOf(FULL_COURSE)).toContain('$2,000 for the term');
-        expect(priceOf(FULL_COURSE)).not.toContain('Founding');
+        expect(priceOf(FULL_COURSE)).not.toContain('$1,500');
     });
 
     it('still offers founding places on the pages of classes that have them', () => {
         for (const course of COURSES.filter((candidate) => candidate.id !== FULL_COURSE)) {
-            expect(priceOf(course.id), course.name).toContain('Founding places $1,500');
+            for (const part of OFFER_PARTS) {
+                expect(priceOf(course.id), course.name).toContain(part);
+            }
         }
     });
 
     it('offers founding places on the page covering every course while any class has them', () => {
-        expect(priceOf()).toContain('Founding places $1,500');
+        for (const part of OFFER_PARTS) {
+            expect(priceOf()).toContain(part);
+        }
     });
 
     it('gives every page the same class times', () => {
