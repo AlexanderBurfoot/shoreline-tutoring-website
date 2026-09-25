@@ -114,7 +114,7 @@ export const biologyCellsEntries: StudyEntry[] = [
         id: 'bio-enzyme-factors',
         subject: 'biology',
         question: 'What affects the rate of an enzyme reaction?',
-        aliases: ['enzyme rate', 'enzyme temperature', 'enzyme ph', 'substrate concentration', 'denaturation'],
+        aliases: ['enzyme rate', 'enzyme temperature', 'enzyme ph', 'substrate concentration'],
         answer:
             'Rate rises with temperature until the enzyme denatures and the active site loses its shape, so the graph ' +
             'peaks then falls sharply. ' +
@@ -125,7 +125,7 @@ export const biologyCellsEntries: StudyEntry[] = [
         id: 'bio-enzyme-models',
         subject: 'biology',
         question: 'What are the lock and key and induced fit models?',
-        aliases: ['lock and key', 'induced fit', 'enzyme specificity', 'active site shape', 'inhibitor'],
+        aliases: ['lock and key', 'induced fit', 'active site shape', 'inhibitor'],
         answer:
             'Lock and key says the substrate fits an active site of matching shape. ' +
             'Induced fit refines it: the active site moulds slightly around the substrate as it binds, which explains ' +

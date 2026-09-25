@@ -273,4 +273,104 @@ export const englishExamsEntries: StudyEntry[] = [
             'so the reader supplies what the narrator cannot say, a technique I took from the fragmented closing of ' +
             'the prescribed text.',
     },
+    {
+        id: 'eng-module-b-approach',
+        subject: 'english',
+        question: 'How do I approach a Module B critical study?',
+        aliases: ['module b approach', 'critical study of literature', 'writing about textual integrity'],
+        answer:
+            'Argue a position on the text value, supported by close analysis of how its parts work together. It ' +
+            'rewards knowing a few passages extremely well rather than the whole text loosely, and it expects an ' +
+            'informed personal judgement rather than a survey of critics.',
+    },
+    {
+        id: 'eng-common-module-approach',
+        subject: 'english',
+        question: 'How do I approach the Common Module?',
+        aliases: ['common module approach', 'texts and human experiences', 'writing about human experiences'],
+        answer:
+            'Write about what the text reveals about human behaviour, and about the anomalies and paradoxes in it, ' +
+            'rather than about the plot. The strongest responses treat the experience as complicated: the text shows ' +
+            'both the comfort and the cost of something.',
+    },
+    {
+        id: 'eng-analysing-structure-of-argument',
+        subject: 'english',
+        question: 'How do I analyse the structure of an argument in a text?',
+        aliases: ['analysing an argument structure', 'how an argument is built', 'ordering of reasons in a text'],
+        answer:
+            'Label what each paragraph does, then look at the order: what is conceded early to earn trust, where the ' +
+            'strongest evidence sits, and what is left to the end to be remembered. The sequence is a strategy, and ' +
+            'naming it is analysis.',
+    },
+    {
+        id: 'eng-writing-about-context-pitfall',
+        subject: 'english',
+        question: 'Where should background about the period go in an essay?',
+        aliases: ['how much context in an essay', 'context paragraph pitfall', 'using context well'],
+        answer:
+            'Only what changes how a passage reads, and inside the analysis rather than in a block at the start. A ' +
+            'sentence of context that explains why an image would unsettle its first audience is worth a paragraph of ' +
+            'background that could preface any essay.',
+    },
+    {
+        id: 'eng-comparing-form',
+        subject: 'english',
+        question: 'How do I compare texts in different forms?',
+        aliases: ['comparing a film and a novel', 'comparing different forms', 'cross form comparison'],
+        answer:
+            'Compare what each form can do with the shared idea rather than listing differences. A novel can render ' +
+            'thought directly and a film cannot, so a film shows interiority through performance and framing, and ' +
+            'that constraint is the point of the comparison.',
+    },
+    {
+        id: 'eng-quotation-bank',
+        subject: 'english',
+        question: 'How do I build a quotation bank?',
+        aliases: ['quotation bank', 'organising quotes by theme', 'learning quotes for an essay'],
+        answer:
+            'Group short quotations by idea rather than by chapter, five or six per idea, each with the technique and ' +
+            'a one-line note on effect. Organised that way, an unexpected question can be answered by recombining ' +
+            'what you already know.',
+    },
+    {
+        id: 'eng-planning-under-time',
+        subject: 'english',
+        question: 'How do I plan an English response in five minutes?',
+        aliases: ['planning an english response quickly', 'essay plan in five minutes', 'exam planning english'],
+        answer:
+            'Write the thesis as one sentence answering the question, then three paragraph ideas in order, each with ' +
+            'the quotation you will start from. Nothing else. That is enough to keep an argument straight for forty ' +
+            'minutes.',
+    },
+    {
+        id: 'eng-improving-a-draft',
+        subject: 'english',
+        question: 'How do I improve a draft essay?',
+        aliases: ['improving an essay draft', 'redrafting an essay', 'what to fix first in a draft'],
+        answer:
+            'Check the argument first: does each paragraph advance the thesis, and does the thesis answer the ' +
+            'question. Then evidence, then expression. Polishing sentences in a paragraph that should be cut is the ' +
+            'commonest waste of redrafting time.',
+    },
+    {
+        id: 'eng-avoiding-technique-lists',
+        subject: 'english',
+        question: 'How do I stop my essay becoming a list of techniques?',
+        aliases: ['avoiding a technique list', 'stop listing devices'],
+        answer:
+            'Start each sentence with the idea rather than the device, so the technique arrives as evidence for a ' +
+            'claim. If a sentence would still make sense with a different technique named, it is identification ' +
+            'rather than analysis.',
+    },
+    {
+        id: 'eng-writing-with-authority',
+        subject: 'english',
+        question: 'How do I write with authority about a text?',
+        aliases: ['writing with authority', 'confident essay voice', 'sounding convincing in an essay'],
+        answer:
+            'Make claims and support them, rather than hedging with seems to or perhaps. Authority comes from ' +
+            'precision: naming exactly what a text does, in its own detail, is more convincing than any amount of ' +
+            'emphatic language.',
+    },
 ];
