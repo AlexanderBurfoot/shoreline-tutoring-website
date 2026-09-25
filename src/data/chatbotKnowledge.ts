@@ -36,6 +36,7 @@ import {
 import { bundlePricing, hourlyPricing, LESSONS_PER_BUNDLE, perLessonRate } from './pricingData';
 import { faqs } from './faqData';
 import { hscGuideEntries } from './hscGuide';
+import { hscPathwayEntries } from './hscPathways';
 import { studyEntries, subjectLinkLabel, subjectPath } from './studyReference';
 import { selectionProgramEntries } from './selectionPrograms';
 import { studySkillEntries } from './studySkills';
@@ -220,7 +221,7 @@ const STUDY_ENTRIES: KnowledgeEntry[] = studyEntries.map((entry) => ({
  * How to study, which belongs to no single subject and so offers no subject
  * page. Quoted exactly as written in src/data/studySkills.
  */
-const HSC_GUIDE_ENTRIES: KnowledgeEntry[] = hscGuideEntries.map((entry) => ({
+const HSC_GUIDE_ENTRIES: KnowledgeEntry[] = [...hscGuideEntries, ...hscPathwayEntries].map((entry) => ({
     id: entry.id,
     question: entry.question,
     keywords: entry.aliases,

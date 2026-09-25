@@ -165,4 +165,15 @@ export const englishMovementEntries: StudyEntry[] = [
             'and no sentence that could be cut. A long word used loosely reads as less sophisticated than a plain one ' +
             'used exactly.',
     },
+    {
+        id: 'eng-indigenous-protocols',
+        subject: 'english',
+        question: 'How do I study Aboriginal and Torres Strait Islander texts respectfully?',
+        aliases: ['cultural protocols', 'studying indigenous texts', 'respectful study of aboriginal material'],
+        answer:
+            'Name the author and their nation or community rather than treating the work as generic, use the terms ' +
+            'they use, and recognise that some knowledge is held by particular people and not for general retelling. ' +
+            'Where a text carries cultural restrictions, the teacher or a community source is the right guide rather ' +
+            'than the internet.',
+    },
 ];

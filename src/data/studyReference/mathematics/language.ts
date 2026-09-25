@@ -355,4 +355,14 @@ export const mathematicsLanguageEntries: StudyEntry[] = [
             'squares to find the hypotenuse and subtract to find a shorter side, and identify the hypotenuse before ' +
             'deciding which.',
     },
+    {
+        id: 'maths-graphing-software',
+        subject: 'mathematics',
+        question: 'How do I use graphing software such as Desmos or GeoGebra?',
+        aliases: ['desmos', 'geogebra', 'graphing software', 'graphing calculator app'],
+        answer:
+            'Type the function and adjust it to see what each parameter does, which makes transformations obvious in ' +
+            'seconds. Use it to check work and build intuition rather than to produce answers, since examinations are ' +
+            'sat without it, and sketch by hand afterwards to confirm you could.',
+    },
 ];

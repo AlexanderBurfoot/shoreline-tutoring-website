@@ -127,4 +127,14 @@ export const chemistryPracticalInvestigationEntries: StudyEntry[] = [
             'and draw the line of best fit, then read the unknown from it. A sample above the linear range must be ' +
             'diluted and the factor applied afterwards.',
     },
+    {
+        id: 'chem-spreadsheet-for-data',
+        subject: 'chemistry',
+        question: 'How do I use a spreadsheet for experimental data?',
+        aliases: ['spreadsheet for science data', 'using excel for a depth study', 'plotting data in a spreadsheet'],
+        answer:
+            'Put raw readings in columns, calculate derived quantities in their own column with a formula rather than ' +
+            'by hand, then chart the two columns you want to relate and add a trendline with its equation displayed. ' +
+            'Keep the raw data untouched so a mistake in processing can be undone.',
+    },
 ];
