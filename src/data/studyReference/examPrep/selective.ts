@@ -104,7 +104,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-number-reasoning',
         subject: 'selective-high-school',
         question: 'What number skills does the Selective test assume?',
-        aliases: ['selective number', 'year 6 number', 'fractions decimals percentages test', 'ratio year 6'],
+        aliases: ['selective number', 'year 6 number', 'fractions decimals percentages test', 'ratio year 6', 'what maths topics are tested', 'which maths is on the test'],
         answer:
             'Fluent work with fractions, decimals, percentages, ratio and rate, negative numbers and simple powers. ' +
             'Questions rarely ask for a calculation alone: they wrap it in a situation, so the skill is choosing the ' +
@@ -261,7 +261,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-how-scores-work',
         subject: 'selective-high-school',
         question: 'How is a Selective test placement decided?',
-        aliases: ['how placement is decided', 'school choice and score', 'entry score'],
+        aliases: ['how placement is decided', 'school choice and score', 'entry score', 'how the test is scored', 'placement score'],
         answer:
             'A placement score is formed from the test results, weighted with school assessment, and offers are made ' +
             'school by school in order of score against the places available. Each school therefore has its own ' +
@@ -271,7 +271,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-choosing-schools',
         subject: 'selective-high-school',
         question: 'How should school preferences be ordered?',
-        aliases: ['ordering school preferences', 'choosing which schools to list', 'preference strategy'],
+        aliases: ['ordering school preferences', 'choosing which schools to list', 'preference strategy', 'how many schools to list', 'listing preferences'],
         answer:
             'In genuine order of preference, since an offer at a higher preference removes the lower ones. Consider ' +
             'travel time, the programs offered and the fit for the student, not only the entry score.',
@@ -280,7 +280,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-practice-paper-use',
         subject: 'selective-high-school',
         question: 'How should practice papers be used?',
-        aliases: ['using practice papers', 'timed practice', 'marking a practice test'],
+        aliases: ['using practice papers', 'timed practice', 'marking a practice test', 'practice test schedule', 'how many practice tests'],
         answer:
             'Under proper time, then marked carefully, with every wrong answer explained before the next paper. Doing ' +
             'more papers without reviewing them practises the mistakes rather than removing them.',

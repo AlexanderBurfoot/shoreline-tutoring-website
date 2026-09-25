@@ -140,7 +140,7 @@ export const selectivePrepEntries: StudyEntry[] = [
         id: 'sel-test-day-logistics',
         subject: 'selective-high-school',
         question: 'What happens on Selective test day?',
-        aliases: ['test day logistics', 'what to bring to the test', 'test day routine'],
+        aliases: ['test day logistics', 'what to bring to the test', 'test day routine', 'what to bring', 'what to eat before a test', 'eat', 'breakfast before a test'],
         answer:
             'Arrive early with the authority to attend advice, identification, pencils, an eraser and water. Sessions ' +
             'run one after another with short breaks, so bring something to eat and expect the day to be longer than ' +
@@ -154,5 +154,45 @@ export const selectivePrepEntries: StudyEntry[] = [
         answer:
             'Put it down and return to normal school work, since nothing more can be changed. Results and offers ' +
             'arrive months later, and in the meantime the schoolwork that continues is what any school will build on.',
+    },
+    {
+        id: 'sel-appeals',
+        subject: 'selective-high-school',
+        question: 'Can a Selective test result be appealed?',
+        aliases: ['appeal a result', 'challenge a test result', 'review of a placement decision'],
+        answer:
+            'The mark itself is not open to appeal, since every paper is marked the same way. What can be raised is a ' +
+            'problem affecting the sitting, through the illness and misadventure process, and that has to be lodged ' +
+            'with the department within its stated window rather than after results.',
+    },
+    {
+        id: 'sel-disability-provisions',
+        subject: 'selective-high-school',
+        question: 'Are there provisions for a student with a disability or medical condition?',
+        aliases: ['disability provisions', 'special provisions', 'extra time in the test', 'adjustments for a test'],
+        answer:
+            'Yes. Adjustments such as extra time, rest breaks, a reader or assistive technology can be requested, ' +
+            'with supporting documentation, as part of the application rather than on the day. Apply for them early, ' +
+            'because approval takes time.',
+    },
+    {
+        id: 'sel-reading-speed',
+        subject: 'selective-high-school',
+        question: 'How do I read faster without losing accuracy?',
+        aliases: ['improve reading speed', 'reading faster', 'reading stamina for a test'],
+        answer:
+            'Read more, daily, in longer stretches than the test requires, so thirty minutes of dense text stops ' +
+            'feeling long. Practise reading a passage once at a steady pace and then answering, rather than ' +
+            'rereading, since rereading is what actually costs the time.',
+    },
+    {
+        id: 'sel-official-information',
+        subject: 'selective-high-school',
+        question: 'Where do I check the official test details?',
+        aliases: ['official information', 'where to check dates', 'department of education test information'],
+        answer:
+            'The NSW Department of Education publishes the dates, the application window, the participating schools ' +
+            'and the current test structure each year, and those details change. Anything time-sensitive should be ' +
+            'confirmed there rather than from a tutoring site or a forum.',
     },
 ];

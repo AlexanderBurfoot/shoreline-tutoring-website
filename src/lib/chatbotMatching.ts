@@ -203,15 +203,20 @@ function indexOf(entry: KnowledgeEntry): EntryIndex {
     }
 
     const normalisedKeywords = entry.keywords.map(normalise);
+    const severalWords = normalisedKeywords
+        .filter((keyword) => keyword.includes(' '))
+        .map(tokenise);
+
     const index: EntryIndex = {
         tokens: new Set([
             ...tokenise(entry.question),
             ...normalisedKeywords.filter((keyword) => !keyword.includes(' ')).flatMap(tokenise),
+            /* A keyword such as "what to bring" is several words written down but
+               only one that carries meaning. Counting it as that word keeps it
+               usable; discarding it lost the keyword entirely. */
+            ...severalWords.filter((words) => words.length === 1).flat(),
         ]),
-        phrases: normalisedKeywords
-            .filter((keyword) => keyword.includes(' '))
-            .map(tokenise)
-            .filter((words) => words.length > 1),
+        phrases: severalWords.filter((words) => words.length > 1),
     };
     entryIndexCache.set(entry, index);
     return index;

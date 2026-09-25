@@ -321,7 +321,7 @@ export const ocEnglishEntries: StudyEntry[] = [
         id: 'oc-test-nerves-oc',
         subject: 'oc-prep',
         question: 'How do I stay calm during the test?',
-        aliases: ['staying calm in a test', 'nerves for year 4', 'what if i get stuck'],
+        aliases: ['staying calm in a test', 'nerves for year 4', 'what if i get stuck', 'my child gets anxious', 'worried about the test', 'anxious', 'nervous'],
         answer:
             'Slow breathing for a few seconds, then start with a question you can do to get moving. Being stuck on ' +
             'one question is normal and costs nothing if you move on and come back.',

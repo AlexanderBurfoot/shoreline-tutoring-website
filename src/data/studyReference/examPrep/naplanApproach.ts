@@ -98,4 +98,44 @@ export const naplanApproachEntries: StudyEntry[] = [
             'raise those with the teacher. It describes one morning of work and is most useful as a prompt for a ' +
             'conversation.',
     },
+    {
+        id: 'nap-participation',
+        subject: 'naplan',
+        question: 'Is NAPLAN compulsory, and can a child be withdrawn?',
+        aliases: ['is naplan compulsory', 'withdrawing from naplan', 'exemption from naplan'],
+        answer:
+            'Participation is expected of all students in those year levels, but withdrawal is possible on religious ' +
+            'or philosophical grounds, and exemptions exist for some students with disability or limited English. ' +
+            'Both are arranged through the school in advance, in writing.',
+    },
+    {
+        id: 'nap-school-comparison',
+        subject: 'naplan',
+        question: 'How are schools compared using NAPLAN?',
+        aliases: ['comparing schools', 'my school website', 'school results naplan'],
+        answer:
+            'Results are published per school on the My School website alongside a measure of the socio-educational ' +
+            'background of its students, so schools are compared with statistically similar ones rather than raw ' +
+            'averages. A single cohort is small, so year-to-year movement is noisy.',
+    },
+    {
+        id: 'nap-what-results-cannot-tell',
+        subject: 'naplan',
+        question: 'What can NAPLAN results not tell me?',
+        aliases: ['limits of naplan results', 'what naplan does not measure', 'is naplan a measure of ability'],
+        answer:
+            'They measure a narrow band of literacy and numeracy on one morning, so they say nothing about effort, ' +
+            'creativity, science, the arts, or how a child is progressing against their own past work. They are most ' +
+            'useful for spotting one specific gap.',
+    },
+    {
+        id: 'nap-helping-with-writing',
+        subject: 'naplan',
+        question: 'How can I help my child with NAPLAN writing at home?',
+        aliases: ['helping with writing at home', 'practising writing with a parent', 'supporting naplan writing'],
+        answer:
+            'Ten minutes of writing to a prompt, two or three times a week, then read it together and pick one thing ' +
+            'to improve rather than correcting everything. Reading aloud what they wrote catches most punctuation ' +
+            'problems without a lesson.',
+    },
 ];

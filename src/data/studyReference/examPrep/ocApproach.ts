@@ -29,7 +29,7 @@ export const ocApproachEntries: StudyEntry[] = [
         id: 'oc-when-to-apply',
         subject: 'oc-prep',
         question: 'When is the OC test sat and when do we apply?',
-        aliases: ['when is the oc test', 'oc application timing', 'year 4 application'],
+        aliases: ['when is the oc test', 'oc application timing', 'year 4 application', 'when applications open', 'oc application dates'],
         answer:
             'Applications open in the first half of Year 4 and the test is sat later that year, with placement for ' +
             'Year 5. The application window is short and strictly enforced, so the date matters more than the ' +
@@ -115,7 +115,7 @@ export const ocApproachEntries: StudyEntry[] = [
         id: 'oc-showing-working',
         subject: 'oc-prep',
         question: 'Should I write anything down in a multiple-choice test?',
-        aliases: ['writing working in a multiple choice test', 'using the question booklet', 'rough working oc'],
+        aliases: ['writing working in a multiple choice test', 'using the question booklet', 'rough working oc', 'writing on the question booklet', 'rough working allowed', 'booklet', 'rough paper'],
         answer:
             'Yes, on the booklet or paper provided. Sketching a diagram, listing the information, or noting a first ' +
             'step prevents the errors that come from holding two steps in your head at once.',
@@ -284,5 +284,75 @@ export const ocApproachEntries: StudyEntry[] = [
             'Compare with something you know: a door is about 2 m tall, a large drink bottle holds about 1.5 L, and a ' +
             'bag of sugar is 1 kg. An estimate that is out by a factor of a thousand usually means the wrong unit was ' +
             'chosen.',
+    },
+    {
+        id: 'oc-places-and-schools',
+        subject: 'oc-prep',
+        question: 'How many Opportunity Class places are there, and which schools have them?',
+        aliases: ['how many oc places', 'which schools have oc classes', 'list of oc schools'],
+        answer:
+            'The number of places and the list of schools are set by the NSW Department of Education and change from ' +
+            'year to year, so check its current list rather than an older one. Places are limited and demand is ' +
+            'concentrated in particular areas.',
+    },
+    {
+        id: 'oc-appeals',
+        subject: 'oc-prep',
+        question: 'Can an Opportunity Class result be reviewed?',
+        aliases: ['appeal an oc result', 'review an oc placement', 'oc illness misadventure'],
+        answer:
+            'The mark is not open to appeal. A problem affecting the sitting itself, such as illness on the day, is ' +
+            'raised through the illness and misadventure process within the departments window, so it must be lodged ' +
+            'promptly rather than after offers.',
+    },
+    {
+        id: 'oc-reading-level',
+        subject: 'oc-prep',
+        question: 'What reading level does the OC test assume?',
+        aliases: ['reading level needed', 'how hard is the oc reading', 'difficulty of oc passages'],
+        answer:
+            'Passages run above average Year 4 level, including unfamiliar vocabulary, a poem, and non-fiction with ' +
+            'an argument in it. The comprehension asked for is inference and purpose rather than locating facts, ' +
+            'which is the part most students have to grow into.',
+    },
+    {
+        id: 'oc-reading-stamina',
+        subject: 'oc-prep',
+        question: 'How do I build reading stamina in a Year 4 student?',
+        aliases: ['reading stamina', 'concentrating for longer', 'building up reading endurance'],
+        answer:
+            'Longer sessions rather than more sessions: read for twenty minutes without interruption, then discuss ' +
+            'it. Mixing in non-fiction and poetry matters, because a student who only reads novels finds the other ' +
+            'passages much harder.',
+    },
+    {
+        id: 'oc-what-an-oc-class-is-like',
+        subject: 'oc-prep',
+        question: 'What is an Opportunity Class actually like?',
+        aliases: ['what happens in an oc class', 'what an oc class is like', 'oc class experience'],
+        answer:
+            'A Year 5 and 6 class of academically similar students, usually at a different school, working at greater ' +
+            'depth and pace with more independent and extension work. Most students find they are no longer the ' +
+            'strongest in the room, which is part of the point.',
+    },
+    {
+        id: 'oc-reading-the-result',
+        subject: 'oc-prep',
+        question: 'How do I read the OC result letter?',
+        aliases: ['reading the oc result', 'understanding the result letter', 'oc placement score explained'],
+        answer:
+            'It reports the placement score and the outcome, not a mark out of a hundred, and a score is only ' +
+            'meaningful against the cut-off for the schools listed. An unsuccessful result places the student on a ' +
+            'reserve list rather than ending the matter.',
+    },
+    {
+        id: 'oc-after-oc',
+        subject: 'oc-prep',
+        question: 'What happens after an Opportunity Class?',
+        aliases: ['what comes after oc', 'oc then selective', 'does oc help with selective'],
+        answer:
+            'Students return to the normal high school process, sitting the Selective High School Placement Test in ' +
+            'Year 6 like anyone else, with no automatic entry. Two years of extension work is useful preparation, but ' +
+            'the placement itself carries no advantage.',
     },
 ];

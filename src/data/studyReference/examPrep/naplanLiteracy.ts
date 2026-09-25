@@ -223,7 +223,7 @@ export const naplanLiteracyEntries: StudyEntry[] = [
         id: 'nap-writing-narrative-marking',
         subject: 'naplan',
         question: 'What does the narrative marking guide reward?',
-        aliases: ['narrative marking criteria', 'how narratives are scored', 'ideas and character marks'],
+        aliases: ['narrative marking criteria', 'how narratives are scored', 'ideas and character marks', 'writing criteria', 'how writing is marked'],
         answer:
             'Audience, text structure, ideas, character and setting, vocabulary, cohesion, paragraphing, sentence ' +
             'structure, punctuation and spelling, each scored separately. Spelling and punctuation carry real marks, ' +
