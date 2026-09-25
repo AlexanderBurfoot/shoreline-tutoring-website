@@ -308,13 +308,14 @@ export const ocEnglishEntries: StudyEntry[] = [
             'questions and return to them, because every question is worth the same.',
     },
     {
-        id: 'oc-test-multiple-choice',
+        id: 'oc-finished-early',
         subject: 'oc-prep',
-        question: 'How do I answer multiple choice questions well?',
-        aliases: ['multiple choice technique', 'best answer not just a good one', 'guessing on multiple choice'],
+        question: 'What should I do if I finish a section early?',
+        aliases: ['finished early', 'time left over in a test', 'what to check first'],
         answer:
-            'Answer in your head before reading the options, then find the closest. Eliminate what is clearly wrong, ' +
-            'and never leave a blank, since there is no penalty for a wrong answer.',
+            'Go back to the questions you marked, then check that every answer sits in the right row on the sheet, ' +
+            'then recheck anything you guessed. Rereading answers you were confident about is the least useful way to ' +
+            'spend the time.',
     },
     {
         id: 'oc-test-nerves-oc',

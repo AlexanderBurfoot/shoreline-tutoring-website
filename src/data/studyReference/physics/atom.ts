@@ -162,8 +162,8 @@ export const physicsAtomEntries: StudyEntry[] = [
     {
         id: 'phys-half-life-calcs',
         subject: 'physics',
-        question: 'How do I do a half-life calculation?',
-        aliases: ['half life calculation', 'how much is left', 'decay curve', 'number of half lives', 'activity'],
+        question: 'How much of a sample is left after several half-lives?',
+        aliases: ['how much is left', 'number of half lives', 'fraction remaining', 'halving repeatedly'],
         answer:
             'After n half-lives the remaining amount is the original divided by 2ⁿ, where n is the elapsed time ' +
             'divided by the half-life. ' +

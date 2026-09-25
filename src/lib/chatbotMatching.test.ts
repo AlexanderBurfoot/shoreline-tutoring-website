@@ -44,6 +44,18 @@ describe('findBestMatch', () => {
         expect(findBestMatch('   ???   ')).toBeNull();
     });
 
+    /* Students write these both ways, and until hyphens were split they were
+       different words, so half the bank was unreachable from the other spelling. */
+    it.each([
+        ['what is half life', 'what is half-life'],
+        ['what is break even', 'what is break-even'],
+        ['what is a z score', 'what is a z-score'],
+    ])('answers "%s" and "%s" from the same entry', (spaced, hyphenated) => {
+        const fromSpaced = findBestMatch(spaced)?.entry.id;
+        expect(fromSpaced).toBeDefined();
+        expect(findBestMatch(hyphenated)?.entry.id).toBe(fromSpaced);
+    });
+
     /* A keyword phrase used to lift an entry to near certainty wherever its
        letters appeared, so "differentiate x" was answered from the entry keyed
        on "e(x)" and a pH question from the one keyed on "mol per litre". Both

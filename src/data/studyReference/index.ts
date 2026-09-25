@@ -13,6 +13,7 @@ import { examPrepEntries } from './examPrep';
 import { englishEntries } from './english';
 import { mathematicsEntries } from './mathematics';
 import { physicsEntries } from './physics';
+import { workedExampleEntries } from './workedExamples';
 import type { StudyEntry, StudySubject } from './types';
 import { SUBJECTS_PATH } from '../../lib/site';
 
@@ -27,6 +28,7 @@ export const studyEntries: StudyEntry[] = [
     ...economicsEntries,
     ...businessEntries,
     ...examPrepEntries,
+    ...workedExampleEntries,
 ];
 
 /** The page to send a student to after an answer, by subject. */

@@ -146,12 +146,25 @@ function singularise(word: string): string {
  * Single characters are kept: in this bank "g", "h" and "s" are the difference
  * between ΔG, ΔH and ΔS. On their own they are weak signals, which the weighting
  * further down already accounts for.
+ *
+ * A hyphen is split only after the synonym lookup, so "face-to-face" is still
+ * recognised whole while "half-life" and "break-even" become the same words a
+ * student types when they leave the hyphen out.
  */
 export function tokenise(text: string): string[] {
     return normalise(text)
         .split(' ')
         .filter((word) => word.length > 0 && !STOP_WORDS.has(word))
-        .map((word) => SYNONYMS.get(word) ?? singularise(word));
+        .flatMap((word) => {
+            const folded = SYNONYMS.get(word);
+            if (folded) {
+                return [folded];
+            }
+            return word
+                .split('-')
+                .filter((part) => part.length > 0 && !STOP_WORDS.has(part))
+                .map(singularise);
+        });
 }
 
 /**
