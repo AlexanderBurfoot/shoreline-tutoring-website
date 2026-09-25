@@ -295,7 +295,7 @@ export const naplanNumeracyEntries: StudyEntry[] = [
     {
         id: 'nap-patterns-shapes',
         subject: 'naplan',
-        question: 'How do I continue a shape pattern?',
+        question: 'How many matchsticks will the next shape need?',
         aliases: ['shape pattern', 'growing pattern', 'matchstick pattern'],
         answer:
             'Count the number of items at each stage and find the difference, then check whether the same difference ' +

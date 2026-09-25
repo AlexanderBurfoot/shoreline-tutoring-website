@@ -2,6 +2,8 @@
 import { naplanEntries } from './naplan';
 import { naplanLiteracyEntries } from './naplanLiteracy';
 import { naplanNumeracyEntries } from './naplanNumeracy';
+import { ocEnglishEntries } from './ocEnglish';
+import { ocMathsEntries } from './ocMaths';
 import { ocPrepEntries } from './ocPrep';
 import { selectiveEntries } from './selective';
 import { selectiveReadingEntries } from './selectiveReading';
@@ -17,6 +19,8 @@ export const examPrepEntries: StudyEntry[] = [
     ...selectiveReadingEntries,
     ...selectiveWritingEntries,
     ...ocPrepEntries,
+    ...ocMathsEntries,
+    ...ocEnglishEntries,
     ...naplanEntries,
     ...naplanNumeracyEntries,
     ...naplanLiteracyEntries,

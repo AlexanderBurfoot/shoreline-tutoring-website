@@ -75,7 +75,7 @@ export const ocPrepEntries: StudyEntry[] = [
         id: 'oc-shapes-space',
         subject: 'oc-prep',
         question: 'What shape and space questions appear in the OC test?',
-        aliases: ['oc shapes', 'nets year 4', 'symmetry oc', 'position and direction', 'grid references'],
+        aliases: ['oc shapes', 'nets year 4', 'symmetry oc', 'grid references'],
         answer:
             'Naming and describing 2D and 3D shapes, symmetry, nets, grid references and directions, and simple ' +
             'transformations. ' +
@@ -96,7 +96,7 @@ export const ocPrepEntries: StudyEntry[] = [
         id: 'oc-logical-deduction',
         subject: 'oc-prep',
         question: 'How do I solve deduction puzzles?',
-        aliases: ['deduction puzzle', 'logic grid', 'who owns what', 'oc thinking skills', 'clues puzzle'],
+        aliases: ['logic grid', 'who owns what', 'oc thinking skills', 'clues puzzle'],
         answer:
             'Draw a grid with the categories along each side, then mark each clue as a yes or a no. ' +
             'Each yes rules out the rest of that row and column. ' +

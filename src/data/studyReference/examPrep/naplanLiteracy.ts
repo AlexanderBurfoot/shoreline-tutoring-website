@@ -20,7 +20,7 @@ export const naplanLiteracyEntries: StudyEntry[] = [
     {
         id: 'nap-reading-locating',
         subject: 'naplan',
-        question: 'How do I find a detail quickly in a passage?',
+        question: 'Where in the text should I look for the answer?',
         aliases: ['locating a detail', 'scanning for information', 'finding the answer in the text'],
         answer:
             'Take a distinctive word from the question, then scan for it or a synonym rather than rereading from the ' +
