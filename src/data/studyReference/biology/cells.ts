@@ -178,7 +178,7 @@ export const biologyCellsEntries: StudyEntry[] = [
         id: 'bio-organelles-detail',
         subject: 'biology',
         question: 'What do the endoplasmic reticulum and Golgi do?',
-        aliases: ['endoplasmic reticulum', 'golgi', 'lysosome', 'vesicle', 'protein processing'],
+        aliases: ['endoplasmic reticulum', 'golgi', 'lysosome', 'vesicle', 'protein processing', 'organelle', 'organelles'],
         answer:
             'Rough endoplasmic reticulum carries ribosomes and folds newly made proteins; smooth ER makes lipids. ' +
             'The Golgi modifies, packages and labels those products into vesicles for delivery. ' +

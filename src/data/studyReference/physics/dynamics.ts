@@ -142,7 +142,7 @@ export const physicsDynamicsEntries: StudyEntry[] = [
         id: 'phys-energy-conservation',
         subject: 'physics',
         question: 'How do I use conservation of energy in a problem?',
-        aliases: ['conservation of energy', 'energy transfer', 'kinetic to potential', 'pendulum energy', 'roller coaster'],
+        aliases: ['conservation of energy', 'energy transfer', 'kinetic to potential', 'pendulum energy', 'roller coaster', 'mechanical energy', 'kinetic plus potential'],
         answer:
             'Total energy before equals total energy after, provided you account for losses. ' +
             'For a falling or swinging object, mgh at the top equals ½mv² at the bottom, which gives v = √(2gh) with ' +

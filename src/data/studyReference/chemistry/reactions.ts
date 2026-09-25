@@ -146,7 +146,7 @@ export const chemistryReactionsEntries: StudyEntry[] = [
         id: 'chem-electrode-potentials',
         subject: 'chemistry',
         question: 'How do I use standard electrode potentials?',
-        aliases: ['standard electrode potential', 'e cell', 'reduction potential table', 'spontaneous redox'],
+        aliases: ['standard electrode potential', 'e cell', 'reduction potential table', 'spontaneous redox', 'electrochemical series', 'standard potential table'],
         answer:
             'The data sheet tabulates standard reduction potentials, written E° or ε. ' +
             'The more positive half-reaction runs forward as reduction; the other is reversed, which reverses the ' +

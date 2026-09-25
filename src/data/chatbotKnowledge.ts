@@ -36,6 +36,7 @@ import {
 import { bundlePricing, hourlyPricing, LESSONS_PER_BUNDLE, perLessonRate } from './pricingData';
 import { faqs } from './faqData';
 import { studyEntries, subjectLinkLabel, subjectPath } from './studyReference';
+import { studySkillEntries } from './studySkills';
 import { subjects } from './subjectData';
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, SUBJECTS_PATH } from '../lib/site';
 
@@ -213,10 +214,22 @@ const STUDY_ENTRIES: KnowledgeEntry[] = studyEntries.map((entry) => ({
     link: { label: subjectLinkLabel(entry.subject), href: subjectPath(entry.subject) },
 }));
 
+/**
+ * How to study, which belongs to no single subject and so offers no subject
+ * page. Quoted exactly as written in src/data/studySkills.
+ */
+const STUDY_SKILL_ENTRIES: KnowledgeEntry[] = studySkillEntries.map((entry) => ({
+    id: entry.id,
+    question: entry.question,
+    keywords: entry.aliases,
+    answer: entry.answer,
+}));
+
 export const knowledgeEntries: KnowledgeEntry[] = [
     ...ASSISTANT_ENTRIES,
     ...FAQ_ENTRIES,
     ...STUDY_ENTRIES,
+    ...STUDY_SKILL_ENTRIES,
 ];
 
 /** Just the study answers, for the chat's "what can you help with" suggestions. */

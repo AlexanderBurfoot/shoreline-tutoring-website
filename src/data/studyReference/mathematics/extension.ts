@@ -21,7 +21,7 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
         id: 'maths-ext-proof-contradiction',
         subject: 'mathematics',
         question: 'What is proof by contradiction?',
-        aliases: ['proof by contradiction', 'contrapositive', 'counterexample', 'irrational proof'],
+        aliases: ['proof by contradiction', 'contrapositive', 'counterexample', 'irrational proof', 'conjecture', 'disproving a statement'],
         answer:
             'Assume the opposite of what you want to prove, then show it forces an impossibility. ' +
             'The classic is √2 being irrational: assuming it equals a fraction in lowest terms leads to both parts ' +

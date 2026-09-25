@@ -103,7 +103,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-line-equations',
         subject: 'mathematics',
         question: 'What are the gradient, midpoint and distance formulas?',
-        aliases: ['gradient formula', 'midpoint', 'distance formula', 'equation of a line', 'y = mx + b'],
+        aliases: ['gradient formula', 'midpoint', 'distance formula', 'equation of a line', 'y = mx + b', 'gradient intercept form'],
         answer:
             'Gradient m = (y₂ − y₁)/(x₂ − x₁), midpoint = ((x₁+x₂)/2, (y₁+y₂)/2), and distance = √((x₂−x₁)² + (y₂−y₁)²). ' +
             'A line is y = mx + b, or y − y₁ = m(x − x₁) when you have a point and a gradient.',

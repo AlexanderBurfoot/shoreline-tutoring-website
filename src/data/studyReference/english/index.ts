@@ -3,6 +3,7 @@ import { englishCriticalEntries } from './critical';
 import { englishExamsEntries } from './exams';
 import { englishLanguageEntries } from './language';
 import { englishModulesEntries } from './modules';
+import { englishMovementEntries } from './movements';
 import { englishPoetryEntries } from './poetry';
 import { englishSkillsEntries } from './skills';
 import { englishTechniquesEntries } from './techniques';
@@ -17,6 +18,7 @@ export const englishEntries: StudyEntry[] = [
     ...englishCriticalEntries,
     ...englishLanguageEntries,
     ...englishPoetryEntries,
+    ...englishMovementEntries,
     ...englishExamsEntries,
     ...englishModulesEntries,
     ...englishSkillsEntries,
