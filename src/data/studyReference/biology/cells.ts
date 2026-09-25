@@ -30,7 +30,7 @@ export const biologyCellsEntries: StudyEntry[] = [
         id: 'bio-cell-structure',
         subject: 'biology',
         question: 'What do the parts of a cell do?',
-        aliases: ['cell organelles', 'mitochondria', 'ribosome', 'prokaryote eukaryote', 'cell membrane'],
+        aliases: ['cell organelles', 'mitochondria', 'ribosome', 'prokaryote eukaryote'],
         answer:
             'The nucleus holds DNA, mitochondria release energy as ATP, ribosomes build proteins, and the membrane ' +
             'controls what enters and leaves. Plant cells add a cell wall, chloroplasts and a large vacuole. ' +
@@ -188,7 +188,7 @@ export const biologyCellsEntries: StudyEntry[] = [
         id: 'bio-cell-membrane-structure',
         subject: 'biology',
         question: 'What is the fluid mosaic model?',
-        aliases: ['fluid mosaic', 'phospholipid bilayer', 'membrane proteins', 'selectively permeable', 'cholesterol membrane'],
+        aliases: ['fluid mosaic', 'phospholipid bilayer', 'membrane proteins', 'selectively permeable', 'cholesterol membrane', 'membrane', 'cell membrane'],
         answer:
             'The membrane is a double layer of phospholipids with water-attracting heads out and water-repelling ' +
             'tails in, studded with proteins that can drift within it. ' +

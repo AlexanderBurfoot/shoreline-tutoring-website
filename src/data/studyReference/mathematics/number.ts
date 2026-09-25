@@ -154,4 +154,14 @@ export const mathematicsNumberEntries: StudyEntry[] = [
             'Check the angle mode before trigonometry. ' +
             'Keep full accuracy in memory and round only the final answer.',
     },
+    {
+        id: 'maths-recurring-decimals',
+        subject: 'mathematics',
+        question: 'What is a recurring decimal?',
+        aliases: ['recurring decimal', 'repeating decimal', 'dot over a decimal', 'converting a recurring decimal'],
+        answer:
+            'A decimal whose digits repeat forever, written with a dot or bar over the repeating part, as in 0.3̇ for ' +
+            'a third. Every fraction gives either a terminating or a recurring decimal, which is why a decimal that ' +
+            'does neither, such as π, cannot be written as a fraction.',
+    },
 ];

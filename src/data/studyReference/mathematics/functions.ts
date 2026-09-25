@@ -316,4 +316,14 @@ export const mathematicsFunctionsEntries: StudyEntry[] = [
             'horizontally and in the opposite direction, so y = f(x + 2) moves left by two. Multiplication inside ' +
             'also compresses rather than stretches.',
     },
+    {
+        id: 'maths-interval-notation',
+        subject: 'mathematics',
+        question: 'What is interval notation?',
+        aliases: ['interval notation', 'square and round brackets', 'writing a domain'],
+        answer:
+            'A way of writing a set of values: a square bracket includes the endpoint and a round bracket excludes ' +
+            'it, so [2, 5) means from 2 up to but not including 5. Infinity always takes a round bracket, since it is ' +
+            'never reached.',
+    },
 ];

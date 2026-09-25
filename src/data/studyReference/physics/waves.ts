@@ -89,7 +89,7 @@ export const physicsWavesEntries: StudyEntry[] = [
         id: 'phys-standing-waves-pipes',
         subject: 'physics',
         question: 'How do standing waves work in strings and pipes?',
-        aliases: ['standing wave', 'harmonics', 'open and closed pipe', 'fundamental frequency', 'nodes antinodes', 'resonance frequency'],
+        aliases: ['standing wave', 'harmonics', 'open and closed pipe', 'fundamental frequency', 'nodes antinodes', 'resonance frequency', 'node', 'antinode'],
         answer:
             'A string or open pipe supports every harmonic, with λ = 2L/n. ' +
             'A closed pipe has a node at the closed end and an antinode at the open one, so it supports only odd ' +

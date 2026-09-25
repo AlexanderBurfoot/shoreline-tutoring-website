@@ -30,7 +30,7 @@ export const biologyNonInfectiousEntries: StudyEntry[] = [
         id: 'bio-epidemiology-study',
         subject: 'biology',
         question: 'What are the types of epidemiological study?',
-        aliases: ['epidemiological study', 'cohort study', 'case control', 'cross sectional', 'correlation causation'],
+        aliases: ['epidemiological study', 'cohort study', 'case control', 'cross sectional', 'correlation causation', 'epidemiology', 'studying disease in a population'],
         answer:
             'A descriptive study reports patterns, an analytical study tests a hypothesis, and an intervention study ' +
             'changes something and measures the effect. Cohort studies follow groups forward; case-control studies ' +

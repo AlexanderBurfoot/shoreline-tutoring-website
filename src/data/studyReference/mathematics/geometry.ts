@@ -138,7 +138,7 @@ export const mathematicsGeometryEntries: StudyEntry[] = [
         id: 'maths-circle-geometry',
         subject: 'mathematics',
         question: 'What are the circle geometry results?',
-        aliases: ['circle geometry', 'angle at the centre', 'angles in the same segment', 'cyclic quadrilateral'],
+        aliases: ['circle geometry', 'angle at the centre', 'angles in the same segment', 'cyclic quadrilateral', 'chord', 'tangent and radius'],
         answer:
             'The angle at the centre is twice the angle at the circumference on the same arc, angles in the same ' +
             'segment are equal, an angle in a semicircle is a right angle, opposite angles of a cyclic quadrilateral ' +

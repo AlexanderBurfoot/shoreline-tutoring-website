@@ -29,7 +29,7 @@ export const mathematicsProbabilityEntries: StudyEntry[] = [
         id: 'maths-correlation',
         subject: 'mathematics',
         question: 'What do correlation and the least-squares line mean?',
-        aliases: ['correlation coefficient', 'scatterplot', 'line of best fit', 'least squares', 'bivariate data', 'extrapolation'],
+        aliases: ['correlation coefficient', 'scatterplot', 'line of best fit', 'least squares', 'bivariate data', 'extrapolation', 'interpolation', 'predicting within the data'],
         answer:
             'The correlation coefficient r runs from −1 to 1: the sign gives the direction and the size the strength. ' +
             'The least-squares line is the line of best fit used to predict. ' +
@@ -91,7 +91,7 @@ export const mathematicsProbabilityEntries: StudyEntry[] = [
         id: 'maths-outliers-skew',
         subject: 'mathematics',
         question: 'How do I identify outliers and describe the shape of data?',
-        aliases: ['outlier', '1.5 iqr rule', 'skewed data', 'positively skewed', 'symmetric distribution', 'bimodal'],
+        aliases: ['outlier', '1.5 iqr rule', 'skewed data', 'positively skewed', 'symmetric distribution', 'bimodal', 'skewness', 'skew'],
         answer:
             'An outlier lies below Q₁ − 1.5 × IQR or above Q₃ + 1.5 × IQR. ' +
             'Data is positively skewed when the tail stretches right, which pulls the mean above the median, and ' +
