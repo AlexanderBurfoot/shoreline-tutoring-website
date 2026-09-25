@@ -68,7 +68,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-market-types',
         subject: 'economics',
         question: 'What are the types of market structure?',
-        aliases: ['market structures', 'monopolistic competition'],
+        aliases: ['market structures', 'types of market', 'degrees of competition'],
         answer:
             'Perfect competition has many small firms selling identical products and no price-setting power. ' +
             'Monopoly has one firm and substantial power. ' +
@@ -90,7 +90,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-demand-factors',
         subject: 'economics',
         question: 'What shifts the demand curve?',
-        aliases: ['factors affecting demand', 'shift in demand', 'substitutes and complements', 'income effect', 'tastes'],
+        aliases: ['factors affecting demand', 'shift in demand', 'substitutes and complements', 'tastes'],
         answer:
             'Income, the price of substitutes and complements, tastes and preferences, population, and expectations ' +
             'about future prices. ' +
@@ -123,7 +123,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-unconventional-policy',
         subject: 'economics',
         question: 'What happens when interest rates cannot fall further?',
-        aliases: ['quantitative easing', 'zero lower bound', 'unconventional monetary policy', 'liquidity trap'],
+        aliases: ['zero lower bound', 'unconventional monetary policy', 'liquidity trap'],
         answer:
             'Near zero, cutting the cash rate loses its power. ' +
             'Central banks then buy government bonds to lower longer-term rates and expand the money supply, which is ' +

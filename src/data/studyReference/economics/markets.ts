@@ -50,7 +50,7 @@ export const economicsMarketsEntries: StudyEntry[] = [
         id: 'econ-labour-market',
         subject: 'economics',
         question: 'How does the labour market work?',
-        aliases: ['labour market', 'derived demand', 'trade unions', 'enterprise bargaining'],
+        aliases: ['labour market', 'trade unions', 'enterprise bargaining'],
         answer:
             'Demand for labour is derived from demand for what it produces. ' +
             'Wages are set by awards, enterprise agreements or individual contracts, with the Fair Work Commission ' +
@@ -60,7 +60,7 @@ export const economicsMarketsEntries: StudyEntry[] = [
         id: 'econ-financial-markets',
         subject: 'economics',
         question: 'What do financial markets do?',
-        aliases: ['financial markets', 'share market', 'bond market', 'financial intermediaries', 'apra asic'],
+        aliases: ['financial markets', 'bond market', 'financial intermediaries', 'apra asic'],
         answer:
             'They channel savings to borrowers. Primary markets issue new securities; secondary markets trade ' +
             'existing ones. ' +
@@ -154,7 +154,7 @@ export const economicsMarketsEntries: StudyEntry[] = [
         id: 'econ-supply-elasticity',
         subject: 'economics',
         question: 'What determines the elasticity of supply?',
-        aliases: ['elasticity of supply', 'time to adjust production', 'spare capacity'],
+        aliases: ['elasticity of supply', 'time to adjust production'],
         answer:
             'Mainly time and capacity. ' +
             'Supply is inelastic when production takes a long time, capacity is already full, or inputs are hard to ' +
@@ -196,7 +196,7 @@ export const economicsMarketsEntries: StudyEntry[] = [
         id: 'econ-monopoly',
         subject: 'economics',
         question: 'What is a monopoly and why is it a problem?',
-        aliases: ['monopoly', 'price maker', 'barriers to entry', 'natural monopoly'],
+        aliases: ['monopoly', 'price maker', 'natural monopoly'],
         answer:
             'One firm supplies the whole market and sets the price, protected by barriers to entry. ' +
             'Output is lower and price higher than under competition, so consumers lose. ' +

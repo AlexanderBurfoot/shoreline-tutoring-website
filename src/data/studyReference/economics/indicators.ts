@@ -48,7 +48,7 @@ export const economicsIndicatorsEntries: StudyEntry[] = [
         id: 'econ-business-cycle',
         subject: 'economics',
         question: 'What is the business cycle?',
-        aliases: ['business cycle', 'boom and bust', 'recession recovery', 'aggregate demand', 'output gap'],
+        aliases: ['business cycle', 'boom and bust', 'recession recovery'],
         answer:
             'The swing of economic activity around its long-run trend: expansion, peak, contraction, trough. ' +
             'Aggregate demand is C + I + G + (X − M). ' +

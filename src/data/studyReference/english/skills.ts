@@ -91,4 +91,42 @@ export const englishSkillsEntries: StudyEntry[] = [
             'supplies related material for modules that need it, and it makes unseen texts less unfamiliar. ' +
             'Short stories, essays and quality journalism repay the time most.',
     },
+    {
+        id: 'eng-speech-delivery',
+        subject: 'english',
+        question: 'What makes a spoken presentation work?',
+        aliases: ['delivering a speech', 'pace and pause in speaking', 'eye contact when presenting'],
+        answer:
+            'Pace slow enough to be followed, pauses where the audience needs to think, variation in volume, and eye ' +
+            'contact that moves. Write for the ear: short sentences, concrete nouns, and signposts the listener can ' +
+            'follow without a page.',
+    },
+    {
+        id: 'eng-listening-task',
+        subject: 'english',
+        question: 'How do I answer a listening task?',
+        aliases: ['listening task', 'note taking while listening', 'audio text questions'],
+        answer:
+            'Read the questions before the first playing, take notes on the first pass and fill detail on the second. ' +
+            'Note tone, emphasis and pauses as well as words, since in a spoken text delivery carries meaning.',
+    },
+    {
+        id: 'eng-multimodal-presentation',
+        subject: 'english',
+        question: 'How do I plan a multimodal presentation?',
+        aliases: ['multimodal presentation', 'slides with a speech', 'combining modes'],
+        answer:
+            'Decide what each mode does that the others cannot, so images carry what would be slow to describe and ' +
+            'speech carries the argument. Slides crowded with the words you are saying make both weaker.',
+    },
+    {
+        id: 'eng-feedback-and-drafting',
+        subject: 'english',
+        question: 'How do I use feedback to redraft?',
+        aliases: ['using feedback', 'redrafting', 'acting on marker comments'],
+        answer:
+            'Separate comments about the idea from comments about expression and fix the ideas first, since rewording ' +
+            'a paragraph that argues the wrong thing wastes the work. Then reread the whole piece for the change you ' +
+            'made, not just the sentence.',
+    },
 ];
