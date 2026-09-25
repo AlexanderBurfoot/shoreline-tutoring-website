@@ -92,7 +92,7 @@ export const biologyGeneticChangeEntries: StudyEntry[] = [
         id: 'bio-gene-expression-control',
         subject: 'biology',
         question: 'How is gene expression controlled?',
-        aliases: ['gene expression control', 'epigenetics', 'environmental influence on genes', 'switching genes on'],
+        aliases: ['gene expression control', 'environmental influence on genes', 'switching genes on'],
         answer:
             'Cells switch genes on and off rather than using all of them, which is why liver and nerve cells differ ' +
             'despite identical DNA. ' +

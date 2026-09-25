@@ -50,7 +50,7 @@ export const biologyHeredityEntries: StudyEntry[] = [
         id: 'bio-inheritance-patterns',
         subject: 'biology',
         question: 'What are the patterns of inheritance?',
-        aliases: ['codominance', 'incomplete dominance', 'sex linked', 'autosomal'],
+        aliases: ['codominance', 'sex linked', 'autosomal'],
         answer:
             'Complete dominance hides the recessive allele. Incomplete dominance blends the two, as in pink flowers. ' +
             'Codominance shows both, as in AB blood. Sex-linked genes sit on the X chromosome, which is why those ' +
@@ -214,5 +214,149 @@ export const biologyHeredityEntries: StudyEntry[] = [
             'appear. ' +
             'Crossing over separates them sometimes, and the further apart they sit the more often that happens, ' +
             'which is how their positions are mapped.',
+    },
+    {
+        id: 'bio-alleles-terms',
+        subject: 'biology',
+        question: 'What do genotype, phenotype, homozygous and heterozygous mean?',
+        aliases: ['genotype and phenotype', 'homozygous', 'heterozygous', 'allele definition'],
+        answer:
+            'Genotype is the alleles present, phenotype the characteristic expressed. Homozygous means two identical ' +
+            'alleles, heterozygous two different ones. An allele is one version of a gene, and a gene sits at a fixed ' +
+            'locus on a chromosome.',
+    },
+    {
+        id: 'bio-dominance-types',
+        subject: 'biology',
+        question: 'What are codominance and incomplete dominance?',
+        aliases: ['incomplete dominance', 'blended phenotype', 'both alleles expressed'],
+        answer:
+            'In incomplete dominance the heterozygote is intermediate, such as a pink flower from red and white. In ' +
+            'codominance both alleles show fully and separately, such as roan cattle with red and white hairs or the ' +
+            'AB blood group.',
+    },
+    {
+        id: 'bio-blood-groups',
+        subject: 'biology',
+        question: 'How is blood group inherited?',
+        aliases: ['abo blood group inheritance', 'blood type genetics', 'universal donor'],
+        answer:
+            'Three alleles at one locus: A and B are codominant and O is recessive, so six genotypes give four ' +
+            'phenotypes. Group O carries neither antigen and can donate to all; group AB can receive from all.',
+    },
+    {
+        id: 'bio-monohybrid-ratios',
+        subject: 'biology',
+        question: 'What ratios should a cross produce?',
+        aliases: ['expected ratios', 'three to one ratio', 'one to one ratio', 'nine three three one'],
+        answer:
+            'A monohybrid cross between two heterozygotes gives 3:1, a heterozygote crossed with a homozygous ' +
+            'recessive gives 1:1, and a dihybrid cross between two heterozygotes gives 9:3:3:1. Real results vary by ' +
+            'chance, more so in small samples.',
+    },
+    {
+        id: 'bio-chi-squared-genetics',
+        subject: 'biology',
+        question: 'How do I test whether results match an expected ratio?',
+        aliases: ['chi squared test', 'observed and expected results', 'significant difference in a cross'],
+        answer:
+            'Calculate the expected numbers from the ratio, then compare with the observed using a chi-squared ' +
+            'statistic and the degrees of freedom. A large value means the difference is unlikely to be chance, so ' +
+            'the predicted inheritance pattern is questionable.',
+    },
+    {
+        id: 'bio-autosomal-vs-sex-linked',
+        subject: 'biology',
+        question: 'How do I tell an autosomal from a sex-linked trait?',
+        aliases: ['autosomal or sex linked', 'trait more common in males', 'x linked inheritance pattern'],
+        answer:
+            'A trait far more common in males, that never passes father to son, and that appears in sons of carrier ' +
+            'mothers, is X-linked recessive. An autosomal trait appears in both sexes at similar rates.',
+    },
+    {
+        id: 'bio-pedigree-deduction',
+        subject: 'biology',
+        question: 'How do I work out the inheritance pattern from a pedigree?',
+        aliases: ['deducing inheritance from a pedigree', 'unaffected parents affected child', 'carrier in a family tree'],
+        answer:
+            'Two unaffected parents with an affected child means recessive. An affected child in every generation ' +
+            'with an affected parent suggests dominant. Then check the sexes: a bias towards males points to X ' +
+            'linkage.',
+    },
+    {
+        id: 'bio-mendel-laws',
+        subject: 'biology',
+        question: 'What did Mendel establish about inheritance?',
+        aliases: ['mendel', 'law of segregation', 'particulate inheritance'],
+        answer:
+            'That characteristics are carried by discrete factors rather than blended fluids, that each parent ' +
+            'contributes one of a pair which separate during gamete formation, and that pairs for different ' +
+            'characteristics are inherited independently when they sit on different chromosomes.',
+    },
+    {
+        id: 'bio-asexual-reproduction',
+        subject: 'biology',
+        question: 'What are the advantages and disadvantages of asexual reproduction?',
+        aliases: ['asexual reproduction', 'clones of a parent'],
+        answer:
+            'It is fast, needs no partner and preserves a successful genotype exactly, which suits stable conditions. ' +
+            'The cost is no variation, so a changed environment or a new disease can remove an entire population.',
+    },
+    {
+        id: 'bio-sexual-reproduction-plants',
+        subject: 'biology',
+        question: 'How do plants reproduce sexually?',
+        aliases: ['plant sexual reproduction', 'pollination', 'fertilisation in plants', 'seed and fruit formation'],
+        answer:
+            'Pollen carries male gametes to the stigma, a tube grows down the style, and fertilisation in the ovule ' +
+            'forms an embryo. The ovule becomes the seed and the ovary the fruit, which then aids dispersal.',
+    },
+    {
+        id: 'bio-reproductive-technologies',
+        subject: 'biology',
+        question: 'What reproductive technologies are used in agriculture?',
+        aliases: ['artificial insemination', 'embryo transfer', 'ivf in livestock', 'reproductive technology'],
+        answer:
+            'Artificial insemination spreads desirable genetics widely from one male, embryo transfer multiplies ' +
+            'offspring from a valued female, and hormone treatment synchronises breeding. Each accelerates selection ' +
+            'but narrows the gene pool.',
+    },
+    {
+        id: 'bio-polypeptide-to-trait',
+        subject: 'biology',
+        question: 'How does a change in DNA change a trait?',
+        aliases: ['dna to protein to trait', 'how a mutation changes a characteristic', 'gene to phenotype'],
+        answer:
+            'The base sequence sets the amino acid sequence, which sets the folded shape, which sets the function. A ' +
+            'single substituted base can change one amino acid, alter the shape and disable the protein, as in sickle ' +
+            'cell anaemia.',
+    },
+    {
+        id: 'bio-mrna-processing',
+        subject: 'biology',
+        question: 'What happens to mRNA before translation in eukaryotes?',
+        aliases: ['mrna processing', 'introns and exons', 'splicing'],
+        answer:
+            'Non-coding introns are cut out and the coding exons joined, and protective ends are added before the ' +
+            'transcript leaves the nucleus. Alternative splicing means one gene can yield several related proteins.',
+    },
+    {
+        id: 'bio-trna-role',
+        subject: 'biology',
+        question: 'What is the job of transfer RNA?',
+        aliases: ['transfer rna', 'trna anticodon', 'bringing amino acids to the ribosome'],
+        answer:
+            'Each tRNA carries one specific amino acid and an anticodon that pairs with the matching codon on the ' +
+            'mRNA, so it is the adaptor that turns a nucleotide sequence into an amino acid sequence at the ribosome.',
+    },
+    {
+        id: 'bio-epigenetics',
+        subject: 'biology',
+        question: 'What is epigenetics?',
+        aliases: ['epigenetics', 'gene expression without changing dna', 'methylation of dna'],
+        answer:
+            'Changes in how genes are expressed rather than in the sequence itself, through chemical tags such as ' +
+            'methyl groups that silence a gene. Some tags respond to environment and diet, and some persist into the ' +
+            'next generation.',
     },
 ];

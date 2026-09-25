@@ -40,7 +40,7 @@ export const biologyCellsEntries: StudyEntry[] = [
         id: 'bio-transport-membrane',
         subject: 'biology',
         question: 'How do substances move in and out of cells?',
-        aliases: ['diffusion', 'active transport', 'facilitated diffusion', 'concentration gradient'],
+        aliases: ['diffusion', 'active transport', 'concentration gradient'],
         answer:
             'Diffusion moves particles down a concentration gradient, and osmosis is that for water across a ' +
             'partially permeable membrane. Facilitated diffusion uses a protein channel but no energy. ' +
@@ -167,7 +167,7 @@ export const biologyCellsEntries: StudyEntry[] = [
         id: 'bio-cell-specialisation',
         subject: 'biology',
         question: 'How do cells become specialised?',
-        aliases: ['specialised cells', 'differentiation', 'stem cells', 'cell types', 'gene expression cells'],
+        aliases: ['specialised cells', 'differentiation', 'cell types', 'gene expression cells'],
         answer:
             'Every cell carries the same DNA but expresses different genes, which gives it a different shape and set ' +
             'of proteins. ' +
@@ -217,5 +217,152 @@ export const biologyCellsEntries: StudyEntry[] = [
             'Anaphase: sister chromatids are pulled apart. ' +
             'Telophase and cytokinesis: nuclei re-form and the cell splits. ' +
             'Interphase before it is when DNA is copied and the cell grows.',
+    },
+    {
+        id: 'bio-water-properties-cells',
+        subject: 'biology',
+        question: 'Why is water important inside cells?',
+        aliases: ['water in cells', 'water as a solvent', 'why cells need water'],
+        answer:
+            'It dissolves ions and polar molecules so reactions can occur, transports substances, resists temperature ' +
+            'change, and takes part directly in hydrolysis and condensation. Cytosol is mostly water, which is why ' +
+            'dehydration slows metabolism.',
+    },
+    {
+        id: 'bio-biomacromolecules',
+        subject: 'biology',
+        question: 'What are the four groups of biological macromolecules?',
+        aliases: ['macromolecules', 'carbohydrates lipids proteins nucleic acids', 'biological molecules'],
+        answer:
+            'Carbohydrates for quick energy and structure, lipids for storage and membranes, proteins for enzymes and ' +
+            'structure, and nucleic acids for information. All but lipids are polymers built by condensation and ' +
+            'broken by hydrolysis.',
+    },
+    {
+        id: 'bio-diffusion-detail',
+        subject: 'biology',
+        question: 'What is the difference between diffusion, facilitated diffusion and active transport?',
+        aliases: ['facilitated diffusion', 'against the gradient'],
+        answer:
+            'Diffusion moves particles down a gradient with no energy cost. Facilitated diffusion uses a channel or ' +
+            'carrier but still follows the gradient. Active transport uses a pump and ATP to move against the ' +
+            'gradient, which is how cells concentrate ions.',
+    },
+    {
+        id: 'bio-isotonic-solutions',
+        subject: 'biology',
+        question: 'What do hypertonic, hypotonic and isotonic mean?',
+        aliases: ['isotonic solution', 'crenation and lysis'],
+        answer:
+            'Compared with the cell contents: hypertonic has more solute, so water leaves and the cell shrinks; ' +
+            'hypotonic has less, so water enters and an animal cell may burst; isotonic means no net movement.',
+    },
+    {
+        id: 'bio-plant-cell-water',
+        subject: 'biology',
+        question: 'What are turgor and plasmolysis?',
+        aliases: ['turgor pressure', 'wilting plant cells', 'flaccid cell'],
+        answer:
+            'A plant cell in a dilute solution takes in water until the cell wall resists, which is turgor and keeps ' +
+            'the plant upright. In a concentrated solution water leaves, the cell becomes flaccid and the membrane ' +
+            'pulls away, which is plasmolysis.',
+    },
+    {
+        id: 'bio-glycolysis-stages',
+        subject: 'biology',
+        question: 'What are the stages of aerobic respiration?',
+        aliases: ['stages of respiration', 'glycolysis', 'krebs cycle', 'electron transport chain'],
+        answer:
+            'Glycolysis splits glucose in the cytosol for a small ATP yield. The Krebs cycle in the mitochondrial ' +
+            'matrix releases carbon dioxide and loaded carriers. The electron transport chain on the inner membrane ' +
+            'produces most of the ATP, with oxygen as final acceptor.',
+    },
+    {
+        id: 'bio-photosynthesis-stages',
+        subject: 'biology',
+        question: 'What are the two stages of photosynthesis?',
+        aliases: ['light dependent stage', 'light independent stage', 'calvin cycle', 'where photosynthesis happens'],
+        answer:
+            'The light dependent stage in the thylakoid membranes splits water, releases oxygen and makes ATP and ' +
+            'loaded carriers. The light independent stage in the stroma uses those to fix carbon dioxide into ' +
+            'glucose.',
+    },
+    {
+        id: 'bio-chloroplast-structure',
+        subject: 'biology',
+        question: 'How is a chloroplast suited to its function?',
+        aliases: ['chloroplast structure', 'thylakoid and stroma', 'grana'],
+        answer:
+            'Stacked thylakoid membranes give a very large area for the pigments that absorb light, and the stroma ' +
+            'holds the enzymes for carbon fixation. Its own DNA and ribosomes let it make some of its proteins on ' +
+            'site.',
+    },
+    {
+        id: 'bio-mitochondria-structure',
+        subject: 'biology',
+        question: 'How is a mitochondrion suited to its function?',
+        aliases: ['mitochondrion structure', 'cristae', 'inner membrane folds'],
+        answer:
+            'The inner membrane is folded into cristae, which multiplies the area carrying the electron transport ' +
+            'chain, and the matrix holds the Krebs cycle enzymes. Cells with high energy demand, such as muscle, ' +
+            'carry far more of them.',
+    },
+    {
+        id: 'bio-enzyme-inhibition',
+        subject: 'biology',
+        question: 'How do enzyme inhibitors work?',
+        aliases: ['enzyme inhibitor', 'competitive inhibition', 'non competitive inhibition'],
+        answer:
+            'A competitive inhibitor binds the active site and blocks the substrate, so more substrate overcomes it. ' +
+            'A non-competitive inhibitor binds elsewhere and changes the shape of the active site, so extra substrate ' +
+            'does not help.',
+    },
+    {
+        id: 'bio-enzyme-cofactors',
+        subject: 'biology',
+        question: 'What are cofactors and coenzymes?',
+        aliases: ['cofactor', 'coenzyme', 'why enzymes need helpers'],
+        answer:
+            'Non-protein helpers an enzyme needs to work: metal ions such as zinc, or organic coenzymes often derived ' +
+            'from vitamins. This is one reason a vitamin deficiency can disable a whole metabolic pathway.',
+    },
+    {
+        id: 'bio-metabolic-pathways',
+        subject: 'biology',
+        question: 'What is a metabolic pathway?',
+        aliases: ['metabolic pathway', 'anabolic and catabolic', 'sequence of enzyme steps'],
+        answer:
+            'A sequence of reactions, each with its own enzyme, so the product of one step is the substrate of the ' +
+            'next. Catabolic pathways break down and release energy; anabolic pathways build up and consume it.',
+    },
+    {
+        id: 'bio-cell-cycle-control',
+        subject: 'biology',
+        question: 'What controls the cell cycle?',
+        aliases: ['cell cycle control', 'checkpoints', 'interphase stages', 'g1 s g2'],
+        answer:
+            'Checkpoints between phases verify that DNA is intact and replicated and that the cell is large enough ' +
+            'before it proceeds. Interphase is G1 growth, S replication and G2 preparation. Loss of checkpoint ' +
+            'control is the basis of tumour formation.',
+    },
+    {
+        id: 'bio-stem-cells',
+        subject: 'biology',
+        question: 'What are stem cells?',
+        aliases: ['stem cells', 'totipotent pluripotent', 'embryonic and adult stem cells'],
+        answer:
+            'Unspecialised cells that can divide and differentiate. Totipotent can form any cell including placental ' +
+            'tissue, pluripotent any body cell, and multipotent only a related family. Their medical promise and ' +
+            'their ethical debate both follow from where they are obtained.',
+    },
+    {
+        id: 'bio-microscope-calculations',
+        subject: 'biology',
+        question: 'How do I calculate magnification and actual size?',
+        aliases: ['magnification calculation', 'actual size from an image', 'using a scale bar'],
+        answer:
+            'Magnification is image size divided by actual size, so actual size is image size divided by ' +
+            'magnification. Measure the image in millimetres, convert using the scale bar, and keep the units ' +
+            'consistent before dividing.',
     },
 ];

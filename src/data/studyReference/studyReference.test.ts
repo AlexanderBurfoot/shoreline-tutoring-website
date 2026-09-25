@@ -84,11 +84,14 @@ describe('study reference bank', () => {
         }
     });
 
+    /* Every question is scored against every entry, so this grows with the square
+       of the bank and needs longer than the default. A student types one question
+       at a time, so the cost this measures is never paid in the browser. */
     it('reaches every entry from its own question', () => {
         for (const entry of studyEntries) {
             expect(findBestMatch(entry.question)?.entry.id, entry.question).toBe(entry.id);
         }
-    });
+    }, 60_000);
 
     it('is offered by the assistant alongside the answers about the business', () => {
         for (const entry of studyEntries) {

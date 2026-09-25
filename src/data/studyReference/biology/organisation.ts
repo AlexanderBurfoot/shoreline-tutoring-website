@@ -21,7 +21,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-nervous-endocrine',
         subject: 'biology',
         question: 'How do the nervous and endocrine systems differ?',
-        aliases: ['nervous system', 'endocrine system', 'hormones', 'synapse'],
+        aliases: ['nervous system', 'endocrine system', 'hormones'],
         answer:
             'The nervous system sends fast electrical impulses along neurons for short-lived responses; a reflex arc ' +
             'bypasses the brain for speed. The endocrine system releases hormones into the blood, which act more ' +
@@ -52,7 +52,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-nutrient-transport',
         subject: 'biology',
         question: 'How does the circulatory system transport nutrients?',
-        aliases: ['circulatory system', 'blood vessels', 'haemoglobin', 'double circulation'],
+        aliases: ['circulatory system', 'blood vessels'],
         answer:
             'Arteries carry blood from the heart under pressure, veins return it with valves to stop backflow, and ' +
             'capillaries exchange materials with tissues. ' +
@@ -73,7 +73,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-digestive-system',
         subject: 'biology',
         question: 'How does the digestive system work?',
-        aliases: ['digestion', 'digestive system', 'villi', 'absorption of nutrients', 'digestive enzymes'],
+        aliases: ['digestion', 'digestive system', 'absorption of nutrients'],
         answer:
             'Mechanical digestion breaks food up, chemical digestion breaks molecules down with enzymes: amylase for ' +
             'starch, protease for protein, lipase for fats. ' +
@@ -156,7 +156,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-neuron-structure',
         subject: 'biology',
         question: 'How does a neuron transmit a signal?',
-        aliases: ['neuron', 'axon', 'myelin', 'neurotransmitter', 'nerve impulse'],
+        aliases: ['neuron', 'axon', 'myelin', 'nerve impulse'],
         answer:
             'Dendrites receive, the cell body integrates, and the axon carries the impulse as a wave of electrical ' +
             'change. Myelin insulates the axon so the signal jumps between gaps and travels faster. ' +
@@ -192,5 +192,153 @@ export const biologyOrganisationEntries: StudyEntry[] = [
             'Auxin accumulates on the shaded side of a shoot and promotes elongation there, so the shoot bends ' +
             'towards light. ' +
             'Roots respond to gravity in the opposite sense, growing downward.',
+    },
+    {
+        id: 'bio-blood-vessels',
+        subject: 'biology',
+        question: 'How do arteries, veins and capillaries differ?',
+        aliases: ['artery vein capillary', 'blood vessel structure', 'valves in veins'],
+        answer:
+            'Arteries have thick elastic muscular walls to withstand pressure, veins are thinner with valves ' +
+            'preventing backflow, and capillaries are one cell thick for exchange. Structure follows pressure and ' +
+            'function in each case.',
+    },
+    {
+        id: 'bio-double-circulation',
+        subject: 'biology',
+        question: 'Why do mammals have a double circulation?',
+        aliases: ['double circulation', 'pulmonary and systemic', 'two circuits of blood'],
+        answer:
+            'Blood passes through the heart twice per circuit: once to the lungs at low pressure, once to the body at ' +
+            'high pressure. This keeps oxygenated and deoxygenated blood separate and allows the body circuit to run ' +
+            'at a pressure the lungs could not tolerate.',
+    },
+    {
+        id: 'bio-haemoglobin',
+        subject: 'biology',
+        question: 'How does haemoglobin carry oxygen?',
+        aliases: ['haemoglobin', 'oxygen dissociation', 'oxygen carrying capacity'],
+        answer:
+            'Each haemoglobin molecule binds up to four oxygen molecules where oxygen is plentiful, and releases them ' +
+            'where concentration is low, warmth is higher and carbon dioxide has lowered the pH. That is why it loads ' +
+            'in the lungs and unloads in active tissue.',
+    },
+    {
+        id: 'bio-lymph-and-tissue-fluid',
+        subject: 'biology',
+        question: 'How is tissue fluid formed and returned?',
+        aliases: ['tissue fluid', 'lymph formation', 'oedema'],
+        answer:
+            'High pressure at the arteriole end of a capillary forces plasma out, bathing the cells; most returns at ' +
+            'the venule end and the remainder drains as lymph. If drainage fails, fluid accumulates as swelling.',
+    },
+    {
+        id: 'bio-breathing-mechanism',
+        subject: 'biology',
+        question: 'How does breathing actually happen?',
+        aliases: ['mechanism of breathing', 'diaphragm and ribs', 'pressure change in the chest'],
+        answer:
+            'The diaphragm flattens and the ribs rise, increasing chest volume and lowering the pressure inside, so ' +
+            'air flows in. Relaxation reverses it. Air moves down a pressure gradient, so breathing is a pressure ' +
+            'mechanism rather than a pulling one.',
+    },
+    {
+        id: 'bio-gas-transport',
+        subject: 'biology',
+        question: 'How is carbon dioxide transported in blood?',
+        aliases: ['carbon dioxide transport', 'bicarbonate in blood', 'co2 and blood ph'],
+        answer:
+            'Mostly as hydrogen carbonate ions in the plasma, with some bound to haemoglobin and a little dissolved. ' +
+            'Because the conversion releases hydrogen ions, rising carbon dioxide lowers blood pH, which is what ' +
+            'drives the increase in breathing rate.',
+    },
+    {
+        id: 'bio-digestive-enzymes',
+        subject: 'biology',
+        question: 'Which enzymes digest which nutrients?',
+        aliases: ['digestive enzymes', 'amylase protease lipase', 'where each enzyme works'],
+        answer:
+            'Amylase in saliva and pancreatic juice breaks starch into sugars, proteases such as pepsin and trypsin ' +
+            'break protein into amino acids, and lipase breaks fats into fatty acids and glycerol. Each works best at ' +
+            'the pH of its own region.',
+    },
+    {
+        id: 'bio-absorption-villi',
+        subject: 'biology',
+        question: 'How is the small intestine adapted for absorption?',
+        aliases: ['villi', 'microvilli', 'absorption in the small intestine'],
+        answer:
+            'Villi and microvilli give an enormous surface area, the epithelium is one cell thick, and a dense ' +
+            'capillary network plus a lacteal for fats maintains steep gradients. Length and peristalsis keep ' +
+            'contents in contact for long enough.',
+    },
+    {
+        id: 'bio-liver-role',
+        subject: 'biology',
+        question: 'What does the liver do?',
+        aliases: ['liver function', 'deamination', 'detoxification', 'glycogen storage'],
+        answer:
+            'Regulates blood glucose by storing and releasing glycogen, deaminates excess amino acids and converts ' +
+            'the ammonia to urea, detoxifies alcohol and drugs, produces bile, and stores some vitamins and iron.',
+    },
+    {
+        id: 'bio-kidney-nephron',
+        subject: 'biology',
+        question: 'How does a nephron produce urine?',
+        aliases: ['nephron function', 'ultrafiltration', 'selective reabsorption', 'loop of henle'],
+        answer:
+            'High pressure in the glomerulus filters small molecules into the capsule, then useful substances such as ' +
+            'glucose and most water are selectively reabsorbed. The loop of Henle concentrates the surrounding fluid, ' +
+            'which is what allows concentrated urine.',
+    },
+    {
+        id: 'bio-endocrine-glands',
+        subject: 'biology',
+        question: 'Which hormones come from which glands?',
+        aliases: ['endocrine glands', 'pituitary thyroid adrenal pancreas', 'which gland makes which hormone'],
+        answer:
+            'The pituitary releases growth hormone and ADH, the thyroid thyroxine, the adrenals adrenaline and ' +
+            'cortisol, the pancreas insulin and glucagon, and the ovaries and testes the sex hormones. Most are ' +
+            'controlled by negative feedback from the pituitary.',
+    },
+    {
+        id: 'bio-nervous-system-divisions',
+        subject: 'biology',
+        question: 'How is the nervous system divided?',
+        aliases: ['central and peripheral nervous system', 'autonomic nervous system', 'sympathetic and parasympathetic'],
+        answer:
+            'The central nervous system is the brain and spinal cord; the peripheral system is the nerves. The ' +
+            'autonomic branch runs involuntary processes, with sympathetic nerves preparing for action and ' +
+            'parasympathetic nerves restoring calm.',
+    },
+    {
+        id: 'bio-synapse',
+        subject: 'biology',
+        question: 'What happens at a synapse?',
+        aliases: ['synapse', 'synaptic transmission', 'neurotransmitter'],
+        answer:
+            'The impulse triggers vesicles to release neurotransmitter into the gap; it diffuses across and binds ' +
+            'receptors on the next neuron, starting a new impulse. Because release is one-sided, synapses set the ' +
+            'direction of transmission.',
+    },
+    {
+        id: 'bio-receptors-and-senses',
+        subject: 'biology',
+        question: 'How do receptors detect a stimulus?',
+        aliases: ['receptors', 'stimulus to impulse', 'photoreceptors', 'sensory receptors'],
+        answer:
+            'Each receptor responds to one kind of stimulus and converts it into an electrical impulse. ' +
+            'Photoreceptors in the retina respond to light, mechanoreceptors to pressure and sound, chemoreceptors to ' +
+            'dissolved chemicals, and thermoreceptors to temperature.',
+    },
+    {
+        id: 'bio-plant-transport-detail',
+        subject: 'biology',
+        question: 'How does water move up a tall tree?',
+        aliases: ['transpiration stream', 'cohesion tension', 'root pressure', 'water up a tree'],
+        answer:
+            'Evaporation from the leaves pulls on a continuous column of water held together by cohesion, and the ' +
+            'narrow xylem vessels help by adhesion. Root pressure contributes at the base, but the pull from the ' +
+            'leaves does most of the work.',
     },
 ];

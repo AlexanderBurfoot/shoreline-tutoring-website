@@ -125,7 +125,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-reproduction-strategies',
         subject: 'biology',
         question: 'What is the difference between asexual and sexual reproduction?',
-        aliases: ['asexual reproduction', 'sexual reproduction', 'binary fission', 'vegetative propagation', 'clone'],
+        aliases: ['sexual reproduction', 'binary fission', 'vegetative propagation', 'clone'],
         answer:
             'Asexual reproduction needs one parent and produces genetically identical offspring, which is fast and ' +
             'reliable in a stable environment. ' +
