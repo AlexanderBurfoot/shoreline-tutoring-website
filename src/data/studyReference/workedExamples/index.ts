@@ -6,6 +6,7 @@ import { workedExampleMathsEntries } from './mathematics';
 import { workedExampleMathsAppliedEntries } from './mathematicsApplied';
 import { workedExampleOtherEntries } from './other';
 import { workedExamplePhysicsEntries } from './physics';
+import { workedExampleSelectiveEntries } from './selective';
 import type { StudyEntry } from '../types';
 
 export const workedExampleEntries: StudyEntry[] = [
@@ -16,4 +17,5 @@ export const workedExampleEntries: StudyEntry[] = [
     ...workedExamplePhysicsEntries,
     ...workedExampleOtherEntries,
     ...workedExampleEnglishEntries,
+    ...workedExampleSelectiveEntries,
 ];
