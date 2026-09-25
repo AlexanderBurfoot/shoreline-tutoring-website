@@ -93,34 +93,6 @@ export const workedExampleMathsEntries: StudyEntry[] = [
             'earned is about $1,954.',
     },
     {
-        id: 'maths-example-z-score',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of a z-score?',
-        aliases: ['worked example z score', 'example of standardising a score', 'z score calculation example'],
-        answer:
-            'A mark of 82 in a test with mean 70 and standard deviation 8 gives z = (82 − 70)/8 = 1.5. That is one ' +
-            'and a half standard deviations above the mean, which puts it above roughly 93% of results.',
-    },
-    {
-        id: 'maths-example-binomial-probability',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of binomial probability?',
-        aliases: ['worked example binomial probability', 'example of a binomial calculation', 'exactly two successes example'],
-        answer:
-            'Five independent trials each succeed with probability 0.2. For exactly two successes, P = ' +
-            '⁵C₂(0.2)²(0.8)³ = 10 × 0.04 × 0.512 = 0.2048. The combination counts which two of the five trials ' +
-            'succeeded.',
-    },
-    {
-        id: 'maths-example-permutations',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of permutations and combinations?',
-        aliases: ['worked example permutations', 'example of counting arrangements', 'combination calculation example'],
-        answer:
-            'From 7 people, the number of ways to fill 4 ranked positions is ⁷P₄ = 7 × 6 × 5 × 4 = 840. If the 4 ' +
-            'chosen are simply a committee with no ranking, divide by the 4! orderings: ⁷C₄ = 35.',
-    },
-    {
         id: 'maths-example-stationary-points',
         subject: 'mathematics',
         question: 'Can you show me a worked example of finding stationary points?',
@@ -273,107 +245,6 @@ export const workedExampleMathsEntries: StudyEntry[] = [
             'all positive integers.',
     },
     {
-        id: 'maths-example-venn',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of a Venn diagram?',
-        aliases: ['worked example venn diagram', 'example of a venn calculation', 'neither category example'],
-        answer:
-            'Of 30 students, 18 play sport, 14 play music and 6 do both. Those doing at least one number 18 + 14 − 6 ' +
-            '= 26, so 4 do neither. Subtracting the overlap once is what stops those 6 being counted twice.',
-    },
-    {
-        id: 'maths-example-conditional-probability',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of conditional probability?',
-        aliases: ['worked example conditional probability', 'example of probability given that', 'restricting to a row example'],
-        answer:
-            'Of 60 students, 25 are girls and 15 of those play sport. P(plays sport given girl) = 15 ÷ 25 = 0.6. The ' +
-            'phrase given that restricts the denominator to that group rather than the whole 60.',
-    },
-    {
-        id: 'maths-example-depreciation',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of depreciation?',
-        aliases: ['worked example depreciation', 'example of reducing balance depreciation', 'declining value example'],
-        answer:
-            'A $24,000 vehicle depreciates 15% a year on the reducing balance. After 3 years its value is 24,000 × ' +
-            '0.85³ = 24,000 × 0.6141 = $14,739. Straight line depreciation at the same rate would instead remove ' +
-            '$3,600 each year.',
-    },
-    {
-        id: 'maths-example-wages',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of calculating wages with overtime?',
-        aliases: ['worked example wages', 'example of overtime pay', 'time and a half calculation example'],
-        answer:
-            'Thirty-eight hours at $24 an hour is $912. Six hours of overtime at time and a half is 6 × $36 = $216. ' +
-            'The gross pay is $1,128, from which tax and superannuation are then deducted.',
-    },
-    {
-        id: 'maths-example-gst',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of GST?',
-        aliases: ['worked example gst', 'example of adding gst', 'finding the gst in a total'],
-        answer:
-            'A price of $250 before GST becomes 250 × 1.1 = $275. To find the GST inside that total, divide by 11: ' +
-            '$25. Taking 10% of $275 would give $27.50, which is the common error.',
-    },
-    {
-        id: 'maths-example-blood-alcohol',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of a blood alcohol calculation?',
-        aliases: ['worked example blood alcohol', 'example of a bac calculation', 'bac formula example'],
-        answer:
-            'For a male, BAC = (10N − 7.5H) ÷ (6.8M). With 4 standard drinks over 2 hours at 80 kg: (40 − 15) ÷ 544 = ' +
-            '0.046. The formula is an estimate, and the time term means waiting is the only way to lower it.',
-    },
-    {
-        id: 'maths-example-dosage',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of a medication dosage?',
-        aliases: ['worked example dosage', 'example of a medicine calculation', 'millilitres of a mixture example'],
-        answer:
-            'A mixture contains 250 mg per 5 mL and 400 mg is required. Volume = 400 ÷ 250 × 5 = 8 mL. Checking the ' +
-            'direction matters: needing more than the stated dose must give more than 5 mL.',
-    },
-    {
-        id: 'maths-example-scale-drawing',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of a scale drawing?',
-        aliases: ['worked example scale drawing', 'example of reading a plan', 'scale calculation example'],
-        answer:
-            'On a 1:50 plan a wall measures 6 cm. The real length is 6 × 50 = 300 cm, which is 3 m. Convert to ' +
-            'sensible units only at the end, and note that an area on that plan scales by 50², not 50.',
-    },
-    {
-        id: 'maths-example-time-zones',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of a time zone calculation?',
-        aliases: ['worked example time zones', 'example of a time difference between cities', 'utc offset example'],
-        answer:
-            'Sydney runs at UTC+10 in winter and London at UTC+0, a difference of 10 hours. A 9:00 am flight ' +
-            'departure in London is 7:00 pm in Sydney. Daylight saving shifts either offset, so check the date before ' +
-            'assuming the gap.',
-    },
-    {
-        id: 'maths-example-reverse-percentage',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of a reverse percentage?',
-        aliases: ['worked example reverse percentage', 'example of finding the original price', 'price before discount example'],
-        answer:
-            'A jacket costs $64 after a 20% discount. That $64 is 80% of the original, so the original is 64 ÷ 0.8 = ' +
-            '$80. Adding 20% of $64 would give $76.80, which is the wrong answer for the right-looking reason.',
-    },
-    {
-        id: 'maths-example-area-units',
-        subject: 'mathematics',
-        question: 'Can you show me a worked example of converting area units?',
-        aliases: ['worked example area conversion', 'example of square metre to square centimetre', 'squared unit conversion example'],
-        answer:
-            'Convert 2.5 m² to cm². Since 1 m is 100 cm, 1 m² is 100 × 100 = 10,000 cm², so 2.5 m² is 25,000 cm². ' +
-            'Multiplying by 100 instead of 10,000 is the usual error.',
-    },
-    {
         id: 'maths-example-simultaneous-quadratic',
         subject: 'mathematics',
         question: 'Can you show me a worked example of a line meeting a curve?',
@@ -401,22 +272,114 @@ export const workedExampleMathsEntries: StudyEntry[] = [
             'original, since the absolute value of 7 and of −7 is the same.',
     },
     {
-        id: 'maths-example-loan-interest',
+        id: 'maths-example-quadratic-word',
         subject: 'mathematics',
-        question: 'Can you show me a worked example of a loan repayment?',
-        aliases: ['worked example loan repayment', 'example of interest and principal', 'reducing balance repayment example'],
+        question: 'Can you show me a worked example of a quadratic word problem?',
+        aliases: ['worked example quadratic word problem', 'example of area giving a quadratic', 'rectangle area quadratic example'],
         answer:
-            'A $200,000 loan at 6% a year charges 0.5% a month, so the first months interest is $1,000. A repayment ' +
-            'of $1,400 therefore reduces the principal by $400. As the balance falls the interest portion shrinks and ' +
-            'the principal portion grows.',
+            'A rectangle is 3 m longer than it is wide and has area 40 m². With width x, x(x + 3) = 40, so x² + 3x − ' +
+            '40 = 0 and (x + 8)(x − 5) = 0. Reject x = −8 as a length, so the width is 5 m and the length 8 m.',
     },
     {
-        id: 'maths-example-five-number-summary',
+        id: 'maths-example-simultaneous-word',
         subject: 'mathematics',
-        question: 'Can you show me a worked example of a five number summary?',
-        aliases: ['worked example five number summary', 'example of finding quartiles', 'box plot from data example'],
+        question: 'Can you show me a worked example of a simultaneous equations word problem?',
+        aliases: ['worked example simultaneous word problem', 'example of two unknowns from prices', 'adult and child ticket example'],
         answer:
-            'For 3, 5, 6, 8, 9, 11, 14 the median is 8. The lower half is 3, 5, 6 with median 5 and the upper half 9, ' +
-            '11, 14 with median 11. So the summary is 3, 5, 8, 11, 14 and the interquartile range is 6.',
+            'Three adults and two children cost $74; two adults and three children cost $66. Multiply the first by 3 ' +
+            'and the second by 2 to match the children, then subtract: 5a = 90, so a = $18. Substituting gives c = ' +
+            '$10.',
+    },
+    {
+        id: 'maths-example-cylinder-surface',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the surface area of a cylinder?',
+        aliases: ['worked example cylinder surface area', 'example of surface area of a cylinder', 'two circles plus a rectangle'],
+        answer:
+            'For radius 4 cm and height 10 cm, the two circles give 2π(16) = 32π and the curved surface gives ' +
+            '2π(4)(10) = 80π. The total is 112π ≈ 352 cm². The curved surface unrolls into a rectangle of width equal ' +
+            'to the circumference.',
+    },
+    {
+        id: 'maths-example-cone-volume',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the volume of a cone?',
+        aliases: ['worked example cone volume', 'example of volume of a cone', 'third of a cylinder example'],
+        answer:
+            'For radius 3 cm and height 8 cm, V = ⅓πr²h = ⅓π(9)(8) = 24π ≈ 75.4 cm³. A cone is exactly a third of the ' +
+            'cylinder with the same base and height, which is a useful check.',
+    },
+    {
+        id: 'maths-example-pythagoras-3d',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of Pythagoras in three dimensions?',
+        aliases: ['worked example pythagoras in 3d', 'example of a space diagonal', 'diagonal of a box example'],
+        answer:
+            'A box measures 3, 4 and 12. The base diagonal is √(9 + 16) = 5, and the space diagonal is √(25 + 144) = ' +
+            '13. Applying Pythagoras twice, or √(a² + b² + c²) directly, gives the same result.',
+    },
+    {
+        id: 'maths-example-bearings',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a bearings problem?',
+        aliases: ['worked example bearings', 'example of a bearing calculation', 'walking on two bearings example'],
+        answer:
+            'Walk 5 km on a bearing of 060°, then 3 km on 150°. Those bearings differ by 90°, so the legs are ' +
+            'perpendicular and the direct distance is √(25 + 9) = 5.83 km. Sketching the bearings from north first is ' +
+            'what reveals the right angle.',
+    },
+    {
+        id: 'maths-example-ambiguous-case',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the ambiguous case?',
+        aliases: ['worked example ambiguous case', 'example of two possible triangles', 'sine rule two answers example'],
+        answer:
+            'With a = 7, b = 9 and A = 40°, the sine rule gives sin B = 9 sin 40° ÷ 7 = 0.827, so B = 55.8° or ' +
+            '124.2°. Both leave an angle sum under 180°, so two triangles exist and the question needs both answers.',
+    },
+    {
+        id: 'maths-example-arithmetic-word',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of an arithmetic sequence in context?',
+        aliases: ['worked example arithmetic in context', 'example of seats in rows', 'increasing rows example'],
+        answer:
+            'A theatre has 12 seats in the first row and two more in each row after, for 20 rows. The last row has 12 ' +
+            '+ 19(2) = 50, and the total is (20/2)(12 + 50) = 620 seats.',
+    },
+    {
+        id: 'maths-example-quotient-rule',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the quotient rule?',
+        aliases: ['worked example quotient rule', 'example of differentiating a fraction', 'quotient rule substitution example'],
+        answer:
+            'Differentiate y = (2x + 1)/(x − 3). With u = 2x + 1 and v = x − 3, y′ = (u′v − uv′)/v² = [2(x − 3) − (2x ' +
+            '+ 1)]/(x − 3)². The numerator simplifies to −7, so y′ = −7/(x − 3)².',
+    },
+    {
+        id: 'maths-example-tangent-equation',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of finding a tangent equation?',
+        aliases: ['worked example tangent equation', 'example of the equation of a tangent', 'tangent at a point example'],
+        answer:
+            'For y = x² − 4x + 5 at x = 3: y = 2, and y′ = 2x − 4 = 2 at that point. So the tangent is y − 2 = 2(x − ' +
+            '3), which simplifies to y = 2x − 4. The normal would have gradient −½ through the same point.',
+    },
+    {
+        id: 'maths-example-trig-integral',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of integrating a trigonometric function?',
+        aliases: ['worked example trig integral', 'example of integrating sin x', 'definite integral of sine example'],
+        answer:
+            'Evaluate the integral of sin x from 0 to π/2. The primitive is −cos x, so the value is −cos(π/2) + cos 0 ' +
+            '= 0 + 1 = 1. The limits are in radians, which is the only form in which these primitives hold.',
+    },
+    {
+        id: 'maths-example-motion-calculus',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of motion using calculus?',
+        aliases: ['worked example motion calculus', 'example of velocity and acceleration functions', 'when is the particle at rest example'],
+        answer:
+            'With v = 3t² − 12t, the particle is at rest when 3t(t − 4) = 0, so at t = 0 and t = 4. Acceleration is a ' +
+            '= 6t − 12, which is 12 m s⁻² at t = 4, so it is speeding up again by then.',
     },
 ];

@@ -233,4 +233,130 @@ export const workedExampleChemistryEntries: StudyEntry[] = [
             'Dissolving 2.0 g of NaOH in 100 mL of water raises the temperature by 5.0 °C. q = 100 × 4.18 × 5.0 = ' +
             '2,090 J, and the moles are 2.0 ÷ 40.00 = 0.050. So ΔH = −2.09 ÷ 0.050 = −41.8 kJ mol⁻¹.',
     },
+    {
+        id: 'chem-example-limiting-masses',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of a limiting reagent from masses?',
+        aliases: ['worked example limiting reagent from masses', 'example of limiting reactant with grams', 'which reactant runs out example'],
+        answer:
+            'For 2H₂ + O₂ → 2H₂O with 4.0 g H₂ and 40.0 g O₂: moles are 1.98 and 1.25. Dividing by the coefficients ' +
+            'gives 0.99 and 1.25, so hydrogen limits. It produces 1.98 mol of water, which is 35.7 g.',
+    },
+    {
+        id: 'chem-example-concentration-from-mass',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of concentration from a mass?',
+        aliases: ['worked example concentration from mass', 'example of making a solution of known concentration', 'grams to molarity example'],
+        answer:
+            'Dissolve 5.85 g of sodium chloride and make it up to 500 mL. Moles = 5.85 ÷ 58.44 = 0.100, and the ' +
+            'volume is 0.500 L, so the concentration is 0.200 mol L⁻¹.',
+    },
+    {
+        id: 'chem-example-gas-volume-from-mass',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of gas volume from a mass?',
+        aliases: ['worked example gas volume from mass', 'example of mass to volume of gas', 'grams of oxygen to litres'],
+        answer:
+            'Find the volume of 8.0 g of oxygen at 25 °C and 100 kPa. Moles = 8.0 ÷ 32.00 = 0.25, and the molar ' +
+            'volume is 24.79 L mol⁻¹, so V = 0.25 × 24.79 = 6.2 L.',
+    },
+    {
+        id: 'chem-example-dilution-ph',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of pH after dilution?',
+        aliases: ['worked example ph after dilution', 'example of diluting an acid and ph', 'tenfold dilution ph example'],
+        answer:
+            'Diluting 0.10 mol L⁻¹ HCl tenfold gives 0.010 mol L⁻¹, so the pH rises from 1.00 to 2.00. Each tenfold ' +
+            'dilution adds one to the pH, and no amount of dilution takes it past 7.',
+    },
+    {
+        id: 'chem-example-kw',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example using Kw?',
+        aliases: ['worked example kw', 'example of finding hydroxide from hydrogen ion', 'kw calculation example'],
+        answer:
+            'If [H⁺] = 2.5 × 10⁻³ mol L⁻¹, then [OH⁻] = Kw ÷ [H⁺] = 1.0 × 10⁻¹⁴ ÷ 2.5 × 10⁻³ = 4.0 × 10⁻¹² mol L⁻¹. ' +
+            'The product is fixed at 25 °C, so raising one concentration lowers the other.',
+    },
+    {
+        id: 'chem-example-hydrate-percentage',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of the percentage of water in a hydrate?',
+        aliases: ['worked example percentage of water in a hydrate', 'example of water in copper sulfate', 'hydrate mass percentage'],
+        answer:
+            'In CuSO₄·5H₂O the water contributes 5 × 18.02 = 90.1 of the total 249.7 g mol⁻¹. That is 90.1 ÷ 249.7 × ' +
+            '100 = 36.1% water by mass, which is what heating to constant mass should remove.',
+    },
+    {
+        id: 'chem-example-precipitate-mass',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of the mass of a precipitate?',
+        aliases: ['worked example mass of precipitate', 'example of precipitate mass calculation', 'silver chloride mass example'],
+        answer:
+            'Add 25.0 mL of 0.100 mol L⁻¹ silver nitrate to excess chloride. Moles of silver = 0.100 × 0.0250 = 2.50 ' +
+            '× 10⁻³, and the ratio is 1:1, so the same moles of AgCl form. Mass = 2.50 × 10⁻³ × 143.32 = 0.358 g.',
+    },
+    {
+        id: 'chem-example-molar-mass-from-density',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of molar mass from gas density?',
+        aliases: ['worked example molar mass from density', 'example of finding molar mass of a gas', 'gas density calculation'],
+        answer:
+            'A gas has a density of 1.96 g L⁻¹ at 25 °C and 100 kPa, where the molar volume is 24.79 L mol⁻¹. Molar ' +
+            'mass = 1.96 × 24.79 = 48.6 g mol⁻¹, which identifies it as ozone.',
+    },
+    {
+        id: 'chem-example-empirical-from-percentages',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of an empirical formula from percentages?',
+        aliases: ['worked example empirical from percentages', 'example of formula from percentage composition', 'percentages to formula'],
+        answer:
+            'For 52.2% carbon, 13.0% hydrogen and 34.8% oxygen: dividing by the atomic masses gives 4.35, 12.9 and ' +
+            '2.175. Dividing by the smallest gives 2, 5.9 and 1, so the empirical formula is C₂H₆O.',
+    },
+    {
+        id: 'chem-example-diprotic-titration',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of titrating a diprotic acid?',
+        aliases: ['worked example diprotic titration', 'example of sulfuric acid titration', 'two to one ratio titration'],
+        answer:
+            'Titrate 20.00 mL of 0.0500 mol L⁻¹ sulfuric acid with 0.100 mol L⁻¹ sodium hydroxide. Moles of acid = ' +
+            '1.00 × 10⁻³, and the ratio is 1 acid to 2 base, so 2.00 × 10⁻³ mol of base is needed, which is 20.0 mL.',
+    },
+    {
+        id: 'chem-example-energy-per-gram',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of energy released per gram?',
+        aliases: ['worked example energy per gram', 'example of converting enthalpy per mole to per gram', 'fuel energy per gram'],
+        answer:
+            'Methane releases 890 kJ mol⁻¹ on complete combustion and has a molar mass of 16.04. Per gram that is 890 ' +
+            '÷ 16.04 = 55.5 kJ, which is why methane carries more energy per kilogram than heavier hydrocarbons.',
+    },
+    {
+        id: 'chem-example-two-step-yield',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of yield over two steps?',
+        aliases: ['worked example two step yield', 'example of multi step yield', 'overall yield calculation'],
+        answer:
+            'A synthesis runs at 80% in the first step and 75% in the second. The overall yield is 0.80 × 0.75 = ' +
+            '0.60, or 60%. Yields multiply rather than average, which is why long syntheses give so little product.',
+    },
+    {
+        id: 'chem-example-oxidation-number-check',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of assigning an oxidation number?',
+        aliases: ['worked example oxidation number', 'example of finding an oxidation state', 'chromium in dichromate example'],
+        answer:
+            'In Cr₂O₇²⁻ each oxygen is −2, giving −14 in total, and the ion charge is −2. So 2x − 14 = −2, giving x = ' +
+            '+6 for each chromium. The sum of oxidation numbers always equals the charge on the species.',
+    },
+    {
+        id: 'chem-example-large-cell-potential',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of a large cell potential?',
+        aliases: ['worked example large cell potential', 'example of magnesium and silver cell', 'maximum cell voltage example'],
+        answer:
+            'Magnesium has a standard potential of −2.37 V and silver +0.80 V. Magnesium is oxidised, so E°cell = ' +
+            '0.80 − (−2.37) = 3.17 V. Pairing the extremes of the table gives the largest voltage available.',
+    },
 ];
