@@ -288,7 +288,7 @@ export const workedExamplePhysicsEntries: StudyEntry[] = [
         aliases: ['worked example force from power', 'example of p = fv', 'driving force from engine power'],
         answer:
             'A car develops 20 kW while travelling at 15 m s⁻¹. Since P = Fv, the driving force is 20,000 ÷ 15 = ' +
-            '1,300 N. At constant speed that equals the total resistance acting against it.',
+            '1,333 N, about 1.3 kN. At constant speed that equals the total resistance acting against it.',
     },
     {
         id: 'phys-example-satellite-period',

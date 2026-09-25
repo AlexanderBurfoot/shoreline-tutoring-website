@@ -156,7 +156,9 @@ export const workedExampleCoreEntries: StudyEntry[] = [
         aliases: ['worked example enthalpy', 'example of calorimetry calculation', 'show me q = mcdeltat used'],
         answer:
             'Burning 0.50 g of ethanol raises 200 g of water by 8.0 °C. q = mcΔT = 200 × 4.18 × 8.0 = 6,688 J. The ' +
-            'moles of ethanol are 0.50 ÷ 46.07 = 0.0109 mol, so ΔH = −6.688 ÷ 0.0109 = −614 kJ mol⁻¹.',
+            'moles of ethanol are 0.50 ÷ 46.07 = 0.0109 mol, so ΔH = −6.688 ÷ 0.0109 = −614 kJ mol⁻¹. The ' +
+            'accepted value is −1,367 kJ mol⁻¹, so this experiment captured under half the energy released: ' +
+            'most of the rest heated the air and the apparatus rather than the water.',
     },
     {
         id: 'chem-example-balancing',
