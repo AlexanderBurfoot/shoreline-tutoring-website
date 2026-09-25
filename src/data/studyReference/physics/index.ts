@@ -1,4 +1,5 @@
 /** Physics, gathered from the module banks. */
+import { physicsPracticalInvestigationEntries } from './practicals';
 import { physicsExplanationEntries } from './explanations';
 import { physicsAtomEntries } from './atom';
 import { physicsDynamicsEntries } from './dynamics';
@@ -28,4 +29,5 @@ export const physicsEntries: StudyEntry[] = [
     ...physicsNuclearEntries,
     ...physicsSkillsEntries,
     ...physicsExplanationEntries,
+    ...physicsPracticalInvestigationEntries,
 ];
