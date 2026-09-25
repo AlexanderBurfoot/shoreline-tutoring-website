@@ -130,7 +130,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-percentage-change',
         subject: 'mathematics',
         question: 'How do I calculate a percentage change?',
-        aliases: ['percentage change', 'percentage increase', 'percentage decrease', 'profit and loss'],
+        aliases: ['percentage change', 'percentage increase', 'percentage decrease'],
         answer:
             'Percentage change = (new − original) / original × 100. A positive answer is an increase, a negative one a decrease. ' +
             'To increase a value by r%, multiply by (1 + r/100); to decrease it, multiply by (1 − r/100).',
@@ -272,5 +272,197 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
             'total, which is how you check your work. ' +
             'Read a probability straight from the counts, and for a conditional one use the row or column total as ' +
             'the denominator rather than the grand total.',
+    },
+    {
+        id: 'maths-jr-bodmas-negatives',
+        subject: 'mathematics',
+        question: 'How do I deal with minus signs in a long calculation?',
+        aliases: ['negatives with brackets', 'minus outside a bracket', 'squaring a negative'],
+        answer:
+            'A minus sign in front of a bracket multiplies everything inside by −1. Note that (−3)² is 9 but −3² is ' +
+            '−9, because the index applies only to the 3 unless a bracket says otherwise.',
+    },
+    {
+        id: 'maths-jr-percentage-profit-loss',
+        subject: 'mathematics',
+        question: 'How do I calculate profit, loss and discount?',
+        aliases: ['profit and loss', 'discount calculation', 'percentage profit'],
+        answer:
+            'Profit is selling price minus cost price, and percentage profit divides that by the cost price. A ' +
+            'discount is a percentage of the marked price, so the sale price is the marked price times one minus the ' +
+            'discount rate.',
+    },
+    {
+        id: 'maths-jr-simple-interest-vs-compound',
+        subject: 'mathematics',
+        question: 'What is the difference between simple and compound interest?',
+        aliases: ['simple versus compound interest', 'which grows faster'],
+        answer:
+            'Simple interest is calculated on the original amount every period, so growth is linear. Compound ' +
+            'interest is calculated on the balance including past interest, so growth accelerates. Over a long term ' +
+            'the difference becomes very large.',
+    },
+    {
+        id: 'maths-jr-algebra-index-laws',
+        subject: 'mathematics',
+        question: 'How do I simplify an expression with indices and variables?',
+        aliases: ['simplifying with indices', 'multiplying terms with powers', 'dividing algebraic terms'],
+        answer:
+            'Multiply the coefficients and add the indices of like bases; divide the coefficients and subtract the ' +
+            'indices. Anything to the power zero is one, so terms can cancel to a plain number.',
+    },
+    {
+        id: 'maths-jr-solving-two-step',
+        subject: 'mathematics',
+        question: 'How do I solve an equation with two operations?',
+        aliases: ['two step equation', 'undoing operations in order', 'solving 3x plus 4'],
+        answer:
+            'Undo the operations in reverse order, doing the same to both sides. For 3x + 4 = 19, subtract 4 first, ' +
+            'then divide by 3. Substituting the answer back is the fastest check.',
+    },
+    {
+        id: 'maths-jr-equations-both-sides',
+        subject: 'mathematics',
+        question: 'How do I solve an equation with the unknown on both sides?',
+        aliases: ['unknown on both sides', 'variables on both sides', 'collecting x terms'],
+        answer:
+            'Move the smaller variable term to the side with the larger one to avoid negatives, then move the numbers ' +
+            'the other way. Whatever you do to one side must be done to the other.',
+    },
+    {
+        id: 'maths-jr-substitution-formulas',
+        subject: 'mathematics',
+        question: 'How do I substitute into a formula with several variables?',
+        aliases: ['substituting several values', 'using a formula with letters', 'replacing letters with numbers'],
+        answer:
+            'Replace each letter with its value in brackets, then apply the order of operations. Brackets matter: ' +
+            'substituting −2 for x in 3x² without them gives the wrong sign.',
+    },
+    {
+        id: 'maths-jr-coordinate-basics',
+        subject: 'mathematics',
+        question: 'How do I plot and read coordinates?',
+        aliases: ['plotting coordinates', 'four quadrants', 'x before y'],
+        answer:
+            'The first number is horizontal and the second vertical, so (3, −2) is three right and two down. The four ' +
+            'quadrants are numbered anticlockwise from the top right, which fixes the signs in each.',
+    },
+    {
+        id: 'maths-jr-gradient-meaning',
+        subject: 'mathematics',
+        question: 'What does gradient actually mean?',
+        aliases: ['meaning of gradient', 'rise over run', 'steepness of a line'],
+        answer:
+            'The change in y for each unit increase in x, found as rise over run. A positive gradient rises to the ' +
+            'right, a negative one falls, zero is horizontal, and a vertical line has no defined gradient.',
+    },
+    {
+        id: 'maths-jr-straight-line-from-two-points',
+        subject: 'mathematics',
+        question: 'How do I find the equation of a line through two points?',
+        aliases: ['equation from two points', 'gradient then intercept', 'point gradient form'],
+        answer:
+            'Find the gradient from the two points, then substitute one point into y − y₁ = m(x − x₁) and rearrange. ' +
+            'Check by substituting the other point, which should satisfy the equation.',
+    },
+    {
+        id: 'maths-jr-data-collection',
+        subject: 'mathematics',
+        question: 'What is the difference between a census and a sample?',
+        aliases: ['census or sample', 'population and sample', 'why sample instead of census'],
+        answer:
+            'A census surveys everyone, so it is accurate but expensive and slow. A sample surveys part of the ' +
+            'population and generalises, which is cheaper but only reliable if the sample is chosen without bias.',
+    },
+    {
+        id: 'maths-jr-frequency-table',
+        subject: 'mathematics',
+        question: 'How do I build and use a frequency table?',
+        aliases: ['frequency table', 'grouped frequency', 'tally to frequency'],
+        answer:
+            'Tally each value or class, total the tallies, and add a cumulative column if you need running totals. ' +
+            'Grouping into classes loses individual values but reveals the shape of a large data set.',
+    },
+    {
+        id: 'maths-jr-probability-language',
+        subject: 'mathematics',
+        question: 'How do I express a probability as a fraction, decimal and percentage?',
+        aliases: ['probability as a fraction', 'converting a probability', 'chance out of one'],
+        answer:
+            'Count favourable outcomes over total outcomes, then divide for the decimal and multiply by 100 for the ' +
+            'percentage. Every probability lies between 0 and 1, so an answer above 1 means the total was wrong.',
+    },
+    {
+        id: 'maths-jr-conversion-of-units-time',
+        subject: 'mathematics',
+        question: 'How do I convert between units of time?',
+        aliases: ['converting time units', 'minutes to hours', 'seconds in a day'],
+        answer:
+            '60 seconds in a minute, 60 minutes in an hour, 24 hours in a day. Time is not decimal, so 2.5 hours is 2 ' +
+            'hours 30 minutes, not 2 hours 50, which is where most errors come from.',
+    },
+    {
+        id: 'maths-jr-estimation-checking',
+        subject: 'mathematics',
+        question: 'How do I check whether an answer is sensible?',
+        aliases: ['is my answer sensible', 'estimating to check an answer', 'order of magnitude check'],
+        answer:
+            'Round the numbers and redo the calculation roughly in your head. Also ask whether the answer should be ' +
+            'bigger or smaller than what you started with, which catches a division that should have been a ' +
+            'multiplication.',
+    },
+    {
+        id: 'maths-jr-number-line-inequalities',
+        subject: 'mathematics',
+        question: 'How do I show an inequality on a number line?',
+        aliases: ['inequality on a number line', 'open and closed circle', 'graphing an inequality'],
+        answer:
+            'An open circle excludes the value, for less than or greater than; a filled circle includes it, for the ' +
+            'or equal to versions. The arrow points in the direction of the values that satisfy it.',
+    },
+    {
+        id: 'maths-jr-ratio-equivalent',
+        subject: 'mathematics',
+        question: 'How do I simplify and compare ratios?',
+        aliases: ['simplifying a ratio', 'equivalent ratios', 'comparing two ratios'],
+        answer:
+            'Divide both parts by their highest common factor, converting to the same units first. To compare two ' +
+            'ratios, write both with the same first term, or convert each to a single fraction.',
+    },
+    {
+        id: 'maths-jr-scale-and-maps',
+        subject: 'mathematics',
+        question: 'How do I use a map scale?',
+        aliases: ['map scale calculation', 'scale on a plan', 'real distance from a map'],
+        answer:
+            'A scale of 1:50,000 means one unit on the map is 50,000 in reality, so 3 cm represents 150,000 cm, which ' +
+            'is 1.5 km. Convert to sensible units only at the end.',
+    },
+    {
+        id: 'maths-jr-pythagoras-intro',
+        subject: 'mathematics',
+        question: 'How do I use Pythagoras to find a shorter side?',
+        aliases: ['finding a shorter side', 'pythagoras subtraction', 'leg of a right triangle'],
+        answer:
+            'Subtract rather than add: a² = c² − b², where c is always the hypotenuse opposite the right angle. ' +
+            'Identifying the hypotenuse first is what prevents the wrong operation.',
+    },
+    {
+        id: 'maths-jr-rounding-decimals',
+        subject: 'mathematics',
+        question: 'How do I round to decimal places and significant figures?',
+        aliases: ['rounding to decimal places', 'significant figures rounding', 'which digit decides'],
+        answer:
+            'Look at the digit immediately after the place you are keeping: five or more rounds up. For significant ' +
+            'figures, start counting from the first non-zero digit, so 0.00456 to two significant figures is 0.0046.',
+    },
+    {
+        id: 'maths-jr-negative-index-intro',
+        subject: 'mathematics',
+        question: 'What does a power of zero or a negative power mean?',
+        aliases: ['power of zero', 'negative power meaning', 'reciprocal from an index'],
+        answer:
+            'Anything except zero to the power zero is one, because dividing a power by itself leaves no factors. A ' +
+            'negative power means one over the positive power, so 2⁻³ is one eighth.',
     },
 ];
