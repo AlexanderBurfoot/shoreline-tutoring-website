@@ -78,10 +78,13 @@ describe('the figures in the answers', () => {
                     continue;
                 }
                 const index = hit.index ?? 0;
-                if (/[×÷+−(]\s*$|½\s*$|ln\s*$|log\s*$|√\s*$/.test(answer.slice(Math.max(0, index - 6), index))) {
+                /* A slash either side means the number is part of a fraction, as in
+                   "x/3 + 2 = 7", where the 3 is a denominator rather than the start
+                   of a chain. Reading it as one gave a false failure. */
+                if (/[×÷+−(/]\s*$|½\s*$|ln\s*$|log\s*$|√\s*$/.test(answer.slice(Math.max(0, index - 6), index))) {
                     continue;
                 }
-                if (/^\s*[×÷+−=]/.test(answer.slice(index + hit[0].length))) {
+                if (/^\s*[×÷+−=/]/.test(answer.slice(index + hit[0].length))) {
                     continue;
                 }
                 const expected = evaluateChain(hit[1], hit[2]);
