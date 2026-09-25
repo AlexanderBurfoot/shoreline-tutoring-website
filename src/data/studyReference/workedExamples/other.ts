@@ -289,4 +289,99 @@ export const workedExampleOtherEntries: StudyEntry[] = [
             'Price rises from $10 to $12, a 20% rise, and quantity supplied rises from 100 to 110, a 10% rise. ' +
             'Elasticity is 10 ÷ 20 = 0.5, so supply is inelastic and producers cannot respond quickly.',
     },
+    {
+        id: 'bio-example-carrier-cross',
+        subject: 'biology',
+        question: 'Can you show me a worked example of a cross between two carriers?',
+        aliases: ['worked example carrier cross', 'example of two carriers having children', 'probability of an affected child'],
+        answer:
+            'Two carriers, Aa × Aa, give AA, Aa, Aa and aa. So one in four is affected and three in four are ' +
+            'unaffected. Among the unaffected children, two of the three are themselves carriers, which is the figure ' +
+            'genetic counselling uses.',
+    },
+    {
+        id: 'bio-example-hardy-weinberg-from-alleles',
+        subject: 'biology',
+        question: 'Can you show me a worked example of Hardy-Weinberg from allele frequencies?',
+        aliases: ['worked example hardy weinberg from alleles', 'example of genotype frequencies', 'p squared two pq q squared'],
+        answer:
+            'With p = 0.6 and q = 0.4, the genotype frequencies are p² = 0.36 homozygous dominant, 2pq = 0.48 ' +
+            'heterozygous and q² = 0.16 homozygous recessive. They sum to 1, which is the check.',
+    },
+    {
+        id: 'bio-example-sex-linked-probability',
+        subject: 'biology',
+        question: 'Can you show me a worked example of a sex-linked probability?',
+        aliases: ['worked example sex linked probability', 'example of probability of an affected son', 'chance of a carrier daughter'],
+        answer:
+            'A carrier mother and unaffected father: each child has a one in four chance of being an affected son and ' +
+            'a one in four chance of being a carrier daughter. Among sons alone the chance of being affected is one ' +
+            'in two.',
+    },
+    {
+        id: 'bio-example-oxygen-consumption',
+        subject: 'biology',
+        question: 'Can you show me a worked example of a respiration rate?',
+        aliases: ['worked example respiration rate', 'example of oxygen consumption calculation', 'respirometer calculation'],
+        answer:
+            'A respirometer shows the fluid moving 24 mm along a 1.0 mm² capillary in 4 minutes. That is 24 mm³ of ' +
+            'oxygen used, or 6.0 mm³ per minute. Dividing by the organism mass allows comparison between organisms of ' +
+            'different size.',
+    },
+    {
+        id: 'econ-example-real-wage',
+        subject: 'economics',
+        question: 'Can you show me a worked example of a real wage change?',
+        aliases: ['worked example real wage', 'example of real versus nominal wage', 'wage growth minus inflation'],
+        answer:
+            'A nominal wage rise of 4.0% with inflation at 2.5% is a real rise of about 1.5%. If inflation were 5%, ' +
+            'the same nominal rise would be a real cut of 1%, which is how workers can be worse off after a pay ' +
+            'increase.',
+    },
+    {
+        id: 'econ-example-elasticity-revenue',
+        subject: 'economics',
+        question: 'Can you show me a worked example of elasticity and revenue?',
+        aliases: ['worked example elasticity and revenue', 'example of a price cut raising revenue', 'elastic demand revenue example'],
+        answer:
+            'Price falls from $20 to $18, a 10% cut, and quantity rises from 100 to 120, a 20% rise, so elasticity is ' +
+            '2. Revenue moves from $2,000 to $2,160, so the cut raised revenue because demand was elastic.',
+    },
+    {
+        id: 'econ-example-gdp-per-capita',
+        subject: 'economics',
+        question: 'Can you show me a worked example of GDP per capita?',
+        aliases: ['worked example gdp per capita', 'example of income per person', 'gdp divided by population'],
+        answer:
+            'A GDP of $2,000 billion in a population of 26 million gives 2,000,000 ÷ 26 = about $76,900 per person. ' +
+            'If GDP grows 2% while the population grows 1.5%, income per person grows only about 0.5%.',
+    },
+    {
+        id: 'bus-example-target-profit',
+        subject: 'business-studies',
+        question: 'Can you show me a worked example of break-even with a target profit?',
+        aliases: ['worked example target profit', 'example of units needed for a profit', 'break even plus profit'],
+        answer:
+            'Fixed costs are $8,000 and the contribution per unit is $10. Break-even is 800 units, and to make $5,000 ' +
+            'profit the business needs (8,000 + 5,000) ÷ 10 = 1,300 units.',
+    },
+    {
+        id: 'bus-example-return-on-equity',
+        subject: 'business-studies',
+        question: 'Can you show me a worked example of return on equity?',
+        aliases: ['worked example return on equity', 'example of roe calculation', 'return to owners example'],
+        answer:
+            'A net profit of $60,000 on owners equity of $400,000 gives 60 ÷ 400 = 15%. It is compared with what the ' +
+            'owners could earn elsewhere, so a 15% return is judged against the alternatives rather than in ' +
+            'isolation.',
+    },
+    {
+        id: 'bus-example-expense-ratio',
+        subject: 'business-studies',
+        question: 'Can you show me a worked example of the expense ratio?',
+        aliases: ['worked example expense ratio', 'example of expenses to sales', 'expense ratio calculation'],
+        answer:
+            'Expenses of $120,000 against sales of $500,000 give 120 ÷ 500 = 24%. Tracking it over several years ' +
+            'shows whether costs are growing faster than sales, which a single figure cannot.',
+    },
 ];

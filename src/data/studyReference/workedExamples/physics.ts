@@ -234,4 +234,141 @@ export const workedExamplePhysicsEntries: StudyEntry[] = [
             'A force rises and falls as a triangle, peaking at 40 N over 0.30 s. The impulse is the area, ½ × 0.30 × ' +
             '40 = 6.0 N s. That equals the change in momentum, so a 2.0 kg object would gain 3.0 m s⁻¹.',
     },
+    {
+        id: 'phys-example-resultant-force',
+        subject: 'physics',
+        question: 'Can you show me a worked example of finding a resultant force?',
+        aliases: ['worked example resultant force', 'example of adding perpendicular forces', 'resultant of two forces'],
+        answer:
+            'A 3.0 N force east and a 4.0 N force north act on a point. The resultant is √(9 + 16) = 5.0 N, at ' +
+            'tan⁻¹(4 ÷ 3) = 53° north of east. Perpendicular forces are added by Pythagoras rather than ' +
+            'arithmetically.',
+    },
+    {
+        id: 'phys-example-frictionless-incline',
+        subject: 'physics',
+        question: 'Can you show me a worked example of a frictionless incline?',
+        aliases: ['worked example frictionless incline', 'example of acceleration down a smooth slope', 'g sin theta example'],
+        answer:
+            'On a smooth 30° slope the only force along the slope is mg sin 30°, so a = g sin 30° = 4.9 m s⁻². The ' +
+            'mass cancels, which is why every object slides down a smooth slope at the same rate.',
+    },
+    {
+        id: 'phys-example-lift-force',
+        subject: 'physics',
+        question: 'Can you show me a worked example of the force in a lift?',
+        aliases: ['worked example lift force', 'example of apparent weight calculation', 'normal force in an accelerating lift'],
+        answer:
+            'A 60 kg person in a lift accelerating upward at 2.0 m s⁻². N = m(g + a) = 60 × 11.8 = 708 N, against 588 ' +
+            'N at rest. Accelerating downward at the same rate would give 468 N.',
+    },
+    {
+        id: 'phys-example-recoil',
+        subject: 'physics',
+        question: 'Can you show me a worked example of recoil?',
+        aliases: ['worked example recoil', 'example of a rifle recoil calculation', 'momentum zero before firing'],
+        answer:
+            'A 4.0 kg rifle fires a 0.010 kg bullet at 400 m s⁻¹. Momentum before is zero, so 0.010 × 400 = 4.0 × v ' +
+            'gives a recoil speed of 1.0 m s⁻¹. The bullet carries far more kinetic energy despite the equal ' +
+            'momentum.',
+    },
+    {
+        id: 'phys-example-kinetic-energy',
+        subject: 'physics',
+        question: 'Can you show me a worked example of kinetic energy?',
+        aliases: ['worked example kinetic energy', 'example of calculating kinetic energy', 'half m v squared example'],
+        answer:
+            'A 1,500 kg car at 25 m s⁻¹ has Ek = ½(1500)(625) = 4.7 × 10⁵ J. At 50 m s⁻¹ it would be four times that, ' +
+            'which is why stopping distance grows with the square of speed.',
+    },
+    {
+        id: 'phys-example-power-force',
+        subject: 'physics',
+        question: 'Can you show me a worked example of finding force from power?',
+        aliases: ['worked example force from power', 'example of p = fv', 'driving force from engine power'],
+        answer:
+            'A car develops 20 kW while travelling at 15 m s⁻¹. Since P = Fv, the driving force is 20,000 ÷ 15 = ' +
+            '1,300 N. At constant speed that equals the total resistance acting against it.',
+    },
+    {
+        id: 'phys-example-satellite-period',
+        subject: 'physics',
+        question: 'Can you show me a worked example of a satellite period?',
+        aliases: ['worked example satellite period', 'example of orbital period calculation', 'finding the period of an orbit'],
+        answer:
+            'For an orbit of radius 1.0 × 10⁷ m with GM = 3.98 × 10¹⁴, T = 2π√(r³ ÷ GM) = 2π√(2.51 × 10⁶) = 1.0 × 10⁴ ' +
+            's, about 2.8 hours. A larger orbit gives a longer period, as Kepler third law requires.',
+    },
+    {
+        id: 'phys-example-gravitational-force',
+        subject: 'physics',
+        question: 'Can you show me a worked example of gravitational force between two objects?',
+        aliases: ['worked example gravitational force', 'example of newtons law of gravitation calculation', 'force between two masses'],
+        answer:
+            'For 1,000 kg and 2,000 kg five metres apart, F = GMm/r² = (6.67 × 10⁻¹¹ × 2.0 × 10⁶) ÷ 25 = 5.3 × 10⁻⁶ ' +
+            'N. It is tiny, which is why gravity is only noticeable when one mass is astronomical.',
+    },
+    {
+        id: 'phys-example-string-frequency',
+        subject: 'physics',
+        question: 'Can you show me a worked example of the fundamental frequency of a string?',
+        aliases: ['worked example fundamental frequency', 'example of a string frequency calculation', 'wavelength on a string example'],
+        answer:
+            'A 0.50 m string carries waves at 200 m s⁻¹. The fundamental fits half a wavelength, so λ = 1.0 m and f = ' +
+            'v ÷ λ = 200 Hz. The second harmonic would be 400 Hz.',
+    },
+    {
+        id: 'phys-example-intensity-distance',
+        subject: 'physics',
+        question: 'Can you show me a worked example of intensity and distance?',
+        aliases: ['worked example intensity and distance', 'example of the inverse square law calculation', 'doubling the distance intensity'],
+        answer:
+            'A lamp gives 80 W m⁻² at 2.0 m. At 4.0 m the distance has doubled, so the intensity falls to a quarter: ' +
+            '20 W m⁻². At 6.0 m it is a ninth, about 8.9 W m⁻².',
+    },
+    {
+        id: 'phys-example-critical-angle',
+        subject: 'physics',
+        question: 'Can you show me a worked example of the critical angle?',
+        aliases: ['worked example critical angle', 'example of calculating the critical angle', 'total internal reflection calculation'],
+        answer:
+            'For glass of refractive index 1.50 against air, sin θc = 1 ÷ 1.50 = 0.667, so θc = 41.8°. Beyond that ' +
+            'angle the light reflects entirely inside the glass, which is how an optical fibre works.',
+    },
+    {
+        id: 'phys-example-parallel-resistors',
+        subject: 'physics',
+        question: 'Can you show me a worked example of resistors in parallel?',
+        aliases: ['worked example parallel resistors', 'example of parallel resistance calculation', 'combining resistors in parallel'],
+        answer:
+            'For 6.0 Ω and 3.0 Ω in parallel, 1/R = 1/6 + 1/3 = 1/2, so R = 2.0 Ω. The combination is always smaller ' +
+            'than the smallest branch, which is the check to apply.',
+    },
+    {
+        id: 'phys-example-resistor-power',
+        subject: 'physics',
+        question: 'Can you show me a worked example of power in a resistor?',
+        aliases: ['worked example power in a resistor', 'example of i squared r', 'heat dissipated in a resistor'],
+        answer:
+            'A current of 3.0 A flows through a 4.0 Ω resistor. P = I²R = 9 × 4 = 36 W. Using P = VI needs the ' +
+            'voltage first, which here is 12 V and gives the same answer.',
+    },
+    {
+        id: 'phys-example-transformer-current',
+        subject: 'physics',
+        question: 'Can you show me a worked example of transformer current?',
+        aliases: ['worked example transformer current', 'example of secondary current calculation', 'step down current increase'],
+        answer:
+            'An ideal transformer steps 240 V down to 12 V with a primary current of 1.5 A. Since power is unchanged, ' +
+            '240 × 1.5 = 12 × Is, so the secondary current is 30 A. Stepping voltage down steps current up.',
+    },
+    {
+        id: 'phys-example-photoelectric-wavelength',
+        subject: 'physics',
+        question: 'Can you show me a worked example of the photoelectric effect from a wavelength?',
+        aliases: ['worked example photoelectric from wavelength', 'example of photon energy in electron volts', 'kinetic energy from wavelength'],
+        answer:
+            'Light of 400 nm carries 1,240 ÷ 400 = 3.10 eV per photon. Against a work function of 2.0 eV, the maximum ' +
+            'kinetic energy is 1.1 eV, so the stopping voltage is 1.1 V.',
+    },
 ];
