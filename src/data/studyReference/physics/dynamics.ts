@@ -206,11 +206,87 @@ export const physicsDynamicsEntries: StudyEntry[] = [
         id: 'phys-energy-types',
         subject: 'physics',
         question: 'What forms does energy take?',
-        aliases: ['forms of energy', 'types of energy', 'chemical energy', 'elastic potential energy', 'energy transformation examples'],
+        aliases: ['forms of energy', 'types of energy', 'chemical energy', 'energy transformation examples'],
         answer:
             'Kinetic, gravitational potential, elastic potential, chemical, thermal, sound, light, electrical and ' +
             'nuclear. ' +
             'Energy is never used up, only transformed, and in every real transformation some becomes thermal energy ' +
             'spread through the surroundings.',
+    },
+    {
+        id: 'phys-normal-force-cases',
+        subject: 'physics',
+        question: 'When is the normal force not equal to the weight?',
+        aliases: ['normal force not equal to weight', 'normal force in a lift', 'normal force on a slope'],
+        answer:
+            'On a slope it is mg cos θ; in an accelerating lift it is m(g ± a); when another force presses down or ' +
+            'pulls up it adjusts accordingly. It equals the weight only on level ground with no vertical acceleration ' +
+            'or extra vertical force.',
+    },
+    {
+        id: 'phys-friction-advantages',
+        subject: 'physics',
+        question: 'Is friction always a nuisance?',
+        aliases: ['uses of friction', 'friction is useful', 'walking requires friction'],
+        answer:
+            'No. Walking, driving, braking, gripping and writing all depend on it. It becomes a problem mainly where ' +
+            'surfaces must slide, which is why engineering reduces it there with lubricants and bearings while ' +
+            'increasing it elsewhere with tread.',
+    },
+    {
+        id: 'phys-momentum-recoil',
+        subject: 'physics',
+        question: 'How do I answer a recoil or explosion question?',
+        aliases: ['recoil', 'explosion momentum', 'total momentum zero'],
+        answer:
+            'Total momentum before is zero, so the momenta afterwards must cancel: m₁v₁ = −m₂v₂. The lighter fragment ' +
+            'moves faster, which is why a rifle recoils gently while the bullet leaves quickly.',
+    },
+    {
+        id: 'phys-two-dimensional-collision',
+        subject: 'physics',
+        question: 'How do I handle a collision in two dimensions?',
+        aliases: ['two dimensional collision', 'momentum components in a collision', 'glancing collision'],
+        answer:
+            'Momentum is conserved separately along each axis, so resolve every velocity into components, write one ' +
+            'equation for each direction and solve them together. A vector diagram is usually the quickest check.',
+    },
+    {
+        id: 'phys-work-energy-theorem',
+        subject: 'physics',
+        question: 'What is the work-energy theorem?',
+        aliases: ['work energy theorem', 'net work equals change in kinetic energy', 'using energy instead of forces'],
+        answer:
+            'The net work done on an object equals its change in kinetic energy. It lets you skip the acceleration ' +
+            'and the time entirely, which makes it the fastest route through many problems involving a distance and a ' +
+            'force.',
+    },
+    {
+        id: 'phys-elastic-potential',
+        subject: 'physics',
+        question: 'How does a spring store energy?',
+        aliases: ['elastic potential energy', 'hookes law', 'energy in a stretched spring'],
+        answer:
+            'Force is proportional to extension, F = kx, so the energy stored is the area under that graph: E = ½kx². ' +
+            'Doubling the extension therefore stores four times the energy, provided the spring is not stretched past ' +
+            'its elastic limit.',
+    },
+    {
+        id: 'phys-energy-in-a-collision',
+        subject: 'physics',
+        question: 'Where does the kinetic energy go in a crash?',
+        aliases: ['energy lost in a collision', 'deformation energy', 'kinetic energy after a crash'],
+        answer:
+            'Into deformation of the vehicles, heat, sound and the movement of parts that break away. Momentum is ' +
+            'still conserved, which is why momentum rather than energy is the quantity used to analyse the collision.',
+    },
+    {
+        id: 'phys-inertia-examples',
+        subject: 'physics',
+        question: 'Where do I see inertia in everyday life?',
+        aliases: ['inertia examples', 'why you lurch forward when braking', 'seatbelt physics'],
+        answer:
+            'You continue forward when a bus brakes, a tablecloth can be pulled from under crockery, and a passenger ' +
+            'needs a seatbelt because their body keeps moving after the car has stopped.',
     },
 ];

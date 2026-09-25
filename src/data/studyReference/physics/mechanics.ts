@@ -285,4 +285,97 @@ export const physicsMechanicsEntries: StudyEntry[] = [
             'The path becomes asymmetric: the descent is steeper than the climb, and the object lands more slowly than ' +
             'it was launched.',
     },
+    {
+        id: 'phys-orbital-decay',
+        subject: 'physics',
+        question: 'Why do low satellites eventually fall?',
+        aliases: ['orbital decay', 'atmospheric drag on a satellite', 'deorbiting'],
+        answer:
+            'There is still a trace of atmosphere in low orbit, so drag slowly removes energy. The orbit shrinks, ' +
+            'which speeds the satellite up while lowering it, until it reaches air dense enough to burn it up.',
+    },
+    {
+        id: 'phys-kepler-third-law-use',
+        subject: 'physics',
+        question: 'How do I use the law of periods in a calculation?',
+        aliases: ['using the law of periods', 'comparing two orbits', 'r cubed over t squared calculation'],
+        answer:
+            'Because r³/T² is the same for every satellite of the same central body, you can set the ratio for one ' +
+            'orbit equal to the ratio for another and solve for the unknown, without ever needing the mass or G.',
+    },
+    {
+        id: 'phys-apparent-weight-circular',
+        subject: 'physics',
+        question: 'Why do I feel heavier at the bottom of a loop?',
+        aliases: ['apparent weight in a loop', 'feeling heavy at the bottom', 'roller coaster forces'],
+        answer:
+            'At the bottom the seat must both support your weight and provide the centripetal force, so the contact ' +
+            'force is mg + mv²/r. At the top gravity contributes to the centripetal force, so the contact force is ' +
+            'smaller.',
+    },
+    {
+        id: 'phys-gravitational-field-lines',
+        subject: 'physics',
+        question: 'What do gravitational field lines show?',
+        aliases: ['gravitational field lines', 'field lines point inward', 'uniform field near the ground'],
+        answer:
+            'Direction and relative strength: they point towards the mass, and closer spacing means a stronger field. ' +
+            'Near the ground they are effectively parallel and evenly spaced, which is why g is treated as constant ' +
+            'there.',
+    },
+    {
+        id: 'phys-torque-on-a-loop',
+        subject: 'physics',
+        question: 'Why does a current loop experience a turning effect rather than a push?',
+        aliases: ['turning effect on a loop', 'opposite forces on opposite sides', 'couple on a coil'],
+        answer:
+            'Opposite sides carry current in opposite directions, so the forces on them are opposite in direction but ' +
+            'offset from the axis. That pair of forces forms a couple, which rotates the loop instead of translating ' +
+            'it.',
+    },
+    {
+        id: 'phys-rotational-inertia-idea',
+        subject: 'physics',
+        question: 'Why is a wheel harder to spin when its mass is at the rim?',
+        aliases: ['mass distribution and rotation', 'flywheel', 'why mass at the rim matters'],
+        answer:
+            'Because the turning effect needed depends on how far the mass sits from the axis, not just on how much ' +
+            'there is. Mass at the rim resists a change in rotation most, which is why flywheels are built that way.',
+    },
+    {
+        id: 'phys-centre-of-mass-motion',
+        subject: 'physics',
+        question: 'What happens to the centre of mass during an explosion or collision?',
+        aliases: ['centre of mass keeps moving', 'motion of the centre of mass', 'fireworks centre of mass'],
+        answer:
+            'It continues on the path the external forces dictate, however the pieces scatter. A firework shell ' +
+            'bursting mid-flight scatters fragments, but their centre of mass follows the original parabola.',
+    },
+    {
+        id: 'phys-projectile-symmetry',
+        subject: 'physics',
+        question: 'What is symmetric about a projectile path?',
+        aliases: ['symmetry of a projectile', 'same speed at the same height', 'equal times up and down'],
+        answer:
+            'For a level launch and landing, the time up equals the time down, the speed at any height on the way up ' +
+            'equals the speed at that height coming down, and the launch and landing angles are equal.',
+    },
+    {
+        id: 'phys-satellite-speed-vs-radius',
+        subject: 'physics',
+        question: 'Why does a lower satellite travel faster?',
+        aliases: ['lower orbit faster', 'orbital speed and radius', 'why the moon moves slowly'],
+        answer:
+            'Because gravity provides the centripetal force, v = √(GM/r), so speed rises as the radius falls. The ' +
+            'International Space Station circles in 90 minutes while the Moon takes a month.',
+    },
+    {
+        id: 'phys-weight-on-other-planets',
+        subject: 'physics',
+        question: 'How do I find the weight of something on another planet?',
+        aliases: ['weight on another planet', 'g on mars', 'comparing gravity between planets'],
+        answer:
+            'Calculate g there from g = GM/r² using that planet mass and radius, then multiply by the mass of the ' +
+            'object. Mass is unchanged, so only the field strength differs.',
+    },
 ];

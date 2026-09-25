@@ -247,4 +247,68 @@ export const physicsKinematicsEntries: StudyEntry[] = [
             'Displacement curves upward as a parabola, since it depends on t². ' +
             'Each graph is the gradient of the one below it and the area of the one above.',
     },
+    {
+        id: 'phys-projectile-from-a-cliff',
+        subject: 'physics',
+        question: 'How do I handle a projectile fired horizontally from a height?',
+        aliases: ['fired horizontally from a height', 'projectile off a cliff', 'initial vertical velocity zero'],
+        answer:
+            'The initial vertical velocity is zero, so the fall time comes from the height alone. Horizontal range is ' +
+            'then the launch speed times that time. The two directions never mix except through the shared time.',
+    },
+    {
+        id: 'phys-relative-velocity-2d',
+        subject: 'physics',
+        question: 'How do I find a relative velocity in two dimensions?',
+        aliases: ['relative velocity in two dimensions', 'plane in a crosswind'],
+        answer:
+            'Subtract the vectors: the velocity of A relative to B is the velocity of A minus that of B. For a boat ' +
+            'crossing a river, add the boat and current vectors head to tail, and the resultant gives both the speed ' +
+            'and the drift angle.',
+    },
+    {
+        id: 'phys-average-velocity-vs-speed',
+        subject: 'physics',
+        question: 'Can average speed and average velocity differ?',
+        aliases: ['average speed versus average velocity', 'round trip average', 'zero average velocity'],
+        answer:
+            'Yes, and often greatly. A runner completing a lap has a substantial average speed but zero average ' +
+            'velocity, because displacement is zero while distance is not.',
+    },
+    {
+        id: 'phys-acceleration-from-graph',
+        subject: 'physics',
+        question: 'How do I find acceleration from a graph?',
+        aliases: ['acceleration from a graph', 'gradient of a velocity graph', 'curved velocity graph'],
+        answer:
+            'Take the gradient of the velocity-time graph. If that graph is curved, the acceleration is changing, so ' +
+            'draw a tangent at the instant in question and take its gradient instead.',
+    },
+    {
+        id: 'phys-motion-in-two-dimensions',
+        subject: 'physics',
+        question: 'Why can two-dimensional motion be split up?',
+        aliases: ['splitting two dimensional motion', 'independence of perpendicular components', 'components of motion'],
+        answer:
+            'Because perpendicular components are independent: a force along one axis changes only that component. ' +
+            'This is why a horizontally launched ball and a dropped ball reach the ground together.',
+    },
+    {
+        id: 'phys-galilean-relativity',
+        subject: 'physics',
+        question: 'What is Galilean relativity?',
+        aliases: ['galilean relativity', 'classical addition of velocities', 'no preferred frame'],
+        answer:
+            'The laws of mechanics are the same in every inertial frame, and velocities simply add. It works well at ' +
+            'ordinary speeds and fails for light, which is what special relativity was built to resolve.',
+    },
+    {
+        id: 'phys-significant-motion-graph-areas',
+        subject: 'physics',
+        question: 'What if a velocity-time graph goes below the axis?',
+        aliases: ['velocity graph below the axis', 'negative area on a graph', 'returning to the start'],
+        answer:
+            'The object is moving in the negative direction, so that area is negative displacement. For total ' +
+            'distance, add the magnitudes of the areas; for displacement, let them cancel.',
+    },
 ];
