@@ -74,4 +74,43 @@ export const mathematicsLanguageEntries: StudyEntry[] = [
             'If a product equals zero then at least one factor must be zero. That is why (x − 4)(x + 2) = 0 gives x = ' +
             '4 or x = −2. It works only against zero: if the product were 8, neither bracket has to equal 8.',
     },
+    {
+        id: 'maths-radical',
+        subject: 'mathematics',
+        question: 'What is a radical?',
+        aliases: ['radical', 'root symbol', 'radicand'],
+        answer:
+            'The root sign and the expression under it, so √(x + 1) is a radical and x + 1 is the radicand. A radical ' +
+            'with no perfect square factor is in simplest form, and an answer keeping a radical is exact rather than ' +
+            'rounded.',
+    },
+    {
+        id: 'maths-numerator',
+        subject: 'mathematics',
+        question: 'What is the numerator?',
+        aliases: ['numerator', 'top of a fraction', 'how many parts'],
+        answer:
+            'The number above the line, counting how many parts you have, while the denominator below says how many ' +
+            'parts make a whole. A numerator larger than the denominator means the fraction is greater than one.',
+    },
+    {
+        id: 'maths-triangular-number',
+        subject: 'mathematics',
+        question: 'What is a triangular number?',
+        aliases: ['triangular number', '1 3 6 10', 'sum of consecutive integers'],
+        answer:
+            'A total made by adding consecutive whole numbers: 1, 3, 6, 10, 15 and so on, since each can be drawn as ' +
+            'a triangle of dots. The nth one is n(n + 1)/2, which is also the number of handshakes among n + 1 ' +
+            'people.',
+    },
+    {
+        id: 'maths-divisor',
+        subject: 'mathematics',
+        question: 'What is a divisor?',
+        aliases: ['divisor', 'number you divide by', 'dividend and divisor'],
+        answer:
+            'The number you are dividing by, while the dividend is the number being divided and the quotient is the ' +
+            'answer. In 84 ÷ 6 = 14, the divisor is 6. A divisor of a whole number with no remainder is also called a ' +
+            'factor of it.',
+    },
 ];

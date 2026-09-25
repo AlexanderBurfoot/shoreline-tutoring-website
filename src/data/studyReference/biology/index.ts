@@ -1,4 +1,5 @@
 /** Biology, gathered from the module banks. */
+import { biologyStructureEntries } from './structures';
 import { biologyComparisonEntries } from './comparisons';
 import { biologyCellsEntries } from './cells';
 import { biologyOrganisationEntries } from './organisation';
@@ -28,4 +29,5 @@ export const biologyEntries: StudyEntry[] = [
     ...biologyNonInfectiousEntries,
     ...biologySkillsEntries,
     ...biologyComparisonEntries,
+    ...biologyStructureEntries,
 ];

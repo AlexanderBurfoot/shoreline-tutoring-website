@@ -76,4 +76,42 @@ export const physicsExplanationEntries: StudyEntry[] = [
             'to flicker. A planet is a small disc rather than a point, so the fluctuations across it average out and ' +
             'it shines steadily.',
     },
+    {
+        id: 'phys-pascal',
+        subject: 'physics',
+        question: 'What is a pascal?',
+        aliases: ['pascal', 'unit of pressure', 'newton per square metre'],
+        answer:
+            'The SI unit of pressure, one newton per square metre. It is small, so pressures are usually quoted in ' +
+            'kilopascals: standard atmospheric pressure is about 101 kPa and the gas laws are normally worked in kPa.',
+    },
+    {
+        id: 'phys-volt',
+        subject: 'physics',
+        question: 'What is a volt?',
+        aliases: ['volt', 'unit of potential difference', 'joule per coulomb'],
+        answer:
+            'One joule of energy transferred per coulomb of charge. So a 12 V battery gives each coulomb 12 joules, ' +
+            'which is why voltage and energy are linked by W = qV rather than being the same quantity.',
+    },
+    {
+        id: 'phys-parsec',
+        subject: 'physics',
+        question: 'What is a parsec?',
+        aliases: ['parsec', 'astronomical distance unit', 'how far a parsec is'],
+        answer:
+            'The distance at which one astronomical unit subtends an angle of one arcsecond, about 3.26 light years. ' +
+            'It comes directly from the parallax method, since a star with a parallax of one arcsecond is one parsec ' +
+            'away.',
+    },
+    {
+        id: 'phys-apparent-magnitude',
+        subject: 'physics',
+        question: 'What is apparent magnitude?',
+        aliases: ['apparent magnitude', 'how bright a star looks', 'magnitude scale'],
+        answer:
+            'How bright a star appears from Earth, on a scale where smaller numbers are brighter and the brightest ' +
+            'objects are negative. A difference of one magnitude is a factor of about 2.5 in brightness, and it ' +
+            'depends on distance as well as on the star itself.',
+    },
 ];
