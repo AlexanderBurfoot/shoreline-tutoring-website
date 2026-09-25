@@ -365,4 +365,15 @@ export const mathematicsLanguageEntries: StudyEntry[] = [
             'seconds. Use it to check work and build intuition rather than to produce answers, since examinations are ' +
             'sat without it, and sketch by hand afterwards to confirm you could.',
     },
+    {
+        id: 'maths-greek-letters',
+        subject: 'mathematics',
+        question: 'What do the Greek letters in maths mean?',
+        aliases: ['greek letters in maths', 'greek symbols mathematics', 'what does sigma mean', 'what does theta mean'],
+        answer:
+            'By convention: \u03c0 is the circle constant, \u03b8 and \u03c6 are angles, \u03a3 is a sum over the values listed beneath it, ' +
+            '\u0394 is a change in a quantity or the discriminant b\u00b2 \u2212 4ac, \u03bc is a population mean and \u03c3 a population ' +
+            'standard deviation, and \u03b1 and \u03b2 usually stand for the roots of a polynomial. They are ordinary ' +
+            'variables with settled habits, not special numbers.',
+    },
 ];

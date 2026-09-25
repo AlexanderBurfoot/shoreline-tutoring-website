@@ -389,4 +389,79 @@ export const hscGuideEntries: HscGuideEntry[] = [
             + 'students can revise. NESA also limits how many tasks a course may have and how much any '
             + 'one can be worth, which is why a school assessment schedule looks the way it does.',
     },
+    {
+        id: 'hsc-reading-a-syllabus',
+        question: 'How do I read a syllabus document?',
+        aliases: [
+            'reading a syllabus',
+            'how to use the syllabus',
+            'understanding the syllabus document',
+            'what is in a syllabus',
+        ],
+        answer:
+            'Skip the front matter and go to the course content. Each module lists outcomes, which are '
+            + 'what you must be able to do, then content points under headings, most beginning with a '
+            + 'verb such as investigate, model or analyse. That verb is the level you are examined at, so '
+            + 'a point that says analyse will not be satisfied by being able to describe. The glossary at '
+            + 'the back defines the key words.',
+    },
+    {
+        id: 'hsc-syllabus-as-checklist',
+        question: 'How do I use the syllabus to revise?',
+        aliases: [
+            'using the syllabus to revise',
+            'syllabus checklist',
+            'syllabus dot points revision',
+            'revising from the syllabus',
+        ],
+        answer:
+            'Turn the content points into a checklist and rate each one confident, shaky or blank. Revise '
+            + 'the blanks first, then find past questions on the shaky ones, because a topic you half know '
+            + 'loses more marks than one you know you have to look up. Nothing outside the syllabus can be '
+            + 'examined, so a complete checklist is a complete course.',
+    },
+    {
+        id: 'hsc-scope-and-sequence',
+        question: 'What is a scope and sequence?',
+        aliases: [
+            'scope and sequence',
+            'school teaching program',
+            'order topics are taught',
+            'teaching schedule document',
+        ],
+        answer:
+            'The school plan for the order and timing of topics across the year. It is written by the '
+            + 'faculty, not NESA, so two schools may teach the same syllabus in a different order. Asking '
+            + 'for it is worth doing: it tells you what is coming next and which topics a task will cover.',
+    },
+    {
+        id: 'hsc-time-per-mark',
+        question: 'How much time should I spend per mark in an exam?',
+        aliases: [
+            'time per mark',
+            'minutes per mark',
+            'how long to spend on each question',
+            'exam timing per mark',
+        ],
+        answer:
+            'Divide the minutes by the marks before you start. A three hour paper worth 100 marks gives '
+            + 'about 1.8 minutes a mark, so a five mark question deserves around nine minutes and no more. '
+            + 'Leave ten minutes at the end for the questions you skipped. Overrunning on a favourite '
+            + 'question costs marks that were easier to get elsewhere.',
+    },
+    {
+        id: 'hsc-after-trials',
+        question: 'What should I do between the trials and the HSC?',
+        aliases: [
+            'between trials and hsc',
+            'after trial exams',
+            'revising after the trials',
+            'how to use the time before the hsc',
+        ],
+        answer:
+            'Work from the trial paper outwards. Mark it against the guidelines, sort the lost marks into '
+            + 'not known, misread and ran out of time, and spend the first fortnight on the not knowns only. '
+            + 'Then move to whole past papers under timed conditions, one per subject per week, marking each '
+            + 'before attempting the next. New content is rarely the problem by this point.',
+    },
 ];

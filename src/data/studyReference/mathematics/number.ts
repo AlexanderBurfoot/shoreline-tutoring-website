@@ -164,4 +164,15 @@ export const mathematicsNumberEntries: StudyEntry[] = [
             'a third. Every fraction gives either a terminating or a recurring decimal, which is why a decimal that ' +
             'does neither, such as π, cannot be written as a fraction.',
     },
+    {
+        id: 'maths-calculator-fractions',
+        subject: 'mathematics',
+        question: 'How do I enter a fraction on a calculator?',
+        aliases: ['entering a fraction on a calculator', 'fraction button', 'mixed number on a calculator', 'a b c key'],
+        answer:
+            'Use the fraction key, often marked with a blank over a blank, and the arrow keys to move between ' +
+            'numerator and denominator rather than typing a division. A separate key or shift of it gives mixed ' +
+            'numbers. A toggle, usually S\u21d4D, swaps between the exact fraction or surd and the decimal, and exams ' +
+            'often want the exact form.',
+    },
 ];

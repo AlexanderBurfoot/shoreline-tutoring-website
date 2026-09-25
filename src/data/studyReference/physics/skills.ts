@@ -268,4 +268,15 @@ export const physicsSkillsEntries: StudyEntry[] = [
             'Use the value provided in the examination data sheet rather than one you remember, and state it when you ' +
             'substitute. Using 9.8 where the paper supplies 9.81 rarely matters, but quoting no value at all does.',
     },
+    {
+        id: 'phys-greek-letters',
+        subject: 'physics',
+        question: 'What do the Greek letters in physics mean?',
+        aliases: ['greek letters in physics', 'greek symbols physics', 'what does lambda mean', 'what does omega mean'],
+        answer:
+            'By convention: \u03bb is wavelength, \u03bd or f is frequency, \u03c9 is angular velocity, \u03b8 is an angle, \u0394 is a change ' +
+            'in a quantity, \u03c1 is density or resistivity, \u03bc is a coefficient of friction and \u03bc\u2080 the permeability of ' +
+            'free space, \u03b5\u2080 is the permittivity of free space, \u03c4 is torque, and \u03b1, \u03b2 and \u03b3 name the three kinds of ' +
+            'nuclear radiation. Read the symbol from its context, since \u03bc has two uses in one course.',
+    },
 ];

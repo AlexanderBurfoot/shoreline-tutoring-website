@@ -11,6 +11,7 @@ import { businessEntries } from './businessStudies';
 import { chemistryEntries } from './chemistry';
 import { commonMistakeEntries } from './commonMistakes';
 import { courseOverviewEntries } from './courseOverviews';
+import { examStructureEntries } from './examStructure';
 import { examTechniqueEntries } from './examTechnique';
 import { economicsEntries } from './economics';
 import { examPrepEntries } from './examPrep';
@@ -38,6 +39,7 @@ export const studyEntries: StudyEntry[] = [
     ...commonMistakeEntries,
     ...scientificMethodEntries,
     ...courseOverviewEntries,
+    ...examStructureEntries,
     ...examTechniqueEntries,
 ];
 
