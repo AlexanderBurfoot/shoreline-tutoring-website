@@ -1,5 +1,6 @@
 /** Worked examples, gathered by subject. */
 import { workedExampleChemistryEntries } from './chemistry';
+import { workedExampleBiologyMoreEntries } from './biologyMore';
 import { workedExampleChemistryMoreEntries } from './chemistryMore';
 import { workedExampleCoreEntries } from './core';
 import { workedExampleEnglishEntries } from './english';
@@ -32,4 +33,5 @@ export const workedExampleEntries: StudyEntry[] = [
     ...workedExampleMathsSeniorEntries,
     ...workedExamplePhysicsMoreEntries,
     ...workedExampleChemistryMoreEntries,
+    ...workedExampleBiologyMoreEntries,
 ];
