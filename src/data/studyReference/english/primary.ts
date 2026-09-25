@@ -126,4 +126,89 @@ export const englishPrimaryEntries: StudyEntry[] = [
             'solves it. One character and one problem is enough, and showing what the character does is more ' +
             'interesting than describing what they look like.',
     },
+    {
+        id: 'eng-proper-noun',
+        subject: 'english',
+        question: 'What is a proper noun?',
+        aliases: ['proper noun', 'common and proper nouns', 'why names have capitals'],
+        answer:
+            'The name of a particular person, place, day or title, and it always takes a capital letter: Sydney, ' +
+            'Monday, Ms Chen. A common noun names a kind of thing, so city is common and Sydney is proper.',
+    },
+    {
+        id: 'eng-adverb-primary',
+        subject: 'english',
+        question: 'What is an adverb?',
+        aliases: ['adverb for kids', 'what an adverb does', 'words ending in ly'],
+        answer:
+            'A word telling you more about a verb: how, when or where something happened. She ran quickly, we arrived ' +
+            'early, he waited outside. Many end in ly, but not all do, and not every ly word is an adverb.',
+    },
+    {
+        id: 'eng-preposition',
+        subject: 'english',
+        question: 'What is a preposition?',
+        aliases: ['preposition', 'position words', 'in on under before'],
+        answer:
+            'A word showing how one thing relates to another in place or time: in, on, under, beside, before, after, ' +
+            'during. It begins a phrase that adds detail, as in the book on the shelf.',
+    },
+    {
+        id: 'eng-compound-sentence-primary',
+        subject: 'english',
+        question: 'What is a compound sentence?',
+        aliases: ['compound sentence for kids', 'joining two sentences', 'using and but so'],
+        answer:
+            'Two complete sentences joined by a word such as and, but, so or or. Each half could stand alone, which ' +
+            'is what separates it from a complex sentence, where one half depends on the other.',
+    },
+    {
+        id: 'eng-plural-rules',
+        subject: 'english',
+        question: 'What are the rules for making plurals?',
+        aliases: ['plural rules', 'making words plural', 'adding es to a plural'],
+        answer:
+            'Add s for most words, es after s, x, z, ch and sh, change y to ies after a consonant, and change f to ' +
+            'ves for many words. Some are irregular, such as children, mice and feet, and a few do not change at all, ' +
+            'such as sheep.',
+    },
+    {
+        id: 'eng-alphabetical-order',
+        subject: 'english',
+        question: 'How do I put words in alphabetical order?',
+        aliases: ['alphabetical order', 'sorting words alphabetically', 'ordering by letter'],
+        answer:
+            'Compare the first letters, and where they match compare the second, then the third, and so on. So cart ' +
+            'comes before cat, because the third letters r and t decide it once ca matches.',
+    },
+    {
+        id: 'eng-using-a-dictionary',
+        subject: 'english',
+        question: 'How do I use a dictionary well?',
+        aliases: ['using a dictionary', 'looking up a word', 'dictionary entry parts'],
+        answer:
+            'Find the word alphabetically, then read past the pronunciation to the part of speech and the numbered ' +
+            'meanings, and choose the meaning that fits your sentence. Most errors come from taking the first ' +
+            'definition without checking it fits.',
+    },
+    {
+        id: 'eng-using-a-thesaurus',
+        subject: 'english',
+        question: 'How do I use a thesaurus without going wrong?',
+        aliases: ['using a thesaurus', 'finding a synonym safely', 'thesaurus mistakes'],
+        answer:
+            'Check each suggestion in a dictionary before using it, since synonyms are rarely exact: said, muttered ' +
+            'and declared differ in tone. The right choice is the one that fits the sentence, not the longest one on ' +
+            'the list.',
+    },
+    {
+        id: 'eng-skimming-scanning',
+        subject: 'english',
+        question: 'What is the difference between skimming and scanning?',
+        aliases: ['skimming and scanning', 'reading quickly for the gist', 'searching for a detail'],
+        answer:
+            'Skimming means reading quickly for the overall idea, using headings and first sentences. Scanning means ' +
+            'searching for one specific thing while ignoring everything else. A comprehension task usually needs ' +
+            'both, in that order.',
+    },
 ];

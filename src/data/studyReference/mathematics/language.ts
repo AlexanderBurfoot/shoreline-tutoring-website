@@ -306,4 +306,53 @@ export const mathematicsLanguageEntries: StudyEntry[] = [
             'everything. Practise with it from the start of the year, since finding a formula under time is a skill ' +
             'of its own. NESA publishes the current version.',
     },
+    {
+        id: 'maths-distributive-law',
+        subject: 'mathematics',
+        question: 'What is the distributive law?',
+        aliases: ['distributive law', 'expanding with the distributive law', 'a times b plus c'],
+        answer:
+            'Multiplying a sum gives the same result as multiplying each part and adding: a(b + c) = ab + ac. It is ' +
+            'what expanding brackets does, and it works in reverse as factorising, which is why the two are the same ' +
+            'skill.',
+    },
+    {
+        id: 'maths-rate-year-8',
+        subject: 'mathematics',
+        question: 'What is a rate, and how is it different from a ratio?',
+        aliases: ['rate versus ratio', 'what is a rate at year 8', 'rate with two units'],
+        answer:
+            'A ratio compares two quantities of the same kind and has no units, such as 3:2. A rate compares ' +
+            'different kinds and keeps its units, such as 60 km per hour or $4 per kilogram. A unit rate has 1 as its ' +
+            'second quantity.',
+    },
+    {
+        id: 'maths-plotting-a-linear-graph',
+        subject: 'mathematics',
+        question: 'How do I plot a linear graph?',
+        aliases: ['plotting a linear graph', 'drawing a straight line graph', 'table of values for a line'],
+        answer:
+            'Make a table with three x values, work out y for each, plot the points and rule a line through them. ' +
+            'Three points rather than two, because if one is misplaced the three will not line up and you will ' +
+            'notice.',
+    },
+    {
+        id: 'maths-inequality-year-9',
+        subject: 'mathematics',
+        question: 'How do I show a solution to an inequality?',
+        aliases: ['inequality at year 9', 'solving and graphing an inequality', 'showing an inequality solution'],
+        answer:
+            'Solve it like an equation, remembering to reverse the sign if you multiply or divide by a negative, then ' +
+            'show the answer on a number line with an open circle for < or > and a filled circle for ≤ or ≥.',
+    },
+    {
+        id: 'maths-pythagoras-year-9',
+        subject: 'mathematics',
+        question: 'How do I use Pythagoras theorem?',
+        aliases: ['pythagoras at year 9', 'using pythagoras', 'finding the hypotenuse'],
+        answer:
+            'In a right-angled triangle, a² + b² = c² where c is the hypotenuse opposite the right angle. Add the ' +
+            'squares to find the hypotenuse and subtract to find a shorter side, and identify the hypotenuse before ' +
+            'deciding which.',
+    },
 ];

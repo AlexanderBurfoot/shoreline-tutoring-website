@@ -73,7 +73,7 @@ export const mathematicsAlgebraEntries: StudyEntry[] = [
         id: 'maths-linear-graph-sketching',
         subject: 'mathematics',
         question: 'How do I sketch a straight line quickly?',
-        aliases: ['sketching a line', 'x and y intercepts', 'gradient intercept method', 'plotting a linear graph'],
+        aliases: ['sketching a line', 'x and y intercepts', 'gradient intercept method'],
         answer:
             'From y = mx + b, plot b on the y-axis, then use the gradient as rise over run to find a second point. ' +
             'Alternatively find both intercepts: set x = 0 for the y-intercept and y = 0 for the x-intercept, then ' +
