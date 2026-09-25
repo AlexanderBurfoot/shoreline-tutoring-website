@@ -229,4 +229,154 @@ export const beyondSyllabusEntries: StudyEntry[] = [
             'evidence, which is the strongest status an explanation reaches. A law describes a consistent ' +
             'relationship without explaining why. Calling something only a theory misunderstands the word.',
     },
+    {
+        id: 'maths-complex-numbers-use',
+        subject: 'mathematics',
+        question: 'What are complex numbers actually used for?',
+        aliases: ['uses of complex numbers', 'why imaginary numbers matter', 'complex numbers in engineering'],
+        answer:
+            'Alternating current analysis, signal processing, control systems, quantum mechanics and fluid flow, ' +
+            'where they handle rotation and oscillation far more neatly than trigonometry alone. The name imaginary ' +
+            'is historical and misleading: the applications are entirely concrete.',
+    },
+    {
+        id: 'maths-matrices-intro',
+        subject: 'mathematics',
+        question: 'What is a matrix used for?',
+        aliases: ['matrix', 'matrices', 'what matrices are for'],
+        answer:
+            'Storing and transforming arrays of numbers: solving large systems of equations, applying rotations and ' +
+            'scalings in graphics, and representing networks. It is not in the NSW courses but appears immediately in ' +
+            'most quantitative degrees.',
+    },
+    {
+        id: 'maths-calculus-real-uses',
+        subject: 'mathematics',
+        question: 'Where is calculus actually used?',
+        aliases: ['uses of calculus', 'why learn calculus', 'calculus in real life'],
+        answer:
+            'Anywhere a rate matters: drug dosage and elimination, structural loads, interest and growth models, ' +
+            'machine learning optimisation, epidemic modelling and flight paths. Every one is a question about how a ' +
+            'quantity changes, which is what the derivative answers.',
+    },
+    {
+        id: 'phys-quantum-computing',
+        subject: 'physics',
+        question: 'What is a qubit?',
+        aliases: ['qubit', 'quantum computing basics', 'superposition in computing'],
+        answer:
+            'A quantum bit that can hold a superposition of states rather than only 0 or 1, so a set of them can ' +
+            'represent many combinations at once. It is beyond the syllabus, and the practical difficulty is that ' +
+            'interaction with the surroundings destroys the superposition.',
+    },
+    {
+        id: 'phys-general-relativity',
+        subject: 'physics',
+        question: 'What is general relativity, in brief?',
+        aliases: ['general relativity', 'curved spacetime', 'gravity as geometry'],
+        answer:
+            'Gravity described as the curvature of spacetime caused by mass and energy, rather than as a force. It ' +
+            'predicts the bending of light, the slowing of clocks in a gravitational field and gravitational waves, ' +
+            'all since observed. NSW covers only special relativity.',
+    },
+    {
+        id: 'phys-standard-model-limits',
+        subject: 'physics',
+        question: 'What does the standard model not explain?',
+        aliases: ['limits of the standard model', 'what physics has not solved', 'dark matter and gravity'],
+        answer:
+            'It does not include gravity, explain dark matter or dark energy, or account for neutrino mass in its ' +
+            'original form. It is extraordinarily accurate within its domain, which is why the gaps are interesting ' +
+            'rather than embarrassing.',
+    },
+    {
+        id: 'chem-green-solvents',
+        subject: 'chemistry',
+        question: 'What are green solvents?',
+        aliases: ['green solvents', 'supercritical carbon dioxide', 'replacing organic solvents'],
+        answer:
+            'Alternatives to volatile organic solvents: water, ionic liquids and supercritical carbon dioxide, which ' +
+            'behaves as a solvent under pressure and simply evaporates afterwards. Decaffeination uses it, which is ' +
+            'why the process leaves no residue.',
+    },
+    {
+        id: 'chem-catalysis-industry',
+        subject: 'chemistry',
+        question: 'Why is catalysis so important industrially?',
+        aliases: ['importance of catalysis', 'catalysts in industry', 'why catalysts save energy'],
+        answer:
+            'Because a lower activation energy means a usable rate at a lower temperature, which cuts fuel use and ' +
+            'equipment cost, and for an exothermic equilibrium it protects the yield. A large share of all ' +
+            'manufactured chemicals passes over a catalyst at some point.',
+    },
+    {
+        id: 'bio-crispr-ethics',
+        subject: 'biology',
+        question: 'What are the ethical questions around gene editing?',
+        aliases: ['gene editing ethics', 'crispr ethics', 'editing human embryos'],
+        answer:
+            'Editing body cells to treat disease raises much the same questions as any therapy. Editing embryos ' +
+            'changes every descendant, cannot be consented to, and risks shifting from treating disease towards ' +
+            'selecting traits, which is why most jurisdictions prohibit it.',
+    },
+    {
+        id: 'bio-microbiome',
+        subject: 'biology',
+        question: 'What is the microbiome?',
+        aliases: ['microbiome', 'gut bacteria', 'bacteria living in us'],
+        answer:
+            'The community of bacteria and other microbes living in and on the body, particularly the gut, which help ' +
+            'digest food, produce vitamins and train the immune system. It is beyond the syllabus but increasingly ' +
+            'relevant to non-infectious disease.',
+    },
+    {
+        id: 'bio-epigenetics-inheritance',
+        subject: 'biology',
+        question: 'Can experiences be inherited?',
+        aliases: ['inheriting experiences', 'epigenetic inheritance', 'can stress be passed on'],
+        answer:
+            'Some chemical tags on DNA respond to environment and can persist into the next generation in animal ' +
+            'studies, affecting gene expression without changing the sequence. How far this applies to humans is ' +
+            'still being established, so it is worth stating cautiously.',
+    },
+    {
+        id: 'econ-behavioural-economics',
+        subject: 'economics',
+        question: 'What is behavioural economics?',
+        aliases: ['behavioural economics', 'nudge theory', 'why people are not rational'],
+        answer:
+            'The study of how people actually decide rather than how a rational model says they should: anchoring on ' +
+            'a first number, weighting losses more than gains, and choosing the default. It is why the ordering of ' +
+            'options changes outcomes.',
+    },
+    {
+        id: 'econ-universal-basic-income',
+        subject: 'economics',
+        question: 'What is universal basic income?',
+        aliases: ['universal basic income', 'ubi', 'unconditional payment'],
+        answer:
+            'An unconditional payment to every citizen regardless of work or means, proposed to simplify welfare and ' +
+            'cushion automation. The arguments turn on cost, on the effect on work incentives, and on whether it ' +
+            'would replace or supplement existing payments.',
+    },
+    {
+        id: 'bus-agile-and-lean-startup',
+        subject: 'business-studies',
+        question: 'What do agile and lean startup mean?',
+        aliases: ['agile', 'lean startup', 'minimum viable product'],
+        answer:
+            'Working in short cycles, releasing something small and revising it from real feedback rather than ' +
+            'planning the whole product first. The minimum viable product is the smallest version that tests the ' +
+            'assumption the business depends on.',
+    },
+    {
+        id: 'bus-circular-economy',
+        subject: 'business-studies',
+        question: 'What is a circular economy?',
+        aliases: ['circular economy', 'designing out waste', 'product stewardship'],
+        answer:
+            'An economy designed so materials are reused, repaired and recycled rather than discarded, with producers ' +
+            'responsible for a product at the end of its life. It treats waste as a design failure, which changes ' +
+            'what is made rather than only how it is disposed of.',
+    },
 ];

@@ -80,7 +80,7 @@ export const economicsMicroEntries: StudyEntry[] = [
         id: 'econ-consumer-choice',
         subject: 'economics',
         question: 'How do consumers actually decide?',
-        aliases: ['consumer decision making', 'utility', 'behavioural economics'],
+        aliases: ['consumer decision making', 'utility'],
         answer:
             'In theory by maximising satisfaction given income and prices. In practice habit, advertising, framing ' +
             'and limited information matter, which is what behavioural economics studies and why nudges can change ' +

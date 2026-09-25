@@ -105,4 +105,102 @@ export const mathematicsMistakeEntries: StudyEntry[] = [
             'one. Not defining the variable. And failing to check the answer against the situation, which is what ' +
             'catches 2.5 buses or a negative age.',
     },
+    {
+        id: 'maths-derivative-units',
+        subject: 'mathematics',
+        question: 'What are the units of a derivative?',
+        aliases: ['units of a derivative', 'what dy dx means in units', 'interpreting a derivative in context'],
+        answer:
+            'The units of the vertical quantity divided by the units of the horizontal one. So dC/dx for cost against ' +
+            'items is dollars per item, and interpreting it in those words is usually worth a mark on its own.',
+    },
+    {
+        id: 'maths-integration-constant-matters',
+        subject: 'mathematics',
+        question: 'Why does the constant of integration matter?',
+        aliases: ['why the constant of integration matters', 'plus c significance', 'finding the particular solution'],
+        answer:
+            'Because integrating gives a family of curves with the same gradient, differing only in vertical ' +
+            'position. One known point picks the right member, which is why every applied antiderivative question ' +
+            'supplies an initial condition.',
+    },
+    {
+        id: 'maths-definite-versus-indefinite',
+        subject: 'mathematics',
+        question: 'What is the difference between a definite and an indefinite integral?',
+        aliases: ['definite versus indefinite integral', 'limits on an integral', 'why one has plus c'],
+        answer:
+            'An indefinite integral is a family of functions and keeps the constant. A definite integral has limits ' +
+            'and evaluates to a number, so the constant cancels. One answers what the function was; the other answers ' +
+            'how much accumulated.',
+    },
+    {
+        id: 'maths-area-versus-integral',
+        subject: 'mathematics',
+        question: 'Is a definite integral the same as an area?',
+        aliases: ['integral versus area', 'is an integral always an area', 'signed area again'],
+        answer:
+            'Not quite. It is the signed area, so regions below the axis subtract. For a total area, split at each ' +
+            'crossing and add the magnitudes; for a net change, such as displacement, the signed value is exactly ' +
+            'what you want.',
+    },
+    {
+        id: 'maths-probability-independence-test',
+        subject: 'mathematics',
+        question: 'How do I test whether two events are independent?',
+        aliases: ['testing independence', 'are two events independent', 'multiplying probabilities test'],
+        answer:
+            'Check whether P(A and B) equals P(A) × P(B). If it does they are independent; if not, knowing one ' +
+            'changes the chance of the other. Independence is about information rather than about physical ' +
+            'connection.',
+    },
+    {
+        id: 'maths-sampling-variability',
+        subject: 'mathematics',
+        question: 'Why do two samples from the same population differ?',
+        aliases: ['sampling variability', 'why samples differ', 'variation between samples'],
+        answer:
+            'Because each sample happens to catch different members. The spread of sample means narrows as the sample ' +
+            'grows, which is why a larger sample supports a stronger claim while never removing uncertainty entirely.',
+    },
+    {
+        id: 'maths-standard-deviation-meaning-detail',
+        subject: 'mathematics',
+        question: 'What does a standard deviation of a particular size mean?',
+        aliases: ['interpreting standard deviation', 'is a standard deviation large', 'comparing spread'],
+        answer:
+            'It is only meaningful against the mean and the context: a standard deviation of 5 is large for marks ' +
+            'averaging 20 and small for marks averaging 400. Dividing it by the mean gives a relative measure that ' +
+            'can be compared.',
+    },
+    {
+        id: 'maths-estimating-answers-senior',
+        subject: 'mathematics',
+        question: 'How do I sanity check a senior mathematics answer?',
+        aliases: ['checking a senior maths answer', 'sanity checking a result', 'does my answer make sense'],
+        answer:
+            'Ask whether the sign, size and units are plausible, whether a probability lies between 0 and 1, and ' +
+            'whether a length or area is positive. Substituting the answer back into the original relationship ' +
+            'catches most algebraic slips.',
+    },
+    {
+        id: 'maths-showing-working',
+        subject: 'mathematics',
+        question: 'How much working should I show?',
+        aliases: ['how much working to show', 'showing working in maths', 'marks for method'],
+        answer:
+            'Enough for a reader to follow each step without guessing, since method marks are awarded even when the ' +
+            'final answer is wrong. Define any variable you introduce, and state the rule you are applying when it is ' +
+            'not obvious.',
+    },
+    {
+        id: 'maths-command-words',
+        subject: 'mathematics',
+        question: 'What do the command words in a mathematics question mean?',
+        aliases: ['maths command words', 'show that versus prove', 'hence and hence or otherwise'],
+        answer:
+            'Show that expects you to reach a given result, so the answer is the working. Prove demands rigour with ' +
+            'reasons. Hence requires you to use the previous part, while hence or otherwise allows any method. ' +
+            'Ignoring hence usually means a much longer solution.',
+    },
 ];

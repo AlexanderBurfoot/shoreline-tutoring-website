@@ -39,7 +39,7 @@ export const mathematicsLanguageEntries: StudyEntry[] = [
         id: 'maths-radians-versus-degrees',
         subject: 'mathematics',
         question: 'When do I use radians instead of degrees?',
-        aliases: ['radians or degrees', 'when to use radians', 'why calculus uses radians'],
+        aliases: ['radians or degrees', 'when to use radians'],
         answer:
             'Use radians for arc length and sector area, since l = rθ and A = ½r²θ only hold in radians, and for all ' +
             'calculus with trigonometric functions, because the derivative of sin x is cos x only in radians. Check ' +
@@ -188,5 +188,102 @@ export const mathematicsLanguageEntries: StudyEntry[] = [
         answer:
             'Multiply the number of trials by the probability of success. Sixty rolls of a die should give 60 × ⅙ = ' +
             '10 sixes. It is a long-run average, so the actual count varies around it rather than matching it.',
+    },
+    {
+        id: 'maths-why-factorise',
+        subject: 'mathematics',
+        question: 'Why is factorising useful?',
+        aliases: ['why factorise', 'point of factorising', 'what factorising is for'],
+        answer:
+            'Because a product equal to zero tells you each factor separately, which is how equations are solved. It ' +
+            'also reveals the roots of a graph, cancels algebraic fractions, and turns an awkward expression into one ' +
+            'whose behaviour can be read off.',
+    },
+    {
+        id: 'maths-why-complete-the-square',
+        subject: 'mathematics',
+        question: 'Why complete the square when the formula exists?',
+        aliases: ['why complete the square', 'point of completing the square', 'vertex form advantage'],
+        answer:
+            'Because it gives the vertex directly, which the formula does not, and it shows why the graph sits where ' +
+            'it does. It is also how the quadratic formula is derived, and it is needed for circles and for some ' +
+            'integration.',
+    },
+    {
+        id: 'maths-discriminant-uses',
+        subject: 'mathematics',
+        question: 'What can the discriminant tell me besides the number of roots?',
+        aliases: ['uses of the discriminant', 'discriminant and tangency', 'proving no solutions'],
+        answer:
+            'A discriminant of zero means a repeated root, which is the algebraic condition for a line to be tangent ' +
+            'to a curve. A negative discriminant proves no real solutions exist, which is often what a question is ' +
+            'really asking.',
+    },
+    {
+        id: 'maths-simultaneous-three-unknowns',
+        subject: 'mathematics',
+        question: 'How do I solve three equations in three unknowns?',
+        aliases: ['three equations three unknowns', 'solving three simultaneous equations', 'eliminating twice'],
+        answer:
+            'Eliminate one variable from two different pairs to leave two equations in two unknowns, solve those, ' +
+            'then substitute back. Keeping the equations numbered and stating which pair you combined each time is ' +
+            'what prevents losing track.',
+    },
+    {
+        id: 'maths-graph-transformations-order',
+        subject: 'mathematics',
+        question: 'Does the order of transformations matter?',
+        aliases: ['order of transformations', 'stretch before translate'],
+        answer:
+            'Yes. A stretch applied before a translation moves the shifted graph by a different amount than the ' +
+            'reverse. Work from the inside of the function outwards, which matches the order the operations are ' +
+            'applied to x.',
+    },
+    {
+        id: 'maths-asymptote-behaviour',
+        subject: 'mathematics',
+        question: 'Can a graph cross its asymptote?',
+        aliases: ['crossing an asymptote', 'can a curve cross an asymptote', 'horizontal asymptote crossing'],
+        answer:
+            'A vertical asymptote never, since the function is undefined there. A horizontal asymptote can be ' +
+            'crossed, because it describes behaviour for large x rather than a boundary, which is why some rational ' +
+            'graphs cut it once near the origin.',
+    },
+    {
+        id: 'maths-domain-restrictions',
+        subject: 'mathematics',
+        question: 'What restricts the domain of a function?',
+        aliases: ['domain restrictions', 'what limits a domain', 'excluded values'],
+        answer:
+            'Division by zero, even roots of negatives, and logarithms of non-positive numbers. In an applied ' +
+            'question the context restricts it further, since a length or a number of items cannot be negative.',
+    },
+    {
+        id: 'maths-composite-order',
+        subject: 'mathematics',
+        question: 'Does the order matter in a composite function?',
+        aliases: ['order of composite functions', 'f of g versus g of f', 'composite function order'],
+        answer:
+            'Almost always. f(g(x)) applies g first, and reversing it usually gives a different function: squaring ' +
+            'then adding one is not the same as adding one then squaring. Work from the inside out.',
+    },
+    {
+        id: 'maths-why-radians-calculus',
+        subject: 'mathematics',
+        question: 'Why does calculus require radians?',
+        aliases: ['why calculus uses radians', 'derivative of sin in degrees', 'radians and derivatives'],
+        answer:
+            'Because the derivative of sin x is cos x only when x is in radians. In degrees a constant factor of ' +
+            'π/180 appears in every derivative, which is why radians are defined the way they are.',
+    },
+    {
+        id: 'maths-limits-meaning',
+        subject: 'mathematics',
+        question: 'What does a limit actually mean?',
+        aliases: ['meaning of a limit', 'what a limit describes'],
+        answer:
+            'The value a function approaches as the input approaches something, whether or not it is ever reached. It ' +
+            'lets gradients and areas be defined exactly rather than approximately, which is what makes calculus ' +
+            'rigorous rather than a good estimate.',
     },
 ];

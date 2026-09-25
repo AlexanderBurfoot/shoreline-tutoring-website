@@ -171,7 +171,7 @@ export const mathematicsCalculusEntries: StudyEntry[] = [
         id: 'maths-calculus-in-context',
         subject: 'mathematics',
         question: 'How do I answer a calculus question set in context?',
-        aliases: ['calculus in context', 'interpreting a derivative', 'units of a derivative', 'practical calculus'],
+        aliases: ['calculus in context', 'interpreting a derivative', 'practical calculus'],
         answer:
             'Ask what the derivative means in the units of the question: dollars per item, litres per minute, metres ' +
             'per second. ' +

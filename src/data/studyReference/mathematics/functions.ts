@@ -189,7 +189,7 @@ export const mathematicsFunctionsEntries: StudyEntry[] = [
         id: 'maths-function-transform-order',
         subject: 'mathematics',
         question: 'In what order do I apply transformations?',
-        aliases: ['order of transformations', 'stretch then shift', 'combined transformations', 'transformation sequence'],
+        aliases: ['stretch then shift', 'combined transformations', 'transformation sequence'],
         answer:
             'Work from the inside out: horizontal changes happen inside the function and behave opposite to how they ' +
             'read, while vertical changes happen outside and behave as they read. ' +

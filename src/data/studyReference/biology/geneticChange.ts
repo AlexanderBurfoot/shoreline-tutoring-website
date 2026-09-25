@@ -123,7 +123,7 @@ export const biologyGeneticChangeEntries: StudyEntry[] = [
         id: 'bio-biotechnology-ethics',
         subject: 'biology',
         question: 'What are the ethical issues in biotechnology?',
-        aliases: ['ethics biotechnology', 'gene editing ethics', 'genetic privacy', 'designer babies', 'social implications'],
+        aliases: ['ethics biotechnology', 'genetic privacy', 'designer babies', 'social implications'],
         answer:
             'Questions of consent and privacy over genetic data, fairness in who can afford treatment, ecological ' +
             'risk from modified organisms escaping, and where to draw the line between treating disease and ' +
