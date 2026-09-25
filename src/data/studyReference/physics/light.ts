@@ -12,7 +12,7 @@ export const physicsLightEntries: StudyEntry[] = [
         question: 'What is the photoelectric effect?',
         aliases: ['photoelectric effect', 'planck constant'],
         answer:
-            'A photon carries E = hf, with h = 6.63 × 10⁻³⁴ J s. If hf exceeds the metal’s work function φ, an ' +
+            'A photon carries E = hf, with h = 6.626 × 10⁻³⁴ J s. If hf exceeds the metal’s work function φ, an ' +
             'electron is ejected with maximum kinetic energy Ek = hf − φ. ' +
             'Brighter light gives more electrons, not faster ones, which is what a wave model could not explain.',
     },
