@@ -134,7 +134,7 @@ export const englishWritingEntries: StudyEntry[] = [
         id: 'eng-analysis-depth',
         subject: 'english',
         question: 'How do I analyse rather than describe?',
-        aliases: ['analysis vs description', 'how to analyse', 'retelling the plot', 'depth of analysis'],
+        aliases: ['analysis vs description', 'how to analyse', 'depth of analysis'],
         answer:
             'Description says what happens; analysis says how the composer made it mean something, and why that ' +
             'matters to the question. ' +
@@ -207,7 +207,7 @@ export const englishWritingEntries: StudyEntry[] = [
         id: 'eng-quote-memorisation',
         subject: 'english',
         question: 'How do I memorise quotes effectively?',
-        aliases: ['memorising quotes', 'learning quotes', 'quote bank', 'remembering evidence'],
+        aliases: ['learning quotes', 'quote bank', 'remembering evidence'],
         answer:
             'Learn short quotes, five words or fewer, grouped by idea rather than by chapter, since essays are ' +
             'organised by argument. ' +

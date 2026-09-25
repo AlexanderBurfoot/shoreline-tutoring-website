@@ -21,7 +21,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-techniques-structure',
         subject: 'english',
         question: 'What are structural and sound techniques?',
-        aliases: ['structural techniques', 'foreshadowing', 'enjambment'],
+        aliases: ['structural techniques', 'foreshadowing'],
         answer:
             'Structural: juxtaposition places contrasting ideas together, foreshadowing hints at what comes, and a ' +
             'cyclical structure returns to its opening. Sound: alliteration repeats initial consonants, assonance ' +
@@ -61,7 +61,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-poetry-techniques',
         subject: 'english',
         question: 'How do I analyse a poem?',
-        aliases: ['poetry analysis', 'stanza', 'rhyme scheme', 'meter', 'volta', 'sonnet', 'free verse'],
+        aliases: ['poetry analysis', 'stanza', 'rhyme scheme', 'meter'],
         answer:
             'Read for the shift: where the argument or feeling turns, which in a sonnet is the volta. ' +
             'Then look at form, rhyme and rhythm, line breaks and enjambment, and sound patterns. ' +
@@ -71,7 +71,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-shakespeare',
         subject: 'english',
         question: 'How do I analyse a Shakespeare play?',
-        aliases: ['shakespeare', 'soliloquy', 'aside', 'blank verse'],
+        aliases: ['shakespeare', 'aside'],
         answer:
             'A soliloquy reveals private thought to the audience, an aside is a quick remark others do not hear, and ' +
             'dramatic irony lets the audience know what a character does not. ' +
@@ -91,7 +91,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-language-grammar',
         subject: 'english',
         question: 'What grammar terms come up in analysis?',
-        aliases: ['grammar', 'nominalisation', 'imperative', 'syntax', 'cumulative listing'],
+        aliases: ['grammar', 'imperative', 'syntax', 'cumulative listing'],
         answer:
             'High modality words, such as "must", show certainty; low modality, such as "might", hedges. ' +
             'Nominalisation turns a verb into a noun, which makes writing formal and impersonal. ' +
@@ -187,7 +187,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-modality-voice',
         subject: 'english',
         question: 'What are modality and active versus passive voice?',
-        aliases: ['modality', 'active voice', 'passive voice', 'high modality', 'agency in a sentence'],
+        aliases: ['active voice', 'passive voice', 'high modality', 'agency in a sentence'],
         answer:
             'Modality is the degree of certainty: "must" is high, "might" is low. ' +
             'Active voice puts the doer first and is direct; passive voice moves the action forward and can hide who ' +
