@@ -94,4 +94,170 @@ export const workedExampleOtherEntries: StudyEntry[] = [
             'Dividing 365 by 8 gives about 46 days of stock on hand. Slower turnover ties up cash even while sales ' +
             'look healthy.',
     },
+    {
+        id: 'bio-example-test-cross',
+        subject: 'biology',
+        question: 'Can you show me a worked example of a test cross?',
+        aliases: ['worked example test cross', 'example of finding an unknown genotype', 'crossing with a recessive example'],
+        answer:
+            'A tall plant is either TT or Tt. Cross it with a short plant, tt. If it is TT every offspring is tall; ' +
+            'if it is Tt about half are short. Seeing one short offspring is enough to prove it was Tt.',
+    },
+    {
+        id: 'bio-example-sex-linked-cross',
+        subject: 'biology',
+        question: 'Can you show me a worked example of a sex-linked cross?',
+        aliases: ['worked example sex linked cross', 'example of an x linked cross', 'carrier mother example'],
+        answer:
+            'A carrier mother XᴬXᵃ has children with an unaffected father XᴬY. Daughters receive Xᴬ from their ' +
+            'father, so none are affected but half are carriers. Sons receive Y from their father, so half are ' +
+            'affected. That is why the condition appears in boys.',
+    },
+    {
+        id: 'bio-example-codominance-cross',
+        subject: 'biology',
+        question: 'Can you show me a worked example of codominance?',
+        aliases: ['worked example codominance', 'example of a roan cross', 'both alleles expressed example'],
+        answer:
+            'Cross a red bull, CᴿCᴿ, with a white cow, CᵂCᵂ. Every calf is CᴿCᵂ, which shows both colours as roan ' +
+            'rather than pink. Crossing two roans then gives 1 red to 2 roan to 1 white.',
+    },
+    {
+        id: 'bio-example-blood-group-cross',
+        subject: 'biology',
+        question: 'Can you show me a worked example of blood group inheritance?',
+        aliases: ['worked example blood group', 'example of abo inheritance', 'blood type cross example'],
+        answer:
+            'A group A mother, Iᴬi, and a group B father, Iᴮi, can have children of every group: IᴬIᴮ is AB, Iᴬi is ' +
+            'A, Iᴮi is B and ii is O, each a quarter. Two parents who are neither AB nor O can therefore have an AB ' +
+            'child.',
+    },
+    {
+        id: 'bio-example-respiration-yield',
+        subject: 'biology',
+        question: 'Can you show me a worked example of comparing respiration yields?',
+        aliases: ['worked example atp yield', 'example of aerobic versus anaerobic yield', 'atp from glucose example'],
+        answer:
+            'Aerobic respiration of one glucose molecule yields about 30 to 32 ATP, while anaerobic respiration ' +
+            'yields 2. So aerobic release is roughly fifteen times greater, which is why muscles tire quickly once ' +
+            'oxygen runs short.',
+    },
+    {
+        id: 'bio-example-quadrat-estimate',
+        subject: 'biology',
+        question: 'Can you show me a worked example of estimating from quadrats?',
+        aliases: ['worked example quadrat estimate', 'example of scaling up a quadrat count', 'population estimate from quadrats'],
+        answer:
+            'Ten quadrats of 1 m² give a mean of 6.4 plants. For a field of 500 m², the estimate is 6.4 × 500 = 3,200 ' +
+            'plants. It assumes the quadrats were placed randomly and that the field is reasonably uniform.',
+    },
+    {
+        id: 'bio-example-photosynthesis-rate',
+        subject: 'biology',
+        question: 'Can you show me a worked example of measuring photosynthesis rate?',
+        aliases: ['worked example photosynthesis rate', 'example of counting bubbles', 'rate of oxygen production example'],
+        answer:
+            'Pondweed releases 45 bubbles in 3 minutes, so the rate is 15 bubbles per minute. Halving the distance to ' +
+            'the lamp raises the light intensity fourfold and the rate climbs until another factor, usually carbon ' +
+            'dioxide, becomes limiting.',
+    },
+    {
+        id: 'econ-example-gdp-expenditure',
+        subject: 'economics',
+        question: 'Can you show me a worked example of calculating GDP?',
+        aliases: ['worked example gdp', 'example of the expenditure approach', 'c plus i plus g example'],
+        answer:
+            'With consumption $600 bn, investment $150 bn, government spending $200 bn, exports $120 bn and imports ' +
+            '$140 bn: GDP = 600 + 150 + 200 + (120 − 140) = $930 bn. Imports are subtracted because they were ' +
+            'produced elsewhere.',
+    },
+    {
+        id: 'econ-example-unemployment-rate',
+        subject: 'economics',
+        question: 'Can you show me a worked example of the unemployment rate?',
+        aliases: ['worked example unemployment rate', 'example of calculating unemployment', 'labour force calculation example'],
+        answer:
+            'With 700,000 unemployed in a labour force of 14 million, the rate is 700,000 ÷ 14,000,000 × 100 = 5.0%. ' +
+            'The denominator is the labour force, not the whole population, which is why the participation rate is ' +
+            'reported alongside it.',
+    },
+    {
+        id: 'econ-example-participation-rate',
+        subject: 'economics',
+        question: 'Can you show me a worked example of the participation rate?',
+        aliases: ['worked example participation rate', 'example of calculating participation', 'working age population example'],
+        answer:
+            'A labour force of 14 million within a working age population of 21 million gives 14 ÷ 21 × 100 = 66.7%. ' +
+            'If discouraged workers stop looking, both the labour force and this rate fall, and measured unemployment ' +
+            'falls with them.',
+    },
+    {
+        id: 'econ-example-terms-of-trade',
+        subject: 'economics',
+        question: 'Can you show me a worked example of the terms of trade?',
+        aliases: ['worked example terms of trade', 'example of a terms of trade index', 'export price index example'],
+        answer:
+            'With an export price index of 110 and an import price index of 100, the terms of trade index is 110 ÷ ' +
+            '100 × 100 = 110. Above 100 means the same exports buy more imports than in the base year, which raises ' +
+            'national income with no extra production.',
+    },
+    {
+        id: 'econ-example-budget-outcome',
+        subject: 'economics',
+        question: 'Can you show me a worked example of a budget outcome?',
+        aliases: ['worked example budget outcome', 'example of a deficit as a share of gdp', 'budget deficit calculation'],
+        answer:
+            'Revenue of $500 bn against spending of $530 bn is a deficit of $30 bn. Against a GDP of $2,000 bn that ' +
+            'is 1.5%. Expressing it as a share of GDP is what allows comparison between years and countries.',
+    },
+    {
+        id: 'bus-example-contribution-margin',
+        subject: 'business-studies',
+        question: 'Can you show me a worked example of contribution margin?',
+        aliases: ['worked example contribution margin', 'example of contribution per unit', 'contribution margin ratio example'],
+        answer:
+            'A product sells for $40 with variable costs of $25, so the contribution per unit is $15. As a ratio that ' +
+            'is 15 ÷ 40 = 37.5%. Every unit sold contributes $15 towards fixed costs, and beyond break-even that $15 ' +
+            'is profit.',
+    },
+    {
+        id: 'bus-example-cash-budget',
+        subject: 'business-studies',
+        question: 'Can you show me a worked example of a cash budget?',
+        aliases: ['worked example cash budget', 'example of a cash flow calculation', 'closing cash balance example'],
+        answer:
+            'Opening cash is $20,000, receipts are $95,000 and payments are $80,000. The closing balance is 20,000 + ' +
+            '95,000 − 80,000 = $35,000. A month of heavy payments can leave this negative even in a profitable year, ' +
+            'which is the point of preparing it.',
+    },
+    {
+        id: 'bus-example-working-capital',
+        subject: 'business-studies',
+        question: 'Can you show me a worked example of working capital?',
+        aliases: ['worked example working capital', 'example of calculating working capital', 'current assets minus liabilities example'],
+        answer:
+            'Current assets of $180,000 less current liabilities of $90,000 gives working capital of $90,000. It is ' +
+            'the buffer available for day-to-day operation, and a business can be profitable and still have too ' +
+            'little of it.',
+    },
+    {
+        id: 'bus-example-debt-to-equity',
+        subject: 'business-studies',
+        question: 'Can you show me a worked example of the debt to equity ratio?',
+        aliases: ['worked example debt to equity', 'example of a gearing calculation', 'gearing ratio example'],
+        answer:
+            'Total liabilities of $120,000 against owners equity of $200,000 gives 120 ÷ 200 = 0.6, or 60%. Every ' +
+            'dollar of equity is matched by 60 cents of borrowing, which is moderate gearing: higher magnifies both ' +
+            'returns and losses.',
+    },
+    {
+        id: 'bus-example-market-share',
+        subject: 'business-studies',
+        question: 'Can you show me a worked example of market share?',
+        aliases: ['worked example market share', 'example of calculating market share', 'share of industry sales example'],
+        answer:
+            'Sales of $2.4 million in an industry worth $30 million give a share of 2.4 ÷ 30 × 100 = 8%. Watch ' +
+            'whether the industry figure is by value or by volume, since a premium seller has a larger share by value ' +
+            'than by units.',
+    },
 ];

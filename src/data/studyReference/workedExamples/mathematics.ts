@@ -228,7 +228,7 @@ export const workedExampleMathsEntries: StudyEntry[] = [
     {
         id: 'maths-example-arc-length',
         subject: 'mathematics',
-        question: 'Can you show me a worked example of arc length and sector area?',
+        question: 'Can you show me a worked example of a sector in radians?',
         aliases: ['worked example arc length', 'example of sector area', 'radians arc calculation example'],
         answer:
             'A sector has radius 8 cm and angle 1.2 radians. Arc length = rθ = 8 × 1.2 = 9.6 cm, and area = ½r²θ = ½ ' +
@@ -299,5 +299,60 @@ export const workedExampleMathsEntries: StudyEntry[] = [
             'A $24,000 vehicle depreciates 15% a year on the reducing balance. After 3 years its value is 24,000 × ' +
             '0.85³ = 24,000 × 0.6141 = $14,739. Straight line depreciation at the same rate would instead remove ' +
             '$3,600 each year.',
+    },
+    {
+        id: 'maths-example-wages',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of calculating wages with overtime?',
+        aliases: ['worked example wages', 'example of overtime pay', 'time and a half calculation example'],
+        answer:
+            'Thirty-eight hours at $24 an hour is $912. Six hours of overtime at time and a half is 6 × $36 = $216. ' +
+            'The gross pay is $1,128, from which tax and superannuation are then deducted.',
+    },
+    {
+        id: 'maths-example-gst',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of GST?',
+        aliases: ['worked example gst', 'example of adding gst', 'finding the gst in a total'],
+        answer:
+            'A price of $250 before GST becomes 250 × 1.1 = $275. To find the GST inside that total, divide by 11: ' +
+            '$25. Taking 10% of $275 would give $27.50, which is the common error.',
+    },
+    {
+        id: 'maths-example-blood-alcohol',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a blood alcohol calculation?',
+        aliases: ['worked example blood alcohol', 'example of a bac calculation', 'bac formula example'],
+        answer:
+            'For a male, BAC = (10N − 7.5H) ÷ (6.8M). With 4 standard drinks over 2 hours at 80 kg: (40 − 15) ÷ 544 = ' +
+            '0.046. The formula is an estimate, and the time term means waiting is the only way to lower it.',
+    },
+    {
+        id: 'maths-example-dosage',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a medication dosage?',
+        aliases: ['worked example dosage', 'example of a medicine calculation', 'millilitres of a mixture example'],
+        answer:
+            'A mixture contains 250 mg per 5 mL and 400 mg is required. Volume = 400 ÷ 250 × 5 = 8 mL. Checking the ' +
+            'direction matters: needing more than the stated dose must give more than 5 mL.',
+    },
+    {
+        id: 'maths-example-scale-drawing',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a scale drawing?',
+        aliases: ['worked example scale drawing', 'example of reading a plan', 'scale calculation example'],
+        answer:
+            'On a 1:50 plan a wall measures 6 cm. The real length is 6 × 50 = 300 cm, which is 3 m. Convert to ' +
+            'sensible units only at the end, and note that an area on that plan scales by 50², not 50.',
+    },
+    {
+        id: 'maths-example-time-zones',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a time zone calculation?',
+        aliases: ['worked example time zones', 'example of a time difference between cities', 'utc offset example'],
+        answer:
+            'Sydney runs at UTC+10 in winter and London at UTC+0, a difference of 10 hours. A 9:00 am flight ' +
+            'departure in London is 7:00 pm in Sydney. Daylight saving shifts either offset, so check the date before ' +
+            'assuming the gap.',
     },
 ];
