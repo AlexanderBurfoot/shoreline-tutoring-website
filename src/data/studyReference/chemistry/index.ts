@@ -1,4 +1,5 @@
 /** Chemistry, gathered from the module banks. */
+import { chemistryComparisonEntries } from './comparisons';
 import { chemistryAcidsEquilibriumEntries } from './acidsEquilibrium';
 import { chemistryAnalysisEntries } from './analysis';
 import { chemistryAppliedEntries } from './applied';
@@ -24,4 +25,5 @@ export const chemistryEntries: StudyEntry[] = [
     ...chemistryAnalysisEntries,
     ...chemistryPracticalEntries,
     ...chemistryAppliedEntries,
+    ...chemistryComparisonEntries,
 ];
