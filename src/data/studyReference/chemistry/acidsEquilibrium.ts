@@ -195,7 +195,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-titration-technique',
         subject: 'chemistry',
         question: 'How do I set up a titration properly?',
-        aliases: ['titration technique', 'rinsing glassware', 'burette pipette', 'conical flask', 'titration apparatus'],
+        aliases: ['titration technique', 'burette pipette', 'conical flask', 'titration apparatus'],
         answer:
             'Rinse the burette and pipette with the solution they will hold, so no water dilutes it. ' +
             'Rinse the conical flask with distilled water only, since extra water does not change the moles inside. ' +
@@ -237,7 +237,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-ice-tables',
         subject: 'chemistry',
         question: 'How do I do an equilibrium calculation?',
-        aliases: ['ice table', 'equilibrium calculation', 'initial change equilibrium', 'finding equilibrium concentrations'],
+        aliases: ['equilibrium calculation', 'finding equilibrium concentrations'],
         answer:
             'Tabulate initial amounts, the change, and the equilibrium amounts, with the change in the ratio of the ' +
             'coefficients. Convert to concentrations before substituting into Keq. ' +

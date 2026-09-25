@@ -213,7 +213,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-dilution',
         subject: 'chemistry',
         question: 'How do I calculate a dilution?',
-        aliases: ['dilution', 'c1v1 = c2v2', 'standard solution preparation', 'parts per million'],
+        aliases: ['dilution', 'standard solution preparation', 'parts per million'],
         answer:
             'c₁V₁ = c₂V₂: the moles do not change, only the volume. ' +
             'Concentration is usually mol/L, and parts per million is milligrams per litre for dilute solutions. ' +

@@ -131,7 +131,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
         id: 'chem-organic-technique',
         subject: 'chemistry',
         question: 'What are reflux, distillation and a separating funnel for?',
-        aliases: ['fractional distillation', 'separating funnel', 'organic technique', 'purifying an ester'],
+        aliases: ['fractional distillation', 'organic technique', 'purifying an ester'],
         answer:
             'Reflux heats a mixture for a long time without losing volatile substances, since vapour condenses and ' +
             'returns. ' +
