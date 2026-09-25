@@ -180,7 +180,7 @@ export const naplanEntries: StudyEntry[] = [
         id: 'naplan-grammar',
         subject: 'naplan',
         question: 'What grammar does NAPLAN test?',
-        aliases: ['naplan grammar', 'parts of speech', 'noun verb adjective', 'subject verb agreement', 'tense'],
+        aliases: ['naplan grammar', 'parts of speech', 'noun verb adjective', 'tense'],
         answer:
             'Parts of speech, subject-verb agreement, consistent tense, pronouns, and clause structure. ' +
             'A common question gives four versions of a sentence and asks which is correct, so check the verb ' +

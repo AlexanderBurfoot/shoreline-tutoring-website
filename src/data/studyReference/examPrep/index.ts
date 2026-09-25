@@ -1,5 +1,7 @@
 /** The placement and national tests, gathered from their banks. */
 import { naplanEntries } from './naplan';
+import { naplanLiteracyEntries } from './naplanLiteracy';
+import { naplanNumeracyEntries } from './naplanNumeracy';
 import { ocPrepEntries } from './ocPrep';
 import { selectiveEntries } from './selective';
 import { selectiveReadingEntries } from './selectiveReading';
@@ -16,4 +18,6 @@ export const examPrepEntries: StudyEntry[] = [
     ...selectiveWritingEntries,
     ...ocPrepEntries,
     ...naplanEntries,
+    ...naplanNumeracyEntries,
+    ...naplanLiteracyEntries,
 ];
