@@ -138,4 +138,24 @@ export const naplanApproachEntries: StudyEntry[] = [
             'to improve rather than correcting everything. Reading aloud what they wrote catches most punctuation ' +
             'problems without a lesson.',
     },
+    {
+        id: 'nap-explaining-to-a-child',
+        subject: 'naplan',
+        question: 'How do I explain NAPLAN to a young child?',
+        aliases: ['explaining naplan to a child', 'talking to my child about naplan', 'reassuring a child about a test'],
+        answer:
+            'Describe it as a set of activities that shows the teacher what the class has learned, not a test they ' +
+            'can pass or fail. Children take their cue from the adult tone, so treating it as ordinary is what keeps ' +
+            'it ordinary.',
+    },
+    {
+        id: 'nap-test-feels-hard',
+        subject: 'naplan',
+        question: 'What if my child says the test was too hard?',
+        aliases: ['test felt too hard', 'child found naplan hard', 'difficult questions in the test'],
+        answer:
+            'In an adaptive test, answering well leads to harder questions, so finding it hard is often a sign of ' +
+            'doing well. That is worth explaining beforehand, because a child who expects every question to be ' +
+            'answerable can be shaken by one that is not.',
+    },
 ];

@@ -355,4 +355,68 @@ export const workedExampleMathsEntries: StudyEntry[] = [
             'departure in London is 7:00 pm in Sydney. Daylight saving shifts either offset, so check the date before ' +
             'assuming the gap.',
     },
+    {
+        id: 'maths-example-reverse-percentage',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a reverse percentage?',
+        aliases: ['worked example reverse percentage', 'example of finding the original price', 'price before discount example'],
+        answer:
+            'A jacket costs $64 after a 20% discount. That $64 is 80% of the original, so the original is 64 ÷ 0.8 = ' +
+            '$80. Adding 20% of $64 would give $76.80, which is the wrong answer for the right-looking reason.',
+    },
+    {
+        id: 'maths-example-area-units',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of converting area units?',
+        aliases: ['worked example area conversion', 'example of square metre to square centimetre', 'squared unit conversion example'],
+        answer:
+            'Convert 2.5 m² to cm². Since 1 m is 100 cm, 1 m² is 100 × 100 = 10,000 cm², so 2.5 m² is 25,000 cm². ' +
+            'Multiplying by 100 instead of 10,000 is the usual error.',
+    },
+    {
+        id: 'maths-example-simultaneous-quadratic',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a line meeting a curve?',
+        aliases: ['worked example line and curve', 'example of substituting into a quadratic', 'intersection of a line and parabola example'],
+        answer:
+            'Solve y = x + 1 with y = x² − 1. Substituting gives x² − 1 = x + 1, so x² − x − 2 = 0 and (x − 2)(x + 1) ' +
+            '= 0. The points are (2, 3) and (−1, 0), so the line cuts the parabola twice.',
+    },
+    {
+        id: 'maths-example-sign-diagram',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a quadratic inequality?',
+        aliases: ['worked example quadratic inequality', 'example of a sign diagram', 'when is a quadratic positive example'],
+        answer:
+            'Solve (x − 1)(x + 3) > 0. The roots are 1 and −3, and the parabola opens upward, so it is above the axis ' +
+            'outside the roots. The answer is x < −3 or x > 1, which is two intervals rather than one.',
+    },
+    {
+        id: 'maths-example-absolute-value',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of an absolute value equation?',
+        aliases: ['worked example absolute value', 'example of a modulus equation', 'two cases example'],
+        answer:
+            'Solve |2x − 3| = 7. Either 2x − 3 = 7, giving x = 5, or 2x − 3 = −7, giving x = −2. Both satisfy the ' +
+            'original, since the absolute value of 7 and of −7 is the same.',
+    },
+    {
+        id: 'maths-example-loan-interest',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a loan repayment?',
+        aliases: ['worked example loan repayment', 'example of interest and principal', 'reducing balance repayment example'],
+        answer:
+            'A $200,000 loan at 6% a year charges 0.5% a month, so the first months interest is $1,000. A repayment ' +
+            'of $1,400 therefore reduces the principal by $400. As the balance falls the interest portion shrinks and ' +
+            'the principal portion grows.',
+    },
+    {
+        id: 'maths-example-five-number-summary',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a five number summary?',
+        aliases: ['worked example five number summary', 'example of finding quartiles', 'box plot from data example'],
+        answer:
+            'For 3, 5, 6, 8, 9, 11, 14 the median is 8. The lower half is 3, 5, 6 with median 5 and the upper half 9, ' +
+            '11, 14 with median 11. So the summary is 3, 5, 8, 11, 14 and the interquartile range is 6.',
+    },
 ];

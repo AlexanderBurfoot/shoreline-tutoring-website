@@ -189,4 +189,49 @@ export const workedExamplePhysicsEntries: StudyEntry[] = [
             'An electron travels at 2.0 × 10⁶ m s⁻¹. λ = h ÷ mv = 6.626 × 10⁻³⁴ ÷ (9.11 × 10⁻³¹ × 2.0 × 10⁶) = 3.6 × ' +
             '10⁻¹⁰ m. That is about an atomic diameter, which is why electrons diffract from crystals.',
     },
+    {
+        id: 'phys-example-doppler',
+        subject: 'physics',
+        question: 'Can you show me a worked example of the Doppler effect?',
+        aliases: ['worked example doppler', 'example of a doppler calculation', 'approaching siren frequency example'],
+        answer:
+            'A siren emitting 500 Hz approaches at 30 m s⁻¹ where sound travels at 340 m s⁻¹. The observed frequency ' +
+            'is 500 × 340 ÷ (340 − 30) = 548 Hz. Receding instead gives 500 × 340 ÷ 370 = 459 Hz.',
+    },
+    {
+        id: 'phys-example-mass-defect',
+        subject: 'physics',
+        question: 'Can you show me a worked example of mass defect?',
+        aliases: ['worked example mass defect', 'example of binding energy calculation', 'mass to energy example'],
+        answer:
+            'A helium-4 nucleus has a mass defect of 0.0304 u. Since 1 u corresponds to about 931 MeV, the binding ' +
+            'energy is 0.0304 × 931 = 28.3 MeV. Dividing by four nucleons gives about 7.1 MeV per nucleon.',
+    },
+    {
+        id: 'phys-example-time-dilation',
+        subject: 'physics',
+        question: 'Can you show me a worked example of time dilation?',
+        aliases: ['worked example time dilation', 'example of a relativity calculation', 'moving clock example'],
+        answer:
+            'A clock moves at 0.80c and measures 10 s of its own time. The factor is 1 ÷ √(1 − 0.64) = 1 ÷ 0.60 = ' +
+            '1.67, so an observer at rest measures 16.7 s. The moving clock always records the shorter interval.',
+    },
+    {
+        id: 'phys-example-length-contraction',
+        subject: 'physics',
+        question: 'Can you show me a worked example of length contraction?',
+        aliases: ['worked example length contraction', 'example of a contracted length', 'moving rod length example'],
+        answer:
+            'A 100 m rocket passes at 0.80c. An observer at rest measures 100 × 0.60 = 60 m. Contraction happens only ' +
+            'along the direction of motion, so the width is unchanged.',
+    },
+    {
+        id: 'phys-example-impulse-graph',
+        subject: 'physics',
+        question: 'Can you show me a worked example of impulse from a graph?',
+        aliases: ['worked example impulse from a graph', 'example of area under a force time graph', 'impulse area example'],
+        answer:
+            'A force rises and falls as a triangle, peaking at 40 N over 0.30 s. The impulse is the area, ½ × 0.30 × ' +
+            '40 = 6.0 N s. That equals the change in momentum, so a 2.0 kg object would gain 3.0 m s⁻¹.',
+    },
 ];

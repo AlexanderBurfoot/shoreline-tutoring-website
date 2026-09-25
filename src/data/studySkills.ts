@@ -195,4 +195,51 @@ export const studySkillEntries: StudySkillEntry[] = [
             + 'than the exercises. Work forward from the earliest gap, because later topics usually '
             + 'depend on it, and ask for the one worked example the class was given.',
     },
+    {
+        id: 'skill-study-with-a-friend',
+        question: 'Is studying with a friend useful?',
+        aliases: ['studying with a friend', 'study group', 'revising together'],
+        answer:
+            'Yes for explaining and testing each other, which forces retrieval, and for comparing '
+            + 'marking of the same past question. It works badly for learning new content, where one '
+            + 'person ends up teaching and the other listening. Agree what you are doing before you '
+            + 'start.',
+    },
+    {
+        id: 'skill-planning-an-assignment',
+        question: 'How do I plan an assignment?',
+        aliases: ['planning an assignment', 'assignment schedule', 'starting a major work'],
+        answer:
+            'Work backwards from the due date with dates for research, a first draft and a final '
+            + 'read, and put the draft date at two thirds of the time available. Read the marking '
+            + 'rubric before starting rather than at the end, since it tells you what the task actually '
+            + 'rewards.',
+    },
+    {
+        id: 'skill-avoiding-last-minute',
+        question: 'How do I stop leaving assignments to the last minute?',
+        aliases: ['stop leaving work late', 'avoiding last minute assignments', 'procrastinating on assignments'],
+        answer:
+            'Make the first step small enough to be unavoidable: open the document and write the '
+            + 'heading and three dot points. Most avoidance is about starting rather than working, and '
+            + 'a task already begun is far easier to return to.',
+    },
+    {
+        id: 'skill-balancing-sport',
+        question: 'How do I balance sport or music with study?',
+        aliases: ['balancing sport and study', 'too many commitments', 'fitting study around training'],
+        answer:
+            'Timetable study around the fixed commitments rather than hoping for spare time, and use '
+            + 'the short gaps for review rather than new content. Students with full schedules often do '
+            + 'better, because the constraint forces the planning that others postpone.',
+    },
+    {
+        id: 'skill-using-past-papers-generally',
+        question: 'How do I get the most out of past papers?',
+        aliases: ['using past papers properly', 'past paper technique', 'how many past papers'],
+        answer:
+            'Do them under time, mark them against the guide, and rework every lost mark before the '
+            + 'next one. Three papers reviewed properly teach more than ten done and filed. Keep the '
+            + 'most recent paper unseen until close to the exam so you have one honest rehearsal.',
+    },
 ];

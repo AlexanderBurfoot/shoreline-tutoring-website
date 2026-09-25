@@ -179,4 +179,54 @@ export const beyondSyllabusEntries: StudyEntry[] = [
             'base, location and staff. It appears on the balance sheet only when a business is bought, which is why a ' +
             'strong reputation built up over years is invisible until then.',
     },
+    {
+        id: 'maths-logarithmic-scales',
+        subject: 'mathematics',
+        question: 'Why do some scales use logarithms?',
+        aliases: ['logarithmic scale', 'why ph and decibels are logarithmic', 'richter scale'],
+        answer:
+            'Because the quantity spans an enormous range. pH, decibels and the Richter scale each compress factors ' +
+            'of ten into single steps, so one unit is ten times, and a magnitude 6 earthquake releases about thirty ' +
+            'times the energy of a magnitude 5 rather than a fifth more.',
+    },
+    {
+        id: 'maths-p-value',
+        subject: 'mathematics',
+        question: 'What is a p value?',
+        aliases: ['p value', 'statistical significance meaning', 'probability of chance result'],
+        answer:
+            'The probability of seeing a result at least as extreme as the one observed if there were really no ' +
+            'effect. A small p value means chance is an unlikely explanation, not that the effect is large or ' +
+            'important. It is beyond the NSW syllabus but appears in any research article.',
+    },
+    {
+        id: 'maths-confidence-interval',
+        subject: 'mathematics',
+        question: 'What is a confidence interval?',
+        aliases: ['confidence interval', 'margin of error', 'plus or minus in a poll'],
+        answer:
+            'A range that would contain the true value in a stated proportion of repeated samples, usually 95%. A ' +
+            'poll reported as 52% with a margin of error of 3 points means the true figure is probably between 49 and ' +
+            '55, which is why a two point lead is not a lead.',
+    },
+    {
+        id: 'maths-standard-error',
+        subject: 'mathematics',
+        question: 'What is the difference between standard deviation and standard error?',
+        aliases: ['standard error', 'standard deviation versus standard error', 'error of the mean'],
+        answer:
+            'Standard deviation describes the spread of the individual values. Standard error describes how precisely ' +
+            'the mean has been estimated, and it shrinks as the sample grows. Error bars can show either, so a graph ' +
+            'should say which.',
+    },
+    {
+        id: 'bio-theory-versus-law',
+        subject: 'biology',
+        question: 'What is the difference between a hypothesis, a theory and a law?',
+        aliases: ['theory versus law', 'is a theory just a guess', 'scientific theory meaning'],
+        answer:
+            'A hypothesis is a testable proposed explanation. A theory is an explanation supported by a large body of ' +
+            'evidence, which is the strongest status an explanation reaches. A law describes a consistent ' +
+            'relationship without explaining why. Calling something only a theory misunderstands the word.',
+    },
 ];

@@ -194,4 +194,43 @@ export const workedExampleChemistryEntries: StudyEntry[] = [
             'so 0.10 mol of HCl remains. Dividing each amount by its coefficient first shows the carbonate is ' +
             'limiting.',
     },
+    {
+        id: 'chem-example-mass-spectrum-reading',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of reading a mass spectrum?',
+        aliases: ['worked example reading a mass spectrum', 'example of interpreting fragments', 'molecular ion and fragment example'],
+        answer:
+            'A spectrum shows a molecular ion at m/z 46 and fragments at 31 and 29. The molar mass is 46, and the ' +
+            'loss of 15 to reach 31 indicates a CH₃ group. Together with an alcohol infrared signal, that points to ' +
+            'ethanol.',
+    },
+    {
+        id: 'chem-example-nmr-reading',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of reading a proton NMR spectrum?',
+        aliases: ['worked example reading nmr', 'example of interpreting nmr', 'three signals example'],
+        answer:
+            'Ethanol gives three signals with areas in the ratio 3:2:1. Three equivalent hydrogens are the CH₃, two ' +
+            'are the CH₂, and one is the OH. Counting signals gives the number of environments, and the areas give ' +
+            'how many hydrogens sit in each.',
+    },
+    {
+        id: 'chem-example-infrared-reading',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of reading an infrared spectrum?',
+        aliases: ['worked example reading infrared', 'example of interpreting ir', 'identifying a functional group from ir'],
+        answer:
+            'A broad absorption between 2500 and 3300 with a strong sharp band near 1700 indicates both an O–H of an ' +
+            'acid and a C=O, so the compound is a carboxylic acid. A sharp O–H near 3300 with no C=O would instead ' +
+            'indicate an alcohol.',
+    },
+    {
+        id: 'chem-example-heat-of-solution',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of enthalpy of dissolution?',
+        aliases: ['worked example enthalpy of solution', 'example of dissolving enthalpy', 'heat released dissolving example'],
+        answer:
+            'Dissolving 2.0 g of NaOH in 100 mL of water raises the temperature by 5.0 °C. q = 100 × 4.18 × 5.0 = ' +
+            '2,090 J, and the moles are 2.0 ÷ 40.00 = 0.050. So ΔH = −2.09 ÷ 0.050 = −41.8 kJ mol⁻¹.',
+    },
 ];

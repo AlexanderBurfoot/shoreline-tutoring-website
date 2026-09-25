@@ -260,4 +260,33 @@ export const workedExampleOtherEntries: StudyEntry[] = [
             'whether the industry figure is by value or by volume, since a premium seller has a larger share by value ' +
             'than by units.',
     },
+    {
+        id: 'bio-example-percentage-cover',
+        subject: 'biology',
+        question: 'Can you show me a worked example of percentage cover?',
+        aliases: ['worked example percentage cover', 'example of quadrat cover', 'cover estimate example'],
+        answer:
+            'A quadrat divided into 100 small squares has a species in 40 of them, so the cover is 40%. Cover suits ' +
+            'plants that spread, where counting individuals is impossible, and it is estimated rather than counted ' +
+            'exactly when a plant partly fills a square.',
+    },
+    {
+        id: 'bio-example-cardiac-output',
+        subject: 'biology',
+        question: 'Can you show me a worked example of cardiac output?',
+        aliases: ['worked example cardiac output', 'example of stroke volume calculation', 'heart output example'],
+        answer:
+            'Cardiac output is stroke volume times heart rate. With 70 mL per beat at 72 beats a minute, that is ' +
+            '5,040 mL, about 5 L a minute. During exercise both figures rise, which is how output can reach four or ' +
+            'five times this.',
+    },
+    {
+        id: 'econ-example-supply-elasticity',
+        subject: 'economics',
+        question: 'Can you show me a worked example of elasticity of supply?',
+        aliases: ['worked example supply elasticity', 'example of calculating supply elasticity', 'price and quantity supplied example'],
+        answer:
+            'Price rises from $10 to $12, a 20% rise, and quantity supplied rises from 100 to 110, a 10% rise. ' +
+            'Elasticity is 10 ÷ 20 = 0.5, so supply is inelastic and producers cannot respond quickly.',
+    },
 ];

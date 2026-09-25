@@ -355,4 +355,24 @@ export const ocApproachEntries: StudyEntry[] = [
             'Year 6 like anyone else, with no automatic entry. Two years of extension work is useful preparation, but ' +
             'the placement itself carries no advantage.',
     },
+    {
+        id: 'oc-is-my-child-ready',
+        subject: 'oc-prep',
+        question: 'How do I know whether my child is ready for the OC test?',
+        aliases: ['is my child ready for oc', 'readiness for the oc test', 'should my child sit oc'],
+        answer:
+            'Look for whether they enjoy harder work rather than whether they can be drilled through it, how they ' +
+            'respond to getting something wrong, and whether they want to sit it. Capability without willingness ' +
+            'makes for a difficult two years.',
+    },
+    {
+        id: 'oc-not-selected',
+        subject: 'oc-prep',
+        question: 'What do we do if our child is not selected?',
+        aliases: ['not selected for oc', 'unsuccessful oc application', 'what if we miss out'],
+        answer:
+            'They stay on the reserve list while places open, and they continue in a class they already know with ' +
+            'friends they already have. Extension groups, competitions and reading beyond the syllabus provide the ' +
+            'same stretch without the move.',
+    },
 ];

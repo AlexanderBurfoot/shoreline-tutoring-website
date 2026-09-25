@@ -232,4 +232,45 @@ export const englishExamsEntries: StudyEntry[] = [
             'character less information than the reader has, or more. A short paragraph after a long one lands hard, ' +
             'and specific detail feels more threatening than a general threat.',
     },
+    {
+        id: 'eng-model-comparative-paragraph',
+        subject: 'english',
+        question: 'Can you show me an example of a comparative paragraph?',
+        aliases: ['example of a comparative paragraph', 'model paragraph comparing two texts', 'integrating two texts example'],
+        answer:
+            'Open with the shared idea, analyse one text, then move across with a connective that states the ' +
+            'relationship. For instance: both texts treat exile as a loss of language, though where the poem mourns ' +
+            'it in fragments, the later memoir recovers it in careful prose, which measures how the passing century ' +
+            'changed what could be said.',
+    },
+    {
+        id: 'eng-model-discursive-opening',
+        subject: 'english',
+        question: 'Can you show me an example of a discursive opening?',
+        aliases: ['example of a discursive opening', 'model discursive introduction', 'how to start a discursive piece'],
+        answer:
+            'Begin with something specific and unresolved, then widen. For instance: my grandmother kept every ' +
+            'receipt, and I have never decided whether that was thrift or fear. It raises a question the piece can ' +
+            'explore rather than announcing a position to defend.',
+    },
+    {
+        id: 'eng-model-persuasive-paragraph',
+        subject: 'english',
+        question: 'Can you show me an example of a persuasive paragraph?',
+        aliases: ['example of a persuasive paragraph', 'model persuasive writing', 'persuasive body paragraph example'],
+        answer:
+            'State the reason, give the evidence, answer the objection, then close on the consequence. For instance: ' +
+            'later start times improve results, since adolescent sleep cycles shift by two hours; the timetable ' +
+            'objection is real but solvable, and the alternative is a generation taught while half asleep.',
+    },
+    {
+        id: 'eng-model-reflection',
+        subject: 'english',
+        question: 'Can you show me an example of a reflection statement?',
+        aliases: ['example of a reflection statement', 'model reflection english', 'explaining my own choices example'],
+        answer:
+            'Name the choice, the intended effect, and the influence. For instance: I ended on an unfinished sentence ' +
+            'so the reader supplies what the narrator cannot say, a technique I took from the fragmented closing of ' +
+            'the prescribed text.',
+    },
 ];

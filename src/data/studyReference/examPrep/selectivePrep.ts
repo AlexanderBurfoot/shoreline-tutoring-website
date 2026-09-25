@@ -195,4 +195,34 @@ export const selectivePrepEntries: StudyEntry[] = [
             'and the current test structure each year, and those details change. Anything time-sensitive should be ' +
             'confirmed there rather than from a tutoring site or a forum.',
     },
+    {
+        id: 'sel-improving-thinking-skills',
+        subject: 'selective-high-school',
+        question: 'How do I improve a thinking skills score?',
+        aliases: ['improving thinking skills', 'getting better at reasoning questions', 'thinking skills practice'],
+        answer:
+            'Work through questions slowly at first, writing why each wrong option is wrong, since the reasoning is ' +
+            'the skill rather than the answer. Speed comes later. Students who only do timed sets keep making the ' +
+            'same category of error faster.',
+    },
+    {
+        id: 'sel-final-month',
+        subject: 'selective-high-school',
+        question: 'What should preparation look like in the final month?',
+        aliases: ['final month of preparation', 'last four weeks before the test', 'tapering practice'],
+        answer:
+            'One full timed paper a week, reviewed thoroughly, plus short targeted work on the weakest question type. ' +
+            'Stop introducing new material in the last fortnight and keep sleep steady, since the gain from another ' +
+            'paper is smaller than the loss from fatigue.',
+    },
+    {
+        id: 'sel-balancing-school-and-prep',
+        subject: 'selective-high-school',
+        question: 'How do we balance test preparation with school work?',
+        aliases: ['balancing school and test prep', 'too much homework and preparation', 'fitting in practice'],
+        answer:
+            'School work comes first, because the placement score includes school assessment. Two or three short ' +
+            'preparation sessions a week is enough alongside it, and dropping sport or sleep to fit more in usually ' +
+            'costs more than it gains.',
+    },
 ];

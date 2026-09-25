@@ -125,4 +125,44 @@ export const englishMovementEntries: StudyEntry[] = [
             'downfall. In Greek tragedy it is specifically the presumption of challenging the gods, and in later ' +
             'texts any comparable refusal of limits.',
     },
+    {
+        id: 'eng-writing-about-visual',
+        subject: 'english',
+        question: 'How do I write about a visual text in an exam?',
+        aliases: ['writing about a visual text', 'analysing an image in an exam', 'visual text response'],
+        answer:
+            'Say what the eye goes to and why, then how the framing, angle, gaze and colour position the viewer, then ' +
+            'what the written text adds or contradicts. Refer to specific areas of the image, since a general ' +
+            'description could apply to any picture.',
+    },
+    {
+        id: 'eng-writing-about-poetry-exam',
+        subject: 'english',
+        question: 'How do I write about a poem under exam time?',
+        aliases: ['writing about a poem in an exam', 'poetry response under time', 'unseen poem response'],
+        answer:
+            'Find the turn first, since that is where the meaning is, then choose two techniques either side of it. ' +
+            'One developed point about form and one about language beat five labelled devices, and quoting three ' +
+            'words is enough to analyse.',
+    },
+    {
+        id: 'eng-related-text-paragraph',
+        subject: 'english',
+        question: 'How do I write a related text paragraph?',
+        aliases: ['related text paragraph', 'writing about a related text', 'how much related text to include'],
+        answer:
+            'Give it the same analytical treatment as the prescribed text, briefly: one or two pieces of close ' +
+            'evidence serving the same idea. Its job is to extend the argument, so a paragraph that merely summarises ' +
+            'the related text adds nothing.',
+    },
+    {
+        id: 'eng-sophisticated-expression',
+        subject: 'english',
+        question: 'What does sophisticated expression actually mean?',
+        aliases: ['sophisticated expression', 'what markers mean by expression', 'improving written expression'],
+        answer:
+            'Precision rather than ornament: exact verbs, clauses arranged so the emphasis falls where you want it, ' +
+            'and no sentence that could be cut. A long word used loosely reads as less sophisticated than a plain one ' +
+            'used exactly.',
+    },
 ];
