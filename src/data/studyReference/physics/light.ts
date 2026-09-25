@@ -10,7 +10,7 @@ export const physicsLightEntries: StudyEntry[] = [
         id: 'phys-photoelectric',
         subject: 'physics',
         question: 'What is the photoelectric effect?',
-        aliases: ['photoelectric effect', 'work function', 'planck constant'],
+        aliases: ['photoelectric effect', 'planck constant'],
         answer:
             'A photon carries E = hf, with h = 6.63 × 10⁻³⁴ J s. If hf exceeds the metal’s work function φ, an ' +
             'electron is ejected with maximum kinetic energy Ek = hf − φ. ' +
@@ -130,7 +130,7 @@ export const physicsLightEntries: StudyEntry[] = [
         id: 'phys-stopping-voltage',
         subject: 'physics',
         question: 'What is stopping voltage and threshold frequency?',
-        aliases: ['stopping voltage', 'threshold frequency', 'photoelectric graph', 'work function from a graph'],
+        aliases: ['stopping voltage', 'threshold frequency', 'work function from a graph'],
         answer:
             'Threshold frequency is the lowest frequency that ejects any electron, where hf equals the work function. ' +
             'Stopping voltage is the reverse voltage that just halts the fastest electrons, so eV(stop) = Ek(max). ' +
@@ -188,5 +188,81 @@ export const physicsLightEntries: StudyEntry[] = [
             'Absorption lines identify the elements present, the peak wavelength gives surface temperature through ' +
             'Wien\u2019s law, line shifts give motion towards or away from us, and line broadening can indicate ' +
             'rotation, density and magnetic fields.',
+    },
+    {
+        id: 'phys-photoelectric-graph',
+        subject: 'physics',
+        question: 'What does a photoelectric graph show?',
+        aliases: ['photoelectric graph', 'kinetic energy against frequency', 'gradient gives plancks constant'],
+        answer:
+            'Maximum kinetic energy against frequency gives a straight line whose gradient is Planck constant and ' +
+            'whose horizontal intercept is the threshold frequency. The vertical intercept is the negative of the ' +
+            'work function.',
+    },
+    {
+        id: 'phys-work-function',
+        subject: 'physics',
+        question: 'What is the work function?',
+        aliases: ['work function', 'minimum energy to release an electron', 'why some metals need uv'],
+        answer:
+            'The minimum energy needed to free an electron from a particular metal surface. Light below the ' +
+            'corresponding threshold frequency releases nothing however bright it is, which is what classical wave ' +
+            'theory could not explain.',
+    },
+    {
+        id: 'phys-intensity-vs-frequency',
+        subject: 'physics',
+        question: 'What does brighter light change in the photoelectric effect?',
+        aliases: ['intensity versus frequency', 'brighter light more electrons', 'why intensity does not raise energy'],
+        answer:
+            'More photons arrive, so more electrons are emitted, but each photon still carries the same energy, so ' +
+            'the maximum kinetic energy is unchanged. Only raising the frequency raises that energy.',
+    },
+    {
+        id: 'phys-blackbody-curve-shape',
+        subject: 'physics',
+        question: 'How does a black body curve change with temperature?',
+        aliases: ['black body curve', 'peak shifts with temperature', 'hotter means bluer'],
+        answer:
+            'The whole curve rises and its peak moves to a shorter wavelength, so a hotter object is both brighter ' +
+            'and bluer. That is why a heated element glows red before white.',
+    },
+    {
+        id: 'phys-spectroscopy-uses',
+        subject: 'physics',
+        question: 'What can spectroscopy tell us besides composition?',
+        aliases: ['uses of spectroscopy', 'doppler shift of spectral lines', 'line broadening'],
+        answer:
+            'Motion, from the shift of the lines; temperature, from the peak of the continuous spectrum; density and ' +
+            'pressure, from how broad the lines are; and magnetic field strength, from line splitting.',
+    },
+    {
+        id: 'phys-light-speed-measurement',
+        subject: 'physics',
+        question: 'How was the speed of light measured?',
+        aliases: ['measuring the speed of light', 'rotating mirror experiment', 'astronomical measurement of light speed'],
+        answer:
+            'First from the timing of the moons of Jupiter, then in the laboratory by timing a beam sent to a distant ' +
+            'mirror and back using a rotating mirror or toothed wheel. Modern values come from the definition of the ' +
+            'metre itself.',
+    },
+    {
+        id: 'phys-em-wave-nature',
+        subject: 'physics',
+        question: 'What is an electromagnetic wave made of?',
+        aliases: ['what an electromagnetic wave is', 'oscillating electric and magnetic fields', 'no medium needed'],
+        answer:
+            'Oscillating electric and magnetic fields at right angles to each other and to the direction of travel, ' +
+            'each regenerating the other. Because no matter is oscillating, it needs no medium and travels through ' +
+            'vacuum.',
+    },
+    {
+        id: 'phys-inverse-square-light',
+        subject: 'physics',
+        question: 'Why does brightness fall with the square of distance?',
+        aliases: ['inverse square law for light', 'brightness and distance', 'spreading over a sphere'],
+        answer:
+            'The same power spreads over a sphere whose area grows as the square of the radius, so the power per ' +
+            'square metre falls accordingly. Doubling the distance quarters the intensity.',
     },
 ];

@@ -245,4 +245,119 @@ export const physicsAtomEntries: StudyEntry[] = [
             'An alpha particle is ⁴₂He, a beta-minus particle is ⁰₋₁e, and gamma changes neither. ' +
             'Work out the missing particle by subtracting, then name the element from its atomic number.',
     },
+    {
+        id: 'phys-spectra-fingerprint',
+        subject: 'physics',
+        question: 'Why is a line spectrum unique to an element?',
+        aliases: ['spectrum as a fingerprint', 'why each element has its own lines', 'identifying an element by its spectrum'],
+        answer:
+            'Because the spacing of the energy levels differs for every element, so the photon energies emitted or ' +
+            'absorbed differ too. That is how the composition of a star is determined from its light without sampling ' +
+            'it.',
+    },
+    {
+        id: 'phys-ionisation-energy-physics',
+        subject: 'physics',
+        question: 'What is ionisation energy in atomic physics?',
+        aliases: ['ionisation energy', 'removing an electron completely', 'energy to free an electron'],
+        answer:
+            'The energy needed to remove an electron from the atom entirely, taking it from its level to zero. It ' +
+            'corresponds to the limit of a spectral series, where the lines crowd together and stop.',
+    },
+    {
+        id: 'phys-x-ray-production',
+        subject: 'physics',
+        question: 'How are X-rays produced?',
+        aliases: ['x ray production', 'x ray tube', 'bremsstrahlung'],
+        answer:
+            'Electrons are accelerated through a large potential difference and stopped abruptly in a metal target. ' +
+            'The sudden deceleration radiates a continuous spectrum, and transitions in the target atoms add sharp ' +
+            'characteristic lines.',
+    },
+    {
+        id: 'phys-medical-imaging-physics',
+        subject: 'physics',
+        question: 'What physics underlies medical imaging?',
+        aliases: ['medical imaging physics', 'ct scan', 'mri principle', 'pet scan physics'],
+        answer:
+            'X-rays and CT use differential absorption by tissue, ultrasound uses reflection at boundaries, MRI uses ' +
+            'the response of nuclei to a strong field and radio pulses, and PET detects the photon pair from positron ' +
+            'annihilation.',
+    },
+    {
+        id: 'phys-half-life-graph',
+        subject: 'physics',
+        question: 'How do I read a decay curve?',
+        aliases: ['reading half life from a graph', 'exponential decay of activity'],
+        answer:
+            'Find the time for the activity to fall to half its starting value, then check that halving again takes ' +
+            'the same time. Because the decay is exponential, that interval is constant wherever on the curve you ' +
+            'start.',
+    },
+    {
+        id: 'phys-activity-and-becquerel',
+        subject: 'physics',
+        question: 'What is activity and how is it measured?',
+        aliases: ['activity of a source', 'becquerel', 'decays per second'],
+        answer:
+            'The number of decays per second, measured in becquerels. It falls as the source is used up, and it is ' +
+            'not the same as dose, which depends on how much of that radiation is absorbed by tissue.',
+    },
+    {
+        id: 'phys-radiation-dose',
+        subject: 'physics',
+        question: 'What is the difference between dose and activity?',
+        aliases: ['radiation dose', 'sievert', 'absorbed energy per kilogram'],
+        answer:
+            'Activity describes the source; dose describes what a body absorbs, in energy per kilogram, weighted for ' +
+            'how damaging that radiation is. Dose is what determines biological risk, which is why distance, time and ' +
+            'shielding all matter.',
+    },
+    {
+        id: 'phys-background-radiation',
+        subject: 'physics',
+        question: 'Where does background radiation come from?',
+        aliases: ['background radiation', 'natural sources of radiation', 'radon in the air'],
+        answer:
+            'Radon gas from the ground, cosmic rays, naturally radioactive isotopes in rock, food and our own bodies, ' +
+            'and a small medical contribution. Any measurement of a source must have this background subtracted.',
+    },
+    {
+        id: 'phys-nuclear-waste',
+        subject: 'physics',
+        question: 'Why is nuclear waste difficult to deal with?',
+        aliases: ['nuclear waste', 'long lived isotopes', 'storing radioactive waste'],
+        answer:
+            'Some products have half-lives of thousands of years, so they must be isolated for far longer than any ' +
+            'institution has existed. High-level waste also generates heat, so it needs cooling before long-term ' +
+            'storage.',
+    },
+    {
+        id: 'phys-isotopes-uses',
+        subject: 'physics',
+        question: 'What are radioisotopes used for?',
+        aliases: ['uses of radioisotopes', 'medical tracer', 'industrial gauging', 'carbon dating'],
+        answer:
+            'Medical tracers and cancer treatment, thickness gauging in industry, sterilising equipment, detecting ' +
+            'leaks in pipes, and dating material by the proportion of an isotope remaining.',
+    },
+    {
+        id: 'phys-particle-detectors',
+        subject: 'physics',
+        question: 'How are particles detected in an accelerator?',
+        aliases: ['particle detector', 'tracks in a detector', 'identifying particles from curvature'],
+        answer:
+            'By the ionisation they leave along their path. A magnetic field curves the tracks, and the direction ' +
+            'shows the sign of the charge while the radius gives momentum, so mass and identity can be inferred.',
+    },
+    {
+        id: 'phys-conservation-in-particle-reactions',
+        subject: 'physics',
+        question: 'What must be conserved in a particle reaction?',
+        aliases: ['conservation in a particle reaction', 'charge conservation', 'baryon and lepton number'],
+        answer:
+            'Energy including mass, momentum, charge, and the particle numbers such as baryon and lepton number. A ' +
+            'proposed reaction that breaks any one of these does not occur, which is how reactions are ruled out on ' +
+            'paper.',
+    },
 ];
