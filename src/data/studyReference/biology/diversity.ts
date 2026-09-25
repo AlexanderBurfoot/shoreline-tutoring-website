@@ -10,7 +10,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-natural-selection',
         subject: 'biology',
         question: 'How does natural selection work?',
-        aliases: ['natural selection', 'evolution', 'selection pressure'],
+        aliases: ['natural selection', 'evolution'],
         answer:
             'Variation exists in a population. A selection pressure means some variants survive and reproduce more, ' +
             'so their alleles become more common over generations. ' +
@@ -40,7 +40,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-evidence-evolution',
         subject: 'biology',
         question: 'What is the evidence for evolution?',
-        aliases: ['evidence for evolution', 'comparative anatomy', 'biogeography', 'dna evidence'],
+        aliases: ['evidence for evolution', 'comparative anatomy', 'dna evidence'],
         answer:
             'The fossil record shows change over time and transitional forms. Comparative anatomy shows homologous ' +
             'structures from a common ancestor. Embryology shows shared early development. ' +
@@ -50,7 +50,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-adaptations',
         subject: 'biology',
         question: 'What are the types of adaptation?',
-        aliases: ['adaptations', 'structural adaptation', 'physiological adaptation', 'behavioural adaptation', 'survival features'],
+        aliases: ['adaptations', 'survival features'],
         answer:
             'Structural adaptations are physical features, such as thick fur. ' +
             'Physiological ones are internal processes, such as concentrating urine to save water. ' +
@@ -71,7 +71,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-speciation',
         subject: 'biology',
         question: 'How does speciation happen?',
-        aliases: ['speciation', 'allopatric', 'sympatric', 'reproductive isolation', 'new species'],
+        aliases: ['speciation', 'allopatric', 'sympatric', 'new species'],
         answer:
             'Populations stop interbreeding, then diverge under different selection pressures until they can no ' +
             'longer produce fertile offspring. ' +
@@ -82,7 +82,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-fossils',
         subject: 'biology',
         question: 'How do fossils form and what do they show?',
-        aliases: ['fossils', 'fossil record', 'transitional fossil', 'relative dating', 'radiometric dating'],
+        aliases: ['fossils', 'fossil record', 'transitional fossil', 'radiometric dating'],
         answer:
             'Fossils usually form when remains are buried quickly in sediment and minerals replace the tissue, so the ' +
             'record favours hard parts and is incomplete. ' +
@@ -104,7 +104,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-molecular-evidence',
         subject: 'biology',
         question: 'How does DNA evidence show relatedness?',
-        aliases: ['molecular evidence', 'dna comparison', 'protein comparison', 'molecular clock'],
+        aliases: ['molecular evidence', 'dna comparison', 'protein comparison'],
         answer:
             'The more similar two species\u2019 DNA or protein sequences, the more recently they shared an ancestor. ' +
             'Mutations accumulate at a roughly steady rate, which acts as a molecular clock. ' +

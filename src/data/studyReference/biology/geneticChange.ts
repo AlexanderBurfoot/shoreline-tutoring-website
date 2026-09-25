@@ -20,7 +20,7 @@ export const biologyGeneticChangeEntries: StudyEntry[] = [
         id: 'bio-biotechnology',
         subject: 'biology',
         question: 'What are PCR and gel electrophoresis?',
-        aliases: ['pcr', 'gel electrophoresis', 'dna profiling', 'crispr', 'genetic technologies'],
+        aliases: ['pcr', 'genetic technologies'],
         answer:
             'PCR copies a chosen DNA sequence many times through cycles of heating and cooling with a primer and ' +
             'polymerase. Gel electrophoresis then separates fragments by size, since DNA is negative and the smaller ' +
@@ -150,5 +150,123 @@ export const biologyGeneticChangeEntries: StudyEntry[] = [
             'Selection shifts frequencies towards favoured alleles, while genetic drift shifts them by chance, which ' +
             'matters most in small populations. ' +
             'A bottleneck or a founder event leaves a population with much less diversity than it started with.',
+    },
+    {
+        id: 'bio-pcr-detail',
+        subject: 'biology',
+        question: 'How does PCR amplify DNA?',
+        aliases: ['pcr steps', 'denature anneal extend', 'thermal cycling'],
+        answer:
+            'Repeated cycles of heating to separate the strands, cooling so primers bind at each end of the target, ' +
+            'and warming so a heat-stable polymerase extends them. Each cycle doubles the copies, so thirty cycles ' +
+            'give millions.',
+    },
+    {
+        id: 'bio-gel-electrophoresis-detail',
+        subject: 'biology',
+        question: 'How does gel electrophoresis separate fragments?',
+        aliases: ['gel electrophoresis', 'dna fragments by size', 'why dna moves to the positive electrode'],
+        answer:
+            'DNA is negatively charged, so it moves towards the positive electrode through a gel that resists larger ' +
+            'fragments more. Shorter fragments travel further, and a ladder of known sizes lets each band be ' +
+            'measured.',
+    },
+    {
+        id: 'bio-restriction-enzymes',
+        subject: 'biology',
+        question: 'What do restriction enzymes do?',
+        aliases: ['restriction enzyme', 'cutting dna at a sequence', 'sticky ends'],
+        answer:
+            'Each cuts DNA wherever a specific short sequence appears, often leaving single-stranded sticky ends. ' +
+            'Cutting two DNA samples with the same enzyme gives ends that pair, which is what makes recombinant DNA ' +
+            'possible.',
+    },
+    {
+        id: 'bio-plasmids-vectors',
+        subject: 'biology',
+        question: 'What is a vector in genetic engineering?',
+        aliases: ['plasmid vector', 'getting a gene into a cell', 'transformation of bacteria'],
+        answer:
+            'Something that carries the gene into the host cell, usually a plasmid or a modified virus. A marker gene ' +
+            'is included so the cells that took it up can be identified and grown.',
+    },
+    {
+        id: 'bio-crispr',
+        subject: 'biology',
+        question: 'What makes gene editing different from earlier genetic engineering?',
+        aliases: ['gene editing', 'crispr', 'editing a gene in place'],
+        answer:
+            'Earlier methods inserted a gene wherever it happened to land. Gene editing targets a chosen sequence and ' +
+            'changes it in place, which is far more precise and raises different ethical questions, especially in ' +
+            'germline cells.',
+    },
+    {
+        id: 'bio-gmo-agriculture',
+        subject: 'biology',
+        question: 'What are genetically modified crops used for?',
+        aliases: ['gm crops', 'pest resistant crops', 'herbicide tolerance'],
+        answer:
+            'Pest and herbicide resistance, drought tolerance, longer shelf life and added nutrients such as vitamin ' +
+            'A precursors. The debate concerns gene flow to wild relatives, effects on non-target species and control ' +
+            'of the seed supply.',
+    },
+    {
+        id: 'bio-dna-profiling',
+        subject: 'biology',
+        question: 'How does DNA profiling identify an individual?',
+        aliases: ['dna profiling', 'dna fingerprinting', 'repeated sequences in dna'],
+        answer:
+            'It compares the number of short repeated sequences at several locations, which varies greatly between ' +
+            'people. Matching enough locations makes a coincidental match vanishingly unlikely, while relatives share ' +
+            'more of them.',
+    },
+    {
+        id: 'bio-genome-projects',
+        subject: 'biology',
+        question: 'What has sequencing whole genomes made possible?',
+        aliases: ['genome sequencing uses', 'comparing genomes', 'personalised medicine'],
+        answer:
+            'Identifying disease-linked alleles, tracing relationships between species and populations, choosing ' +
+            'treatments matched to a patient genetics, and tracking the evolution of pathogens during an outbreak.',
+    },
+    {
+        id: 'bio-tissue-culture',
+        subject: 'biology',
+        question: 'What is plant tissue culture?',
+        aliases: ['tissue culture', 'growing plants from cells', 'micropropagation'],
+        answer:
+            'Small pieces of plant tissue are grown on a sterile nutrient medium with hormones, and each develops ' +
+            'into a whole plant. It produces many identical plants quickly from one valued individual, and it ' +
+            'preserves varieties that do not breed reliably from seed.',
+    },
+    {
+        id: 'bio-biotech-ethics-framework',
+        subject: 'biology',
+        question: 'How do I structure an answer about biotechnology ethics?',
+        aliases: ['structuring an ethics answer', 'weighing benefits and risks', 'who decides in biotechnology'],
+        answer:
+            'Name the benefit, name the risk or cost, say who carries each, and note who decides and whether consent ' +
+            'was possible. An answer that only lists concerns has not addressed the trade-off the question asks ' +
+            'about.',
+    },
+    {
+        id: 'bio-non-random-mating',
+        subject: 'biology',
+        question: 'How does mate choice affect a population?',
+        aliases: ['non random mating', 'sexual selection', 'mate choice and variation'],
+        answer:
+            'Choosing mates by a particular trait concentrates the alleles behind it, so the trait spreads even when ' +
+            'it costs survival, as with a peacock tail. It changes which genotypes appear without changing which ' +
+            'alleles exist.',
+    },
+    {
+        id: 'bio-conservation-genetics',
+        subject: 'biology',
+        question: 'Why does genetic diversity matter for conservation?',
+        aliases: ['genetic diversity in conservation', 'inbreeding depression', 'small population genetics'],
+        answer:
+            'A population with little variation has fewer ways to respond to disease or change, and inbreeding raises ' +
+            'the chance of harmful recessive alleles pairing. Managing a small population therefore means managing ' +
+            'its breeding, not only its numbers.',
     },
 ];

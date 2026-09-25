@@ -11,7 +11,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-plant-transport',
         subject: 'biology',
         question: 'How do plants transport water and sugar?',
-        aliases: ['xylem phloem', 'transpiration', 'translocation', 'stomata', 'plant transport'],
+        aliases: ['xylem phloem', 'transpiration', 'plant transport'],
         answer:
             'Xylem carries water and minerals upward, pulled by transpiration from the leaves. ' +
             'Phloem carries sugars from source to sink in both directions, which is translocation. ' +

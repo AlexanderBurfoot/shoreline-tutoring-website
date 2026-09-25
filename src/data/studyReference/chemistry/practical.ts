@@ -153,4 +153,34 @@ export const chemistryPracticalEntries: StudyEntry[] = [
             'mass loss, a colorimeter for a colour change, and timing to a fixed endpoint for a precipitate. ' +
             'Continuous methods give a full curve.',
     },
+    {
+        id: 'chem-limewater-test',
+        subject: 'chemistry',
+        question: 'How do I test for carbon dioxide, hydrogen and oxygen?',
+        aliases: ['gas tests', 'limewater test', 'squeaky pop test', 'glowing splint test'],
+        answer:
+            'Carbon dioxide turns limewater milky. Hydrogen gives a squeaky pop with a lit splint. Oxygen relights a ' +
+            'glowing splint. Each test needs the gas collected, so plan the collection method before the reaction ' +
+            'starts.',
+    },
+    {
+        id: 'chem-indicator-natural',
+        subject: 'chemistry',
+        question: 'How do natural indicators work?',
+        aliases: ['natural indicator', 'red cabbage indicator', 'litmus from lichen'],
+        answer:
+            'Plant pigments that change structure, and therefore colour, as they gain or lose a proton. Red cabbage ' +
+            'and hibiscus both work, and litmus itself comes from lichen, which is why the colour change spans a ' +
+            'range rather than one pH.',
+    },
+    {
+        id: 'chem-scaling-a-reaction',
+        subject: 'chemistry',
+        question: 'What changes when a reaction is scaled up?',
+        aliases: ['scaling up a reaction', 'from laboratory to industry', 'heat management at scale'],
+        answer:
+            'Heat becomes harder to add or remove because the surface to volume ratio falls, mixing takes longer, and ' +
+            'a runaway exothermic reaction becomes dangerous. Cost, safety and waste handling then drive choices that ' +
+            'do not matter in a test tube.',
+    },
 ];
