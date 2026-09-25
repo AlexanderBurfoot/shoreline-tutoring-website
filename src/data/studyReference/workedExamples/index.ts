@@ -4,6 +4,8 @@ import { workedExampleCoreEntries } from './core';
 import { workedExampleEnglishEntries } from './english';
 import { workedExampleMathsEntries } from './mathematics';
 import { workedExampleMathsAppliedEntries } from './mathematicsApplied';
+import { workedExampleNaplanEntries } from './naplan';
+import { workedExampleOcEntries } from './ocPrep';
 import { workedExampleOtherEntries } from './other';
 import { workedExamplePhysicsEntries } from './physics';
 import { workedExampleSelectiveEntries } from './selective';
@@ -18,4 +20,6 @@ export const workedExampleEntries: StudyEntry[] = [
     ...workedExampleOtherEntries,
     ...workedExampleEnglishEntries,
     ...workedExampleSelectiveEntries,
+    ...workedExampleOcEntries,
+    ...workedExampleNaplanEntries,
 ];
