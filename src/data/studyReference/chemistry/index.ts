@@ -4,11 +4,17 @@ import { chemistryAnalysisEntries } from './analysis';
 import { chemistryCalculationEntries } from './calculations';
 import { chemistryOrganicEntries } from './organic';
 import { chemistryPracticalEntries } from './practical';
-import { chemistryYear11Entries } from './year11';
+import { chemistryEnergyEntries } from './energy';
+import { chemistryPropertiesEntries } from './properties';
+import { chemistryQuantitiesEntries } from './quantities';
+import { chemistryReactionsEntries } from './reactions';
 import type { StudyEntry } from '../types';
 
 export const chemistryEntries: StudyEntry[] = [
-    ...chemistryYear11Entries,
+    ...chemistryPropertiesEntries,
+    ...chemistryQuantitiesEntries,
+    ...chemistryReactionsEntries,
+    ...chemistryEnergyEntries,
     ...chemistryCalculationEntries,
     ...chemistryAcidsEquilibriumEntries,
     ...chemistryOrganicEntries,
