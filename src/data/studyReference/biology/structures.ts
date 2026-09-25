@@ -111,4 +111,14 @@ export const biologyStructureEntries: StudyEntry[] = [
             'Having a single set of chromosomes, written n. Gametes are haploid, with 23 in humans, so fertilisation ' +
             'restores the diploid number rather than doubling it each generation.',
     },
+    {
+        id: 'bio-reading-food-web',
+        subject: 'biology',
+        question: 'How do I read a food web diagram?',
+        aliases: ['reading a food web', 'arrows in a food web', 'interpreting a web diagram'],
+        answer:
+            'Arrows point in the direction energy travels, from the eaten to the eater, which is the opposite of what ' +
+            'most students assume. Count the levels from the producer to find a trophic level, and trace every path ' +
+            'when asked what removing a species would do.',
+    },
 ];

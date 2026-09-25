@@ -140,4 +140,24 @@ export const chemistryLaboratoryEntries: StudyEntry[] = [
             'Transferring small amounts of solid without contaminating the stock bottle. Use a clean dry one for each ' +
             'substance, and never return unused solid to the bottle, since it may already be contaminated.',
     },
+    {
+        id: 'chem-reading-solubility-curve',
+        subject: 'chemistry',
+        question: 'How do I read a solubility curve?',
+        aliases: ['reading a solubility curve', 'solubility graph', 'how much dissolves at a temperature'],
+        answer:
+            'Read the mass that dissolves per 100 g of water at that temperature. A point on the line is a saturated ' +
+            'solution, below it unsaturated, and above it supersaturated. Cooling from one point to another gives the ' +
+            'mass that must crystallise out.',
+    },
+    {
+        id: 'chem-data-sheet',
+        subject: 'chemistry',
+        question: 'What is on the chemistry data sheet?',
+        aliases: ['chemistry data sheet', 'chemistry formula sheet', 'periodic table in the exam'],
+        answer:
+            'A periodic table, a table of standard potentials, solubility and constant values, and the standard ' +
+            'formulas. Knowing where each sits saves time, and the potentials table in particular is faster to use ' +
+            'than to recall. NESA publishes the current version.',
+    },
 ];

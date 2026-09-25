@@ -226,4 +226,14 @@ export const economicsTermEntries: StudyEntry[] = [
             'next decision, yet it routinely does, which is the sunk cost fallacy: continuing a failing project ' +
             'because of what it has already consumed.',
     },
+    {
+        id: 'econ-reading-indicator-table',
+        subject: 'economics',
+        question: 'How do I read a table of economic indicators?',
+        aliases: ['reading an economic indicator table', 'interpreting economic data', 'table of statistics economics'],
+        answer:
+            'Check the period and the units first, then read across for one indicator over time and down for the same ' +
+            'period across indicators. The useful observation is usually a divergence, such as growth rising while ' +
+            'employment does not.',
+    },
 ];

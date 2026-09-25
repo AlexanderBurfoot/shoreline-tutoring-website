@@ -472,4 +472,14 @@ export const englishExamsEntries: StudyEntry[] = [
             'memory, or shifting as they do. Demonstrate it by showing the setting change alongside the character ' +
             'rather than by asserting the idea.',
     },
+    {
+        id: 'eng-annotating-a-film-scene',
+        subject: 'english',
+        question: 'How do I annotate a film scene for study?',
+        aliases: ['annotating a film scene', 'taking notes on a film', 'studying a scene'],
+        answer:
+            'Watch it three times: once for what happens, once for the camera and editing, once for sound. Note the ' +
+            'timecode of two or three specific moments, since an essay needs a precise reference rather than a ' +
+            'general impression of the scene.',
+    },
 ];

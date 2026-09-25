@@ -286,4 +286,24 @@ export const mathematicsLanguageEntries: StudyEntry[] = [
             'lets gradients and areas be defined exactly rather than approximately, which is what makes calculus ' +
             'rigorous rather than a good estimate.',
     },
+    {
+        id: 'maths-reading-scatterplot',
+        subject: 'mathematics',
+        question: 'How do I read a scatterplot?',
+        aliases: ['reading a scatterplot', 'interpreting a scatter graph', 'direction and strength of correlation'],
+        answer:
+            'Describe direction, form and strength: positive or negative, linear or curved, strong or weak, then note ' +
+            'any outlier. A line of best fit only belongs on it if the form is linear, and no pattern at all is a ' +
+            'valid description.',
+    },
+    {
+        id: 'maths-reference-sheet',
+        subject: 'mathematics',
+        question: 'How do I use the mathematics reference sheet?',
+        aliases: ['mathematics reference sheet', 'formula sheet in the exam', 'what is on the reference sheet'],
+        answer:
+            'It supplies many standard formulas, so learn which are on it and which are not rather than memorising ' +
+            'everything. Practise with it from the start of the year, since finding a formula under time is a skill ' +
+            'of its own. NESA publishes the current version.',
+    },
 ];

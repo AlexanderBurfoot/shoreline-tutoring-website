@@ -215,4 +215,14 @@ export const businessTermEntries: StudyEntry[] = [
             'or on-time delivery. A good one is specific, measurable and influenced by what the business actually ' +
             'does; too many at once obscure which matters.',
     },
+    {
+        id: 'bus-reading-financial-extract',
+        subject: 'business-studies',
+        question: 'How do I read an extract from a financial statement?',
+        aliases: ['reading a financial statement extract', 'interpreting accounts in an exam', 'stimulus financial data'],
+        answer:
+            'Identify which statement it is, since an income statement shows a period and a balance sheet a single ' +
+            'date. Then calculate only the ratios the question needs, and comment on the change rather than the ' +
+            'figure.',
+    },
 ];

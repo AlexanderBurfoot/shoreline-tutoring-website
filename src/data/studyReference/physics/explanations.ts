@@ -313,4 +313,24 @@ export const physicsExplanationEntries: StudyEntry[] = [
             'Because λ = h/mv, and for a one kilogram object at one metre per second that is about 7 × 10⁻³⁴ m, far ' +
             'smaller than any aperture or atom it could diffract from. The wave nature is there but unobservable.',
     },
+    {
+        id: 'phys-reading-graph-pair',
+        subject: 'physics',
+        question: 'How do I read displacement, velocity and acceleration graphs together?',
+        aliases: ['reading motion graphs together', 'three graphs of motion', 'converting between motion graphs'],
+        answer:
+            'Each is the gradient of the one before it and the area of the one after. So a horizontal velocity line ' +
+            'means a straight displacement line and zero acceleration, and a curved displacement graph means the ' +
+            'velocity is changing.',
+    },
+    {
+        id: 'phys-data-sheet',
+        subject: 'physics',
+        question: 'What is on the physics formulae and data sheet?',
+        aliases: ['physics data sheet', 'physics formula sheet', 'constants given in the exam'],
+        answer:
+            'The standard formulas and the constants, so values such as g, c and Planck constant do not need ' +
+            'memorising. What it does not give is which formula applies, so practise choosing from it rather than ' +
+            'recalling from memory. Check the current version on the NESA site.',
+    },
 ];
