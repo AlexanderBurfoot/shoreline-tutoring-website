@@ -113,4 +113,80 @@ export const mathematicsLanguageEntries: StudyEntry[] = [
             'answer. In 84 ÷ 6 = 14, the divisor is 6. A divisor of a whole number with no remainder is also called a ' +
             'factor of it.',
     },
+    {
+        id: 'maths-point-on-a-curve',
+        subject: 'mathematics',
+        question: 'How do I test whether a point lies on a curve?',
+        aliases: ['is a point on the curve', 'testing a point on a graph', 'substituting a point'],
+        answer:
+            'Substitute the coordinates into the equation and see whether both sides agree. If they do, the point is ' +
+            'on the curve; if not, the difference tells you which side of it the point sits.',
+    },
+    {
+        id: 'maths-height-by-trigonometry',
+        subject: 'mathematics',
+        question: 'How do I find the height of something I cannot measure?',
+        aliases: ['height of a tree with trigonometry', 'finding a height indirectly', 'angle of elevation to a height'],
+        answer:
+            'Measure your distance from the base and the angle of elevation to the top, then height = distance × tan ' +
+            'θ. Add your own eye height if the angle was measured from eye level, which is the step most often ' +
+            'forgotten.',
+    },
+    {
+        id: 'maths-series-convergence',
+        subject: 'mathematics',
+        question: 'How do I tell whether a geometric series converges?',
+        aliases: ['does a series converge', 'when a limiting sum exists', 'convergent geometric series'],
+        answer:
+            'Only when the common ratio lies strictly between −1 and 1, so each term is smaller in magnitude than the ' +
+            'last. Then the limiting sum is a/(1 − r). At r = 1 or beyond, the terms do not shrink and the sum grows ' +
+            'without limit.',
+    },
+    {
+        id: 'maths-time-to-double',
+        subject: 'mathematics',
+        question: 'How do I find how long an investment takes to double?',
+        aliases: ['time to double an investment', 'doubling time', 'solving for n with logarithms'],
+        answer:
+            'Set the final amount to twice the principal, so 2 = (1 + r)ⁿ, then take logarithms of both sides: n = ' +
+            'log 2 ÷ log(1 + r). At 6% a year that is about 12 years, which is where the rule of 72 comes from.',
+    },
+    {
+        id: 'maths-mode-from-histogram',
+        subject: 'mathematics',
+        question: 'How do I find the mode from a histogram?',
+        aliases: ['mode from a histogram', 'modal class', 'tallest column mode'],
+        answer:
+            'The modal class is the interval with the tallest column. Grouped data gives a modal class rather than a ' +
+            'single mode, since the individual values are no longer visible, so name the interval rather than ' +
+            'guessing a value inside it.',
+    },
+    {
+        id: 'maths-complement-of-an-event',
+        subject: 'mathematics',
+        question: 'How do I use the complement of an event?',
+        aliases: ['complement of an event', 'probability of not happening', 'one minus the probability'],
+        answer:
+            'P(not A) = 1 − P(A). It is the fastest route through any at least one question: the complement of at ' +
+            'least one is none, which is usually a single product rather than a sum of cases.',
+    },
+    {
+        id: 'maths-counting-with-a-table',
+        subject: 'mathematics',
+        question: 'How do I count outcomes using a table?',
+        aliases: ['counting outcomes with a table', 'two dice table', 'sample space table'],
+        answer:
+            'Draw a grid with one trial along the top and the other down the side, then fill each cell with the ' +
+            'combined outcome. For two dice that gives 36 equally likely cells, and counting the ones that satisfy ' +
+            'the condition gives the probability directly.',
+    },
+    {
+        id: 'maths-expected-number',
+        subject: 'mathematics',
+        question: 'How do I find the expected number of successes?',
+        aliases: ['expected number of successes', 'expected frequency', 'how many times will it happen'],
+        answer:
+            'Multiply the number of trials by the probability of success. Sixty rolls of a die should give 60 × ⅙ = ' +
+            '10 sixes. It is a long-run average, so the actual count varies around it rather than matching it.',
+    },
 ];

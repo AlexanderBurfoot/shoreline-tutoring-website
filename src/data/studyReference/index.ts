@@ -10,6 +10,7 @@ import { biologyEntries } from './biology';
 import { businessEntries } from './businessStudies';
 import { chemistryEntries } from './chemistry';
 import { commonMistakeEntries } from './commonMistakes';
+import { courseOverviewEntries } from './courseOverviews';
 import { economicsEntries } from './economics';
 import { examPrepEntries } from './examPrep';
 import { englishEntries } from './english';
@@ -35,6 +36,7 @@ export const studyEntries: StudyEntry[] = [
     ...beyondSyllabusEntries,
     ...commonMistakeEntries,
     ...scientificMethodEntries,
+    ...courseOverviewEntries,
 ];
 
 /** The page to send a student to after an answer, by subject. */

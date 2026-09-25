@@ -207,7 +207,7 @@ export const mathematicsProbabilityEntries: StudyEntry[] = [
         id: 'maths-frequency-tables',
         subject: 'mathematics',
         question: 'How do I find the mean from a frequency table?',
-        aliases: ['mean from a table', 'grouped data mean', 'fx column', 'modal class'],
+        aliases: ['mean from a table', 'grouped data mean', 'fx column'],
         answer:
             'Multiply each value by its frequency, add those products, then divide by the total frequency. ' +
             'For grouped data, use the midpoint of each class as the value, which makes the answer an estimate. ' +
