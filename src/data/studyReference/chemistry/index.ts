@@ -4,6 +4,7 @@ import { chemistryAnalysisEntries } from './analysis';
 import { chemistryAppliedEntries } from './applied';
 import { chemistryCalculationEntries } from './calculations';
 import { chemistryOrganicEntries } from './organic';
+import { chemistryPolymersEntries } from './polymers';
 import { chemistryPracticalEntries } from './practical';
 import { chemistryEnergyEntries } from './energy';
 import { chemistryPropertiesEntries } from './properties';
@@ -19,6 +20,7 @@ export const chemistryEntries: StudyEntry[] = [
     ...chemistryCalculationEntries,
     ...chemistryAcidsEquilibriumEntries,
     ...chemistryOrganicEntries,
+    ...chemistryPolymersEntries,
     ...chemistryAnalysisEntries,
     ...chemistryPracticalEntries,
     ...chemistryAppliedEntries,
