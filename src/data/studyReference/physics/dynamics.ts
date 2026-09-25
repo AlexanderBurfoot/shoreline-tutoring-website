@@ -19,12 +19,12 @@ export const physicsDynamicsEntries: StudyEntry[] = [
     {
         id: 'phys-momentum',
         subject: 'physics',
-        question: 'What is momentum and when is it conserved?',
-        aliases: ['momentum', 'impulse', 'conservation of momentum', 'collision physics'],
+        question: 'What is momentum?',
+        aliases: ['momentum', 'p = mv', 'what is momentum', 'momentum formula'],
         answer:
-            'Momentum is p = mv, and impulse is the change in it: J = FΔt = Δp. ' +
-            'Total momentum is conserved in any collision with no external force. Kinetic energy is conserved only in ' +
-            'elastic collisions, which is what separates elastic from inelastic.',
+            'Momentum is p = mv, a vector in the direction of the velocity, measured in kg m s⁻¹. ' +
+            'A heavy slow object can carry the same momentum as a light fast one. ' +
+            'Impulse is the change in it: J = FΔt = Δp.',
     },
     {
         id: 'phys-work-energy',
@@ -190,5 +190,27 @@ export const physicsDynamicsEntries: StudyEntry[] = [
             'When a constant force acts on something moving at speed v, P = Fv. ' +
             'Efficiency is useful output divided by total input, always below 100% because some energy leaves as ' +
             'heat and sound.',
+    },
+    {
+        id: 'phys-momentum-conservation-proof',
+        subject: 'physics',
+        question: 'Why is momentum conserved?',
+        aliases: ['why momentum is conserved', 'newton third law momentum', 'isolated system'],
+        answer:
+            'In a collision the two objects exert equal and opposite forces on each other for the same time, so the ' +
+            'impulses are equal and opposite. ' +
+            'One gains exactly what the other loses, so the total is unchanged, provided no outside force acts on the ' +
+            'system.',
+    },
+    {
+        id: 'phys-energy-types',
+        subject: 'physics',
+        question: 'What forms does energy take?',
+        aliases: ['forms of energy', 'types of energy', 'chemical energy', 'elastic potential energy', 'energy transformation examples'],
+        answer:
+            'Kinetic, gravitational potential, elastic potential, chemical, thermal, sound, light, electrical and ' +
+            'nuclear. ' +
+            'Energy is never used up, only transformed, and in every real transformation some becomes thermal energy ' +
+            'spread through the surroundings.',
     },
 ];

@@ -30,7 +30,7 @@ export const physicsLightEntries: StudyEntry[] = [
         id: 'phys-electromagnetic-spectrum',
         subject: 'physics',
         question: 'What is the electromagnetic spectrum?',
-        aliases: ['electromagnetic spectrum', 'radio waves', 'gamma rays', 'speed of light', 'em waves'],
+        aliases: ['electromagnetic spectrum', 'order of the spectrum', 'speed of light', 'em waves'],
         answer:
             'From longest wavelength to shortest: radio, microwave, infrared, visible, ultraviolet, X-ray, gamma. ' +
             'All travel at c = 3.00 × 10⁸ m/s in a vacuum. Shorter wavelength means higher frequency and higher ' +
@@ -167,5 +167,26 @@ export const physicsLightEntries: StudyEntry[] = [
             'Dilated time is t = γt₀, always longer than the proper time. ' +
             'Contracted length is l = l₀/γ, always shorter than the proper length. ' +
             'Check the direction: moving clocks run slow, moving lengths shrink.',
+    },
+    {
+        id: 'phys-wave-particle-duality',
+        subject: 'physics',
+        question: 'Is light a wave or a particle?',
+        aliases: ['wave particle duality light', 'evidence for waves', 'evidence for particles', 'complementary models'],
+        answer:
+            'Both, depending on the experiment. ' +
+            'Interference, diffraction and polarisation need a wave model; the photoelectric effect needs particles ' +
+            'with discrete energy. ' +
+            'Neither model alone accounts for everything, which is what duality means.',
+    },
+    {
+        id: 'phys-spectroscopy-stars',
+        subject: 'physics',
+        question: 'What can we learn from a star\u2019s spectrum?',
+        aliases: ['stellar spectra', 'what spectra tell us', 'composition of stars', 'surface temperature star', 'rotation from spectra'],
+        answer:
+            'Absorption lines identify the elements present, the peak wavelength gives surface temperature through ' +
+            'Wien\u2019s law, line shifts give motion towards or away from us, and line broadening can indicate ' +
+            'rotation, density and magnetic fields.',
     },
 ];

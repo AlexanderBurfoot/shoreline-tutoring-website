@@ -137,4 +137,26 @@ export const physicsElectromagnetismEntries: StudyEntry[] = [
             'Lenz\u2019s law those currents produce forces that drag the rotor after the field. ' +
             'The rotor must lag slightly, since equal speeds would mean no change of flux and so no current.',
     },
+    {
+        id: 'phys-generator-operation',
+        subject: 'physics',
+        question: 'How does a generator produce a voltage?',
+        aliases: ['generator operation', 'rotating coil emf', 'peak emf', 'why output is sinusoidal'],
+        answer:
+            'Rotating a coil in a magnetic field changes the flux through it continuously, inducing an emf by ' +
+            'Faraday\u2019s law. ' +
+            'The emf is greatest when the coil moves through the position where flux changes fastest, and zero when ' +
+            'flux is momentarily unchanging, which makes the output a sine wave.',
+    },
+    {
+        id: 'phys-magnetic-materials',
+        subject: 'physics',
+        question: 'Why are some materials magnetic?',
+        aliases: ['ferromagnetic', 'magnetic domains', 'permanent magnet', 'soft iron core', 'demagnetising'],
+        answer:
+            'In ferromagnetic materials such as iron, groups of atoms called domains align. ' +
+            'In a permanent magnet they stay aligned; in soft iron they align while a field is applied and relax ' +
+            'afterwards, which is why cores are made of it. ' +
+            'Heating or hammering randomises the domains again.',
+    },
 ];

@@ -224,4 +224,25 @@ export const physicsAtomEntries: StudyEntry[] = [
             'The cosmic microwave background is the cooled radiation left from the hot early universe. ' +
             'The observed proportion of hydrogen to helium also matches the prediction.',
     },
+    {
+        id: 'phys-radiation-safety',
+        subject: 'physics',
+        question: 'How is radiation used and controlled safely?',
+        aliases: ['radiation uses', 'medical imaging', 'radiotherapy', 'shielding', 'dose'],
+        answer:
+            'Tracers and imaging use short-lived isotopes so the dose fades quickly; radiotherapy targets tumours ' +
+            'with a focused high dose. ' +
+            'Safety rests on time, distance and shielding: less exposure, further away, and behind lead or concrete ' +
+            'for gamma.',
+    },
+    {
+        id: 'phys-nuclear-equations',
+        subject: 'physics',
+        question: 'How do I balance a nuclear equation?',
+        aliases: ['nuclear equation', 'balancing decay equations', 'mass number atomic number', 'transmutation'],
+        answer:
+            'Mass numbers must balance on both sides, and so must atomic numbers. ' +
+            'An alpha particle is ⁴₂He, a beta-minus particle is ⁰₋₁e, and gamma changes neither. ' +
+            'Work out the missing particle by subtracting, then name the element from its atomic number.',
+    },
 ];

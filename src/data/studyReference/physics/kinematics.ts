@@ -123,4 +123,25 @@ export const physicsKinematicsEntries: StudyEntry[] = [
             'Distance travelled is the sum of the leg lengths; displacement is the single arrow from start to finish, ' +
             'usually shorter. Quote a direction with it, often as a bearing.',
     },
+    {
+        id: 'phys-graph-conversions',
+        subject: 'physics',
+        question: 'How do I convert between motion graphs?',
+        aliases: ['converting motion graphs', 'from velocity to acceleration graph', 'sketching the derivative graph'],
+        answer:
+            'The gradient of one graph becomes the height of the next: displacement to velocity to acceleration. ' +
+            'Going back the other way, the area under a graph becomes the height of the previous one. ' +
+            'A straight sloping line therefore becomes a horizontal line, and a curve becomes a slope.',
+    },
+    {
+        id: 'phys-equations-choosing',
+        subject: 'physics',
+        question: 'Which equation of motion should I use?',
+        aliases: ['choosing a suvat equation', 'which formula motion', 'listing known values'],
+        answer:
+            'List what you know and what you want, then pick the equation that leaves out the quantity you neither ' +
+            'have nor need. ' +
+            'If time is missing, use v² = u² + 2as. ' +
+            'If the final velocity is missing, use s = ut + ½at². Writing the list first prevents most mistakes.',
+    },
 ];

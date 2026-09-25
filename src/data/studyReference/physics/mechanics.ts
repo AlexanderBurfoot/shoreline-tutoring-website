@@ -162,4 +162,26 @@ export const physicsMechanicsEntries: StudyEntry[] = [
             'one equation for each axis. ' +
             'Solve them together, then rebuild the final velocity with Pythagoras and tan⁻¹.',
     },
+    {
+        id: 'phys-projectile-from-height',
+        subject: 'physics',
+        question: 'How do I handle a projectile launched from a height?',
+        aliases: ['projectile from a cliff', 'launched from a height', 'unequal start and finish height'],
+        answer:
+            'The flight is no longer symmetric, so do not double the time to the peak. ' +
+            'Set the vertical displacement equal to the drop, with a consistent sign convention, and solve the ' +
+            'quadratic for time, taking the positive root. ' +
+            'Then use that time horizontally for the range.',
+    },
+    {
+        id: 'phys-circular-applications',
+        subject: 'physics',
+        question: 'Where does circular motion appear in real situations?',
+        aliases: ['circular motion examples', 'car on a curve', 'ferris wheel', 'loop the loop', 'string in a circle'],
+        answer:
+            'A car cornering relies on friction as the centripetal force, so the maximum speed depends on the road ' +
+            'surface. ' +
+            'At the top of a loop, gravity supplies part of it, which is why there is a minimum speed. ' +
+            'On a string, tension supplies it and is greatest at the bottom of the swing.',
+    },
 ];

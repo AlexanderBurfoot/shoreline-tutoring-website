@@ -242,4 +242,25 @@ export const physicsWavesEntries: StudyEntry[] = [
             'Resonance is driving a system at its natural frequency, where energy transfers efficiently and the ' +
             'amplitude builds.',
     },
+    {
+        id: 'phys-em-waves-uses',
+        subject: 'physics',
+        question: 'What is each part of the electromagnetic spectrum used for?',
+        aliases: ['uses of em waves', 'microwaves uses', 'infrared uses', 'x rays uses', 'uv uses'],
+        answer:
+            'Radio for broadcasting, microwaves for heating and mobile signals, infrared for thermal imaging and ' +
+            'remote controls, visible for sight, ultraviolet for sterilising, X-rays for imaging bone, gamma for ' +
+            'sterilising and treating cancer. ' +
+            'Risk rises with frequency, since higher energy photons ionise.',
+    },
+    {
+        id: 'phys-lens-applications',
+        subject: 'physics',
+        question: 'How do lenses correct vision?',
+        aliases: ['short sighted', 'long sighted', 'myopia physics', 'hyperopia', 'corrective lenses'],
+        answer:
+            'A short-sighted eye focuses light in front of the retina, so a diverging concave lens is used to spread ' +
+            'the light first. ' +
+            'A long-sighted eye focuses behind it, so a converging convex lens brings the focus forward.',
+    },
 ];

@@ -181,4 +181,26 @@ export const physicsElectricityEntries: StudyEntry[] = [
             'Currents in the same direction attract, opposite directions repel. ' +
             'The force per unit length is F/L = μ₀I₁I₂/2πr, which is the relationship that once defined the ampere.',
     },
+    {
+        id: 'phys-power-in-circuits',
+        subject: 'physics',
+        question: 'How do I calculate power in a circuit?',
+        aliases: ['electrical power formulas', 'p = vi', 'p = i squared r', 'power dissipated'],
+        answer:
+            'P = VI, and substituting Ohm\u2019s law gives P = I²R and P = V²/R. ' +
+            'Choose whichever uses the quantities you have. ' +
+            'In series, the largest resistance dissipates the most power; in parallel it is the smallest, since it ' +
+            'draws the most current.',
+    },
+    {
+        id: 'phys-domestic-circuits',
+        subject: 'physics',
+        question: 'How is household wiring arranged?',
+        aliases: ['household circuits', 'active neutral earth', 'why appliances are in parallel', 'power points'],
+        answer:
+            'Appliances are wired in parallel so each receives the full supply voltage and can be switched ' +
+            'independently. ' +
+            'The active wire carries current in, the neutral completes the circuit, and the earth provides a safe ' +
+            'path if a fault makes a metal case live.',
+    },
 ];
