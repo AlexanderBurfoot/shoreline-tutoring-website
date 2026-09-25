@@ -201,7 +201,7 @@ export const biologySkillsEntries: StudyEntry[] = [
     {
         id: 'bio-using-secondary-data',
         subject: 'biology',
-        question: 'How do I use secondary data well in a depth study?',
+        question: 'How do I use secondary data well in an investigation?',
         aliases: ['using secondary data', 'citing a data source', 'combining data sets'],
         answer:
             'Record where each data set came from and when, check the method behind it, and do not combine data ' +

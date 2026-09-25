@@ -263,7 +263,13 @@ export const studySkillEntries: StudySkillEntry[] = [
     {
         id: 'skill-screen-time',
         question: 'How do I manage screen time around study?',
-        aliases: ['screen time and study', 'phone distraction', 'devices during homework'],
+        aliases: [
+            'screen time and study',
+            'phone distraction',
+            'stop my phone distracting me',
+            'phone distracting me',
+            'devices during homework',
+        ],
         answer:
             'Separate the device used for work from the one used for everything else, and put the '
             + 'second in another room during study blocks. Notifications cost more than the seconds '
@@ -446,7 +452,12 @@ export const studySkillEntries: StudySkillEntry[] = [
     {
         id: 'skill-part-time-work',
         question: 'How do we balance part-time work with Year 12?',
-        aliases: ['part time work and year 12', 'working while studying', 'job during the hsc'],
+        aliases: [
+            'part time work and year 12',
+            'working while studying',
+            'study with a part time job',
+            'job during the hsc',
+        ],
         answer:
             'A shift or two a week is manageable and often helps structure, but check that it does '
             + 'not fall the night before assessments or across the trial period. Where hours are needed '

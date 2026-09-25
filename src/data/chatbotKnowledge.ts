@@ -40,6 +40,7 @@ import { nesaKeyWordEntries } from './nesaKeyWords';
 import { hscPathwayEntries } from './hscPathways';
 import { studyEntries, subjectLinkLabel, subjectPath } from './studyReference';
 import { selectionProgramEntries } from './selectionPrograms';
+import { studyHabitEntries } from './studyHabits';
 import { studySkillEntries } from './studySkills';
 import { subjects } from './subjectData';
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, SUBJECTS_PATH } from '../lib/site';
@@ -244,7 +245,7 @@ const KEY_WORD_ENTRIES: KnowledgeEntry[] = nesaKeyWordEntries.map((entry) => ({
     answer: entry.answer,
 }));
 
-const STUDY_SKILL_ENTRIES: KnowledgeEntry[] = studySkillEntries.map((entry) => ({
+const STUDY_SKILL_ENTRIES: KnowledgeEntry[] = [...studySkillEntries, ...studyHabitEntries].map((entry) => ({
     id: entry.id,
     question: entry.question,
     keywords: entry.aliases,

@@ -134,7 +134,12 @@ export const hscGuideEntries: HscGuideEntry[] = [
     {
         id: 'hsc-year-11-importance',
         question: 'How much does Year 11 matter for the ATAR?',
-        aliases: ['does year 11 count for the atar', 'importance of year 11', 'preliminary marks and the atar'],
+        aliases: [
+            'does year 11 count for the atar',
+            'does year 11 count towards the hsc',
+            'importance of year 11',
+            'preliminary marks and the atar',
+        ],
         answer:
             'Not directly, since only Year 12 courses are used. It matters in two other ways: the content carries '
             + 'forward, and Year 11 is where study habits and assessment technique are built. Students who coast '
