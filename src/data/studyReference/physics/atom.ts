@@ -51,7 +51,7 @@ export const physicsAtomEntries: StudyEntry[] = [
         id: 'phys-standard-model',
         subject: 'physics',
         question: 'What is the standard model of matter?',
-        aliases: ['standard model', 'quarks', 'leptons', 'fundamental forces', 'particle physics'],
+        aliases: ['standard model', 'particle physics'],
         answer:
             'Matter is built from quarks, which make protons and neutrons, and leptons, which include the electron. ' +
             'Forces are carried by bosons: the photon for electromagnetism, gluons for the strong force, W and Z for ' +
@@ -174,7 +174,7 @@ export const physicsAtomEntries: StudyEntry[] = [
         id: 'phys-binding-energy-curve',
         subject: 'physics',
         question: 'What does the binding energy curve show?',
-        aliases: ['binding energy per nucleon', 'mass defect calculation', 'iron peak', 'why fusion releases energy'],
+        aliases: ['binding energy per nucleon', 'iron peak', 'why fusion releases energy'],
         answer:
             'Binding energy per nucleon rises to a peak near iron and falls away on both sides. ' +
             'Fusing light nuclei or splitting heavy ones both move products towards that peak, releasing energy. ' +
@@ -184,7 +184,7 @@ export const physicsAtomEntries: StudyEntry[] = [
         id: 'phys-fission-reactors',
         subject: 'physics',
         question: 'How does a fission reactor work?',
-        aliases: ['nuclear reactor', 'moderator', 'control rods', 'critical mass'],
+        aliases: ['nuclear reactor', 'moderator', 'critical mass'],
         answer:
             'A neutron splits a heavy nucleus, releasing energy and more neutrons, which can sustain a chain ' +
             'reaction. ' +

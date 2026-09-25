@@ -29,7 +29,7 @@ export const physicsWavesEntries: StudyEntry[] = [
         id: 'phys-thermodynamics',
         subject: 'physics',
         question: 'How does heat move between objects?',
-        aliases: ['thermodynamics', 'heat transfer', 'conduction convection radiation', 'thermal equilibrium'],
+        aliases: ['thermodynamics', 'heat transfer', 'conduction convection radiation'],
         answer:
             'Energy is conserved, and heat flows from hot to cold until thermal equilibrium. ' +
             'Q = mcΔT for a temperature change, and Q = mL for a change of state, where temperature stays constant. ' +
@@ -171,7 +171,7 @@ export const physicsWavesEntries: StudyEntry[] = [
         id: 'phys-thermal-expansion',
         subject: 'physics',
         question: 'Why do materials expand when heated?',
-        aliases: ['thermal expansion', 'expansion joints', 'bimetallic strip', 'why things expand'],
+        aliases: ['thermal expansion', 'expansion joints', 'why things expand'],
         answer:
             'Heating raises the average kinetic energy of the particles, so they vibrate further apart and the ' +
             'material grows. ' +
@@ -182,7 +182,7 @@ export const physicsWavesEntries: StudyEntry[] = [
         id: 'phys-heat-transfer-methods',
         subject: 'physics',
         question: 'What are conduction, convection and radiation?',
-        aliases: ['conduction', 'convection', 'thermal radiation', 'insulation', 'heat transfer methods'],
+        aliases: ['conduction', 'convection', 'insulation', 'heat transfer methods'],
         answer:
             'Conduction passes energy between touching particles and works best in metals, through free electrons. ' +
             'Convection carries it in a moving fluid, since warm fluid rises. ' +
