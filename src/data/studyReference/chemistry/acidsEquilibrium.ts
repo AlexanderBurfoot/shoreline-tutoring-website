@@ -268,7 +268,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-industrial-equilibrium',
         subject: 'chemistry',
         question: 'How are industrial conditions chosen for the Haber and Contact processes?',
-        aliases: ['haber process', 'contact process', 'industrial compromise', 'ammonia synthesis', 'sulfur trioxide'],
+        aliases: ['haber process', 'industrial compromise', 'ammonia synthesis', 'sulfur trioxide'],
         answer:
             'Both are exothermic and reduce the number of gas particles, so yield favours high pressure and low ' +
             'temperature. But a low temperature is too slow, so a moderate temperature plus a catalyst is chosen: a ' +

@@ -40,7 +40,7 @@ export const chemistryEnergyEntries: StudyEntry[] = [
         id: 'chem-collision-energy-profile',
         subject: 'chemistry',
         question: 'What does an energy profile diagram show?',
-        aliases: ['energy profile', 'activation energy', 'catalyst diagram', 'transition state'],
+        aliases: ['energy profile', 'catalyst diagram', 'transition state'],
         answer:
             'It plots energy through a reaction: the hump is the activation energy and its peak the transition state. ' +
             'The difference between reactants and products is ΔH, below zero for exothermic. ' +
@@ -137,5 +137,92 @@ export const chemistryEnergyEntries: StudyEntry[] = [
             'q is the heat in joules, m the mass of the solution in grams, c its specific heat capacity, 4.18 J g⁻¹ K⁻¹ ' +
             'for water, and ΔT the temperature change. ' +
             'Use the mass of the solution being heated, not the mass of the reactant dissolved in it.',
+    },
+    {
+        id: 'chem-bond-breaking-making',
+        subject: 'chemistry',
+        question: 'Why is bond breaking endothermic and bond making exothermic?',
+        aliases: ['bond breaking endothermic', 'bond making exothermic', 'energy of bonds'],
+        answer:
+            'Breaking a bond needs energy to overcome the attraction holding the atoms together; forming one releases ' +
+            'it. A reaction is exothermic overall when the bonds made are stronger than the bonds broken.',
+    },
+    {
+        id: 'chem-activation-energy-meaning',
+        subject: 'chemistry',
+        question: 'What is activation energy?',
+        aliases: ['activation energy', 'energy barrier', 'why reactions need a push'],
+        answer:
+            'The minimum energy a collision needs for the reaction to proceed, corresponding to the peak of the ' +
+            'energy profile. It is why a mixture can be thermodynamically favourable yet sit unreacted until it is ' +
+            'heated or catalysed.',
+    },
+    {
+        id: 'chem-enthalpy-vs-temperature',
+        subject: 'chemistry',
+        question: 'What is the difference between enthalpy change and temperature change?',
+        aliases: ['enthalpy versus temperature change', 'why delta h is per mole', 'temperature rise in a calorimeter'],
+        answer:
+            'The temperature change is what you measure; the enthalpy change is the energy per mole that caused it. ' +
+            'The same reaction in a larger volume of water gives a smaller temperature rise but the same enthalpy ' +
+            'change.',
+    },
+    {
+        id: 'chem-calorimetry-errors',
+        subject: 'chemistry',
+        question: 'What errors affect a calorimetry result?',
+        aliases: ['calorimetry errors', 'heat lost to surroundings', 'why measured enthalpy is low'],
+        answer:
+            'Heat escaping to the surroundings and absorbed by the container, incomplete reaction, and evaporation. ' +
+            'These usually make the measured energy release too small, which is why a result below the accepted value ' +
+            'is the common outcome.',
+    },
+    {
+        id: 'chem-standard-enthalpy-formation',
+        subject: 'chemistry',
+        question: 'What is the standard enthalpy of formation?',
+        aliases: ['enthalpy of formation', 'formation from elements', 'why elements are zero'],
+        answer:
+            'The enthalpy change when one mole of a compound forms from its elements in their standard states. An ' +
+            'element in its standard state is defined as zero, which is what lets Hess law calculations use a table ' +
+            'of them.',
+    },
+    {
+        id: 'chem-entropy-predictions',
+        subject: 'chemistry',
+        question: 'How do I predict whether entropy increases?',
+        aliases: ['predicting entropy change', 'more particles more entropy', 'gas produced entropy'],
+        answer:
+            'Entropy rises when a solid becomes a liquid or gas, when a gas is produced, when a solid dissolves, and ' +
+            'when fewer particles become more. It falls when gases combine into fewer molecules or a solid ' +
+            'precipitates.',
+    },
+    {
+        id: 'chem-gibbs-temperature-dependence',
+        subject: 'chemistry',
+        question: 'How does temperature decide spontaneity?',
+        aliases: ['temperature and spontaneity', 'when does a reaction become spontaneous', 'crossover temperature'],
+        answer:
+            'When ΔH and ΔS have the same sign they oppose each other in ΔG = ΔH − TΔS, so there is a temperature at ' +
+            'which the sign of ΔG flips. Setting ΔG to zero and solving gives that crossover temperature.',
+    },
+    {
+        id: 'chem-energy-profile-catalyst',
+        subject: 'chemistry',
+        question: 'How does a catalyst change the energy profile?',
+        aliases: ['catalyst on an energy profile', 'lower activation energy graph', 'unchanged enthalpy with a catalyst'],
+        answer:
+            'It lowers the peak, so less energy is needed to react, but the levels of the reactants and products are ' +
+            'unchanged, so ΔH is the same. A graph showing a catalyst changing ΔH is wrong.',
+    },
+    {
+        id: 'chem-fuel-energy-comparison',
+        subject: 'chemistry',
+        question: 'Is energy per gram or per mole the right basis for a fuel?',
+        aliases: ['energy content of a fuel', 'energy per gram'],
+        answer:
+            'Divide the heat of combustion by the molar mass for energy per gram, which is what matters for ' +
+            'transport, or use it per mole for a chemical comparison. State which basis you used, since the ranking ' +
+            'can differ between them.',
     },
 ];

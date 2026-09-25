@@ -10,7 +10,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
         id: 'chem-functional-groups',
         subject: 'chemistry',
         question: 'What are the main organic functional groups?',
-        aliases: ['functional groups', 'alcohol', 'ester', 'homologous series'],
+        aliases: ['functional groups', 'alcohol', 'ester'],
         answer:
             'Alkane (C−C), alkene (C=C), alkyne (C≡C), alcohol (−OH), aldehyde (−CHO), ketone (C=O in the chain), ' +
             'carboxylic acid (−COOH), ester (−COO−), amine (−NH₂) and amide (−CONH₂). ' +
@@ -69,7 +69,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
         id: 'chem-soaps-detergents',
         subject: 'chemistry',
         question: 'How do soaps and detergents work?',
-        aliases: ['soap', 'detergent', 'hydrophilic hydrophobic', 'surfactant', 'hard water'],
+        aliases: ['soap', 'detergent', 'hydrophilic hydrophobic', 'surfactant'],
         answer:
             'A surfactant has a hydrophobic tail and a hydrophilic head, so it surrounds grease and lets water carry ' +
             'it away. Soap is made by saponification, boiling a fat with a strong base. ' +
@@ -153,7 +153,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
         id: 'chem-triglycerides',
         subject: 'chemistry',
         question: 'What are triglycerides and saponification?',
-        aliases: ['triglyceride', 'fatty acid', 'saponification', 'saturated unsaturated fat', 'making soap'],
+        aliases: ['triglyceride', 'fatty acid', 'saturated unsaturated fat', 'making soap'],
         answer:
             'A triglyceride is an ester of glycerol with three fatty acids. ' +
             'Saturated chains have no double bonds and pack tightly, so those fats are solid; unsaturated ones kink ' +
@@ -476,5 +476,118 @@ export const chemistryOrganicEntries: StudyEntry[] = [
             'Designing processes to prevent waste rather than treat it: high atom economy, catalysts instead of ' +
             'stoichiometric reagents, safer solvents, renewable feedstocks, and products that break down after use. ' +
             'The cheapest waste to deal with is the waste never made.',
+    },
+    {
+        id: 'chem-homologous-series-meaning',
+        subject: 'chemistry',
+        question: 'What makes a group of compounds a chemical family?',
+        aliases: ['homologous series', 'same functional group family', 'general formula of a series'],
+        answer:
+            'A family sharing a functional group and a general formula, each member differing by CH₂. Chemical ' +
+            'behaviour is similar throughout because the functional group is the same, while physical properties ' +
+            'change gradually with chain length.',
+    },
+    {
+        id: 'chem-iupac-numbering-rules',
+        subject: 'chemistry',
+        question: 'How do I number the carbon chain when naming?',
+        aliases: ['numbering the chain', 'lowest locant rule', 'which end to start from'],
+        answer:
+            'Number from whichever end gives the functional group, then the substituents, the lowest numbers. The ' +
+            'parent chain is the longest one containing the functional group, which is not always the longest chain ' +
+            'in the structure.',
+    },
+    {
+        id: 'chem-functional-group-priority',
+        subject: 'chemistry',
+        question: 'Which functional group takes priority in a name?',
+        aliases: ['functional group priority', 'which group names the compound', 'suffix or prefix'],
+        answer:
+            'Carboxylic acid ranks above ester, amide, aldehyde, ketone, alcohol and amine. The highest ranking group ' +
+            'gives the suffix and the rest appear as prefixes, which is why a hydroxy acid is named as an acid.',
+    },
+    {
+        id: 'chem-addition-vs-substitution',
+        subject: 'chemistry',
+        question: 'What is the difference between addition and substitution?',
+        aliases: ['addition versus substitution', 'unsaturated adds', 'saturated substitutes'],
+        answer:
+            'Addition opens a double or triple bond and adds across it, so nothing is lost. Substitution swaps an ' +
+            'atom for another and releases a small molecule. Alkenes add; alkanes can only substitute.',
+    },
+    {
+        id: 'chem-testing-unsaturation',
+        subject: 'chemistry',
+        question: 'How do I test for a carbon-carbon double bond?',
+        aliases: ['test for unsaturation', 'decolourising bromine'],
+        answer:
+            'Add bromine water: an alkene decolourises it rapidly in the dark by addition, while an alkane does not. ' +
+            'Acidified permanganate is also decolourised by an alkene.',
+    },
+    {
+        id: 'chem-esterification-conditions',
+        subject: 'chemistry',
+        question: 'What conditions does esterification need?',
+        aliases: ['esterification conditions', 'concentrated sulfuric acid catalyst', 'reflux for an ester'],
+        answer:
+            'An alcohol and a carboxylic acid heated under reflux with concentrated sulfuric acid as catalyst and ' +
+            'dehydrating agent. The reaction reaches equilibrium, so removing water or using an excess of one ' +
+            'reactant improves the yield.',
+    },
+    {
+        id: 'chem-saponification-detail',
+        subject: 'chemistry',
+        question: 'What happens during saponification?',
+        aliases: ['saponification', 'making soap from fat', 'base hydrolysis of an ester'],
+        answer:
+            'A fat is hydrolysed by a strong base, giving glycerol and the salts of the fatty acids, which are soap. ' +
+            'It is base hydrolysis of an ester, and unlike esterification it goes essentially to completion.',
+    },
+    {
+        id: 'chem-detergent-vs-soap',
+        subject: 'chemistry',
+        question: 'Why do detergents work in hard water when soap does not?',
+        aliases: ['detergent versus soap', 'soap scum in hard water', 'why detergents lather'],
+        answer:
+            'Soap forms an insoluble scum with the calcium and magnesium ions in hard water. Detergents have a ' +
+            'different head group whose calcium salts stay soluble, so they lather and clean in hard water.',
+    },
+    {
+        id: 'chem-polymer-properties-structure',
+        subject: 'chemistry',
+        question: 'How does polymer structure decide whether a plastic can be remelted?',
+        aliases: ['thermoplastic', 'thermosetting plastic', 'cross links and remelting'],
+        answer:
+            'A thermoplastic has separate chains held by intermolecular forces, so heating lets them slide and it can ' +
+            'be remoulded and recycled. A thermoset is cross-linked into one network, so heating decomposes rather ' +
+            'than softens it.',
+    },
+    {
+        id: 'chem-recycling-plastics',
+        subject: 'chemistry',
+        question: 'Why are some plastics hard to recycle?',
+        aliases: ['recycling plastics', 'mixed plastic waste', 'why thermosets cannot be recycled'],
+        answer:
+            'Different polymers must be separated because they melt at different temperatures and do not mix, ' +
+            'additives and dyes contaminate the melt, and cross-linked plastics cannot be melted at all.',
+    },
+    {
+        id: 'chem-organic-yield-losses',
+        subject: 'chemistry',
+        question: 'Why are organic yields often low?',
+        aliases: ['organic yield', 'losses in organic synthesis', 'multi step yield'],
+        answer:
+            'Reactions that reach equilibrium, competing side reactions, and losses at every transfer, extraction and ' +
+            'purification. In a multi-step synthesis the yields multiply, so three steps at 70% leave about a third ' +
+            'of the theoretical product.',
+    },
+    {
+        id: 'chem-identifying-unknown-steps',
+        subject: 'chemistry',
+        question: 'In what order should I use spectra to identify a compound?',
+        aliases: ['order of spectral analysis', 'identifying a compound from data'],
+        answer:
+            'Mass spectrum for the molar mass and fragments, infrared for which functional groups are present, then ' +
+            'carbon and proton NMR for how the skeleton is arranged. Each narrows what the next has to decide.',
     },
 ];
