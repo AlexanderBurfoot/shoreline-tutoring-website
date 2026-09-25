@@ -122,4 +122,34 @@ export const englishExamsEntries: StudyEntry[] = [
             'two required texts, and a conclusion that introduces a new idea. Each is a structural failure rather ' +
             'than a matter of style.',
     },
+    {
+        id: 'eng-narrative-structure-terms',
+        subject: 'english',
+        question: 'What are the parts of a narrative structure?',
+        aliases: ['exposition', 'rising action', 'climax', 'denouement', 'parts of a story structure'],
+        answer:
+            'Exposition sets the situation, rising action builds the complication, the climax is the turning point, ' +
+            'and the falling action and resolution settle what follows. Naming the stage matters less than showing ' +
+            'what the text does with it, such as a climax withheld.',
+    },
+    {
+        id: 'eng-allegory',
+        subject: 'english',
+        question: 'What is an allegory?',
+        aliases: ['allegory', 'allegorical reading', 'story standing for something else'],
+        answer:
+            'A text whose surface story consistently stands for something else, usually political or moral, so every ' +
+            'element has a counterpart. It differs from symbolism in being sustained: one symbol does not make an ' +
+            'allegory.',
+    },
+    {
+        id: 'eng-diction',
+        subject: 'english',
+        question: 'What is diction, and how do I write about it?',
+        aliases: ['diction', 'word choice analysis', 'formal and colloquial diction'],
+        answer:
+            'The kind of words a writer chooses: formal or colloquial, abstract or concrete, plain or elevated. Name ' +
+            'the register and quote two words that establish it, then say what the choice implies about the speaker ' +
+            'or their attitude to the subject.',
+    },
 ];

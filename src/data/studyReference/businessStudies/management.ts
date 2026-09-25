@@ -11,7 +11,7 @@ export const businessManagementEntries: StudyEntry[] = [
         id: 'bus-management-functions',
         subject: 'business-studies',
         question: 'What are the functions of management?',
-        aliases: ['functions of management', 'what management involves'],
+        aliases: ['functions of management', 'what management involves', 'organising', 'controlling', 'leading a team'],
         answer:
             'Planning what to do, organising resources and people, leading and motivating, and controlling by ' +
             'measuring against the plan and correcting. The four are continuous rather than sequential, since ' +

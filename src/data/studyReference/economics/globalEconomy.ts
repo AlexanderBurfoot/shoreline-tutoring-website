@@ -112,7 +112,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-taxation-types',
         subject: 'economics',
         question: 'What are progressive, regressive and proportional taxes?',
-        aliases: ['progressive tax', 'regressive tax', 'proportional tax', 'direct and indirect tax', 'gst regressive'],
+        aliases: ['progressive tax', 'regressive tax', 'proportional tax', 'direct and indirect tax', 'gst regressive', 'taxation', 'how tax works'],
         answer:
             'A progressive tax takes a larger share as income rises, like income tax. ' +
             'A regressive tax takes a larger share from lower incomes, which is the criticism of the GST. ' +

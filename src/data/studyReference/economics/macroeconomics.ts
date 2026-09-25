@@ -50,7 +50,7 @@ export const economicsMacroEntries: StudyEntry[] = [
         id: 'econ-consumption-function',
         subject: 'economics',
         question: 'What determines how much households spend?',
-        aliases: ['determinants of consumption', 'consumer confidence'],
+        aliases: ['determinants of consumption', 'household spending', 'disposable income and spending'],
         answer:
             'Disposable income above all, then wealth, interest rates, expectations and confidence. The marginal ' +
             'propensity to consume is the fraction of an extra dollar that is spent, and it drives the size of the ' +

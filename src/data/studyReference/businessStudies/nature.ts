@@ -185,4 +185,44 @@ export const businessNatureEntries: StudyEntry[] = [
             'management, audit and reporting requirements, and the separation of ownership from control. ' +
             'Weak governance is how a profitable company can still be run into the ground.',
     },
+    {
+        id: 'bus-mergers-and-acquisitions',
+        subject: 'business-studies',
+        question: 'What is the difference between a merger and an acquisition?',
+        aliases: ['merger', 'acquisition', 'takeover', 'horizontal and vertical integration'],
+        answer:
+            'A merger combines two businesses into a new entity; an acquisition is one buying another, which may be ' +
+            'agreed or hostile. Horizontal integration buys a competitor, vertical integration buys a supplier or ' +
+            'distributor.',
+    },
+    {
+        id: 'bus-insolvency',
+        subject: 'business-studies',
+        question: 'What happens when a business cannot pay its debts?',
+        aliases: ['liquidation', 'bankruptcy', 'insolvency'],
+        answer:
+            'An insolvent company may enter voluntary administration, where an administrator tries to save it, and ' +
+            'otherwise liquidation, where assets are sold and creditors paid in order. Bankruptcy is the equivalent ' +
+            'for an individual, such as a sole trader.',
+    },
+    {
+        id: 'bus-business-cessation',
+        subject: 'business-studies',
+        question: 'Why do businesses close even when profitable?',
+        aliases: ['why businesses close', 'cessation of a business', 'retirement and succession'],
+        answer:
+            'Retirement without a successor, an owner choosing to sell, a lease lost, a better use for the capital, ' +
+            'or a partnership dissolving. Profitability and continuation are separate questions, which is why ' +
+            'succession planning matters.',
+    },
+    {
+        id: 'bus-franchise-obligations',
+        subject: 'business-studies',
+        question: 'What obligations come with a franchise agreement?',
+        aliases: ['franchise agreement', 'franchisor obligations', 'franchising code'],
+        answer:
+            'Ongoing fees and royalties, set suppliers, prescribed layout and marketing, and territory limits, ' +
+            'against training and brand support from the franchisor. The Franchising Code requires disclosure before ' +
+            'signing and sets a cooling-off period.',
+    },
 ];

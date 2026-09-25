@@ -263,4 +263,44 @@ export const economicsIndicatorsEntries: StudyEntry[] = [
             'worsens the inflation and restraining it worsens the unemployment. It usually follows a supply shock, as ' +
             'in the oil crises of the 1970s.',
     },
+    {
+        id: 'econ-gni-and-gdp',
+        subject: 'economics',
+        question: 'What is the difference between GDP and GNI?',
+        aliases: ['gni', 'gross national income', 'gdp versus gni'],
+        answer:
+            'GDP counts production inside the country whoever owns it; GNI counts income earned by residents wherever ' +
+            'it is earned. For a country funded heavily from overseas, GNI is lower than GDP, because income flows ' +
+            'out to foreign owners.',
+    },
+    {
+        id: 'econ-recession',
+        subject: 'economics',
+        question: 'What is a recession?',
+        aliases: ['recession', 'two quarters of negative growth', 'downturn definition'],
+        answer:
+            'Conventionally two consecutive quarters of falling real GDP, though economists also look at unemployment ' +
+            'and confidence. Unemployment keeps rising for a time after growth resumes, which is why a recession ' +
+            'feels longer than the figures suggest.',
+    },
+    {
+        id: 'econ-economic-shocks',
+        subject: 'economics',
+        question: 'What is an economic shock?',
+        aliases: ['economic shock', 'supply shock', 'demand shock', 'external shock'],
+        answer:
+            'A sudden unexpected change in conditions: an oil price jump, a pandemic, a financial crisis or a ' +
+            'collapse in export prices. Supply shocks raise prices and lower output at once, which is why they are ' +
+            'harder to answer than demand shocks.',
+    },
+    {
+        id: 'econ-consumer-and-business-confidence',
+        subject: 'economics',
+        question: 'Why does confidence matter to the economy?',
+        aliases: ['consumer confidence', 'business confidence', 'expectations and spending'],
+        answer:
+            'Because spending and investment depend on expectations about the future, not only on current income. ' +
+            'Falling confidence causes households to save and firms to defer investment, which produces the downturn ' +
+            'they expected.',
+    },
 ];

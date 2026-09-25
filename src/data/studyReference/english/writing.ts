@@ -31,7 +31,7 @@ export const englishWritingEntries: StudyEntry[] = [
         id: 'eng-quote-integration',
         subject: 'english',
         question: 'How do I integrate quotes properly?',
-        aliases: ['quote integration', 'embedding quotes', 'how to quote', 'textual evidence'],
+        aliases: ['quote integration', 'embedding quotes', 'how to quote', 'textual evidence', 'embed a quote'],
         answer:
             'Keep quotes short and run them into your own sentence, so the grammar still works. ' +
             'Name the technique, then explain the effect on the responder. ' +

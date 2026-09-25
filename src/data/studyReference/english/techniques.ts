@@ -133,7 +133,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-characterisation',
         subject: 'english',
         question: 'How do composers build character?',
-        aliases: ['characterisation', 'direct characterisation', 'indirect characterisation', 'character development', 'foil'],
+        aliases: ['characterisation', 'direct characterisation', 'indirect characterisation', 'character development', 'foil', 'protagonist', 'antagonist'],
         answer:
             'Directly, by describing a character, and indirectly through their speech, actions, thoughts and how ' +
             'others react to them. ' +
@@ -197,7 +197,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-poetic-form',
         subject: 'english',
         question: 'What are the main poetic forms?',
-        aliases: ['ballad', 'ode', 'haiku', 'elegy', 'poetic form'],
+        aliases: ['ballad', 'ode', 'haiku', 'elegy', 'poetic form', 'couplet', 'quatrain'],
         answer:
             'A sonnet has fourteen lines and a turn, an ode praises, an elegy mourns, and a ballad tells a story in ' +
             'quatrains. ' +
@@ -407,5 +407,35 @@ export const englishTechniquesEntries: StudyEntry[] = [
             'Polysyndeton repeats conjunctions where they are not needed, which slows the rhythm and piles detail on ' +
             'detail. Asyndeton removes them entirely, which quickens it and creates urgency. Both change pace rather ' +
             'than meaning.',
+    },
+    {
+        id: 'eng-documentary-analysis',
+        subject: 'english',
+        question: 'How do I analyse a documentary?',
+        aliases: ['documentary analysis', 'analysing a documentary', 'documentary techniques'],
+        answer:
+            'Treat it as a constructed argument, not a record. Look at what is filmed and what is left out, the ' +
+            'voiceover and who is given an interview, archival footage, music, and the order of the evidence. Every ' +
+            'one of those is a choice made to position the viewer.',
+    },
+    {
+        id: 'eng-band-six-qualities',
+        subject: 'english',
+        question: 'What separates a top band response from a middle one?',
+        aliases: ['band 6 essay', 'what a top response does', 'difference between band 4 and band 6'],
+        answer:
+            'A controlling idea rather than a list of points, evidence chosen to serve the argument, analysis that ' +
+            'explains effect on the reader, and judgement about the text rather than description of it. Middle band ' +
+            'responses usually know the text well and answer a question of their own.',
+    },
+    {
+        id: 'eng-revision-method',
+        subject: 'english',
+        question: 'How should I revise for an English exam?',
+        aliases: ['revising for english', 'how to study english', 'english exam preparation'],
+        answer:
+            'Rehearse thinking, not recall: write paragraphs to past questions under time, build a quotation bank ' +
+            'grouped by idea, and practise adapting a thesis to an unfamiliar wording. Rereading notes feels ' +
+            'productive and changes very little.',
     },
 ];

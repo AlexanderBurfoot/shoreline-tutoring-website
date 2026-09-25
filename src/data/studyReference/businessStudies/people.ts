@@ -31,7 +31,7 @@ export const businessPeopleEntries: StudyEntry[] = [
         id: 'bus-remuneration-methods',
         subject: 'business-studies',
         question: 'What are the ways of paying employees?',
-        aliases: ['remuneration methods', 'wage versus salary', 'commission and bonus', 'performance pay'],
+        aliases: ['remuneration methods', 'wage versus salary', 'commission and bonus', 'performance pay', 'remuneration', 'how employees are paid'],
         answer:
             'Hourly wages, annual salary, piece rates, commission, bonuses, profit sharing and share schemes, plus ' +
             'non-financial benefits. Each rewards something different, so the method shapes behaviour as much as the ' +
