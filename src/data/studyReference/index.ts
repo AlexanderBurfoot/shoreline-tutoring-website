@@ -5,6 +5,7 @@
  * about the business itself. Each carries a link to its subject page, so a
  * student who wanted the formula is one click from the tutoring that explains it.
  */
+import { beyondSyllabusEntries } from './beyondSyllabus';
 import { biologyEntries } from './biology';
 import { businessEntries } from './businessStudies';
 import { chemistryEntries } from './chemistry';
@@ -29,6 +30,7 @@ export const studyEntries: StudyEntry[] = [
     ...businessEntries,
     ...examPrepEntries,
     ...workedExampleEntries,
+    ...beyondSyllabusEntries,
 ];
 
 /** The page to send a student to after an answer, by subject. */

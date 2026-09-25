@@ -136,7 +136,7 @@ export const chemistryReactionsEntries: StudyEntry[] = [
         id: 'chem-galvanic-cells',
         subject: 'chemistry',
         question: 'How does a galvanic cell work?',
-        aliases: ['galvanic cell', 'electrochemistry', 'anode cathode', 'electrolysis'],
+        aliases: ['galvanic cell', 'electrochemistry', 'anode cathode'],
         answer:
             'Oxidation happens at the anode and reduction at the cathode, with electrons flowing through the wire and ' +
             'ions through the salt bridge. Cell potential is E°(cathode) − E°(anode), and a positive value means the ' +
@@ -157,7 +157,7 @@ export const chemistryReactionsEntries: StudyEntry[] = [
         id: 'chem-everyday-redox',
         subject: 'chemistry',
         question: 'Where does redox appear in everyday life?',
-        aliases: ['everyday redox', 'rusting', 'batteries as redox', 'bleaching'],
+        aliases: ['everyday redox', 'batteries as redox', 'bleaching'],
         answer:
             'Rusting, combustion, respiration, photosynthesis, batteries, bleaching and photography are all electron ' +
             'transfers. ' +
