@@ -92,7 +92,7 @@ export const mathematicsAlgebraEntries: StudyEntry[] = [
     {
         id: 'maths-simultaneous-word',
         subject: 'mathematics',
-        question: 'When do I need two equations?',
+        question: 'How do I know a problem has two unknowns?',
         aliases: ['two unknowns', 'setting up simultaneous equations', 'two variables word problem'],
         answer:
             'Whenever a problem has two unknowns, you need two independent pieces of information. ' +

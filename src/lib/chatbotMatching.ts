@@ -36,13 +36,23 @@ const PHRASE_BONUS = 0.15;
  */
 const PHRASE_MATCH_FLOOR = 0.8;
 
-/** Words too common to tell two questions apart. */
+/**
+ * Words too common to tell two questions apart.
+ *
+ * The second group is how a student frames a question rather than what it is
+ * about. Because none of them appear in the answers, each was treated as the
+ * most telling word in the question, so "moles confusing" was dominated by
+ * "confusing" and found nothing. Words an entry is actually about, such as
+ * "stuck", "help" and "need", are deliberately left out of this group.
+ */
 const STOP_WORDS = new Set([
     'a', 'about', 'am', 'an', 'and', 'any', 'are', 'as', 'at', 'be', 'been', 'by', 'can', 'could',
     'did', 'do', 'does', 'for', 'from', 'get', 'go', 'had', 'has', 'have', 'he', 'her', 'his', 'how',
     'i', 'if', 'in', 'is', 'it', 'its', 'me', 'my', 'of', 'on', 'or', 'our', 'out', 'she', 'should',
     'so', 'the', 'their', 'them', 'there', 'they', 'this', 'to', 'up', 'us', 'was', 'we', 'what',
     'when', 'where', 'which', 'who', 'why', 'will', 'with', 'would', 'you', 'your',
+
+    'cant', 'confused', 'confusing', 'dont', 'help', 'need', 'please', 'pls', 'struggling',
 ]);
 
 /** Parents' wordings mapped onto the words the answers are written with. */

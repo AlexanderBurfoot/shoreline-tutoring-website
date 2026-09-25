@@ -44,6 +44,15 @@ describe('findBestMatch', () => {
         expect(findBestMatch('   ???   ')).toBeNull();
     });
 
+    /* Adding a word to STOP_WORDS can empty the question of an entry that was
+       about that word, leaving it unreachable by anything. "Stuck" and "help"
+       each nearly went the same way. */
+    it('leaves every entry at least one word to be found by', () => {
+        for (const entry of knowledgeEntries) {
+            expect(tokenise(entry.question).length, entry.id).toBeGreaterThan(0);
+        }
+    });
+
     /* Students write these both ways, and until hyphens were split they were
        different words, so half the bank was unreachable from the other spelling. */
     it.each([

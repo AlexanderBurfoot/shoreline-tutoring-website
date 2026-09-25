@@ -308,7 +308,7 @@ export const selectiveReasoningEntries: StudyEntry[] = [
     {
         id: 'sel-angle-rules',
         subject: 'selective-high-school',
-        question: 'What angle rules do I need?',
+        question: 'Which angle facts should I know for the test?',
         aliases: ['angles on a line', 'angles at a point', 'vertically opposite angles'],
         answer:
             'Angles on a straight line add to 180 degrees, angles at a point to 360, and vertically opposite angles ' +

@@ -31,7 +31,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-reading-strategy',
         subject: 'selective-high-school',
         question: 'How do I approach the reading section?',
-        aliases: ['reading test strategy', 'comprehension strategy', 'cloze passage'],
+        aliases: ['reading test strategy', 'comprehension strategy', 'cloze passage', 'reading comprehension', 'comprehension strategies'],
         answer:
             'Skim for structure first, then read the question and hunt for the evidence. ' +
             'Every answer must be supported by the text, so eliminate options that are true in general but not stated. ' +

@@ -40,7 +40,7 @@ export const biologyHeredityEntries: StudyEntry[] = [
         id: 'bio-punnett',
         subject: 'biology',
         question: 'How do I use a Punnett square?',
-        aliases: ['punnett square', 'genotype', 'phenotype', 'dominant recessive', 'monohybrid cross'],
+        aliases: ['punnett square', 'genotype', 'phenotype', 'dominant recessive', 'monohybrid cross', 'punnet square', 'punnett'],
         answer:
             'Put one parent’s alleles along the top and the other’s down the side, then fill each cell with the ' +
             'pair. Genotype is the allele combination, phenotype is the trait you see. ' +

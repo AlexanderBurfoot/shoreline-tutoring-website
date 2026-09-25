@@ -51,7 +51,7 @@ export const englishModulesEntries: StudyEntry[] = [
         id: 'eng-module-c',
         subject: 'english',
         question: 'What does Module C, The Craft of Writing, require?',
-        aliases: ['module c', 'craft of writing', 'stimulus writing', 'writing techniques'],
+        aliases: ['module c', 'craft of writing', 'stimulus writing', 'writing techniques', 'crafting of writing', 'craft of writing module'],
         answer:
             'You write your own imaginative, discursive or persuasive piece, often from a stimulus, then may be asked ' +
             'to reflect on your choices. ' +

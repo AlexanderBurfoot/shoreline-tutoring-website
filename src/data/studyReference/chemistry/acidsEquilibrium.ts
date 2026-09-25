@@ -59,7 +59,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-titration',
         subject: 'chemistry',
         question: 'How does a titration calculation work?',
-        aliases: ['titration', 'equivalence point', 'c1v1', 'concentration calculation'],
+        aliases: ['titration', 'equivalence point', 'c1v1', 'concentration calculation', 'titrations', 'doing a titration'],
         answer:
             'Use n = cV to find moles of the known solution, apply the mole ratio from the balanced equation, ' +
             'then divide by the unknown volume to get its concentration. ' +
