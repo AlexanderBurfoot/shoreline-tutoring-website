@@ -365,4 +365,53 @@ export const biologyCellsEntries: StudyEntry[] = [
             'magnification. Measure the image in millimetres, convert using the scale bar, and keep the units ' +
             'consistent before dividing.',
     },
+    {
+        id: 'bio-classification-difficulties',
+        subject: 'biology',
+        question: 'Why is classifying organisms sometimes difficult?',
+        aliases: ['problems with classification', 'defining a species is hard', 'asexual organisms classification'],
+        answer:
+            'The biological species definition depends on interbreeding, which cannot be applied to asexual ' +
+            'organisms, fossils or populations that hybridise. Molecular data sometimes contradicts anatomy, so ' +
+            'groupings are revised as evidence accumulates.',
+    },
+    {
+        id: 'bio-viruses-and-life',
+        subject: 'biology',
+        question: 'Are viruses alive?',
+        aliases: ['are viruses living', 'characteristics of life', 'why viruses are borderline'],
+        answer:
+            'They carry genetic material and evolve, but they do not respire, grow or reproduce without a host cell, ' +
+            'so most definitions exclude them. The disagreement is about where to draw the line rather than about the ' +
+            'facts.',
+    },
+    {
+        id: 'bio-cell-communication',
+        subject: 'biology',
+        question: 'How do cells signal to each other?',
+        aliases: ['cell signalling', 'receptor and signal molecule', 'target cell response'],
+        answer:
+            'A signal molecule binds a receptor with a complementary shape, which changes the receptor and triggers a ' +
+            'response inside the cell. Only cells with the matching receptor respond, which is how a hormone in the ' +
+            'blood affects only certain tissues.',
+    },
+    {
+        id: 'bio-comparing-plant-animal-transport',
+        subject: 'biology',
+        question: 'How does transport in plants differ from transport in animals?',
+        aliases: ['comparing plant and animal transport', 'no pump in plants', 'one way and two way transport'],
+        answer:
+            'Animals pump blood in a closed circuit in both directions. Plants have no pump: water rises in xylem ' +
+            'driven by evaporation and travels one way, while phloem moves sugar either way by pressure differences.',
+    },
+    {
+        id: 'bio-answering-extended-response',
+        subject: 'biology',
+        question: 'How do I structure an extended response in biology?',
+        aliases: ['extended response biology', 'structuring a long answer', 'using headings in a long response'],
+        answer:
+            'Plan the parts the question names, give each its own paragraph, use correct terminology and a named ' +
+            'example in each, and answer the verb: assess needs a judgement, explain needs a mechanism. A diagram ' +
+            'counts where it adds information.',
+    },
 ];
