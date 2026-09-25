@@ -37,7 +37,7 @@ export const chemistryQuantitiesEntries: StudyEntry[] = [
         id: 'chem-molar-mass',
         subject: 'chemistry',
         question: 'How do I calculate molar mass?',
-        aliases: ['molar mass', 'formula mass', 'relative molecular mass', 'adding atomic masses'],
+        aliases: ['molar mass', 'relative molecular mass', 'adding atomic masses'],
         answer:
             'Add the relative atomic masses of every atom in the formula, multiplying by each subscript, and include ' +
             'anything inside brackets the right number of times. ' +
@@ -57,7 +57,7 @@ export const chemistryQuantitiesEntries: StudyEntry[] = [
         id: 'chem-percentage-composition',
         subject: 'chemistry',
         question: 'How do I find percentage composition by mass?',
-        aliases: ['percentage composition', 'percent by mass', 'mass percentage of an element'],
+        aliases: ['percentage composition', 'mass percentage of an element'],
         answer:
             'Divide the total mass of that element in one mole of the compound by the molar mass, then multiply by 100. ' +
             'In CaCO₃ the carbon is 12.01/100.09, about 12.0%. ' +
@@ -117,7 +117,7 @@ export const chemistryQuantitiesEntries: StudyEntry[] = [
         id: 'chem-gas-laws',
         subject: 'chemistry',
         question: 'What are the gas laws?',
-        aliases: ['ideal gas law', 'pv = nrt', 'boyles law', 'charles law', 'molar volume'],
+        aliases: ['ideal gas law', 'pv = nrt', 'boyles law', 'charles law'],
         answer:
             'PV = nRT, with R = 8.314 J K⁻¹ mol⁻¹, P in kPa, V in litres and T in kelvin, which is how NSW ' +
             'worked solutions set it out. At constant temperature P and V are inversely related; at constant ' +
@@ -208,5 +208,102 @@ export const chemistryQuantitiesEntries: StudyEntry[] = [
             'spillage, and how to dispose of the waste. ' +
             'Then write the risk assessment from it, naming the control for each hazard rather than listing hazards ' +
             'alone.',
+    },
+    {
+        id: 'chem-mole-conversions-summary',
+        subject: 'chemistry',
+        question: 'What are all the ways into moles?',
+        aliases: ['ways to find moles', 'mole conversion routes', 'which mole formula to use'],
+        answer:
+            'From mass divide by molar mass, from a solution multiply concentration by volume in litres, from a gas ' +
+            'divide the volume by the molar volume, and from a count divide by Avogadro number. Choosing the right ' +
+            'entry point is most of the work.',
+    },
+    {
+        id: 'chem-molar-volume-conditions',
+        subject: 'chemistry',
+        question: 'What is the molar volume of a gas?',
+        aliases: ['molar volume', 'volume of one mole of gas', 'at 25 degrees and 100 kpa'],
+        answer:
+            'About 24.79 L mol⁻¹ at 25 °C and 100 kPa, and about 22.71 L mol⁻¹ at 0 °C and 100 kPa. Because it ' +
+            'depends on conditions, always check which the question specifies rather than recalling one value.',
+    },
+    {
+        id: 'chem-mass-of-a-molecule',
+        subject: 'chemistry',
+        question: 'How do I find the mass of a single molecule?',
+        aliases: ['mass of one molecule', 'molar mass divided by avogadro', 'mass of an individual particle'],
+        answer:
+            'Divide the molar mass in grams by 6.022 × 10²³. The answer is around 10⁻²³ to 10⁻²² grams, so an answer ' +
+            'of a sensible everyday size means the division went the wrong way.',
+    },
+    {
+        id: 'chem-mole-ratio-reading',
+        subject: 'chemistry',
+        question: 'How do I read the mole ratio from an equation?',
+        aliases: ['reading a mole ratio', 'coefficients as a ratio', 'ratio not mass ratio'],
+        answer:
+            'The coefficients give the ratio in moles, never in grams. In 2H₂ + O₂ → 2H₂O, two moles of hydrogen ' +
+            'react with one of oxygen, which is four grams to thirty two, not two to one by mass.',
+    },
+    {
+        id: 'chem-formula-mass-vs-molecular',
+        subject: 'chemistry',
+        question: 'What is the difference between formula mass and molecular mass?',
+        aliases: ['formula mass', 'molecular mass', 'ionic compounds have no molecules'],
+        answer:
+            'Ionic compounds form a lattice rather than discrete molecules, so the sum of the atomic masses in the ' +
+            'formula unit is called the formula mass. The arithmetic is identical; the distinction is about what the ' +
+            'particle actually is.',
+    },
+    {
+        id: 'chem-parts-per-million-calculation',
+        subject: 'chemistry',
+        question: 'How do I calculate parts per million?',
+        aliases: ['calculating ppm', 'mg per litre', 'converting ppm to concentration'],
+        answer:
+            'Divide the mass of solute by the mass of solution and multiply by a million. For dilute water samples, ' +
+            'one ppm is essentially one milligram per litre, which is why trace results are usually reported that ' +
+            'way.',
+    },
+    {
+        id: 'chem-volumetric-glassware-uncertainty',
+        subject: 'chemistry',
+        question: 'How precise is each piece of volumetric glassware?',
+        aliases: ['glassware uncertainty', 'burette precision', 'measuring cylinder precision'],
+        answer:
+            'A burette reads to about ±0.05 mL and a volumetric pipette to about ±0.03 mL, while a measuring cylinder ' +
+            'is nearer ±0.5 mL. Using a cylinder for an aliquot therefore limits the whole titration to that ' +
+            'accuracy.',
+    },
+    {
+        id: 'chem-standard-conditions',
+        subject: 'chemistry',
+        question: 'What do standard conditions mean in chemistry?',
+        aliases: ['standard conditions', 'standard state', 'what standard means in thermochemistry'],
+        answer:
+            'One hundred kilopascals, a stated temperature, usually 25 °C, solutions at one molar, and each substance ' +
+            'in its most stable form at those conditions. Standard enthalpies and electrode potentials are only ' +
+            'comparable because of it.',
+    },
+    {
+        id: 'chem-percent-by-volume',
+        subject: 'chemistry',
+        question: 'What do the different concentration units mean?',
+        aliases: ['percent by mass', 'percent by volume', 'mass per volume concentration'],
+        answer:
+            'Percent by mass is grams of solute per hundred grams of solution, percent by volume is millilitres per ' +
+            'hundred millilitres, and mass per volume is grams per hundred millilitres. Read which one a label uses ' +
+            'before calculating.',
+    },
+    {
+        id: 'chem-scientific-notation-chemistry',
+        subject: 'chemistry',
+        question: 'How do I handle very large and very small numbers in chemistry?',
+        aliases: ['scientific notation in chemistry', 'powers of ten in calculations', 'entering exponents in a calculator'],
+        answer:
+            'Work in scientific notation throughout and use the exponent key rather than typing out zeros. Check the ' +
+            'exponent of the answer against a rough estimate, since a mistyped power of ten is the error most easily ' +
+            'missed.',
     },
 ];

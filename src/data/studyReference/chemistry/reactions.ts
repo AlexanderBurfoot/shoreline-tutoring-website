@@ -20,7 +20,7 @@ export const chemistryReactionsEntries: StudyEntry[] = [
         id: 'chem-acid-base-reactions',
         subject: 'chemistry',
         question: 'What are the common acid reactions?',
-        aliases: ['acid reactions', 'neutralisation', 'acid plus carbonate', 'acid plus metal', 'salt'],
+        aliases: ['acid reactions', 'neutralisation', 'salt'],
         answer:
             'Acid plus base gives salt and water. Acid plus metal gives salt and hydrogen. ' +
             'Acid plus carbonate gives salt, water and carbon dioxide. ' +
@@ -174,5 +174,130 @@ export const chemistryReactionsEntries: StudyEntry[] = [
             'difference. ' +
             'Because each element has its own spacing of levels, each gives its own colour: sodium yellow, potassium ' +
             'lilac, copper blue-green.',
+    },
+    {
+        id: 'chem-combustion-equations',
+        subject: 'chemistry',
+        question: 'How do I write a combustion equation?',
+        aliases: ['combustion equation', 'burning a hydrocarbon equation', 'balancing combustion'],
+        answer:
+            'A hydrocarbon burning completely gives carbon dioxide and water. Balance the carbons, then the ' +
+            'hydrogens, then the oxygens last, using a half coefficient for oxygen if needed and doubling everything ' +
+            'at the end.',
+    },
+    {
+        id: 'chem-acid-metal-carbonate',
+        subject: 'chemistry',
+        question: 'What do acids react with, and what forms?',
+        aliases: ['acid plus metal', 'acid plus carbonate', 'acid plus base products'],
+        answer:
+            'With a metal, a salt and hydrogen. With a base or metal oxide, a salt and water. With a carbonate, a ' +
+            'salt, water and carbon dioxide. In each case the acid anion pairs with the metal cation to form the ' +
+            'salt.',
+    },
+    {
+        id: 'chem-neutralisation-equations',
+        subject: 'chemistry',
+        question: 'How do I write a neutralisation equation?',
+        aliases: ['neutralisation equation', 'acid plus base ionic equation', 'h plus and oh minus'],
+        answer:
+            'Salt plus water, with the net ionic equation reducing to H⁺ + OH⁻ → H₂O for a strong acid and strong ' +
+            'base. That is why the enthalpy of neutralisation is nearly the same for any such pair.',
+    },
+    {
+        id: 'chem-displacement-reactions',
+        subject: 'chemistry',
+        question: 'How do displacement reactions work?',
+        aliases: ['more reactive metal displaces', 'halogen displacement'],
+        answer:
+            'A more reactive element takes the place of a less reactive one in a compound. Zinc displaces copper from ' +
+            'copper sulfate; chlorine displaces bromide from bromide solution. The activity series predicts whether a ' +
+            'given pair will react.',
+    },
+    {
+        id: 'chem-decomposition-reactions',
+        subject: 'chemistry',
+        question: 'What is thermal decomposition?',
+        aliases: ['thermal decomposition', 'heating a carbonate', 'breaking a compound with heat'],
+        answer:
+            'One compound breaking into two or more simpler substances on heating, which is endothermic. Metal ' +
+            'carbonates give the oxide and carbon dioxide, and hydrated salts lose their water first.',
+    },
+    {
+        id: 'chem-rate-surface-area',
+        subject: 'chemistry',
+        question: 'Why does surface area change reaction rate?',
+        aliases: ['surface area and rate', 'powder reacts faster', 'why lumps react slowly'],
+        answer:
+            'Reaction happens at the surface, so dividing a solid exposes more of it and multiplies the number of ' +
+            'collisions per second. A powder can react dangerously fast where the same mass as a lump reacts slowly.',
+    },
+    {
+        id: 'chem-rate-concentration-pressure',
+        subject: 'chemistry',
+        question: 'Why do concentration and pressure change rate?',
+        aliases: ['concentration and rate', 'pressure and rate of reaction', 'more frequent collisions'],
+        answer:
+            'Both pack more particles into the same volume, so collisions are more frequent. Neither changes the ' +
+            'proportion of collisions that have enough energy, which is what distinguishes them from a temperature ' +
+            'rise.',
+    },
+    {
+        id: 'chem-rate-temperature-explanation',
+        subject: 'chemistry',
+        question: 'Why does a small temperature rise change rate so much?',
+        aliases: ['temperature and rate explanation', 'why ten degrees doubles the rate', 'proportion with activation energy'],
+        answer:
+            'Because raising temperature shifts the whole distribution of particle energies, and the fraction above ' +
+            'the activation energy grows sharply. Collisions also become more frequent, but the change in that ' +
+            'fraction dominates.',
+    },
+    {
+        id: 'chem-catalyst-types',
+        subject: 'chemistry',
+        question: 'What kinds of catalyst are there?',
+        aliases: ['homogeneous catalyst', 'heterogeneous catalyst', 'enzyme as a catalyst'],
+        answer:
+            'Homogeneous catalysts are in the same phase as the reactants; heterogeneous ones, such as the metals in ' +
+            'a car exhaust, are in a different phase and provide a surface. Enzymes are biological catalysts of ' +
+            'extraordinary specificity.',
+    },
+    {
+        id: 'chem-oxidising-reducing-agents',
+        subject: 'chemistry',
+        question: 'How do I identify the oxidising and reducing agents?',
+        aliases: ['oxidising agent', 'reducing agent', 'which species is oxidised'],
+        answer:
+            'The oxidising agent is reduced, since it takes electrons; the reducing agent is oxidised, since it gives ' +
+            'them. Assign oxidation numbers on both sides and see which changed, then name the species rather than ' +
+            'the element.',
+    },
+    {
+        id: 'chem-electrochemical-series-use',
+        subject: 'chemistry',
+        question: 'How do I use the electrode potential table?',
+        aliases: ['using the electrode potential table', 'predicting whether a reaction occurs', 'strongest oxidising agent'],
+        answer:
+            'Species higher on the table are stronger oxidising agents. A reaction is spontaneous when the oxidising ' +
+            'agent sits above the reducing agent, which makes the cell potential positive.',
+    },
+    {
+        id: 'chem-galvanic-cell-notation',
+        subject: 'chemistry',
+        question: 'How is a galvanic cell written down?',
+        aliases: ['cell notation', 'anode on the left', 'writing a cell diagram'],
+        answer:
+            'Anode on the left, cathode on the right, a double line for the salt bridge and single lines for phase ' +
+            'boundaries. Oxidation always occurs at the anode, whichever way the cell is drawn.',
+    },
+    {
+        id: 'chem-battery-types',
+        subject: 'chemistry',
+        question: 'How does a rechargeable cell differ from a dry cell?',
+        aliases: ['rechargeable cell', 'dry cell', 'secondary cell chemistry'],
+        answer:
+            'In a secondary cell the reaction products stay in place and adhere to the electrodes, so applying a ' +
+            'voltage drives the reaction backwards. In a primary cell the products disperse or escape, so it cannot ' +
+            'be reversed.',
     },
 ];

@@ -106,7 +106,7 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
         id: 'chem-ppm',
         subject: 'chemistry',
         question: 'What does parts per million mean?',
-        aliases: ['ppm', 'trace concentration', 'mg per litre'],
+        aliases: ['ppm', 'trace concentration'],
         answer:
             'One part per million is one milligram per litre in a dilute water solution, or one milligram per ' +
             'kilogram by mass. ' +

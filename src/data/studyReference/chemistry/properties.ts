@@ -8,7 +8,7 @@ export const chemistryPropertiesEntries: StudyEntry[] = [
         id: 'chem-atomic-structure',
         subject: 'chemistry',
         question: 'What is the structure of an atom?',
-        aliases: ['atomic structure', 'subatomic particles', 'valence electrons'],
+        aliases: ['atomic structure', 'subatomic particles'],
         answer:
             'Protons and neutrons sit in the nucleus; electrons occupy shells and subshells around it. ' +
             'The atomic number is the proton count and defines the element; isotopes differ in neutrons. ' +
@@ -184,7 +184,7 @@ export const chemistryPropertiesEntries: StudyEntry[] = [
         id: 'chem-intermolecular-forces',
         subject: 'chemistry',
         question: 'What are the intermolecular forces?',
-        aliases: ['intermolecular forces', 'hydrogen bonding', 'dispersion forces', 'dipole dipole', 'boiling point'],
+        aliases: ['intermolecular forces', 'hydrogen bonding', 'dispersion forces', 'boiling point'],
         answer:
             'From weakest to strongest: dispersion forces, dipole-dipole forces, then hydrogen bonding, which needs ' +
             'H bonded to N, O or F. Stronger forces mean higher melting and boiling points, since more energy is ' +
@@ -224,7 +224,7 @@ export const chemistryPropertiesEntries: StudyEntry[] = [
         id: 'chem-network-molecular',
         subject: 'chemistry',
         question: 'What is the difference between a covalent network and a covalent molecular solid?',
-        aliases: ['covalent network', 'covalent molecular', 'diamond graphite', 'allotropes', 'lattice types'],
+        aliases: ['covalent network', 'covalent molecular', 'diamond graphite', 'lattice types'],
         answer:
             'A network is covalently bonded all the way through, so melting means breaking covalent bonds: very high ' +
             'melting point and hardness, as in diamond. ' +
@@ -284,5 +284,122 @@ export const chemistryPropertiesEntries: StudyEntry[] = [
             'They show variable oxidation states, form coloured compounds and ions, and act as catalysts. ' +
             'All three follow from partly filled d subshells, which allow several stable electron arrangements and ' +
             'energy gaps that absorb visible light.',
+    },
+    {
+        id: 'chem-subshell-order',
+        subject: 'chemistry',
+        question: 'In what order do subshells fill?',
+        aliases: ['order subshells fill', 'aufbau order', 'why 4s fills before 3d'],
+        answer:
+            'By increasing energy rather than by shell number, so 4s fills before 3d. The order is 1s, 2s, 2p, 3s, ' +
+            '3p, 4s, 3d, 4p, and writing it out once before an examination is quicker than deriving it.',
+    },
+    {
+        id: 'chem-valence-electrons',
+        subject: 'chemistry',
+        question: 'Why do valence electrons decide chemistry?',
+        aliases: ['valence electrons', 'outer shell electrons', 'why group number matters'],
+        answer:
+            'Because only the outermost electrons are close enough to be shared or transferred. Elements in the same ' +
+            'group have the same number of them, which is why they react in similar ways and form ions of the same ' +
+            'charge.',
+    },
+    {
+        id: 'chem-noble-gas-stability',
+        subject: 'chemistry',
+        question: 'Why are the noble gases unreactive?',
+        aliases: ['noble gas stability', 'full outer shell', 'why argon does not react'],
+        answer:
+            'A filled outer shell leaves nothing to gain by sharing or transferring electrons, and their ionisation ' +
+            'energies are very high. That stability is the reference point for explaining why other atoms form ions ' +
+            'and bonds at all.',
+    },
+    {
+        id: 'chem-ionic-lattice',
+        subject: 'chemistry',
+        question: 'Why are ionic compounds hard, brittle and high melting?',
+        aliases: ['ionic lattice properties', 'why ionic solids are brittle', 'high melting point of salt'],
+        answer:
+            'Strong electrostatic attraction throughout a three-dimensional lattice takes a great deal of energy to ' +
+            'break, so melting points are high. Shifting a layer brings like charges together, which is why a crystal ' +
+            'shatters rather than bends.',
+    },
+    {
+        id: 'chem-covalent-bond-strength',
+        subject: 'chemistry',
+        question: 'What makes a covalent bond strong?',
+        aliases: ['covalent bond strength', 'bond length and strength', 'double bond strength'],
+        answer:
+            'Shorter bonds between smaller atoms are stronger, and multiple bonds are stronger than single ones. Bond ' +
+            'strength governs how much energy a reaction needs to start, which is why nitrogen gas with a triple bond ' +
+            'is so inert.',
+    },
+    {
+        id: 'chem-dipole-dipole',
+        subject: 'chemistry',
+        question: 'What is the difference between the intermolecular forces?',
+        aliases: ['dipole dipole', 'comparing intermolecular forces'],
+        answer:
+            'Dispersion forces exist between all molecules and strengthen with more electrons. Dipole-dipole ' +
+            'attraction acts between polar molecules. Hydrogen bonding, the strongest, needs hydrogen bonded to ' +
+            'nitrogen, oxygen or fluorine.',
+    },
+    {
+        id: 'chem-hydrogen-bonding-requirements',
+        subject: 'chemistry',
+        question: 'When does hydrogen bonding occur?',
+        aliases: ['requirements for hydrogen bonding', 'hydrogen bonded to oxygen', 'why hf hydrogen bonds'],
+        answer:
+            'Only where a hydrogen is bonded directly to nitrogen, oxygen or fluorine, leaving it strongly positive ' +
+            'beside a lone pair on a neighbouring molecule. Hydrogen attached to carbon is not enough, which is why ' +
+            'methane boils so low.',
+    },
+    {
+        id: 'chem-boiling-point-trends-structure',
+        subject: 'chemistry',
+        question: 'How do I predict which substance has the higher boiling point?',
+        aliases: ['predicting boiling point', 'comparing boiling points by structure', 'which boils higher'],
+        answer:
+            'Identify the bonding first: ionic and network covalent are highest, then metallic, then molecular. ' +
+            'Within molecular substances compare the intermolecular forces, and only then compare molecular size.',
+    },
+    {
+        id: 'chem-atomic-radius-explained',
+        subject: 'chemistry',
+        question: 'Why do atoms get smaller across a period?',
+        aliases: ['atomic radius across a period', 'why atoms shrink', 'radius down a group'],
+        answer:
+            'Across a period, protons are added without a new shell, so the same shell is pulled in more tightly. ' +
+            'Down a group a new shell is added and shielding increases, so the radius grows.',
+    },
+    {
+        id: 'chem-ion-size',
+        subject: 'chemistry',
+        question: 'How does forming an ion change the size of an atom?',
+        aliases: ['ionic radius', 'cation smaller than atom', 'anion larger than atom'],
+        answer:
+            'A cation is smaller, because it loses electrons and often a whole shell while keeping its nuclear ' +
+            'charge. An anion is larger, because added electrons increase repulsion while the nuclear charge is ' +
+            'unchanged.',
+    },
+    {
+        id: 'chem-group-trends-reactivity',
+        subject: 'chemistry',
+        question: 'Why does reactivity change down a group?',
+        aliases: ['reactivity down a group', 'why caesium is more reactive', 'halogen reactivity trend'],
+        answer:
+            'For metals, the outer electron is further out and more shielded down the group, so it is lost more ' +
+            'easily and reactivity rises. For non-metals, gaining an electron becomes harder down the group, so ' +
+            'reactivity falls.',
+    },
+    {
+        id: 'chem-allotropes-general',
+        subject: 'chemistry',
+        question: 'Why do oxygen and ozone behave differently?',
+        aliases: ['oxygen and ozone', 'same element different arrangement', 'forms of an element'],
+        answer:
+            'Different structural forms of the same element in the same state, such as oxygen and ozone, or diamond ' +
+            'and graphite. Because the arrangement differs, the physical and sometimes chemical properties differ ' +
+            'too.',
     },
 ];
