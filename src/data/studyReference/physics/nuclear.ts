@@ -152,4 +152,43 @@ export const physicsNuclearEntries: StudyEntry[] = [
             'itself expanding rather than galaxies moving through it. The cosmic microwave background is the other ' +
             'principal piece of evidence.',
     },
+    {
+        id: 'phys-fundamental-and-overtones',
+        subject: 'physics',
+        question: 'What is the difference between the fundamental and an overtone?',
+        aliases: ['fundamental and first overtone', 'overtone versus harmonic', 'second harmonic'],
+        answer:
+            'The fundamental is the lowest frequency a system will sustain, also called the first harmonic. The first ' +
+            'overtone is the next frequency up, which is the second harmonic in a string or open pipe but the third ' +
+            'harmonic in a closed pipe, since only odd harmonics exist there.',
+    },
+    {
+        id: 'phys-threshold-wavelength',
+        subject: 'physics',
+        question: 'What is the threshold wavelength?',
+        aliases: ['threshold wavelength', 'longest wavelength that causes emission', 'work function as a wavelength'],
+        answer:
+            'The longest wavelength whose photons still carry enough energy to free an electron, found from λ = hc ' +
+            'divided by the work function. Longer wavelengths mean lower photon energy, so nothing is emitted however ' +
+            'intense the light.',
+    },
+    {
+        id: 'phys-hydrogen-ionisation',
+        subject: 'physics',
+        question: 'What is the ionisation energy of a hydrogen atom?',
+        aliases: ['ionisation of a hydrogen atom', 'energy to remove the electron', 'series limit'],
+        answer:
+            'The energy needed to move the electron from the ground state to free, which is 13.6 eV for hydrogen. It ' +
+            'corresponds to the series limit in the spectrum, where the lines crowd together and stop.',
+    },
+    {
+        id: 'phys-neutrino',
+        subject: 'physics',
+        question: 'What is a neutrino?',
+        aliases: ['neutrino', 'particle with almost no mass', 'why beta decay needs a neutrino'],
+        answer:
+            'A lepton with no charge and almost no mass that barely interacts with matter. Beta decay appeared to ' +
+            'lose energy and momentum until it was proposed, and detecting one requires enormous detectors because ' +
+            'most pass straight through the Earth.',
+    },
 ];

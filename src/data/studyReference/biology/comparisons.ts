@@ -77,4 +77,43 @@ export const biologyComparisonEntries: StudyEntry[] = [
             'Translocation is the movement of sugars through the phloem, which can travel either way and requires ' +
             'energy.',
     },
+    {
+        id: 'bio-cytoskeleton',
+        subject: 'biology',
+        question: 'What is the cytoskeleton?',
+        aliases: ['cytoskeleton', 'microtubules', 'internal scaffolding of a cell'],
+        answer:
+            'A network of protein filaments giving the cell its shape, anchoring organelles, and providing tracks ' +
+            'along which vesicles are moved. It also builds the spindle that separates chromosomes, so a cell could ' +
+            'not divide without it.',
+    },
+    {
+        id: 'bio-selective-permeability',
+        subject: 'biology',
+        question: 'What does selectively permeable mean?',
+        aliases: ['selective permeability', 'selectively permeable membrane', 'why some molecules cross and others do not'],
+        answer:
+            'The membrane lets some substances through and not others. Small non-polar molecules pass straight ' +
+            'through the lipid, water and ions need channels, and large or charged molecules need specific carriers, ' +
+            'which is what lets a cell control its own contents.',
+    },
+    {
+        id: 'bio-non-disjunction',
+        subject: 'biology',
+        question: 'What is non-disjunction?',
+        aliases: ['non disjunction', 'chromosomes failing to separate', 'cause of trisomy'],
+        answer:
+            'A failure of chromosomes or chromatids to separate properly during meiosis, so a gamete carries one too ' +
+            'many or too few. Fertilisation then gives a zygote with an abnormal number, as in trisomy 21.',
+    },
+    {
+        id: 'bio-chromosomal-abnormality',
+        subject: 'biology',
+        question: 'What kinds of chromosomal abnormality are there?',
+        aliases: ['chromosomal abnormality', 'deletion duplication inversion translocation', 'structural chromosome change'],
+        answer:
+            'Changes in number, from non-disjunction, and changes in structure: a deletion loses a section, a ' +
+            'duplication repeats one, an inversion reverses one, and a translocation moves a section to a different ' +
+            'chromosome. Each can disrupt many genes at once.',
+    },
 ];
