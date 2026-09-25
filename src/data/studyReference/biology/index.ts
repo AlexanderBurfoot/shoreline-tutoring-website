@@ -5,6 +5,7 @@ import { biologyDiversityEntries } from './diversity';
 import { biologyEcosystemsEntries } from './ecosystems';
 import { biologyHeredityEntries } from './heredity';
 import { biologyGeneticChangeEntries } from './geneticChange';
+import { biologyImmunityEntries } from './immunity';
 import { biologyInfectiousDiseaseEntries } from './infectiousDisease';
 import { biologyNonInfectiousEntries } from './nonInfectious';
 import { biologySkillsEntries } from './skills';
@@ -18,6 +19,7 @@ export const biologyEntries: StudyEntry[] = [
     ...biologyHeredityEntries,
     ...biologyGeneticChangeEntries,
     ...biologyInfectiousDiseaseEntries,
+    ...biologyImmunityEntries,
     ...biologyNonInfectiousEntries,
     ...biologySkillsEntries,
 ];

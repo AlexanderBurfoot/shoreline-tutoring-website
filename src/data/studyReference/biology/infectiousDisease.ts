@@ -20,7 +20,7 @@ export const biologyInfectiousDiseaseEntries: StudyEntry[] = [
         id: 'bio-pathogens',
         subject: 'biology',
         question: 'What are the types of pathogen?',
-        aliases: ['pathogens', 'bacteria virus', 'types of pathogen', 'kochs postulates'],
+        aliases: ['pathogens', 'bacteria virus', 'kochs postulates'],
         answer:
             'Bacteria, viruses, fungi, protozoa, prions and macroparasites. ' +
             'Antibiotics work on bacteria but not viruses, because viruses replicate inside host cells. ' +
@@ -91,7 +91,7 @@ export const biologyInfectiousDiseaseEntries: StudyEntry[] = [
         id: 'bio-immunity-types',
         subject: 'biology',
         question: 'What are the types of immunity?',
-        aliases: ['active immunity', 'passive immunity', 'natural immunity', 'artificial immunity', 'antivenom'],
+        aliases: ['active immunity', 'natural immunity', 'artificial immunity', 'antivenom'],
         answer:
             'Active immunity means your own immune system responds, from infection or vaccination, and lasts because ' +
             'memory cells form. ' +
@@ -132,7 +132,7 @@ export const biologyInfectiousDiseaseEntries: StudyEntry[] = [
         id: 'bio-plant-pathogens',
         subject: 'biology',
         question: 'How does disease affect plants and agriculture?',
-        aliases: ['plant disease management', 'crop disease', 'quarantine agriculture', 'fungicide', 'resistant varieties'],
+        aliases: ['plant disease management', 'crop disease', 'quarantine agriculture', 'fungicide'],
         answer:
             'Plant pathogens spread through soil, water, wind, insects and infected stock, and can destroy a crop ' +
             'because monocultures are genetically uniform. ' +
