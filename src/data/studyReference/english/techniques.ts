@@ -31,7 +31,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-persuasive-devices',
         subject: 'english',
         question: 'What are the persuasive devices?',
-        aliases: ['persuasive techniques', 'ethos pathos logos', 'rhetorical question', 'speech techniques'],
+        aliases: ['persuasive techniques', 'rhetorical question', 'speech techniques'],
         answer:
             'Ethos appeals to credibility, pathos to emotion and logos to logic. ' +
             'Add rhetorical questions, inclusive language such as "we", the rule of three, repetition and direct ' +
@@ -154,7 +154,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-repetition-devices',
         subject: 'english',
         question: 'What are the repetition devices?',
-        aliases: ['repetition', 'anaphora', 'tricolon', 'rule of three', 'parallelism', 'refrain'],
+        aliases: ['repetition', 'anaphora', 'rule of three', 'parallelism'],
         answer:
             'Anaphora repeats a phrase at the start of successive clauses, building rhythm and insistence. ' +
             'A tricolon groups three items for emphasis. ' +
@@ -176,7 +176,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-hyperbole-understatement',
         subject: 'english',
         question: 'What are hyperbole, understatement and euphemism?',
-        aliases: ['hyperbole', 'understatement', 'litotes', 'euphemism', 'exaggeration'],
+        aliases: ['hyperbole', 'understatement', 'euphemism', 'exaggeration'],
         answer:
             'Hyperbole exaggerates for effect and is not meant literally. ' +
             'Understatement deliberately downplays, which can be more powerful than overstating. ' +
