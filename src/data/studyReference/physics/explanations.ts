@@ -114,4 +114,203 @@ export const physicsExplanationEntries: StudyEntry[] = [
             'objects are negative. A difference of one magnitude is a factor of about 2.5 in brightness, and it ' +
             'depends on distance as well as on the star itself.',
     },
+    {
+        id: 'phys-triangle-of-forces',
+        subject: 'physics',
+        question: 'What is the triangle of forces?',
+        aliases: ['triangle of forces', 'three forces in equilibrium', 'closed vector triangle'],
+        answer:
+            'When three forces hold an object in equilibrium, drawing them head to tail forms a closed triangle, ' +
+            'since the resultant is zero. That lets an unknown force be found by trigonometry rather than by ' +
+            'resolving into components.',
+    },
+    {
+        id: 'phys-angled-pull-friction',
+        subject: 'physics',
+        question: 'How do I handle a force applied at an angle?',
+        aliases: ['force at an angle with friction', 'pulling at an angle', 'angled applied force'],
+        answer:
+            'Resolve it: the horizontal component drives the motion and the vertical component changes the normal ' +
+            'force, and so the friction. Pulling upward at an angle reduces friction, which is why a pull often beats ' +
+            'a push of the same size.',
+    },
+    {
+        id: 'phys-work-against-friction',
+        subject: 'physics',
+        question: 'How do I calculate work done against friction?',
+        aliases: ['work against friction', 'energy lost to friction', 'friction work calculation'],
+        answer:
+            'Multiply the friction force by the distance moved, which gives the energy converted to heat. It is ' +
+            'always positive as an energy loss, and it is why the kinetic energy gained is less than the work done by ' +
+            'the applied force.',
+    },
+    {
+        id: 'phys-energy-with-losses',
+        subject: 'physics',
+        question: 'How do I use conservation of energy when there is friction?',
+        aliases: ['energy conservation with friction', 'energy losses on a slope', 'accounting for heat in energy problems'],
+        answer:
+            'Initial energy equals final energy plus the energy lost. For a block sliding down a rough slope, mgh = ' +
+            '½mv² + friction × distance, so the speed at the bottom is less than the smooth case predicts.',
+    },
+    {
+        id: 'phys-car-on-flat-curve',
+        subject: 'physics',
+        question: 'What provides the centripetal force for a car on a flat road?',
+        aliases: ['car turning on a flat road', 'friction as centripetal force', 'maximum speed around a flat curve'],
+        answer:
+            'Friction between the tyres and the road. The maximum speed is where friction reaches its limit, v = ' +
+            '√(μgr), so a wet road with a lower μ lowers the safe speed even though the radius is unchanged.',
+    },
+    {
+        id: 'phys-geostationary-radius',
+        subject: 'physics',
+        question: 'How is the radius of a geostationary orbit found?',
+        aliases: ['geostationary orbit radius', 'calculating the geostationary altitude', 'orbit with a 24 hour period'],
+        answer:
+            'Set the period to one sidereal day and rearrange Kepler third law: r = (GMT²/4π²)^⅓, which gives about ' +
+            '4.2 × 10⁷ m from the centre of Earth, or roughly 36,000 km above the surface.',
+    },
+    {
+        id: 'phys-escape-energy',
+        subject: 'physics',
+        question: 'What is the difference between escape velocity and escape energy?',
+        aliases: ['escape energy', 'energy needed to escape', 'work to leave a gravitational field'],
+        answer:
+            'Escape velocity is the speed needed if all the energy is given at once. Escape energy is the work ' +
+            'required, GMm/r, which can be supplied gradually by a rocket burning for minutes, which is why no launch ' +
+            'actually reaches escape velocity at the pad.',
+    },
+    {
+        id: 'phys-gpe-over-distance',
+        subject: 'physics',
+        question: 'How do I find the energy needed to lift something far from Earth?',
+        aliases: ['energy to raise a satellite', 'gravitational potential energy change', 'work done against gravity over distance'],
+        answer:
+            'Use the difference between −GMm/r values at the two radii rather than mgh, since g is no longer ' +
+            'constant. Over a few metres mgh is fine; over hundreds of kilometres it overestimates the energy by a ' +
+            'large margin.',
+    },
+    {
+        id: 'phys-torque-angled-force',
+        subject: 'physics',
+        question: 'How do I calculate torque when the force is at an angle?',
+        aliases: ['torque with an angled force', 'moment arm with an angle', 'r f sin theta'],
+        answer:
+            'τ = rF sin θ, where θ is the angle between the force and the line from the pivot. Only the perpendicular ' +
+            'component turns the object, so a force pointing along that line produces no torque at all.',
+    },
+    {
+        id: 'phys-thermal-expansion-calculation',
+        subject: 'physics',
+        question: 'How do I calculate thermal expansion?',
+        aliases: ['thermal expansion calculation', 'expansion of a steel bridge', 'change in length with temperature'],
+        answer:
+            'ΔL = αLΔT. For 100 m of steel with α = 12 × 10⁻⁶ per degree over a 30 °C rise, ΔL = 0.036 m, about 3.6 ' +
+            'cm, which is why expansion joints exist.',
+    },
+    {
+        id: 'phys-heat-transfer-rate',
+        subject: 'physics',
+        question: 'What determines how fast heat flows?',
+        aliases: ['rate of heat transfer', 'what affects conduction rate', 'insulation thickness'],
+        answer:
+            'The temperature difference, the area, the thickness of the material and its conductivity. Doubling the ' +
+            'thickness halves the rate, and the temperature difference falls as the objects approach each other, ' +
+            'which is why cooling slows over time.',
+    },
+    {
+        id: 'phys-path-difference',
+        subject: 'physics',
+        question: 'How do I use path difference in interference?',
+        aliases: ['path difference', 'constructive interference condition', 'half wavelength path difference'],
+        answer:
+            'Constructive interference occurs where the path difference is a whole number of wavelengths, destructive ' +
+            'where it is an odd number of half wavelengths. So a path difference of 1.5λ gives a minimum and 2λ a ' +
+            'maximum.',
+    },
+    {
+        id: 'phys-beats-frequency',
+        subject: 'physics',
+        question: 'How do I calculate a beat frequency?',
+        aliases: ['beat frequency', 'calculating beats', 'two close frequencies'],
+        answer:
+            'Subtract the two frequencies: 440 Hz and 444 Hz give 4 beats a second. Piano tuners work by reducing ' +
+            'that count to zero, which is a far more sensitive method than judging pitch directly.',
+    },
+    {
+        id: 'phys-redshift',
+        subject: 'physics',
+        question: 'What is redshift, and how is it measured?',
+        aliases: ['redshift', 'doppler shift of light', 'measuring galaxy recession'],
+        answer:
+            'A shift of spectral lines towards longer wavelengths because the source is receding. Because the pattern ' +
+            'of lines is known, the shift can be measured precisely, and z = Δλ/λ gives the recession speed as a ' +
+            'fraction of the speed of light.',
+    },
+    {
+        id: 'phys-fibre-angle',
+        subject: 'physics',
+        question: 'Why does light stay inside an optical fibre?',
+        aliases: ['light in an optical fibre', 'total internal reflection in a fibre', 'cladding refractive index'],
+        answer:
+            'Light enters within a narrow cone of angles so that it always strikes the core boundary beyond the ' +
+            'critical angle. The cladding has a slightly lower refractive index, which sets that angle and keeps the ' +
+            'light trapped over kilometres.',
+    },
+    {
+        id: 'phys-two-loop-circuit',
+        subject: 'physics',
+        question: 'How do I analyse a circuit with two loops?',
+        aliases: ['two loop circuit', 'kirchhoff laws applied', 'solving a circuit with simultaneous equations'],
+        answer:
+            'Apply the junction rule to write currents in terms of each other, then the loop rule around each loop to ' +
+            'get two equations. Solve them simultaneously. A negative current simply means the direction guessed was ' +
+            'the wrong way round.',
+    },
+    {
+        id: 'phys-internal-resistance-calculation',
+        subject: 'physics',
+        question: 'How do I find the internal resistance of a cell?',
+        aliases: ['internal resistance calculation', 'finding internal resistance', 'terminal voltage drop'],
+        answer:
+            'Compare the terminal voltage with the emf at a known current: r = (emf − V)/I. For 12.0 V falling to ' +
+            '11.4 V at 2.0 A, r = 0.30 Ω. Plotting V against I gives the same answer as the negative gradient.',
+    },
+    {
+        id: 'phys-magnetic-force-angled',
+        subject: 'physics',
+        question: 'How do I calculate the force on a wire at an angle to a field?',
+        aliases: ['force on an angled wire', 'b i l sin theta', 'wire at an angle to the field'],
+        answer:
+            'F = BIL sin θ. For B = 0.20 T, I = 3.0 A, L = 0.50 m and θ = 30°, F = 0.20 × 3.0 × 0.50 × 0.50 = 0.15 N. ' +
+            'At 90° it would be twice that, and parallel to the field it would be zero.',
+    },
+    {
+        id: 'phys-transformer-efficiency-calculation',
+        subject: 'physics',
+        question: 'How do I calculate transformer efficiency?',
+        aliases: ['transformer efficiency calculation', 'power out over power in', 'efficiency of a transformer example'],
+        answer:
+            'Divide the output power by the input power. A transformer drawing 1,200 W and delivering 1,150 W is ' +
+            '95.8% efficient, with the missing 50 W appearing as heat in the windings and core.',
+    },
+    {
+        id: 'phys-relativistic-momentum-calculation',
+        subject: 'physics',
+        question: 'How do I calculate relativistic momentum?',
+        aliases: ['relativistic momentum calculation', 'gamma factor calculation', 'momentum near light speed'],
+        answer:
+            'p = mv ÷ √(1 − v²/c²). At 0.90c the factor is 1 ÷ √(1 − 0.81) = 2.29, so the momentum is 2.29 times the ' +
+            'classical value. It is why accelerating a particle further gives diminishing gains in speed.',
+    },
+    {
+        id: 'phys-de-broglie-macroscopic',
+        subject: 'physics',
+        question: 'Why do we not see the wave nature of everyday objects?',
+        aliases: ['de broglie for large objects', 'why wave behaviour is not seen', 'wavelength of a cricket ball'],
+        answer:
+            'Because λ = h/mv, and for a one kilogram object at one metre per second that is about 7 × 10⁻³⁴ m, far ' +
+            'smaller than any aperture or atom it could diffract from. The wave nature is there but unobservable.',
+    },
 ];

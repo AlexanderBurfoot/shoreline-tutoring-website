@@ -80,7 +80,7 @@ export const physicsLightEntries: StudyEntry[] = [
         id: 'phys-double-slit',
         subject: 'physics',
         question: 'How does the double-slit experiment work?',
-        aliases: ['double slit', 'youngs experiment', 'fringe spacing', 'path difference', 'diffraction grating'],
+        aliases: ['double slit', 'youngs experiment', 'fringe spacing', 'diffraction grating'],
         answer:
             'Light from two slits superposes, giving bright fringes where the path difference is a whole number of ' +
             'wavelengths and dark ones at half-wavelength differences. ' +

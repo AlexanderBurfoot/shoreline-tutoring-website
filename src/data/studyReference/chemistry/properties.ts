@@ -144,7 +144,7 @@ export const chemistryPropertiesEntries: StudyEntry[] = [
         id: 'chem-naming-compounds',
         subject: 'chemistry',
         question: 'How do I name and write formulas for ionic compounds?',
-        aliases: ['naming ionic compounds', 'chemical formula', 'polyatomic ions', 'writing formulas', 'roman numerals'],
+        aliases: ['naming ionic compounds', 'chemical formula', 'writing formulas', 'roman numerals'],
         answer:
             'Name the metal first, then the non-metal with an -ide ending, or the polyatomic ion by its own name. ' +
             'Balance the charges so the compound is neutral, using subscripts, and put brackets around a polyatomic ' +

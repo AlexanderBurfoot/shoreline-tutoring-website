@@ -235,7 +235,7 @@ export const physicsWavesEntries: StudyEntry[] = [
         id: 'phys-beats-resonance',
         subject: 'physics',
         question: 'What causes beats and resonance?',
-        aliases: ['beats', 'beat frequency', 'resonance examples', 'natural frequency', 'tuning an instrument'],
+        aliases: ['beats', 'resonance examples', 'natural frequency', 'tuning an instrument'],
         answer:
             'Two slightly different frequencies superpose to give a loudness that rises and falls: the beat frequency ' +
             'is the difference between them, which is how instruments are tuned. ' +
