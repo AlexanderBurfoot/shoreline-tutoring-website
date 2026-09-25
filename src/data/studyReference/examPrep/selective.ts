@@ -41,7 +41,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-maths-reasoning',
         subject: 'selective-high-school',
         question: 'How do I prepare for mathematical reasoning?',
-        aliases: ['mathematical reasoning', 'problem solving maths', 'word problems', 'working backwards', 'estimation'],
+        aliases: ['mathematical reasoning', 'problem solving maths', 'word problems'],
         answer:
             'These reward method, not speed of calculation: work backwards from the options, estimate to rule out, ' +
             'draw the situation, and look for a pattern. ' +
