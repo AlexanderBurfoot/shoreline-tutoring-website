@@ -1,0 +1,162 @@
+/**
+ * Worked examples: mathematics.
+ *
+ * One question of each type, solved with numbers and checked. Written by hand
+ * and shown exactly as written, so the assistant never calculates anything.
+ */
+import type { StudyEntry } from '../types';
+
+export const workedExampleMathsEntries: StudyEntry[] = [
+    {
+        id: 'maths-example-surds',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of simplifying surds?',
+        aliases: ['worked example surds', 'example of simplifying a surd', 'adding surds example'],
+        answer:
+            'Simplify √72 + √8. Look for square factors: 72 = 36 × 2 so √72 = 6√2, and 8 = 4 × 2 so √8 = 2√2. They ' +
+            'are now like surds, so add the coefficients: 8√2.',
+    },
+    {
+        id: 'maths-example-log-equation',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a logarithmic equation?',
+        aliases: ['worked example log equation', 'example of solving a log equation', 'combining logs example'],
+        answer:
+            'Solve log₂x + log₂(x − 2) = 3. Combine the logs: log₂[x(x − 2)] = 3, so x² − 2x = 2³ = 8. Then x² − 2x − ' +
+            '8 = 0 gives (x − 4)(x + 2) = 0. Reject x = −2, since log of a negative is undefined, leaving x = 4.',
+    },
+    {
+        id: 'maths-example-sine-rule',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the sine rule?',
+        aliases: ['worked example sine rule', 'example of the sine rule', 'finding a side with the sine rule'],
+        answer:
+            'In a triangle, a = 8 cm with A = 40° and B = 75°. By the sine rule, b = a sin B / sin A = 8 × sin 75° ÷ ' +
+            'sin 40° = 8 × 0.966 ÷ 0.643 = 12.0 cm. Check it is sensible: B is the larger angle, so b should be the ' +
+            'longer side.',
+    },
+    {
+        id: 'maths-example-cosine-rule',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the cosine rule?',
+        aliases: ['worked example cosine rule', 'example of the cosine rule', 'finding a side with the cosine rule'],
+        answer:
+            'Two sides are 7 cm and 9 cm with an included angle of 52°. c² = 7² + 9² − 2(7)(9)cos 52° = 49 + 81 − 126 ' +
+            '× 0.616 = 130 − 77.6 = 52.4, so c = 7.2 cm. Use the cosine rule whenever the angle sits between the two ' +
+            'known sides.',
+    },
+    {
+        id: 'maths-example-triangle-area-sine',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the area of a triangle using sine?',
+        aliases: ['worked example area with sine', 'example of half ab sin c', 'area of a triangle without the height'],
+        answer:
+            'Two sides of 7 cm and 9 cm meet at 52°. Area = ½ab sin C = ½ × 7 × 9 × sin 52° = 31.5 × 0.788 = 24.8 ' +
+            'cm². This is the formula to use when no perpendicular height is given.',
+    },
+    {
+        id: 'maths-example-arithmetic-series',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of an arithmetic series?',
+        aliases: ['worked example arithmetic series', 'example of summing an arithmetic sequence', 'sum of the first n terms example'],
+        answer:
+            'Sum the first 20 terms of 5, 8, 11, … where a = 5 and d = 3. S₂₀ = (20/2)[2(5) + 19(3)] = 10[10 + 57] = ' +
+            '670. Check the last term is 5 + 19(3) = 62, and 20 terms averaging (5 + 62)/2 = 33.5 gives the same ' +
+            'total.',
+    },
+    {
+        id: 'maths-example-geometric-series',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a geometric series?',
+        aliases: ['worked example geometric series', 'example of summing a geometric sequence', 'geometric sum example'],
+        answer:
+            'Sum the first 8 terms of 3, 6, 12, … where a = 3 and r = 2. S₈ = a(rⁿ − 1)/(r − 1) = 3(2⁸ − 1)/(2 − 1) = ' +
+            '3(256 − 1) = 765. With r > 1 the terms grow, so most of the total comes from the last few.',
+    },
+    {
+        id: 'maths-example-limiting-sum',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a limiting sum?',
+        aliases: ['worked example limiting sum', 'example of sum to infinity', 'infinite geometric series example'],
+        answer:
+            'Find the limiting sum of 12 + 3 + 0.75 + … where a = 12 and r = 0.25. Since |r| < 1, S∞ = a/(1 − r) = 12 ' +
+            '÷ 0.75 = 16. A limiting sum exists only when the ratio lies strictly between −1 and 1.',
+    },
+    {
+        id: 'maths-example-annuity',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of an annuity?',
+        aliases: ['worked example annuity', 'example of a future value calculation', 'regular savings example'],
+        answer:
+            'Save $200 a month for 5 years at 6% per year compounded monthly, so i = 0.005 and n = 60. FV = ' +
+            '200[(1.005⁶⁰ − 1)/0.005] = 200 × 69.77 = $13,954. The contributions total $12,000, so the interest ' +
+            'earned is about $1,954.',
+    },
+    {
+        id: 'maths-example-z-score',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a z-score?',
+        aliases: ['worked example z score', 'example of standardising a score', 'z score calculation example'],
+        answer:
+            'A mark of 82 in a test with mean 70 and standard deviation 8 gives z = (82 − 70)/8 = 1.5. That is one ' +
+            'and a half standard deviations above the mean, which puts it above roughly 93% of results.',
+    },
+    {
+        id: 'maths-example-binomial-probability',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of binomial probability?',
+        aliases: ['worked example binomial probability', 'example of a binomial calculation', 'exactly two successes example'],
+        answer:
+            'Five independent trials each succeed with probability 0.2. For exactly two successes, P = ' +
+            '⁵C₂(0.2)²(0.8)³ = 10 × 0.04 × 0.512 = 0.2048. The combination counts which two of the five trials ' +
+            'succeeded.',
+    },
+    {
+        id: 'maths-example-permutations',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of permutations and combinations?',
+        aliases: ['worked example permutations', 'example of counting arrangements', 'combination calculation example'],
+        answer:
+            'From 7 people, the number of ways to fill 4 ranked positions is ⁷P₄ = 7 × 6 × 5 × 4 = 840. If the 4 ' +
+            'chosen are simply a committee with no ranking, divide by the 4! orderings: ⁷C₄ = 35.',
+    },
+    {
+        id: 'maths-example-stationary-points',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of finding stationary points?',
+        aliases: ['worked example stationary points', 'example of classifying a turning point', 'maximum and minimum example'],
+        answer:
+            'For y = x³ − 3x² + 4, y′ = 3x² − 6x = 3x(x − 2), so stationary points are at x = 0 and x = 2. Since y″ = ' +
+            '6x − 6, at x = 0 it is negative, giving a maximum at (0, 4), and at x = 2 it is positive, giving a ' +
+            'minimum at (2, 0).',
+    },
+    {
+        id: 'maths-example-optimisation',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of an optimisation problem?',
+        aliases: ['worked example optimisation', 'example of maximising an area', 'largest area example'],
+        answer:
+            'A rectangle has perimeter 40 m, so width = 20 − x and A = x(20 − x) = 20x − x². Then A′ = 20 − 2x = 0 ' +
+            'gives x = 10, and A″ = −2 confirms a maximum. The largest area is 100 m², a square, which is the usual ' +
+            'answer for a fixed perimeter.',
+    },
+    {
+        id: 'maths-example-related-rates',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of related rates?',
+        aliases: ['worked example related rates', 'example of a rate of change problem', 'expanding sphere example'],
+        answer:
+            'A sphere grows so its radius increases at 2 cm s⁻¹. Since V = ⁴⁄₃πr³, dV/dr = 4πr², so at r = 5 cm, ' +
+            'dV/dt = 4π(25) × 2 = 200π ≈ 628 cm³ s⁻¹. The chain rule links the two rates.',
+    },
+    {
+        id: 'maths-example-trapezoidal',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the trapezoidal rule?',
+        aliases: ['worked example trapezoidal rule', 'example of approximating an area', 'trapezoidal estimate example'],
+        answer:
+            'Estimate the area under y = x² from 0 to 4 using four strips, so h = 1 and the values are 0, 1, 4, 9, ' +
+            '16. Area ≈ (h/2)[first + last + 2(middle values)] = 0.5[16 + 2(14)] = 22. The exact value is 21⅓, so the ' +
+            'estimate is high because the curve is concave up.',
+    },
+];

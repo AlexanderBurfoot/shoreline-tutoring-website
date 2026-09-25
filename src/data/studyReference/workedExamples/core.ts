@@ -6,9 +6,9 @@
  * assistant never calculates anything itself. It shows a parallel example and
  * leaves the student to apply it to their own numbers.
  */
-import type { StudyEntry } from './types';
+import type { StudyEntry } from '../types';
 
-export const workedExampleEntries: StudyEntry[] = [
+export const workedExampleCoreEntries: StudyEntry[] = [
     {
         id: 'maths-example-quadratic',
         subject: 'mathematics',
