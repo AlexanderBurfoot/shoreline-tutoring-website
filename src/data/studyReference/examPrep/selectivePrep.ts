@@ -225,4 +225,103 @@ export const selectivePrepEntries: StudyEntry[] = [
             'preparation sessions a week is enough alongside it, and dropping sport or sleep to fit more in usually ' +
             'costs more than it gains.',
     },
+    {
+        id: 'sel-passage-types',
+        subject: 'selective-high-school',
+        question: 'What kinds of passage appear in the reading test?',
+        aliases: ['types of reading passage', 'what texts are in the reading test', 'poem and nonfiction passages'],
+        answer:
+            'A mix: narrative fiction, poetry, and non-fiction carrying an argument, sometimes with a paired text or ' +
+            'a visual element. Practising only novels leaves the poem and the argument passages unfamiliar, which is ' +
+            'where most marks are lost.',
+    },
+    {
+        id: 'sel-section-weighting',
+        subject: 'selective-high-school',
+        question: 'Do all sections of the test count equally?',
+        aliases: ['section weighting', 'which section matters most', 'how sections are combined'],
+        answer:
+            'The placement score combines the test sections with school assessment, so no single section decides it, ' +
+            'and the weighting is set by the department rather than by the school. Practically that means an even ' +
+            'spread of preparation beats perfecting one section.',
+    },
+    {
+        id: 'sel-running-out-of-time-maths',
+        subject: 'selective-high-school',
+        question: 'What do I do if I run out of time in mathematical reasoning?',
+        aliases: ['running out of time in maths reasoning', 'not finishing the maths section', 'time pressure in reasoning'],
+        answer:
+            'Answer every remaining question with your best guess before time is called, since there is no penalty. ' +
+            'Then, in practice afterwards, work out whether the problem was speed on easy questions or too long on ' +
+            'one hard one, because the fixes are different.',
+    },
+    {
+        id: 'sel-finishing-early',
+        subject: 'selective-high-school',
+        question: 'How should I use spare minutes at the end of a section?',
+        aliases: ['finishing early in the selective test', 'spare time in a section', 'what to check first'],
+        answer:
+            'Return to anything you marked, then check your answers are in the right rows, then recheck any question ' +
+            'you guessed. Rereading questions you were confident about rarely changes a mark and can talk you out of ' +
+            'a correct answer.',
+    },
+    {
+        id: 'sel-long-scenario',
+        subject: 'selective-high-school',
+        question: 'How do I handle a long reasoning scenario?',
+        aliases: ['long reasoning scenario', 'several questions on one passage', 'complex thinking skills question'],
+        answer:
+            'Read the scenario once, then note the fixed facts in short form before looking at the questions. Several ' +
+            'questions usually share the same scenario, so the notes are reused, which is why the time spent on them ' +
+            'pays back.',
+    },
+    {
+        id: 'sel-vocabulary-practice',
+        subject: 'selective-high-school',
+        question: 'How do I practise vocabulary for the reading test?',
+        aliases: ['practising vocabulary', 'vocabulary for the selective test', 'learning words for reading'],
+        answer:
+            'Collect words from your own reading rather than from a list, with the sentence you met them in, and ' +
+            'revisit them weekly. Words learned in context are the ones you can recognise when the test uses them in ' +
+            'a different context.',
+    },
+    {
+        id: 'sel-practising-with-a-timer',
+        subject: 'selective-high-school',
+        question: 'Should I always practise under time?',
+        aliases: ['practising with a timer', 'timed versus untimed practice', 'when to practise slowly'],
+        answer:
+            'Not always. Work untimed while learning a question type, so the reasoning is right, then add time once ' +
+            'the method is secure. Practising only against the clock makes errors faster rather than rarer.',
+    },
+    {
+        id: 'sel-writing-task-difference',
+        subject: 'selective-high-school',
+        question: 'How is the test writing task different from school writing?',
+        aliases: ['writing task versus school writing', 'test writing conditions', 'writing without feedback'],
+        answer:
+            'It is shorter, handwritten under time, on an unseen prompt, and marked by a stranger with no knowledge ' +
+            'of you. That rewards a clear plan and a complete piece over ambition, which is the opposite of what a ' +
+            'drafted school task rewards.',
+    },
+    {
+        id: 'sel-unfamiliar-maths',
+        subject: 'selective-high-school',
+        question: 'What do I do if the mathematics looks unfamiliar?',
+        aliases: ['unfamiliar maths in the test', 'question I have not been taught', 'new type of maths question'],
+        answer:
+            'The content is from the primary curriculum, so it is the presentation that is new rather than the ' +
+            'mathematics. Write down what is given, decide what is being asked, and try a small case or a diagram, ' +
+            'which usually exposes the familiar step underneath.',
+    },
+    {
+        id: 'sel-how-much-practice',
+        subject: 'selective-high-school',
+        question: 'How much practice is too much?',
+        aliases: ['how much practice is too much', 'over preparing for the test', 'diminishing returns in practice'],
+        answer:
+            'Once practice is producing no improvement, or is costing sleep, school work or willingness, it has ' +
+            'passed the point of usefulness. Two or three focused sessions a week over months does more than daily ' +
+            'drilling in the final weeks.',
+    },
 ];

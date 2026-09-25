@@ -158,4 +158,103 @@ export const naplanApproachEntries: StudyEntry[] = [
             'doing well. That is worth explaining beforehand, because a child who expects every question to be ' +
             'answerable can be shaken by one that is not.',
     },
+    {
+        id: 'nap-week-before',
+        subject: 'naplan',
+        question: 'What should we do in the week before NAPLAN?',
+        aliases: ['week before naplan', 'preparing the week before', 'last week before the test'],
+        answer:
+            'Very little that is new. Familiarise with the online format if that has not been done, keep routines ' +
+            'steady, and answer any questions the child has about what will happen. Anxiety in the last week costs ' +
+            'more marks than the extra practice earns.',
+    },
+    {
+        id: 'nap-unwell-on-the-day',
+        subject: 'naplan',
+        question: 'What if my child is unwell on a NAPLAN day?',
+        aliases: ['unwell on a naplan day', 'missing a naplan test', 'catch up session naplan'],
+        answer:
+            'Schools run catch-up sessions within the testing window for students who miss a test, so contact the ' +
+            'school rather than sending a sick child. If a test is missed entirely, that result is simply not ' +
+            'reported.',
+    },
+    {
+        id: 'nap-typing-practice',
+        subject: 'naplan',
+        question: 'Should my child practise typing for the online tests?',
+        aliases: ['typing for naplan', 'practising typing', 'online writing test typing'],
+        answer:
+            'Yes for Year 5 and above, where writing is typed. A student who hunts for keys spends attention on the ' +
+            'keyboard rather than the writing, and short regular typing practice through the year fixes it without ' +
+            'any focus on the test.',
+    },
+    {
+        id: 'nap-on-screen-calculator',
+        subject: 'naplan',
+        question: 'How does the on-screen calculator work?',
+        aliases: ['on screen calculator naplan', 'using the calculator in the online test', 'calculator section online'],
+        answer:
+            'It appears only in the calculator section and works like a basic calculator with a mouse or keypad. ' +
+            'Practising with it beforehand matters, because entering a long calculation with a mouse is slower than ' +
+            'students expect.',
+    },
+    {
+        id: 'nap-technology-problem',
+        subject: 'naplan',
+        question: 'What happens if the technology fails during a test?',
+        aliases: ['technology failure in naplan', 'computer problem during the test', 'internet drops out naplan'],
+        answer:
+            'The platform is designed to resume where the student left off, and schools have procedures for ' +
+            'interruptions including rescheduling within the window. It is worth telling a child in advance so a ' +
+            'glitch does not read as their mistake.',
+    },
+    {
+        id: 'nap-comparing-years',
+        subject: 'naplan',
+        question: 'Can I compare my child NAPLAN results between years?',
+        aliases: ['comparing naplan results between years', 'growth between naplan tests', 'tracking progress naplan'],
+        answer:
+            'Broadly yes, since the tests are placed on a common scale, so growth between Year 3 and Year 5 can be ' +
+            'described. Treat a single cohort movement cautiously though, because one morning of testing carries a ' +
+            'lot of noise.',
+    },
+    {
+        id: 'nap-planning-tutoring',
+        subject: 'naplan',
+        question: 'How can NAPLAN results guide tutoring?',
+        aliases: ['using naplan to plan tutoring', 'what results tell a tutor', 'targeting weak areas'],
+        answer:
+            'Use the sub-areas rather than the overall band: a gap in measurement or in punctuation is actionable, ' +
+            'where a lower overall numeracy figure is not. Bring the report to a first session, since it shortens the ' +
+            'diagnosis considerably.',
+    },
+    {
+        id: 'nap-what-teachers-do',
+        subject: 'naplan',
+        question: 'What do teachers do with NAPLAN results?',
+        aliases: ['what teachers do with naplan', 'how schools use results', 'school planning from naplan'],
+        answer:
+            'They use them alongside their own assessment to identify patterns across a cohort, group students for ' +
+            'support, and inform planning. For an individual child a teacher own observations are the better guide, ' +
+            'since they cover the whole year.',
+    },
+    {
+        id: 'nap-sharing-the-report',
+        subject: 'naplan',
+        question: 'Should I show my child their NAPLAN report?',
+        aliases: ['showing a child their naplan report', 'discussing results with a child', 'talking about naplan results'],
+        answer:
+            'Yes, framed as information rather than a verdict, and focused on the specific areas rather than the ' +
+            'overall position. A child who sees one area to work on responds better than one who takes away a single ' +
+            'number about themselves.',
+    },
+    {
+        id: 'nap-numeracy-vs-literacy',
+        subject: 'naplan',
+        question: 'What if my child is much stronger in one area?',
+        aliases: ['stronger in numeracy than literacy', 'uneven naplan results', 'gap between areas'],
+        answer:
+            'A wide gap is common and useful information. Support the weaker area without withdrawing the stronger ' +
+            'one, since confidence in one subject often carries a student through difficulty in another.',
+    },
 ];

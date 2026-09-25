@@ -375,4 +375,103 @@ export const ocApproachEntries: StudyEntry[] = [
             'friends they already have. Extension groups, competitions and reading beyond the syllabus provide the ' +
             'same stretch without the move.',
     },
+    {
+        id: 'oc-practising-thinking-skills',
+        subject: 'oc-prep',
+        question: 'How do we practise thinking skills at home?',
+        aliases: ['practising thinking skills at home', 'reasoning practice for year 4', 'logic puzzles at home'],
+        answer:
+            'Short puzzle sessions two or three times a week, discussed aloud rather than marked. Ask the child to ' +
+            'explain why the wrong options are wrong, since the reasoning is the skill and it transfers to question ' +
+            'types they have never seen.',
+    },
+    {
+        id: 'oc-practising-reading',
+        subject: 'oc-prep',
+        question: 'How do we practise reading for the OC test?',
+        aliases: ['practising reading for oc', 'reading practice at home', 'comprehension practice year 4'],
+        answer:
+            'Read widely and talk about it: what the character wanted, why the writer chose that word, what might ' +
+            'happen next. Comprehension questions test that thinking, so the conversation builds the skill more ' +
+            'reliably than worksheets.',
+    },
+    {
+        id: 'oc-practising-maths',
+        subject: 'oc-prep',
+        question: 'How do we practise mathematical reasoning at home?',
+        aliases: ['practising maths reasoning at home', 'maths practice for oc', 'problem solving practice year 4'],
+        answer:
+            'Mix number fluency, which is short and daily, with one or two harder problems discussed together. Let ' +
+            'the child explain their method: most lost marks come from a step skipped rather than from a fact not ' +
+            'known.',
+    },
+    {
+        id: 'oc-test-stamina',
+        subject: 'oc-prep',
+        question: 'How do we build test stamina in a Year 4 student?',
+        aliases: ['test stamina for a young child', 'concentrating for a whole test', 'sitting still for an hour'],
+        answer:
+            'Build up gradually: a section at a time at first, then two together, then a full paper closer to the ' +
+            'date. Sitting an entire paper cold is discouraging, and stamina is a large part of what the test ' +
+            'measures at this age.',
+    },
+    {
+        id: 'oc-practice-schedule',
+        subject: 'oc-prep',
+        question: 'What does a sensible OC practice schedule look like?',
+        aliases: ['oc practice schedule', 'how often to practise for oc', 'weekly plan for oc'],
+        answer:
+            'Two or three sessions of twenty to thirty minutes a week, each covering one area, plus reading every ' +
+            'day. A full timed paper every few weeks in the last couple of months is enough to build familiarity.',
+    },
+    {
+        id: 'oc-tutor-or-not',
+        subject: 'oc-prep',
+        question: 'Do we need a tutor for the OC test?',
+        aliases: ['do we need a tutor for oc', 'tutoring for the oc test', 'preparing without a tutor'],
+        answer:
+            'Not necessarily. What matters is regular practice, feedback on why answers were wrong, and exposure to ' +
+            'the question types. A tutor supplies the feedback where a parent cannot, and the question types are ' +
+            'available in past materials.',
+    },
+    {
+        id: 'oc-talking-about-the-result',
+        subject: 'oc-prep',
+        question: 'How do we talk to our child about the OC result?',
+        aliases: ['talking about the oc result', 'discussing an unsuccessful result', 'handling the outcome with a child'],
+        answer:
+            'Separate the outcome from the effort and from the child. Places are few and the margins are small, so a ' +
+            'near miss says nothing about ability. What they practised for the test stays with them whichever way it ' +
+            'goes.',
+    },
+    {
+        id: 'oc-what-it-does-not-measure',
+        subject: 'oc-prep',
+        question: 'What does the OC test not measure?',
+        aliases: ['what the oc test does not measure', 'limits of the oc test', 'what a test cannot show'],
+        answer:
+            'Persistence, curiosity, creativity, collaboration and how a child responds to difficulty, none of which ' +
+            'fit a multiple-choice format. It samples reading and reasoning on one morning, which is useful ' +
+            'information and a long way from the whole picture.',
+    },
+    {
+        id: 'oc-keeping-perspective',
+        subject: 'oc-prep',
+        question: 'How do we keep the OC test in proportion?',
+        aliases: ['keeping the oc test in proportion', 'not over emphasising the test', 'perspective on selective entry'],
+        answer:
+            'It is one pathway among several, sat at nine years old, for a class that lasts two years. Children take ' +
+            'their sense of its importance from the adults around them, so treating it as one opportunity is what ' +
+            'keeps it that.',
+    },
+    {
+        id: 'oc-day-itself',
+        subject: 'oc-prep',
+        question: 'What does OC test day look like?',
+        aliases: ['what happens on the day', 'arriving for the oc test'],
+        answer:
+            'Students sit the test at a designated centre, usually a nearby school, in a single session with short ' +
+            'breaks. Arrive early with the authority to attend advice, pencils, an eraser, water and something to eat ' +
+            'for the breaks.',
+    },
 ];
