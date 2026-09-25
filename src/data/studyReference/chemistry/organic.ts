@@ -141,7 +141,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
     {
         id: 'chem-biofuels',
         subject: 'chemistry',
-        question: 'How are biofuels made, and how do they compare with fossil fuels?',
+        question: 'How are biofuels made?',
         aliases: ['biofuel', 'fermentation', 'ethanol fuel', 'biodiesel', 'carbon neutral'],
         answer:
             'Fermentation converts glucose to ethanol and carbon dioxide using yeast; biodiesel comes from ' +
@@ -327,5 +327,70 @@ export const chemistryOrganicEntries: StudyEntry[] = [
             'in a fume cupboard. ' +
             'Concentrated acids are corrosive and their dilution is strongly exothermic. ' +
             'A risk assessment names each hazard, its risk and the control for it.',
+    },
+    {
+        id: 'chem-structural-isomer-drawing',
+        subject: 'chemistry',
+        question: 'How do I find all the isomers of a formula?',
+        aliases: ['drawing all isomers', 'how many isomers', 'systematic isomers', 'branching options'],
+        answer:
+            'Start with the longest straight chain, then shorten it by one carbon and move that carbon as a branch ' +
+            'to each possible position, avoiding repeats that are the same molecule drawn differently. ' +
+            'For compounds with a functional group, also move the group along the chain.',
+    },
+    {
+        id: 'chem-organic-solubility',
+        subject: 'chemistry',
+        question: 'Which organic compounds dissolve in water?',
+        aliases: ['organic solubility in water', 'like dissolves like', 'polar organic molecules', 'why hexane does not mix'],
+        answer:
+            'Like dissolves like. ' +
+            'Short-chain alcohols, acids, aldehydes and amines dissolve because their polar groups hydrogen bond with ' +
+            'water. ' +
+            'As the carbon chain lengthens the non-polar part dominates and solubility falls, which is why hexane and ' +
+            'water form layers.',
+    },
+    {
+        id: 'chem-fuels-comparison',
+        subject: 'chemistry',
+        question: 'How do fuels compare?',
+        aliases: ['comparing fuels', 'energy density', 'heat of combustion comparison', 'fuel choice'],
+        answer:
+            'Compare energy released per gram or per mole, the products of combustion, availability, cost, and ' +
+            'whether the source is renewable. ' +
+            'Longer-chain hydrocarbons release more energy per mole but less per gram than shorter ones, and ethanol ' +
+            'releases less than petrol for the same volume.',
+    },
+    {
+        id: 'chem-plastics-properties',
+        subject: 'chemistry',
+        question: 'Why do plastics have such different properties?',
+        aliases: ['plastic properties', 'chain packing', 'cross linking', 'flexible or rigid plastic', 'side groups'],
+        answer:
+            'Chain length, branching, side groups and cross-linking decide how closely chains pack and how easily ' +
+            'they slide. ' +
+            'Close packing gives strength and rigidity; branching gives flexibility; cross-linking gives a rigid ' +
+            'thermoset that cannot be remelted.',
+    },
+    {
+        id: 'chem-nmr-equivalent-environments',
+        subject: 'chemistry',
+        question: 'How do I count chemical environments?',
+        aliases: ['chemical environments', 'equivalent hydrogens', 'how many signals', 'symmetry in nmr'],
+        answer:
+            'Two atoms share an environment if swapping them leaves the molecule unchanged, usually because of ' +
+            'symmetry. ' +
+            'Count the distinct groups: each gives one signal. ' +
+            'In ethanol the three hydrogens of the CH₃ are equivalent, so they give a single peak, not three.',
+    },
+    {
+        id: 'chem-analysis-choosing-standards',
+        subject: 'chemistry',
+        question: 'Why does analysis need standards?',
+        aliases: ['why use standards', 'reference sample', 'comparing to a known', 'quality control analysis'],
+        answer:
+            'An instrument measures a signal, not a concentration, so the signal means nothing until it is compared ' +
+            'with samples of known concentration. ' +
+            'Standards also reveal drift: running one again partway through shows whether the instrument has shifted.',
     },
 ];

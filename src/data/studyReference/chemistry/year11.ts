@@ -492,4 +492,85 @@ export const chemistryYear11Entries: StudyEntry[] = [
             'Concentration can also be grams per litre, percentage by mass or volume, or parts per million for trace ' +
             'amounts. Convert to mol L⁻¹ before using it in a stoichiometry calculation.',
     },
+    {
+        id: 'chem-nomenclature-acids',
+        subject: 'chemistry',
+        question: 'How are acids and their salts named?',
+        aliases: ['naming acids', 'ate ite ide endings', 'sulfate sulfite', 'nitrate nitrite'],
+        answer:
+            'An acid ending in -ic gives a salt ending in -ate; one ending in -ous gives -ite. ' +
+            'Sulfuric acid gives sulfates, sulfurous gives sulfites, nitric gives nitrates. ' +
+            'A binary acid such as hydrochloric gives a chloride.',
+    },
+    {
+        id: 'chem-diatomic-elements',
+        subject: 'chemistry',
+        question: 'Which elements exist as diatomic molecules?',
+        aliases: ['diatomic', 'h2 o2 n2', 'elements in pairs', 'writing element formulas'],
+        answer:
+            'Hydrogen, nitrogen, oxygen, fluorine, chlorine, bromine and iodine exist as pairs in their natural ' +
+            'state. ' +
+            'Writing O instead of O₂ in an equation is a common and costly slip, since it changes the balancing.',
+    },
+    {
+        id: 'chem-avogadro-meaning',
+        subject: 'chemistry',
+        question: 'What is a mole, conceptually?',
+        aliases: ['what is a mole', 'counting particles', 'why chemists use moles', 'dozen analogy'],
+        answer:
+            'A mole is a counting unit, like a dozen but far larger: 6.022 × 10²³ particles. ' +
+            'Chemists use it because reactions happen between numbers of particles, but we measure mass, and the mole ' +
+            'is what links the two through molar mass.',
+    },
+    {
+        id: 'chem-solution-preparation',
+        subject: 'chemistry',
+        question: 'How do I prepare a solution of known concentration?',
+        aliases: ['preparing a solution', 'volumetric flask method', 'making up to the mark', 'weighing accurately'],
+        answer:
+            'Weigh the solid accurately, dissolve it in a small volume of water, transfer every drop into a ' +
+            'volumetric flask with rinsings, then add water to the calibration mark and invert to mix. ' +
+            'Adding water to the mark before dissolving gives the wrong volume.',
+    },
+    {
+        id: 'chem-endothermic-examples',
+        subject: 'chemistry',
+        question: 'What are everyday examples of exothermic and endothermic processes?',
+        aliases: ['exothermic examples', 'endothermic examples', 'cold pack', 'hand warmer', 'photosynthesis energy'],
+        answer:
+            'Exothermic: combustion, respiration, neutralisation and the setting of concrete, all releasing heat. ' +
+            'Endothermic: photosynthesis, thermal decomposition, dissolving ammonium nitrate in an instant cold pack, ' +
+            'and evaporation, which is why sweat cools you.',
+    },
+    {
+        id: 'chem-spontaneity',
+        subject: 'chemistry',
+        question: 'What makes a reaction spontaneous?',
+        aliases: ['spontaneity', 'when is a reaction spontaneous', 'temperature dependence spontaneity', 'enthalpy entropy balance'],
+        answer:
+            'A negative ΔG. Since ΔG = ΔH − TΔS, a reaction that releases heat and increases disorder is spontaneous ' +
+            'at every temperature. ' +
+            'If the two terms oppose each other, temperature decides: high temperature favours the entropy term.',
+    },
+    {
+        id: 'chem-rates-measuring',
+        subject: 'chemistry',
+        question: 'How is reaction rate measured experimentally?',
+        aliases: ['measuring rate', 'gas volume collected', 'mass loss experiment', 'disappearing cross', 'rate graph gradient'],
+        answer:
+            'Follow something that changes: volume of gas collected, mass lost, colour intensity, or the time for a ' +
+            'mark to disappear. ' +
+            'Plot the quantity against time; the gradient is the rate, steepest at the start and flattening as ' +
+            'reactants are used up.',
+    },
+    {
+        id: 'chem-transition-metals',
+        subject: 'chemistry',
+        question: 'What is distinctive about transition metals?',
+        aliases: ['transition metals', 'variable oxidation states', 'coloured compounds', 'catalytic metals'],
+        answer:
+            'They show variable oxidation states, form coloured compounds and ions, and act as catalysts. ' +
+            'All three follow from partly filled d subshells, which allow several stable electron arrangements and ' +
+            'energy gaps that absorb visible light.',
+    },
 ];

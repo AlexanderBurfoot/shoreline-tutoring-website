@@ -347,4 +347,56 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
             'Repeating until titres are concordant improves reliability; using the right indicator and careful ' +
             'technique improves accuracy.',
     },
+    {
+        id: 'chem-equilibrium-position',
+        subject: 'chemistry',
+        question: 'What does the position of equilibrium mean?',
+        aliases: ['position of equilibrium', 'lies to the right', 'favouring products', 'extent of reaction'],
+        answer:
+            'It describes the relative amounts of reactants and products once rates are equal. ' +
+            'Lying to the right means products dominate, which corresponds to a large equilibrium constant. ' +
+            'Shifting the position is not the same as changing the constant: only temperature does that.',
+    },
+    {
+        id: 'chem-acid-strength-structure',
+        subject: 'chemistry',
+        question: 'Why are some acids stronger than others?',
+        aliases: ['why acids differ in strength', 'bond strength acid', 'stability of the conjugate base', 'electronegativity acid strength'],
+        answer:
+            'The easier the proton leaves and the more stable the resulting anion, the stronger the acid. ' +
+            'Stability rises when the negative charge is spread over more atoms or sits next to electronegative ' +
+            'ones, which is why trichloroacetic acid is far stronger than acetic acid.',
+    },
+    {
+        id: 'chem-dilution-ph-effect',
+        subject: 'chemistry',
+        question: 'What happens to pH when an acid is diluted?',
+        aliases: ['diluting an acid ph', 'ten fold dilution', 'ph change on dilution', 'why ph never passes 7'],
+        answer:
+            'A tenfold dilution of a strong acid raises the pH by one unit, since [H⁺] falls by a factor of ten. ' +
+            'Dilution alone never pushes an acidic solution past neutral: it approaches pH 7 without crossing it, ' +
+            'because water itself supplies ions.',
+    },
+    {
+        id: 'chem-titration-choice-of-apparatus',
+        subject: 'chemistry',
+        question: 'Why is each piece of titration glassware used?',
+        aliases: ['why use a pipette', 'why a burette', 'aliquot', 'accuracy of glassware'],
+        answer:
+            'A pipette delivers one fixed accurate volume, the aliquot. ' +
+            'A burette delivers a variable volume and is read to two decimal places, which is why it holds the ' +
+            'titrant. ' +
+            'A volumetric flask measures one accurate volume for making a standard solution, and a conical flask is ' +
+            'only a container for swirling.',
+    },
+    {
+        id: 'chem-solubility-temperature',
+        subject: 'chemistry',
+        question: 'How does temperature affect solubility?',
+        aliases: ['solubility curve', 'temperature and dissolving', 'gas solubility temperature', 'saturated at a temperature'],
+        answer:
+            'Most solids dissolve more readily as temperature rises, which a solubility curve shows. ' +
+            'Gases do the opposite: they become less soluble in warm water, which is why warm rivers hold less ' +
+            'dissolved oxygen and why a warm soft drink goes flat faster.',
+    },
 ];
