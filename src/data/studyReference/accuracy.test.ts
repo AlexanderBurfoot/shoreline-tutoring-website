@@ -101,7 +101,18 @@ describe('the figures in the answers', () => {
     });
 
     /* Two entries quoting the same constant differently means one of them is
-       wrong, which is cheaper to catch here than in a student's exam. */
+       wrong, which is cheaper to catch here than in a student's exam.
+
+       These entries are exempt because the value they state is deliberately not
+       the constant: two report what an experiment measured for g, and one gives
+       the speed of light inside glass. Exempting them by name keeps the check
+       strict for every other entry, where a mismatch really is an error. */
+    const NOT_QUOTING_THE_CONSTANT = new Set([
+        'phys-example-percentage-error',
+        'phys-example-linearising-data',
+        'phys-example-refractive-index-speed',
+    ]);
+
     it.each([
         ['acceleration due to gravity', /\b9\.(\d+) m s/g, '8'],
         ['the speed of light', /\b(\d\.\d+) ?× ?10⁸ m/g, '3.00'],
@@ -111,6 +122,9 @@ describe('the figures in the answers', () => {
     ])('quotes %s consistently', (_name, pattern, expected) => {
         const values = new Set<string>();
         for (const entry of knowledgeEntries) {
+            if (NOT_QUOTING_THE_CONSTANT.has(entry.id)) {
+                continue;
+            }
             for (const hit of entry.answer.matchAll(pattern)) {
                 values.add(hit[1]);
             }

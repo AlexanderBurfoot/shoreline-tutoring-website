@@ -11,6 +11,7 @@ import { workedExampleNaplanEntries } from './naplan';
 import { workedExampleOcEntries } from './ocPrep';
 import { workedExampleOtherEntries } from './other';
 import { workedExamplePhysicsEntries } from './physics';
+import { workedExamplePhysicsMoreEntries } from './physicsMore';
 import { workedExampleSelectiveEntries } from './selective';
 import type { StudyEntry } from '../types';
 
@@ -28,4 +29,5 @@ export const workedExampleEntries: StudyEntry[] = [
     ...workedExampleEnglishModelEntries,
     ...workedExampleMathsPrimaryEntries,
     ...workedExampleMathsSeniorEntries,
+    ...workedExamplePhysicsMoreEntries,
 ];
