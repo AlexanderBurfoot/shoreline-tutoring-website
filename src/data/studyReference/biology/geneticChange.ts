@@ -40,7 +40,7 @@ export const biologyGeneticChangeEntries: StudyEntry[] = [
         id: 'bio-dna-sequencing',
         subject: 'biology',
         question: 'What is DNA sequencing used for?',
-        aliases: ['dna sequencing', 'genome', 'bioinformatics', 'human genome project', 'genetic screening'],
+        aliases: ['dna sequencing', 'genome', 'bioinformatics', 'human genome project'],
         answer:
             'Sequencing reads the order of bases in DNA. It identifies mutations behind genetic disease, traces ' +
             'evolutionary relationships, and guides treatment by matching a drug to a genotype. ' +
@@ -144,7 +144,7 @@ export const biologyGeneticChangeEntries: StudyEntry[] = [
         id: 'bio-hardy-weinberg',
         subject: 'biology',
         question: 'How do allele frequencies change in a population?',
-        aliases: ['allele frequency', 'gene pool', 'genetic drift', 'founder effect', 'bottleneck'],
+        aliases: ['allele frequency', 'gene pool', 'hardy weinberg', 'equilibrium of a gene pool'],
         answer:
             'The gene pool is every allele in a population. ' +
             'Selection shifts frequencies towards favoured alleles, while genetic drift shifts them by chance, which ' +

@@ -100,4 +100,119 @@ export const biologyEcosystemsEntries: StudyEntry[] = [
             'Biotic factors are living, such as predators, competitors and disease. ' +
             'A habitat is where an organism lives; its niche is the role it plays and the conditions it needs.',
     },
+    {
+        id: 'bio-ecological-pyramids',
+        subject: 'biology',
+        question: 'Why do ecological pyramids narrow towards the top?',
+        aliases: ['pyramid of numbers', 'pyramid of biomass', 'inverted pyramid', 'comparing pyramids'],
+        answer:
+            'Because most of the energy at each level is lost as heat and in respiration, so less is available to the ' +
+            'level above. ' +
+            'A pyramid of biomass or energy therefore always narrows upward. ' +
+            'A pyramid of numbers can look inverted, since one large tree supports thousands of insects.',
+    },
+    {
+        id: 'bio-biomagnification',
+        subject: 'biology',
+        question: 'What is biomagnification?',
+        aliases: ['biomagnification', 'bioaccumulation', 'ddt in food chain', 'toxins concentrating'],
+        answer:
+            'A substance the body cannot break down or excrete builds up in each organism, and a predator eats many ' +
+            'prey, so the concentration multiplies at every level. ' +
+            'Top predators end up with the highest load, which is why DDT thinned the eggshells of birds of prey.',
+    },
+    {
+        id: 'bio-eutrophication',
+        subject: 'biology',
+        question: 'What is eutrophication?',
+        aliases: ['eutrophication', 'algal bloom', 'fertiliser runoff', 'dissolved oxygen crash'],
+        answer:
+            'Fertiliser or sewage runoff adds nitrates and phosphates to water, algae multiply into a bloom, then die ' +
+            'and are decomposed by bacteria that consume the dissolved oxygen. ' +
+            'Fish and invertebrates suffocate, so the enrichment ends in a dead zone.',
+    },
+    {
+        id: 'bio-keystone-species',
+        subject: 'biology',
+        question: 'What is a keystone species?',
+        aliases: ['keystone species', 'trophic cascade', 'removing a top predator'],
+        answer:
+            'A species whose effect on a community is far larger than its abundance suggests. ' +
+            'Removing it triggers a cascade: without sea otters, sea urchins strip the kelp forest, and every species ' +
+            'that shelters there declines.',
+    },
+    {
+        id: 'bio-niche-partitioning',
+        subject: 'biology',
+        question: 'How do similar species coexist?',
+        aliases: ['niche partitioning', 'resource partitioning', 'competitive exclusion', 'fundamental and realised niche'],
+        answer:
+            'By dividing the resource: feeding at different heights, times or on different sizes of prey. ' +
+            'Competitive exclusion says two species cannot occupy an identical niche indefinitely, so the realised ' +
+            'niche each one actually uses is narrower than the range it could tolerate.',
+    },
+    {
+        id: 'bio-water-cycle',
+        subject: 'biology',
+        question: 'How does water move through an ecosystem?',
+        aliases: ['water cycle', 'evapotranspiration', 'groundwater', 'precipitation and runoff'],
+        answer:
+            'Evaporation from surfaces and transpiration from plants carry water into the air, where it condenses and ' +
+            'falls as precipitation. ' +
+            'Some runs off into rivers, some soaks down to groundwater, and plants draw it back up, so the same water ' +
+            'circulates indefinitely.',
+    },
+    {
+        id: 'bio-threatened-species-protection',
+        subject: 'biology',
+        question: 'How are threatened species protected?',
+        aliases: ['threatened species', 'captive breeding', 'seed bank', 'national park protection', 'wildlife corridor'],
+        answer:
+            'By protecting habitat in reserves, linking fragments with corridors, controlling introduced predators, ' +
+            'breeding in captivity for release, and storing genetic material in seed banks. ' +
+            'Habitat protection matters most, since a captive population has nowhere to return to without it.',
+    },
+    {
+        id: 'bio-habitat-fragmentation',
+        subject: 'biology',
+        question: 'Why does habitat fragmentation matter?',
+        aliases: ['habitat fragmentation', 'edge effect', 'patch size', 'isolated populations'],
+        answer:
+            'Splitting one large habitat into patches cuts the interior area, exposes more edge to wind, weeds and ' +
+            'predators, and isolates populations so they cannot interbreed. ' +
+            'Small isolated groups lose genetic diversity and are far more likely to die out locally.',
+    },
+    {
+        id: 'bio-invasive-species-australia',
+        subject: 'biology',
+        question: 'Why are cane toads and rabbits such a problem in Australia?',
+        aliases: ['cane toad', 'rabbit plague', 'feral animals', 'biological control gone wrong'],
+        answer:
+            'They arrived without the predators, parasites and competitors that limited them at home, so numbers grew ' +
+            'unchecked. ' +
+            'Rabbits strip vegetation and cause erosion; cane toads poison native predators that try to eat them. ' +
+            'Both were introductions intended to help.',
+    },
+    {
+        id: 'bio-ecosystem-services',
+        subject: 'biology',
+        question: 'What do humans gain from functioning ecosystems?',
+        aliases: ['ecosystem services', 'pollination service', 'natural capital', 'benefits from ecosystems'],
+        answer:
+            'Pollination of crops, clean water filtered through wetlands, soil formation, flood control, carbon ' +
+            'storage, timber, fisheries and medicines. ' +
+            'These are called ecosystem services because replacing them artificially, where it is possible at all, ' +
+            'costs far more than protecting them.',
+    },
+    {
+        id: 'bio-density-dependent-factors',
+        subject: 'biology',
+        question: 'What is the difference between density-dependent and density-independent factors?',
+        aliases: ['density dependent', 'density independent', 'crowding and disease', 'drought effect on numbers'],
+        answer:
+            'Density-dependent factors bite harder as a population grows: competition for food, disease spreading ' +
+            'through crowds, and predators attracted to abundance. ' +
+            'Density-independent factors such as drought, fire and frost hit the same proportion whatever the ' +
+            'population size.',
+    },
 ];

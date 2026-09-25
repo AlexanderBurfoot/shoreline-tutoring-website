@@ -30,7 +30,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-classification',
         subject: 'biology',
         question: 'How are organisms classified?',
-        aliases: ['classification', 'taxonomy', 'binomial nomenclature', 'species definition'],
+        aliases: ['classification', 'taxonomy', 'species definition', 'why we group organisms'],
         answer:
             'From broad to narrow: kingdom, phylum, class, order, family, genus, species. ' +
             'Binomial nomenclature names each species by genus and species, italicised. ' +
@@ -93,7 +93,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-comparative-evidence',
         subject: 'biology',
         question: 'What are homologous, analogous and vestigial structures?',
-        aliases: ['homologous structures', 'analogous structures', 'vestigial', 'convergent evolution', 'divergent evolution'],
+        aliases: ['vestigial structures', 'embryology evidence', 'comparing body plans'],
         answer:
             'Homologous structures share an ancestry despite different uses, like the bones in a whale flipper and a ' +
             'human arm, and show divergent evolution. ' +
@@ -104,7 +104,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-molecular-evidence',
         subject: 'biology',
         question: 'How does DNA evidence show relatedness?',
-        aliases: ['molecular evidence', 'dna comparison', 'protein comparison', 'molecular clock', 'phylogenetic tree'],
+        aliases: ['molecular evidence', 'dna comparison', 'protein comparison', 'molecular clock'],
         answer:
             'The more similar two species\u2019 DNA or protein sequences, the more recently they shared an ancestor. ' +
             'Mutations accumulate at a roughly steady rate, which acts as a molecular clock. ' +
@@ -165,5 +165,68 @@ export const biologyDiversityEntries: StudyEntry[] = [
             'conditions. ' +
             'Eukarya covers protists, fungi, plants and animals. The scheme came from molecular comparison, not ' +
             'appearance.',
+    },
+    {
+        id: 'bio-binomial-nomenclature',
+        subject: 'biology',
+        question: 'How does binomial naming work?',
+        aliases: ['binomial nomenclature', 'genus and species name', 'scientific name', 'italics for species'],
+        answer:
+            'Every species gets two names: the genus, capitalised, then the species, in lower case, both italicised ' +
+            'or underlined, as in Homo sapiens. ' +
+            'One agreed name per species avoids the confusion of common names, which differ between regions and ' +
+            'languages.',
+    },
+    {
+        id: 'bio-cladogram',
+        subject: 'biology',
+        question: 'How do I read a cladogram?',
+        aliases: ['cladogram', 'phylogenetic tree', 'common ancestor node', 'branching diagram'],
+        answer:
+            'Each node is a common ancestor, and the branches from it are the lineages that diverged there. ' +
+            'Relatedness is read by how recently two branches meet, not by how close they sit along the top, which ' +
+            'is the most common misreading.',
+    },
+    {
+        id: 'bio-convergent-divergent',
+        subject: 'biology',
+        question: 'What is the difference between convergent and divergent evolution?',
+        aliases: ['convergent evolution', 'divergent evolution', 'analogous structures', 'homologous structures'],
+        answer:
+            'Divergent evolution starts from one ancestor and produces different forms, leaving homologous structures ' +
+            'with shared underlying anatomy. ' +
+            'Convergent evolution produces similar forms from unrelated ancestors facing similar pressures, giving ' +
+            'analogous structures such as the wings of birds and insects.',
+    },
+    {
+        id: 'bio-coevolution',
+        subject: 'biology',
+        question: 'What is coevolution?',
+        aliases: ['coevolution', 'flower and pollinator', 'predator prey arms race'],
+        answer:
+            'Two species act as selection pressures on each other, so each drives change in the other. ' +
+            'A long-tubed flower and a long-tongued moth, or faster prey and faster predators, are both outcomes of ' +
+            'this reciprocal pressure.',
+    },
+    {
+        id: 'bio-genetic-drift',
+        subject: 'biology',
+        question: 'What is genetic drift?',
+        aliases: ['genetic drift', 'founder effect', 'bottleneck effect', 'chance change in allele frequency'],
+        answer:
+            'Change in allele frequency by chance rather than by advantage, because only some individuals happen to ' +
+            'reproduce. ' +
+            'It matters most in small populations: a founder group or a population crushed through a bottleneck ' +
+            'carries only a sample of the original variation.',
+    },
+    {
+        id: 'bio-gene-flow',
+        subject: 'biology',
+        question: 'What is gene flow?',
+        aliases: ['gene flow', 'migration between populations', 'interbreeding populations'],
+        answer:
+            'The movement of alleles between populations when individuals or gametes migrate and breed. ' +
+            'It adds variation and keeps populations genetically similar, so cutting it off, by a mountain range or a ' +
+            'cleared paddock, is the first step towards speciation.',
     },
 ];

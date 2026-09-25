@@ -17,14 +17,14 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
             'Separating a mixture first: chromatography. Structure questions usually need two of them together.',
     },
     {
-        id: 'chem-monitoring-environment',
+        id: 'chem-monitoring-atmosphere',
         subject: 'chemistry',
-        question: 'How is water quality monitored?',
-        aliases: ['monitoring the environment', 'eutrophication', 'heavy metals', 'dissolved oxygen'],
+        question: 'How is the atmosphere monitored?',
+        aliases: ['monitoring the atmosphere', 'cfcs', 'air pollutants', 'measuring gases in air'],
         answer:
-            'Tests cover pH, dissolved oxygen, turbidity, hardness, phosphate and nitrate, and heavy metal ions. ' +
-            'Excess nutrients cause eutrophication: algae bloom, then decay and strip the oxygen. ' +
-            'AAS measures metal ions at very low concentrations.',
+            'Gases are identified and measured by the infrared and ultraviolet wavelengths they absorb, which is how ' +
+            'carbon dioxide, methane and ozone are tracked from the ground and from satellites. ' +
+            'Chlorine radicals from CFCs destroy ozone catalytically, so a small amount does lasting damage.',
     },
     {
         id: 'chem-gravimetric',

@@ -10,7 +10,7 @@ export const biologyInfectiousDiseaseEntries: StudyEntry[] = [
         id: 'bio-immune-response',
         subject: 'biology',
         question: 'How does the immune response work?',
-        aliases: ['immune response', 'antibodies', 'antigen', 'how the body fights infection'],
+        aliases: ['immune response', 'antigen', 'how the body fights infection'],
         answer:
             'Non-specific defences act first: skin, mucus and inflammation. ' +
             'The specific response follows, with B cells making antibodies against an antigen and T cells destroying ' +
@@ -30,7 +30,7 @@ export const biologyInfectiousDiseaseEntries: StudyEntry[] = [
         id: 'bio-prevention-treatment',
         subject: 'biology',
         question: 'How are infectious diseases prevented and treated?',
-        aliases: ['preventing infection', 'quarantine', 'public health', 'hygiene', 'vector control'],
+        aliases: ['preventing infection', 'public health', 'hygiene', 'treating an infection'],
         answer:
             'Prevention uses hygiene, quarantine, vector control and vaccination, which trains memory cells before ' +
             'exposure. Herd immunity protects those who cannot be vaccinated. ' +
@@ -60,7 +60,7 @@ export const biologyInfectiousDiseaseEntries: StudyEntry[] = [
         id: 'bio-disease-transmission',
         subject: 'biology',
         question: 'How are infectious diseases transmitted?',
-        aliases: ['transmission', 'vector', 'direct contact', 'airborne disease', 'water borne'],
+        aliases: ['transmission', 'direct contact', 'airborne disease', 'water borne'],
         answer:
             'By direct contact, droplets and aerosols, contaminated food or water, body fluids, or a vector such as a ' +
             'mosquito that carries the pathogen between hosts. ' +
@@ -70,7 +70,7 @@ export const biologyInfectiousDiseaseEntries: StudyEntry[] = [
         id: 'bio-first-second-line',
         subject: 'biology',
         question: 'What are the first and second lines of defence?',
-        aliases: ['first line of defence', 'second line of defence', 'inflammation', 'phagocyte', 'non specific defence'],
+        aliases: ['first line of defence', 'second line of defence', 'phagocyte', 'non specific defence'],
         answer:
             'The first line keeps pathogens out: skin, mucus, cilia, stomach acid and tears. ' +
             'The second is non-specific and internal: inflammation brings blood and white cells to the site, fever ' +
@@ -149,5 +149,65 @@ export const biologyInfectiousDiseaseEntries: StudyEntry[] = [
             'from particular species, and protocols that separated the sick. ' +
             'The syllabus asks you to describe the practice and the biological reason it works, not merely to list ' +
             'examples.',
+    },
+    {
+        id: 'bio-germ-theory',
+        subject: 'biology',
+        question: 'How was it shown that microbes cause disease?',
+        aliases: ['germ theory', 'koch postulates', 'pasteur experiment', 'proving a pathogen causes a disease'],
+        answer:
+            'Pasteur showed that broth stayed sterile unless microbes reached it, ending spontaneous generation. ' +
+            'Koch then set the standard still used: find the microbe in every case, grow it in pure culture, give the ' +
+            'disease to a healthy host with it, and recover the same microbe again.',
+    },
+    {
+        id: 'bio-disease-vectors',
+        subject: 'biology',
+        question: 'What is a disease vector?',
+        aliases: ['vector', 'mosquito and malaria', 'vector control', 'insect borne disease'],
+        answer:
+            'An organism that carries a pathogen from one host to another without necessarily being harmed itself. ' +
+            'Mosquitoes carry malaria and dengue, ticks carry bacteria, aphids carry plant viruses. ' +
+            'Controlling the vector, by removing standing water or using nets, breaks the chain.',
+    },
+    {
+        id: 'bio-lymphatic-system',
+        subject: 'biology',
+        question: 'What does the lymphatic system do in defence?',
+        aliases: ['lymphatic system', 'lymph node', 'lymph', 'swollen glands'],
+        answer:
+            'It drains tissue fluid back to the blood and filters it through lymph nodes packed with lymphocytes and ' +
+            'phagocytes, where pathogens are detected and destroyed. ' +
+            'Nodes swell during an infection because lymphocytes there are dividing rapidly.',
+    },
+    {
+        id: 'bio-inflammation',
+        subject: 'biology',
+        question: 'What causes inflammation?',
+        aliases: ['inflammation', 'histamine', 'redness and swelling', 'inflammatory response'],
+        answer:
+            'Damaged cells and mast cells release histamine, which widens local blood vessels and makes them leakier. ' +
+            'More blood brings warmth and redness, escaping fluid brings swelling, and phagocytes can pass into the ' +
+            'tissue to engulf pathogens.',
+    },
+    {
+        id: 'bio-biosecurity-australia',
+        subject: 'biology',
+        question: 'How does Australia limit the entry and spread of disease?',
+        aliases: ['quarantine', 'biosecurity', 'border control of disease', 'contact tracing'],
+        answer:
+            'Border inspection and quarantine of animals, plants and produce, surveillance for new outbreaks, ' +
+            'notifiable disease reporting, contact tracing, and movement controls during an outbreak. ' +
+            'Being an island makes exclusion unusually effective, which is why some diseases here remain absent.',
+    },
+    {
+        id: 'bio-antibody-action',
+        subject: 'biology',
+        question: 'How do antibodies work?',
+        aliases: ['antibody', 'antibodies', 'antibody specificity', 'agglutination'],
+        answer:
+            'An antibody has a binding site shaped to one antigen, so each is specific. ' +
+            'Binding marks the pathogen for phagocytes, clumps pathogens together so they are easier to engulf, and ' +
+            'can neutralise a toxin or block a virus from entering a cell.',
     },
 ];
