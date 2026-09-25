@@ -170,8 +170,15 @@ interface EntryIndex {
      * "time" and "half", and a question about what time the bus leaves finds it.
      */
     tokens: Set<string>;
-    /** Multi-word keywords, matched against the question as whole phrases. */
-    phrases: string[];
+    /**
+     * Multi-word keywords as their sequence of words, matched in order against
+     * the words of the question.
+     *
+     * Comparing words rather than raw text means a keyword written "boyles law"
+     * is still found when a student types "Boyle law", since both reduce to the
+     * same two words. Comparing text missed every such pair in the bank.
+     */
+    phrases: string[][];
 }
 
 const entryIndexCache = new WeakMap<KnowledgeEntry, EntryIndex>();
@@ -188,10 +195,24 @@ function indexOf(entry: KnowledgeEntry): EntryIndex {
             ...tokenise(entry.question),
             ...normalisedKeywords.filter((keyword) => !keyword.includes(' ')).flatMap(tokenise),
         ]),
-        phrases: normalisedKeywords.filter((keyword) => keyword.includes(' ')),
+        phrases: normalisedKeywords
+            .filter((keyword) => keyword.includes(' '))
+            .map(tokenise)
+            .filter((words) => words.length > 1),
     };
     entryIndexCache.set(entry, index);
     return index;
+}
+
+/** Whether the words of a keyword appear in order, together, in the question. */
+function containsWords(question: string[], phrase: string[]): boolean {
+    const last = question.length - phrase.length;
+    for (let start = 0; start <= last; start += 1) {
+        if (phrase.every((word, offset) => question[start + offset] === word)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 /**
@@ -268,18 +289,14 @@ export function scoreEntry(
         }
     }
 
-    /* Padded on both sides so a phrase matches whole words only. Without this,
-       "e x" is found inside "differentiate x" and the question is answered from
-       an unrelated entry. */
-    const paddedQuestion = ` ${normalise(question)} `;
-    const matchedPhrases = phrases.filter((phrase) => paddedQuestion.includes(` ${phrase} `));
+    const matchedPhrases = phrases.filter((phrase) => containsWords(queryTokens, phrase));
 
     const score = matched / total + matchedPhrases.length * PHRASE_BONUS;
     if (matchedPhrases.length === 0) {
         return Math.min(score, 1);
     }
 
-    const longestPhrase = Math.max(...matchedPhrases.map((phrase) => tokenise(phrase).length));
+    const longestPhrase = Math.max(...matchedPhrases.map((phrase) => phrase.length));
     const explainsTheQuestion = longestPhrase * 2 >= queryTokens.length;
     return Math.min(explainsTheQuestion ? Math.max(score, PHRASE_MATCH_FLOOR) : score, 1);
 }
