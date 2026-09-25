@@ -11,7 +11,7 @@ export const mathematicsCalculusEntries: StudyEntry[] = [
         id: 'maths-differentiation-rules',
         subject: 'mathematics',
         question: 'What are the differentiation rules?',
-        aliases: ['power rule', 'product rule', 'quotient rule', 'chain rule', 'how to differentiate'],
+        aliases: ['power rule', 'how to differentiate'],
         answer:
             'Power rule: d/dx(xⁿ) = nxⁿ⁻¹. Product rule: (uv)′ = u′v + uv′. Quotient rule: (u/v)′ = (u′v − uv′)/v². ' +
             'Chain rule: dy/dx = dy/du × du/dx, for a function inside another function.',
@@ -47,10 +47,7 @@ export const mathematicsCalculusEntries: StudyEntry[] = [
         id: 'maths-rates-of-change',
         subject: 'mathematics',
         question: 'How do I use calculus for rates of change?',
-        aliases: [
-            'rates of change', 'related rates', 'motion calculus',
-            'rate of change of volume', 'chain rule rates', 'filling a tank',
-        ],
+        aliases: ['rates of change', 'motion calculus', 'rate of change of volume', 'chain rule rates', 'filling a tank'],
         answer:
             'The derivative is the instantaneous rate of change. In motion, differentiating displacement gives ' +
             'velocity and differentiating again gives acceleration; integrating reverses it. ' +
@@ -80,7 +77,7 @@ export const mathematicsCalculusEntries: StudyEntry[] = [
         id: 'maths-integration-applications',
         subject: 'mathematics',
         question: 'What can integration be used for?',
-        aliases: ['applications of integration', 'volumes of revolution', 'trapezoidal rule', 'approximating an integral'],
+        aliases: ['applications of integration', 'volumes of revolution', 'approximating an integral'],
         answer:
             'Area between two curves is the integral of the upper minus the lower. ' +
             'A volume of revolution about the x-axis is π∫y² dx. ' +
@@ -180,5 +177,150 @@ export const mathematicsCalculusEntries: StudyEntry[] = [
             'per second. ' +
             'Setting it to zero finds a maximum or minimum of the real quantity, so check whether that point makes ' +
             'sense in the context before quoting it.',
+    },
+    {
+        id: 'maths-chain-rule',
+        subject: 'mathematics',
+        question: 'How do I use the chain rule?',
+        aliases: ['chain rule', 'differentiating a function of a function', 'bracket to a power derivative'],
+        answer:
+            'Differentiate the outside function, keeping the inside unchanged, then multiply by the derivative of the ' +
+            'inside. For (3x² + 1)⁵ the answer is 5(3x² + 1)⁴ × 6x.',
+    },
+    {
+        id: 'maths-product-rule',
+        subject: 'mathematics',
+        question: 'How do I use the product rule?',
+        aliases: ['product rule', 'differentiating a product', 'u dash v plus u v dash'],
+        answer:
+            'For y = uv, the derivative is u′v + uv′. Write u, v and their derivatives down separately before ' +
+            'substituting, which prevents the most common slip of differentiating both factors at once.',
+    },
+    {
+        id: 'maths-quotient-rule',
+        subject: 'mathematics',
+        question: 'How do I use the quotient rule?',
+        aliases: ['quotient rule', 'differentiating a fraction', 'v u dash minus u v dash'],
+        answer:
+            'For y = u/v, the derivative is (u′v − uv′)/v². The order in the numerator matters, and it is often ' +
+            'easier to rewrite a simple quotient with a negative index and use the chain rule instead.',
+    },
+    {
+        id: 'maths-implicit-related-rates',
+        subject: 'mathematics',
+        question: 'How do I answer a related rates question?',
+        aliases: ['related rates', 'rate of change of one thing from another', 'chain rule for rates'],
+        answer:
+            'Write the relationship between the quantities, differentiate both sides with respect to time, then ' +
+            'substitute the known rate and the instantaneous values. The chain rule links the rates: dV/dt = dV/dr × ' +
+            'dr/dt.',
+    },
+    {
+        id: 'maths-area-below-axis',
+        subject: 'mathematics',
+        question: 'What if the area is below the x-axis?',
+        aliases: ['area below the x axis', 'negative integral', 'signed area'],
+        answer:
+            'A definite integral there is negative, because the signed area counts below the axis as negative. For a ' +
+            'total area, integrate each region separately and add the magnitudes; for a net change, keep the signs.',
+    },
+    {
+        id: 'maths-definite-integral-properties',
+        subject: 'mathematics',
+        question: 'What properties of definite integrals are useful?',
+        aliases: ['properties of definite integrals', 'swapping the limits', 'splitting an integral'],
+        answer:
+            'Swapping the limits changes the sign, equal limits give zero, an integral can be split at any point ' +
+            'between the limits, and a constant factor can be taken outside. Symmetry can turn an awkward integral ' +
+            'into twice a simpler one.',
+    },
+    {
+        id: 'maths-average-vs-instantaneous-rate',
+        subject: 'mathematics',
+        question: 'What is the difference between average and instantaneous rate of change?',
+        aliases: ['average rate of change', 'instantaneous rate of change', 'gradient of a chord'],
+        answer:
+            'The average rate is the gradient of the chord between two points, found by dividing the change in y by ' +
+            'the change in x. The instantaneous rate is the gradient of the tangent at one point, which is what the ' +
+            'derivative gives.',
+    },
+    {
+        id: 'maths-trapezoidal-rule',
+        subject: 'mathematics',
+        question: 'How do I use the trapezoidal rule?',
+        aliases: ['trapezoidal rule', 'approximating an area', 'function values at intervals'],
+        answer:
+            'Add the two end values, add twice each internal value, then multiply by half the strip width. It ' +
+            'overestimates where the curve is concave up and underestimates where it is concave down, which is often ' +
+            'the question asked.',
+    },
+    {
+        id: 'maths-exponential-growth-decay',
+        subject: 'mathematics',
+        question: 'How do I solve an exponential growth or decay problem?',
+        aliases: ['exponential growth', 'exponential decay', 'rate proportional to the amount'],
+        answer:
+            'If the rate of change is proportional to the amount present, the solution is A = A₀e^(kt), with k ' +
+            'positive for growth and negative for decay. Use the given data to find k first, taking logarithms of ' +
+            'both sides.',
+    },
+    {
+        id: 'maths-newtons-law-cooling',
+        subject: 'mathematics',
+        question: 'How does the cooling model work?',
+        aliases: ['newtons law of cooling', 'cooling problem', 'approaching the ambient temperature'],
+        answer:
+            'The temperature difference from the surroundings decays exponentially, so T = Tₐ + (T₀ − Tₐ)e^(kt). The ' +
+            'object approaches the ambient temperature without reaching it, which is why the limit of the model is ' +
+            'Tₐ.',
+    },
+    {
+        id: 'maths-curve-sketching-calculus',
+        subject: 'mathematics',
+        question: 'How do I use calculus to sketch a curve?',
+        aliases: ['curve sketching with calculus', 'using the first and second derivative', 'full sketch method'],
+        answer:
+            'Find the intercepts, then the stationary points from the first derivative, classify them with the second ' +
+            'derivative or a sign test, find points of inflection, and check the behaviour for large positive and ' +
+            'negative x.',
+    },
+    {
+        id: 'maths-maximum-minimum-context',
+        subject: 'mathematics',
+        question: 'How do I handle an optimisation question with a constraint?',
+        aliases: ['optimisation with a constraint', 'maximum volume for a given surface area', 'eliminating a variable'],
+        answer:
+            'Write the quantity to be optimised, use the constraint to eliminate one variable, then differentiate and ' +
+            'set to zero. Always verify it is a maximum or minimum, and check the answer is physically possible.',
+    },
+    {
+        id: 'maths-velocity-acceleration-signs',
+        subject: 'mathematics',
+        question: 'What do the signs of velocity and acceleration tell me?',
+        aliases: ['sign of velocity', 'sign of acceleration', 'speeding up or slowing down'],
+        answer:
+            'Velocity gives direction of travel and acceleration gives direction of the change. Same signs mean ' +
+            'speeding up, opposite signs mean slowing down. Speed is the magnitude of velocity, so it can rise while ' +
+            'velocity becomes more negative.',
+    },
+    {
+        id: 'maths-displacement-from-velocity',
+        subject: 'mathematics',
+        question: 'How do I get displacement and distance from a velocity function?',
+        aliases: ['displacement from velocity', 'distance travelled from velocity', 'integrating velocity'],
+        answer:
+            'Integrating velocity over the interval gives displacement. For distance travelled, split the integral ' +
+            'where velocity changes sign and add the magnitudes, since a return journey subtracts from displacement ' +
+            'but adds to distance.',
+    },
+    {
+        id: 'maths-primitive-with-condition',
+        subject: 'mathematics',
+        question: 'How do I find a function from its derivative?',
+        aliases: ['finding the original function', 'primitive with a condition', 'constant of integration value'],
+        answer:
+            'Integrate to get the family of functions, including the constant, then substitute the given point to ' +
+            'find that constant. Every antiderivative question in context supplies one condition for exactly this ' +
+            'purpose.',
     },
 ];

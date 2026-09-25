@@ -41,7 +41,7 @@ export const mathematicsFunctionsEntries: StudyEntry[] = [
         id: 'maths-exponential-log-graphs',
         subject: 'mathematics',
         question: 'What do exponential and logarithmic graphs look like?',
-        aliases: ['exponential graph', 'log graph', 'asymptote', 'exponential growth', 'euler number'],
+        aliases: ['exponential graph', 'log graph', 'asymptote', 'euler number'],
         answer:
             'y = aˣ passes through (0, 1) with the x-axis as an asymptote, rising for a > 1 and falling for 0 < a < 1. ' +
             'y = log_a x is its reflection in y = x, passing through (1, 0) with the y-axis as an asymptote. ' +

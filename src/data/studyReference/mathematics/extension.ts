@@ -50,7 +50,7 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
         id: 'maths-ext-integration-substitution',
         subject: 'mathematics',
         question: 'How does integration by substitution work?',
-        aliases: ['integration by substitution', 'u substitution', 'reverse chain rule', 'change of variable'],
+        aliases: ['u substitution', 'change of variable'],
         answer:
             'Let u be the inner function, find du/dx, and replace both the function and dx so the integral is entirely ' +
             'in u. For a definite integral, change the limits to u values rather than substituting back. ' +
@@ -60,7 +60,7 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
         id: 'maths-ext-volumes',
         subject: 'mathematics',
         question: 'How do I find a volume of revolution?',
-        aliases: ['volume of revolution', 'rotating about the x axis', 'washer method', 'shell method'],
+        aliases: ['washer method', 'shell method'],
         answer:
             'Rotating about the x-axis gives V = π∫y² dx; about the y-axis, V = π∫x² dy. ' +
             'When there is a hole, subtract the inner radius squared from the outer, which is the washer method. ' +
@@ -70,7 +70,7 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
         id: 'maths-ext-differential-equations',
         subject: 'mathematics',
         question: 'How do I solve a differential equation?',
-        aliases: ['differential equations', 'separation of variables', 'exponential growth model', 'newtons law of cooling', 'solving a de'],
+        aliases: ['differential equations', 'separation of variables', 'exponential growth model', 'solving a de'],
         answer:
             'Separate the variables so each side holds one only, then integrate both sides and include the constant. ' +
             'Use the initial condition to find that constant. ' +

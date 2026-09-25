@@ -31,7 +31,7 @@ export const mathematicsGeometryEntries: StudyEntry[] = [
         id: 'maths-triangle-angles',
         subject: 'mathematics',
         question: 'What are the angle rules for triangles and polygons?',
-        aliases: ['angle sum of a triangle', 'exterior angle', 'polygon angle sum', 'interior angles', 'isosceles angles'],
+        aliases: ['angle sum of a triangle', 'polygon angle sum', 'interior angles', 'isosceles angles'],
         answer:
             'A triangle\u2019s angles add to 180°, and an exterior angle equals the sum of the two opposite interior ' +
             'ones. ' +
@@ -115,5 +115,98 @@ export const mathematicsGeometryEntries: StudyEntry[] = [
             'Use only what is given or already proved. ' +
             'Finish by stating what you set out to show, since the last line is the conclusion, not just the last ' +
             'calculation.',
+    },
+    {
+        id: 'maths-congruence-tests',
+        subject: 'mathematics',
+        question: 'What are the congruence tests?',
+        aliases: ['congruence tests', 'sss sas asa rhs', 'proving triangles congruent'],
+        answer:
+            'SSS, SAS, AAS and RHS. Name the test and then match the sides and angles in the same order in both ' +
+            'triangles, since the order is what makes the proof valid.',
+    },
+    {
+        id: 'maths-similarity-tests',
+        subject: 'mathematics',
+        question: 'What are the similarity tests and how do I use the ratio?',
+        aliases: ['similarity tests', 'equiangular triangles', 'ratio of sides in similar figures'],
+        answer:
+            'Equiangular, sides in proportion, or two sides in proportion with the included angle equal. Once ' +
+            'similar, all matching lengths share one ratio, areas share its square, and volumes its cube.',
+    },
+    {
+        id: 'maths-circle-geometry',
+        subject: 'mathematics',
+        question: 'What are the circle geometry results?',
+        aliases: ['circle geometry', 'angle at the centre', 'angles in the same segment', 'cyclic quadrilateral'],
+        answer:
+            'The angle at the centre is twice the angle at the circumference on the same arc, angles in the same ' +
+            'segment are equal, an angle in a semicircle is a right angle, opposite angles of a cyclic quadrilateral ' +
+            'sum to 180, and a tangent meets the radius at a right angle.',
+    },
+    {
+        id: 'maths-pythagoras-applications',
+        subject: 'mathematics',
+        question: 'Where do I use Pythagoras beyond a plain triangle?',
+        aliases: ['pythagoras applications', 'diagonal of a rectangle', 'is it a right angle'],
+        answer:
+            'To find a diagonal, to check whether a triangle is right-angled by testing whether a² + b² = c², and to ' +
+            'find distances on a grid, which is where the distance formula comes from.',
+    },
+    {
+        id: 'maths-area-of-sector-segment',
+        subject: 'mathematics',
+        question: 'How do I find the area of a segment?',
+        aliases: ['area of a segment', 'sector minus triangle', 'segment of a circle'],
+        answer:
+            'Find the sector area, then subtract the triangle formed by the two radii and the chord. The triangle ' +
+            'area is ½ab sin C with both sides equal to the radius, so it is ½r² sin θ.',
+    },
+    {
+        id: 'maths-surface-area-composite',
+        subject: 'mathematics',
+        question: 'How do I find the surface area of a composite solid?',
+        aliases: ['surface area of a composite solid', 'adding surfaces together', 'hidden faces'],
+        answer:
+            'Break it into the standard solids and add the exposed surfaces only, leaving out the faces where the ' +
+            'parts join. Sketching the net of each piece makes the hidden faces obvious.',
+    },
+    {
+        id: 'maths-volume-composite',
+        subject: 'mathematics',
+        question: 'How do I find the volume of a composite solid?',
+        aliases: ['volume of a composite solid', 'adding volumes', 'volume of a shape with a hole'],
+        answer:
+            'Split the solid into standard shapes and add the volumes, or take the volume of the enclosing shape and ' +
+            'subtract the part removed. Check that every measurement is in the same unit before multiplying.',
+    },
+    {
+        id: 'maths-scale-factor-area-volume',
+        subject: 'mathematics',
+        question: 'What happens to area and volume when lengths are scaled?',
+        aliases: ['scale factor for area', 'scale factor for volume', 'doubling the dimensions'],
+        answer:
+            'If lengths are multiplied by k, areas are multiplied by k² and volumes by k³. Doubling every dimension ' +
+            'gives four times the surface area and eight times the volume, which is why large animals are not simply ' +
+            'scaled up small ones.',
+    },
+    {
+        id: 'maths-exterior-angles',
+        subject: 'mathematics',
+        question: 'What is the exterior angle of a polygon?',
+        aliases: ['exterior angle', 'exterior angles sum to 360', 'exterior angle of a triangle'],
+        answer:
+            'The exterior angles of any convex polygon sum to 360 degrees, so each exterior angle of a regular ' +
+            'polygon is 360 divided by the number of sides. In a triangle, an exterior angle equals the sum of the ' +
+            'two interior opposite angles.',
+    },
+    {
+        id: 'maths-coordinate-geometry-proof',
+        subject: 'mathematics',
+        question: 'How do I prove a shape is a particular quadrilateral using coordinates?',
+        aliases: ['coordinate geometry proof', 'proving a parallelogram with coordinates', 'using gradients and distances'],
+        answer:
+            'Use gradients to show sides are parallel or perpendicular, and the distance formula to show sides are ' +
+            'equal. State which property you are proving first, then show exactly the facts that property requires.',
     },
 ];

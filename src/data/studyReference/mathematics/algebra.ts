@@ -109,4 +109,120 @@ export const mathematicsAlgebraEntries: StudyEntry[] = [
             'If not, take logarithms of both sides and bring the index down as a multiplier, then divide. ' +
             'Check whether the question wants an exact answer or a decimal.',
     },
+    {
+        id: 'maths-expanding-binomials',
+        subject: 'mathematics',
+        question: 'How do I expand two brackets?',
+        aliases: ['expanding two brackets', 'foil method', 'perfect square expansion', 'difference of two squares expansion'],
+        answer:
+            'Multiply every term in the first bracket by every term in the second, then collect like terms. Learn the ' +
+            'two patterns: (a + b)² = a² + 2ab + b², and (a + b)(a − b) = a² − b², which saves time in both ' +
+            'directions.',
+    },
+    {
+        id: 'maths-factorising-methods',
+        subject: 'mathematics',
+        question: 'Which factorising method should I try first?',
+        aliases: ['which factorising method', 'order of factorising', 'grouping in pairs'],
+        answer:
+            'Always take out the highest common factor first. Then check for a difference of two squares, then a ' +
+            'quadratic trinomial, then grouping in pairs for four terms. A fully factorised answer often needs two of ' +
+            'these in sequence.',
+    },
+    {
+        id: 'maths-quadratic-non-monic',
+        subject: 'mathematics',
+        question: 'How do I factorise a quadratic when the leading coefficient is not one?',
+        aliases: ['non monic quadratic', 'factorising 2x squared'],
+        answer:
+            'Find two numbers multiplying to the product of the first and last coefficients and adding to the middle ' +
+            'one, split the middle term with them, then factorise in pairs. Checking by expanding takes ten seconds ' +
+            'and is worth it.',
+    },
+    {
+        id: 'maths-algebraic-fraction-operations',
+        subject: 'mathematics',
+        question: 'How do I add and subtract algebraic fractions?',
+        aliases: ['common denominator with algebra', 'subtracting algebraic fractions'],
+        answer:
+            'Factorise every denominator first, then build the lowest common denominator from the distinct factors. ' +
+            'Multiply each numerator by what its denominator was missing, combine, then factorise the result to see ' +
+            'if anything cancels.',
+    },
+    {
+        id: 'maths-surd-operations',
+        subject: 'mathematics',
+        question: 'How do I add, multiply and rationalise surds?',
+        aliases: ['adding surds', 'multiplying surds', 'rationalising the denominator'],
+        answer:
+            'Simplify each surd first, then add only like surds. Multiplying uses √a × √b = √(ab). To rationalise, ' +
+            'multiply by the surd itself, or by the conjugate when the denominator is a binomial.',
+    },
+    {
+        id: 'maths-index-negative-fractional',
+        subject: 'mathematics',
+        question: 'What do negative and fractional indices mean?',
+        aliases: ['negative index', 'fractional index', 'index as a root'],
+        answer:
+            'A negative index means the reciprocal, so x⁻² is 1/x². A fractional index means a root: x^(1/2) is √x ' +
+            'and x^(2/3) is the cube root of x squared. The index laws still apply unchanged.',
+    },
+    {
+        id: 'maths-simultaneous-nonlinear',
+        subject: 'mathematics',
+        question: 'How do I solve simultaneous equations when one is not linear?',
+        aliases: ['non linear simultaneous equations', 'line and parabola intersection', 'substitution with a quadratic'],
+        answer:
+            'Substitute the linear equation into the other so you get one quadratic in one variable, solve it, then ' +
+            'find the matching values. Two solutions mean the line cuts the curve twice, one means it is tangent, and ' +
+            'none means they never meet.',
+    },
+    {
+        id: 'maths-inequalities-quadratic',
+        subject: 'mathematics',
+        question: 'How do I solve a quadratic inequality?',
+        aliases: ['quadratic inequality', 'sign of a quadratic', 'when is the parabola positive'],
+        answer:
+            'Factorise, find the roots, then sketch the parabola and read off where it lies above or below the axis. ' +
+            'Testing a single value in each region is the safest check, and the answer is usually two intervals or ' +
+            'one between the roots.',
+    },
+    {
+        id: 'maths-inequalities-fractions',
+        subject: 'mathematics',
+        question: 'How do I solve an inequality with a variable in the denominator?',
+        aliases: ['inequality with a fraction', 'variable in the denominator inequality', 'multiplying by an unknown sign'],
+        answer:
+            'Do not multiply by the denominator, since its sign is unknown. Move everything to one side, combine into ' +
+            'a single fraction, then use a sign diagram of the numerator and denominator, excluding where the ' +
+            'denominator is zero.',
+    },
+    {
+        id: 'maths-absolute-value-equations',
+        subject: 'mathematics',
+        question: 'How do I solve an equation with absolute value?',
+        aliases: ['absolute value equation', 'modulus equation', 'two cases for absolute value'],
+        answer:
+            'Split it into two cases, one with the bracket as written and one with its sign reversed, solve both, ' +
+            'then check each against the original, since one may not satisfy it.',
+    },
+    {
+        id: 'maths-word-problem-setup',
+        subject: 'mathematics',
+        question: 'How do I set up a problem where two quantities are related?',
+        aliases: ['setting up a word problem', 'two related quantities'],
+        answer:
+            'Name the smaller quantity with a letter, write the other in terms of it, then write the sentence the ' +
+            'question gives you as an equation. Always state what your letter stands for, including the units.',
+    },
+    {
+        id: 'maths-checking-algebra',
+        subject: 'mathematics',
+        question: 'How do I check an algebraic answer?',
+        aliases: ['checking an algebra answer', 'substituting back', 'verifying a solution'],
+        answer:
+            'Substitute the answer into the original equation, not into a line of your own working, since an error ' +
+            'earlier would be confirmed rather than caught. For a word problem, also check it makes sense: a negative ' +
+            'number of people is a signal.',
+    },
 ];
