@@ -78,7 +78,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'com-investment-options',
         subject: 'business-studies',
         question: 'What are the main investment options?',
-        aliases: ['investing', 'shares', 'property investment', 'risk and return', 'superannuation', 'diversification'],
+        aliases: ['investing', 'shares', 'property investment', 'risk and return', 'superannuation'],
         answer:
             'Savings accounts are low risk and low return. Shares and property offer higher returns with more risk ' +
             'and, for property, less liquidity. Superannuation is long-term retirement saving with tax advantages. ' +
@@ -225,7 +225,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'bus-performance-measures',
         subject: 'business-studies',
         question: 'How is business performance measured?',
-        aliases: ['performance indicators', 'kpi', 'benchmarking', 'measuring success'],
+        aliases: ['performance indicators', 'measuring success'],
         answer:
             'Financial indicators include profitability, liquidity, gearing and growth in sales. ' +
             'Non-financial ones include market share, staff turnover, customer satisfaction and environmental ' +

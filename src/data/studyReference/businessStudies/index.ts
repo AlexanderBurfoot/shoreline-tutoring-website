@@ -1,6 +1,7 @@
 /**
  * Business Studies and Commerce reference, gathered by topic.
  */
+import { businessTermEntries } from './terms';
 import { businessConsumerLegalEntries } from './consumerLegal';
 import { businessFinanceEntries } from './finance';
 import { businessManagementEntries } from './management';
@@ -24,4 +25,5 @@ export const businessEntries: StudyEntry[] = [
     ...businessPeopleEntries,
     ...businessReportingEntries,
     ...businessConsumerLegalEntries,
+    ...businessTermEntries,
 ];

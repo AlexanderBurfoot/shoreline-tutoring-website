@@ -1,6 +1,7 @@
 /**
  * Economics reference, Years 11 and 12, gathered by topic.
  */
+import { economicsTermEntries } from './terms';
 import { economicsGlobalEntries } from './globalEconomy';
 import { economicsIndicatorsEntries } from './indicators';
 import { economicsMacroEntries } from './macroeconomics';
@@ -16,4 +17,5 @@ export const economicsEntries: StudyEntry[] = [
     ...economicsPolicyEntries,
     ...economicsMacroEntries,
     ...economicsGlobalEntries,
+    ...economicsTermEntries,
 ];

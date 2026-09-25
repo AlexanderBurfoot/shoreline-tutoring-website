@@ -18,7 +18,7 @@ export const businessFinanceEntries: StudyEntry[] = [
         id: 'bus-financial-objectives',
         subject: 'business-studies',
         question: 'What are the financial objectives of a business?',
-        aliases: ['financial objectives', 'profitability', 'liquidity', 'solvency', 'efficiency and growth'],
+        aliases: ['financial objectives', 'profitability', 'liquidity', 'efficiency and growth'],
         answer:
             'Profitability, liquidity, efficiency, growth, return to owners and solvency. ' +
             'They pull against each other: holding cash protects liquidity but earns little, and rapid growth often ' +

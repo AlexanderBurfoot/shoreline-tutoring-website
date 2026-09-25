@@ -19,7 +19,7 @@ export const businessStrategyEntries: StudyEntry[] = [
         id: 'bus-competitive-advantage',
         subject: 'business-studies',
         question: 'What gives a business a competitive advantage?',
-        aliases: ['competitive advantage', 'cost leadership', 'differentiation strategy'],
+        aliases: ['competitive advantage', 'cost leadership'],
         answer:
             'Either lower costs than rivals, or something customers value that rivals cannot easily copy, such as ' +
             'brand, location, expertise or service. An advantage that can be copied cheaply is a temporary one.',

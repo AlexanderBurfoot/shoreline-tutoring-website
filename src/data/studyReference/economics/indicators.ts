@@ -68,7 +68,7 @@ export const economicsIndicatorsEntries: StudyEntry[] = [
         id: 'econ-living-standards',
         subject: 'economics',
         question: 'How are living standards measured?',
-        aliases: ['living standards', 'material and non material', 'hdi', 'gdp limitations', 'wellbeing'],
+        aliases: ['living standards', 'material and non material', 'gdp limitations', 'wellbeing'],
         answer:
             'Material living standards depend on income and consumption; non-material ones cover health, environment ' +
             'and leisure. ' +
