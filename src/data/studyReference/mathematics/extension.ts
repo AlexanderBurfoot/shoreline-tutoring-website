@@ -161,7 +161,7 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
         id: 'maths-ext-vector-projection',
         subject: 'mathematics',
         question: 'What is the projection of one vector onto another?',
-        aliases: ['vector projection', 'scalar projection', 'component of a vector', 'resolving a vector'],
+        aliases: ['vector projection', 'scalar projection', 'component of a vector', 'resolving a vector', 'vector resolute', 'scalar resolute'],
         answer:
             'The scalar projection of u onto v is (u·v)/|v|: how far u reaches along v. ' +
             'The vector projection multiplies that by the unit vector: ((u·v)/|v|²)v. ' +
@@ -249,5 +249,15 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
             'dP/dt = kP(1 − P/M), where M is the carrying capacity. ' +
             'Growth is nearly exponential while P is small, slows as P approaches M, and stops at P = M. ' +
             'The curve is S-shaped, with its steepest point at half the carrying capacity.',
+    },
+    {
+        id: 'maths-ext-partial-fractions',
+        subject: 'mathematics',
+        question: 'What are partial fractions?',
+        aliases: ['partial fractions', 'splitting a fraction for integration', 'decomposing a rational function'],
+        answer:
+            'Splitting one algebraic fraction into a sum of simpler ones, so a rational function can be integrated. ' +
+            'Factorise the denominator, write one term per factor with unknown numerators, then equate coefficients ' +
+            'or substitute convenient values to find them.',
     },
 ];

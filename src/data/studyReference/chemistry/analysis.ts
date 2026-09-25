@@ -75,7 +75,7 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
         id: 'chem-mass-spectrometry',
         subject: 'chemistry',
         question: 'What does mass spectrometry tell me?',
-        aliases: ['mass spectrometry', 'molecular ion peak', 'fragmentation', 'm/z', 'base peak'],
+        aliases: ['mass spectrometry', 'molecular ion peak', 'fragmentation', 'm/z', 'base peak', 'mass spectrometer', 'ms spectrum'],
         answer:
             'It gives the mass-to-charge ratio of ions. ' +
             'The molecular ion peak, furthest right, gives the molar mass of the whole molecule, and the fragments ' +

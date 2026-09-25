@@ -378,4 +378,14 @@ export const physicsMechanicsEntries: StudyEntry[] = [
             'Calculate g there from g = GM/r² using that planet mass and radius, then multiply by the mass of the ' +
             'object. Mass is unchanged, so only the field strength differs.',
     },
+    {
+        id: 'phys-angular-velocity',
+        subject: 'physics',
+        question: 'What is angular velocity?',
+        aliases: ['angular velocity', 'omega in circular motion', 'radians per second', 'v = r omega'],
+        answer:
+            'How fast an angle is swept out, ω = Δθ/Δt in radians per second, which for a full circle is 2π/T. It ' +
+            'links to the speed along the path by v = rω, so two points on a spinning disc share the angular velocity ' +
+            'but not the speed.',
+    },
 ];

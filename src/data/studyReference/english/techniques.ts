@@ -378,4 +378,34 @@ export const englishTechniquesEntries: StudyEntry[] = [
             'Ask what the text treats as normal or desirable, who is given a voice and who is not, and what it ' +
             'punishes or rewards. Values sit in the structure and the endings as much as in what characters say.',
     },
+    {
+        id: 'eng-stream-of-consciousness',
+        subject: 'english',
+        question: 'What is stream of consciousness?',
+        aliases: ['stream of consciousness', 'interior monologue style', 'thought as it happens'],
+        answer:
+            'Narration that follows a character thoughts as they occur, with the associations, interruptions and ' +
+            'fragments of real thinking rather than ordered sentences. It gives intimacy and unreliability at once, ' +
+            'since the reader receives the thought unedited.',
+    },
+    {
+        id: 'eng-bildungsroman',
+        subject: 'english',
+        question: 'What is a bildungsroman?',
+        aliases: ['bildungsroman', 'coming of age novel', 'novel of growing up'],
+        answer:
+            'A novel following a protagonist from youth into maturity, structured around the experiences that form ' +
+            'them. Writing about one means tracking what the character loses as well as gains, since the form is ' +
+            'about the cost of growing up.',
+    },
+    {
+        id: 'eng-polysyndeton',
+        subject: 'english',
+        question: 'What are polysyndeton and asyndeton?',
+        aliases: ['polysyndeton', 'asyndeton', 'repeated conjunctions', 'omitting conjunctions'],
+        answer:
+            'Polysyndeton repeats conjunctions where they are not needed, which slows the rhythm and piles detail on ' +
+            'detail. Asyndeton removes them entirely, which quickens it and creates urgency. Both change pace rather ' +
+            'than meaning.',
+    },
 ];

@@ -243,4 +243,24 @@ export const economicsIndicatorsEntries: StudyEntry[] = [
             'Absolute poverty measures a fixed subsistence standard and is more useful for developing economies. ' +
             'Relative measures rise when the median rises faster than the bottom.',
     },
+    {
+        id: 'econ-purchasing-power-parity',
+        subject: 'economics',
+        question: 'What is purchasing power parity?',
+        aliases: ['purchasing power parity', 'ppp', 'comparing incomes between countries'],
+        answer:
+            'A way of comparing incomes between countries by what money actually buys there rather than by the ' +
+            'exchange rate. It raises the measured income of countries where living costs are low, which is why PPP ' +
+            'figures are used for comparing living standards.',
+    },
+    {
+        id: 'econ-stagflation',
+        subject: 'economics',
+        question: 'What is stagflation?',
+        aliases: ['stagflation', 'inflation with unemployment', 'supply shock inflation'],
+        answer:
+            'High inflation and high unemployment together, which demand-side policy cannot fix: stimulating demand ' +
+            'worsens the inflation and restraining it worsens the unemployment. It usually follows a supply shock, as ' +
+            'in the oil crises of the 1970s.',
+    },
 ];
