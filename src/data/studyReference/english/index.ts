@@ -1,4 +1,5 @@
 /** English, gathered from the topic banks. */
+import { englishPrimaryEntries } from './primary';
 import { englishTermEntries } from './terms';
 import { englishFurtherTextTypeEntries } from './textTypesExtra';
 import { englishCriticalEntries } from './critical';
@@ -26,4 +27,5 @@ export const englishEntries: StudyEntry[] = [
     ...englishSkillsEntries,
     ...englishTermEntries,
     ...englishFurtherTextTypeEntries,
+    ...englishPrimaryEntries,
 ];
