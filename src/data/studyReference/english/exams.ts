@@ -152,4 +152,54 @@ export const englishExamsEntries: StudyEntry[] = [
             'the register and quote two words that establish it, then say what the choice implies about the speaker ' +
             'or their attitude to the subject.',
     },
+    {
+        id: 'eng-plot-versus-structure',
+        subject: 'english',
+        question: 'What is the difference between plot and structure?',
+        aliases: ['plot versus structure', 'is structure the same as plot', 'order of events versus events'],
+        answer:
+            'Plot is what happens; structure is the order and shape in which the reader receives it. Two texts can ' +
+            'share a plot and differ entirely in structure, and writing about structure means writing about the ' +
+            'arrangement rather than retelling the events.',
+    },
+    {
+        id: 'eng-form-versus-genre',
+        subject: 'english',
+        question: 'What is the difference between form and genre?',
+        aliases: ['form versus genre', 'is form the same as genre', 'novel is a form'],
+        answer:
+            'Form is the kind of text it physically is: novel, play, film, poem, speech. Genre is the tradition it ' +
+            'belongs to: gothic, satire, tragedy, dystopia. A gothic novel and a gothic film share genre but not ' +
+            'form.',
+    },
+    {
+        id: 'eng-quote-versus-paraphrase',
+        subject: 'english',
+        question: 'What is the difference between quoting and paraphrasing?',
+        aliases: ['quote versus paraphrase', 'when to paraphrase', 'do I need quotation marks'],
+        answer:
+            'A quotation reproduces the exact words inside quotation marks, which lets you analyse the word choice. A ' +
+            'paraphrase restates the content in your own words, which suits plot detail you need briefly. Analysis of ' +
+            'language needs the quotation.',
+    },
+    {
+        id: 'eng-quotes-per-paragraph',
+        subject: 'english',
+        question: 'How many quotations should a paragraph have?',
+        aliases: ['how many quotes per paragraph', 'number of quotations in a paragraph', 'too many quotes'],
+        answer:
+            'Usually two or three short embedded ones, each analysed. A paragraph with six quotations has room to ' +
+            'explain none of them, and a paragraph with none has no evidence, so the test is whether every quotation ' +
+            'is doing work.',
+    },
+    {
+        id: 'eng-contractions-in-essays',
+        subject: 'english',
+        question: 'Can I use contractions and first person in an essay?',
+        aliases: ['contractions in an essay', 'can I write I in an essay', 'formal register in an essay'],
+        answer:
+            'Write out contractions in full, since analytical register expects it. First person is acceptable in a ' +
+            'reflection statement and in some discursive writing, but in an essay the argument is stronger stated ' +
+            'directly than prefaced with I think.',
+    },
 ];

@@ -303,4 +303,24 @@ export const economicsIndicatorsEntries: StudyEntry[] = [
             'Falling confidence causes households to save and firms to defer investment, which produces the downturn ' +
             'they expected.',
     },
+    {
+        id: 'econ-deficit-versus-debt',
+        subject: 'economics',
+        question: 'What is the difference between a deficit and debt?',
+        aliases: ['deficit versus debt', 'is a deficit the same as debt', 'flow versus stock'],
+        answer:
+            'A deficit is the shortfall in one year, a flow. Debt is the accumulated total of past deficits, a stock. ' +
+            'A government can reduce its deficit while its debt still grows, which is why the two figures move ' +
+            'differently.',
+    },
+    {
+        id: 'econ-efficiency-versus-effectiveness',
+        subject: 'economics',
+        question: 'What is the difference between efficiency and effectiveness?',
+        aliases: ['efficiency versus effectiveness', 'doing the right thing versus doing it well', 'efficient but not effective'],
+        answer:
+            'Efficiency is achieving an outcome with the fewest resources; effectiveness is achieving the intended ' +
+            'outcome at all. A policy can be efficient and ineffective, delivering cheaply something that does not ' +
+            'solve the problem.',
+    },
 ];

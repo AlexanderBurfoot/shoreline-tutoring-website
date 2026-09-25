@@ -86,4 +86,22 @@ export const studySkillEntries: StudySkillEntry[] = [
             + 'session, and mixing topics beats blocking one. Rereading and highlighting feel productive and change '
             + 'very little, which is why students who do only those are surprised by their marks.',
     },
+    {
+        id: 'skill-order-of-a-paper',
+        question: 'What is the best order to answer an exam paper?',
+        aliases: ['order to answer a paper', 'should I answer in order', 'which question first'],
+        answer:
+            'Start with the questions you can do quickly to bank marks and settle your nerves, then the heavier '
+            + 'ones, leaving anything that stalls you until last. Note the marks available on each question first, '
+            + 'so you never spend fifteen minutes on two marks.',
+    },
+    {
+        id: 'skill-unfamiliar-question',
+        question: 'What do I do with a question I have never seen before?',
+        aliases: ['unfamiliar question', 'question I have never seen', 'unseen application question'],
+        answer:
+            'Underline what it gives you and what it asks for, then ask which topic that information belongs to. '
+            + 'Unfamiliar questions are almost always familiar content in a new context, so write what you know '
+            + 'about that content and connect it to what was given.',
+    },
 ];

@@ -1,4 +1,5 @@
 /** Mathematics, gathered from the stage and topic banks. */
+import { mathematicsLanguageEntries } from './language';
 import { mathematicsAlgebraEntries } from './algebra';
 import { mathematicsCalculusEntries } from './calculus';
 import { mathematicsExtensionEntries } from './extension';
@@ -24,4 +25,5 @@ export const mathematicsEntries: StudyEntry[] = [
     ...mathematicsProbabilityEntries,
     ...mathematicsStandardEntries,
     ...mathematicsExtensionEntries,
+    ...mathematicsLanguageEntries,
 ];

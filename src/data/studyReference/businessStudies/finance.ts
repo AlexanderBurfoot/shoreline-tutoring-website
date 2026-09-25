@@ -149,4 +149,44 @@ export const businessFinanceEntries: StudyEntry[] = [
             'Payment methods trade risk against cost, from payment in advance to a letter of credit. ' +
             'Transfer pricing between subsidiaries attracts tax scrutiny.',
     },
+    {
+        id: 'bus-revenue-versus-profit',
+        subject: 'business-studies',
+        question: 'What is the difference between revenue and profit?',
+        aliases: ['revenue versus profit', 'is turnover the same as profit', 'sales versus profit'],
+        answer:
+            'Revenue is the money received from sales before anything is deducted. Profit is what remains after ' +
+            'costs. A business with growing revenue can be making a loss, which is why revenue alone says nothing ' +
+            'about viability.',
+    },
+    {
+        id: 'bus-asset-versus-liability',
+        subject: 'business-studies',
+        question: 'What is the difference between an asset and a liability?',
+        aliases: ['asset versus liability', 'what counts as an asset', 'owing versus owning'],
+        answer:
+            'An asset is something the business owns or controls that will bring future benefit; a liability is ' +
+            'something it owes. Owners equity is the difference between them, which is why the balance sheet always ' +
+            'balances.',
+    },
+    {
+        id: 'bus-current-versus-non-current',
+        subject: 'business-studies',
+        question: 'What is the difference between current and non-current assets?',
+        aliases: ['current versus fixed assets', 'non current asset', 'what makes an asset current'],
+        answer:
+            'Current assets are expected to be converted to cash within twelve months, such as stock and receivables. ' +
+            'Non-current assets are held longer, such as premises and equipment. Liabilities are split the same way, ' +
+            'and liquidity ratios compare only the current ones.',
+    },
+    {
+        id: 'bus-marketing-versus-selling',
+        subject: 'business-studies',
+        question: 'What is the difference between marketing and selling?',
+        aliases: ['marketing versus selling', 'is marketing just advertising', 'selling what you make'],
+        answer:
+            'Selling persuades customers to buy what already exists. Marketing starts earlier, finding out what ' +
+            'customers want and shaping the product, price, place and promotion around it. A business that only sells ' +
+            'is left arguing with the market rather than serving it.',
+    },
 ];
