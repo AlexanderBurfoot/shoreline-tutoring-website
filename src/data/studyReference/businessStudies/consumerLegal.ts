@@ -18,7 +18,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'bus-finance-statements',
         subject: 'business-studies',
         question: 'What do the financial statements show?',
-        aliases: ['balance sheet', 'income statement', 'cash flow statement', 'assets liabilities equity'],
+        aliases: ['balance sheet', 'income statement', 'assets liabilities equity'],
         answer:
             'The balance sheet is a snapshot: assets equal liabilities plus owner\u2019s equity. ' +
             'The income statement shows revenue less expenses over a period, giving profit. ' +
@@ -58,7 +58,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'com-consumer-rights',
         subject: 'business-studies',
         question: 'What are my consumer rights?',
-        aliases: ['consumer rights', 'australian consumer law', 'refund', 'warranty', 'consumer guarantees'],
+        aliases: ['consumer rights', 'australian consumer law', 'refund', 'warranty'],
         answer:
             'Australian Consumer Law gives guarantees that goods are of acceptable quality, match their description ' +
             'and are fit for purpose. A major failure entitles you to a refund, replacement or repair at your choice; ' +
@@ -88,7 +88,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'com-legal-system',
         subject: 'business-studies',
         question: 'How does the Australian legal system work?',
-        aliases: ['legal system', 'criminal vs civil', 'court hierarchy', 'statute law', 'common law'],
+        aliases: ['legal system', 'criminal vs civil', 'statute law', 'common law'],
         answer:
             'Criminal law is the state prosecuting an offence, proved beyond reasonable doubt. Civil law resolves ' +
             'disputes between parties, decided on the balance of probabilities. ' +
@@ -98,7 +98,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'com-employment',
         subject: 'business-studies',
         question: 'What should I know about my first job?',
-        aliases: ['employment rights', 'award wage', 'casual vs part time', 'tax file number', 'payslip', 'superannuation guarantee'],
+        aliases: ['employment rights', 'award wage', 'casual vs part time', 'payslip', 'superannuation guarantee'],
         answer:
             'Your pay rate comes from an award or agreement, and casual work pays a loading instead of leave. ' +
             'You need a tax file number, and your employer must pay superannuation on top of wages. ' +
@@ -128,7 +128,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'bus-planning-decision',
         subject: 'business-studies',
         question: 'How does business planning work?',
-        aliases: ['business planning', 'swot analysis', 'strategic planning', 'situational analysis', 'business plan'],
+        aliases: ['business planning', 'strategic planning', 'situational analysis', 'business plan'],
         answer:
             'Planning runs from strategic, over years, through tactical to operational, over days. ' +
             'A situational analysis, such as SWOT, sets out strengths, weaknesses, opportunities and threats. ' +
@@ -192,7 +192,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'bus-cash-flow-management',
         subject: 'business-studies',
         question: 'How do businesses manage cash flow?',
-        aliases: ['cash flow management', 'distribution of payments', 'discounts for early payment', 'factoring cash flow', 'working capital'],
+        aliases: ['cash flow management', 'distribution of payments', 'discounts for early payment', 'factoring cash flow'],
         answer:
             'Match the timing of receipts and payments: spread large outgoings, offer discounts for early payment, ' +
             'and negotiate longer terms from suppliers. ' +
@@ -252,5 +252,129 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
             'management attention. ' +
             'Expanding overseas adds exchange rate, regulatory and cultural risk. ' +
             'Franchising grows fast with less capital, at the cost of direct control over quality.',
+    },
+    {
+        id: 'bus-contract-law',
+        subject: 'business-studies',
+        question: 'What makes a contract legally binding?',
+        aliases: ['elements of a contract', 'offer and acceptance', 'consideration', 'intention to be bound'],
+        answer:
+            'An offer, acceptance of it, consideration passing both ways, an intention to create legal relations, and ' +
+            'the legal capacity to agree. ' +
+            'A contract can be spoken as well as written, though writing is what makes the terms provable later.',
+    },
+    {
+        id: 'bus-consumer-guarantees',
+        subject: 'business-studies',
+        question: 'What are the consumer guarantees?',
+        aliases: ['consumer guarantees', 'acceptable quality', 'refund or replacement'],
+        answer:
+            'Goods must be of acceptable quality, match their description, be fit for purpose and be safe; services ' +
+            'must be provided with due care. ' +
+            'These apply automatically and cannot be signed away, so a no refund sign does not remove them.',
+    },
+    {
+        id: 'bus-misleading-conduct',
+        subject: 'business-studies',
+        question: 'What counts as misleading or deceptive conduct?',
+        aliases: ['misleading conduct', 'deceptive advertising', 'bait advertising', 'false claims'],
+        answer:
+            'Any conduct likely to mislead, whether or not it was intended, including false claims about price or ' +
+            'origin, advertising goods not actually available, and burying the real cost in fine print. ' +
+            'The ACCC enforces it and penalties can be very large.',
+    },
+    {
+        id: 'bus-resolving-consumer-disputes',
+        subject: 'business-studies',
+        question: 'How do I resolve a problem with a purchase?',
+        aliases: ['consumer complaint', 'fair trading complaint', 'small claims tribunal', 'escalating a dispute'],
+        answer:
+            'Raise it with the seller first, in writing, stating the problem and the remedy you want. ' +
+            'If that fails, complain to NSW Fair Trading, which conciliates, and if it still fails, apply to the NSW ' +
+            'Civil and Administrative Tribunal, which is designed for small claims without a lawyer.',
+    },
+    {
+        id: 'bus-credit-and-debt',
+        subject: 'business-studies',
+        question: 'What should I understand before using credit?',
+        aliases: ['credit card interest', 'comparison rate', 'buy now pay later', 'getting into debt'],
+        answer:
+            'The interest rate and how interest is calculated, the fees, the minimum repayment and how long it would ' +
+            'take to clear the balance. ' +
+            'Compare using the comparison rate, which includes fees. ' +
+            'Interest free periods end, and buy now pay later still charges for missed payments.',
+    },
+    {
+        id: 'bus-insurance-types',
+        subject: 'business-studies',
+        question: 'What types of insurance protect a household?',
+        aliases: ['types of insurance', 'compulsory third party', 'home and contents insurance', 'income protection'],
+        answer:
+            'Compulsory third party for injuries in a car accident, comprehensive or third party property for the ' +
+            'vehicles, home and contents, health, life and income protection. ' +
+            'Insurance transfers a risk you cannot afford to carry, in exchange for a cost you can.',
+    },
+    {
+        id: 'bus-saving-and-compound-interest',
+        subject: 'business-studies',
+        question: 'Why does starting to save early matter so much?',
+        aliases: ['compound interest on savings', 'saving early', 'growth of savings over time'],
+        answer:
+            'Because interest earns interest, so the growth is exponential rather than linear. ' +
+            'The same monthly amount started ten years earlier can end up worth far more, which is why superannuation ' +
+            'contributions made in your twenties matter out of proportion to their size.',
+    },
+    {
+        id: 'bus-scams-and-fraud',
+        subject: 'business-studies',
+        question: 'How do I recognise a scam?',
+        aliases: ['scam warning signs', 'phishing', 'identity theft', 'unexpected contact asking for money'],
+        answer:
+            'Unexpected contact, urgency, a request for payment in an unusual way, a link asking you to log in, or an ' +
+            'offer that makes no commercial sense. ' +
+            'Verify independently using a number you looked up yourself, never one supplied in the message.',
+    },
+    {
+        id: 'bus-employee-rights',
+        subject: 'business-studies',
+        question: 'What are my rights as a young employee?',
+        aliases: ['young worker rights', 'payslip requirements', 'unpaid trial', 'being underpaid'],
+        answer:
+            'The correct award or minimum wage including penalty rates, a payslip within one working day of being paid, ' +
+            'superannuation, breaks, and a safe workplace. ' +
+            'Unpaid work trials beyond a short demonstration are not lawful. ' +
+            'The Fair Work Ombudsman investigates underpayment.',
+    },
+    {
+        id: 'bus-tax-basics',
+        subject: 'business-studies',
+        question: 'How does income tax work for an employee?',
+        aliases: ['income tax', 'tax file number', 'tax return', 'gst on purchases'],
+        answer:
+            'Your employer withholds tax from each pay based on the tax free threshold and the marginal rates, then you ' +
+            'lodge a return so the total is reconciled and any excess is refunded. ' +
+            'Give your employer a tax file number or you are taxed at the top rate.',
+    },
+    {
+        id: 'bus-courts-hierarchy',
+        subject: 'business-studies',
+        question: 'How are the courts arranged in New South Wales?',
+        aliases: ['court hierarchy', 'local district supreme court', 'appeals to a higher court'],
+        answer:
+            'The Local Court hears most minor matters, the District Court serious criminal and larger civil cases, and ' +
+            'the Supreme Court the most serious, with appeals running upward to the Court of Appeal and then the High ' +
+            'Court of Australia. ' +
+            'Tribunals handle specialised disputes more cheaply.',
+    },
+    {
+        id: 'bus-criminal-versus-civil',
+        subject: 'business-studies',
+        question: 'What is the difference between criminal and civil law?',
+        aliases: ['criminal versus civil law', 'burden of proof', 'beyond reasonable doubt', 'balance of probabilities'],
+        answer:
+            'Criminal law is the state prosecuting an offence against society, proved beyond reasonable doubt, with ' +
+            'punishment as the outcome. ' +
+            'Civil law is a dispute between parties, proved on the balance of probabilities, with compensation or an ' +
+            'order as the outcome.',
     },
 ];
