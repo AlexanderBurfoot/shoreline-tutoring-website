@@ -195,4 +195,153 @@ export const economicsPolicyEntries: StudyEntry[] = [
             'Add time lags, imperfect data, conflicting objectives, and the political cost of measures that hurt before ' +
             'they help.',
     },
+    {
+        id: 'econ-trade-diagram',
+        subject: 'economics',
+        question: 'How do I show the effect of a tariff on a diagram?',
+        aliases: ['tariff diagram', 'effect of a tariff', 'domestic and world price'],
+        answer:
+            'Draw domestic supply and demand with the world price below equilibrium. A tariff raises the price paid, ' +
+            'so domestic production rises, consumption falls, imports shrink, and the government collects revenue on ' +
+            'the remaining imports while consumers pay more.',
+    },
+    {
+        id: 'econ-subsidy-effects',
+        subject: 'economics',
+        question: 'What are the effects of a subsidy to producers?',
+        aliases: ['production subsidy', 'effect of a subsidy', 'subsidy versus tariff'],
+        answer:
+            'It lowers producers costs, so domestic output rises and imports fall, but the cost falls on taxpayers ' +
+            'rather than consumers, who keep paying the world price. That makes it less visible than a tariff and ' +
+            'harder to remove.',
+    },
+    {
+        id: 'econ-quota-effects',
+        subject: 'economics',
+        question: 'How does a quota differ from a tariff?',
+        aliases: ['import quota', 'quota versus tariff', 'quantity restriction on imports'],
+        answer:
+            'A quota caps the quantity imported rather than raising its price, so the price rises through scarcity ' +
+            'and the gain goes to whoever holds the import licence rather than to government revenue.',
+    },
+    {
+        id: 'econ-dumping-and-response',
+        subject: 'economics',
+        question: 'What is dumping and how do countries respond?',
+        aliases: ['dumping', 'anti dumping duty', 'selling below cost'],
+        answer:
+            'Selling exports below cost or below the home market price, which can destroy an industry that would ' +
+            'otherwise be competitive. Countries respond with anti-dumping duties, which is one of the few forms of ' +
+            'protection WTO rules permit.',
+    },
+    {
+        id: 'econ-trade-agreements-types',
+        subject: 'economics',
+        question: 'What are the types of trade agreement?',
+        aliases: ['bilateral agreement', 'multilateral agreement', 'regional trade bloc'],
+        answer:
+            'Bilateral between two countries, regional between a group such as ASEAN, and multilateral through the ' +
+            'WTO. Bilateral deals are quicker to negotiate but create a web of different rules, which raises costs ' +
+            'for exporters.',
+    },
+    {
+        id: 'econ-australian-industry-structure',
+        subject: 'economics',
+        question: 'How has the structure of the Australian economy changed?',
+        aliases: ['structural change in australia', 'decline of manufacturing', 'growth of services'],
+        answer:
+            'Manufacturing has shrunk as a share of output and employment, while services, mining and education ' +
+            'exports have grown. Lower protection, technology and Asian demand drove it, and the adjustment fell ' +
+            'unevenly on particular regions.',
+    },
+    {
+        id: 'econ-mining-boom-effects',
+        subject: 'economics',
+        question: 'What did the mining boom do to the Australian economy?',
+        aliases: ['mining boom', 'dutch disease'],
+        answer:
+            'It lifted the terms of trade, national income and the exchange rate. The high dollar squeezed ' +
+            'manufacturing, tourism and education, producing a two-speed economy, and the later fall in prices ' +
+            'required a second adjustment.',
+    },
+    {
+        id: 'econ-housing-market-economics',
+        subject: 'economics',
+        question: 'Why are Australian house prices an economic issue?',
+        aliases: ['house prices', 'housing affordability', 'housing and wealth inequality'],
+        answer:
+            'Housing is the largest asset for most households, so prices drive wealth inequality and consumer ' +
+            'spending. Supply constraints, tax treatment and low interest rates all raised prices relative to income, ' +
+            'which shifts wealth between generations.',
+    },
+    {
+        id: 'econ-migration-economics',
+        subject: 'economics',
+        question: 'What are the economic effects of migration?',
+        aliases: ['economic effects of migration', 'skilled migration', 'migration and wages'],
+        answer:
+            'It raises the labour force and aggregate demand, fills skill shortages, and lowers the average age of ' +
+            'the population. It also adds pressure on housing and infrastructure, and effects on wages depend on ' +
+            'whether migrants substitute for or complement local workers.',
+    },
+    {
+        id: 'econ-infrastructure-investment',
+        subject: 'economics',
+        question: 'Why does infrastructure matter economically?',
+        aliases: ['infrastructure investment', 'productivity and infrastructure', 'transport bottlenecks'],
+        answer:
+            'Transport, energy and communications reduce the cost of everything else, so bottlenecks limit ' +
+            'productivity across the economy. Because the benefits are long term and widely spread, much of it is ' +
+            'publicly funded.',
+    },
+    {
+        id: 'econ-regional-differences',
+        subject: 'economics',
+        question: 'Why do economic outcomes differ between regions?',
+        aliases: ['regional economic differences', 'rural and urban economies', 'regional unemployment'],
+        answer:
+            'Industry mix, distance from markets, access to services and education, and the mobility of labour. A ' +
+            'region dependent on one industry suffers disproportionately when that industry declines, and labour does ' +
+            'not move as freely as theory assumes.',
+    },
+    {
+        id: 'econ-indigenous-economic-outcomes',
+        subject: 'economics',
+        question: 'What explains the gap in Indigenous economic outcomes?',
+        aliases: ['indigenous economic outcomes', 'closing the gap economics', 'employment gap'],
+        answer:
+            'Lower employment, income, education completion and health outcomes, compounded by remoteness, ' +
+            'discrimination and dispossession. Policy responses target education, employment programs and ' +
+            'community-controlled service delivery.',
+    },
+    {
+        id: 'econ-data-sources',
+        subject: 'economics',
+        question: 'Where does Australian economic data come from?',
+        aliases: ['economic data sources', 'australian bureau of statistics', 'rba statistics'],
+        answer:
+            'The Australian Bureau of Statistics publishes the national accounts, CPI and labour force survey; the ' +
+            'Reserve Bank publishes financial and monetary data; Treasury publishes the budget papers. Citing the ' +
+            'source and period strengthens an answer.',
+    },
+    {
+        id: 'econ-forecasting-limits',
+        subject: 'economics',
+        question: 'Why are economic forecasts often wrong?',
+        aliases: ['economic forecasting', 'why forecasts fail', 'uncertainty in economics'],
+        answer:
+            'They assume relationships that shift, they cannot predict shocks, and expectations change behaviour in ' +
+            'ways models capture poorly. Forecasts are used as a base case to plan against rather than as a ' +
+            'prediction.',
+    },
+    {
+        id: 'econ-essay-structure',
+        subject: 'economics',
+        question: 'How do I structure an economics essay?',
+        aliases: ['economics essay structure', 'using diagrams in an essay', 'economics extended response'],
+        answer:
+            'Define the terms, state the position, then one idea per paragraph with a mechanism, a diagram or ' +
+            'statistic, and a link back to the question. A labelled diagram that is referred to in the text earns ' +
+            'marks; one left unexplained does not.',
+    },
 ];

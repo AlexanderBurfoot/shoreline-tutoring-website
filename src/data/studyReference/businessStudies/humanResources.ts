@@ -62,7 +62,7 @@ export const businessHumanResourcesEntries: StudyEntry[] = [
         id: 'bus-workplace-disputes',
         subject: 'business-studies',
         question: 'How are workplace disputes resolved?',
-        aliases: ['negotiation and mediation', 'arbitration', 'industrial action', 'dispute resolution'],
+        aliases: ['negotiation and mediation', 'arbitration', 'dispute resolution'],
         answer:
             'Usually by negotiation, then mediation or conciliation with an independent third party, and arbitration ' +
             'where a decision is imposed. ' +

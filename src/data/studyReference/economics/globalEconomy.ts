@@ -252,7 +252,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-protection-arguments',
         subject: 'economics',
         question: 'What are the arguments for and against protection?',
-        aliases: ['arguments for protection', 'infant industry', 'dumping', 'case for free trade'],
+        aliases: ['arguments for protection', 'infant industry', 'case for free trade'],
         answer:
             'For: protecting infant industries until they reach scale, defending against dumping, saving jobs during ' +
             'adjustment, and national security in essential goods. ' +

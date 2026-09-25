@@ -18,7 +18,7 @@ export const businessMarketingEntries: StudyEntry[] = [
         id: 'bus-marketing-strategies',
         subject: 'business-studies',
         question: 'What are the marketing strategies?',
-        aliases: ['marketing strategies', 'positioning', 'e marketing'],
+        aliases: ['marketing strategies', 'e marketing'],
         answer:
             'Segment the market, target a group and position the product in their minds. ' +
             'Strategies cover the product life cycle, branding, packaging, pricing methods, promotion mix and ' +

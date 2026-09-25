@@ -118,7 +118,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'bus-ethics-csr',
         subject: 'business-studies',
         question: 'What is corporate social responsibility?',
-        aliases: ['corporate social responsibility', 'csr', 'business ethics', 'triple bottom line', 'greenwashing'],
+        aliases: ['corporate social responsibility', 'csr', 'business ethics', 'greenwashing'],
         answer:
             'Going beyond legal compliance to consider the effect on people and the environment, often summarised as ' +
             'the triple bottom line of profit, people and planet. ' +
@@ -171,7 +171,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'bus-inventory-management',
         subject: 'business-studies',
         question: 'How do businesses manage inventory?',
-        aliases: ['inventory management', 'just in time', 'stock control', 'holding costs', 'supply chain risk'],
+        aliases: ['inventory management', 'just in time', 'stock control', 'holding costs'],
         answer:
             'Holding stock ties up cash and risks obsolescence; holding too little risks stockouts and lost sales. ' +
             'Just-in-time ordering minimises holding costs but depends on reliable suppliers, which is why supply ' +
@@ -203,7 +203,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'bus-motivation-theories',
         subject: 'business-studies',
         question: 'What motivates employees?',
-        aliases: ['motivation', 'maslow', 'herzberg', 'financial rewards', 'non financial rewards'],
+        aliases: ['motivation', 'maslow', 'herzberg', 'financial rewards'],
         answer:
             'Financial rewards include wages, bonuses, profit sharing and share plans. ' +
             'Non-financial ones include job enrichment, flexibility, recognition and career development. ' +
@@ -214,7 +214,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'bus-training-development',
         subject: 'business-studies',
         question: 'Why do businesses invest in training?',
-        aliases: ['training and development', 'induction', 'on the job training', 'staff turnover', 'skills gap'],
+        aliases: ['training and development', 'on the job training', 'skills gap'],
         answer:
             'Training lifts productivity and quality, reduces errors and accidents, and supports retention, since ' +
             'people stay where they are developed. ' +
@@ -225,7 +225,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'bus-performance-measures',
         subject: 'business-studies',
         question: 'How is business performance measured?',
-        aliases: ['performance indicators', 'kpi', 'benchmarking', 'market share', 'measuring success'],
+        aliases: ['performance indicators', 'kpi', 'benchmarking', 'measuring success'],
         answer:
             'Financial indicators include profitability, liquidity, gearing and growth in sales. ' +
             'Non-financial ones include market share, staff turnover, customer satisfaction and environmental ' +
