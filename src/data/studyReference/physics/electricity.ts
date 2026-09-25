@@ -29,7 +29,7 @@ export const physicsElectricityEntries: StudyEntry[] = [
         id: 'phys-static-electricity',
         subject: 'physics',
         question: 'What is static electricity and charge?',
-        aliases: ['static electricity', 'charging by friction', 'conductor insulator', 'earthing', 'coulomb charge'],
+        aliases: ['static electricity', 'conductor insulator', 'earthing', 'coulomb charge'],
         answer:
             'Charge is conserved and comes in positive and negative, with like charges repelling. ' +
             'Objects charge by friction, contact or induction, moving electrons rather than protons. ' +
@@ -39,7 +39,7 @@ export const physicsElectricityEntries: StudyEntry[] = [
         id: 'phys-circuits',
         subject: 'physics',
         question: 'How do I analyse a circuit?',
-        aliases: ['circuit analysis', 'voltage divider', 'ammeter voltmeter', 'series and parallel circuits'],
+        aliases: ['circuit analysis', 'ammeter voltmeter', 'series and parallel circuits'],
         answer:
             'Kirchhoff\u2019s current law: current into a junction equals current out. ' +
             'Kirchhoff\u2019s voltage law: voltages around any loop sum to zero. ' +
@@ -60,7 +60,7 @@ export const physicsElectricityEntries: StudyEntry[] = [
         id: 'phys-kirchhoff-internal-resistance',
         subject: 'physics',
         question: 'What are Kirchhoff\u2019s laws and internal resistance?',
-        aliases: ['kirchhoffs laws', 'junction rule', 'loop rule', 'internal resistance', 'terminal voltage', 'emf of a cell'],
+        aliases: ['kirchhoffs laws', 'junction rule', 'loop rule', 'internal resistance', 'emf of a cell'],
         answer:
             'Current into a junction equals current out, and voltages around any loop sum to zero. ' +
             'A real cell has internal resistance r, so terminal voltage V = ε − Ir: the more current drawn, the lower ' +
@@ -80,7 +80,7 @@ export const physicsElectricityEntries: StudyEntry[] = [
         id: 'phys-voltage-meaning',
         subject: 'physics',
         question: 'What is voltage, really?',
-        aliases: ['voltage', 'potential difference', 'emf', 'volt meaning', 'energy per charge'],
+        aliases: ['voltage', 'potential difference', 'volt meaning', 'energy per charge'],
         answer:
             'Voltage is energy per unit charge, V = W/q, measured in volts. ' +
             'Potential difference is the energy given up between two points; emf is the energy supplied per coulomb ' +
@@ -90,7 +90,7 @@ export const physicsElectricityEntries: StudyEntry[] = [
         id: 'phys-resistance-factors',
         subject: 'physics',
         question: 'What affects the resistance of a wire?',
-        aliases: ['resistance of a wire', 'resistivity', 'length and thickness', 'temperature resistance', 'ohmic'],
+        aliases: ['resistance of a wire', 'length and thickness', 'temperature resistance', 'ohmic'],
         answer:
             'R = ρL/A: resistance rises with length and falls with cross-sectional area, and ρ is the resistivity of ' +
             'the material. ' +
@@ -101,7 +101,7 @@ export const physicsElectricityEntries: StudyEntry[] = [
         id: 'phys-electric-field-lines',
         subject: 'physics',
         question: 'How do I read electric field lines?',
-        aliases: ['field lines', 'electric field diagram', 'parallel plates field', 'uniform field', 'field direction'],
+        aliases: ['field lines', 'electric field diagram', 'uniform field', 'field direction'],
         answer:
             'Lines point the way a positive charge would be pushed, out of positive and into negative. ' +
             'Closer lines mean a stronger field. ' +
@@ -131,7 +131,7 @@ export const physicsElectricityEntries: StudyEntry[] = [
         id: 'phys-circuit-safety',
         subject: 'physics',
         question: 'How do fuses, circuit breakers and earthing protect a circuit?',
-        aliases: ['fuse', 'circuit breaker', 'short circuit', 'electrical safety'],
+        aliases: ['fuse', 'circuit breaker', 'electrical safety'],
         answer:
             'A fuse is a thin wire that melts when the current is too high, breaking the circuit; a circuit breaker ' +
             'does the same job magnetically and can be reset. ' +
@@ -202,5 +202,120 @@ export const physicsElectricityEntries: StudyEntry[] = [
             'independently. ' +
             'The active wire carries current in, the neutral completes the circuit, and the earth provides a safe ' +
             'path if a fault makes a metal case live.',
+    },
+    {
+        id: 'phys-charge-quantisation',
+        subject: 'physics',
+        question: 'What is the smallest amount of charge?',
+        aliases: ['elementary charge', 'charge is quantised', 'charge on an electron'],
+        answer:
+            'The elementary charge, 1.602 × 10⁻¹⁹ C, carried by a proton as positive and an electron as negative. Any ' +
+            'charge is a whole number multiple of it, so charge comes in units rather than any value.',
+    },
+    {
+        id: 'phys-charging-methods',
+        subject: 'physics',
+        question: 'How does an object become charged?',
+        aliases: ['charging by friction', 'charging by induction', 'earthing an object'],
+        answer:
+            'By friction, where electrons transfer between materials; by contact, where they spread between ' +
+            'conductors; or by induction, where a nearby charge redistributes the electrons and earthing then removes ' +
+            'some. Only electrons move in a solid.',
+    },
+    {
+        id: 'phys-electric-potential-energy',
+        subject: 'physics',
+        question: 'What is electric potential energy?',
+        aliases: ['electric potential energy', 'work to move a charge', 'volt as joules per coulomb'],
+        answer:
+            'The work needed to bring a charge to a point against the field. Potential difference is that work per ' +
+            'unit charge, so one volt means one joule per coulomb, and W = qV follows directly.',
+    },
+    {
+        id: 'phys-parallel-plates',
+        subject: 'physics',
+        question: 'What is the field between parallel plates?',
+        aliases: ['parallel plates field', 'e = v/d', 'uniform electric field'],
+        answer:
+            'Uniform, with strength E = V/d, pointing from the positive plate to the negative one. A charge released ' +
+            'in it accelerates uniformly, which makes it the electrical analogue of projectile motion.',
+    },
+    {
+        id: 'phys-drift-velocity',
+        subject: 'physics',
+        question: 'How fast do electrons actually move in a wire?',
+        aliases: ['drift velocity', 'why a light comes on instantly', 'electron speed in a wire'],
+        answer:
+            'Slowly, often less than a millimetre per second. The light comes on at once because the field is ' +
+            'established through the whole circuit at near light speed, so electrons everywhere begin moving ' +
+            'together.',
+    },
+    {
+        id: 'phys-resistivity',
+        subject: 'physics',
+        question: 'What is resistivity?',
+        aliases: ['resistivity', 'resistance of a wire formula', 'r = rho l over a'],
+        answer:
+            'A property of the material, so R = ρL/A. A longer wire has more resistance and a thicker one less, which ' +
+            'is why cross-sectional area is what limits the current a cable can carry.',
+    },
+    {
+        id: 'phys-temperature-and-resistance',
+        subject: 'physics',
+        question: 'How does temperature affect resistance?',
+        aliases: ['temperature and resistance', 'resistance of a filament', 'thermistor behaviour'],
+        answer:
+            'In a metal, resistance rises with temperature because the ions vibrate more and impede the electrons. In ' +
+            'a thermistor it falls, because heating frees more charge carriers, which is what makes it useful as a ' +
+            'temperature sensor.',
+    },
+    {
+        id: 'phys-ohmic-non-ohmic',
+        subject: 'physics',
+        question: 'What is the difference between an ohmic and a non-ohmic conductor?',
+        aliases: ['ohmic conductor', 'non ohmic', 'iv graph shape', 'diode characteristic'],
+        answer:
+            'An ohmic conductor gives a straight line through the origin on a current against voltage graph, so ' +
+            'resistance is constant. A filament lamp curves as it heats, and a diode conducts in only one direction, ' +
+            'so neither is ohmic.',
+    },
+    {
+        id: 'phys-emf-vs-voltage',
+        subject: 'physics',
+        question: 'What is the difference between emf and terminal voltage?',
+        aliases: ['emf', 'terminal voltage', 'lost volts', 'internal resistance effect'],
+        answer:
+            'The emf is the total energy per coulomb supplied by the source. Terminal voltage is what reaches the ' +
+            'circuit, lower by the volts lost across the internal resistance, which is why a battery reading falls as ' +
+            'the current drawn rises.',
+    },
+    {
+        id: 'phys-meters-in-circuits',
+        subject: 'physics',
+        question: 'Where do ammeters and voltmeters go?',
+        aliases: ['ammeter in series', 'voltmeter in parallel', 'ideal meter resistance'],
+        answer:
+            'An ammeter goes in series and should have near zero resistance so it does not reduce the current. A ' +
+            'voltmeter goes in parallel with the component and should have near infinite resistance so it draws ' +
+            'almost no current.',
+    },
+    {
+        id: 'phys-potential-divider',
+        subject: 'physics',
+        question: 'How does a voltage divider work?',
+        aliases: ['voltage divider', 'potential divider', 'sharing voltage between resistors'],
+        answer:
+            'Two resistors in series share the supply voltage in proportion to their resistances, so the voltage ' +
+            'across one is the supply times its share of the total. Replacing one with a sensor turns it into a ' +
+            'circuit that responds to light or temperature.',
+    },
+    {
+        id: 'phys-short-circuit',
+        subject: 'physics',
+        question: 'What happens in a short circuit?',
+        aliases: ['short circuit', 'why a short is dangerous', 'low resistance path'],
+        answer:
+            'Current bypasses the load through a path of very low resistance, so it rises sharply, and the heating in ' +
+            'the wires rises with the square of it. That is what a fuse or circuit breaker exists to interrupt.',
     },
 ];

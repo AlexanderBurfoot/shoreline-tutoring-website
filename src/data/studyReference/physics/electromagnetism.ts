@@ -40,7 +40,7 @@ export const physicsElectromagnetismEntries: StudyEntry[] = [
         id: 'phys-motors-generators',
         subject: 'physics',
         question: 'How does a motor differ from a generator?',
-        aliases: ['dc motor', 'generator', 'slip rings', 'ac generator'],
+        aliases: ['dc motor', 'generator', 'ac generator'],
         answer:
             'A motor turns electrical energy into motion using the force on a current in a field, F = BIL. ' +
             'A generator does the reverse, inducing an emf by turning a coil in a field. ' +
@@ -121,7 +121,7 @@ export const physicsElectromagnetismEntries: StudyEntry[] = [
         id: 'phys-transformer-losses',
         subject: 'physics',
         question: 'Why is a real transformer not 100% efficient?',
-        aliases: ['transformer efficiency', 'transformer losses', 'heat in a transformer', 'flux leakage'],
+        aliases: ['transformer efficiency', 'heat in a transformer', 'why a transformer wastes energy'],
         answer:
             'Resistance in the windings turns energy into heat, eddy currents circulate in the core, repeatedly ' +
             'remagnetising the core costs energy, and some flux misses the secondary coil. ' +
@@ -239,5 +239,122 @@ export const physicsElectromagnetismEntries: StudyEntry[] = [
             'It reverses the current in the coil every half turn, so the force on each side keeps pushing the same way ' +
             'round instead of reversing as the coil passes the vertical. ' +
             'Without it, the coil would swing to the vertical and stop.',
+    },
+    {
+        id: 'phys-magnetic-flux-density',
+        subject: 'physics',
+        question: 'What does magnetic flux density mean?',
+        aliases: ['magnetic flux density', 'tesla', 'field strength b'],
+        answer:
+            'The strength of a magnetic field, B, measured in tesla, where one tesla gives one newton per amp per ' +
+            'metre on a current-carrying wire. Flux is B times the area it passes through, so flux density is flux ' +
+            'per unit area.',
+    },
+    {
+        id: 'phys-motor-effect-factors',
+        subject: 'physics',
+        question: 'What affects the force on a current-carrying wire?',
+        aliases: ['force on a wire', 'f = bil sin theta', 'motor effect factors'],
+        answer:
+            'F = BIL sin θ, so the force rises with field strength, current and length in the field, and is greatest ' +
+            'when the wire is perpendicular to the field. A wire parallel to the field feels no force at all.',
+    },
+    {
+        id: 'phys-charged-particle-in-field',
+        subject: 'physics',
+        question: 'What path does a charged particle take in a magnetic field?',
+        aliases: ['charged particle in a magnetic field', 'circular path radius'],
+        answer:
+            'A circle, because the force F = qvB sin θ is always perpendicular to the velocity. Equating it to mv²/r ' +
+            'gives r = mv/qB, so heavier or faster particles curve less and stronger fields curve them more.',
+    },
+    {
+        id: 'phys-mass-spectrometer-physics',
+        subject: 'physics',
+        question: 'How does a velocity selector work?',
+        aliases: ['velocity selector', 'crossed fields', 'balancing electric and magnetic force'],
+        answer:
+            'Electric and magnetic fields are arranged so their forces on a moving charge oppose. Only particles with ' +
+            'v = E/B pass straight through, whatever their charge or mass, which is how a beam is made monoenergetic ' +
+            'before analysis.',
+    },
+    {
+        id: 'phys-relay',
+        subject: 'physics',
+        question: 'How does a relay work?',
+        aliases: ['relay', 'electromagnet switch', 'controlling a large current with a small one'],
+        answer:
+            'A small current through a coil magnetises a core, which pulls an armature across and closes a separate ' +
+            'circuit. It lets a low-power control circuit switch a high-power one, and it isolates the two ' +
+            'electrically.',
+    },
+    {
+        id: 'phys-ac-rms',
+        subject: 'physics',
+        question: 'What do RMS voltage and current mean?',
+        aliases: ['rms voltage', 'root mean square', 'peak versus rms'],
+        answer:
+            'The steady values that would deliver the same power as the alternating ones. For a sinusoid the RMS ' +
+            'value is the peak divided by √2, so mains quoted at 240 V has a peak of about 340 V.',
+    },
+    {
+        id: 'phys-generator-output-shape',
+        subject: 'physics',
+        question: 'Why is generator output sinusoidal?',
+        aliases: ['why generator output is sinusoidal', 'flux change with angle', 'emf varies with rotation'],
+        answer:
+            'Because the rate of change of flux through the coil varies with its angle. Flux is greatest when the ' +
+            'coil faces the field but changing fastest when the coil is edge-on, which is where the induced emf ' +
+            'peaks.',
+    },
+    {
+        id: 'phys-slip-rings-vs-commutator',
+        subject: 'physics',
+        question: 'What is the difference between slip rings and a commutator?',
+        aliases: ['slip rings', 'commutator versus slip rings', 'ac or dc output'],
+        answer:
+            'Slip rings keep each end of the coil connected to the same terminal, so the output alternates. A split ' +
+            'ring commutator swaps the connections every half turn, so the output stays one way, giving direct ' +
+            'current.',
+    },
+    {
+        id: 'phys-motor-torque-factors',
+        subject: 'physics',
+        question: 'What affects the torque of a motor?',
+        aliases: ['motor torque factors', 'number of turns and torque', 'why motors use many turns'],
+        answer:
+            'The field strength, the current, the area of the coil, the number of turns and the angle. Torque is ' +
+            'greatest when the coil is parallel to the field and zero when it is perpendicular, which is why a ' +
+            'multi-coil armature runs more smoothly.',
+    },
+    {
+        id: 'phys-induction-cooktop',
+        subject: 'physics',
+        question: 'How does an induction cooktop work?',
+        aliases: ['induction cooktop', 'eddy currents for heating', 'induction heating'],
+        answer:
+            'An alternating current in a coil beneath the surface induces eddy currents in the base of the pan, and ' +
+            'the resistance of the metal turns those currents into heat. The cooktop itself stays comparatively cool, ' +
+            'and a non-magnetic pan will not work.',
+    },
+    {
+        id: 'phys-three-phase-supply',
+        subject: 'physics',
+        question: 'Why is mains power distributed as three phases?',
+        aliases: ['three phase power', 'phases in distribution', 'why industry uses three phase'],
+        answer:
+            'Three supplies a third of a cycle apart deliver power continuously rather than in pulses, which lets ' +
+            'motors run smoothly and lets the same conductors carry more power. A house takes one phase; heavy ' +
+            'machinery takes all three.',
+    },
+    {
+        id: 'phys-earth-magnetic-field',
+        subject: 'physics',
+        question: 'Why does a compass point north?',
+        aliases: ['earth magnetic field', 'compass needle', 'magnetic declination'],
+        answer:
+            'Earth behaves like a large magnet, so a freely suspended needle aligns with its field. The magnetic ' +
+            'poles are not at the geographic poles, so a compass reading differs from true north by the local ' +
+            'declination.',
     },
 ];

@@ -153,4 +153,119 @@ export const physicsSkillsEntries: StudyEntry[] = [
             'improvement. ' +
             'Avoid claiming proof from one experiment.',
     },
+    {
+        id: 'phys-graph-choosing-axes',
+        subject: 'physics',
+        question: 'Which variable goes on which axis?',
+        aliases: ['which axis for which variable', 'independent variable on the horizontal', 'plotting convention'],
+        answer:
+            'The independent variable, the one you chose, goes on the horizontal axis, and the dependent one on the ' +
+            'vertical. Label both with the quantity and its unit, since an unlabelled axis loses marks however good ' +
+            'the plot.',
+    },
+    {
+        id: 'phys-gradient-with-units',
+        subject: 'physics',
+        question: 'How do I find the units of a gradient?',
+        aliases: ['units of a gradient', 'what the gradient represents', 'interpreting a slope physically'],
+        answer:
+            'Divide the units of the vertical axis by those of the horizontal. A displacement against time graph ' +
+            'gives metres per second, so the gradient is a velocity, which is how a graph identifies the physical ' +
+            'quantity it measures.',
+    },
+    {
+        id: 'phys-intercept-meaning',
+        subject: 'physics',
+        question: 'What does an unexpected intercept tell me?',
+        aliases: ['meaning of an intercept', 'line not through the origin', 'systematic error from an intercept'],
+        answer:
+            'That something is offset. If theory predicts a line through the origin and your line does not pass ' +
+            'through it, the most likely cause is a systematic error such as an uncalibrated instrument or an ' +
+            'unaccounted starting value.',
+    },
+    {
+        id: 'phys-repeat-readings',
+        subject: 'physics',
+        question: 'How many repeat readings should I take?',
+        aliases: ['how many repeats', 'averaging readings', 'discarding an anomalous reading'],
+        answer:
+            'At least three at each value, more where the spread is wide. Average them, and if one reading is clearly ' +
+            'anomalous, note it and exclude it from the mean rather than quietly deleting it.',
+    },
+    {
+        id: 'phys-resolution-of-instruments',
+        subject: 'physics',
+        question: 'What does the resolution of an instrument mean?',
+        aliases: ['resolution of an instrument', 'smallest division', 'precision of a measuring device'],
+        answer:
+            'The smallest change it can show, usually one scale division. A ruler reading to a millimetre cannot ' +
+            'support an answer to a hundredth of a millimetre, so resolution sets the sensible number of significant ' +
+            'figures.',
+    },
+    {
+        id: 'phys-percentage-difference',
+        subject: 'physics',
+        question: 'How do I compare my result with the accepted value?',
+        aliases: ['percentage difference', 'comparing with the accepted value', 'how accurate was my result'],
+        answer:
+            'Take the difference between your value and the accepted one, divide by the accepted one and multiply by ' +
+            '100. Then account for it: a 5% difference needs a named cause, not an apology.',
+    },
+    {
+        id: 'phys-control-variables-physics',
+        subject: 'physics',
+        question: 'What do I hold constant in a physics experiment?',
+        aliases: ['controlled variables in physics', 'keeping conditions the same', 'fair test in physics'],
+        answer:
+            'Everything that could affect the measurement except the one you vary: the same apparatus, the same ' +
+            'release point, the same mass, the same temperature. State how each was kept constant, since naming the ' +
+            'variable is only half the answer.',
+    },
+    {
+        id: 'phys-writing-a-method',
+        subject: 'physics',
+        question: 'How do I write a method that someone else could follow?',
+        aliases: ['writing a method', 'reproducible procedure', 'numbered steps for an experiment'],
+        answer:
+            'Numbered steps in order, with the quantities, the apparatus, what is measured and how many repeats. The ' +
+            'test is whether another student could reproduce your results without asking you a question.',
+    },
+    {
+        id: 'phys-identifying-relationships',
+        subject: 'physics',
+        question: 'How do I tell what relationship a graph shows?',
+        aliases: ['identifying a relationship', 'directly proportional', 'inverse relationship on a graph'],
+        answer:
+            'A straight line through the origin means directly proportional. A straight line not through the origin ' +
+            'is linear but not proportional. A curve falling as x rises may be inverse, which plotting against 1/x ' +
+            'will confirm by straightening it.',
+    },
+    {
+        id: 'phys-evaluating-a-model',
+        subject: 'physics',
+        question: 'How do I evaluate a physical model in an answer?',
+        aliases: ['evaluating a model', 'limits of a physics model', 'when a model breaks down'],
+        answer:
+            'State what the model predicts well, then where it fails and why: the conditions it assumes are no longer ' +
+            'met. Newtonian mechanics is accurate until speeds approach that of light, which is a limit rather than ' +
+            'an error.',
+    },
+    {
+        id: 'phys-significant-figures-physics',
+        subject: 'physics',
+        question: 'How many significant figures should a physics answer have?',
+        aliases: ['significant figures in physics', 'rounding a physics answer', 'sig figs from data'],
+        answer:
+            'Match the least precise measurement, usually two or three. Keep extra digits during the working and ' +
+            'round once at the end, and always give the unit, since an unlabelled number is not a physical quantity.',
+    },
+    {
+        id: 'phys-using-standard-data',
+        subject: 'physics',
+        question: 'When should I use a data sheet value?',
+        aliases: ['data sheet', 'using a given constant', 'accepted value of g'],
+        answer:
+            'Use the value provided in the examination data sheet rather than one you remember, and state it when you ' +
+            'substitute. Using 9.8 where the paper supplies 9.81 rarely matters, but quoting no value at all does.',
+    },
 ];
