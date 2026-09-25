@@ -297,4 +297,24 @@ export const naplanPracticeEntries: StudyEntry[] = [
             'on the sentence, so picture the situation and ask whether things are being combined, shared, compared or ' +
             'repeated.',
     },
+    {
+        id: 'nap-reading-a-scale',
+        subject: 'naplan',
+        question: 'How do I read a measuring scale accurately?',
+        aliases: ['reading a measuring scale', 'reading a ruler or jug', 'value between markings'],
+        answer:
+            'Work out what one small division is worth by dividing the gap between two labels by the number of ' +
+            'spaces, then count on from the nearest label. Read at eye level with a jug or cylinder, since looking ' +
+            'down gives a reading that is too high.',
+    },
+    {
+        id: 'nap-correct-sentence',
+        subject: 'naplan',
+        question: 'How do I choose the grammatically correct sentence?',
+        aliases: ['which sentence is correct', 'choosing the correct sentence', 'grammar multiple choice'],
+        answer:
+            'Read each aloud in your head and listen for where it stumbles, then check the specifics: does the verb ' +
+            'match the subject, is the tense consistent, and is each apostrophe doing a job. The wrong options ' +
+            'usually differ in one small feature.',
+    },
 ];

@@ -172,4 +172,24 @@ export const selectiveThinkingEntries: StudyEntry[] = [
             'Whenever the question describes positions, order, overlap or movement. A rough sketch takes fifteen ' +
             'seconds and prevents the kind of error that no amount of rechecking in your head will catch.',
     },
+    {
+        id: 'sel-best-supported',
+        subject: 'selective-high-school',
+        question: 'How do I answer a "best supported by the passage" question?',
+        aliases: ['best supported by the passage', 'which statement is supported', 'strongest support question'],
+        answer:
+            'Test each option against the text and ask what you could point to. The right answer needs no assumption ' +
+            'beyond what is written, while the wrong ones need one extra step that sounds reasonable but is not ' +
+            'stated.',
+    },
+    {
+        id: 'sel-matrix-pattern',
+        subject: 'selective-high-school',
+        question: 'How do I answer a matrix or grid pattern question?',
+        aliases: ['matrix pattern question', 'grid pattern reasoning', 'which shape completes the grid'],
+        answer:
+            'Read across the rows first, then down the columns, and name the change in words: rotating, adding an ' +
+            'element, shading alternately. Apply the row rule and the column rule separately to the missing cell, ' +
+            'then find the option that satisfies both.',
+    },
 ];

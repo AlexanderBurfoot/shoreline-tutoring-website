@@ -104,4 +104,95 @@ export const studySkillEntries: StudySkillEntry[] = [
             + 'Unfamiliar questions are almost always familiar content in a new context, so write what you know '
             + 'about that content and connect it to what was given.',
     },
+    {
+        id: 'skill-flashcards',
+        question: 'How do I use flashcards effectively?',
+        aliases: ['flashcards', 'using flash cards', 'anki'],
+        answer:
+            'One fact per card, written as a question so you have to retrieve rather than recognise. '
+            + 'Say the answer before turning it over, and set aside the ones you get wrong for a second '
+            + 'pass rather than shuffling them back in. Reviewing over several days beats one long '
+            + 'sitting.',
+    },
+    {
+        id: 'skill-summarising',
+        question: 'How do I summarise a chapter usefully?',
+        aliases: ['summarising a chapter', 'how to make summary notes', 'condensing notes'],
+        answer:
+            'Read a section, then write the summary with the book closed, in your own words. Copying '
+            + 'while reading produces neat notes you have not learned. Aim to reduce a chapter to a '
+            + 'page, and note what you could not recall, because that is the part to revisit.',
+    },
+    {
+        id: 'skill-mind-maps',
+        question: 'When is a mind map worth making?',
+        aliases: ['mind map', 'concept map', 'diagram of a topic'],
+        answer:
+            'When a topic has many connected parts and you need the links rather than the detail, '
+            + 'such as a biology module or the causes of an event. It is less useful for procedures, '
+            + 'where the order matters and a worked example teaches more.',
+    },
+    {
+        id: 'skill-learning-formulas',
+        question: 'How do I learn formulas properly?',
+        aliases: ['learning formulas', 'memorising formulas', 'remembering equations'],
+        answer:
+            'Use them rather than reading them: work problems until the substitution is automatic, '
+            + 'and write the formula from memory before each attempt. Knowing what each symbol means '
+            + 'and what the units are makes the formula far harder to misremember.',
+    },
+    {
+        id: 'skill-concentration',
+        question: 'How do I concentrate for longer?',
+        aliases: ['concentrating for longer', 'focus while studying', 'attention span study'],
+        answer:
+            'Work in fixed blocks with the phone in another room, and start with the hardest task '
+            + 'while attention is freshest. Twenty-five minutes of genuine work beats an hour of '
+            + 'interrupted work, and a specific goal for the block matters more than its length.',
+    },
+    {
+        id: 'skill-interleaving',
+        question: 'What is interleaving?',
+        aliases: ['interleaving', 'mixing topics when studying', 'blocked versus mixed practice'],
+        answer:
+            'Mixing different topics or question types within a study session rather than doing one '
+            + 'kind repeatedly. It feels harder and produces better retention, because you have to work '
+            + 'out which method applies, which is exactly what an exam requires.',
+    },
+    {
+        id: 'skill-rereading-trap',
+        question: 'Why does rereading feel productive but teach little?',
+        aliases: ['rereading notes', 'why rereading does not work', 'illusion of knowing', 'stop rereading'],
+        answer:
+            'Because recognising material feels like knowing it. The second reading is easier, and '
+            + 'that ease is mistaken for mastery. Closing the book and writing what you remember is '
+            + 'uncomfortable for the same reason it works: it shows you what is missing.',
+    },
+    {
+        id: 'skill-practical-exam',
+        question: 'How do I prepare for a practical exam?',
+        aliases: ['preparing for a practical exam', 'skills assessment prac', 'practical test preparation'],
+        answer:
+            'Rehearse the procedures rather than reading them: know the apparatus, the order of '
+            + 'steps, the safety controls and how to record results. Practise the calculations you will '
+            + 'need on the data, since that is where time is lost under pressure.',
+    },
+    {
+        id: 'skill-asking-for-help',
+        question: 'How do I ask a teacher for help effectively?',
+        aliases: ['asking a teacher for help', 'how to ask for help', 'getting help with a topic'],
+        answer:
+            'Bring the specific question and what you have already tried, rather than saying you do '
+            + 'not understand the topic. Showing the point at which your working breaks down lets a '
+            + 'teacher fix the actual gap in a couple of minutes.',
+    },
+    {
+        id: 'skill-catching-up',
+        question: 'How do I catch up after missing school?',
+        aliases: ['catching up after absence', 'missed classes', 'behind after being away'],
+        answer:
+            'Find out what was covered rather than what was set, since the explanation matters more '
+            + 'than the exercises. Work forward from the earliest gap, because later topics usually '
+            + 'depend on it, and ask for the one worked example the class was given.',
+    },
 ];

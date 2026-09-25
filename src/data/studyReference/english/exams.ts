@@ -202,4 +202,34 @@ export const englishExamsEntries: StudyEntry[] = [
             'reflection statement and in some discursive writing, but in an essay the argument is stronger stated ' +
             'directly than prefaced with I think.',
     },
+    {
+        id: 'eng-feature-article',
+        subject: 'english',
+        question: 'How do I write a feature article?',
+        aliases: ['feature article', 'writing a feature article', 'magazine article for english'],
+        answer:
+            'Open with a specific scene or person rather than a general claim, establish why it matters, then move ' +
+            'between narrative detail and wider comment. Use subheadings and a byline if the task allows, keep ' +
+            'paragraphs short, and close by returning to the opening image.',
+    },
+    {
+        id: 'eng-letter-writing',
+        subject: 'english',
+        question: 'How do I write a letter for English?',
+        aliases: ['writing a letter for english', 'letter as a text type', 'epistolary response'],
+        answer:
+            'Match the register to the recipient and the purpose, and let the relationship between writer and reader ' +
+            'do the characterisation. A letter reveals the writer as much as the subject, so what they choose to omit ' +
+            'or excuse is where the interest lies.',
+    },
+    {
+        id: 'eng-building-tension',
+        subject: 'english',
+        question: 'How do I build tension in a piece of writing?',
+        aliases: ['building tension', 'creating suspense', 'pace in a story'],
+        answer:
+            'Delay what the reader wants to know, shorten the sentences as the moment approaches, and give the ' +
+            'character less information than the reader has, or more. A short paragraph after a long one lands hard, ' +
+            'and specific detail feels more threatening than a general threat.',
+    },
 ];
