@@ -10,7 +10,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-natural-selection',
         subject: 'biology',
         question: 'How does natural selection work?',
-        aliases: ['natural selection', 'evolution', 'allele frequency', 'speciation', 'selection pressure'],
+        aliases: ['natural selection', 'evolution', 'selection pressure'],
         answer:
             'Variation exists in a population. A selection pressure means some variants survive and reproduce more, ' +
             'so their alleles become more common over generations. ' +
@@ -30,7 +30,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-classification',
         subject: 'biology',
         question: 'How are organisms classified?',
-        aliases: ['classification', 'taxonomy', 'binomial nomenclature', 'dichotomous key', 'species definition'],
+        aliases: ['classification', 'taxonomy', 'binomial nomenclature', 'species definition'],
         answer:
             'From broad to narrow: kingdom, phylum, class, order, family, genus, species. ' +
             'Binomial nomenclature names each species by genus and species, italicised. ' +
@@ -40,7 +40,7 @@ export const biologyDiversityEntries: StudyEntry[] = [
         id: 'bio-evidence-evolution',
         subject: 'biology',
         question: 'What is the evidence for evolution?',
-        aliases: ['evidence for evolution', 'fossil record', 'comparative anatomy', 'homologous structures', 'biogeography', 'dna evidence'],
+        aliases: ['evidence for evolution', 'comparative anatomy', 'biogeography', 'dna evidence'],
         answer:
             'The fossil record shows change over time and transitional forms. Comparative anatomy shows homologous ' +
             'structures from a common ancestor. Embryology shows shared early development. ' +

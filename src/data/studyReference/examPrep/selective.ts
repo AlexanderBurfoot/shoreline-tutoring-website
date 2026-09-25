@@ -21,7 +21,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-thinking-skills',
         subject: 'selective-high-school',
         question: 'What are thinking skills questions?',
-        aliases: ['thinking skills', 'critical thinking questions', 'logical reasoning', 'assumption question', 'flaw in argument'],
+        aliases: ['thinking skills', 'critical thinking questions', 'logical reasoning', 'flaw in argument'],
         answer:
             'Short logic and reasoning puzzles: find the conclusion, the assumption it rests on, or the flaw in an ' +
             'argument, and solve deduction problems from a set of clues. ' +
@@ -31,7 +31,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-reading-strategy',
         subject: 'selective-high-school',
         question: 'How do I approach the reading section?',
-        aliases: ['reading test strategy', 'comprehension strategy', 'cloze passage', 'matching paragraphs', 'inference question'],
+        aliases: ['reading test strategy', 'comprehension strategy', 'cloze passage', 'inference question'],
         answer:
             'Skim for structure first, then read the question and hunt for the evidence. ' +
             'Every answer must be supported by the text, so eliminate options that are true in general but not stated. ' +
@@ -114,7 +114,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-problem-strategies',
         subject: 'selective-high-school',
         question: 'What strategies help with hard problems?',
-        aliases: ['problem solving strategies', 'working backwards', 'trial and improvement', 'drawing a diagram', 'simplifying a problem'],
+        aliases: ['problem solving strategies', 'trial and improvement', 'drawing a diagram', 'simplifying a problem'],
         answer:
             'Work backwards from the answer options, try a smaller version of the problem, draw a diagram, or look ' +
             'for a pattern. ' +

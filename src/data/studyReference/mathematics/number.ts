@@ -64,7 +64,7 @@ export const mathematicsNumberEntries: StudyEntry[] = [
         id: 'maths-integers',
         subject: 'mathematics',
         question: 'How do I work with negative numbers?',
-        aliases: ['negative numbers', 'integers', 'subtracting a negative', 'multiplying negatives', 'number line'],
+        aliases: ['negative numbers', 'integers', 'subtracting a negative', 'multiplying negatives'],
         answer:
             'Subtracting a negative is the same as adding, so 5 − (−3) = 8. ' +
             'Two negatives multiplied or divided give a positive; one negative gives a negative. ' +

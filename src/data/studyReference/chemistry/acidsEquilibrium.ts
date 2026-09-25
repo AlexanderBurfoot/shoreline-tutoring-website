@@ -40,7 +40,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-ph',
         subject: 'chemistry',
         question: 'How do I calculate pH?',
-        aliases: ['ph formula', 'poh', 'hydrogen ion concentration', 'ph scale'],
+        aliases: ['ph formula', 'hydrogen ion concentration', 'ph scale'],
         answer:
             'pH = −log₁₀[H⁺], and pOH = −log₁₀[OH⁻]. At 25°C, pH + pOH = 14. ' +
             'Each whole pH unit is a tenfold change in [H⁺], so pH 3 is ten times more acidic than pH 4.',
@@ -59,7 +59,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-titration',
         subject: 'chemistry',
         question: 'How does a titration calculation work?',
-        aliases: ['titration', 'equivalence point', 'standard solution', 'c1v1', 'concentration calculation'],
+        aliases: ['titration', 'equivalence point', 'c1v1', 'concentration calculation'],
         answer:
             'Use n = cV to find moles of the known solution, apply the mole ratio from the balanced equation, ' +
             'then divide by the unknown volume to get its concentration. ' +
@@ -79,7 +79,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-indicators',
         subject: 'chemistry',
         question: 'How do I choose an indicator?',
-        aliases: ['indicator', 'phenolphthalein', 'methyl orange', 'titration curve', 'equivalence point ph'],
+        aliases: ['indicator', 'phenolphthalein', 'methyl orange', 'equivalence point ph'],
         answer:
             'Choose one whose colour change spans the pH at the equivalence point. ' +
             'Strong acid with strong base is neutral there, so most indicators work. Weak acid with strong base ends ' +
@@ -89,7 +89,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-equilibrium-graphs',
         subject: 'chemistry',
         question: 'How do I read a concentration-time graph for equilibrium?',
-        aliases: ['equilibrium graph', 'concentration time graph', 'reaching equilibrium', 'dynamic equilibrium'],
+        aliases: ['equilibrium graph', 'concentration time graph', 'reaching equilibrium'],
         answer:
             'Concentrations change quickly at first, then level off where the forward and reverse rates are equal. ' +
             'Equilibrium is dynamic: both reactions continue at the same rate. ' +
@@ -99,7 +99,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-salts-hydrolysis',
         subject: 'chemistry',
         question: 'Why are some salt solutions not neutral?',
-        aliases: ['salt hydrolysis', 'acidic salt', 'basic salt', 'conjugate base ph', 'amphiprotic'],
+        aliases: ['salt hydrolysis', 'acidic salt', 'basic salt', 'conjugate base ph'],
         answer:
             'A salt from a strong acid and strong base is neutral. From a weak acid and strong base, the conjugate ' +
             'base reacts with water and the solution is basic; the reverse gives an acidic solution. ' +
@@ -141,7 +141,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-titration-curves',
         subject: 'chemistry',
         question: 'What does a titration curve show?',
-        aliases: ['titration curve', 'equivalence point ph', 'buffer region', 'strong acid weak base curve', 'half equivalence'],
+        aliases: ['titration curve', 'buffer region', 'strong acid weak base curve', 'half equivalence'],
         answer:
             'pH against volume added. The steep section is the equivalence point: pH 7 only for strong acid with ' +
             'strong base, above 7 for weak acid with strong base, below 7 for strong acid with weak base. ' +
@@ -195,7 +195,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-titration-technique',
         subject: 'chemistry',
         question: 'How do I set up a titration properly?',
-        aliases: ['titration technique', 'rinsing glassware', 'burette pipette', 'volumetric flask', 'conical flask', 'titration apparatus'],
+        aliases: ['titration technique', 'rinsing glassware', 'burette pipette', 'conical flask', 'titration apparatus'],
         answer:
             'Rinse the burette and pipette with the solution they will hold, so no water dilutes it. ' +
             'Rinse the conical flask with distilled water only, since extra water does not change the moles inside. ' +

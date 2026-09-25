@@ -31,7 +31,7 @@ export const mathematicsFunctionsEntries: StudyEntry[] = [
         id: 'maths-quadratic-graphs',
         subject: 'mathematics',
         question: 'How do I sketch a parabola?',
-        aliases: ['parabola', 'vertex form', 'axis of symmetry', 'completing the square', 'turning point'],
+        aliases: ['parabola', 'vertex form', 'axis of symmetry'],
         answer:
             'For y = ax² + bx + c, the axis of symmetry is x = −b/2a, and substituting it gives the turning point. ' +
             'a > 0 opens upwards, a < 0 downwards. Completing the square gives vertex form y = a(x − h)² + k, where ' +
@@ -61,7 +61,7 @@ export const mathematicsFunctionsEntries: StudyEntry[] = [
         id: 'maths-polynomials',
         subject: 'mathematics',
         question: 'How do I work with polynomials?',
-        aliases: ['polynomial', 'remainder theorem', 'factor theorem', 'roots of polynomials', 'long division algebra'],
+        aliases: ['polynomial', 'remainder theorem', 'factor theorem', 'long division algebra'],
         answer:
             'The remainder theorem says dividing P(x) by (x − a) leaves P(a). ' +
             'If P(a) = 0 then (x − a) is a factor, which is the factor theorem and the usual way to start factorising. ' +
@@ -156,7 +156,7 @@ export const mathematicsFunctionsEntries: StudyEntry[] = [
         id: 'maths-square-root-graphs',
         subject: 'mathematics',
         question: 'What do square root and semicircle graphs look like?',
-        aliases: ['square root graph', 'graph of square root', 'square root of x', 'semicircle', 'root x', 'half a parabola'],
+        aliases: ['square root graph', 'graph of square root', 'square root of x', 'root x', 'half a parabola'],
         answer:
             'y = √x is the top half of a sideways parabola, starting at the origin, with domain x ≥ 0 since a ' +
             'square root cannot take a negative. ' +

@@ -50,7 +50,7 @@ export const biologyHeredityEntries: StudyEntry[] = [
         id: 'bio-inheritance-patterns',
         subject: 'biology',
         question: 'What are the patterns of inheritance?',
-        aliases: ['codominance', 'incomplete dominance', 'sex linked', 'autosomal', 'pedigree'],
+        aliases: ['codominance', 'incomplete dominance', 'sex linked', 'autosomal'],
         answer:
             'Complete dominance hides the recessive allele. Incomplete dominance blends the two, as in pink flowers. ' +
             'Codominance shows both, as in AB blood. Sex-linked genes sit on the X chromosome, which is why those ' +
@@ -80,7 +80,7 @@ export const biologyHeredityEntries: StudyEntry[] = [
         id: 'bio-meiosis-detail',
         subject: 'biology',
         question: 'What happens in each stage of meiosis?',
-        aliases: ['meiosis stages', 'crossing over', 'independent assortment', 'meiosis 1 and 2', 'homologous pairs'],
+        aliases: ['meiosis stages', 'meiosis 1 and 2', 'homologous pairs'],
         answer:
             'In meiosis I homologous chromosomes pair, swap sections by crossing over, then separate, which halves ' +
             'the chromosome number. ' +
@@ -113,7 +113,7 @@ export const biologyHeredityEntries: StudyEntry[] = [
         id: 'bio-genetic-code',
         subject: 'biology',
         question: 'How does the genetic code work?',
-        aliases: ['genetic code', 'codon', 'anticodon', 'start codon', 'stop codon', 'degenerate code'],
+        aliases: ['genetic code', 'anticodon', 'start codon', 'stop codon', 'degenerate code'],
         answer:
             'Three bases make a codon, which specifies one amino acid, read from a codon table. ' +
             'AUG starts translation and also codes for methionine; three codons stop it. ' +

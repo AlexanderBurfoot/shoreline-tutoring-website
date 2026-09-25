@@ -101,7 +101,7 @@ export const mathematicsStandardEntries: StudyEntry[] = [
         id: 'maths-std-data-displays',
         subject: 'mathematics',
         question: 'Which data display should I use?',
-        aliases: ['histogram', 'dot plot', 'stem and leaf', 'pareto chart', 'data display', 'bimodal'],
+        aliases: ['histogram', 'dot plot', 'stem and leaf', 'pareto chart', 'data display'],
         answer:
             'Dot plots and stem-and-leaf keep the individual values and suit small sets. ' +
             'Histograms group continuous data into classes. Box plots compare spread across groups. ' +

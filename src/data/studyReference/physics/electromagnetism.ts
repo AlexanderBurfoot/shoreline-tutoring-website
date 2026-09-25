@@ -121,7 +121,7 @@ export const physicsElectromagnetismEntries: StudyEntry[] = [
         id: 'phys-transformer-losses',
         subject: 'physics',
         question: 'Why is a real transformer not 100% efficient?',
-        aliases: ['transformer efficiency', 'transformer losses', 'laminated core', 'heat in a transformer', 'flux leakage'],
+        aliases: ['transformer efficiency', 'transformer losses', 'heat in a transformer', 'flux leakage'],
         answer:
             'Resistance in the windings turns energy into heat, eddy currents circulate in the core, repeatedly ' +
             'remagnetising the core costs energy, and some flux misses the secondary coil. ' +

@@ -153,7 +153,7 @@ export const businessEntries: StudyEntry[] = [
         id: 'bus-influences',
         subject: 'business-studies',
         question: 'What influences a business?',
-        aliases: ['influences on business', 'external influences', 'internal influences', 'stakeholders', 'pestle'],
+        aliases: ['influences on business', 'external influences', 'internal influences', 'pestle'],
         answer:
             'External influences include economic conditions, financial markets, geography, social attitudes, legal ' +
             'and political settings, institutions, technology and competition. ' +

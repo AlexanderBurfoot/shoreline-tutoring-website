@@ -131,7 +131,7 @@ export const mathematicsTrigonometryEntries: StudyEntry[] = [
         id: 'maths-unit-circle',
         subject: 'mathematics',
         question: 'How does the unit circle work?',
-        aliases: ['unit circle', 'astc', 'quadrants trig', 'related acute angle', 'sign of sin cos tan'],
+        aliases: ['unit circle', 'quadrants trig', 'related acute angle', 'sign of sin cos tan'],
         answer:
             'On a circle of radius 1, the coordinates of a point at angle θ are (cos θ, sin θ). ' +
             'ASTC gives which ratios are positive: All in the first quadrant, Sine in the second, Tangent in the ' +

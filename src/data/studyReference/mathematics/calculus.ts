@@ -38,7 +38,7 @@ export const mathematicsCalculusEntries: StudyEntry[] = [
         id: 'maths-definite-integral',
         subject: 'mathematics',
         question: 'What does a definite integral find?',
-        aliases: ['definite integral', 'area under a curve', 'area between curves'],
+        aliases: ['definite integral', 'area under a curve'],
         answer:
             'A definite integral finds the signed area between a curve and the x-axis: ∫ from a to b of f(x) dx = F(b) − F(a). ' +
             'Area below the axis counts as negative, so split the integral at any x-intercept when you want total area.',

@@ -21,7 +21,7 @@ export const physicsSkillsEntries: StudyEntry[] = [
         id: 'phys-experiment-design',
         subject: 'physics',
         question: 'How do I design a valid, reliable experiment?',
-        aliases: ['validity reliability accuracy', 'controlled variables', 'independent variable', 'systematic error'],
+        aliases: ['validity reliability accuracy'],
         answer:
             'Change one independent variable, measure the dependent one, and hold the rest constant: that is validity. ' +
             'Repeat trials for reliability, and use fine instruments for accuracy. ' +

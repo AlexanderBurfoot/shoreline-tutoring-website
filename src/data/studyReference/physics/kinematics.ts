@@ -11,10 +11,7 @@ export const physicsKinematicsEntries: StudyEntry[] = [
         id: 'phys-suvat',
         subject: 'physics',
         question: 'What are the equations of motion?',
-        aliases: [
-            'suvat', 'equations of motion', 'kinematics equations', 'constant acceleration',
-            'falling object', 'how fast something falls', 'free fall', 'acceleration due to gravity',
-        ],
+        aliases: ['suvat', 'equations of motion', 'kinematics equations', 'constant acceleration', 'falling object', 'how fast something falls', 'acceleration due to gravity'],
         answer:
             'For constant acceleration: v = u + at, s = ut + ½at², v² = u² + 2as, and s = ½(u + v)t. ' +
             'Here u is the initial velocity, v the final velocity, a the acceleration and s the displacement. ' +
@@ -44,7 +41,7 @@ export const physicsKinematicsEntries: StudyEntry[] = [
         id: 'phys-motion-graphs',
         subject: 'physics',
         question: 'How do I read a motion graph?',
-        aliases: ['motion graph', 'displacement time graph', 'velocity time graph', 'gradient of a graph', 'area under a graph'],
+        aliases: ['motion graph', 'displacement time graph', 'velocity time graph', 'area under a graph'],
         answer:
             'On a displacement-time graph the gradient is velocity. On a velocity-time graph the gradient is ' +
             'acceleration and the area underneath is displacement. ' +
@@ -55,7 +52,7 @@ export const physicsKinematicsEntries: StudyEntry[] = [
         id: 'phys-distance-displacement',
         subject: 'physics',
         question: 'What is the difference between distance and displacement?',
-        aliases: ['distance vs displacement', 'speed vs velocity', 'average speed', 'average velocity', 'scalar quantity motion'],
+        aliases: ['distance vs displacement', 'average speed', 'scalar quantity motion'],
         answer:
             'Distance is the total path travelled, a scalar. Displacement is the straight line from start to finish ' +
             'with a direction, a vector. ' +

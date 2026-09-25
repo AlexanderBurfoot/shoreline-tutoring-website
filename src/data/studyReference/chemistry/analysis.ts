@@ -20,7 +20,7 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
         id: 'chem-monitoring-environment',
         subject: 'chemistry',
         question: 'How is water quality monitored?',
-        aliases: ['water quality', 'monitoring the environment', 'eutrophication', 'heavy metals', 'dissolved oxygen'],
+        aliases: ['monitoring the environment', 'eutrophication', 'heavy metals', 'dissolved oxygen'],
         answer:
             'Tests cover pH, dissolved oxygen, turbidity, hardness, phosphate and nitrate, and heavy metal ions. ' +
             'Excess nutrients cause eutrophication: algae bloom, then decay and strip the oxygen. ' +
@@ -65,7 +65,7 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
         id: 'chem-aas-uv',
         subject: 'chemistry',
         question: 'What do AAS and UV-visible spectroscopy measure?',
-        aliases: ['aas', 'atomic absorption spectroscopy', 'uv visible', 'colorimetry', 'calibration curve', 'absorbance'],
+        aliases: ['aas', 'atomic absorption spectroscopy', 'uv visible', 'colorimetry', 'absorbance'],
         answer:
             'Both measure how much light a sample absorbs, and absorbance rises with concentration. ' +
             'Run standards of known concentration to build a calibration curve, then read the unknown from it. ' +
@@ -106,7 +106,7 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
         id: 'chem-ppm',
         subject: 'chemistry',
         question: 'What does parts per million mean?',
-        aliases: ['ppm', 'parts per million', 'trace concentration', 'mg per litre'],
+        aliases: ['ppm', 'trace concentration', 'mg per litre'],
         answer:
             'One part per million is one milligram per litre in a dilute water solution, or one milligram per ' +
             'kilogram by mass. ' +
@@ -170,7 +170,7 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
         id: 'chem-water-quality',
         subject: 'chemistry',
         question: 'What is tested in water quality analysis?',
-        aliases: ['water quality', 'dissolved oxygen', 'eutrophication', 'turbidity', 'total dissolved solids', 'hardness'],
+        aliases: ['water quality', 'turbidity', 'total dissolved solids', 'hardness'],
         answer:
             'pH, dissolved oxygen, turbidity, total dissolved solids, hardness, and phosphate, nitrate and heavy ' +
             'metal ions. ' +

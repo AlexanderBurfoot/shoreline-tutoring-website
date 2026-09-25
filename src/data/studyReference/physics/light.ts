@@ -10,7 +10,7 @@ export const physicsLightEntries: StudyEntry[] = [
         id: 'phys-photoelectric',
         subject: 'physics',
         question: 'What is the photoelectric effect?',
-        aliases: ['photoelectric effect', 'work function', 'photon energy', 'planck constant', 'threshold frequency'],
+        aliases: ['photoelectric effect', 'work function', 'planck constant'],
         answer:
             'A photon carries E = hf, with h = 6.63 × 10⁻³⁴ J s. If hf exceeds the metal’s work function φ, an ' +
             'electron is ejected with maximum kinetic energy Ek = hf − φ. ' +
@@ -140,7 +140,7 @@ export const physicsLightEntries: StudyEntry[] = [
         id: 'phys-relativity-postulates',
         subject: 'physics',
         question: 'What are the postulates of special relativity?',
-        aliases: ['postulates of relativity', 'inertial frame', 'constant speed of light', 'einstein postulates', 'frame of reference'],
+        aliases: ['postulates of relativity', 'constant speed of light', 'einstein postulates', 'frame of reference'],
         answer:
             'First, the laws of physics are the same in every inertial frame, meaning any frame moving at constant ' +
             'velocity. Second, the speed of light in a vacuum is the same for every observer, whatever their motion. ' +

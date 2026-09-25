@@ -84,7 +84,7 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
         id: 'maths-financial-annuities',
         subject: 'mathematics',
         question: 'How do loans and annuities work?',
-        aliases: ['annuity', 'loan repayments', 'present value', 'future value', 'reducing balance loan'],
+        aliases: ['annuity', 'loan repayments', 'present value', 'reducing balance loan'],
         answer:
             'Each period, interest is added and a repayment is subtracted, so Aₙ = Aₙ₋₁(1 + r) − M. ' +
             'An annuity builds the same way with deposits instead. ' +

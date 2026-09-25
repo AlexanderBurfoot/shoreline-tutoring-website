@@ -232,7 +232,7 @@ export const naplanEntries: StudyEntry[] = [
         id: 'naplan-adaptive-test',
         subject: 'naplan',
         question: 'What does it mean that NAPLAN is adaptive?',
-        aliases: ['adaptive test', 'naplan online', 'harder questions', 'tailored test', 'how naplan works'],
+        aliases: ['adaptive test', 'harder questions', 'tailored test', 'how naplan works'],
         answer:
             'The test adjusts as you answer: get questions right and the next set is harder, which lets it measure a ' +
             'wide range accurately. ' +

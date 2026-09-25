@@ -20,7 +20,7 @@ export const biologyCellsEntries: StudyEntry[] = [
         id: 'bio-photosynthesis-respiration',
         subject: 'biology',
         question: 'What are photosynthesis and respiration?',
-        aliases: ['photosynthesis', 'respiration', 'aerobic respiration', 'atp', 'glucose equation'],
+        aliases: ['photosynthesis', 'respiration', 'aerobic respiration', 'glucose equation'],
         answer:
             'Photosynthesis: 6CO₂ + 6H₂O + light energy makes C₆H₁₂O₆ + 6O₂, in chloroplasts. ' +
             'Aerobic respiration reverses it in mitochondria, releasing energy as ATP. ' +
@@ -40,7 +40,7 @@ export const biologyCellsEntries: StudyEntry[] = [
         id: 'bio-transport-membrane',
         subject: 'biology',
         question: 'How do substances move in and out of cells?',
-        aliases: ['diffusion', 'osmosis', 'active transport', 'facilitated diffusion', 'concentration gradient'],
+        aliases: ['diffusion', 'active transport', 'facilitated diffusion', 'concentration gradient'],
         answer:
             'Diffusion moves particles down a concentration gradient, and osmosis is that for water across a ' +
             'partially permeable membrane. Facilitated diffusion uses a protein channel but no energy. ' +

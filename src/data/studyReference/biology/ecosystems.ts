@@ -10,7 +10,7 @@ export const biologyEcosystemsEntries: StudyEntry[] = [
         id: 'bio-biodiversity-ecosystems',
         subject: 'biology',
         question: 'How do ecosystems and food chains work?',
-        aliases: ['food chain', 'food web', 'trophic levels', 'ecosystem', 'biodiversity', 'energy flow'],
+        aliases: ['food chain', 'food web', 'trophic levels', 'ecosystem'],
         answer:
             'Producers capture light energy, and each trophic level passes on roughly ten per cent of it, which is ' +
             'why chains are short. Decomposers return nutrients to the soil. ' +

@@ -112,7 +112,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-probability-basics',
         subject: 'mathematics',
         question: 'What are the basic probability rules?',
-        aliases: ['probability rules', 'complement', 'basic probability', 'probability of an event'],
+        aliases: ['probability rules', 'basic probability', 'probability of an event'],
         answer:
             'P(not A) = 1 − P(A). For either event, P(A or B) = P(A) + P(B) − P(A and B). For independent events, ' +
             'P(A and B) = P(A) × P(B). Conditional probability is P(A|B) = P(A and B)/P(B).',
@@ -197,7 +197,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-ratio-rates',
         subject: 'mathematics',
         question: 'How do I work with ratios and rates?',
-        aliases: ['ratio', 'rates', 'unitary method', 'scale', 'proportion', 'dividing in a ratio'],
+        aliases: ['ratio', 'rates', 'unitary method', 'scale', 'proportion'],
         answer:
             'Divide in a ratio by adding the parts, finding one part, then multiplying: sharing $60 as 2:3 means ' +
             'five parts of $12. A rate compares different units, such as km/h. The unitary method finds the value of ' +
@@ -217,7 +217,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-similar-congruent',
         subject: 'mathematics',
         question: 'What is the difference between similar and congruent figures?',
-        aliases: ['similar triangles', 'congruent triangles', 'sas', 'scale factor', 'proof geometry'],
+        aliases: ['similar triangles', 'congruent triangles', 'sas', 'scale factor'],
         answer:
             'Congruent figures are identical in size and shape, proved by SSS, SAS, AAS or RHS. ' +
             'Similar figures have the same shape at a different size, proved by AA, and their matching sides share a ' +
@@ -237,7 +237,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
         id: 'maths-scientific-notation',
         subject: 'mathematics',
         question: 'How does scientific notation work?',
-        aliases: ['scientific notation', 'standard form', 'significant figures maths', 'rounding'],
+        aliases: ['scientific notation', 'standard form', 'significant figures maths'],
         answer:
             'Write the number as a value between 1 and 10 times a power of ten: 45 000 is 4.5 × 10⁴, and 0.0032 is ' +
             '3.2 × 10⁻³. A positive power means a large number, a negative power a small one. ' +

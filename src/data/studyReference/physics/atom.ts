@@ -31,7 +31,7 @@ export const physicsAtomEntries: StudyEntry[] = [
         id: 'phys-spectra',
         subject: 'physics',
         question: 'What do emission and absorption spectra show?',
-        aliases: ['emission spectrum', 'absorption spectrum', 'spectral lines', 'bohr model', 'energy levels'],
+        aliases: ['emission spectrum', 'absorption spectrum', 'spectral lines', 'energy levels'],
         answer:
             'Electrons occupy fixed energy levels. Falling between levels emits a photon of exactly that energy ' +
             'difference, giving bright lines; absorbing one lifts an electron and leaves dark lines. ' +
@@ -184,7 +184,7 @@ export const physicsAtomEntries: StudyEntry[] = [
         id: 'phys-fission-reactors',
         subject: 'physics',
         question: 'How does a fission reactor work?',
-        aliases: ['nuclear reactor', 'chain reaction', 'moderator', 'control rods', 'critical mass'],
+        aliases: ['nuclear reactor', 'moderator', 'control rods', 'critical mass'],
         answer:
             'A neutron splits a heavy nucleus, releasing energy and more neutrons, which can sustain a chain ' +
             'reaction. ' +
@@ -195,7 +195,7 @@ export const physicsAtomEntries: StudyEntry[] = [
         id: 'phys-stellar-life-cycle',
         subject: 'physics',
         question: 'What is the life cycle of a star?',
-        aliases: ['life cycle of a star', 'main sequence', 'red giant', 'supernova', 'neutron star', 'black hole'],
+        aliases: ['life cycle of a star', 'red giant', 'supernova', 'neutron star', 'black hole'],
         answer:
             'A star forms from collapsing gas and joins the main sequence while it fuses hydrogen. ' +
             'When that runs out it swells into a giant. ' +

@@ -91,7 +91,7 @@ export const economicsEntries: StudyEntry[] = [
         id: 'econ-trade',
         subject: 'economics',
         question: 'Why do countries trade, and what is comparative advantage?',
-        aliases: ['free trade', 'comparative advantage', 'protection', 'tariff', 'globalisation', 'terms of trade'],
+        aliases: ['free trade', 'comparative advantage', 'protection', 'globalisation'],
         answer:
             'A country has a comparative advantage where its opportunity cost of producing something is lowest, so ' +
             'both sides gain by specialising and trading. Protection, through tariffs, subsidies and quotas, shields ' +
@@ -101,7 +101,7 @@ export const economicsEntries: StudyEntry[] = [
         id: 'econ-balance-of-payments',
         subject: 'economics',
         question: 'What is the balance of payments?',
-        aliases: ['balance of payments', 'current account', 'capital account', 'current account deficit', 'exchange rate'],
+        aliases: ['balance of payments', 'current account', 'capital account', 'current account deficit'],
         answer:
             'It records all transactions with the rest of the world. The current account covers goods, services, ' +
             'income and transfers; the capital and financial account covers investment flows. ' +
@@ -192,7 +192,7 @@ export const economicsEntries: StudyEntry[] = [
         id: 'econ-government-intervention',
         subject: 'economics',
         question: 'Why do governments intervene in markets?',
-        aliases: ['market failure', 'public goods', 'externalities', 'merit goods', 'monopoly regulation'],
+        aliases: ['merit goods', 'monopoly regulation'],
         answer:
             'To correct market failure: public goods nobody would supply privately, externalities the price ignores, ' +
             'merit goods that are under-consumed, and market power that lets a firm raise prices. ' +

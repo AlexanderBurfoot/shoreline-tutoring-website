@@ -51,7 +51,7 @@ export const englishModulesEntries: StudyEntry[] = [
         id: 'eng-module-c',
         subject: 'english',
         question: 'What does Module C, The Craft of Writing, require?',
-        aliases: ['module c', 'craft of writing', 'reflection statement', 'stimulus writing', 'writing techniques'],
+        aliases: ['module c', 'craft of writing', 'stimulus writing', 'writing techniques'],
         answer:
             'You write your own imaginative, discursive or persuasive piece, often from a stimulus, then may be asked ' +
             'to reflect on your choices. ' +
@@ -125,7 +125,7 @@ export const englishModulesEntries: StudyEntry[] = [
         id: 'eng-responder-reading',
         subject: 'english',
         question: 'What is meant by a reading of a text?',
-        aliases: ['reading of a text', 'interpretation', 'multiple readings', 'reception', 'personal response'],
+        aliases: ['reading of a text', 'interpretation', 'multiple readings', 'reception'],
         answer:
             'A reading is an interpretation supported by evidence, and texts sustain more than one. ' +
             'Different responders, and different eras, notice different things. ' +

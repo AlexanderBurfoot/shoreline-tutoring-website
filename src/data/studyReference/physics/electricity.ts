@@ -50,7 +50,7 @@ export const physicsElectricityEntries: StudyEntry[] = [
         id: 'phys-magnetism-basics',
         subject: 'physics',
         question: 'What produces a magnetic field?',
-        aliases: ['magnetic field', 'solenoid', 'field lines', 'electromagnet', 'right hand grip rule'],
+        aliases: ['magnetic field', 'solenoid', 'electromagnet', 'right hand grip rule'],
         answer:
             'Moving charge produces a magnetic field. Around a straight wire it circles the wire, given by the ' +
             'right-hand grip rule, with B = μ₀I/2πr. ' +
@@ -131,7 +131,7 @@ export const physicsElectricityEntries: StudyEntry[] = [
         id: 'phys-circuit-safety',
         subject: 'physics',
         question: 'How do fuses, circuit breakers and earthing protect a circuit?',
-        aliases: ['fuse', 'circuit breaker', 'earthing', 'short circuit', 'electrical safety'],
+        aliases: ['fuse', 'circuit breaker', 'short circuit', 'electrical safety'],
         answer:
             'A fuse is a thin wire that melts when the current is too high, breaking the circuit; a circuit breaker ' +
             'does the same job magnetically and can be reset. ' +

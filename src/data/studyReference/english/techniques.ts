@@ -21,7 +21,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-techniques-structure',
         subject: 'english',
         question: 'What are structural and sound techniques?',
-        aliases: ['structural techniques', 'juxtaposition', 'foreshadowing', 'alliteration', 'enjambment', 'tone'],
+        aliases: ['structural techniques', 'foreshadowing', 'enjambment'],
         answer:
             'Structural: juxtaposition places contrasting ideas together, foreshadowing hints at what comes, and a ' +
             'cyclical structure returns to its opening. Sound: alliteration repeats initial consonants, assonance ' +
@@ -51,7 +51,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-film-techniques',
         subject: 'english',
         question: 'What are the film techniques?',
-        aliases: ['film techniques', 'camera angles', 'mise en scene', 'diegetic sound', 'editing', 'close up'],
+        aliases: ['film techniques', 'camera angles', 'mise en scene', 'diegetic sound', 'close up'],
         answer:
             'Shot types: close-up for emotion, long shot for context. Angles: high to diminish, low to empower. ' +
             'Mise en scène is everything arranged in the frame. Diegetic sound exists in the world of the film, ' +
@@ -71,7 +71,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-shakespeare',
         subject: 'english',
         question: 'How do I analyse a Shakespeare play?',
-        aliases: ['shakespeare', 'soliloquy', 'dramatic irony', 'aside', 'blank verse', 'iambic pentameter'],
+        aliases: ['shakespeare', 'soliloquy', 'aside', 'blank verse'],
         answer:
             'A soliloquy reveals private thought to the audience, an aside is a quick remark others do not hear, and ' +
             'dramatic irony lets the audience know what a character does not. ' +
@@ -81,7 +81,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-narrative-techniques',
         subject: 'english',
         question: 'What are the narrative techniques?',
-        aliases: ['narrative techniques', 'point of view', 'unreliable narrator', 'flashback', 'characterisation'],
+        aliases: ['narrative techniques', 'point of view', 'unreliable narrator', 'flashback'],
         answer:
             'Point of view shapes what a reader can know: first person is intimate but limited, third person ' +
             'omniscient sees everything. An unreliable narrator makes the reader question the account. ' +
@@ -91,7 +91,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-language-grammar',
         subject: 'english',
         question: 'What grammar terms come up in analysis?',
-        aliases: ['grammar', 'modality', 'nominalisation', 'imperative', 'syntax', 'cumulative listing'],
+        aliases: ['grammar', 'nominalisation', 'imperative', 'syntax', 'cumulative listing'],
         answer:
             'High modality words, such as "must", show certainty; low modality, such as "might", hedges. ' +
             'Nominalisation turns a verb into a noun, which makes writing formal and impersonal. ' +
@@ -197,7 +197,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-poetic-form',
         subject: 'english',
         question: 'What are the main poetic forms?',
-        aliases: ['sonnet', 'ballad', 'ode', 'free verse', 'haiku', 'elegy', 'poetic form'],
+        aliases: ['ballad', 'ode', 'haiku', 'elegy', 'poetic form'],
         answer:
             'A sonnet has fourteen lines and a turn, an ode praises, an elegy mourns, and a ballad tells a story in ' +
             'quatrains. ' +

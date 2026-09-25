@@ -57,6 +57,26 @@ describe('study reference bank', () => {
         }
     });
 
+    it('gives each alias to one entry per subject, so entries stay distinct', () => {
+        /* Two entries in the same subject claiming the same wording is how an
+           entry becomes unreachable: one of them always wins and the other is
+           dead. Across subjects it is fine, since "reflection" genuinely means
+           different things in maths and physics. */
+        const owners = new Map<string, string[]>();
+        for (const entry of studyEntries) {
+            for (const alias of entry.aliases) {
+                const key = `${entry.subject}::${alias.toLowerCase().trim()}`;
+                owners.set(key, [...(owners.get(key) ?? []), entry.id]);
+            }
+        }
+
+        const shared = [...owners.entries()]
+            .filter(([, ids]) => ids.length > 1)
+            .map(([key, ids]) => `${key} claimed by ${ids.join(' and ')}`);
+
+        expect(shared).toEqual([]);
+    });
+
     it('follows the house style: no em dashes', () => {
         for (const entry of studyEntries) {
             expect(entry.answer, entry.id).not.toContain('—');

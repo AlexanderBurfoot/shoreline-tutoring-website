@@ -21,7 +21,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-nervous-endocrine',
         subject: 'biology',
         question: 'How do the nervous and endocrine systems differ?',
-        aliases: ['nervous system', 'endocrine system', 'hormones', 'neuron', 'synapse', 'reflex arc'],
+        aliases: ['nervous system', 'endocrine system', 'hormones', 'synapse'],
         answer:
             'The nervous system sends fast electrical impulses along neurons for short-lived responses; a reflex arc ' +
             'bypasses the brain for speed. The endocrine system releases hormones into the blood, which act more ' +
@@ -52,7 +52,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-nutrient-transport',
         subject: 'biology',
         question: 'How does the circulatory system transport nutrients?',
-        aliases: ['circulatory system', 'blood vessels', 'heart structure', 'haemoglobin', 'double circulation'],
+        aliases: ['circulatory system', 'blood vessels', 'haemoglobin', 'double circulation'],
         answer:
             'Arteries carry blood from the heart under pressure, veins return it with valves to stop backflow, and ' +
             'capillaries exchange materials with tissues. ' +
@@ -63,7 +63,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-hormonal-coordination',
         subject: 'biology',
         question: 'How do hormones coordinate the body?',
-        aliases: ['hormones', 'insulin glucagon', 'blood glucose', 'adrenaline', 'thyroxine', 'negative feedback hormone'],
+        aliases: ['insulin glucagon', 'adrenaline', 'thyroxine', 'negative feedback hormone'],
         answer:
             'Glands release hormones into the blood, and only cells with the matching receptor respond. ' +
             'Insulin lowers blood glucose and glucagon raises it, a negative feedback pair. ' +
@@ -84,7 +84,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-respiratory-system',
         subject: 'biology',
         question: 'How does the respiratory system exchange gases?',
-        aliases: ['respiratory system', 'alveoli', 'breathing', 'lungs', 'ventilation'],
+        aliases: ['respiratory system', 'breathing', 'lungs', 'ventilation'],
         answer:
             'Air passes down the trachea and bronchi to the alveoli, tiny sacs with a huge combined surface area, a ' +
             'wall one cell thick, and a dense capillary network. ' +
@@ -95,7 +95,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-heart-structure',
         subject: 'biology',
         question: 'How does the heart work?',
-        aliases: ['heart structure', 'atria ventricles', 'valves', 'double circulation', 'cardiac cycle'],
+        aliases: ['heart structure', 'atria ventricles', 'valves', 'cardiac cycle'],
         answer:
             'Atria receive blood and ventricles pump it out, with valves preventing backflow. ' +
             'The right side sends deoxygenated blood to the lungs, the left sends oxygenated blood to the body, which ' +
@@ -156,7 +156,7 @@ export const biologyOrganisationEntries: StudyEntry[] = [
         id: 'bio-neuron-structure',
         subject: 'biology',
         question: 'How does a neuron transmit a signal?',
-        aliases: ['neuron', 'axon', 'myelin', 'synapse', 'neurotransmitter', 'nerve impulse'],
+        aliases: ['neuron', 'axon', 'myelin', 'neurotransmitter', 'nerve impulse'],
         answer:
             'Dendrites receive, the cell body integrates, and the axon carries the impulse as a wave of electrical ' +
             'change. Myelin insulates the axon so the signal jumps between gaps and travels faster. ' +

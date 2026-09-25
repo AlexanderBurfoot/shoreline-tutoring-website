@@ -30,7 +30,7 @@ export const physicsDynamicsEntries: StudyEntry[] = [
         id: 'phys-work-energy',
         subject: 'physics',
         question: 'What are the work and energy formulas?',
-        aliases: ['work done', 'kinetic energy', 'potential energy', 'power formula', 'conservation of energy'],
+        aliases: ['work done', 'kinetic energy', 'potential energy', 'power formula'],
         answer:
             'Work is W = Fs cos θ, kinetic energy is Ek = ½mv², and gravitational potential energy near Earth is ' +
             'Ep = mgh. Power is P = W/t, or P = Fv. Energy is conserved overall, so losses usually appear as heat.',
@@ -59,7 +59,7 @@ export const physicsDynamicsEntries: StudyEntry[] = [
         id: 'phys-relativistic-momentum',
         subject: 'physics',
         question: 'What happens to mass and momentum near light speed?',
-        aliases: ['relativistic momentum', 'mass energy equivalence', 'relativistic mass', 'particle accelerator'],
+        aliases: ['relativistic momentum', 'mass energy equivalence', 'relativistic mass'],
         answer:
             'Momentum becomes p = mv/√(1 − v²/c²), so it grows without limit as v approaches c, which is why no ' +
             'object with mass can reach light speed. ' +

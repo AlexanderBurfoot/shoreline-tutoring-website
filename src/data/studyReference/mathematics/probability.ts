@@ -49,7 +49,7 @@ export const mathematicsProbabilityEntries: StudyEntry[] = [
         id: 'maths-combinatorics',
         subject: 'mathematics',
         question: 'What is the difference between permutations and combinations?',
-        aliases: ['permutations', 'combinations', 'npr', 'ncr', 'counting techniques', 'pigeonhole'],
+        aliases: ['permutations', 'npr', 'ncr', 'counting techniques', 'pigeonhole'],
         answer:
             'Permutations count arrangements, where order matters: ⁿPᵣ = n!/(n − r)!. ' +
             'Combinations count selections, where order does not: ⁿCᵣ = n!/(r!(n − r)!). ' +
@@ -153,7 +153,7 @@ export const mathematicsProbabilityEntries: StudyEntry[] = [
         id: 'maths-relative-frequency',
         subject: 'mathematics',
         question: 'What is the difference between theoretical and experimental probability?',
-        aliases: ['relative frequency', 'experimental probability', 'theoretical probability', 'long run frequency', 'simulation'],
+        aliases: ['relative frequency', 'experimental probability', 'theoretical probability', 'long run frequency'],
         answer:
             'Theoretical probability comes from counting equally likely outcomes; experimental probability, or ' +
             'relative frequency, comes from counting what actually happened, so it is trials of the event divided by ' +

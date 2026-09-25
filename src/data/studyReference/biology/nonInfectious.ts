@@ -20,7 +20,7 @@ export const biologyNonInfectiousEntries: StudyEntry[] = [
         id: 'bio-non-infectious',
         subject: 'biology',
         question: 'What counts as a non-infectious disease?',
-        aliases: ['non infectious disease', 'genetic disease', 'lifestyle disease', 'what counts as non infectious'],
+        aliases: ['non infectious disease', 'genetic disease', 'what counts as non infectious'],
         answer:
             'Diseases not caused by a pathogen: genetic, nutritional, environmental and those caused by lifestyle. ' +
             'Epidemiology studies their patterns, where incidence is new cases in a period and prevalence is total ' +

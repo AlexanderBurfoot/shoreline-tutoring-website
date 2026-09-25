@@ -10,7 +10,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
         id: 'chem-functional-groups',
         subject: 'chemistry',
         question: 'What are the main organic functional groups?',
-        aliases: ['functional groups', 'alcohol', 'carboxylic acid', 'ester', 'amine', 'homologous series'],
+        aliases: ['functional groups', 'alcohol', 'ester', 'homologous series'],
         answer:
             'Alkane (C−C), alkene (C=C), alkyne (C≡C), alcohol (−OH), aldehyde (−CHO), ketone (C=O in the chain), ' +
             'carboxylic acid (−COOH), ester (−COO−), amine (−NH₂) and amide (−CONH₂). ' +
@@ -69,7 +69,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
         id: 'chem-soaps-detergents',
         subject: 'chemistry',
         question: 'How do soaps and detergents work?',
-        aliases: ['soap', 'detergent', 'saponification', 'hydrophilic hydrophobic', 'surfactant', 'hard water'],
+        aliases: ['soap', 'detergent', 'hydrophilic hydrophobic', 'surfactant', 'hard water'],
         answer:
             'A surfactant has a hydrophobic tail and a hydrophilic head, so it surrounds grease and lets water carry ' +
             'it away. Soap is made by saponification, boiling a fat with a strong base. ' +
@@ -79,7 +79,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
         id: 'chem-alkene-addition',
         subject: 'chemistry',
         question: 'What are the addition reactions of alkenes?',
-        aliases: ['addition reaction', 'hydrogenation', 'halogenation', 'hydration of alkenes', 'markovnikov', 'bromine water test'],
+        aliases: ['addition reaction', 'hydrogenation', 'hydration of alkenes', 'markovnikov'],
         answer:
             'The double bond opens and adds: hydrogen gives an alkane, a halogen gives a dihaloalkane, water with ' +
             'acid gives an alcohol, and a hydrogen halide gives a haloalkane. ' +
@@ -131,7 +131,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
         id: 'chem-organic-technique',
         subject: 'chemistry',
         question: 'What are reflux, distillation and a separating funnel for?',
-        aliases: ['reflux', 'fractional distillation', 'separating funnel', 'organic technique', 'purifying an ester'],
+        aliases: ['fractional distillation', 'separating funnel', 'organic technique', 'purifying an ester'],
         answer:
             'Reflux heats a mixture for a long time without losing volatile substances, since vapour condenses and ' +
             'returns. ' +

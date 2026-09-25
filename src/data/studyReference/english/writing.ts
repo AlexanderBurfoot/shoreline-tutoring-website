@@ -21,7 +21,7 @@ export const englishWritingEntries: StudyEntry[] = [
         id: 'eng-thesis',
         subject: 'english',
         question: 'What makes a good thesis statement?',
-        aliases: ['thesis', 'introduction', 'thesis statement', 'how to start an essay'],
+        aliases: ['thesis', 'thesis statement', 'how to start an essay'],
         answer:
             'A thesis is an arguable claim that answers the exact question asked, not a description of the text. ' +
             'It should name what the composer does and why it matters, and every paragraph should visibly support it. ' +
@@ -103,7 +103,7 @@ export const englishWritingEntries: StudyEntry[] = [
         id: 'eng-punctuation',
         subject: 'english',
         question: 'What are the common punctuation and expression mistakes?',
-        aliases: ['punctuation', 'apostrophe', 'comma splice', 'semicolon', 'its vs its', 'expression marks'],
+        aliases: ['punctuation', 'apostrophe', 'comma splice', 'semicolon', 'its vs its'],
         answer:
             'Apostrophes show possession or omission, never plurals. A comma cannot join two sentences: use a full ' +
             'stop, a semicolon or a conjunction. "Its" is possessive, "it\u2019s" means it is. ' +

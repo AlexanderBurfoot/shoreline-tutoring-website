@@ -31,7 +31,7 @@ export const englishSkillsEntries: StudyEntry[] = [
         id: 'eng-reading-strategies',
         subject: 'english',
         question: 'How do I read a text closely for study?',
-        aliases: ['close reading', 'annotating', 'note taking english', 'study a novel', 'quote bank'],
+        aliases: ['close reading', 'note taking english', 'study a novel'],
         answer:
             'Annotate as you read, marking technique, effect and how it links to the module idea. ' +
             'Build a quote bank grouped by idea rather than by chapter, since essays are organised by argument. ' +
@@ -74,7 +74,7 @@ export const englishSkillsEntries: StudyEntry[] = [
         id: 'eng-essay-adaptation',
         subject: 'english',
         question: 'How do I adapt a prepared essay to the question?',
-        aliases: ['adapting an essay', 'prepared essay', 'answering the question english', 'memorised essay'],
+        aliases: ['prepared essay', 'answering the question english', 'memorised essay'],
         answer:
             'Keep your evidence, change the argument to fit. ' +
             'Rewrite the thesis and every topic sentence using the question\u2019s key words, then adjust the ' +

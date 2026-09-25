@@ -41,7 +41,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-moles',
         subject: 'chemistry',
         question: 'What are the mole formulas?',
-        aliases: ['moles', 'n = m/mm', 'avogadro', 'molar mass', 'mole calculation'],
+        aliases: ['moles', 'n = m/mm', 'avogadro', 'mole calculation'],
         answer:
             'n = m/M, where m is mass in grams and M the molar mass. In solution, n = cV with V in litres. ' +
             'For a gas at standard conditions, n = V/Vm. One mole contains 6.022 × 10²³ particles.',
@@ -50,7 +50,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-rate-factors',
         subject: 'chemistry',
         question: 'What affects the rate of a reaction?',
-        aliases: ['reaction rate', 'rate of reaction', 'catalyst', 'collision theory'],
+        aliases: ['reaction rate', 'rate of reaction', 'collision theory'],
         answer:
             'Temperature, concentration or pressure, surface area, and catalysts. ' +
             'Collision theory explains why: reactions need collisions with enough energy and the right orientation, ' +
@@ -80,7 +80,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-oxidation-reduction',
         subject: 'chemistry',
         question: 'What are oxidation and reduction?',
-        aliases: ['oxidation', 'reduction', 'redox', 'oil rig', 'oxidation number'],
+        aliases: ['oxidation', 'reduction', 'redox', 'oil rig'],
         answer:
             'OIL RIG: Oxidation Is Loss of electrons, Reduction Is Gain. ' +
             'The oxidised species is the reducing agent and vice versa. Track oxidation numbers to see which element ' +
@@ -110,7 +110,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-balancing-equations',
         subject: 'chemistry',
         question: 'How do I balance a chemical equation?',
-        aliases: ['balancing equations', 'stoichiometry', 'mole ratio', 'limiting reagent'],
+        aliases: ['balancing equations', 'stoichiometry', 'mole ratio'],
         answer:
             'Adjust coefficients only, never subscripts, until each element has the same count on both sides. ' +
             'Those coefficients are the mole ratio. The limiting reagent is whichever runs out first, found by ' +
@@ -151,7 +151,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-galvanic-cells',
         subject: 'chemistry',
         question: 'How does a galvanic cell work?',
-        aliases: ['galvanic cell', 'electrochemistry', 'anode cathode', 'standard electrode potential', 'electrolysis'],
+        aliases: ['galvanic cell', 'electrochemistry', 'anode cathode', 'electrolysis'],
         answer:
             'Oxidation happens at the anode and reduction at the cathode, with electrons flowing through the wire and ' +
             'ions through the salt bridge. Cell potential is E°(cathode) − E°(anode), and a positive value means the ' +
@@ -171,7 +171,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-atomic-structure',
         subject: 'chemistry',
         question: 'What is the structure of an atom?',
-        aliases: ['atomic structure', 'electron configuration', 'isotopes', 'subatomic particles', 'valence electrons'],
+        aliases: ['atomic structure', 'subatomic particles', 'valence electrons'],
         answer:
             'Protons and neutrons sit in the nucleus; electrons occupy shells and subshells around it. ' +
             'The atomic number is the proton count and defines the element; isotopes differ in neutrons. ' +
@@ -254,7 +254,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-limiting-reagent',
         subject: 'chemistry',
         question: 'How do I find the limiting reagent?',
-        aliases: ['limiting reagent', 'limiting reactant', 'excess reagent', 'theoretical yield'],
+        aliases: ['limiting reagent', 'limiting reactant', 'excess reagent'],
         answer:
             'Convert each reactant to moles, divide by its coefficient in the balanced equation, and the smallest ' +
             'result is the limiting reagent. ' +
@@ -391,7 +391,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-elements-compounds',
         subject: 'chemistry',
         question: 'What is the difference between elements, compounds and mixtures?',
-        aliases: ['element compound mixture', 'pure substance', 'homogeneous', 'heterogeneous', 'alloy mixture'],
+        aliases: ['element compound mixture', 'homogeneous', 'heterogeneous', 'alloy mixture'],
         answer:
             'An element has one kind of atom, a compound has different elements chemically bonded in fixed ' +
             'proportions, and a mixture has substances physically combined in any proportion. ' +

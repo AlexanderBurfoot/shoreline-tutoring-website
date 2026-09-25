@@ -30,7 +30,7 @@ export const biologyGeneticChangeEntries: StudyEntry[] = [
         id: 'bio-genetic-engineering',
         subject: 'biology',
         question: 'How does genetic engineering work?',
-        aliases: ['genetic engineering', 'recombinant dna', 'transgenic', 'restriction enzymes', 'gmo', 'gene therapy'],
+        aliases: ['genetic engineering', 'recombinant dna', 'restriction enzymes', 'gene therapy'],
         answer:
             'Restriction enzymes cut DNA at specific sequences, leaving ends that ligase joins to DNA from another ' +
             'organism, making recombinant DNA. A vector such as a plasmid carries it into a host cell. ' +
@@ -50,7 +50,7 @@ export const biologyGeneticChangeEntries: StudyEntry[] = [
         id: 'bio-genetic-disorders',
         subject: 'biology',
         question: 'What causes genetic disorders?',
-        aliases: ['genetic disorders', 'down syndrome', 'cystic fibrosis', 'nondisjunction', 'carrier', 'karyotype'],
+        aliases: ['genetic disorders', 'down syndrome', 'cystic fibrosis', 'nondisjunction', 'karyotype'],
         answer:
             'Single-gene disorders come from one faulty allele, such as cystic fibrosis, which is recessive, so ' +
             'carriers show nothing. Chromosomal disorders come from nondisjunction, where chromosomes fail to ' +

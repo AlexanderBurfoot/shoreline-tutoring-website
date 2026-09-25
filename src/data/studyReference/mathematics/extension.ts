@@ -223,7 +223,7 @@ export const mathematicsExtensionEntries: StudyEntry[] = [
         id: 'maths-ext-binomial-mean',
         subject: 'mathematics',
         question: 'What are the mean and variance of a binomial distribution?',
-        aliases: ['binomial mean', 'binomial variance', 'bernoulli trial', 'np', 'sample proportion'],
+        aliases: ['binomial mean', 'binomial variance', 'bernoulli trial', 'np'],
         answer:
             'For n independent trials with probability p: mean np, variance np(1 − p), standard deviation the square ' +
             'root of that. ' +

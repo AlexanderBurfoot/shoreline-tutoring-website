@@ -10,10 +10,7 @@ export const physicsMechanicsEntries: StudyEntry[] = [
         id: 'phys-projectile',
         subject: 'physics',
         question: 'How do I solve a projectile motion question?',
-        aliases: [
-            'projectile motion', 'projectile physics', 'range', 'time of flight',
-            'projectile equations', 'projectile extension 1', 'projectile maths',
-        ],
+        aliases: ['projectile motion', 'projectile physics', 'range', 'projectile equations', 'projectile extension 1', 'projectile maths'],
         answer:
             'Treat the two directions separately. Horizontal velocity is constant at u cos θ, so x = u cos θ × t. ' +
             'Vertically the acceleration is g downwards, so v = u sin θ − gt and y = u sin θ × t − ½gt². ' +
@@ -43,7 +40,7 @@ export const physicsMechanicsEntries: StudyEntry[] = [
         id: 'phys-torque',
         subject: 'physics',
         question: 'What is torque?',
-        aliases: ['torque', 'moment', 'lever arm', 'rotational equilibrium'],
+        aliases: ['torque', 'moment', 'lever arm'],
         answer:
             'τ = rF sin θ, where r is the distance from the pivot and θ the angle between the force and the lever arm. ' +
             'A force through the pivot gives no torque. For rotational equilibrium, clockwise and anticlockwise ' +
