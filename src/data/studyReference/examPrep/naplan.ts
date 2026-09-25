@@ -249,4 +249,98 @@ export const naplanEntries: StudyEntry[] = [
             'strong, developing or needs additional support. ' +
             'They are a snapshot on one day, useful for spotting a gap early, not a judgement of ability.',
     },
+    {
+        id: 'nap-what-year-levels',
+        subject: 'naplan',
+        question: 'Which year levels sit NAPLAN?',
+        aliases: ['which years sit naplan', 'year 3 5 7 9', 'when is naplan held'],
+        answer:
+            'Years 3, 5, 7 and 9, in March each year. The tests cover reading, writing, conventions of language, and ' +
+            'numeracy, and each year level sits its own version pitched at that stage.',
+    },
+    {
+        id: 'nap-how-to-prepare-generally',
+        subject: 'naplan',
+        question: 'What is the most useful preparation for NAPLAN?',
+        aliases: ['best naplan preparation', 'what actually helps in naplan', 'familiarisation not cramming'],
+        answer:
+            'Familiarity with the format and the online tools, steady work on any gap the class teacher has ' +
+            'identified, and reading widely. The tests measure skills built over years, so the last fortnight cannot ' +
+            'change much.',
+    },
+    {
+        id: 'nap-online-tools',
+        subject: 'naplan',
+        question: 'What tools does the online test provide?',
+        aliases: ['online test tools', 'on screen calculator', 'flagging a question online'],
+        answer:
+            'An on-screen calculator in the calculator section, a way to flag questions to revisit within a section, ' +
+            'and a timer. Practising with the platform beforehand removes the surprise, which is worth more than ' +
+            'extra content.',
+    },
+    {
+        id: 'nap-adaptive-explained',
+        subject: 'naplan',
+        question: 'What does it mean that the test adapts?',
+        aliases: ['adaptive testing explained', 'harder questions after correct answers', 'why questions get harder'],
+        answer:
+            'The questions you see depend on how you have been answering, so a student who answers well is given ' +
+            'harder questions. Facing hard questions is a sign of doing well, not of failing, which is worth knowing ' +
+            'before the day.',
+    },
+    {
+        id: 'nap-guessing-strategy',
+        subject: 'naplan',
+        question: 'Should I guess in NAPLAN?',
+        aliases: ['guessing in naplan', 'no penalty for wrong answers', 'leaving a question blank'],
+        answer:
+            'Yes, rather than leaving a blank, because there is no penalty for a wrong answer. Eliminate what is ' +
+            'clearly wrong first, since a guess between two options is far better than one between four.',
+    },
+    {
+        id: 'nap-reading-time-management',
+        subject: 'naplan',
+        question: 'How do I pace myself across several passages?',
+        aliases: ['reading test timing', 'how long per text', 'running short of time in reading'],
+        answer:
+            'Divide the time by the number of texts and keep moving, answering the questions you can for each text ' +
+            'before going on. Spending too long on one hard question is the most common way to lose easy marks later.',
+    },
+    {
+        id: 'nap-writing-prompt-types',
+        subject: 'naplan',
+        question: 'What kinds of writing prompt appear?',
+        aliases: ['writing prompt types', 'narrative or persuasive prompt', 'stimulus for naplan writing'],
+        answer:
+            'Either a narrative or a persuasive prompt, given as a short stimulus with a picture or statement. The ' +
+            'genre is stated, so the first task is to write in the genre asked for rather than the one you prefer.',
+    },
+    {
+        id: 'nap-writing-audience',
+        subject: 'naplan',
+        question: 'How do I write for the marker as an audience?',
+        aliases: ['writing for an audience', 'audience in naplan writing', 'who am i writing for'],
+        answer:
+            'Write for an interested adult reader who does not know you. That means explaining nothing about ' +
+            'yourself, choosing words you can use precisely, and making the purpose clear in the first sentence or ' +
+            'two.',
+    },
+    {
+        id: 'nap-writing-ideas-development',
+        subject: 'naplan',
+        question: 'What does developing an idea mean?',
+        aliases: ['developing an idea', 'expanding a point', 'more than listing ideas'],
+        answer:
+            'Taking one point and adding detail, example and consequence rather than moving to the next. Three ' +
+            'developed ideas score above eight listed ones, in both the narrative and the persuasive criteria.',
+    },
+    {
+        id: 'nap-writing-character',
+        subject: 'naplan',
+        question: 'How do I create a character quickly?',
+        aliases: ['creating a character', 'character in a short story', 'showing personality fast'],
+        answer:
+            'Give them one want and one habit, shown in action in the first paragraph. A character who does something ' +
+            'specific is established faster than one described for half a page.',
+    },
 ];

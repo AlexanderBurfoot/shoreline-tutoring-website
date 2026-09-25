@@ -76,7 +76,7 @@ export const naplanLiteracyEntries: StudyEntry[] = [
         id: 'nap-visual-texts',
         subject: 'naplan',
         question: 'How do I answer questions about an image in a text?',
-        aliases: ['image in a text', 'reading a diagram', 'what the picture adds'],
+        aliases: ['image in a text', 'what the picture adds'],
         answer:
             'Say what the image shows and what it adds that the words do not: a scale, a location, an emotion or a ' +
             'comparison. An image that only repeats the text is rarely the answer.',

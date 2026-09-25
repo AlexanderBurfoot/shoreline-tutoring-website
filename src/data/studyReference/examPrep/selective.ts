@@ -247,4 +247,153 @@ export const selectiveEntries: StudyEntry[] = [
             'It takes fewer words than it seems and it is the single change that most lifts a piece under exam ' +
             'conditions.',
     },
+    {
+        id: 'sel-prep-timeline',
+        subject: 'selective-high-school',
+        question: 'When should preparation for the Selective test start?',
+        aliases: ['when to start preparing', 'how long to prepare', 'preparation timeline'],
+        answer:
+            'Six to twelve months of steady work suits most students, focused on reading widely, filling gaps in Year ' +
+            '5 and 6 mathematics, and practising the question types. Cramming in the final weeks raises anxiety more ' +
+            'than scores.',
+    },
+    {
+        id: 'sel-how-scores-work',
+        subject: 'selective-high-school',
+        question: 'How is a Selective test placement decided?',
+        aliases: ['how placement is decided', 'school choice and score', 'entry score'],
+        answer:
+            'A placement score is formed from the test results, weighted with school assessment, and offers are made ' +
+            'school by school in order of score against the places available. Each school therefore has its own ' +
+            'effective cut-off, which moves year to year.',
+    },
+    {
+        id: 'sel-choosing-schools',
+        subject: 'selective-high-school',
+        question: 'How should school preferences be ordered?',
+        aliases: ['ordering school preferences', 'choosing which schools to list', 'preference strategy'],
+        answer:
+            'In genuine order of preference, since an offer at a higher preference removes the lower ones. Consider ' +
+            'travel time, the programs offered and the fit for the student, not only the entry score.',
+    },
+    {
+        id: 'sel-practice-paper-use',
+        subject: 'selective-high-school',
+        question: 'How should practice papers be used?',
+        aliases: ['using practice papers', 'timed practice', 'marking a practice test'],
+        answer:
+            'Under proper time, then marked carefully, with every wrong answer explained before the next paper. Doing ' +
+            'more papers without reviewing them practises the mistakes rather than removing them.',
+    },
+    {
+        id: 'sel-error-log',
+        subject: 'selective-high-school',
+        question: 'How do I learn from my mistakes efficiently?',
+        aliases: ['error log', 'tracking mistakes', 'learning from wrong answers'],
+        answer:
+            'Keep a list of every question missed with the reason: not known, misread, careless, or out of time. The ' +
+            'pattern in the reasons tells you what to work on, and it is usually not what you assumed.',
+    },
+    {
+        id: 'sel-reading-widely',
+        subject: 'selective-high-school',
+        question: 'What kind of reading helps most?',
+        aliases: ['what to read to prepare', 'reading widely for the test', 'newspapers and non fiction'],
+        answer:
+            'A mix: fiction for inference and character, quality non-fiction and news for argument and unfamiliar ' +
+            'vocabulary, and poetry for compressed language. Reading one genre only leaves a gap the test is designed ' +
+            'to find.',
+    },
+    {
+        id: 'sel-mental-arithmetic',
+        subject: 'selective-high-school',
+        question: 'How do I get faster at mental arithmetic?',
+        aliases: ['mental arithmetic speed', 'getting faster at calculation', 'daily practice arithmetic'],
+        answer:
+            'Short daily sessions on the facts you hesitate on, not long sessions on what you already know. Speed ' +
+            'comes from recall rather than method, so the aim is to stop calculating the same small steps.',
+    },
+    {
+        id: 'sel-question-order-strategy',
+        subject: 'selective-high-school',
+        question: 'Should I answer questions in order?',
+        aliases: ['answering questions in order', 'skipping a hard question', 'two pass strategy'],
+        answer:
+            'Work through in order but leave anything that stalls you, marked, and return to it. Every question is ' +
+            'worth the same, so a hard one early can cost several easy ones at the end.',
+    },
+    {
+        id: 'sel-checking-strategy',
+        subject: 'selective-high-school',
+        question: 'How should I use spare time at the end?',
+        aliases: ['checking answers at the end', 'using spare time in a test', 'rechecking work'],
+        answer:
+            'Return to the marked questions first, then check that answers are in the right places on the sheet, then ' +
+            'recheck anything you guessed. Rereading answers you were confident about rarely changes a mark.',
+    },
+    {
+        id: 'sel-anxiety-management',
+        subject: 'selective-high-school',
+        question: 'What helps with test anxiety on the day?',
+        aliases: ['managing test anxiety', 'calming down before a test', 'nerves on test day'],
+        answer:
+            'Sleep, a normal breakfast, arriving early, slow breathing, and starting with a question you can do. Some ' +
+            'nerves improve performance; the aim is to keep them from becoming avoidance.',
+    },
+    {
+        id: 'sel-parents-role',
+        subject: 'selective-high-school',
+        question: 'What is the most useful thing a parent can do?',
+        aliases: ['how parents can help', 'parent role in preparation', 'supporting a child through the test'],
+        answer:
+            'Keep the routine steady, make the reading available, and separate the childs worth from the result. ' +
+            'Pressure raises anxiety and lowers performance, and the test is one pathway rather than a verdict.',
+    },
+    {
+        id: 'sel-what-if-unsuccessful',
+        subject: 'selective-high-school',
+        question: 'What happens if a placement is not offered?',
+        aliases: ['not getting a placement', 'waiting list', 'other pathways to selective'],
+        answer:
+            'Students are placed on a reserve list and offers continue as places open, and there are later entry ' +
+            'points in some schools. Comprehensive schools also offer extension classes, so an unsuccessful ' +
+            'application is not the end of the pathway.',
+    },
+    {
+        id: 'sel-thinking-numerical-patterns',
+        subject: 'selective-high-school',
+        question: 'How do I approach a number pattern in thinking skills?',
+        aliases: ['pattern in thinking skills', 'sequence in a reasoning question', 'finding the rule in a puzzle'],
+        answer:
+            'Check the differences, then the ratios, then whether alternate terms form their own pattern. If none ' +
+            'fits, look at the digits themselves rather than the values, since some puzzles work on digit patterns.',
+    },
+    {
+        id: 'sel-thinking-weighing-puzzles',
+        subject: 'selective-high-school',
+        question: 'How do I solve balance and weighing puzzles?',
+        aliases: ['balance puzzle', 'weighing problem', 'which is heavier puzzle'],
+        answer:
+            'Treat each balance as an equation and substitute between them to eliminate unknowns. If the puzzle asks ' +
+            'for the fewest weighings, think about splitting the group into three rather than two, since each ' +
+            'weighing has three outcomes.',
+    },
+    {
+        id: 'sel-thinking-set-overlap',
+        subject: 'selective-high-school',
+        question: 'How do I handle questions about overlapping groups?',
+        aliases: ['overlapping groups', 'how many in both groups', 'set overlap reasoning'],
+        answer:
+            'Draw two overlapping circles and fill the overlap first. The total is both circles minus the overlap, so ' +
+            'if 20 play sport, 15 play music and 5 play both, 30 students are involved, not 35.',
+    },
+    {
+        id: 'sel-thinking-conditional',
+        subject: 'selective-high-school',
+        question: 'How do I handle if-then statements?',
+        aliases: ['if then reasoning', 'conditional statement logic', 'contrapositive'],
+        answer:
+            'If A then B tells you that no B means no A, but it says nothing about what happens when A is absent. ' +
+            'Testing each option against that one rule eliminates the three that assume more than was said.',
+    },
 ];
