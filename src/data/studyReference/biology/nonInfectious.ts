@@ -116,7 +116,7 @@ export const biologyNonInfectiousEntries: StudyEntry[] = [
         id: 'bio-disease-prevention-education',
         subject: 'biology',
         question: 'How are non-infectious diseases prevented?',
-        aliases: ['prevention non infectious', 'public health campaign', 'screening', 'lifestyle disease', 'early detection'],
+        aliases: ['prevention non infectious', 'screening', 'lifestyle disease', 'early detection'],
         answer:
             'Education and regulation reduce exposure to risk factors such as smoking, poor diet and ultraviolet ' +
             'radiation. ' +
@@ -219,5 +219,102 @@ export const biologyNonInfectiousEntries: StudyEntry[] = [
             'Too little thyroxine slows metabolism and causes fatigue and weight gain; too much speeds it. ' +
             'Iodine deficiency enlarges the thyroid into a goitre, since the gland cannot make the hormone it is ' +
             'being told to produce.',
+    },
+    {
+        id: 'bio-osteoporosis-and-bones',
+        subject: 'biology',
+        question: 'What non-infectious conditions affect the skeleton?',
+        aliases: ['osteoporosis', 'arthritis', 'bone density loss'],
+        answer:
+            'Osteoporosis reduces bone density so fractures occur under ordinary load, and arthritis damages joint ' +
+            'cartilage. Both are more common with age, and weight-bearing exercise and adequate calcium and vitamin D ' +
+            'reduce the risk.',
+    },
+    {
+        id: 'bio-kidney-disease',
+        subject: 'biology',
+        question: 'What happens in chronic kidney disease?',
+        aliases: ['chronic kidney disease', 'loss of nephron function', 'kidney disease symptoms'],
+        answer:
+            'Nephrons are lost gradually, so waste accumulates, fluid and ion balance drifts and blood pressure ' +
+            'rises. It is often silent until much function is gone, which is why diabetes and hypertension patients ' +
+            'are screened.',
+    },
+    {
+        id: 'bio-mental-health-as-disease',
+        subject: 'biology',
+        question: 'How is mental illness treated as a non-infectious disease?',
+        aliases: ['mental illness', 'mental health as disease', 'depression as a disorder'],
+        answer:
+            'It has measurable physiological and genetic components as well as environmental triggers, and it carries ' +
+            'a large share of the burden of disease. Treatment combines medication, therapy and social support.',
+    },
+    {
+        id: 'bio-nutrition-and-chronic-disease',
+        subject: 'biology',
+        question: 'How does diet contribute to chronic disease?',
+        aliases: ['diet and chronic disease', 'salt and blood pressure', 'processed food and disease'],
+        answer:
+            'Excess energy leads to obesity, which raises the risk of type 2 diabetes and cardiovascular disease. ' +
+            'High salt raises blood pressure, and low fibre and micronutrient intake affect gut and immune function.',
+    },
+    {
+        id: 'bio-tobacco-and-alcohol',
+        subject: 'biology',
+        question: 'What damage do tobacco and alcohol do?',
+        aliases: ['effects of smoking', 'effects of alcohol', 'lung damage from smoking', 'liver damage from alcohol'],
+        answer:
+            'Tobacco smoke paralyses cilia, damages alveoli and carries carcinogens, causing emphysema and cancer. ' +
+            'Alcohol damages liver cells progressively, affects the nervous system and raises the risk of several ' +
+            'cancers.',
+    },
+    {
+        id: 'bio-screening-programs',
+        subject: 'biology',
+        question: 'How do screening programs work?',
+        aliases: ['screening program', 'early detection of disease', 'false positive in screening'],
+        answer:
+            'A test is offered to a whole group at risk to find disease before symptoms appear, when treatment works ' +
+            'better. No test is perfect, so a screening program must balance missed cases against unnecessary alarm ' +
+            'and follow-up.',
+    },
+    {
+        id: 'bio-health-education',
+        subject: 'biology',
+        question: 'Why is health education part of disease prevention?',
+        aliases: ['health education', 'public health campaign', 'changing behaviour for health'],
+        answer:
+            'Because most chronic disease risk lies in behaviour, and behaviour follows knowledge, cost and ' +
+            'environment together. Campaigns work best combined with structural change such as pricing, labelling or ' +
+            'facilities.',
+    },
+    {
+        id: 'bio-technology-in-treatment',
+        subject: 'biology',
+        question: 'How has technology changed the treatment of disorders?',
+        aliases: ['technology in treatment', 'prosthetics', 'pacemaker', 'assistive technology'],
+        answer:
+            'Pacemakers restore heart rhythm, cochlear implants and hearing aids restore hearing, corrective lenses ' +
+            'and surgery restore vision, prosthetics restore movement, and imaging finds disease earlier than ' +
+            'examination alone.',
+    },
+    {
+        id: 'bio-epidemiology-limitations',
+        subject: 'biology',
+        question: 'What are the limitations of an epidemiological study?',
+        aliases: ['limitations of epidemiology', 'confounding variable', 'recall bias'],
+        answer:
+            'Confounding variables, reliance on self-reported data, loss of participants over time, and the ' +
+            'difficulty of establishing cause from an association. Replication across different populations is what ' +
+            'builds confidence.',
+    },
+    {
+        id: 'bio-disease-in-populations',
+        subject: 'biology',
+        question: 'Why do disease rates differ between populations?',
+        aliases: ['why disease rates differ', 'socioeconomic factors in health', 'access to healthcare'],
+        answer:
+            'Differences in genetics, age structure, income, education, housing, diet, and access to health services. ' +
+            'Remoteness compounds most of these, which is why rural and remote health outcomes lag urban ones.',
     },
 ];

@@ -215,4 +215,101 @@ export const biologyEcosystemsEntries: StudyEntry[] = [
             'Density-independent factors such as drought, fire and frost hit the same proportion whatever the ' +
             'population size.',
     },
+    {
+        id: 'bio-primary-productivity',
+        subject: 'biology',
+        question: 'What is primary productivity?',
+        aliases: ['primary productivity', 'gross and net productivity', 'energy fixed by producers'],
+        answer:
+            'The rate at which producers convert light into chemical energy. Gross productivity is the total fixed; ' +
+            'net productivity is what remains after the plants own respiration, and that is what supports every level ' +
+            'above.',
+    },
+    {
+        id: 'bio-food-web-disturbance',
+        subject: 'biology',
+        question: 'What happens to a food web when one species is removed?',
+        aliases: ['removing a species from a food web', 'knock on effects in a web', 'food web disturbance'],
+        answer:
+            'Its predators lose a food source and its prey increase, and those changes spread. A web with many ' +
+            'alternative links absorbs the loss better than a simple chain, which is one reason diversity confers ' +
+            'stability.',
+    },
+    {
+        id: 'bio-carrying-capacity-limits',
+        subject: 'biology',
+        question: 'What sets the carrying capacity of a habitat?',
+        aliases: ['what limits carrying capacity', 'resource that runs out first', 'habitat capacity'],
+        answer:
+            'Whichever resource runs short first: food, water, nesting sites, territory or light. Raising everything ' +
+            'except the limiting resource changes nothing, and carrying capacity itself shifts with the seasons.',
+    },
+    {
+        id: 'bio-exponential-vs-logistic',
+        subject: 'biology',
+        question: 'What is the difference between exponential and logistic growth?',
+        aliases: ['exponential growth curve', 'logistic growth curve', 's shaped population curve'],
+        answer:
+            'Exponential growth is unrestricted and gives a J shape. Logistic growth slows as resources become ' +
+            'limiting and levels off at the carrying capacity, giving an S shape. Real populations often overshoot ' +
+            'and oscillate around it.',
+    },
+    {
+        id: 'bio-adaptations-to-climate',
+        subject: 'biology',
+        question: 'How do organisms cope with temperature extremes?',
+        aliases: ['coping with heat', 'coping with cold', 'hibernation and torpor', 'countercurrent heat exchange'],
+        answer:
+            'Insulation, body size and shape, countercurrent blood flow in extremities, sheltering, migrating, and ' +
+            'entering torpor or hibernation. Behaviour is usually the first response because it is the fastest.',
+    },
+    {
+        id: 'bio-fire-ecology-australia',
+        subject: 'biology',
+        question: 'What role does fire play in Australian ecosystems?',
+        aliases: ['fire ecology', 'cultural burning', 'seeds needing fire', 'regeneration after fire'],
+        answer:
+            'Many species need fire to release seed or clear competition, and the interval between fires shapes which ' +
+            'species persist. Aboriginal cultural burning used frequent low-intensity fire, which produced a ' +
+            'different mosaic from infrequent intense fire.',
+    },
+    {
+        id: 'bio-restoration-ecology',
+        subject: 'biology',
+        question: 'How is a degraded ecosystem restored?',
+        aliases: ['restoring an ecosystem', 'revegetation', 'removing weeds and pests'],
+        answer:
+            'Remove the cause of the damage, control introduced predators and weeds, replant with local species, ' +
+            'restore the water regime, then monitor for years. Restoration rarely reproduces the original system ' +
+            'exactly.',
+    },
+    {
+        id: 'bio-monitoring-an-ecosystem',
+        subject: 'biology',
+        question: 'How is the health of an ecosystem monitored?',
+        aliases: ['monitoring ecosystem health', 'indicator species', 'water quality as an indicator'],
+        answer:
+            'Repeated surveys of abundance and diversity at fixed sites, plus abiotic measurements and indicator ' +
+            'species that are sensitive to change. Trends over years matter more than any single survey.',
+    },
+    {
+        id: 'bio-competition-types',
+        subject: 'biology',
+        question: 'What is the difference between intraspecific and interspecific competition?',
+        aliases: ['intraspecific competition', 'interspecific competition', 'competition within a species'],
+        answer:
+            'Intraspecific competition is between members of the same species, so it is the most intense, since their ' +
+            'needs are identical. Interspecific competition is between species with overlapping needs, and it can end ' +
+            'in exclusion or in partitioning.',
+    },
+    {
+        id: 'bio-trophic-efficiency-consequences',
+        subject: 'biology',
+        question: 'Why are there so few top predators?',
+        aliases: ['why few top predators', 'energy limits food chain length', 'why food chains are short'],
+        answer:
+            'Because roughly a tenth of the energy passes to each level, so the energy left after four or five ' +
+            'transfers cannot support many individuals. That is also why eating plants feeds more people than eating ' +
+            'meat.',
+    },
 ];

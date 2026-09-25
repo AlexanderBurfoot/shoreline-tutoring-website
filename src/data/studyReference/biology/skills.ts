@@ -141,4 +141,101 @@ export const biologySkillsEntries: StudyEntry[] = [
             'A lock and key model of enzymes explains specificity but not flexibility. ' +
             'Naming what a model leaves out is usually the mark being awarded.',
     },
+    {
+        id: 'bio-choosing-a-sampling-method',
+        subject: 'biology',
+        question: 'Which sampling method suits which organism?',
+        aliases: ['choosing a sampling method', 'quadrat or transect choice', 'sampling mobile animals'],
+        answer:
+            'Quadrats for plants and slow-moving organisms, transects where there is a gradient, capture-recapture ' +
+            'for mobile animals, and traps or nets for insects and aquatic life. Match the method to how the organism ' +
+            'moves.',
+    },
+    {
+        id: 'bio-calculating-abundance',
+        subject: 'biology',
+        question: 'How do I estimate abundance from quadrat data?',
+        aliases: ['estimating abundance', 'scaling up quadrat counts', 'percentage cover'],
+        answer:
+            'Find the mean count per quadrat, then multiply by the number of quadrat areas in the whole site. For ' +
+            'plants, percentage cover is often more useful than counting individuals, since one plant may spread ' +
+            'widely.',
+    },
+    {
+        id: 'bio-capture-recapture-assumptions',
+        subject: 'biology',
+        question: 'What does capture-recapture assume?',
+        aliases: ['capture recapture assumptions', 'lincoln index assumptions', 'why an estimate can be wrong'],
+        answer:
+            'That marks stay on and do not affect survival, that marked animals mix back in fully, and that no ' +
+            'births, deaths or migration occur between the two catches. Breaking any of these biases the estimate.',
+    },
+    {
+        id: 'bio-processing-biological-data',
+        subject: 'biology',
+        question: 'How do I process biological data before drawing a conclusion?',
+        aliases: ['processing biological data', 'calculating a rate from data', 'means and ranges in biology'],
+        answer:
+            'Calculate means and a measure of spread, convert to a rate where time is involved, and present the data ' +
+            'in the form the trend is clearest in. State the number of replicates, since a mean of two tells the ' +
+            'reader little.',
+    },
+    {
+        id: 'bio-statistical-significance-biology',
+        subject: 'biology',
+        question: 'What does it mean for a biological difference to be significant?',
+        aliases: ['statistical significance in biology', 'is the difference real', 'overlapping error bars'],
+        answer:
+            'That it is unlikely to have arisen by chance given the variation in the data. If error bars overlap ' +
+            'substantially, the difference between two means may be sampling variation rather than a real effect.',
+    },
+    {
+        id: 'bio-choosing-a-graph-biology',
+        subject: 'biology',
+        question: 'Which graph should I use for biological data?',
+        aliases: ['choosing a graph in biology', 'line or column graph biology', 'scatterplot for two variables'],
+        answer:
+            'A line graph where the independent variable is continuous, a column graph for categories, a scatterplot ' +
+            'to look for a relationship between two measured variables, and a histogram for the distribution of one.',
+    },
+    {
+        id: 'bio-using-secondary-data',
+        subject: 'biology',
+        question: 'How do I use secondary data well in a depth study?',
+        aliases: ['using secondary data', 'citing a data source', 'combining data sets'],
+        answer:
+            'Record where each data set came from and when, check the method behind it, and do not combine data ' +
+            'collected by incompatible methods. Then analyse it rather than reproducing it, which is where the marks ' +
+            'are.',
+    },
+    {
+        id: 'bio-writing-a-biology-conclusion',
+        subject: 'biology',
+        question: 'How do I write a conclusion in biology?',
+        aliases: ['writing a biology conclusion', 'answering the question with data', 'conclusion versus discussion'],
+        answer:
+            'Answer the question directly, quote the figures that support it, state the limitation that most affects ' +
+            'confidence, and say what would be tested next. A conclusion that repeats the method has not concluded ' +
+            'anything.',
+    },
+    {
+        id: 'bio-ethics-in-fieldwork',
+        subject: 'biology',
+        question: 'What ethical issues arise in biological fieldwork?',
+        aliases: ['fieldwork ethics', 'disturbing habitat', 'handling animals in the field', 'permits for collecting'],
+        answer:
+            'Minimising disturbance, returning organisms unharmed to where they were found, avoiding breeding ' +
+            'seasons, obtaining permits, and respecting Aboriginal land and cultural sites. The default is to observe ' +
+            'rather than collect.',
+    },
+    {
+        id: 'bio-command-terms-biology',
+        subject: 'biology',
+        question: 'What do the biology command terms require?',
+        aliases: ['biology command terms', 'explain versus describe', 'assess in biology'],
+        answer:
+            'Identify or outline needs the briefest correct statement, describe needs features, explain needs a cause ' +
+            'or mechanism, compare needs both similarities and differences, and assess or evaluate needs a judgement ' +
+            'with criteria.',
+    },
 ];
