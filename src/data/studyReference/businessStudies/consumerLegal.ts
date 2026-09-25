@@ -1,14 +1,9 @@
 /**
- * Business Studies reference, Years 9 to 12.
- *
- * The four business functions and the influences on them, plus the consumer,
- * financial and legal questions students bring from Commerce. Commerce is not
- * offered at the moment (see subjectData.ts), so those entries sit here and
- * point at Business Studies rather than at a page that is not published.
+ * Commerce: consumers, personal finance and the legal system.
  */
-import type { StudyEntry } from './types';
+import type { StudyEntry } from '../types';
 
-export const businessEntries: StudyEntry[] = [
+export const businessConsumerLegalEntries: StudyEntry[] = [
     {
         id: 'bus-business-functions',
         subject: 'business-studies',
@@ -18,26 +13,6 @@ export const businessEntries: StudyEntry[] = [
             'Operations turns inputs into outputs, marketing identifies and satisfies customer needs, finance manages ' +
             'the money, and human resources manages the people. ' +
             'They are interdependent: a marketing campaign that succeeds creates demands on operations and staffing.',
-    },
-    {
-        id: 'bus-operations',
-        subject: 'business-studies',
-        question: 'What does the operations function involve?',
-        aliases: ['operations management', 'transformation process', 'quality management', 'supply chain', 'outsourcing'],
-        answer:
-            'Operations is the transformation of inputs into outputs, with the four Vs of volume, variety, variation ' +
-            'in demand and visibility. Strategies include supply chain management, outsourcing, technology and ' +
-            'quality management through control, assurance and improvement.',
-    },
-    {
-        id: 'bus-marketing-mix',
-        subject: 'business-studies',
-        question: 'What is the marketing mix?',
-        aliases: ['marketing mix', 'four ps', 'product price promotion place', 'market segmentation'],
-        answer:
-            'Product, price, promotion and place, chosen together to reach a target market. ' +
-            'Pricing can be cost-plus, market-based or competition-based, and can skim or penetrate on launch. ' +
-            'Segmentation divides a market so the mix can be aimed at one group.',
     },
     {
         id: 'bus-finance-statements',
@@ -58,16 +33,6 @@ export const businessEntries: StudyEntry[] = [
             'Liquidity: current ratio = current assets / current liabilities. Gearing: debt to equity shows reliance ' +
             'on borrowing. Profitability: gross and net profit ratios, and return on equity. ' +
             'Efficiency: expense ratio and accounts receivable turnover.',
-    },
-    {
-        id: 'bus-human-resources',
-        subject: 'business-studies',
-        question: 'What does human resource management involve?',
-        aliases: ['human resources', 'recruitment', 'employment contract', 'workplace dispute', 'training'],
-        answer:
-            'The cycle is acquisition, development, maintenance and separation. ' +
-            'It covers recruitment, training, pay and conditions, and resolving disputes through negotiation, ' +
-            'mediation, grievance procedures or, if needed, the Fair Work Commission.',
     },
     {
         id: 'bus-business-lifecycle',
@@ -150,58 +115,6 @@ export const businessEntries: StudyEntry[] = [
             'Small and medium enterprises employ fewer than 200 people and dominate by number.',
     },
     {
-        id: 'bus-influences',
-        subject: 'business-studies',
-        question: 'What influences a business?',
-        aliases: ['influences on business', 'external influences', 'internal influences', 'pestle'],
-        answer:
-            'External influences include economic conditions, financial markets, geography, social attitudes, legal ' +
-            'and political settings, institutions, technology and competition. ' +
-            'Internal ones include products, location, resources, management and business culture. ' +
-            'Stakeholders are everyone affected, from shareholders to the community.',
-    },
-    {
-        id: 'bus-marketing-strategies',
-        subject: 'business-studies',
-        question: 'What are the marketing strategies?',
-        aliases: ['marketing strategies', 'positioning', 'branding', 'product life cycle', 'e marketing', 'market research'],
-        answer:
-            'Segment the market, target a group and position the product in their minds. ' +
-            'Strategies cover the product life cycle, branding, packaging, pricing methods, promotion mix and ' +
-            'distribution channels. Market research informs each one, and ethics limits what is acceptable.',
-    },
-    {
-        id: 'bus-finance-sources',
-        subject: 'business-studies',
-        question: 'Where can a business get finance?',
-        aliases: ['sources of finance', 'debt vs equity', 'overdraft', 'leasing', 'factoring', 'venture capital'],
-        answer:
-            'Internal finance is retained profit and owner\u2019s funds. External debt is short-term, such as ' +
-            'overdrafts and factoring, or long-term, such as mortgages and leasing. ' +
-            'Equity means new owners and no repayments, but the profit is shared and control diluted.',
-    },
-    {
-        id: 'bus-employment-relations',
-        subject: 'business-studies',
-        question: 'How are employment relations managed?',
-        aliases: ['employment relations', 'industrial relations', 'award', 'enterprise agreement', 'dispute resolution', 'unfair dismissal'],
-        answer:
-            'Pay and conditions come from the National Employment Standards, awards and enterprise agreements. ' +
-            'Disputes are resolved by negotiation, mediation, grievance procedures, conciliation or arbitration. ' +
-            'Dismissal must follow a fair process, or it may be found unfair.',
-    },
-    {
-        id: 'bus-global-business',
-        subject: 'business-studies',
-        question: 'What does global business involve?',
-        aliases: ['global business', 'exporting', 'global sourcing', 'transnational corporation', 'exchange rate business'],
-        answer:
-            'Ways in include exporting, licensing, franchising, joint ventures and direct investment, each trading ' +
-            'control against risk. ' +
-            'Global businesses must manage exchange rate movements, differing regulations and cultural expectations, ' +
-            'and decide whether to standardise or customise for each market.',
-    },
-    {
         id: 'bus-ethics-csr',
         subject: 'business-studies',
         question: 'What is corporate social responsibility?',
@@ -242,16 +155,6 @@ export const businessEntries: StudyEntry[] = [
             'the plan. ' +
             'Senior managers set direction, middle managers turn it into programs, and frontline managers run daily ' +
             'operations. The skills needed shift from technical to strategic as you move up.',
-    },
-    {
-        id: 'bus-management-styles',
-        subject: 'business-studies',
-        question: 'What are the management styles?',
-        aliases: ['management style', 'autocratic', 'democratic', 'participative', 'laissez faire'],
-        answer:
-            'Autocratic managers decide alone, which is fast and suits a crisis but can demotivate. ' +
-            'Participative or democratic managers involve staff, which builds commitment and takes longer. ' +
-            'Laissez-faire leaves decisions to the team, which works with experts and fails without them.',
     },
     {
         id: 'bus-quality-management',

@@ -6,7 +6,7 @@
  * student who wanted the formula is one click from the tutoring that explains it.
  */
 import { biologyEntries } from './biology';
-import { businessEntries } from './business';
+import { businessEntries } from './businessStudies';
 import { chemistryEntries } from './chemistry';
 import { economicsEntries } from './economics';
 import { examPrepEntries } from './examPrep';
