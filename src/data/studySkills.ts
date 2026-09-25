@@ -242,4 +242,224 @@ export const studySkillEntries: StudySkillEntry[] = [
             + 'next one. Three papers reviewed properly teach more than ten done and filed. Keep the '
             + 'most recent paper unseen until close to the exam so you have one honest rehearsal.',
     },
+    {
+        id: 'skill-helping-without-doing',
+        question: 'How do I help my child without doing the work for them?',
+        aliases: ['helping without doing the work', 'how much help is too much', 'supporting homework'],
+        answer:
+            'Ask questions rather than giving answers: what is the question asking, what have you '
+            + 'tried, where did it stop making sense. Sitting nearby while they work beats working '
+            + 'alongside them, because the aim is a student who can start without you.',
+    },
+    {
+        id: 'skill-study-space',
+        question: 'How do I set up a study space?',
+        aliases: ['study space', 'where should my child study', 'desk setup for study'],
+        answer:
+            'A consistent place with good light, the phone elsewhere and only the current subject on '
+            + 'the desk. It does not have to be a bedroom, and for some students a shared table works '
+            + 'better because it is visible. What matters is that sitting there means working.',
+    },
+    {
+        id: 'skill-screen-time',
+        question: 'How do I manage screen time around study?',
+        aliases: ['screen time and study', 'phone distraction', 'devices during homework'],
+        answer:
+            'Separate the device used for work from the one used for everything else, and put the '
+            + 'second in another room during study blocks. Notifications cost more than the seconds '
+            + 'they take, because returning to a difficult task is the expensive part.',
+    },
+    {
+        id: 'skill-refusing-to-study',
+        question: 'What do I do if my child refuses to study?',
+        aliases: ['child refuses to study', 'wont do homework', 'resistance to studying'],
+        answer:
+            'Find out which it is: not knowing where to start, not seeing the point, or fear of doing '
+            + 'it badly. Each needs a different response, and a smaller first step usually helps more '
+            + 'than a longer conversation about effort.',
+    },
+    {
+        id: 'skill-perfectionism',
+        question: 'How do I support a perfectionist?',
+        aliases: ['perfectionist student', 'afraid of getting it wrong', 'over checking work'],
+        answer:
+            'Set a time limit per task so finishing becomes the goal rather than flawlessness, and '
+            + 'praise the attempt at hard work rather than the mark. A student who cannot hand in an '
+            + 'imperfect draft will avoid starting, which costs far more than the imperfection would.',
+    },
+    {
+        id: 'skill-organisation',
+        question: 'How do I help a disorganised student?',
+        aliases: ['disorganised student', 'helping with organisation', 'losing track of work'],
+        answer:
+            'One place for everything: a single planner, a folder per subject, and a weekly '
+            + 'five-minute sort. Most disorganisation is a system problem rather than a character '
+            + 'problem, and the system has to be simple enough to survive a bad week.',
+    },
+    {
+        id: 'skill-using-a-planner',
+        question: 'How do I use a planner or diary properly?',
+        aliases: ['using a planner', 'homework diary', 'writing down due dates'],
+        answer:
+            'Record the due date and also when you will do it, since a list of deadlines is not a '
+            + 'plan. Check it at the same time each day, and put long tasks in as several entries '
+            + 'rather than one, so a major work does not sit untouched until the week before.',
+    },
+    {
+        id: 'skill-tutoring-homework',
+        question: 'Should tutoring come with homework?',
+        aliases: ['tutoring homework', 'work between tutoring sessions', 'practice after a lesson'],
+        answer:
+            'Usually a small amount, so the session is consolidated while it is fresh. It should be '
+            + 'short enough to actually be done and specific enough to check. Hours of extra work on '
+            + 'top of school load tends to be started and abandoned.',
+    },
+    {
+        id: 'skill-is-tutoring-working',
+        question: 'How do I know whether tutoring is working?',
+        aliases: ['is tutoring working', 'measuring tutoring progress', 'when to expect improvement'],
+        answer:
+            'Look for the student attempting work they previously avoided, explaining a method rather '
+            + 'than reciting it, and asking sharper questions. Marks follow, but they lag by a term, '
+            + 'because a rank reflects the whole cohort rather than one student progress.',
+    },
+    {
+        id: 'skill-tutoring-frequency',
+        question: 'How often should tutoring happen?',
+        aliases: ['how often tutoring', 'tutoring frequency', 'weekly or fortnightly tutoring'],
+        answer:
+            'Weekly suits most students, because it matches the pace new content arrives at and keeps '
+            + 'the gap short enough to act on. Fortnightly can work for a confident student needing '
+            + 'checkpoints. More than weekly is usually a sign the underlying gap is older than the '
+            + 'current topic.',
+    },
+    {
+        id: 'skill-preparing-for-a-session',
+        question: 'How do I prepare for a tutoring session?',
+        aliases: ['preparing for a tutoring session', 'what to bring to tutoring', 'getting the most from a lesson'],
+        answer:
+            'Bring the specific questions that stopped you, the marked work, and the assessment '
+            + 'notification if one is coming. A session that starts with a real question goes further '
+            + 'than one that starts with working out what to cover.',
+    },
+    {
+        id: 'skill-talking-to-a-teacher',
+        question: 'How do I raise a concern with a teacher?',
+        aliases: ['talking to a teacher', 'raising a concern at school', 'emailing a teacher'],
+        answer:
+            'Be specific and ask for information rather than opening with a judgement: which topics '
+            + 'are weakest, what the next assessment covers, what they would work on first. Teachers '
+            + 'see the cohort, so their answer usually reframes the problem usefully.',
+    },
+    {
+        id: 'skill-reading-a-report',
+        question: 'How do I read a school report?',
+        aliases: ['reading a school report', 'understanding a report card', 'what grades mean on a report'],
+        answer:
+            'Read the comments before the grades, and compare subjects against each other rather than '
+            + 'against an ideal. A grade shows position; the comment usually says whether the cause is '
+            + 'content, effort or organisation, which is what can be acted on.',
+    },
+    {
+        id: 'skill-disliked-subject',
+        question: 'How do I help with a subject my child dislikes?',
+        aliases: ['subject my child hates', 'disliked subject', 'motivation in one subject'],
+        answer:
+            'Dislike usually follows difficulty rather than causing it, so find the point where it '
+            + 'stopped making sense and repair that. Competence changes the feeling far more reliably '
+            + 'than encouragement does.',
+    },
+    {
+        id: 'skill-rebuilding-confidence',
+        question: 'How do I rebuild confidence after a poor result?',
+        aliases: ['rebuilding confidence', 'after a bad result', 'confidence after failure'],
+        answer:
+            'Go through the paper and separate what was not known from what was misread or rushed, '
+            + 'which usually makes the result look smaller. Then pick one topic to fix and one habit to '
+            + 'change, so the next attempt has a visible reason to go better.',
+    },
+    {
+        id: 'skill-encouraging-reading',
+        question: 'How do I encourage a reluctant reader?',
+        aliases: ['encouraging reading', 'reluctant reader', 'getting a child to read'],
+        answer:
+            'Let them choose, including comics, magazines and audiobooks, and keep it separate from '
+            + 'schoolwork. Reading volume is what builds vocabulary and fluency, and volume comes from '
+            + 'enjoyment rather than from the reading level of the book.',
+    },
+    {
+        id: 'skill-siblings',
+        question: 'How do I handle siblings comparing themselves?',
+        aliases: ['siblings comparing', 'comparing children', 'sibling rivalry and marks'],
+        answer:
+            'Discuss progress against their own earlier work rather than against each other, and '
+            + 'avoid using one as the standard even approvingly. Different subjects, teachers and '
+            + 'cohorts make the comparison meaningless anyway.',
+    },
+    {
+        id: 'skill-learning-difficulty',
+        question: 'When should we seek an assessment for a learning difficulty?',
+        aliases: ['assessment for a learning difficulty', 'suspecting dyslexia', 'when to get tested'],
+        answer:
+            'When the gap between effort and result persists despite support, or a specific skill '
+            + 'such as reading, spelling or number recall lags well behind everything else. Start with '
+            + 'the school learning support team, since an assessment can also unlock adjustments for '
+            + 'exams.',
+    },
+    {
+        id: 'skill-focus-difficulty',
+        question: 'How do I support a student who finds focus difficult?',
+        aliases: ['student who cannot focus', 'short attention span study', 'help concentrating on study'],
+        answer:
+            'Shorter blocks with a stated goal, visible progress, movement between them, and the '
+            + 'hardest task first. Written steps help more than verbal instructions. If it is affecting '
+            + 'every setting rather than only study, that is worth raising with the school or a GP.',
+    },
+    {
+        id: 'skill-memorisation',
+        question: 'How do I help with memorising content?',
+        aliases: ['helping with memorisation', 'memorising for an exam', 'remembering facts'],
+        answer:
+            'Test rather than review: ask the questions and let them answer from memory, then check. '
+            + 'Spacing it over days and mixing topics beats one long session, and content understood '
+            + 'first is far easier to retain than content met for the first time as something to '
+            + 'memorise.',
+    },
+    {
+        id: 'skill-assignment-overload',
+        question: 'What do we do when several assignments are due at once?',
+        aliases: ['assignments due at once', 'assignment overload', 'too many tasks at the same time'],
+        answer:
+            'List them with their weightings and due dates, then work in that order rather than by '
+            + 'whichever feels most urgent. Finishing a smaller task completely frees more attention '
+            + 'than making partial progress on all of them.',
+    },
+    {
+        id: 'skill-holidays',
+        question: 'How should school holidays be used for study?',
+        aliases: ['study during the holidays', 'holiday revision', 'using the break well'],
+        answer:
+            'A short daily block in the first and last weeks, with a genuine break between, and a '
+            + 'focus on consolidating the term just finished rather than reading ahead. Students who '
+            + 'work through the whole break arrive at the new term already tired.',
+    },
+    {
+        id: 'skill-part-time-work',
+        question: 'How do we balance part-time work with Year 12?',
+        aliases: ['part time work and year 12', 'working while studying', 'job during the hsc'],
+        answer:
+            'A shift or two a week is manageable and often helps structure, but check that it does '
+            + 'not fall the night before assessments or across the trial period. Where hours are needed '
+            + 'for financial reasons, the fix is timetabling study around them rather than dropping '
+            + 'study.',
+    },
+    {
+        id: 'skill-family-year-12',
+        question: 'How do we prepare as a family for Year 12?',
+        aliases: ['preparing for year 12 as a family', 'supporting a year 12 student', 'family and the hsc'],
+        answer:
+            'Agree early on quiet times, transport and what household jobs continue, since resentment '
+            + 'about small things surfaces under pressure. Keep asking about things other than school, '
+            + 'and treat the year as demanding rather than exceptional.',
+    },
 ];
