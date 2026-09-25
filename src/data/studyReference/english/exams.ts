@@ -373,4 +373,103 @@ export const englishExamsEntries: StudyEntry[] = [
             'precision: naming exactly what a text does, in its own detail, is more convincing than any amount of ' +
             'emphatic language.',
     },
+    {
+        id: 'eng-text-you-dislike',
+        subject: 'english',
+        question: 'How do I write well about a text I dislike?',
+        aliases: ['writing about a text I dislike', 'hating the prescribed text', 'analysing a text you do not enjoy'],
+        answer:
+            'Separate judgement from analysis: a text can be studied precisely by someone unmoved by it. If the ' +
+            'module allows evaluation, a well-argued reservation supported by close reading scores better than forced ' +
+            'enthusiasm, which markers recognise instantly.',
+    },
+    {
+        id: 'eng-unprepared-question',
+        subject: 'english',
+        question: 'What do I do if the question asks about something I did not prepare?',
+        aliases: ['unprepared english question', 'question on an aspect I did not study', 'unexpected essay question'],
+        answer:
+            'Take the keyword and make it the subject of your thesis, then reach for the evidence you know best and ' +
+            'show how it speaks to that idea. Close analysis of familiar passages, redirected honestly, beats a ' +
+            'prepared essay on a different question.',
+    },
+    {
+        id: 'eng-two-ideas-at-once',
+        subject: 'english',
+        question: 'How do I handle a question with two concepts in it?',
+        aliases: ['question with two concepts', 'two ideas in one question', 'linking two ideas in an essay'],
+        answer:
+            'Address the relationship between them rather than each in turn: does one cause, limit or complicate the ' +
+            'other. A thesis naming that relationship holds the essay together where two separate halves will not.',
+    },
+    {
+        id: 'eng-using-a-critical-reading',
+        subject: 'english',
+        question: 'How do I use a critical reading without name-dropping?',
+        aliases: ['using a critical reading', 'referring to critics', 'critical perspective in an essay'],
+        answer:
+            'Use it as a lens that changes what you notice in the text, then show what it reveals in a specific ' +
+            'passage. Naming a critic without demonstrating the reading adds nothing, and Module B rewards your ' +
+            'judgement rather than theirs.',
+    },
+    {
+        id: 'eng-analysing-a-title',
+        subject: 'english',
+        question: 'Can I write about a text title?',
+        aliases: ['analysing a title', 'significance of a title', 'writing about the title'],
+        answer:
+            'Yes, where it is doing work: a title can frame the whole reading, promise something the text withholds, ' +
+            'or take on a second meaning by the close. Return to it at the end of the essay, since that is where its ' +
+            'shift becomes visible.',
+    },
+    {
+        id: 'eng-analysing-an-opening',
+        subject: 'english',
+        question: 'How do I analyse the opening of a text?',
+        aliases: ['analysing an opening', 'first page analysis', 'why openings matter'],
+        answer:
+            'Ask what it establishes and what it withholds: voice, setting, the terms on which we read, and the ' +
+            'question that keeps us going. Openings are heavily revised by writers, so almost everything in them is ' +
+            'deliberate.',
+    },
+    {
+        id: 'eng-analysing-an-ending',
+        subject: 'english',
+        question: 'How do I analyse the ending of a text?',
+        aliases: ['analysing an ending', 'writing about a conclusion', 'why the ending matters'],
+        answer:
+            'Ask what is resolved, what is left open, and whether the close returns to something from the opening ' +
+            'changed. An ending that refuses resolution is making an argument, and saying what that argument is ' +
+            'usually lifts a paragraph.',
+    },
+    {
+        id: 'eng-silence-and-absence',
+        subject: 'english',
+        question: 'Can I write about what a text leaves out?',
+        aliases: ['writing about absence', 'silence in a text', 'what a text omits'],
+        answer:
+            'Yes, and it often distinguishes a strong response: whose voice is missing, what is never described, ' +
+            'where the narration stops. The claim has to be anchored in something on the page, such as a scene ending ' +
+            'before the event it promised.',
+    },
+    {
+        id: 'eng-minor-character',
+        subject: 'english',
+        question: 'Is it worth writing about a minor character?',
+        aliases: ['minor character', 'writing about a secondary character', 'minor characters in an essay'],
+        answer:
+            'Often yes, because markers see the same two figures repeatedly. A minor character usually exists to ' +
+            'reveal something about a major one or about the world of the text, and naming that function is more ' +
+            'interesting than another paragraph on the protagonist.',
+    },
+    {
+        id: 'eng-setting-as-character',
+        subject: 'english',
+        question: 'What does it mean to say setting works like a character?',
+        aliases: ['setting as a character', 'place acting on characters', 'setting with agency'],
+        answer:
+            'That the place acts on the people rather than only surrounding them: constraining choices, carrying ' +
+            'memory, or shifting as they do. Demonstrate it by showing the setting change alongside the character ' +
+            'rather than by asserting the idea.',
+    },
 ];

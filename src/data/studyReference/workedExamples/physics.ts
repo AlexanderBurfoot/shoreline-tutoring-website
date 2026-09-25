@@ -371,4 +371,23 @@ export const workedExamplePhysicsEntries: StudyEntry[] = [
             'Light of 400 nm carries 1,240 ÷ 400 = 3.10 eV per photon. Against a work function of 2.0 eV, the maximum ' +
             'kinetic energy is 1.1 eV, so the stopping voltage is 1.1 V.',
     },
+    {
+        id: 'phys-example-work-on-a-slope',
+        subject: 'physics',
+        question: 'Can you show me a worked example of work done on a slope?',
+        aliases: ['worked example work on a slope', 'example of pushing a box up a ramp', 'work against gravity and friction'],
+        answer:
+            'Pushing a 20 kg box 5.0 m up a 30° slope against 15 N of friction: the height gained is 5.0 sin 30° = ' +
+            '2.5 m, so the work against gravity is 20 × 9.8 × 2.5 = 490 J, and against friction 15 × 5.0 = 75 J, ' +
+            'giving 565 J in total.',
+    },
+    {
+        id: 'phys-example-motor-efficiency',
+        subject: 'physics',
+        question: 'Can you show me a worked example of motor efficiency?',
+        aliases: ['worked example motor efficiency', 'example of efficiency of a motor', 'electrical to mechanical efficiency'],
+        answer:
+            'A motor draws 240 V at 2.5 A, so the input power is 600 W. It raises a 30 kg load at 1.5 m s⁻¹, which is ' +
+            '30 × 9.8 × 1.5 = 441 W of useful output. Efficiency is 441 ÷ 600 = 73.5%.',
+    },
 ];

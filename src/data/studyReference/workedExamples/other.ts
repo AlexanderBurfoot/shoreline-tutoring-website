@@ -384,4 +384,24 @@ export const workedExampleOtherEntries: StudyEntry[] = [
             'Expenses of $120,000 against sales of $500,000 give 120 ÷ 500 = 24%. Tracking it over several years ' +
             'shows whether costs are growing faster than sales, which a single figure cannot.',
     },
+    {
+        id: 'econ-example-multiplier-leakages',
+        subject: 'economics',
+        question: 'Can you show me a worked example of the multiplier with leakages?',
+        aliases: ['worked example multiplier with leakages', 'example of multiplier with tax and imports', 'smaller multiplier example'],
+        answer:
+            'If households spend 0.8 of extra income, but 0.1 leaks to tax and 0.1 to imports, the fraction respent ' +
+            'domestically is 0.6. The multiplier is 1 ÷ (1 − 0.6) = 2.5, so a $2 bn injection raises income by about ' +
+            '$5 bn rather than $10 bn.',
+    },
+    {
+        id: 'bus-example-cash-flow-forecast',
+        subject: 'business-studies',
+        question: 'Can you show me a worked example of a cash flow forecast?',
+        aliases: ['worked example cash flow forecast', 'example of forecasting cash', 'projected cash balance example'],
+        answer:
+            'Opening cash $15,000; receipts of $60,000 in month one and $40,000 in month two; payments of $52,000 and ' +
+            '$55,000. Month one closes at $23,000 and month two at $8,000. The declining balance is the warning, even ' +
+            'though both months are positive.',
+    },
 ];

@@ -230,4 +230,41 @@ export const workedExampleMathsAppliedEntries: StudyEntry[] = [
             'From 3 red and 2 blue counters, two are drawn with replacement. P(exactly one red) counts both orders: 2 ' +
             '× (3/5)(2/5) = 12/25. Because the counter is replaced, the denominators stay at 5 for both draws.',
     },
+    {
+        id: 'maths-example-exponential-decay',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of exponential decay?',
+        aliases: ['worked example exponential decay', 'example of a decay calculation', 'half life in maths example'],
+        answer:
+            'A substance decays so that A = A₀e^(−0.05t) with t in years. After 20 years, A = A₀e⁻¹ = 0.368A₀, so ' +
+            'about 37% remains. Setting A = 0.5A₀ and solving gives a half-life of ln 2 ÷ 0.05 = 13.9 years.',
+    },
+    {
+        id: 'maths-example-inverse-function',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of finding an inverse function?',
+        aliases: ['worked example inverse function', 'example of finding an inverse', 'swapping x and y example'],
+        answer:
+            'For y = 3x − 4, swap the variables to get x = 3y − 4, then rearrange: y = (x + 4)/3. Checking that ' +
+            'f(f⁻¹(x)) returns x confirms it, and the two graphs are reflections in the line y = x.',
+    },
+    {
+        id: 'maths-example-rate-from-graph',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of reading a rate from a graph?',
+        aliases: ['worked example rate from a graph', 'example of gradient as a rate', 'reading a rate off a curve'],
+        answer:
+            'A tank graph passes through (2, 30) and (6, 90) litres. The average rate is (90 − 30) ÷ (6 − 2) = 15 ' +
+            'litres per minute. For an instantaneous rate on a curve, draw a tangent and take its gradient instead.',
+    },
+    {
+        id: 'maths-example-three-branch-tree',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a three outcome tree diagram?',
+        aliases: ['worked example three outcome tree', 'example of a tree with three branches', 'three colours probability example'],
+        answer:
+            'A bag holds 2 red, 3 blue and 5 green counters, and one is drawn then replaced. Each branch has ' +
+            'probability 0.2, 0.3 and 0.5. P(two the same colour) = 0.04 + 0.09 + 0.25 = 0.38, summing the three ' +
+            'matching pairs.',
+    },
 ];

@@ -189,7 +189,7 @@ export const economicsMacroEntries: StudyEntry[] = [
         id: 'econ-policy-evaluation',
         subject: 'economics',
         question: 'How do I evaluate an economic policy in an answer?',
-        aliases: ['evaluating a policy', 'assessing effectiveness of policy', 'policy evaluation structure'],
+        aliases: ['evaluating a policy', 'assessing effectiveness of policy'],
         answer:
             'State the objective, explain the mechanism, give evidence of the outcome, then name the limitation or ' +
             'side effect and the trade-off accepted. An answer that only describes the policy has not evaluated it.',

@@ -359,4 +359,23 @@ export const workedExampleChemistryEntries: StudyEntry[] = [
             'Magnesium has a standard potential of −2.37 V and silver +0.80 V. Magnesium is oxidised, so E°cell = ' +
             '0.80 − (−2.37) = 3.17 V. Pairing the extremes of the table gives the largest voltage available.',
     },
+    {
+        id: 'chem-example-combined-gas-law',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of the combined gas law?',
+        aliases: ['worked example combined gas law', 'example of changing gas conditions', 'p1v1 over t1 example'],
+        answer:
+            'A gas occupies 2.00 L at 300 K and 100 kPa. At 400 K and 150 kPa, V₂ = (100 × 2.00 × 400) ÷ (300 × 150) ' +
+            '= 1.78 L. Temperatures must be in kelvin, and the amount of gas is unchanged.',
+    },
+    {
+        id: 'chem-example-buffer-preparation',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of preparing a buffer?',
+        aliases: ['worked example preparing a buffer', 'example of making a buffer', 'choosing a buffer ratio'],
+        answer:
+            'To buffer at pH 5.00 with an acid of pKa 4.76: 5.00 = 4.76 + log([base]/[acid]), so the ratio is 10^0.24 ' +
+            '= 1.74. Mixing 1.74 mol of the salt per mole of acid gives that pH, and the total concentration sets the ' +
+            'capacity.',
+    },
 ];
