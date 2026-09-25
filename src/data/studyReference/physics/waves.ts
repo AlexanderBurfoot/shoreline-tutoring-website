@@ -19,7 +19,7 @@ export const physicsWavesEntries: StudyEntry[] = [
         id: 'phys-refraction',
         subject: 'physics',
         question: 'What are reflection, refraction and total internal reflection?',
-        aliases: ['snells law', 'refraction', 'refractive index', 'total internal reflection', 'critical angle'],
+        aliases: ['snells law', 'refraction', 'refractive index', 'total internal reflection'],
         answer:
             'Snell\u2019s law is n₁ sin θ₁ = n₂ sin θ₂, and the refractive index is n = c/v. ' +
             'Light bends towards the normal entering a denser medium. Past the critical angle, where sin θc = n₂/n₁, ' +
@@ -79,7 +79,7 @@ export const physicsWavesEntries: StudyEntry[] = [
         id: 'phys-lenses-mirrors',
         subject: 'physics',
         question: 'How do I draw ray diagrams for lenses and mirrors?',
-        aliases: ['ray diagram', 'lens formula', 'magnification', 'real and virtual image', 'converging lens', 'mirror equation'],
+        aliases: ['ray diagram', 'magnification', 'real and virtual image', 'converging lens', 'mirror equation'],
         answer:
             '1/f = 1/u + 1/v, and magnification m = −v/u = h′/h. ' +
             'Draw a ray parallel to the axis that refracts through the focus, and one straight through the centre. ' +
@@ -109,7 +109,7 @@ export const physicsWavesEntries: StudyEntry[] = [
         id: 'phys-sound-intensity',
         subject: 'physics',
         question: 'How does sound intensity fall with distance?',
-        aliases: ['sound intensity', 'inverse square law', 'decibel', 'intensity distance', 'i1r1 = i2r2'],
+        aliases: ['sound intensity', 'inverse square law', 'intensity distance', 'i1r1 = i2r2'],
         answer:
             'Intensity obeys an inverse square law, I ∝ 1/r², so I₁r₁² = I₂r₂²: double the distance and the intensity ' +
             'falls to a quarter. The decibel scale is logarithmic, so every 10 dB is a tenfold change in intensity.',
@@ -160,7 +160,7 @@ export const physicsWavesEntries: StudyEntry[] = [
         id: 'phys-dispersion',
         subject: 'physics',
         question: 'Why does a prism split white light?',
-        aliases: ['dispersion', 'prism', 'rainbow', 'spectrum of white light', 'refractive index colour'],
+        aliases: ['dispersion', 'prism', 'spectrum of white light', 'refractive index colour'],
         answer:
             'The refractive index is slightly different for each wavelength, so each colour bends by a different ' +
             'amount. Violet slows most and bends most, red least. ' +
@@ -262,5 +262,99 @@ export const physicsWavesEntries: StudyEntry[] = [
             'A short-sighted eye focuses light in front of the retina, so a diverging concave lens is used to spread ' +
             'the light first. ' +
             'A long-sighted eye focuses behind it, so a converging convex lens brings the focus forward.',
+    },
+    {
+        id: 'phys-wavefronts',
+        subject: 'physics',
+        question: 'What is a wavefront?',
+        aliases: ['wavefront', 'huygens principle', 'rays and wavefronts'],
+        answer:
+            'A line or surface joining points that are all at the same stage of their oscillation, such as the crests. ' +
+            'Rays are drawn perpendicular to wavefronts to show the direction of travel, so the two are two views of ' +
+            'the same wave.',
+    },
+    {
+        id: 'phys-why-light-bends',
+        subject: 'physics',
+        question: 'Why does light bend when it enters a new medium?',
+        aliases: ['why light bends', 'change of speed on refraction', 'wavefront explanation of bending'],
+        answer:
+            'Because its speed changes. ' +
+            'One edge of the wavefront enters the slower medium first and is held back while the other edge continues, ' +
+            'so the front pivots. ' +
+            'Frequency is unchanged, so the wavelength changes instead.',
+    },
+    {
+        id: 'phys-rainbow',
+        subject: 'physics',
+        question: 'How is a rainbow formed?',
+        aliases: ['rainbow', 'dispersion in raindrops', 'why the bow is curved'],
+        answer:
+            'Light refracts entering a raindrop, reflects off the back, and refracts again leaving. ' +
+            'Each colour bends by a slightly different amount, so they emerge separated, with red at about 42 degrees ' +
+            'from the antisolar point and violet slightly less, which is why red sits on the outside.',
+    },
+    {
+        id: 'phys-critical-angle',
+        subject: 'physics',
+        question: 'What is the critical angle?',
+        aliases: ['critical angle', 'angle for total internal reflection', 'calculating the critical angle'],
+        answer:
+            'The angle of incidence inside the denser medium at which the refracted ray grazes along the boundary at ' +
+            '90 degrees. ' +
+            'Beyond it, nothing refracts out. ' +
+            'It is found from sin θc = n₂/n₁, so a larger difference in refractive index gives a smaller critical angle.',
+    },
+    {
+        id: 'phys-curved-mirrors',
+        subject: 'physics',
+        question: 'How do concave and convex mirrors differ?',
+        aliases: ['concave mirror', 'convex mirror', 'focal point of a mirror', 'shaving mirror'],
+        answer:
+            'A concave mirror converges light to a focus and can give a magnified upright image when the object is ' +
+            'inside the focal length, or an inverted real image beyond it. ' +
+            'A convex mirror always gives a small upright virtual image with a wide field of view, which is why it is ' +
+            'used for security and blind corners.',
+    },
+    {
+        id: 'phys-magnification',
+        subject: 'physics',
+        question: 'How do I calculate magnification?',
+        aliases: ['magnification formula', 'image height ratio', 'negative magnification'],
+        answer:
+            'Magnification is image height divided by object height, which also equals image distance over object ' +
+            'distance. ' +
+            'A magnitude below one means the image is smaller, and a negative value means it is inverted.',
+    },
+    {
+        id: 'phys-thin-lens-equation',
+        subject: 'physics',
+        question: 'What is the thin lens equation?',
+        aliases: ['thin lens equation', 'lens formula', 'object and image distance'],
+        answer:
+            '1/f = 1/u + 1/v, where u is the object distance, v the image distance and f the focal length. ' +
+            'Signs matter: a converging lens has positive f, a diverging lens negative, and a negative v means the ' +
+            'image is virtual and on the same side as the object.',
+    },
+    {
+        id: 'phys-ultrasound',
+        subject: 'physics',
+        question: 'How is ultrasound used?',
+        aliases: ['ultrasound', 'sonar', 'echolocation', 'imaging with sound'],
+        answer:
+            'A pulse is sent out and the time for the echo gives the distance, since d = vt/2 for the round trip. ' +
+            'Reflections at boundaries between tissues build an image. ' +
+            'Higher frequencies give finer detail but penetrate less deeply.',
+    },
+    {
+        id: 'phys-decibel-scale',
+        subject: 'physics',
+        question: 'What is the decibel scale?',
+        aliases: ['decibel', 'sound level scale', 'logarithmic loudness'],
+        answer:
+            'A logarithmic scale for sound intensity, so every 10 dB is a factor of ten in intensity but sounds only ' +
+            'about twice as loud. ' +
+            'It is used because human hearing spans a range of about a trillion in intensity, which a linear scale ' +
+            'handles badly.',
     },
 ];

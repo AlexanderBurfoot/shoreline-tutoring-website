@@ -50,7 +50,7 @@ export const physicsElectricityEntries: StudyEntry[] = [
         id: 'phys-magnetism-basics',
         subject: 'physics',
         question: 'What produces a magnetic field?',
-        aliases: ['magnetic field', 'solenoid', 'electromagnet', 'right hand grip rule'],
+        aliases: ['magnetic field', 'electromagnet'],
         answer:
             'Moving charge produces a magnetic field. Around a straight wire it circles the wire, given by the ' +
             'right-hand grip rule, with B = μ₀I/2πr. ' +

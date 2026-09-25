@@ -50,7 +50,7 @@ export const physicsLightEntries: StudyEntry[] = [
         id: 'phys-michelson-morley',
         subject: 'physics',
         question: 'What did the Michelson-Morley experiment show?',
-        aliases: ['michelson morley', 'aether', 'null result', 'postulates of special relativity', 'inertial frame'],
+        aliases: ['michelson morley', 'aether', 'null result', 'postulates of special relativity'],
         answer:
             'It looked for the Earth\u2019s motion through a supposed aether and found nothing, a famous null result. ' +
             'That supported Einstein\u2019s postulates: the laws of physics are the same in every inertial frame, and ' +
@@ -140,7 +140,7 @@ export const physicsLightEntries: StudyEntry[] = [
         id: 'phys-relativity-postulates',
         subject: 'physics',
         question: 'What are the postulates of special relativity?',
-        aliases: ['postulates of relativity', 'constant speed of light', 'einstein postulates', 'frame of reference'],
+        aliases: ['postulates of relativity', 'constant speed of light', 'einstein postulates'],
         answer:
             'First, the laws of physics are the same in every inertial frame, meaning any frame moving at constant ' +
             'velocity. Second, the speed of light in a vacuum is the same for every observer, whatever their motion. ' +

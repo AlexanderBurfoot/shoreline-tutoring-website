@@ -11,7 +11,7 @@ export const physicsKinematicsEntries: StudyEntry[] = [
         id: 'phys-suvat',
         subject: 'physics',
         question: 'What are the equations of motion?',
-        aliases: ['suvat', 'equations of motion', 'kinematics equations', 'constant acceleration', 'falling object', 'how fast something falls', 'acceleration due to gravity'],
+        aliases: ['suvat', 'equations of motion', 'kinematics equations', 'falling object', 'how fast something falls', 'acceleration due to gravity'],
         answer:
             'For constant acceleration: v = u + at, s = ut + ½at², v² = u² + 2as, and s = ½(u + v)t. ' +
             'Here u is the initial velocity, v the final velocity, a the acceleration and s the displacement. ' +
@@ -21,7 +21,7 @@ export const physicsKinematicsEntries: StudyEntry[] = [
         id: 'phys-vectors-scalars',
         subject: 'physics',
         question: 'What is the difference between a vector and a scalar?',
-        aliases: ['vector scalar', 'displacement vs distance', 'speed vs velocity', 'resultant vector'],
+        aliases: ['vector scalar', 'displacement vs distance', 'resultant vector'],
         answer:
             'A scalar has size only, such as distance, speed, mass or energy. A vector has size and direction, such ' +
             'as displacement, velocity, acceleration and force. Add vectors head to tail, or by components, and the ' +
@@ -31,7 +31,7 @@ export const physicsKinematicsEntries: StudyEntry[] = [
         id: 'phys-graphing-data',
         subject: 'physics',
         question: 'How do I use a gradient to find a physical constant?',
-        aliases: ['line of best fit', 'gradient of a graph', 'linearising data', 'straight line graph physics', 'plotting results'],
+        aliases: ['gradient of a graph', 'linearising data', 'straight line graph physics', 'plotting results'],
         answer:
             'Rearrange the relationship into the form y = mx + b, so the quantity you want becomes the gradient. ' +
             'Plot the measured pairs, draw the line of best fit, and take the gradient from the line, not from two ' +
@@ -52,7 +52,7 @@ export const physicsKinematicsEntries: StudyEntry[] = [
         id: 'phys-distance-displacement',
         subject: 'physics',
         question: 'What is the difference between distance and displacement?',
-        aliases: ['distance vs displacement', 'average speed', 'scalar quantity motion'],
+        aliases: ['distance vs displacement', 'scalar quantity motion'],
         answer:
             'Distance is the total path travelled, a scalar. Displacement is the straight line from start to finish ' +
             'with a direction, a vector. ' +
@@ -140,5 +140,111 @@ export const physicsKinematicsEntries: StudyEntry[] = [
             'have nor need. ' +
             'If time is missing, use v² = u² + 2as. ' +
             'If the final velocity is missing, use s = ut + ½at². Writing the list first prevents most mistakes.',
+    },
+    {
+        id: 'phys-speed-vs-velocity',
+        subject: 'physics',
+        question: 'What is the difference between speed and velocity?',
+        aliases: ['speed vs velocity', 'average speed', 'is velocity a vector'],
+        answer:
+            'Speed is a scalar, the rate of covering distance. ' +
+            'Velocity is a vector, the rate of change of displacement, so it carries a direction. ' +
+            'A car going round a roundabout at a steady 30 km/h has constant speed but changing velocity.',
+    },
+    {
+        id: 'phys-area-under-graph',
+        subject: 'physics',
+        question: 'What does the area under a motion graph tell me?',
+        aliases: ['area under a velocity time graph', 'area under an acceleration graph', 'displacement from a graph'],
+        answer:
+            'The area under a velocity-time graph is the displacement, and under an acceleration-time graph it is the ' +
+            'change in velocity. ' +
+            'Area below the axis counts as negative, so it subtracts from the total, which is how a return journey ' +
+            'gives zero displacement.',
+    },
+    {
+        id: 'phys-sign-conventions',
+        subject: 'physics',
+        question: 'How do I choose which direction is positive?',
+        aliases: ['sign convention', 'is deceleration negative', 'choosing a positive direction'],
+        answer:
+            'Choose either direction as positive, state it, then stay with it for every quantity in the question. ' +
+            'Negative acceleration does not always mean slowing: it means acceleration in the negative direction, so ' +
+            'an object moving the negative way is speeding up.',
+    },
+    {
+        id: 'phys-thrown-upward',
+        subject: 'physics',
+        question: 'What happens at the top of a ball thrown upward?',
+        aliases: ['ball thrown up', 'velocity at the highest point', 'time up equals time down'],
+        answer:
+            'Velocity is momentarily zero but acceleration is still 9.8 m s⁻² downward, which is why the ball does not ' +
+            'stay there. ' +
+            'Ignoring air resistance, the flight is symmetric: the time up equals the time down, and it returns at the ' +
+            'same speed it left.',
+    },
+    {
+        id: 'phys-stopping-distance',
+        subject: 'physics',
+        question: 'What affects the stopping distance of a car?',
+        aliases: ['stopping distance', 'braking distance', 'reaction time distance', 'thinking distance'],
+        answer:
+            'Stopping distance is thinking distance plus braking distance. ' +
+            'Thinking distance grows in proportion to speed, but braking distance grows with the square of it, since ' +
+            'the kinetic energy to remove is ½mv². ' +
+            'Doubling the speed roughly quadruples the braking distance.',
+    },
+    {
+        id: 'phys-uniform-acceleration-meaning',
+        subject: 'physics',
+        question: 'What does uniform acceleration mean?',
+        aliases: ['uniform acceleration', 'constant acceleration', 'non uniform acceleration'],
+        answer:
+            'The velocity changes by the same amount each second, so the velocity-time graph is a straight line. ' +
+            'The equations of motion only apply in this case. ' +
+            'If acceleration itself changes, the graph curves and you need gradients and areas instead of the formulas.',
+    },
+    {
+        id: 'phys-tangent-gradient',
+        subject: 'physics',
+        question: 'How do I find instantaneous velocity from a curved graph?',
+        aliases: ['tangent to a curve', 'gradient of a tangent', 'instantaneous value from a curve'],
+        answer:
+            'Draw a tangent touching the curve at that point, extend it well past the curve, then take the rise over ' +
+            'run using two widely separated points on the tangent. ' +
+            'Using points close together magnifies the error in reading them.',
+    },
+    {
+        id: 'phys-frame-of-reference',
+        subject: 'physics',
+        question: 'What is a frame of reference?',
+        aliases: ['frame of reference', 'inertial frame', 'observer in motion'],
+        answer:
+            'The viewpoint from which motion is measured. ' +
+            'A passenger sees a dropped coin fall straight down; someone on the platform sees it follow a curve. ' +
+            'Both are right. ' +
+            'An inertial frame is one that is not accelerating, and the laws of motion take their simple form only in ' +
+            'such a frame.',
+    },
+    {
+        id: 'phys-vector-subtraction',
+        subject: 'physics',
+        question: 'How do I subtract vectors?',
+        aliases: ['vector subtraction', 'change in velocity vector', 'reversing a vector', 'delta v'],
+        answer:
+            'Reverse the vector being subtracted, then add. ' +
+            'Change in velocity is final minus initial, so a ball bouncing straight back off a wall at the same speed ' +
+            'has a change in velocity of 2v, not zero, which is why the wall exerts a force.',
+    },
+    {
+        id: 'phys-free-fall-graphs',
+        subject: 'physics',
+        question: 'What do the graphs of a falling object look like?',
+        aliases: ['graphs of free fall', 'parabolic displacement graph', 'shape of a gravity graph'],
+        answer:
+            'Acceleration is a horizontal line at 9.8 m s⁻². ' +
+            'Velocity is a straight line with that gradient. ' +
+            'Displacement curves upward as a parabola, since it depends on t². ' +
+            'Each graph is the gradient of the one below it and the area of the one above.',
     },
 ];

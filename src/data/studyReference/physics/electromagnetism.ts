@@ -10,7 +10,7 @@ export const physicsElectromagnetismEntries: StudyEntry[] = [
         id: 'phys-magnetic-force',
         subject: 'physics',
         question: 'What is the force on a charge or wire in a magnetic field?',
-        aliases: ['magnetic force', 'f = bil', 'motor effect', 'right hand rule', 'f = qvb'],
+        aliases: ['magnetic force', 'f = bil', 'motor effect', 'f = qvb'],
         answer:
             'On a moving charge, F = qvB sin θ. On a current-carrying wire, F = BIL sin θ. ' +
             'Use the right-hand rule to find the direction, and note the force is zero when the motion or current is ' +
@@ -40,7 +40,7 @@ export const physicsElectromagnetismEntries: StudyEntry[] = [
         id: 'phys-motors-generators',
         subject: 'physics',
         question: 'How does a motor differ from a generator?',
-        aliases: ['dc motor', 'generator', 'commutator', 'slip rings', 'ac generator'],
+        aliases: ['dc motor', 'generator', 'slip rings', 'ac generator'],
         answer:
             'A motor turns electrical energy into motion using the force on a current in a field, F = BIL. ' +
             'A generator does the reverse, inducing an emf by turning a coil in a field. ' +
@@ -60,7 +60,7 @@ export const physicsElectromagnetismEntries: StudyEntry[] = [
         id: 'phys-eddy-currents',
         subject: 'physics',
         question: 'What are eddy currents?',
-        aliases: ['eddy currents', 'magnetic braking', 'laminated core', 'induction braking', 'eddy current losses'],
+        aliases: ['eddy currents', 'laminated core', 'induction braking', 'eddy current losses'],
         answer:
             'A changing flux through a solid conductor induces circulating currents in it. ' +
             'By Lenz\u2019s law they oppose the motion that caused them, which is how magnetic braking works. ' +
@@ -158,5 +158,86 @@ export const physicsElectromagnetismEntries: StudyEntry[] = [
             'In a permanent magnet they stay aligned; in soft iron they align while a field is applied and relax ' +
             'afterwards, which is why cores are made of it. ' +
             'Heating or hammering randomises the domains again.',
+    },
+    {
+        id: 'phys-solenoid',
+        subject: 'physics',
+        question: 'What is the magnetic field of a solenoid?',
+        aliases: ['solenoid', 'field inside a coil', 'iron core in a coil'],
+        answer:
+            'Inside a long solenoid the field is uniform and along the axis; outside it resembles a bar magnet. ' +
+            'Strength rises with current and with turns per metre, and an iron core multiplies it, which is what makes ' +
+            'an electromagnet useful.',
+    },
+    {
+        id: 'phys-right-hand-rule',
+        subject: 'physics',
+        question: 'How do I use the right-hand rule?',
+        aliases: ['right hand rule', 'right hand grip rule', 'field direction around a wire'],
+        answer:
+            'For a straight wire, point the right thumb along the conventional current and the curled fingers give the ' +
+            'circular field direction. ' +
+            'For a coil, curl the fingers with the current and the thumb points to the north end.',
+    },
+    {
+        id: 'phys-galvanometer',
+        subject: 'physics',
+        question: 'How does a moving-coil meter work?',
+        aliases: ['galvanometer', 'moving coil meter', 'why a needle deflects'],
+        answer:
+            'Current in a coil sitting in a magnetic field feels a turning force, so the coil rotates against a spring ' +
+            'until the two balance. ' +
+            'The deflection is then proportional to the current, and curved magnet faces keep the field radial so the ' +
+            'scale stays even.',
+    },
+    {
+        id: 'phys-loudspeaker',
+        subject: 'physics',
+        question: 'How does a loudspeaker work?',
+        aliases: ['loudspeaker', 'speaker coil', 'turning current into sound'],
+        answer:
+            'A coil attached to a cone sits in the field of a permanent magnet. ' +
+            'The alternating current in the coil makes it feel a force that reverses with the current, so the cone ' +
+            'vibrates and pushes waves of pressure into the air at the frequency of the signal.',
+    },
+    {
+        id: 'phys-transformer-calculation',
+        subject: 'physics',
+        question: 'How do I do a transformer calculation?',
+        aliases: ['transformer ratio', 'step up step down calculation'],
+        answer:
+            'Vs/Vp = Ns/Np, so more turns on the secondary means a higher voltage. ' +
+            'If the transformer is ideal the power is unchanged, so VpIp = VsIs and the current changes the opposite ' +
+            'way: stepping voltage up steps current down.',
+    },
+    {
+        id: 'phys-magnetic-braking',
+        subject: 'physics',
+        question: 'What is magnetic braking?',
+        aliases: ['magnetic braking', 'induction brake', 'magnet falling slowly down a tube'],
+        answer:
+            'Motion through a field induces currents that, by the law of induction, oppose the motion that made them. ' +
+            'A magnet dropped down a copper tube drifts rather than falls, and trains use the same effect to brake ' +
+            'without any contact or wear.',
+    },
+    {
+        id: 'phys-induced-emf-size',
+        subject: 'physics',
+        question: 'What determines the size of an induced emf?',
+        aliases: ['rate of change of flux', 'size of an induced emf', 'faster movement more voltage'],
+        answer:
+            'The rate of change of flux and the number of turns: emf = −N ΔΦ/Δt. ' +
+            'Moving faster, using a stronger field, a larger area or more turns all increase it. ' +
+            'Holding the magnet still gives nothing, however strong it is.',
+    },
+    {
+        id: 'phys-commutator',
+        subject: 'physics',
+        question: 'What does a commutator do?',
+        aliases: ['commutator', 'split ring', 'brushes in a motor'],
+        answer:
+            'It reverses the current in the coil every half turn, so the force on each side keeps pushing the same way ' +
+            'round instead of reversing as the coil passes the vertical. ' +
+            'Without it, the coil would swing to the vertical and stop.',
     },
 ];
