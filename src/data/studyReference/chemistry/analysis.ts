@@ -10,7 +10,7 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
         id: 'chem-analysis-techniques',
         subject: 'chemistry',
         question: 'Which analysis technique should I use?',
-        aliases: ['which technique', 'choosing an analysis technique', 'instrumental analysis', 'chromatography', 'identifying a compound'],
+        aliases: ['which technique', 'choosing an analysis technique', 'instrumental analysis', 'identifying a compound'],
         answer:
             'Match the technique to the question. Molar mass and fragments: mass spectrometry. Functional groups: ' +
             'infrared. Carbon and hydrogen skeleton: NMR. Concentration of a metal ion: AAS. ' +
@@ -41,7 +41,7 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
         id: 'chem-nmr',
         subject: 'chemistry',
         question: 'How do I read an NMR spectrum?',
-        aliases: ['nmr', 'proton nmr', 'carbon 13 nmr', 'chemical shift', 'splitting', 'n + 1 rule', 'integration'],
+        aliases: ['nmr', 'proton nmr', 'chemical shift', 'splitting', 'n + 1 rule'],
         answer:
             'The number of signals gives the number of distinct environments: hydrogen environments in ¹H NMR, ' +
             'carbon environments in ¹³C. ' +
@@ -65,7 +65,7 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
         id: 'chem-aas-uv',
         subject: 'chemistry',
         question: 'What do AAS and UV-visible spectroscopy measure?',
-        aliases: ['aas', 'atomic absorption spectroscopy', 'uv visible', 'colorimetry', 'absorbance'],
+        aliases: ['aas', 'atomic absorption spectroscopy', 'uv visible', 'absorbance'],
         answer:
             'Both measure how much light a sample absorbs, and absorbance rises with concentration. ' +
             'Run standards of known concentration to build a calibration curve, then read the unknown from it. ' +
@@ -181,7 +181,7 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
         id: 'chem-calibration-curves',
         subject: 'chemistry',
         question: 'How do I use a calibration curve?',
-        aliases: ['calibration curve', 'standards', 'absorbance concentration graph', 'reading an unknown', 'beer lambert'],
+        aliases: ['calibration curve', 'standards', 'absorbance concentration graph', 'reading an unknown'],
         answer:
             'Measure the absorbance of several standards of known concentration and plot absorbance against ' +
             'concentration, which should be a straight line through the origin. ' +
@@ -198,5 +198,91 @@ export const chemistryAnalysisEntries: StudyEntry[] = [
             'hydrogen environments from NMR, using integration and splitting to place them. ' +
             'Combine the three: no single technique settles a structure, and the answer should cite evidence from ' +
             'each.',
+    },
+    {
+        id: 'chem-carbon-13-nmr',
+        subject: 'chemistry',
+        question: 'What does carbon-13 NMR show?',
+        aliases: ['carbon 13 nmr', 'c13 spectrum', 'number of carbon environments'],
+        answer:
+            'One peak for each carbon environment, with the shift indicating what the carbon is attached to: around ' +
+            '170 to 180 ppm for a carbonyl carbon, 50 to 70 for a carbon bonded to oxygen, and under 50 for a plain ' +
+            'alkyl carbon. ' +
+            'Counting peaks tests a proposed structure quickly.',
+    },
+    {
+        id: 'chem-nmr-integration',
+        subject: 'chemistry',
+        question: 'What does the integration trace on an NMR spectrum show?',
+        aliases: ['integration', 'peak area ratio', 'how many hydrogens in a peak'],
+        answer:
+            'Area is proportional to the number of hydrogens in that environment, so the ratio of areas gives the ' +
+            'ratio of hydrogens. ' +
+            'A 3:2:1 set of areas in ethanol matches CH₃, CH₂ and OH, which together with the shifts fixes the ' +
+            'structure.',
+    },
+    {
+        id: 'chem-mass-spec-fragments',
+        subject: 'chemistry',
+        question: 'What do the fragments in a mass spectrum tell me?',
+        aliases: ['fragmentation pattern', 'm/z fragments'],
+        answer:
+            'The peak at the highest m/z is usually the molecular ion, giving the molar mass. ' +
+            'Differences between peaks name the pieces lost: 15 for CH₃, 17 for OH, 29 for CHO or C₂H₅. ' +
+            'Those losses point to which groups the molecule contains.',
+    },
+    {
+        id: 'chem-chromatography',
+        subject: 'chemistry',
+        question: 'How does chromatography separate a mixture?',
+        aliases: ['chromatography', 'retention factor', 'rf value', 'stationary and mobile phase'],
+        answer:
+            'Components distribute themselves between a stationary phase and a moving solvent, and the ones held less ' +
+            'tightly travel further. ' +
+            'Rf is the distance moved by the spot divided by the distance moved by the solvent, and it is constant for ' +
+            'a substance in a given system.',
+    },
+    {
+        id: 'chem-colorimetry',
+        subject: 'chemistry',
+        question: 'How does colorimetry measure concentration?',
+        aliases: ['colorimetry', 'absorbance and concentration', 'beer lambert'],
+        answer:
+            'A coloured solution absorbs light in proportion to its concentration, so absorbance measured at a fixed ' +
+            'wavelength rises linearly with it. ' +
+            'Standards give the calibration line, and the unknown is read from it. ' +
+            'Very concentrated samples fall off the line and must be diluted.',
+    },
+    {
+        id: 'chem-cation-identification',
+        subject: 'chemistry',
+        question: 'How are metal cations identified?',
+        aliases: ['cation test', 'identifying a metal ion', 'flame test and precipitate'],
+        answer:
+            'Flame colour narrows it down, then selective precipitation confirms it: adding hydroxide or carbonate ' +
+            'gives characteristic colours and solubilities, and some hydroxides redissolve in excess. ' +
+            'AAS gives a quantitative answer where the tests only identify.',
+    },
+    {
+        id: 'chem-anion-identification',
+        subject: 'chemistry',
+        question: 'How are anions identified?',
+        aliases: ['anion test', 'carbonate test', 'sulfate test', 'chloride test'],
+        answer:
+            'Carbonate fizzes with acid and the gas turns limewater cloudy. ' +
+            'Sulfate gives a white precipitate with barium that acid does not dissolve. ' +
+            'Chloride gives a white precipitate with silver nitrate that darkens in light. ' +
+            'Phosphate gives a yellow precipitate with ammonium molybdate.',
+    },
+    {
+        id: 'chem-sample-dilution',
+        subject: 'chemistry',
+        question: 'Why are samples diluted before instrumental analysis?',
+        aliases: ['diluting a sample', 'within the calibration range', 'dilution factor'],
+        answer:
+            'Because the linear response of an instrument covers a limited range, and a reading above it ' +
+            'underestimates the concentration. ' +
+            'Dilute into the middle of the range, then multiply the result by the dilution factor to recover the ' +
+            'original concentration.',
     },
 ];

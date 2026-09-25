@@ -50,7 +50,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-rate-factors',
         subject: 'chemistry',
         question: 'What affects the rate of a reaction?',
-        aliases: ['reaction rate', 'rate of reaction', 'collision theory'],
+        aliases: ['reaction rate', 'rate of reaction'],
         answer:
             'Temperature, concentration or pressure, surface area, and catalysts. ' +
             'Collision theory explains why: reactions need collisions with enough energy and the right orientation, ' +
@@ -90,7 +90,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-empirical-formula',
         subject: 'chemistry',
         question: 'How do I find an empirical formula?',
-        aliases: ['empirical formula', 'molecular formula', 'percentage composition'],
+        aliases: ['empirical formula', 'molecular formula'],
         answer:
             'Convert each element’s mass or percentage to moles with n = m/M, divide every answer by the smallest, ' +
             'then scale to whole numbers. The molecular formula is a whole-number multiple of that, found by comparing ' +
@@ -100,7 +100,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-periodic-trends',
         subject: 'chemistry',
         question: 'What are the periodic trends?',
-        aliases: ['periodic table trends', 'electronegativity', 'atomic radius', 'ionisation energy', 'groups periods'],
+        aliases: ['periodic table trends', 'atomic radius', 'ionisation energy', 'groups periods'],
         answer:
             'Across a period, atomic radius falls while electronegativity and ionisation energy rise, because the ' +
             'nuclear charge grows with no new shell. Down a group the reverse happens, as each shell added sits ' +
@@ -131,7 +131,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-solubility-rules',
         subject: 'chemistry',
         question: 'What are the solubility rules?',
-        aliases: ['solubility rules', 'precipitation reaction', 'net ionic equation', 'spectator ions'],
+        aliases: ['solubility rules', 'precipitation reaction'],
         answer:
             'All nitrates and Group 1 and ammonium salts dissolve. Most chlorides dissolve except silver and lead. ' +
             'Most sulfates dissolve except barium, lead and calcium. Most carbonates and hydroxides do not dissolve ' +
@@ -234,7 +234,7 @@ export const chemistryYear11Entries: StudyEntry[] = [
         id: 'chem-vsepr',
         subject: 'chemistry',
         question: 'How do I predict the shape of a molecule?',
-        aliases: ['vsepr', 'molecular shape', 'bond angle', 'tetrahedral', 'polar molecule', 'lone pair'],
+        aliases: ['vsepr', 'molecular shape', 'bond angle', 'tetrahedral', 'lone pair'],
         answer:
             'Electron pairs around the central atom repel and spread as far apart as possible: two give linear, three ' +
             'trigonal planar, four tetrahedral at about 109.5°. Lone pairs repel more, so they squeeze the angle. ' +
@@ -243,8 +243,8 @@ export const chemistryYear11Entries: StudyEntry[] = [
     {
         id: 'chem-isotopes-ram',
         subject: 'chemistry',
-        question: 'How do I calculate relative atomic mass from isotopes?',
-        aliases: ['relative atomic mass', 'isotopes', 'weighted average mass', 'mass spectrum abundance'],
+        question: 'How do I calculate relative atomic mass from isotopic abundances?',
+        aliases: ['relative atomic mass', 'weighted average mass', 'mass spectrum abundance'],
         answer:
             'Relative atomic mass is the weighted mean of the isotope masses: multiply each isotopic mass by its ' +
             'fractional abundance and add. ' +
@@ -572,5 +572,228 @@ export const chemistryYear11Entries: StudyEntry[] = [
             'They show variable oxidation states, form coloured compounds and ions, and act as catalysts. ' +
             'All three follow from partly filled d subshells, which allow several stable electron arrangements and ' +
             'energy gaps that absorb visible light.',
+    },
+    {
+        id: 'chem-particle-number',
+        subject: 'chemistry',
+        question: 'How do I find the number of particles in a sample?',
+        aliases: ['number of particles', 'molecules in a sample', 'times avogadro'],
+        answer:
+            'Find the moles first, then multiply by 6.022 × 10²³. ' +
+            'Be clear about what is being counted: one mole of CO₂ holds that many molecules but three times as many ' +
+            'atoms, so read whether the question asks for molecules, atoms or ions.',
+    },
+    {
+        id: 'chem-percentage-composition',
+        subject: 'chemistry',
+        question: 'How do I find percentage composition by mass?',
+        aliases: ['percentage composition', 'percent by mass', 'mass percentage of an element'],
+        answer:
+            'Divide the total mass of that element in one mole of the compound by the molar mass, then multiply by 100. ' +
+            'In CaCO₃ the carbon is 12.01/100.09, about 12.0%. ' +
+            'Multiply by the subscript before dividing when an element appears more than once.',
+    },
+    {
+        id: 'chem-water-of-crystallisation',
+        subject: 'chemistry',
+        question: 'How do I find the water of crystallisation?',
+        aliases: ['water of crystallisation', 'hydrated salt', 'anhydrous after heating', 'mass loss on heating'],
+        answer:
+            'Heat to constant mass, so all the water leaves. ' +
+            'The mass lost is the water and what remains is the anhydrous salt. ' +
+            'Convert both to moles and simplify the ratio, which gives the x in a formula such as CuSO₄·5H₂O.',
+    },
+    {
+        id: 'chem-ideal-gas-limits',
+        subject: 'chemistry',
+        question: 'When does the ideal gas law stop working?',
+        aliases: ['ideal gas assumptions', 'real gas deviation', 'high pressure low temperature gas'],
+        answer:
+            'It assumes the particles have no volume and no attraction for each other. ' +
+            'At high pressure their own volume is no longer negligible, and at low temperature attractions matter, so ' +
+            'real gases deviate most when they are close to condensing.',
+    },
+    {
+        id: 'chem-isotopes',
+        subject: 'chemistry',
+        question: 'What is an isotope?',
+        aliases: ['isotope', 'same element different mass', 'different neutron number'],
+        answer:
+            'Atoms of the same element with different numbers of neutrons, so the same atomic number but different mass ' +
+            'numbers. ' +
+            'Chemical behaviour is essentially identical, since that depends on electrons, but mass-dependent ' +
+            'properties such as diffusion rate differ slightly.',
+    },
+    {
+        id: 'chem-flame-colour-origin',
+        subject: 'chemistry',
+        question: 'Why do metal ions give coloured flames?',
+        aliases: ['flame colour', 'why sodium is yellow', 'electron excitation in a flame'],
+        answer:
+            'Heat lifts electrons to higher energy levels, and as they fall back they emit photons of the exact energy ' +
+            'difference. ' +
+            'Because each element has its own spacing of levels, each gives its own colour: sodium yellow, potassium ' +
+            'lilac, copper blue-green.',
+    },
+    {
+        id: 'chem-shielding',
+        subject: 'chemistry',
+        question: 'What are shielding and effective nuclear charge?',
+        aliases: ['shielding', 'effective nuclear charge', 'why outer electrons feel less pull'],
+        answer:
+            'Inner electrons repel the outer ones and so screen them from the nucleus. ' +
+            'The pull an outer electron actually feels is the effective nuclear charge, roughly the nuclear charge minus ' +
+            'the shielding. ' +
+            'It explains why atoms grow larger down a group.',
+    },
+    {
+        id: 'chem-metallic-properties',
+        subject: 'chemistry',
+        question: 'Why are metals malleable and conductive?',
+        aliases: ['malleable', 'delocalised electrons', 'why metals conduct', 'sea of electrons'],
+        answer:
+            'Positive ions sit in a lattice surrounded by delocalised electrons. ' +
+            'Those electrons carry charge and heat, and because the bonding is not directional, layers of ions can slide ' +
+            'past one another without breaking it, so the metal bends rather than shatters.',
+    },
+    {
+        id: 'chem-allotropes-carbon',
+        subject: 'chemistry',
+        question: 'What are the allotropes of carbon?',
+        aliases: ['allotrope', 'diamond and graphite', 'graphene', 'same element different structure'],
+        answer:
+            'Diamond bonds each carbon to four others in a rigid three-dimensional network, so it is extremely hard and ' +
+            'does not conduct. ' +
+            'Graphite bonds to three, leaving a delocalised electron per atom and sheets that slide, so it conducts and ' +
+            'lubricates. ' +
+            'Graphene is a single such sheet.',
+    },
+    {
+        id: 'chem-molecular-polarity',
+        subject: 'chemistry',
+        question: 'How do I decide whether a molecule is polar?',
+        aliases: ['net dipole', 'symmetrical molecule non polar', 'polar molecule'],
+        answer:
+            'Check each bond for a difference in electronegativity, then check the shape. ' +
+            'If the bond dipoles cancel by symmetry the molecule is non-polar, which is why CO₂ is non-polar despite ' +
+            'polar bonds, while the bent shape of water leaves a net dipole.',
+    },
+    {
+        id: 'chem-water-anomalies',
+        subject: 'chemistry',
+        question: 'Why is water such an unusual substance?',
+        aliases: ['properties of water', 'why ice floats', 'high boiling point of water'],
+        answer:
+            'Hydrogen bonding. ' +
+            'It raises the boiling point far above that of similar-sized molecules, gives water a high specific heat ' +
+            'that moderates climate, and holds molecules in an open lattice when it freezes, so ice is less dense than ' +
+            'the liquid and floats.',
+    },
+    {
+        id: 'chem-energy-unit-conversion',
+        subject: 'chemistry',
+        question: 'How do I convert between joules and kilojoules per mole?',
+        aliases: ['kilojoules per mole', 'converting energy units', 'joules to kilojoules'],
+        answer:
+            'Divide joules by 1000 for kilojoules, then divide by the moles involved for a value per mole. ' +
+            'Calorimetry gives joules for the actual sample, so the division by moles is what turns a measurement into ' +
+            'a molar enthalpy that can be compared with data.',
+    },
+    {
+        id: 'chem-thermochemical-equations',
+        subject: 'chemistry',
+        question: 'How do I write a thermochemical equation?',
+        aliases: ['thermochemical equation', 'sign of delta h', 'per mole of which substance'],
+        answer:
+            'Write the balanced equation with states, then give ΔH after it, negative for exothermic. ' +
+            'The value belongs to those exact coefficients, so doubling the equation doubles ΔH, and reversing it ' +
+            'changes the sign.',
+    },
+    {
+        id: 'chem-collision-theory',
+        subject: 'chemistry',
+        question: 'What is collision theory?',
+        aliases: ['collision theory', 'successful collision', 'correct orientation'],
+        answer:
+            'Particles must collide, with at least the activation energy and in a suitable orientation, for a reaction ' +
+            'to occur. ' +
+            'Most collisions fail on one of those counts, which is why anything that raises the frequency or the energy ' +
+            'of collisions raises the rate.',
+    },
+    {
+        id: 'chem-significant-figures',
+        subject: 'chemistry',
+        question: 'How many significant figures should a chemistry answer have?',
+        aliases: ['significant figures in chemistry', 'rounding a calculation', 'sig figs from a measurement'],
+        answer:
+            'Match the least precise measurement used, usually the one with the fewest significant figures. ' +
+            'Carry extra digits through the working and round only at the end. ' +
+            'A burette reading to 0.05 mL gives three or four figures, so an answer to six is claiming precision you ' +
+            'did not measure.',
+    },
+    {
+        id: 'chem-safety-data',
+        subject: 'chemistry',
+        question: 'What safety information should I check before an experiment?',
+        aliases: ['safety data sheet', 'hazard symbols', 'handling a chemical safely'],
+        answer:
+            'The safety data sheet: the hazards, the protective equipment needed, what to do on skin contact or ' +
+            'spillage, and how to dispose of the waste. ' +
+            'Then write the risk assessment from it, naming the control for each hazard rather than listing hazards ' +
+            'alone.',
+    },
+    {
+        id: 'chem-net-ionic-equations',
+        subject: 'chemistry',
+        question: 'How do I write a net ionic equation?',
+        aliases: ['net ionic equation', 'full ionic equation', 'spectator ions'],
+        answer:
+            'Write every soluble ionic substance as separated ions, keep solids, gases, water and weak acids together, ' +
+            'then cancel the ions that appear unchanged on both sides. ' +
+            'Those are spectator ions. ' +
+            'What remains is the chemistry that actually happened.',
+    },
+    {
+        id: 'chem-everyday-redox',
+        subject: 'chemistry',
+        question: 'Where does redox appear in everyday life?',
+        aliases: ['everyday redox', 'rusting', 'batteries as redox', 'bleaching'],
+        answer:
+            'Rusting, combustion, respiration, photosynthesis, batteries, bleaching and photography are all electron ' +
+            'transfers. ' +
+            'Recognising one means identifying which species loses electrons and which gains, which the oxidation ' +
+            'numbers make visible.',
+    },
+    {
+        id: 'chem-electronegativity',
+        subject: 'chemistry',
+        question: 'What is electronegativity?',
+        aliases: ['electronegativity', 'polar bond', 'difference in electronegativity'],
+        answer:
+            'How strongly an atom attracts the shared electrons in a bond. ' +
+            'It rises across a period and falls down a group, with fluorine highest. ' +
+            'A small difference gives a non-polar covalent bond, a moderate one a polar bond, and a large one ionic ' +
+            'bonding.',
+    },
+    {
+        id: 'chem-heat-calculation',
+        subject: 'chemistry',
+        question: 'How do I use q = mcΔT?',
+        aliases: ['q = mcdeltat', 'heat energy calculation', 'specific heat calculation'],
+        answer:
+            'q is the heat in joules, m the mass of the solution in grams, c its specific heat capacity, 4.18 J g⁻¹ K⁻¹ ' +
+            'for water, and ΔT the temperature change. ' +
+            'Use the mass of the solution being heated, not the mass of the reactant dissolved in it.',
+    },
+    {
+        id: 'chem-gas-stoichiometry',
+        subject: 'chemistry',
+        question: 'How do I do stoichiometry with gas volumes?',
+        aliases: ['gas volume stoichiometry', 'molar gas volume calculation', 'volume ratio of gases'],
+        answer:
+            'Convert the volume to moles by dividing by the molar volume at those conditions, apply the mole ratio, then ' +
+            'convert back. ' +
+            'For gases at the same temperature and pressure the volume ratio equals the mole ratio, so you can often ' +
+            'work directly in volumes.',
     },
 ];

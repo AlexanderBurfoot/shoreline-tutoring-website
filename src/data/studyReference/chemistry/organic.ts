@@ -49,7 +49,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
         id: 'chem-alcohols-reactions',
         subject: 'chemistry',
         question: 'What reactions do alcohols undergo?',
-        aliases: ['alcohol reactions', 'oxidation of alcohols', 'dehydration', 'substitution reaction', 'primary secondary tertiary'],
+        aliases: ['alcohol reactions', 'oxidation of alcohols', 'dehydration', 'primary secondary tertiary'],
         answer:
             'Primary alcohols oxidise to aldehydes then carboxylic acids; secondary give ketones; tertiary resist ' +
             'oxidation. Dehydration with acid gives an alkene. ' +
@@ -392,5 +392,89 @@ export const chemistryOrganicEntries: StudyEntry[] = [
             'An instrument measures a signal, not a concentration, so the signal means nothing until it is compared ' +
             'with samples of known concentration. ' +
             'Standards also reveal drift: running one again partway through shows whether the instrument has shifted.',
+    },
+    {
+        id: 'chem-haloalkanes',
+        subject: 'chemistry',
+        question: 'How do haloalkanes form and react?',
+        aliases: ['haloalkane', 'halogenation of an alkane', 'uv and chlorine', 'substitution reaction'],
+        answer:
+            'An alkane reacts with a halogen in ultraviolet light by substitution, one hydrogen at a time, giving a ' +
+            'mixture of products. ' +
+            'The carbon-halogen bond is polar, so haloalkanes are far more reactive than alkanes and are used to build ' +
+            'other functional groups.',
+    },
+    {
+        id: 'chem-dehydration-alcohols',
+        subject: 'chemistry',
+        question: 'How is an alkene made from an alcohol?',
+        aliases: ['dehydration of an alcohol', 'making an alkene from ethanol', 'concentrated sulfuric acid dehydration'],
+        answer:
+            'Heat the alcohol with concentrated sulfuric acid, which removes water across two adjacent carbons and ' +
+            'leaves a double bond. ' +
+            'It is the reverse of the hydration that turns an alkene into an alcohol, so conditions decide which way ' +
+            'the reaction runs.',
+    },
+    {
+        id: 'chem-making-ethanol',
+        subject: 'chemistry',
+        question: 'What are the two ways of making ethanol?',
+        aliases: ['making ethanol', 'hydration of ethene', 'industrial ethanol'],
+        answer:
+            'Fermenting sugars with yeast, which is renewable but slow and dilute, or hydrating ethene from crude oil ' +
+            'with a catalyst, which is fast and gives pure product but uses a finite feedstock. ' +
+            'Fuel ethanol is usually fermented, industrial solvent usually hydrated.',
+    },
+    {
+        id: 'chem-amino-acids',
+        subject: 'chemistry',
+        question: 'What are amino acids and peptide bonds?',
+        aliases: ['amino acid', 'peptide bond', 'zwitterion'],
+        answer:
+            'An amino acid carries both an amine and a carboxylic acid group, so it can act as either, and exists as a ' +
+            'zwitterion at intermediate pH. ' +
+            'The amine of one condenses with the acid of the next, releasing water and forming a peptide bond, which ' +
+            'makes proteins condensation polymers.',
+    },
+    {
+        id: 'chem-carbohydrates',
+        subject: 'chemistry',
+        question: 'What are carbohydrates chemically?',
+        aliases: ['carbohydrate', 'glucose structure', 'glycosidic link', 'starch and cellulose difference'],
+        answer:
+            'Polyhydroxy aldehydes or ketones, usually ring-shaped, that join by condensation through glycosidic links. ' +
+            'Starch and cellulose are both glucose polymers; the difference in how the rings are linked is why we can ' +
+            'digest one and not the other.',
+    },
+    {
+        id: 'chem-biopolymers',
+        subject: 'chemistry',
+        question: 'What are biopolymers?',
+        aliases: ['biopolymer', 'polylactic acid', 'biodegradable plastic', 'cellulose as a polymer'],
+        answer:
+            'Polymers made by living things or from renewable feedstocks: cellulose, starch, proteins, and polylactic ' +
+            'acid made from fermented plant sugar. ' +
+            'Many are biodegradable because enzymes can break their ester or amide links, which carbon-carbon chains ' +
+            'resist.',
+    },
+    {
+        id: 'chem-improving-yield',
+        subject: 'chemistry',
+        question: 'How is yield improved in industry?',
+        aliases: ['improving yield', 'recycling unreacted material', 'excess of the cheaper reactant'],
+        answer:
+            'Use an excess of the cheapest reactant, remove the product as it forms so equilibrium keeps shifting, ' +
+            'recycle unreacted material, and choose conditions that favour the product without ruining the rate. ' +
+            'Purification losses matter as much as the reaction itself.',
+    },
+    {
+        id: 'chem-green-chemistry',
+        subject: 'chemistry',
+        question: 'What is green chemistry?',
+        aliases: ['green chemistry', 'reducing solvent waste', 'safer feedstocks'],
+        answer:
+            'Designing processes to prevent waste rather than treat it: high atom economy, catalysts instead of ' +
+            'stoichiometric reagents, safer solvents, renewable feedstocks, and products that break down after use. ' +
+            'The cheapest waste to deal with is the waste never made.',
     },
 ];

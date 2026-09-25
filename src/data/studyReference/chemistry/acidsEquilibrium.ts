@@ -120,7 +120,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-strong-weak-acids',
         subject: 'chemistry',
         question: 'What is the difference between a strong acid and a concentrated one?',
-        aliases: ['strong vs weak acid', 'degree of ionisation', 'concentrated acid', 'dilute acid', 'weak acid ph'],
+        aliases: ['strong vs weak acid', 'concentrated acid', 'dilute acid', 'weak acid ph'],
         answer:
             'Strength is how completely an acid ionises; concentration is how much acid is in the solution. ' +
             'A strong acid ionises essentially completely, so [H⁺] equals its concentration. ' +
@@ -130,7 +130,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-kw-poh',
         subject: 'chemistry',
         question: 'What is Kw?',
-        aliases: ['kw', 'ionic product of water', 'poh', 'ph plus poh', 'self ionisation'],
+        aliases: ['kw', 'ionic product of water', 'ph plus poh', 'self ionisation'],
         answer:
             'Water self-ionises, and Kw = [H₃O⁺][OH⁻] = 1.0 × 10⁻¹⁴ at 25°C (298.15 K). ' +
             'So pH + pOH = 14, but only at that temperature. ' +
@@ -398,5 +398,88 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
             'Most solids dissolve more readily as temperature rises, which a solubility curve shows. ' +
             'Gases do the opposite: they become less soluble in warm water, which is why warm rivers hold less ' +
             'dissolved oxygen and why a warm soft drink goes flat faster.',
+    },
+    {
+        id: 'chem-poh',
+        subject: 'chemistry',
+        question: 'What is pOH and how does it relate to pH?',
+        aliases: ['poh', 'ph plus poh equals 14', 'calculating poh'],
+        answer:
+            'pOH = −log₁₀[OH⁻], and at 25 °C pH + pOH = 14. ' +
+            'For a base, finding [OH⁻] first and converting through pOH is usually quicker than going via [H⁺]. ' +
+            'The sum is 14 only at 25 °C, since it comes from Kw.',
+    },
+    {
+        id: 'chem-distinguishing-strong-weak',
+        subject: 'chemistry',
+        question: 'How can I tell a strong acid from a weak one experimentally?',
+        aliases: ['distinguishing strong and weak acids', 'conductivity of an acid', 'rate of reaction with magnesium'],
+        answer:
+            'At the same concentration, the strong acid has the lower pH, conducts better and reacts faster with ' +
+            'magnesium or carbonate, because it supplies more ions. ' +
+            'Both neutralise the same volume of base, so titration volume cannot tell them apart.',
+    },
+    {
+        id: 'chem-catalyst-and-equilibrium',
+        subject: 'chemistry',
+        question: 'Does a catalyst change the equilibrium yield?',
+        aliases: ['catalyst and equilibrium', 'reaching equilibrium faster', 'no change in yield'],
+        answer:
+            'No. ' +
+            'It lowers the activation energy of the forward and reverse reactions equally, so equilibrium arrives ' +
+            'sooner but at the same position. ' +
+            'Industrially that still matters: a faster approach means a usable rate at a lower temperature, which ' +
+            'protects the yield.',
+    },
+    {
+        id: 'chem-pressure-equilibrium',
+        subject: 'chemistry',
+        question: 'How does pressure affect a gaseous equilibrium?',
+        aliases: ['pressure on equilibrium', 'moles of gas on each side', 'compressing an equilibrium'],
+        answer:
+            'Raising the pressure shifts the system towards the side with fewer moles of gas, since that reduces the ' +
+            'pressure again. ' +
+            'If both sides have equal moles of gas, pressure has no effect on the position at all.',
+    },
+    {
+        id: 'chem-inert-gas-equilibrium',
+        subject: 'chemistry',
+        question: 'Why does adding an inert gas not shift equilibrium?',
+        aliases: ['inert gas added', 'argon added to equilibrium', 'partial pressures unchanged'],
+        answer:
+            'At constant volume the concentrations and partial pressures of the reacting gases are unchanged, so Q ' +
+            'still equals K and nothing shifts. ' +
+            'The total pressure rises, but only the partial pressures of the species in the equilibrium expression ' +
+            'matter.',
+    },
+    {
+        id: 'chem-percentage-ionisation',
+        subject: 'chemistry',
+        question: 'What is percentage ionisation?',
+        aliases: ['percentage ionisation', 'degree of ionisation', 'fraction ionised'],
+        answer:
+            'The fraction of the acid molecules that have donated their proton, as a percentage of those added. ' +
+            'It rises on dilution, since the equilibrium shifts towards more particles, so a weak acid is more ' +
+            'ionised when dilute even though its pH is higher.',
+    },
+    {
+        id: 'chem-buffer-calculation',
+        subject: 'chemistry',
+        question: 'How do I calculate the pH of a buffer?',
+        aliases: ['buffer ph', 'henderson hasselbalch', 'ratio of acid to conjugate base'],
+        answer:
+            'pH = pKa + log₁₀([base]/[acid]), so the pH depends on the ratio, not the absolute amounts. ' +
+            'When the two are equal the pH equals the pKa, which is how a buffer is chosen for a target pH, and why ' +
+            'diluting a buffer barely changes it.',
+    },
+    {
+        id: 'chem-titre-size',
+        subject: 'chemistry',
+        question: 'What if my titre is too large or too small?',
+        aliases: ['titre too large', 'titre too small', 'choosing an aliquot volume'],
+        answer:
+            'Aim for a titre between about 10 and 30 mL, where the reading error is a small fraction of the volume. ' +
+            'If the titre overfills the burette, dilute the titrant or use a smaller aliquot; if it is only a few ' +
+            'millilitres, do the reverse.',
     },
 ];
