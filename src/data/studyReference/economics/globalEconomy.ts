@@ -18,7 +18,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-balance-of-payments',
         subject: 'economics',
         question: 'What is the balance of payments?',
-        aliases: ['balance of payments', 'current account', 'capital account', 'current account deficit'],
+        aliases: ['balance of payments', 'current account', 'capital account'],
         answer:
             'It records all transactions with the rest of the world. The current account covers goods, services, ' +
             'income and transfers; the capital and financial account covers investment flows. ' +
@@ -28,7 +28,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-income-distribution',
         subject: 'economics',
         question: 'How is inequality measured?',
-        aliases: ['income distribution', 'lorenz curve', 'gini coefficient', 'inequality', 'poverty line'],
+        aliases: ['income distribution', 'lorenz curve', 'gini coefficient', 'inequality'],
         answer:
             'The Lorenz curve plots the share of income against the share of households; the further it bows from ' +
             'the line of equality, the more unequal the distribution. ' +
@@ -48,7 +48,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-exchange-rates',
         subject: 'economics',
         question: 'What determines the exchange rate?',
-        aliases: ['exchange rate', 'appreciation depreciation', 'floating exchange rate', 'currency demand', 'twi'],
+        aliases: ['exchange rate', 'appreciation depreciation', 'currency demand', 'twi'],
         answer:
             'Under a float, the rate is set by demand for and supply of the currency, driven by trade, interest rate ' +
             'differences, commodity prices and expectations. ' +
@@ -58,7 +58,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-australia-trade',
         subject: 'economics',
         question: 'What does Australia trade, and with whom?',
-        aliases: ['australias trade', 'trade patterns', 'terms of trade', 'commodity exports', 'free trade agreements'],
+        aliases: ['australias trade', 'trade patterns', 'commodity exports', 'free trade agreements'],
         answer:
             'Australia exports mostly commodities, such as iron ore, coal and gas, plus services including education ' +
             'and tourism, and trades most with Asia. ' +
@@ -68,7 +68,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-market-types',
         subject: 'economics',
         question: 'What are the types of market structure?',
-        aliases: ['market structures', 'perfect competition', 'monopoly', 'oligopoly', 'monopolistic competition'],
+        aliases: ['market structures', 'monopolistic competition'],
         answer:
             'Perfect competition has many small firms selling identical products and no price-setting power. ' +
             'Monopoly has one firm and substantial power. ' +
@@ -79,7 +79,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-firm-behaviour',
         subject: 'economics',
         question: 'How does a firm decide what to produce?',
-        aliases: ['profit maximisation', 'marginal cost', 'marginal revenue', 'economies of scale', 'firm output'],
+        aliases: ['profit maximisation', 'marginal cost', 'marginal revenue', 'firm output'],
         answer:
             'A firm maximises profit where marginal revenue equals marginal cost, since beyond that point each extra ' +
             'unit costs more than it earns. ' +
@@ -145,7 +145,7 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-globalisation-effects',
         subject: 'economics',
         question: 'What are the effects of globalisation?',
-        aliases: ['globalisation effects', 'trade liberalisation', 'foreign investment', 'global supply chains', 'inequality globalisation'],
+        aliases: ['globalisation effects', 'global supply chains', 'inequality globalisation'],
         answer:
             'Trade, investment, technology and labour move more freely, which raises efficiency and lowers prices, ' +
             'and has lifted many out of poverty. ' +
@@ -178,11 +178,151 @@ export const economicsGlobalEntries: StudyEntry[] = [
         id: 'econ-market-failure-examples',
         subject: 'economics',
         question: 'What are examples of market failure in Australia?',
-        aliases: ['market failure examples', 'negative externality', 'public good example', 'natural monopoly', 'asymmetric information'],
+        aliases: ['market failure examples', 'negative externality', 'public good example', 'asymmetric information'],
         answer:
             'Pollution is a negative externality whose cost the price ignores. ' +
             'Defence and street lighting are public goods nobody would supply privately. ' +
             'Electricity networks are natural monopolies, so they are regulated. ' +
             'Health insurance suffers asymmetric information, which is why it is regulated too.',
+    },
+    {
+        id: 'econ-measuring-globalisation',
+        subject: 'economics',
+        question: 'How is globalisation measured?',
+        aliases: ['indicators of globalisation', 'trade as a share of gdp', 'transnational corporations'],
+        answer:
+            'By trade volumes and trade as a share of world output, financial flows and foreign investment, the size ' +
+            'and reach of transnational corporations, technology transfer, and labour migration. ' +
+            'Financial flows have grown far faster than trade in goods.',
+    },
+    {
+        id: 'econ-trade-liberalisation',
+        subject: 'economics',
+        question: 'What is trade liberalisation?',
+        aliases: ['trade liberalisation', 'free trade agreement', 'world trade organisation', 'tariff reduction'],
+        answer:
+            'Reducing barriers to trade, through multilateral rounds under the World Trade Organisation, regional ' +
+            'blocs, or bilateral agreements. ' +
+            'Australia cut protection sharply from the 1970s, which lowered prices and forced industries to become ' +
+            'competitive or shrink.',
+    },
+    {
+        id: 'econ-appreciation-effects',
+        subject: 'economics',
+        question: 'What are the effects of an appreciation of the dollar?',
+        aliases: ['appreciation', 'depreciation', 'exchange rate and exporters'],
+        answer:
+            'A stronger dollar makes imports cheaper, which lowers inflation and helps consumers, but makes exports ' +
+            'dearer abroad, squeezing exporters and tourism. ' +
+            'A depreciation reverses both, improving competitiveness while adding to imported inflation.',
+    },
+    {
+        id: 'econ-current-account-deficit',
+        subject: 'economics',
+        question: 'Why does Australia run a current account deficit?',
+        aliases: ['current account deficit', 'savings investment gap', 'net foreign debt'],
+        answer:
+            'Because domestic saving has been below what the country wants to invest, so the shortfall is funded from ' +
+            'overseas. ' +
+            'Servicing that funding shows up as a net income deficit, which is the largest part of the current account ' +
+            'deficit, rather than a trade shortfall.',
+    },
+    {
+        id: 'econ-terms-of-trade',
+        subject: 'economics',
+        question: 'What are the terms of trade?',
+        aliases: ['terms of trade', 'export prices to import prices', 'commodity boom'],
+        answer:
+            'An index of export prices divided by import prices. ' +
+            'When it rises, the same volume of exports buys more imports, which raises national income without any ' +
+            'extra production. ' +
+            'Australia is unusually exposed to it because exports are concentrated in commodities.',
+    },
+    {
+        id: 'econ-foreign-investment',
+        subject: 'economics',
+        question: 'What role does foreign investment play in Australia?',
+        aliases: ['foreign investment', 'foreign direct investment', 'portfolio investment'],
+        answer:
+            'It fills the gap between national saving and investment, funding mines, infrastructure and housing. ' +
+            'Direct investment brings management and technology with it and is long term; portfolio investment is ' +
+            'financial and can leave quickly, which is why the mix matters.',
+    },
+    {
+        id: 'econ-protection-arguments',
+        subject: 'economics',
+        question: 'What are the arguments for and against protection?',
+        aliases: ['arguments for protection', 'infant industry', 'dumping', 'case for free trade'],
+        answer:
+            'For: protecting infant industries until they reach scale, defending against dumping, saving jobs during ' +
+            'adjustment, and national security in essential goods. ' +
+            'Against: higher prices, resources kept in industries that cannot compete, retaliation, and the loss of the ' +
+            'gains from specialisation.',
+    },
+    {
+        id: 'econ-globalisation-inequality',
+        subject: 'economics',
+        question: 'Has globalisation reduced inequality?',
+        aliases: ['globalisation and inequality', 'convergence between countries', 'winners and losers'],
+        answer:
+            'Between countries, partly: hundreds of millions in East Asia moved out of poverty through export-led ' +
+            'growth. ' +
+            'Within countries it has often widened, since gains flow to capital and skilled labour while regions ' +
+            'dependent on exposed industries fall behind.',
+    },
+    {
+        id: 'econ-emerging-economies',
+        subject: 'economics',
+        question: 'What are emerging and developing economies?',
+        aliases: ['emerging economy', 'developing economy', 'newly industrialised'],
+        answer:
+            'Emerging economies are industrialising fast and integrating into world markets, with rising incomes but ' +
+            'weaker institutions than developed economies. ' +
+            'Developing economies have low incomes and often depend on a few primary exports, which leaves them exposed ' +
+            'to price swings.',
+    },
+    {
+        id: 'econ-international-organisations',
+        subject: 'economics',
+        question: 'What do the IMF, World Bank and WTO do?',
+        aliases: ['imf', 'world bank', 'role of the wto', 'international economic organisations'],
+        answer:
+            'The IMF lends to countries in balance of payments crisis and monitors stability, usually with conditions ' +
+            'attached. ' +
+            'The World Bank funds development projects. ' +
+            'The WTO sets and enforces trade rules and hears disputes between members.',
+    },
+    {
+        id: 'econ-china-trade',
+        subject: 'economics',
+        question: 'How important is China to the Australian economy?',
+        aliases: ['china trade', 'iron ore exports', 'trade concentration risk'],
+        answer:
+            'It is by far the largest export market, taking roughly a third of exports, especially iron ore, coal, gas ' +
+            'and education. ' +
+            'That concentration lifted national income through the resources boom and leaves Australia exposed to ' +
+            'Chinese growth and to political disputes.',
+    },
+    {
+        id: 'econ-global-financial-crisis',
+        subject: 'economics',
+        question: 'What did the global financial crisis show?',
+        aliases: ['global financial crisis', 'gfc', 'financial contagion', 'stimulus response'],
+        answer:
+            'That financial linkages transmit shocks faster than trade does, and that under-regulated lending can ' +
+            'threaten the whole system. ' +
+            'Australia avoided recession through rapid fiscal stimulus, sharp rate cuts, deposit guarantees and ' +
+            'continued Chinese demand for resources.',
+    },
+    {
+        id: 'econ-exchange-rate-systems',
+        subject: 'economics',
+        question: 'What are fixed, floating and managed exchange rates?',
+        aliases: ['floating exchange rate', 'fixed exchange rate', 'managed float'],
+        answer:
+            'A floating rate is set by supply and demand in the foreign exchange market, which is the Australian ' +
+            'system since 1983 and lets the currency absorb shocks. ' +
+            'A fixed rate is pegged and defended by the central bank. ' +
+            'A managed float floats but with intervention to smooth movements.',
     },
 ];
