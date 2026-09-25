@@ -245,7 +245,7 @@ export const physicsWavesEntries: StudyEntry[] = [
     {
         id: 'phys-em-waves-uses',
         subject: 'physics',
-        question: 'What is each part of the electromagnetic spectrum used for?',
+        question: 'What is each type of radiation used for?',
         aliases: ['uses of em waves', 'microwaves uses', 'infrared uses', 'x rays uses', 'uv uses'],
         answer:
             'Radio for broadcasting, microwaves for heating and mobile signals, infrared for thermal imaging and ' +
