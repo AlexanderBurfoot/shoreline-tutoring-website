@@ -295,7 +295,7 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
     {
         id: 'maths-jr-simple-interest-vs-compound',
         subject: 'mathematics',
-        question: 'What is the difference between simple and compound interest?',
+        question: 'Why does compounding beat a flat calculation over time?',
         aliases: ['simple versus compound interest', 'which grows faster'],
         answer:
             'Simple interest is calculated on the original amount every period, so growth is linear. Compound ' +
@@ -330,13 +330,14 @@ export const mathematicsJuniorEntries: StudyEntry[] = [
             'the other way. Whatever you do to one side must be done to the other.',
     },
     {
-        id: 'maths-jr-substitution-formulas',
+        id: 'maths-jr-fraction-bar-bracket',
         subject: 'mathematics',
-        question: 'How do I substitute into a formula with several variables?',
-        aliases: ['substituting several values', 'using a formula with letters', 'replacing letters with numbers'],
+        question: 'Does a fraction bar act as a bracket?',
+        aliases: ['fraction bar as a bracket', 'dividing line grouping', 'numerator calculated first'],
         answer:
-            'Replace each letter with its value in brackets, then apply the order of operations. Brackets matter: ' +
-            'substituting −2 for x in 3x² without them gives the wrong sign.',
+            'Yes. Everything above the line is worked out before dividing, and so is everything below, even though no ' +
+            'brackets are written. Typing such an expression into a calculator without adding those brackets is a ' +
+            'common source of wrong answers.',
     },
     {
         id: 'maths-jr-coordinate-basics',
