@@ -99,7 +99,7 @@ export const mathematicsTrigonometryEntries: StudyEntry[] = [
         id: 'maths-which-trig-rule',
         subject: 'mathematics',
         question: 'Which trigonometric rule should I use?',
-        aliases: ['which rule', 'sine rule or cosine rule', 'sine or cosine rule', 'choosing a trig rule', 'non right angled triangle'],
+        aliases: ['which rule', 'sine rule or cosine rule', 'sine or cosine rule', 'choosing a trig rule'],
         answer:
             'Right-angled triangle: SOH CAH TOA. ' +
             'Non-right-angled with a side opposite a known angle: sine rule. ' +

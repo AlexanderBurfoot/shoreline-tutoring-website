@@ -193,7 +193,7 @@ export const mathematicsStandardEntries: StudyEntry[] = [
         id: 'maths-std-limits-accuracy',
         subject: 'mathematics',
         question: 'What are limits of accuracy and percentage error?',
-        aliases: ['limits of accuracy', 'absolute error', 'percentage error', 'measurement error', 'upper and lower bound'],
+        aliases: ['limits of accuracy', 'percentage error', 'measurement error', 'upper and lower bound'],
         answer:
             'A measurement is accurate to plus or minus half the smallest unit on the instrument, giving upper and ' +
             'lower bounds. ' +
@@ -264,7 +264,7 @@ export const mathematicsStandardEntries: StudyEntry[] = [
         id: 'maths-std-cumulative-frequency',
         subject: 'mathematics',
         question: 'How do I use a cumulative frequency graph?',
-        aliases: ['cumulative frequency', 'ogive', 'percentile', 'median from a graph', 'cumulative frequency polygon'],
+        aliases: ['cumulative frequency', 'ogive', 'median from a graph', 'cumulative frequency polygon'],
         answer:
             'Plot running totals against the upper end of each class and join the points. ' +
             'Read the median at half the total frequency, and the quartiles at a quarter and three quarters. ' +
@@ -288,5 +288,147 @@ export const mathematicsStandardEntries: StudyEntry[] = [
             'One minute of arc along a great circle is one nautical mile, so the distance between two points on the ' +
             'same meridian is the difference in latitude in minutes. ' +
             'Longitude also gives time: 15° is one hour.',
+    },
+    {
+        id: 'maths-std-unit-conversion',
+        subject: 'mathematics',
+        question: 'How do I convert between metric units reliably?',
+        aliases: ['converting metric units', 'unit conversion method', 'squared and cubed unit conversion'],
+        answer:
+            'Multiply going to smaller units and divide going to larger ones. For areas the factor is squared and for ' +
+            'volumes cubed, so 1 m² is 10,000 cm², not 100.',
+    },
+    {
+        id: 'maths-std-rates',
+        subject: 'mathematics',
+        question: 'How do I convert a rate into different units?',
+        aliases: ['working with rates', 'rate per unit', 'converting a rate'],
+        answer:
+            'A rate compares two quantities with different units, so keep the units in the working. To convert, ' +
+            'multiply by a fraction equal to one: 72 km/h times 1000 m per km divided by 3600 s per hour gives 20 ' +
+            'm/s.',
+    },
+    {
+        id: 'maths-std-percentage-increase-decrease',
+        subject: 'mathematics',
+        question: 'How do I find the original amount after a percentage change?',
+        aliases: ['reverse percentage', 'original price before discount', 'working backwards from a percentage'],
+        answer:
+            'Divide rather than multiply. If a price after a 20% discount is $64, that is 80% of the original, so the ' +
+            'original is 64 ÷ 0.8 = $80. Subtracting 20% of $64 gives the wrong answer.',
+    },
+    {
+        id: 'maths-std-gst',
+        subject: 'mathematics',
+        question: 'How do I calculate GST?',
+        aliases: ['gst calculation', 'adding ten per cent', 'removing gst from a total'],
+        answer:
+            'To add GST, multiply by 1.1. To find the GST inside a total, divide by 11. To find the pre-GST price, ' +
+            'divide by 1.1. Subtracting 10% from the total is a common and costly error.',
+    },
+    {
+        id: 'maths-std-budget-planning',
+        subject: 'mathematics',
+        question: 'How do I plan a budget that balances?',
+        aliases: ['balancing a budget', 'fixed and variable expenses', 'surplus and deficit household'],
+        answer:
+            'List income after tax, then separate fixed expenses such as rent from variable ones such as food. Income ' +
+            'minus expenses is the surplus, and a deficit means either income must rise or a variable expense must ' +
+            'fall.',
+    },
+    {
+        id: 'maths-std-loan-repayments',
+        subject: 'mathematics',
+        question: 'How do I work with a loan repayment table?',
+        aliases: ['loan repayment table', 'reducing balance loan', 'interest and principal portions'],
+        answer:
+            'Each repayment covers the interest on the current balance first, and the remainder reduces the ' +
+            'principal. Interest for the period is the balance times the monthly rate, so the interest portion falls ' +
+            'as the balance does.',
+    },
+    {
+        id: 'maths-std-future-value',
+        subject: 'mathematics',
+        question: 'What is the difference between future value and present value?',
+        aliases: ['future value', 'present value', 'annuity value'],
+        answer:
+            'Future value is what a series of payments grows to; present value is the single amount now that is ' +
+            'equivalent to them. Both use the same interest rate, and a table or formula converts between them.',
+    },
+    {
+        id: 'maths-std-inflation-effect',
+        subject: 'mathematics',
+        question: 'How does inflation affect a calculation?',
+        aliases: ['inflation effect on money', 'adjusting for inflation over years', 'real value of savings'],
+        answer:
+            'Prices rise compound, so an amount today is multiplied by (1 + rate)ⁿ to give the equivalent later ' +
+            'amount. Savings earning less than inflation lose real value even though the balance grows.',
+    },
+    {
+        id: 'maths-std-choosing-a-graph',
+        subject: 'mathematics',
+        question: 'Which graph suits which kind of data?',
+        aliases: ['choosing a graph type', 'when to use a histogram', 'box plot or column graph'],
+        answer:
+            'Column graphs and Pareto charts for categories, histograms and box plots for continuous data, line ' +
+            'graphs for change over time, scatterplots for two numeric variables, and a divided bar or sector graph ' +
+            'for parts of a whole.',
+    },
+    {
+        id: 'maths-std-percentiles',
+        subject: 'mathematics',
+        question: 'What does a percentile mean?',
+        aliases: ['quartile as a percentile', 'what percentile am i in', 'percentile'],
+        answer:
+            'The value below which that percentage of the data falls, so the 80th percentile has 80% of results ' +
+            'beneath it. The median is the 50th percentile and the quartiles are the 25th and 75th, which is how a ' +
+            'rank is reported without giving the raw mark.',
+    },
+    {
+        id: 'maths-std-histogram-vs-bar',
+        subject: 'mathematics',
+        question: 'What is the difference between a histogram and a bar graph?',
+        aliases: ['histogram versus bar graph', 'continuous data display', 'no gaps in a histogram'],
+        answer:
+            'A histogram shows continuous data in intervals, so the columns touch and the horizontal axis is a number ' +
+            'line. A bar graph shows separate categories, so the bars have gaps and could be reordered without losing ' +
+            'meaning.',
+    },
+    {
+        id: 'maths-std-interpreting-error',
+        subject: 'mathematics',
+        question: 'What does limit of accuracy mean in practice?',
+        aliases: ['limit of accuracy', 'plus or minus half a unit', 'absolute error'],
+        answer:
+            'A measurement to the nearest unit could be up to half a unit either way, so 34 cm to the nearest ' +
+            'centimetre means between 33.5 and 34.5. That range then carries into any calculation using it.',
+    },
+    {
+        id: 'maths-std-similar-figures-application',
+        subject: 'mathematics',
+        question: 'How do I use similar triangles to find a height I cannot measure?',
+        aliases: ['finding a height with similar triangles', 'shadow method', 'indirect measurement'],
+        answer:
+            'Set up two similar triangles, usually using shadows or a mirror, then equate the ratios of matching ' +
+            'sides. The unknown height is the only value left, so one multiplication finishes it.',
+    },
+    {
+        id: 'maths-std-non-right-angle-choice',
+        subject: 'mathematics',
+        question: 'Which rule do I use in a triangle without a right angle?',
+        aliases: ['non right angled triangle', 'sine or cosine rule choice', 'area of a triangle with sine'],
+        answer:
+            'Use the cosine rule when you have three sides, or two sides and the angle between them. Use the sine ' +
+            'rule when you have a side and its opposite angle. For the area with two sides and the included angle, ' +
+            'use ½ab sin C.',
+    },
+    {
+        id: 'maths-std-ambiguous-case',
+        subject: 'mathematics',
+        question: 'What is the ambiguous case of the sine rule?',
+        aliases: ['ambiguous case', 'two possible angles', 'obtuse alternative in the sine rule'],
+        answer:
+            'When finding an angle with the sine rule, both an acute and an obtuse angle share the same sine, so ' +
+            'check whether the obtuse option still leaves a valid triangle with an angle sum under 180 degrees.',
     },
 ];

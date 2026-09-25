@@ -61,7 +61,7 @@ export const mathematicsFunctionsEntries: StudyEntry[] = [
         id: 'maths-polynomials',
         subject: 'mathematics',
         question: 'How do I work with polynomials?',
-        aliases: ['polynomial', 'remainder theorem', 'factor theorem', 'long division algebra'],
+        aliases: ['polynomial', 'long division algebra'],
         answer:
             'The remainder theorem says dividing P(x) by (x − a) leaves P(a). ' +
             'If P(a) = 0 then (x − a) is a factor, which is the factor theorem and the usual way to start factorising. ' +
@@ -205,5 +205,115 @@ export const mathematicsFunctionsEntries: StudyEntry[] = [
             'there. ' +
             'A function is continuous where its graph has no break. ' +
             'Limits underpin the derivative, which is the limit of a gradient as the interval shrinks to zero.',
+    },
+    {
+        id: 'maths-quadratic-vertex-form',
+        subject: 'mathematics',
+        question: 'How do I find the vertex of a parabola?',
+        aliases: ['vertex of a parabola', 'turning point of a quadratic', 'axis of symmetry formula'],
+        answer:
+            'The axis of symmetry is x = −b/2a, and substituting it gives the y value of the vertex. Completing the ' +
+            'square gives the same point directly, since y = a(x − h)² + k has its vertex at (h, k).',
+    },
+    {
+        id: 'maths-quadratic-from-graph',
+        subject: 'mathematics',
+        question: 'How do I find the equation of a parabola from its graph?',
+        aliases: ['equation of a parabola from a graph', 'finding a quadratic from points', 'using the roots to write a quadratic'],
+        answer:
+            'If the roots are visible, write y = a(x − p)(x − q) and use one more point to find a. If the vertex is ' +
+            'visible, use y = a(x − h)² + k the same way. Choose the form that matches what the graph actually shows.',
+    },
+    {
+        id: 'maths-graph-asymptotes',
+        subject: 'mathematics',
+        question: 'How do I find the asymptotes of a graph?',
+        aliases: ['horizontal asymptote', 'behaviour for large x'],
+        answer:
+            'A vertical asymptote sits where the denominator is zero and the numerator is not. For a horizontal one, ' +
+            'look at what happens as x becomes very large: compare the degrees of the numerator and denominator.',
+    },
+    {
+        id: 'maths-graph-intercepts',
+        subject: 'mathematics',
+        question: 'How do I find intercepts?',
+        aliases: ['x intercept', 'y intercept', 'finding where a graph crosses'],
+        answer:
+            'Set y to zero and solve for x to find the x-intercepts, and set x to zero to find the y-intercept. A ' +
+            'graph has at most one y-intercept if it is a function, but it may have several x-intercepts.',
+    },
+    {
+        id: 'maths-function-or-not',
+        subject: 'mathematics',
+        question: 'How do I tell whether a relation is a function?',
+        aliases: ['is it a function', 'one to one function'],
+        answer:
+            'Apply the vertical line test: if any vertical line meets the graph more than once, it is not a function. ' +
+            'The horizontal line test decides whether it is one to one, which is what an inverse function requires.',
+    },
+    {
+        id: 'maths-inverse-function-method',
+        subject: 'mathematics',
+        question: 'How do I find the rule for an inverse function?',
+        aliases: ['finding an inverse rule', 'swapping x and y', 'inverse function method'],
+        answer:
+            'Swap x and y, then rearrange to make y the subject. The graph of the inverse is the reflection in the ' +
+            'line y = x, and the domain of the inverse is the range of the original.',
+    },
+    {
+        id: 'maths-log-graph-transformations',
+        subject: 'mathematics',
+        question: 'How do I sketch a transformed logarithmic or exponential graph?',
+        aliases: ['transforming an exponential graph', 'shifting a log graph', 'asymptote after a shift'],
+        answer:
+            'Track the asymptote and one known point through each transformation. For y = 2^x the asymptote is y = 0 ' +
+            'and the point (0, 1); a vertical shift moves both, and a reflection flips both across the relevant axis.',
+    },
+    {
+        id: 'maths-solving-exponential-equations',
+        subject: 'mathematics',
+        question: 'How do I solve an equation with the unknown in the exponent?',
+        aliases: ['solving an exponential equation', 'taking logs of both sides'],
+        answer:
+            'If both sides can be written with the same base, equate the indices. Otherwise take logarithms of both ' +
+            'sides and use the power law to bring the index down, then divide.',
+    },
+    {
+        id: 'maths-log-equations',
+        subject: 'mathematics',
+        question: 'How do I solve a logarithmic equation?',
+        aliases: ['solving a log equation', 'combining logs', 'checking for invalid solutions'],
+        answer:
+            'Combine the logarithms into one using the laws, then rewrite in index form. Always check each solution ' +
+            'in the original equation, since a value that makes any logarithm take a non-positive argument must be ' +
+            'rejected.',
+    },
+    {
+        id: 'maths-polynomial-division',
+        subject: 'mathematics',
+        question: 'How do I divide polynomials?',
+        aliases: ['polynomial division', 'long division of polynomials', 'quotient and remainder'],
+        answer:
+            'Set it out like long division, dividing the leading terms, multiplying back and subtracting. The result ' +
+            'is a quotient plus a remainder over the divisor, and a remainder of zero means the divisor is a factor.',
+    },
+    {
+        id: 'maths-remainder-factor-theorem',
+        subject: 'mathematics',
+        question: 'What are the remainder and factor theorems?',
+        aliases: ['remainder theorem', 'factor theorem', 'testing for a factor'],
+        answer:
+            'Substituting x = a into a polynomial gives the remainder on division by (x − a). If that value is zero, ' +
+            '(x − a) is a factor. This is how a cubic is factorised: test small values of a until one gives zero.',
+    },
+    {
+        id: 'maths-transformation-order-graphs',
+        subject: 'mathematics',
+        question: 'How do I identify a transformation from an equation?',
+        aliases: ['spotting a transformation', 'inside the bracket versus outside', 'horizontal shift direction'],
+        answer:
+            'A change outside the function acts vertically and in the direction you expect; a change inside acts ' +
+            'horizontally and in the opposite direction, so y = f(x + 2) moves left by two. Multiplication inside ' +
+            'also compresses rather than stretches.',
     },
 ];

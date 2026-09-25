@@ -56,7 +56,7 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
         id: 'maths-compound-interest',
         subject: 'mathematics',
         question: 'What is the compound interest formula?',
-        aliases: ['compound interest', 'investment formula', 'interest on interest', 'future value'],
+        aliases: ['compound interest', 'investment formula', 'interest on interest'],
         answer:
             'A = P(1 + r)ⁿ, where r is the rate per period as a decimal and n the number of periods. ' +
             'Interest is earned on interest already added, so the balance curves upward. ' +
@@ -84,7 +84,7 @@ export const mathematicsSeniorEntries: StudyEntry[] = [
         id: 'maths-financial-annuities',
         subject: 'mathematics',
         question: 'How do loans and annuities work?',
-        aliases: ['annuity', 'loan repayments', 'present value', 'reducing balance loan'],
+        aliases: ['annuity', 'loan repayments'],
         answer:
             'Each period, interest is added and a repayment is subtracted, so Aₙ = Aₙ₋₁(1 + r) − M. ' +
             'An annuity builds the same way with deposits instead. ' +

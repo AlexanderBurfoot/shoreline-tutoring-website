@@ -132,7 +132,7 @@ export const mathematicsProbabilityEntries: StudyEntry[] = [
         id: 'maths-tree-diagrams',
         subject: 'mathematics',
         question: 'How do I use a tree diagram?',
-        aliases: ['tree diagram', 'two stage experiment', 'multiply along branches', 'with replacement', 'without replacement'],
+        aliases: ['tree diagram', 'two stage experiment', 'multiply along branches'],
         answer:
             'Multiply along a branch for one outcome, then add across branches for several outcomes. ' +
             'Every set of branches from one point must sum to 1. ' +
@@ -185,7 +185,7 @@ export const mathematicsProbabilityEntries: StudyEntry[] = [
         id: 'maths-counting-arrangements',
         subject: 'mathematics',
         question: 'How do I count arrangements with restrictions?',
-        aliases: ['arrangements', 'how many ways', 'number of ways', 'permutations with restrictions', 'circular arrangements', 'identical objects', 'seating arrangements'],
+        aliases: ['arrangements', 'how many ways', 'number of ways', 'permutations with restrictions', 'identical objects', 'seating arrangements'],
         answer:
             'Handle the restriction first, then arrange the rest. ' +
             'Items that must sit together are treated as one block, which is then arranged internally. ' +
@@ -243,5 +243,145 @@ export const mathematicsProbabilityEntries: StudyEntry[] = [
             'for sixths, random digits for tenths. ' +
             'Define what counts as a success, run many trials, and use the relative frequency as the estimate. ' +
             'More trials give a closer estimate.',
+    },
+    {
+        id: 'maths-probability-and-or',
+        subject: 'mathematics',
+        question: 'When do I add and when do I multiply probabilities?',
+        aliases: ['adding or multiplying probabilities', 'and means multiply', 'or means add'],
+        answer:
+            'And means both happen, so multiply. Or means at least one happens, so add, then subtract the overlap ' +
+            'unless the events cannot both occur. Writing the events out in words first prevents the wrong choice.',
+    },
+    {
+        id: 'maths-probability-without-replacement',
+        subject: 'mathematics',
+        question: 'How does replacement change a probability?',
+        aliases: ['with replacement', 'without replacement', 'changing denominator'],
+        answer:
+            'With replacement, each draw is independent and the denominators stay the same. Without replacement, both ' +
+            'the favourable count and the total fall for the second draw, which is why the two fractions differ.',
+    },
+    {
+        id: 'maths-probability-table',
+        subject: 'mathematics',
+        question: 'How do I read probabilities from a two-way table?',
+        aliases: ['two way table probability', 'reading a contingency table', 'row and column totals'],
+        answer:
+            'The whole table total is the denominator for a plain probability, a row or column total for a ' +
+            'conditional one. The phrase given that tells you to restrict yourself to that row or column.',
+    },
+    {
+        id: 'maths-factorial-notation',
+        subject: 'mathematics',
+        question: 'What does factorial notation mean?',
+        aliases: ['factorial', 'n factorial', 'why zero factorial is one'],
+        answer:
+            'n! is the product of every whole number from n down to 1, and it counts the arrangements of n distinct ' +
+            'objects. By definition 0! = 1, because there is exactly one way to arrange nothing.',
+    },
+    {
+        id: 'maths-arrangements-identical',
+        subject: 'mathematics',
+        question: 'How do I count arrangements when some items are identical?',
+        aliases: ['arrangements with repeated letters', 'identical objects arrangements', 'dividing by repeats'],
+        answer:
+            'Divide n! by the factorial of each repeated group. BANANA has 6 letters with three As and two Ns, so the ' +
+            'count is 6! divided by 3! and 2!, giving 60.',
+    },
+    {
+        id: 'maths-circular-arrangements',
+        subject: 'mathematics',
+        question: 'How do I count arrangements around a circle?',
+        aliases: ['circular arrangements', 'seating around a table count', 'fixing one position'],
+        answer:
+            'Fix one person to remove the rotations, then arrange the rest: (n − 1)! ways. If reflections also count ' +
+            'as the same, halve it again.',
+    },
+    {
+        id: 'maths-binomial-conditions',
+        subject: 'mathematics',
+        question: 'When can I use the binomial distribution?',
+        aliases: ['conditions for a binomial distribution', 'fixed number of trials', 'independent trials same probability'],
+        answer:
+            'A fixed number of independent trials, each with the same two outcomes and the same probability of ' +
+            'success. Sampling without replacement from a small population breaks the last two, so binomial no longer ' +
+            'applies.',
+    },
+    {
+        id: 'maths-normal-empirical-rule',
+        subject: 'mathematics',
+        question: 'What is the 68, 95, 99.7 rule?',
+        aliases: ['empirical rule', 'sixty eight ninety five rule', 'standard deviations from the mean'],
+        answer:
+            'In a normal distribution about 68% of values lie within one standard deviation of the mean, 95% within ' +
+            'two and 99.7% within three. It lets you answer many normal distribution questions without a table.',
+    },
+    {
+        id: 'maths-z-score-comparison',
+        subject: 'mathematics',
+        question: 'How do I use a z-score to compare two results?',
+        aliases: ['comparing results with z scores', 'standardised score', 'which result was better'],
+        answer:
+            'Convert each to the number of standard deviations from its own mean, z = (x − μ)/σ. The larger z is the ' +
+            'better relative result, which is how marks from tests with different means can be compared.',
+    },
+    {
+        id: 'maths-sampling-bias',
+        subject: 'mathematics',
+        question: 'What makes a sample biased?',
+        aliases: ['biased sample', 'self selection bias', 'representative sample'],
+        answer:
+            'Any method that makes some members more likely to be chosen: surveying only volunteers, only one ' +
+            'location, or only people who are easy to reach. A large sample collected badly is still biased, so size ' +
+            'does not fix method.',
+    },
+    {
+        id: 'maths-correlation-limits',
+        subject: 'mathematics',
+        question: 'What does a correlation coefficient not tell me?',
+        aliases: ['limits of correlation', 'correlation does not prove cause', 'non linear relationship'],
+        answer:
+            'It measures linear association only, so a strong curved relationship can give a low value. It says ' +
+            'nothing about cause, and one extreme point can change it substantially, so always look at the ' +
+            'scatterplot as well.',
+    },
+    {
+        id: 'maths-least-squares-use',
+        subject: 'mathematics',
+        question: 'How do I use a least-squares line for prediction?',
+        aliases: ['predicting with a regression line', 'interpolation and extrapolation', 'least squares prediction'],
+        answer:
+            'Substitute the x value into the equation. Interpolation within the range of the data is reasonably safe; ' +
+            'extrapolation beyond it assumes the pattern continues, which the data cannot support.',
+    },
+    {
+        id: 'maths-expected-value-meaning',
+        subject: 'mathematics',
+        question: 'What does expected value actually mean?',
+        aliases: ['meaning of expected value', 'is the game fair'],
+        answer:
+            'The long run average outcome per trial, not what will happen on any single one. A game is fair when the ' +
+            'expected value is zero; a positive expected value for the operator is how every commercial game is ' +
+            'designed.',
+    },
+    {
+        id: 'maths-variance-and-sd',
+        subject: 'mathematics',
+        question: 'How do I calculate variance and standard deviation?',
+        aliases: ['calculating variance', 'standard deviation formula', 'population and sample standard deviation'],
+        answer:
+            'Find the mean, take each deviation from it, square them, average the squares for the variance, then take ' +
+            'the square root for the standard deviation. The sample version divides by n − 1 rather than n.',
+    },
+    {
+        id: 'maths-probability-simulation',
+        subject: 'mathematics',
+        question: 'How do I use a simulation to estimate a probability?',
+        aliases: ['simulation to estimate probability', 'random numbers for a simulation', 'many trials estimate'],
+        answer:
+            'Assign random digits to outcomes in the right proportion, run many trials, and take the relative ' +
+            'frequency as the estimate. More trials narrow the estimate, and the design must match the real ' +
+            'probabilities exactly.',
     },
 ];
