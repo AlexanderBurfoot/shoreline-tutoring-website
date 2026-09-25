@@ -2,12 +2,18 @@
 import { naplanEntries } from './naplan';
 import { ocPrepEntries } from './ocPrep';
 import { selectiveEntries } from './selective';
+import { selectiveReadingEntries } from './selectiveReading';
 import { selectiveReasoningEntries } from './selectiveReasoning';
+import { selectiveThinkingEntries } from './selectiveThinking';
+import { selectiveWritingEntries } from './selectiveWriting';
 import type { StudyEntry } from '../types';
 
 export const examPrepEntries: StudyEntry[] = [
     ...selectiveEntries,
     ...selectiveReasoningEntries,
+    ...selectiveThinkingEntries,
+    ...selectiveReadingEntries,
+    ...selectiveWritingEntries,
     ...ocPrepEntries,
     ...naplanEntries,
 ];

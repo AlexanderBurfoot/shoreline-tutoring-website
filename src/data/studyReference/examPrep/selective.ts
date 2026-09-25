@@ -31,7 +31,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-reading-strategy',
         subject: 'selective-high-school',
         question: 'How do I approach the reading section?',
-        aliases: ['reading test strategy', 'comprehension strategy', 'cloze passage', 'inference question'],
+        aliases: ['reading test strategy', 'comprehension strategy', 'cloze passage'],
         answer:
             'Skim for structure first, then read the question and hunt for the evidence. ' +
             'Every answer must be supported by the text, so eliminate options that are true in general but not stated. ' +
@@ -51,7 +51,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-writing-task',
         subject: 'selective-high-school',
         question: 'How is the writing task marked?',
-        aliases: ['selective writing', 'writing task', 'writing marking criteria', 'persuasive writing test'],
+        aliases: ['selective writing', 'writing task', 'persuasive writing test'],
         answer:
             'Markers look at ideas and their development, structure, language and expression, and accuracy in ' +
             'spelling, punctuation and grammar. ' +
@@ -114,7 +114,7 @@ export const selectiveEntries: StudyEntry[] = [
         id: 'sel-problem-strategies',
         subject: 'selective-high-school',
         question: 'What strategies help with hard problems?',
-        aliases: ['problem solving strategies', 'trial and improvement', 'drawing a diagram', 'simplifying a problem'],
+        aliases: ['problem solving strategies', 'trial and improvement', 'simplifying a problem'],
         answer:
             'Work backwards from the answer options, try a smaller version of the problem, draw a diagram, or look ' +
             'for a pattern. ' +
