@@ -27,6 +27,12 @@ const PHRASE_BONUS = 0.15;
  * A whole keyword phrase found in the question is strong evidence on its own:
  * someone who types "z score" or "chain rule" wants that entry, even though
  * neither word alone means much. Such a match scores at least this.
+ *
+ * It applies only to a phrase that accounts for much of what was asked. A
+ * question about pH happens to contain "mol per litre", and a question about
+ * differentiating happens to contain the letters of "e(x)"; lifting either to
+ * this floor answers confidently with the wrong entry, which is worse for a
+ * student than offering no answer at all.
  */
 const PHRASE_MATCH_FLOOR = 0.8;
 
@@ -262,11 +268,20 @@ export function scoreEntry(
         }
     }
 
-    const normalisedQuestion = normalise(question);
-    const phraseMatches = phrases.filter((phrase) => normalisedQuestion.includes(phrase)).length;
+    /* Padded on both sides so a phrase matches whole words only. Without this,
+       "e x" is found inside "differentiate x" and the question is answered from
+       an unrelated entry. */
+    const paddedQuestion = ` ${normalise(question)} `;
+    const matchedPhrases = phrases.filter((phrase) => paddedQuestion.includes(` ${phrase} `));
 
-    const score = matched / total + phraseMatches * PHRASE_BONUS;
-    return Math.min(phraseMatches > 0 ? Math.max(score, PHRASE_MATCH_FLOOR) : score, 1);
+    const score = matched / total + matchedPhrases.length * PHRASE_BONUS;
+    if (matchedPhrases.length === 0) {
+        return Math.min(score, 1);
+    }
+
+    const longestPhrase = Math.max(...matchedPhrases.map((phrase) => tokenise(phrase).length));
+    const explainsTheQuestion = longestPhrase * 2 >= queryTokens.length;
+    return Math.min(explainsTheQuestion ? Math.max(score, PHRASE_MATCH_FLOOR) : score, 1);
 }
 
 export interface Match {

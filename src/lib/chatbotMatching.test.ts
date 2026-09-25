@@ -44,6 +44,17 @@ describe('findBestMatch', () => {
         expect(findBestMatch('   ???   ')).toBeNull();
     });
 
+    /* A keyword phrase used to lift an entry to near certainty wherever its
+       letters appeared, so "differentiate x" was answered from the entry keyed
+       on "e(x)" and a pH question from the one keyed on "mol per litre". Both
+       were confidently wrong, which is worse than offering no answer. */
+    it.each([
+        ['differentiate x cubed times sin x', 'maths-discrete-random-variables'],
+        ['find the pH of 0.05 mol per litre HCl', 'chem-concentration-units'],
+    ])('does not answer "%s" from an incidental phrase match', (question, wrongId) => {
+        expect(findBestMatch(question)?.entry.id).not.toBe(wrongId);
+    });
+
     it('scores an exact question at or above the threshold', () => {
         for (const entry of knowledgeEntries) {
             expect(scoreEntry(entry.question, entry)).toBeGreaterThanOrEqual(MATCH_THRESHOLD);
