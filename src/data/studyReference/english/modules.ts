@@ -10,7 +10,7 @@ export const englishModulesEntries: StudyEntry[] = [
         id: 'eng-module-analysis',
         subject: 'english',
         question: 'What is a context, and why does it matter in analysis?',
-        aliases: ['context', 'composer context', 'responder context', 'values in a text'],
+        aliases: ['context', 'composer context', 'responder context'],
         answer:
             'Context is the circumstances a text was composed and is received in: historical, cultural, personal. ' +
             'It matters because it shapes the values in the text and how a modern responder reads them. ' +
