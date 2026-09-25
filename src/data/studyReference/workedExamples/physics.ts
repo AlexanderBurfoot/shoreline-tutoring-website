@@ -125,4 +125,68 @@ export const workedExamplePhysicsEntries: StudyEntry[] = [
             'the emitted electron is 5.0 − 2.3 = 2.7 eV, so the stopping voltage is 2.7 V. A brighter source releases ' +
             'more electrons but does not change this.',
     },
+    {
+        id: 'phys-example-relative-velocity',
+        subject: 'physics',
+        question: 'Can you show me a worked example of relative velocity?',
+        aliases: ['worked example relative velocity', 'example of a crosswind calculation', 'plane and wind example'],
+        answer:
+            'A plane heads north at 200 km/h through a 50 km/h easterly wind. The resultant is √(200² + 50²) = 206 ' +
+            'km/h, at tan⁻¹(50 ÷ 200) = 14° east of north. The two velocities add as perpendicular vectors.',
+    },
+    {
+        id: 'phys-example-incline-friction',
+        subject: 'physics',
+        question: 'Can you show me a worked example of an incline with friction?',
+        aliases: ['worked example incline with friction', 'example of a slope calculation with friction', 'block sliding down a ramp example'],
+        answer:
+            'A 10 kg block sits on a 30° slope with μ = 0.20. Down the slope, mg sin 30° = 49 N. The normal force is ' +
+            'mg cos 30° = 84.9 N, so friction is 0.20 × 84.9 = 17.0 N. Net force 32.0 N gives a = 3.2 m s⁻².',
+    },
+    {
+        id: 'phys-example-vertical-circle',
+        subject: 'physics',
+        question: 'Can you show me a worked example of a vertical circle?',
+        aliases: ['worked example vertical circle', 'example of tension at the top of a loop', 'ball on a string example'],
+        answer:
+            'A 0.50 kg ball swings at 5.0 m s⁻¹ on a 1.0 m string. At the top, T = mv²/r − mg = (0.50 × 25 ÷ 1.0) − ' +
+            '4.9 = 7.6 N. At the bottom the weight adds instead, giving 17.4 N.',
+    },
+    {
+        id: 'phys-example-kepler',
+        subject: 'physics',
+        question: 'Can you show me a worked example of Kepler third law?',
+        aliases: ['worked example keplers third law', 'example of the law of periods', 'orbital radius from period example'],
+        answer:
+            'Working in astronomical units and years, r³/T² = 1 for every planet. Mars takes 1.88 years, so r³ = ' +
+            '1.88² = 3.53 and r = 1.52 AU. No masses or constants are needed when the ratio is used this way.',
+    },
+    {
+        id: 'phys-example-momentum-2d',
+        subject: 'physics',
+        question: 'Can you show me a worked example of momentum in two dimensions?',
+        aliases: ['worked example two dimensional momentum', 'example of a collision at right angles', 'momentum components example'],
+        answer:
+            'A 3.0 kg trolley moving east at 4.0 m s⁻¹ collides with a 2.0 kg trolley moving north at 5.0 m s⁻¹ and ' +
+            'they stick. Momentum is 12 kg m s⁻¹ east and 10 north, so the total is √244 = 15.6 and the speed is 15.6 ' +
+            '÷ 5.0 = 3.1 m s⁻¹, at 40° north of east.',
+    },
+    {
+        id: 'phys-example-rms',
+        subject: 'physics',
+        question: 'Can you show me a worked example of RMS voltage?',
+        aliases: ['worked example rms voltage', 'example of peak to rms', 'root mean square example'],
+        answer:
+            'Australian mains peaks at about 340 V. The RMS value is 340 ÷ √2 = 240 V, which is the figure quoted and ' +
+            'the one that delivers the same power as a steady 240 V supply.',
+    },
+    {
+        id: 'phys-example-de-broglie',
+        subject: 'physics',
+        question: 'Can you show me a worked example of the de Broglie wavelength?',
+        aliases: ['worked example de broglie', 'example of matter wavelength', 'electron wavelength example'],
+        answer:
+            'An electron travels at 2.0 × 10⁶ m s⁻¹. λ = h ÷ mv = 6.626 × 10⁻³⁴ ÷ (9.11 × 10⁻³¹ × 2.0 × 10⁶) = 3.6 × ' +
+            '10⁻¹⁰ m. That is about an atomic diameter, which is why electrons diffract from crystals.',
+    },
 ];

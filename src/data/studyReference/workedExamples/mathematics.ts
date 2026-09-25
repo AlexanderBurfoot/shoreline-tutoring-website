@@ -159,4 +159,145 @@ export const workedExampleMathsEntries: StudyEntry[] = [
             '16. Area ≈ (h/2)[first + last + 2(middle values)] = 0.5[16 + 2(14)] = 22. The exact value is 21⅓, so the ' +
             'estimate is high because the curve is concave up.',
     },
+    {
+        id: 'maths-example-quadratic-formula',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the quadratic formula?',
+        aliases: ['worked example quadratic formula', 'example using the quadratic formula', 'quadratic formula substitution example'],
+        answer:
+            'Solve 2x² − 5x − 3 = 0 with a = 2, b = −5, c = −3. The discriminant is 25 − 4(2)(−3) = 49, so x = (5 ± ' +
+            '7)/4, giving x = 3 or x = −0.5. A perfect square discriminant means it could have been factorised ' +
+            'instead.',
+    },
+    {
+        id: 'maths-example-completing-square',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of completing the square?',
+        aliases: ['worked example completing the square', 'example of completing the square', 'vertex by completing the square'],
+        answer:
+            'Rewrite x² + 6x + 5. Half of 6 is 3, so x² + 6x = (x + 3)² − 9, giving (x + 3)² − 4. The vertex is ' +
+            'therefore (−3, −4), and the minimum value is −4.',
+    },
+    {
+        id: 'maths-example-index-laws',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the index laws?',
+        aliases: ['worked example index laws', 'example of simplifying indices', 'power of a power example'],
+        answer:
+            'Simplify (2x³)⁴ ÷ (4x⁵). The numerator is 16x¹², since both the 2 and the index are raised to the ' +
+            'fourth. Dividing gives 4x⁷, subtracting the indices and the coefficients separately.',
+    },
+    {
+        id: 'maths-example-log-laws',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the logarithm laws?',
+        aliases: ['worked example log laws', 'example of combining logarithms', 'log addition example'],
+        answer:
+            'Simplify log 8 + log 5 − log 2. Adding logs multiplies the numbers and subtracting divides, so it ' +
+            'becomes log(8 × 5 ÷ 2) = log 20. The laws only apply to logs of the same base.',
+    },
+    {
+        id: 'maths-example-exponential-growth',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of exponential growth?',
+        aliases: ['worked example exponential growth', 'example of a growth calculation', 'population growth example'],
+        answer:
+            'A population of 500 grows at 3% per year continuously, so A = 500e^(0.03t). After 10 years, A = 500 × ' +
+            'e^0.3 = 500 × 1.350 = 675. Using compound interest style growth instead gives 500 × 1.03¹⁰ = 672, which ' +
+            'is close but not identical.',
+    },
+    {
+        id: 'maths-example-trig-equation',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of solving a trigonometric equation?',
+        aliases: ['worked example trig equation', 'example of solving sin x', 'all solutions in a domain example'],
+        answer:
+            'Solve sin x = 0.5 for 0° ≤ x ≤ 360°. The related angle is 30°, and sine is positive in the first and ' +
+            'second quadrants, so x = 30° or x = 150°. Always check the domain before deciding how many solutions to ' +
+            'give.',
+    },
+    {
+        id: 'maths-example-exact-values',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example using exact trigonometric values?',
+        aliases: ['worked example exact values', 'example using the 30 60 90 triangle', 'exact value of sin 60'],
+        answer:
+            'In the 30-60-90 triangle with sides 1, √3 and 2, sin 60° = √3/2 and cos 60° = ½. So the exact height of ' +
+            'a 10 m ramp at 60° is 10 sin 60° = 5√3 m, which is 8.66 m rounded.',
+    },
+    {
+        id: 'maths-example-arc-length',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of arc length and sector area?',
+        aliases: ['worked example arc length', 'example of sector area', 'radians arc calculation example'],
+        answer:
+            'A sector has radius 8 cm and angle 1.2 radians. Arc length = rθ = 8 × 1.2 = 9.6 cm, and area = ½r²θ = ½ ' +
+            '× 64 × 1.2 = 38.4 cm². Both formulas need radians, not degrees.',
+    },
+    {
+        id: 'maths-example-area-between-curves',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of the area between two curves?',
+        aliases: ['worked example area between curves', 'example of area between two graphs', 'upper minus lower example'],
+        answer:
+            'Find the area between y = x and y = x² from x = 0 to x = 1. The line is above the curve there, so ' +
+            'integrate the difference: ∫(x − x²)dx = ½ − ⅓ = ⅙. Subtracting the wrong way round gives a negative ' +
+            'answer.',
+    },
+    {
+        id: 'maths-example-volume-revolution',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a volume of revolution?',
+        aliases: ['worked example volume of revolution', 'example of rotating about the x axis', 'pi integral y squared example'],
+        answer:
+            'Rotate y = x from x = 0 to x = 2 about the x-axis. V = π∫y²dx = π∫x²dx = π[x³/3] from 0 to 2 = 8π/3. ' +
+            'That agrees with the cone formula ⅓πr²h with r = 2 and h = 2.',
+    },
+    {
+        id: 'maths-example-substitution-integration',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of integration by substitution?',
+        aliases: ['worked example integration by substitution', 'example of u substitution', 'reverse chain rule example'],
+        answer:
+            'Integrate 2x(x² + 1)³. Let u = x² + 1, so du = 2x dx and the integral becomes ∫u³du = u⁴/4. Substituting ' +
+            'back gives (x² + 1)⁴/4 + C.',
+    },
+    {
+        id: 'maths-example-induction',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of proof by induction?',
+        aliases: ['worked example induction', 'example of mathematical induction', 'induction proof example'],
+        answer:
+            'Prove 1 + 3 + 5 + … + (2n − 1) = n². For n = 1 both sides are 1. Assume it holds for n = k, then adding ' +
+            'the next odd number gives k² + (2k + 1) = (k + 1)², which is the statement for k + 1, so it holds for ' +
+            'all positive integers.',
+    },
+    {
+        id: 'maths-example-venn',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of a Venn diagram?',
+        aliases: ['worked example venn diagram', 'example of a venn calculation', 'neither category example'],
+        answer:
+            'Of 30 students, 18 play sport, 14 play music and 6 do both. Those doing at least one number 18 + 14 − 6 ' +
+            '= 26, so 4 do neither. Subtracting the overlap once is what stops those 6 being counted twice.',
+    },
+    {
+        id: 'maths-example-conditional-probability',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of conditional probability?',
+        aliases: ['worked example conditional probability', 'example of probability given that', 'restricting to a row example'],
+        answer:
+            'Of 60 students, 25 are girls and 15 of those play sport. P(plays sport given girl) = 15 ÷ 25 = 0.6. The ' +
+            'phrase given that restricts the denominator to that group rather than the whole 60.',
+    },
+    {
+        id: 'maths-example-depreciation',
+        subject: 'mathematics',
+        question: 'Can you show me a worked example of depreciation?',
+        aliases: ['worked example depreciation', 'example of reducing balance depreciation', 'declining value example'],
+        answer:
+            'A $24,000 vehicle depreciates 15% a year on the reducing balance. After 3 years its value is 24,000 × ' +
+            '0.85³ = 24,000 × 0.6141 = $14,739. Straight line depreciation at the same rate would instead remove ' +
+            '$3,600 each year.',
+    },
 ];

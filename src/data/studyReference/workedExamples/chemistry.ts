@@ -118,4 +118,80 @@ export const workedExampleChemistryEntries: StudyEntry[] = [
             'Prepare 250 mL of 0.0200 mol L⁻¹ from a 0.500 mol L⁻¹ stock. c₁V₁ = c₂V₂ gives V₁ = (0.0200 × 0.250) ÷ ' +
             '0.500 = 0.0100 L, so pipette 10.0 mL into a 250 mL volumetric flask and make up to the mark.',
     },
+    {
+        id: 'chem-example-combustion-analysis',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of combustion analysis?',
+        aliases: ['worked example combustion analysis', 'example of finding a formula from combustion', 'carbon dioxide and water data example'],
+        answer:
+            'Burning 0.240 g of a compound gives 0.352 g CO₂ and 0.144 g H₂O. Carbon: 0.352 ÷ 44.01 = 0.0080 mol. ' +
+            'Hydrogen: 0.144 ÷ 18.02 = 0.0080 mol of water, so 0.0160 mol H. Those masses total 0.112 g, leaving ' +
+            '0.128 g of oxygen, which is 0.0080 mol. The ratio 1:2:1 gives CH₂O.',
+    },
+    {
+        id: 'chem-example-percentage-composition',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of percentage composition?',
+        aliases: ['worked example percentage composition', 'example of percent by mass', 'mass percentage example'],
+        answer:
+            'In water, the molar mass is 18.02 with hydrogen contributing 2 × 1.008 = 2.016. Hydrogen is 2.016 ÷ ' +
+            '18.02 × 100 = 11.2% and oxygen the remaining 88.8%. The two must add to 100, which is the check.',
+    },
+    {
+        id: 'chem-example-ppm',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of parts per million?',
+        aliases: ['worked example ppm', 'example of a ppm calculation', 'milligrams per litre example'],
+        answer:
+            'A 2.0 L water sample contains 5.0 mg of lead. That is 2.5 mg per litre, and since a litre of water ' +
+            'weighs about a kilogram, it is 2.5 ppm. For dilute aqueous samples milligrams per litre and ppm are ' +
+            'interchangeable.',
+    },
+    {
+        id: 'chem-example-ph-of-base',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of the pH of a base?',
+        aliases: ['worked example ph of a base', 'example of calculating ph from hydroxide', 'poh to ph example'],
+        answer:
+            'For 0.010 mol L⁻¹ NaOH, a strong base, [OH⁻] = 0.010 so pOH = 2.00. At 25 °C, pH = 14.00 − 2.00 = 12.00. ' +
+            'Taking the log of the base concentration directly would give 2 rather than 12, which is the usual slip.',
+    },
+    {
+        id: 'chem-example-ka',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of calculating Ka?',
+        aliases: ['worked example ka', 'example of finding ka from ph', 'weak acid constant example'],
+        answer:
+            'A 0.10 mol L⁻¹ weak acid has pH 2.87, so [H⁺] = 10⁻²·⁸⁷ = 1.35 × 10⁻³ mol L⁻¹. Ka = [H⁺]² ÷ [HA] = (1.35 ' +
+            '× 10⁻³)² ÷ 0.10 = 1.8 × 10⁻⁵, which identifies it as ethanoic acid.',
+    },
+    {
+        id: 'chem-example-percentage-ionisation',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of percentage ionisation?',
+        aliases: ['worked example percentage ionisation', 'example of degree of ionisation', 'fraction ionised example'],
+        answer:
+            'For that same acid, the ionised fraction is 1.35 × 10⁻³ ÷ 0.10 × 100 = 1.35%. Diluting it raises this ' +
+            'percentage even though the pH rises, because the equilibrium shifts towards more particles.',
+    },
+    {
+        id: 'chem-example-atom-economy',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of atom economy?',
+        aliases: ['worked example atom economy', 'example of calculating atom economy', 'desired product mass fraction example'],
+        answer:
+            'For CaCO₃ → CaO + CO₂ with calcium oxide as the desired product, its molar mass is 56.08 out of a total ' +
+            '100.09. Atom economy = 56.08 ÷ 100.09 × 100 = 56.0%. No improvement in technique changes that, only a ' +
+            'different reaction would.',
+    },
+    {
+        id: 'chem-example-excess-remaining',
+        subject: 'chemistry',
+        question: 'Can you show me a worked example of finding the excess left over?',
+        aliases: ['worked example excess reagent', 'example of leftover reactant', 'how much acid remains example'],
+        answer:
+            'Add 0.30 mol of HCl to 0.10 mol of CaCO₃, which react 2 to 1. The carbonate consumes 0.20 mol of acid, ' +
+            'so 0.10 mol of HCl remains. Dividing each amount by its coefficient first shows the carbonate is ' +
+            'limiting.',
+    },
 ];
