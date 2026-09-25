@@ -115,7 +115,13 @@ export const englishModulesEntries: StudyEntry[] = [
         id: 'eng-representation',
         subject: 'english',
         question: 'What does representation mean in English?',
-        aliases: ['representation', 'how something is represented', 'perspective', 'point of view module', 'construct'],
+        aliases: [
+            'representation',
+            'how something is represented',
+            'perspective',
+            'point of view module',
+            'constructed representation',
+        ],
         answer:
             'Every text presents a version of reality shaped by its composer\u2019s choices, context and purpose. ' +
             'Asking how something is represented means asking which choices created that impression and whose ' +

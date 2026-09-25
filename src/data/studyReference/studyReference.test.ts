@@ -117,7 +117,7 @@ describe('the questions students actually type', () => {
         ['difference between mitosis and meiosis', 'bio-mitosis-meiosis'],
         ['punnett square', 'bio-punnett'],
         ['what is TEEL', 'eng-essay-structure'],
-        ['what does analyse mean in a question', 'eng-common-verbs'],
+        ['what does analyse mean in a question', 'keyword-analyse'],
     ])('answers "%s" from the bank', (question, expectedId) => {
         expect(findBestMatch(question)?.entry.id).toBe(expectedId);
     });

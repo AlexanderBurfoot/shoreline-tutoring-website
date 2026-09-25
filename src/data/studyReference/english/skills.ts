@@ -21,7 +21,7 @@ export const englishSkillsEntries: StudyEntry[] = [
         id: 'eng-common-verbs',
         subject: 'english',
         question: 'What do the question verbs mean, such as analyse or evaluate?',
-        aliases: ['analyse', 'evaluate', 'discuss', 'explain verb', 'nesa glossary', 'directive verbs'],
+        aliases: ['question verbs', 'directive verbs', 'nesa glossary', 'command words in english'],
         answer:
             'Identify means name it. Explain means give how or why. Analyse means break it into parts and show how ' +
             'they relate. Evaluate means make a judgement against criteria. Discuss means argue the points for and ' +

@@ -36,6 +36,7 @@ import {
 import { bundlePricing, hourlyPricing, LESSONS_PER_BUNDLE, perLessonRate } from './pricingData';
 import { faqs } from './faqData';
 import { hscGuideEntries } from './hscGuide';
+import { nesaKeyWordEntries } from './nesaKeyWords';
 import { hscPathwayEntries } from './hscPathways';
 import { studyEntries, subjectLinkLabel, subjectPath } from './studyReference';
 import { selectionProgramEntries } from './selectionPrograms';
@@ -235,6 +236,14 @@ const SELECTION_PROGRAM_ENTRIES: KnowledgeEntry[] = selectionProgramEntries.map(
     answer: entry.answer,
 }));
 
+/** What the verb at the front of a question asks for. From src/data/nesaKeyWords. */
+const KEY_WORD_ENTRIES: KnowledgeEntry[] = nesaKeyWordEntries.map((entry) => ({
+    id: entry.id,
+    question: entry.question,
+    keywords: entry.aliases,
+    answer: entry.answer,
+}));
+
 const STUDY_SKILL_ENTRIES: KnowledgeEntry[] = studySkillEntries.map((entry) => ({
     id: entry.id,
     question: entry.question,
@@ -245,6 +254,10 @@ const STUDY_SKILL_ENTRIES: KnowledgeEntry[] = studySkillEntries.map((entry) => (
 export const knowledgeEntries: KnowledgeEntry[] = [
     ...ASSISTANT_ENTRIES,
     ...FAQ_ENTRIES,
+    /* Ahead of the subject bank deliberately. A student who types nothing but
+       "explain" ties with every entry containing that word, and the tie falls
+       to whichever comes first, so the entry defining the word should. */
+    ...KEY_WORD_ENTRIES,
     ...STUDY_ENTRIES,
     ...STUDY_SKILL_ENTRIES,
     ...HSC_GUIDE_ENTRIES,
