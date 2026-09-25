@@ -116,7 +116,7 @@ export const englishExamsEntries: StudyEntry[] = [
         id: 'eng-common-essay-errors',
         subject: 'english',
         question: 'What loses the most marks in an English essay?',
-        aliases: ['common essay errors', 'retelling the plot', 'technique listing', 'ignoring the question'],
+        aliases: ['common essay errors', 'technique listing', 'ignoring the question'],
         answer:
             'Retelling the plot, listing techniques without effects, ignoring the question, writing about only one of ' +
             'two required texts, and a conclusion that introduces a new idea. Each is a structural failure rather ' +
