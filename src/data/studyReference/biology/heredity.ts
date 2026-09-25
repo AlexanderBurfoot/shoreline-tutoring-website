@@ -20,7 +20,7 @@ export const biologyHeredityEntries: StudyEntry[] = [
         id: 'bio-transcription-translation',
         subject: 'biology',
         question: 'What is the difference between transcription and translation?',
-        aliases: ['transcription', 'translation', 'protein synthesis', 'mrna', 'trna', 'codon'],
+        aliases: ['transcription', 'translation', 'protein synthesis', 'mrna', 'trna', 'codon', 'central dogma', 'dna to rna to protein'],
         answer:
             'Transcription copies a gene from DNA into mRNA in the nucleus, with U replacing T. ' +
             'Translation reads that mRNA at a ribosome, where tRNA brings the amino acid matching each three-base codon, ' +
@@ -60,7 +60,7 @@ export const biologyHeredityEntries: StudyEntry[] = [
         id: 'bio-dna-structure',
         subject: 'biology',
         question: 'What is the structure of DNA?',
-        aliases: ['dna structure', 'double helix', 'base pairing', 'nucleotide', 'chromosome gene'],
+        aliases: ['dna structure', 'double helix', 'base pairing', 'nucleotide', 'chromosome gene', 'watson and crick', 'double helix model'],
         answer:
             'DNA is a double helix of nucleotides, each a sugar, a phosphate and a base. ' +
             'A pairs with T and C with G, so the strands are complementary. ' +

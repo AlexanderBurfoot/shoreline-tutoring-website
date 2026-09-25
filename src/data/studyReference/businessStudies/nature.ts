@@ -19,7 +19,7 @@ export const businessNatureEntries: StudyEntry[] = [
         id: 'bus-management-styles',
         subject: 'business-studies',
         question: 'What are the management styles?',
-        aliases: ['management style', 'autocratic', 'democratic', 'participative', 'laissez faire'],
+        aliases: ['management style', 'autocratic', 'democratic', 'participative', 'laissez faire', 'scientific management', 'classical management'],
         answer:
             'Autocratic managers decide alone, which is fast and suits a crisis but can demotivate. ' +
             'Participative or democratic managers involve staff, which builds commitment and takes longer. ' +

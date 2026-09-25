@@ -203,7 +203,7 @@ export const businessConsumerLegalEntries: StudyEntry[] = [
         id: 'bus-motivation-theories',
         subject: 'business-studies',
         question: 'What motivates employees?',
-        aliases: ['motivation', 'maslow', 'herzberg', 'financial rewards'],
+        aliases: ['motivation', 'maslow', 'herzberg', 'financial rewards', 'herzberg two factor', 'hygiene factors'],
         answer:
             'Financial rewards include wages, bonuses, profit sharing and share plans. ' +
             'Non-financial ones include job enrichment, flexibility, recognition and career development. ' +

@@ -298,7 +298,7 @@ export const chemistryAcidsEquilibriumEntries: StudyEntry[] = [
         id: 'chem-acid-base-definitions',
         subject: 'chemistry',
         question: 'How have definitions of acids and bases changed?',
-        aliases: ['history of acid theory', 'lavoisier', 'davy', 'arrhenius definition', 'bronsted lowry history'],
+        aliases: ['history of acid theory', 'lavoisier', 'davy', 'arrhenius definition', 'bronsted lowry history', 'arrhenius acid'],
         answer:
             'Lavoisier thought oxygen made an acid; Davy showed hydrogen was the common element instead. ' +
             'Arrhenius defined acids as producing H⁺ in water and bases OH⁻. ' +

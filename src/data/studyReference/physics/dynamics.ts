@@ -121,7 +121,7 @@ export const physicsDynamicsEntries: StudyEntry[] = [
         id: 'phys-impulse-detail',
         subject: 'physics',
         question: 'What is impulse and why do crumple zones help?',
-        aliases: ['impulse', 'force time graph', 'crumple zone', 'airbag physics', 'change in momentum'],
+        aliases: ['impulse', 'force time graph', 'crumple zone', 'airbag physics', 'change in momentum', 'impulse momentum theorem', 'momentum change from a force'],
         answer:
             'Impulse is FΔt and equals the change in momentum, so it is also the area under a force-time graph. ' +
             'For a given change in momentum, a longer collision time means a smaller force. ' +

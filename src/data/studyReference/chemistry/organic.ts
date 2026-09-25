@@ -133,7 +133,7 @@ export const chemistryOrganicEntries: StudyEntry[] = [
         id: 'chem-structural-formulae',
         subject: 'chemistry',
         question: 'How do I read a structural formula?',
-        aliases: ['structural formula', 'condensed formula', 'skeletal structure', 'drawing organic structures', 'general formula'],
+        aliases: ['structural formula', 'condensed formula', 'skeletal structure', 'drawing organic structures', 'general formula', 'kekule structure'],
         answer:
             'Find the longest continuous carbon chain, then the functional group hanging off it: those two give the ' +
             'name. A condensed formula groups each carbon with its hydrogens, and a skeletal one shows bonds as lines ' +
