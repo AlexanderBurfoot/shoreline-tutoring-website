@@ -462,4 +462,24 @@ export const studySkillEntries: StudySkillEntry[] = [
             + 'about small things surfaces under pressure. Keep asking about things other than school, '
             + 'and treat the year as demanding rather than exceptional.',
     },
+    {
+        id: 'skill-burnout',
+        question: 'What does burnout look like, and what helps?',
+        aliases: ['burnout', 'exhausted from study', 'losing motivation completely'],
+        answer:
+            'Sustained exhaustion, cynicism about work that used to matter, and falling output '
+            + 'despite more hours. It is different from ordinary tiredness because rest over a weekend '
+            + 'does not fix it. Reducing load deliberately, restoring sleep and exercise, and talking '
+            + 'to someone rather than pushing through are what help.',
+    },
+    {
+        id: 'skill-handwriting-speed',
+        question: 'How do I write faster by hand in an exam?',
+        aliases: ['handwriting speed', 'writing faster in an exam', 'hand hurts when writing'],
+        answer:
+            'Practise writing at length by hand well before the exams, since speed and stamina are '
+            + 'physical and typing does not build them. Keep letters small and consistent rather than '
+            + 'neat, and if pain or speed is a genuine barrier, that is grounds for exam provisions '
+            + 'rather than something to endure.',
+    },
 ];

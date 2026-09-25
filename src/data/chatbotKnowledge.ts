@@ -37,6 +37,7 @@ import { bundlePricing, hourlyPricing, LESSONS_PER_BUNDLE, perLessonRate } from 
 import { faqs } from './faqData';
 import { hscGuideEntries } from './hscGuide';
 import { studyEntries, subjectLinkLabel, subjectPath } from './studyReference';
+import { selectionProgramEntries } from './selectionPrograms';
 import { studySkillEntries } from './studySkills';
 import { subjects } from './subjectData';
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, SUBJECTS_PATH } from '../lib/site';
@@ -226,6 +227,13 @@ const HSC_GUIDE_ENTRIES: KnowledgeEntry[] = hscGuideEntries.map((entry) => ({
     answer: entry.answer,
 }));
 
+const SELECTION_PROGRAM_ENTRIES: KnowledgeEntry[] = selectionProgramEntries.map((entry) => ({
+    id: entry.id,
+    question: entry.question,
+    keywords: entry.aliases,
+    answer: entry.answer,
+}));
+
 const STUDY_SKILL_ENTRIES: KnowledgeEntry[] = studySkillEntries.map((entry) => ({
     id: entry.id,
     question: entry.question,
@@ -239,6 +247,7 @@ export const knowledgeEntries: KnowledgeEntry[] = [
     ...STUDY_ENTRIES,
     ...STUDY_SKILL_ENTRIES,
     ...HSC_GUIDE_ENTRIES,
+    ...SELECTION_PROGRAM_ENTRIES,
 ];
 
 /** Just the study answers, for the chat's "what can you help with" suggestions. */
