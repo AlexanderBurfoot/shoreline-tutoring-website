@@ -81,7 +81,7 @@ export const englishTechniquesEntries: StudyEntry[] = [
         id: 'eng-narrative-techniques',
         subject: 'english',
         question: 'What are the narrative techniques?',
-        aliases: ['narrative techniques', 'point of view', 'unreliable narrator', 'flashback'],
+        aliases: ['narrative techniques', 'point of view', 'flashback'],
         answer:
             'Point of view shapes what a reader can know: first person is intimate but limited, third person ' +
             'omniscient sees everything. An unreliable narrator makes the reader question the account. ' +

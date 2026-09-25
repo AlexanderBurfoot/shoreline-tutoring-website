@@ -41,7 +41,7 @@ export const englishModulesEntries: StudyEntry[] = [
         id: 'eng-module-b',
         subject: 'english',
         question: 'What does Module B, Critical Study of Literature, require?',
-        aliases: ['module b', 'critical study', 'textual integrity', 'personal response', 'reception of a text'],
+        aliases: ['module b', 'critical study', 'personal response'],
         answer:
             'A sustained, close study of one text, arguing for its value and textual integrity: how its parts work ' +
             'as a whole. ' +

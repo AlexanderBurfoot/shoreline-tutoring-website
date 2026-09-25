@@ -61,7 +61,7 @@ export const englishWritingEntries: StudyEntry[] = [
         id: 'eng-comparative-essay',
         subject: 'english',
         question: 'How do I write a comparative essay on two texts?',
-        aliases: ['comparative essay', 'comparing two texts', 'two texts essay', 'intertextuality'],
+        aliases: ['comparative essay', 'comparing two texts', 'two texts essay'],
         answer:
             'Compare in every paragraph rather than handling one text then the other. ' +
             'Use the same idea as the hinge, and show how each composer treats it differently and why, which usually ' +
@@ -124,7 +124,7 @@ export const englishWritingEntries: StudyEntry[] = [
         id: 'eng-topic-sentences',
         subject: 'english',
         question: 'What makes a good topic sentence?',
-        aliases: ['topic sentence', 'paragraph opening', 'linking to the question', 'argument sentence'],
+        aliases: ['topic sentence', 'paragraph opening', 'argument sentence'],
         answer:
             'It states the argument of that paragraph and uses the wording of the question, so a marker can see the ' +
             'relevance immediately. ' +
@@ -186,7 +186,7 @@ export const englishWritingEntries: StudyEntry[] = [
         id: 'eng-appreciating-form',
         subject: 'english',
         question: 'How do I write about a text\u2019s form?',
-        aliases: ['form of a text', 'genre conventions', 'medium', 'why this form', 'form and meaning'],
+        aliases: ['form of a text', 'medium', 'why this form', 'form and meaning'],
         answer:
             'Ask what the form allows that another would not: a play gives immediacy and staging, a novel gives ' +
             'interiority, a film gives image and sound together. ' +
