@@ -103,7 +103,7 @@ export const englishWritingEntries: StudyEntry[] = [
         id: 'eng-punctuation',
         subject: 'english',
         question: 'What are the common punctuation and expression mistakes?',
-        aliases: ['punctuation', 'apostrophe', 'comma splice', 'semicolon', 'its vs its'],
+        aliases: ['punctuation', 'common expression mistakes', 'punctuation and expression errors'],
         answer:
             'Apostrophes show possession or omission, never plurals. A comma cannot join two sentences: use a full ' +
             'stop, a semicolon or a conjunction. "Its" is possessive, "it\u2019s" means it is. ' +

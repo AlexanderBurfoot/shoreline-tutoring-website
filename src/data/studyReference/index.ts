@@ -15,6 +15,7 @@ import { examStructureEntries } from './examStructure';
 import { examTechniqueEntries } from './examTechnique';
 import { economicsEntries } from './economics';
 import { examPrepEntries } from './examPrep';
+import { englishConventionEntries } from './english/conventions';
 import { englishEntries } from './english';
 import { mathematicsEntries } from './mathematics';
 import { physicsEntries } from './physics';
@@ -41,6 +42,10 @@ export const studyEntries: StudyEntry[] = [
     ...courseOverviewEntries,
     ...examStructureEntries,
     ...examTechniqueEntries,
+    /* Last on purpose. A one-word query such as "comma" scores 1.000 against
+       every entry containing that word, and the tie falls to whichever comes
+       first, so these narrow rules must not displace the general entries. */
+    ...englishConventionEntries,
 ];
 
 /** The page to send a student to after an answer, by subject. */
