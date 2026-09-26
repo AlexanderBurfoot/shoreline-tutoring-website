@@ -4,6 +4,7 @@ import { workedExampleBiologyMoreEntries } from './biologyMore';
 import { workedExampleChemistryMoreEntries } from './chemistryMore';
 import { workedExampleCoreEntries } from './core';
 import { workedExampleEnglishEntries } from './english';
+import { workedExampleEconomicsMoreEntries } from './economicsMore';
 import { workedExampleEnglishModelEntries } from './englishModels';
 import { workedExampleMathsEntries } from './mathematics';
 import { workedExampleMathsAppliedEntries } from './mathematicsApplied';
@@ -34,4 +35,5 @@ export const workedExampleEntries: StudyEntry[] = [
     ...workedExamplePhysicsMoreEntries,
     ...workedExampleChemistryMoreEntries,
     ...workedExampleBiologyMoreEntries,
+    ...workedExampleEconomicsMoreEntries,
 ];
