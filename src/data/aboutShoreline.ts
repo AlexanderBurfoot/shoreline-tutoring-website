@@ -1,9 +1,11 @@
 /**
- * Why a parent should choose Shoreline, in the assistant's own words.
+ * The questions a parent asks before booking.
  *
- * These are the questions a parent asks before booking, which the bank had no
- * answer for: why you rather than someone else, what a first lesson is like, how
- * progress is shown. They matter commercially, so they are worth answering well.
+ * Why you rather than someone else, what a first lesson is like, how progress is
+ * shown, and who Shoreline does not suit. They matter commercially, so they are
+ * worth answering well, which means answering plainly rather than selling: one
+ * entry summarises the case and one states the limits, and the rest describe how
+ * lessons actually run.
  *
  * Every claim here is already made somewhere on the site: the three feature
  * cards in src/components/Features.tsx, the five steps in
@@ -12,7 +14,7 @@
  * or marks achieved appears anywhere on the site, so nothing of that kind is
  * claimed here. Adding any of it needs the owner to confirm it first.
  */
-import { TRIAL_OFFER, VENUE_SUBURB } from './groupClassLaunch';
+import { IN_PERSON_DAY, ONLINE_DAY, TRIAL_OFFER, VENUE_SUBURB } from './groupClassLaunch';
 import type { KnowledgeEntry } from './chatbotKnowledge';
 
 const ENQUIRY_LINK = { label: 'Send an enquiry', href: '/#contact' };
@@ -22,14 +24,15 @@ const GROUP_LINK = { label: 'See group classes', href: '/group-classes' };
 export const aboutShorelineEntries: KnowledgeEntry[] = [
     {
         id: 'about-why-choose',
-        question: 'Why choose Shoreline Tutoring?',
+        question: 'What makes Shoreline Tutoring different, and why choose it?',
         keywords: [
             'why choose shoreline', 'why shoreline', 'why you', 'what makes you different',
             'why should we choose you', 'what sets you apart', 'why pick shoreline',
-            'convince me', 'what is special about shoreline',
+            'convince me', 'what is special about shoreline', 'how are you different',
+            'different from other tutors', 'compared to other tutoring',
         ],
         answer:
-            'Three things, and they are the ones we would want asked. Attention is never spread thin: one-on-one '
+            'Three things. Attention is never spread thin: one-on-one '
             + 'means one tutor and one student for the whole lesson, and group classes stay small with one course per '
             + 'class, so nobody sits through content meant for someone else. The plan is built from where marks are '
             + 'actually being lost rather than from a script, and it changes as your child improves. And lessons are '
@@ -38,19 +41,20 @@ export const aboutShorelineEntries: KnowledgeEntry[] = [
         link: ENQUIRY_LINK,
     },
     {
-        id: 'about-how-we-differ',
-        question: 'What makes Shoreline different from other tutoring?',
+        id: 'about-is-it-right-for-us',
+        question: 'Is Shoreline the right fit for us?',
         keywords: [
-            'how are you different', 'different from other tutors', 'compared to other tutoring',
-            'versus a tutoring centre', 'why not a big centre', 'difference between you and others',
+            'is it right for us', 'is shoreline right for my child', 'are you the right fit',
+            'who do you suit', 'might not suit', 'reasons not to choose shoreline',
         ],
         answer:
-            'We can only speak for how we work rather than for anyone else. One-on-one is one tutor and one student '
-            + 'for the full lesson, at your home or online. Group classes run one course per class and stay small, so '
-            + 'the teaching is aimed at the course your child is actually sitting. Questions between lessons get an '
-            + 'answer within 24 hours in your WhatsApp group. Whether that suits you better than another option is '
-            + 'worth testing on the free first lesson.',
-        link: ONE_ON_ONE_LINK,
+            'Some honest limits, so you can judge. Small-group classes only run for a set list of senior courses, so '
+            + `if your child's course is not on it, one-on-one is the only option we have. In-person classes run in `
+            + `${VENUE_SUBURB} on ${IN_PERSON_DAY} and online on ${ONLINE_DAY}, so the timetable is fixed. One-on-one `
+            + 'is priced by year level per hour rather than as a cheap package, and it is the right choice when there '
+            + 'are specific gaps to close rather than general revision to sit through. Tell us the situation and we '
+            + 'will say if we are not the right fit.',
+        link: GROUP_LINK,
     },
     {
         id: 'about-first-lesson',
@@ -89,8 +93,8 @@ export const aboutShorelineEntries: KnowledgeEntry[] = [
         answer:
             'Both, because content alone does not earn the marks. Lessons follow the NSW syllabus and practise what '
             + 'markers actually reward: answering to the verb in the question, structuring a response that can reach '
-            + 'full marks, and working past papers under time. A student who knows the content but loses marks on '
-            + 'presentation is the most common case we see.',
+            + 'full marks, and working past papers under time. Knowing the content and still losing marks on how it is '
+            + 'presented is a common and fixable problem.',
         link: ONE_ON_ONE_LINK,
     },
     {
