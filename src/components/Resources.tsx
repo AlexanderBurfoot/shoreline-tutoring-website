@@ -88,7 +88,7 @@ const Resources = () => {
                         {filteredPosts.length > 0 ? (
                             filteredPosts.map((post, index) => (
                                 <ScrollReveal key={post.id} delay={index * 100} width="100%">
-                                    <Link href={`/resources/${post.slug}`} className="resource-card">
+                                    <Link href={`/resources/${post.slug}`} className="resource-card spotlight">
                                         <div className="resource-card__image-wrapper">
                                             <Image
                                                 src={post.imageUrl}

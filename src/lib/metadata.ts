@@ -2,6 +2,13 @@
 export const META_DESCRIPTION_MAX_LENGTH = 160;
 
 /**
+ * Google truncates a page title in results at roughly this length. It measures
+ * pixels rather than characters, so this is a practical limit rather than an
+ * exact one, and it counts whatever the layout appends to the title as well.
+ */
+export const SEARCH_TITLE_MAX_LENGTH = 60;
+
+/**
  * Collapse whitespace and trim `text` to a length search engines will display
  * in full, cutting at a word boundary rather than mid-word.
  *

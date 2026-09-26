@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from '../data/blogData';
 import { subjects } from '../data/subjectData';
+import { COURSES_WITH_OUTLINES, COURSE_OUTLINES_PUBLISHED, courseOutlinePath } from '../data/courseOutlines';
 import { PRIVACY_PATH, SITE_URL } from '../lib/site';
 import { toIsoDate } from '../lib/metadata';
 
@@ -47,5 +48,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...legalRoutes, ...blogRoutes, ...subjectRoutes];
+  // Draft course plans are left out until they are published.
+  const courseRoutes = COURSE_OUTLINES_PUBLISHED
+    ? COURSES_WITH_OUTLINES.map((course) => ({
+      url: `${SITE_URL}${courseOutlinePath(course.id)}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+    : [];
+
+  return [...staticRoutes, ...legalRoutes, ...blogRoutes, ...subjectRoutes, ...courseRoutes];
 }

@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation';
 import './CTA.css';
 import ChoiceChips, { type ChoiceOption } from './ChoiceChips';
 import ContactFields, { OptionalTag, phoneLooksWrong, type PhoneAttention } from './ContactFields';
+import TurnstileWidget from './TurnstileWidget';
 import { trackAdsConversion, trackEvent } from '../lib/analytics';
 import { onEnquiryFormatRequest } from '../lib/enquiryFormat';
 import {
@@ -24,6 +25,7 @@ import {
     VENUE_ADDRESS,
     VENUE_MAP_URL,
     type ClassPreference,
+    type Course,
 } from '../data/groupClassLaunch';
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '../lib/site';
 
@@ -54,13 +56,13 @@ const SUBJECT_OPTIONS = toOptions(SUBJECTS);
 const COURSE_OPTIONS: ChoiceOption[] = COURSES.map((course) => ({ value: course.id, label: course.shortName }));
 const DAY_OPTIONS: ChoiceOption[] = GROUP_CLASS_DAYS.map((day) => ({ value: day.id, label: day.shortLabel }));
 
-const emptyForm = (format: string): FormData => ({
+const emptyForm = (format: string, course = ''): FormData => ({
     name: '',
     email: '',
     phone: '',
     format,
     subjects: [],
-    course: '',
+    course,
     day: '',
     message: '',
 });
@@ -143,7 +145,7 @@ function findMissingChoice(form: FormData): MissingChoice | null {
  * What the enquiry route receives. A group enquiry names the course and day
  * instead of subjects, so the email says which class to place the student in.
  */
-function buildPayload(form: FormData, honeypot: string) {
+function buildPayload(form: FormData, honeypot: string, turnstileToken: string | null) {
     const isGroup = form.format === GROUP_FORMAT;
     const course = COURSES.find((option) => option.id === form.course);
     const day = GROUP_CLASS_DAYS.find((option) => option.id === form.day);
@@ -158,6 +160,7 @@ function buildPayload(form: FormData, honeypot: string) {
         day: isGroup && day ? day.shortLabel : '',
         message: form.message,
         company: honeypot,
+        turnstileToken,
     };
 }
 
@@ -260,6 +263,8 @@ const ContactOptions = () => (
 interface CTAProps {
     /** Format selected when the form loads, on pages about a single format. */
     defaultFormat?: string;
+    /** Group course selected when the form loads, on a single course's page. */
+    defaultCourse?: Course['id'];
     /** Small label above the heading. */
     label?: string;
     /** Heading; defaults to the general enquiry heading. */
@@ -268,14 +273,17 @@ interface CTAProps {
     description?: ReactNode;
 }
 
-const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, description }: CTAProps) => {
+const CTA = ({ defaultFormat = '', defaultCourse, label = 'Start Your Journey', title, description }: CTAProps) => {
     const router = useRouter();
-    const [formData, setFormData] = useState<FormData>(() => emptyForm(defaultFormat));
+    const [formData, setFormData] = useState<FormData>(() => emptyForm(defaultFormat, defaultCourse));
     const [status, setStatus] = useState<FormStatus>('idle');
     const [errorMessage, setErrorMessage] = useState('');
     // Honeypot: hidden from real users; bots that fill it are rejected server-side.
     const [honeypot, setHoneypot] = useState('');
     const [phoneAttention, setPhoneAttention] = useState<PhoneAttention>('none');
+    // A Turnstile token works once, so a failed send remounts the widget for a new one.
+    const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+    const [turnstileAttempt, setTurnstileAttempt] = useState(0);
     const phoneInputRef = useRef<HTMLInputElement>(null);
     useClassPreference(setFormData);
     // A booking button further up the page has said which format it is for.
@@ -325,7 +333,7 @@ const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, descript
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(buildPayload(formData, honeypot)),
+                body: JSON.stringify(buildPayload(formData, honeypot, turnstileToken)),
             });
             const data = await response.json();
             if (!response.ok) {
@@ -337,12 +345,14 @@ const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, descript
             // that page cannot inflate the count.
             trackEvent('enquiry_success', enquiryShape);
             trackAdsConversion();
-            setFormData(emptyForm(defaultFormat));
+            setFormData(emptyForm(defaultFormat, defaultCourse));
             setPhoneAttention('none');
             router.push('/thank-you');
         } catch (err) {
             setStatus('error');
             setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try emailing us directly.');
+            setTurnstileToken(null);
+            setTurnstileAttempt((attempt) => attempt + 1);
             trackEvent('enquiry_failed', { ...enquiryShape, reason: 'submission_error' });
         }
     };
@@ -436,6 +446,7 @@ const CTA = ({ defaultFormat = '', label = 'Start Your Journey', title, descript
                                 />
                             </div>
 
+                            <TurnstileWidget key={turnstileAttempt} onToken={setTurnstileToken} />
                             {status === 'error' && <ErrorNotice message={errorMessage} />}
                             <SubmitButton isSubmitting={status === 'submitting'} />
                         </form>

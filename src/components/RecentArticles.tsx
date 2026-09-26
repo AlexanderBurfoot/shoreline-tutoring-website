@@ -30,7 +30,7 @@ const RecentArticles = () => {
                 <div className="recent-articles__grid">
                     {recentPosts.map((post, index) => (
                         <ScrollReveal key={post.id} delay={index * 100} width="100%">
-                            <Link href={`/resources/${post.slug}`} className="resource-card recent-articles__card">
+                            <Link href={`/resources/${post.slug}`} className="resource-card recent-articles__card spotlight">
                                 <div className="resource-card__image-wrapper">
                                     <Image
                                         src={post.imageUrl}

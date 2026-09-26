@@ -1,8 +1,10 @@
 import './ReserveStrip.css';
 import {
     FIRST_LESSON_DATE_LONG,
+    FOUNDING_OFFER_LINE,
     GROUP_CLASSES_PATH,
     TRIAL_OFFER,
+    anyFoundingPlaces,
 } from '../data/groupClassLaunch';
 import { TrackedLink } from './NavLinks';
 
@@ -24,6 +26,11 @@ const ReserveStrip = () => (
                 <span className="reserve-strip__detail">
                     {TRIAL_OFFER} · Every course runs as its own class
                 </span>
+                {anyFoundingPlaces() && (
+                    <span className="reserve-strip__offer">
+                        Founding offer: {FOUNDING_OFFER_LINE}
+                    </span>
+                )}
             </p>
             <TrackedLink
                 href={GROUP_ENQUIRY_HREF}

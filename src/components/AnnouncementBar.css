@@ -1,7 +1,13 @@
 /* Announcement Bar
    Fixed above the header. The --announcement-height custom property (declared
    in index.css, taller on narrow screens) shifts the header and page flow down
-   to make room; the .announcement-dismissed class on <html> zeroes it out. */
+   to make room; the .announcement-dismissed class on <html> zeroes it out.
+
+   Gold bar with navy on it, which reads at 9.46:1. Everything inside is the
+   reverse of what it was when the bar was navy: the badge and the button are now
+   the dark elements, and the sheen is light rather than gold, since gold on gold
+   would not show. The bar is also no longer in the dark-section list in
+   index.css, so the focus ring and accent text take their navy defaults. */
 
 .announcement {
     position: fixed;
@@ -15,17 +21,17 @@
     justify-content: center;
     padding: 0 var(--space-14);
     overflow: hidden;
-    background: linear-gradient(135deg, #0a1628 0%, var(--color-navy) 50%, #253552 100%);
-    border-bottom: 2px solid var(--color-gold-primary);
-    box-shadow: 0 4px 18px rgba(10, 22, 40, 0.35);
+    background: var(--color-gold-gradient);
+    border-bottom: 2px solid var(--color-navy);
+    box-shadow: 0 4px 18px rgba(10, 22, 40, 0.28);
 }
 
-/* A slow gold sheen across the bar, so it catches the eye without flashing. */
+/* A slow light sheen across the bar, so it catches the eye without flashing. */
 .announcement::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(100deg, transparent 30%, rgba(234, 197, 77, 0.16) 50%, transparent 70%);
+    background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.28) 50%, transparent 70%);
     transform: translateX(-100%);
     animation: announcementSheen 6s ease-in-out infinite;
     pointer-events: none;
@@ -50,7 +56,7 @@
     flex-wrap: wrap;
     gap: var(--space-2) var(--space-4);
     min-width: 0;
-    color: var(--color-white);
+    color: var(--color-navy);
     line-height: 1.25;
     text-align: center;
 }
@@ -59,8 +65,8 @@
     flex-shrink: 0;
     padding: var(--space-1) var(--space-3);
     border-radius: var(--border-radius-full);
-    background: var(--color-gold-gradient);
-    color: var(--color-navy);
+    background: var(--color-navy);
+    color: var(--color-gold-primary);
     font-size: var(--text-xs);
     font-weight: 800;
     letter-spacing: 0.1em;
@@ -76,10 +82,13 @@
 .announcement__offer {
     flex-shrink: 0;
     padding: var(--space-1) var(--space-3);
-    border: 1px solid var(--color-gold-primary);
+    /* Solid white rather than a wash of the bar's own gold, so the two offers
+       read as separate labels pinned to the bar instead of part of it. */
+    border: 1px solid var(--color-navy);
     border-radius: var(--border-radius-full);
-    background: rgba(234, 197, 77, 0.16);
-    color: var(--color-gold-primary);
+    background: var(--color-white);
+    color: var(--color-navy);
+    box-shadow: 0 1px 4px rgba(10, 22, 40, 0.18);
     font-size: var(--text-sm);
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -94,7 +103,7 @@
     flex-shrink: 0;
     font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--color-white);
+    color: var(--color-navy);
     white-space: nowrap;
 }
 
@@ -103,7 +112,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--color-gold-primary);
+    background: var(--color-navy);
 }
 
 .announcement__pulse::after {
@@ -111,7 +120,7 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: var(--color-gold-primary);
+    background: var(--color-navy);
     animation: announcementPulse 1.8s ease-out infinite;
 }
 
@@ -135,18 +144,18 @@
     flex-shrink: 0;
     padding: var(--space-2) var(--space-5);
     border-radius: var(--border-radius-full);
-    background: var(--color-gold-gradient);
-    color: var(--color-navy);
+    background: var(--color-navy);
+    color: var(--color-white);
     font-size: var(--text-sm);
     font-weight: 700;
     white-space: nowrap;
-    box-shadow: 0 4px 14px rgba(234, 197, 77, 0.35);
+    box-shadow: 0 4px 14px rgba(10, 22, 40, 0.3);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .announcement__link:hover .announcement__cta {
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(234, 197, 77, 0.5);
+    box-shadow: 0 6px 20px rgba(10, 22, 40, 0.42);
 }
 
 .announcement__close {
@@ -160,7 +169,8 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: rgba(255, 255, 255, 0.7);
+    /* Opaque enough to clear 3:1 against the darker end of the gradient too. */
+    color: rgba(26, 35, 50, 0.8);
     background: transparent;
     border: none;
     cursor: pointer;
@@ -168,8 +178,8 @@
 }
 
 .announcement__close:hover {
-    color: var(--color-white);
-    background: rgba(255, 255, 255, 0.12);
+    color: var(--color-navy);
+    background: rgba(26, 35, 50, 0.12);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -187,6 +197,12 @@
 @media (max-width: 1100px) {
     .announcement__badge,
     .announcement__headline-detail {
+        display: none;
+    }
+
+    /* The founding pill goes too, rather than let the two rows overflow the
+       bar's fixed height; the pricing and class pages still carry the offer. */
+    .announcement__offer--founding {
         display: none;
     }
 

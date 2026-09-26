@@ -13,6 +13,7 @@ import {
     LESSON_TEACHING_HOURS,
     PROMO_BACKGROUND_IMAGE,
     FOUNDING_HOURLY_RATE,
+    FOUNDING_PLACES_PER_CLASS,
     FOUNDING_TERM_PRICE,
     SESSION_PRICE,
     TERM_HOURLY_RATE,
@@ -360,7 +361,7 @@ const PromoPopup = () => {
                         <p className={`promo-popup__rate ${chosenCourse ? 'promo-popup__rate--shown' : ''}`} aria-live="polite">
                             {chosenCourse
                                 ? hasFoundingPlaces(chosenCourse.id)
-                                    ? <>Year 12 {chosenCourse.name}: founding place <strong>{FOUNDING_TERM_PRICE}</strong> for {TERM_LABEL} ({FOUNDING_HOURLY_RATE} an hour), first lesson free.</>
+                                    ? <>Year 12 {chosenCourse.name}: <strong>{FOUNDING_TERM_PRICE} instead of {TERM_PRICE}</strong> for {TERM_LABEL} ({FOUNDING_HOURLY_RATE} an hour) for the first {FOUNDING_PLACES_PER_CLASS} students in the class, first lesson free.</>
                                     : <>Year 12 {chosenCourse.name}: <strong>{TERM_PRICE}</strong> for {TERM_LABEL} ({TERM_HOURLY_RATE} an hour) or {SESSION_PRICE} a lesson, first lesson free.</>
                                 : `One ${LESSON_TEACHING_HOURS}-hour lesson a week, working through the Year 12 course alongside school. ${TRIAL_OFFER}.`}
                         </p>

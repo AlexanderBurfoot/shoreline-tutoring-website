@@ -7,7 +7,9 @@ import {
     COURSES,
     FIRST_LESSON_DATE_LONG,
     FOUNDING_HOURLY_RATE,
+    FOUNDING_OFFER_LINE,
     FOUNDING_PLACES_PER_CLASS,
+    FOUNDING_SAVING_BADGE,
     FOUNDING_TERM_PRICE,
     GROUP_CLASSES_PATH,
     LESSON_TEACHING_HOURS,
@@ -43,7 +45,7 @@ const faqs = [
     },
     {
         question: 'Who are the small-group classes for?',
-        answer: `Small-group classes run weekly for Year 12 Mathematics Standard, Advanced and Extension 1, Physics and Chemistry, from ${FIRST_LESSON_DATE_LONG}. Each course runs as its own class, so nobody sits through content meant for a different course. The first lesson is free. One-on-one tutoring remains available across Years 1 to 12 in all our subjects.`,
+        answer: `Small-group classes run weekly for Year 12 Mathematics Standard, Advanced and Extension 1, Physics, Chemistry and Biology, from ${FIRST_LESSON_DATE_LONG}. Each course runs as its own class, so nobody sits through content meant for a different course. The first lesson is free. One-on-one tutoring remains available across Years 1 to 12 in all our subjects.`,
     },
     {
         question: 'Do you offer sibling discounts?',
@@ -51,7 +53,7 @@ const faqs = [
     },
     {
         question: 'What subjects do you offer?',
-        answer: 'We offer tutoring in English, Mathematics, Physics, Chemistry, Economics, Business Studies, NAPLAN Preparation, as well as Selective High School exam and Opportunity Classes exam preparation. Small-group classes currently run for Year 12 maths, physics and chemistry.',
+        answer: 'We offer tutoring in English, Mathematics, Physics, Chemistry, Biology, Economics, Business Studies, NAPLAN Preparation, as well as Selective High School exam and Opportunity Classes exam preparation. Small-group classes currently run for Year 12 maths, physics, chemistry and biology.',
     },
     {
         question: 'How do I get started?',
@@ -132,7 +134,7 @@ const Pricing = () => {
                     </h1>
                     <p className="pricing-hero__subtitle">
                         Transparent pricing. One-on-one tutoring across Years 1 to 12, and
-                        weekly small-group classes for Year 12 maths, physics and chemistry.
+                        weekly small-group classes for Year 12 maths, physics, chemistry and biology.
                     </p>
                 </div>
             </section>
@@ -146,7 +148,7 @@ const Pricing = () => {
                     <p className="pricing-category-heading__text">
                         One {LESSON_TEACHING_HOURS}-hour lesson a week working through the Year 12
                         course alongside school, for Mathematics Standard, Advanced and Extension 1,
-                        Physics and Chemistry. Every course runs as its own class, weekly from{' '}
+                        Physics, Chemistry and Biology. Every course runs as its own class, weekly from{' '}
                         {FIRST_LESSON_DATE_LONG}.
                     </p>
                 </div>
@@ -160,26 +162,56 @@ const Pricing = () => {
                         <p className="pricing-table-subtitle">
                             Pay for the term or week by week, the same whether you attend in person
                             on Saturdays or online on Sundays. Sit the first lesson free and only pay
-                            if you decide to stay.
+                            if you decide to stay.{' '}
+                            {anyFoundingPlaces() && (
+                                <strong>
+                                    As a founding offer, {FOUNDING_OFFER_LINE}.
+                                </strong>
+                            )}
                         </p>
                     </div>
 
                     <div className="pricing-program">
-                        {/* Leads with founding places while any class has them. */}
-                        <div className="pricing-program__price">
-                            {anyFoundingPlaces() ? FOUNDING_TERM_PRICE : TERM_PRICE}
-                            <small>
-                                {anyFoundingPlaces()
-                                    ? `founding place for ${TERM_LABEL} · first ${FOUNDING_PLACES_PER_CLASS} students per class · ${FOUNDING_HOURLY_RATE} an hour`
-                                    : `for ${TERM_LABEL}, paid up front · ${TERM_HOURLY_RATE} an hour`}
-                            </small>
-                        </div>
-                        <p className="pricing-program__alternatives">
-                            {anyFoundingPlaces()
-                                ? `Then ${TERM_PRICE} for the term, saving ${TERM_SAVING}, or ${SESSION_PRICE} a lesson paid weekly.`
-                                : `Saves ${TERM_SAVING} on paying ${SESSION_PRICE} a lesson each week.`}{' '}
-                            {TERM_PAID_SESSIONS} paid {LESSON_TEACHING_HOURS}-hour lessons in {TERM_LABEL}.
-                        </p>
+                        {/* While any class has founding places, the price they replace sits
+                            beside the offer, so it reads as a discount rather than as the
+                            ordinary price. */}
+                        {anyFoundingPlaces() ? (
+                            <>
+                                <span className="pricing-program__badge">{FOUNDING_SAVING_BADGE}</span>
+                                <div className="pricing-program__price">
+                                    <span className="pricing-program__amounts">
+                                        {FOUNDING_TERM_PRICE}
+                                        <s className="pricing-program__was">
+                                            <span className="sr-only">Usually </span>
+                                            {TERM_PRICE}
+                                        </s>
+                                    </span>
+                                    <small>for {TERM_LABEL} · {FOUNDING_HOURLY_RATE} an hour</small>
+                                </div>
+                                <p className="pricing-program__alternatives">
+                                    <strong>
+                                        Only the first {FOUNDING_PLACES_PER_CLASS} students in each class
+                                        pay {FOUNDING_TERM_PRICE}.
+                                    </strong>{' '}
+                                    After those places are taken the term is {TERM_PRICE}, which still
+                                    saves {TERM_SAVING} on paying {SESSION_PRICE} a lesson weekly.{' '}
+                                    {TERM_PAID_SESSIONS} paid {LESSON_TEACHING_HOURS}-hour lessons
+                                    in {TERM_LABEL}.
+                                </p>
+                            </>
+                        ) : (
+                            <>
+                                <div className="pricing-program__price">
+                                    {TERM_PRICE}
+                                    <small>for {TERM_LABEL}, paid up front · {TERM_HOURLY_RATE} an hour</small>
+                                </div>
+                                <p className="pricing-program__alternatives">
+                                    Saves {TERM_SAVING} on paying {SESSION_PRICE} a lesson each week.{' '}
+                                    {TERM_PAID_SESSIONS} paid {LESSON_TEACHING_HOURS}-hour lessons
+                                    in {TERM_LABEL}.
+                                </p>
+                            </>
+                        )}
                         <ul className="pricing-program__courses">
                             {COURSES.map((course) => (
                                 <li key={course.id} className="pricing-program__course">

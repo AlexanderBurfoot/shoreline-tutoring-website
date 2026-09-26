@@ -6,10 +6,13 @@ import {
     ANNOUNCEMENT_DISMISSED_KEY,
     ANNOUNCEMENT_HIDDEN_CLASS,
     FIRST_LESSON_DATE_SHORT,
+    FIRST_PAID_LESSON_DATE_SHORT,
+    FOUNDING_OFFER_SHORT,
     GROUP_CLASSES_PATH,
     IN_PERSON_DAY,
     ONLINE_DAY,
     TRIAL_OFFER,
+    anyFoundingPlaces,
     firstLessonDayPhrase,
 } from '../data/groupClassLaunch';
 
@@ -60,8 +63,12 @@ const AnnouncementBar = () => {
                     Year 12 Small-Group Classes
                     {dayPhrase ? (
                         <>
-                            <span className="announcement__headline-detail"> · maths, physics and chemistry</span>
-                            {' '}start {FIRST_LESSON_DATE_SHORT}
+                            <span className="announcement__headline-detail"> · maths and science</span>
+                            {' · '}free trial {FIRST_LESSON_DATE_SHORT}
+                            {/* Not a detail span: the point of the line is that the
+                                trial and the first paid lesson are different days,
+                                which a narrow screen needs as much as a wide one. */}
+                            {' · '}term starts {FIRST_PAID_LESSON_DATE_SHORT}
                         </>
                     ) : (
                         <span className="announcement__headline-detail"> · {ONGOING_DETAIL}</span>
@@ -69,6 +76,14 @@ const AnnouncementBar = () => {
                 </span>
 
                 <span className="announcement__offer">{TRIAL_OFFER}</span>
+
+                {/* The bar is a fixed height, so the founding pill is the first
+                    thing dropped when the row runs out of room. */}
+                {anyFoundingPlaces() && (
+                    <span className="announcement__offer announcement__offer--founding">
+                        {FOUNDING_OFFER_SHORT}
+                    </span>
+                )}
 
                 <span className="announcement__countdown">
                     <span className="announcement__pulse" aria-hidden="true"></span>

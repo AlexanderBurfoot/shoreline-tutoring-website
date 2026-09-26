@@ -115,7 +115,7 @@
     padding: 6px 20px;
     border-radius: var(--border-radius-full);
     background: var(--color-gold-gradient);
-    color: var(--color-white);
+    color: var(--color-navy);
     margin-bottom: var(--space-4);
 }
 
@@ -469,6 +469,20 @@
     box-shadow: var(--shadow-gold);
 }
 
+/* The founding offer's label, above the price it applies to. */
+.pricing-program__badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-4);
+    margin-bottom: var(--space-4);
+    border-radius: var(--border-radius-full);
+    background: var(--color-gold-gradient);
+    color: var(--color-navy);
+    font-size: var(--text-xs);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 .pricing-program__price {
     display: flex;
     flex-direction: column;
@@ -487,6 +501,20 @@
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-text-light);
+}
+
+/* The founding price and the term price it replaces, on one baseline. */
+.pricing-program__amounts {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--space-3);
+}
+
+.pricing-program__was {
+    font-size: 0.42em;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-decoration-thickness: 2px;
 }
 
 .pricing-program__alternatives {

@@ -7,6 +7,7 @@ import FacilitiesShowcase from './FacilitiesShowcase';
 import './FormatPage.css';
 import { PRICING_SECTION_ID, type FormatPageContent, type Heading, type SectionHeader } from '../data/formatPages';
 import { perLessonRate } from '../data/pricingData';
+import { COURSE_OUTLINES_PUBLISHED, courseOutlinePath } from '../data/courseOutlines';
 
 /** Anchor for the attendance-options section. */
 const ATTENDANCE_SECTION_ID = 'attendance-options';
@@ -22,13 +23,13 @@ const LOGO_SRC = '/Shoreline-Logo.png';
 const LOGO_WIDTH = 1966;
 const LOGO_HEIGHT = 1289;
 
-interface PageSection {
+export interface PageSection {
     id?: string;
     header: SectionHeader;
     body: ReactNode;
 }
 
-const ArrowIcon = ({ size }: { size: number }) => (
+export const ArrowIcon = ({ size }: { size: number }) => (
     <svg className="icon-arrow" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
         <path d="M5 12h14M12 5l7 7-7 7" />
     </svg>
@@ -63,7 +64,7 @@ const alternatingClass = (index: number) =>
     `format-section ${index % 2 === 1 ? 'format-section--alt' : ''} section`;
 
 /** A run of sections, continuing the background alternation from `startIndex`. */
-const SectionList = ({ sections, startIndex = 0 }: { sections: PageSection[]; startIndex?: number }) => (
+export const SectionList = ({ sections, startIndex = 0 }: { sections: PageSection[]; startIndex?: number }) => (
     <>
         {sections.map((section, index) => (
             <section key={section.header.eyebrow} id={section.id} className={alternatingClass(startIndex + index)}>
@@ -77,7 +78,7 @@ const SectionList = ({ sections, startIndex = 0 }: { sections: PageSection[]; st
 );
 
 /** The dark opening section of a format page. */
-const FormatHero = ({ hero }: { hero: FormatPageContent['hero'] }) => {
+export const FormatHero = ({ hero }: { hero: FormatPageContent['hero'] }) => {
     const { secondaryCta } = hero;
     const secondaryClass = 'btn btn-secondary';
 
@@ -134,10 +135,16 @@ const CourseCards = ({ items }: { items: NonNullable<FormatPageContent['courses'
     <div className="format-courses">
         {items.map((course, index) => (
             <ScrollReveal key={course.id} width="100%" delay={index * 100}>
-                <div className="format-course">
+                <div className="format-course spotlight">
                     <span className="format-course__name">{course.shortName}</span>
                     <h3 className="format-course__title">{course.name}</h3>
                     <p className="format-course__covers">{course.covers}</p>
+                    {COURSE_OUTLINES_PUBLISHED && (
+                        <Link href={courseOutlinePath(course.id)} className="format-course__link">
+                            See the term plan
+                            <ArrowIcon size={16} />
+                        </Link>
+                    )}
                 </div>
             </ScrollReveal>
         ))}
@@ -148,7 +155,7 @@ const AttendanceCards = ({ options }: { options: FormatPageContent['attendance']
     <div className="format-options">
         {options.map((option, index) => (
             <ScrollReveal key={option.name} width="100%" delay={index * 120}>
-                <div className="format-option">
+                <div className="format-option spotlight">
                     <span className="format-option__name">{option.name}</span>
                     <p className="format-option__tagline">{option.tagline}</p>
                     <p className="format-option__description">{option.description}</p>
@@ -170,7 +177,7 @@ const BenefitCards = ({ items }: { items: FormatPageContent['benefits']['items']
     <div className="format-benefits">
         {items.map((benefit, index) => (
             <ScrollReveal key={benefit.title} width="100%" delay={index * 100}>
-                <div className="format-benefit">
+                <div className="format-benefit spotlight">
                     <span className="format-benefit__check" aria-hidden="true">✓</span>
                     <h3 className="format-benefit__title">{benefit.title}</h3>
                     <p className="format-benefit__description">{benefit.description}</p>
@@ -199,9 +206,21 @@ const ProgramPrice = ({ program }: { program: NonNullable<FormatPageContent['pri
         <div className="format-program">
             <span className="format-program__label">{program.label}</span>
             <div className="format-program__price">
-                {program.price}
+                {/* An offer price keeps the price it replaces beside it, struck through. */}
+                {program.wasPrice ? (
+                    <span className="format-program__amounts">
+                        {program.price}
+                        <s className="format-program__was">
+                            <span className="sr-only">Usually </span>
+                            {program.wasPrice}
+                        </s>
+                    </span>
+                ) : (
+                    program.price
+                )}
                 <small>{program.caption}</small>
             </div>
+            {program.note && <p className="format-program__note">{program.note}</p>}
             <ul className="format-program__inclusions">
                 {program.inclusions.map((item) => (
                     <li key={item} className="format-program__inclusion">

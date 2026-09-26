@@ -70,8 +70,10 @@
 
   /* Height reserved at the top of the viewport for the announcement bar. The
      header, the page flow and any full-height section read from this, so the
-     bar can be removed by zeroing the one value. */
-  --announcement-height: 76px;
+     bar can be removed by zeroing the one value. Roomy on purpose: the bar
+     advertises the group classes, and the space around the text is what makes
+     it read as the first thing on the page. */
+  --announcement-height: 96px;
 
   /* Borders & Shadows */
   --border-radius-sm: 4px;
@@ -131,7 +133,7 @@ html.announcement-dismissed {
    wins, since html.class outranks :root. */
 @media (max-width: 768px) {
   :root {
-    --announcement-height: 84px;
+    --announcement-height: 104px;
   }
 }
 
@@ -298,7 +300,7 @@ ol {
 
 .btn-primary {
   background: var(--color-gold-gradient);
-  color: var(--color-white);
+  color: var(--color-navy);
   box-shadow: var(--shadow-gold);
 }
 
@@ -330,7 +332,7 @@ ol {
 
 .btn-secondary:hover {
   background: var(--color-gold-primary);
-  color: var(--color-white);
+  color: var(--color-navy);
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(234, 197, 77, 0.25);
 }
@@ -379,7 +381,6 @@ button:hover .icon-arrow {
   outline-style: solid;
 }
 
-.announcement,
 .header--dark,
 .header--solid-navy,
 .format-hero,
