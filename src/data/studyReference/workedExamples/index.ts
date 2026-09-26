@@ -16,6 +16,7 @@ import { workedExampleOcEntries } from './ocPrep';
 import { workedExampleOtherEntries } from './other';
 import { workedExamplePhysicsEntries } from './physics';
 import { workedExamplePhysicsMoreEntries } from './physicsMore';
+import { workedExampleScientificSkillEntries } from './scientificSkills';
 import { workedExampleSelectiveEntries } from './selective';
 import type { StudyEntry } from '../types';
 
@@ -38,4 +39,5 @@ export const workedExampleEntries: StudyEntry[] = [
     ...workedExampleBiologyMoreEntries,
     ...workedExampleEconomicsMoreEntries,
     ...workedExampleMathsStandardEntries,
+    ...workedExampleScientificSkillEntries,
 ];
