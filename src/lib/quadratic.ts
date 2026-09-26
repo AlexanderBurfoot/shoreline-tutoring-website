@@ -28,6 +28,10 @@ export interface Quadratic {
 export interface QuadraticSolution {
     quadratic: Quadratic;
     discriminant: number;
+    /** Vertex form, e.g. "(x \u2212 2)\u00b2" or "2(x + 1)\u00b2 \u2212 9". */
+    completedSquare: string;
+    /** Factorised over the integers, or null when the roots are not rational. */
+    factorised: string | null;
     /** Exact roots as written for a student, longest form first. */
     exactRoots: string[];
     /** The same roots as decimals, for a sense of size. */
@@ -67,7 +71,7 @@ function simplifySurd(n: number): { outside: number; inside: number } {
 }
 
 /** Writes p/q in lowest terms, as an integer where it divides exactly. */
-function fraction(numerator: number, denominator: number): string {
+export function fraction(numerator: number, denominator: number): string {
     const sign = denominator < 0 ? -1 : 1;
     const top = numerator * sign;
     const bottom = denominator * sign;
@@ -233,6 +237,82 @@ function exactRoots(a: number, b: number, c: number, discriminant: number): stri
     ];
 }
 
+/**
+ * Writes a(x \u2212 h)\u00b2 + k, the form that shows the vertex directly. Fractions are
+ * kept exact, since h is b/2a and rarely whole.
+ */
+function completedSquareForm(a: number, b: number, c: number): string {
+    const lead = a === 1 ? '' : a === -1 ? '\u2212' : `${minus(String(a))}`;
+
+    /* The bracket holds x minus h, where h is \u2212b/2a, so the sign follows the
+       sign of h and not of b. Reading it off b alone inverted every curve with a
+       negative leading coefficient, against its own reported vertex. */
+    const hIsPositive = -b / (2 * a) > 0;
+    const inside = b === 0
+        ? 'x'
+        : `x ${hIsPositive ? '\u2212' : '+'} ${fraction(Math.abs(b), Math.abs(2 * a))}`;
+    const bracket = b === 0 ? 'x\u00b2' : `(${inside})\u00b2`;
+
+    /* k is c \u2212 b\u00b2/4a, kept over a common denominator of 4a. */
+    const kTop = 4 * a * c - b * b;
+    const kBottom = 4 * a;
+    if (kTop === 0) {
+        return `${lead}${bracket}`;
+    }
+    const size = fraction(Math.abs(kTop), Math.abs(kBottom));
+    const sign = (kTop / kBottom) > 0 ? '+' : '\u2212';
+    return `${lead}${bracket} ${sign} ${size}`;
+}
+
+/**
+ * Factorises over the integers when both roots are rational, as
+ * (q\u2081x \u2212 p\u2081)(q\u2082x \u2212 p\u2082) with any leftover factor in front.
+ */
+function factorisedForm(a: number, b: number, c: number, discriminant: number): string | null {
+    if (![a, b, c].every(Number.isInteger) || discriminant < 0) {
+        return null;
+    }
+    const root = Math.sqrt(discriminant);
+    if (!Number.isInteger(root)) {
+        return null;
+    }
+
+    /**
+     * A root p/q becomes the factor (qx \u2212 p). The denominator's sign is moved
+     * onto the numerator first: reducing \u22122/\u22122 without doing so gave p = \u22121 and
+     * printed (x + 1) for a root of +1, so a negative leading coefficient came
+     * out factorised into something that expanded to the wrong quadratic.
+     */
+    const reduce = (numerator: number, denominator: number): { p: number; q: number } => {
+        const flip = denominator < 0 ? -1 : 1;
+        const top = numerator * flip;
+        const bottom = denominator * flip;
+        const divisor = gcd(top, bottom);
+        return { p: top / divisor, q: bottom / divisor };
+    };
+
+    const bracket = ({ p, q }: { p: number; q: number }): string => {
+        const term = q === 1 ? 'x' : `${q}x`;
+        return p === 0 ? `(${term})` : `(${term} ${p > 0 ? '\u2212' : '+'} ${Math.abs(p)})`;
+    };
+
+    const firstRoot = reduce(-b + root, 2 * a);
+    const secondRoot = reduce(-b - root, 2 * a);
+    const first = bracket(firstRoot);
+    const second = bracket(secondRoot);
+
+    /* Each bracket contributed its own denominator, so what is left of a goes
+       in front. It is a whole number whenever the roots are rational. */
+    const q1 = firstRoot.q;
+    const q2 = secondRoot.q;
+    const leftover = a / (q1 * q2);
+    if (!Number.isInteger(leftover) || leftover === 0) {
+        return null;
+    }
+    const lead = leftover === 1 ? '' : leftover === -1 ? '\u2212' : minus(String(leftover));
+    return `${lead}${first}${second}`;
+}
+
 /** Solves the quadratic, or returns null when the question is not one. */
 export function solveQuadratic(question: string): QuadraticSolution | null {
     const quadratic = readQuadratic(question);
@@ -252,6 +332,8 @@ export function solveQuadratic(question: string): QuadraticSolution | null {
     return {
         quadratic,
         discriminant,
+        completedSquare: completedSquareForm(a, b, c),
+        factorised: factorisedForm(a, b, c, discriminant),
         exactRoots: exactRoots(a, b, c, discriminant),
         decimalRoots,
         vertex: { x: vertexX, y: a * vertexX * vertexX + b * vertexX + c },

@@ -96,6 +96,43 @@ describe('solveQuadratic', () => {
         expect(solved?.decimalRoots.map((r) => Math.round(r)).sort()).toEqual([1, 2]);
     });
 
+    /* The completed square and factorised forms are what a student copies down,
+       so each is asserted as an exact string. A numeric check on the vertex is
+       not enough: it passed while the printed bracket read (x + 1) for a curve
+       whose vertex was at x = 1, because the sign was taken from b rather than
+       from \u2212b/2a. */
+    it.each([
+        ['x^2 - 4x + 4', '(x \u2212 2)\u00b2', '(x \u2212 2)(x \u2212 2)'],
+        ['x^2 - 5x + 6 = 0', '(x \u2212 5/2)\u00b2 \u2212 1/4', '(x \u2212 3)(x \u2212 2)'],
+        ['x^2 + 6x + 5 = 0', '(x + 3)\u00b2 \u2212 4', '(x + 1)(x + 5)'],
+        ['y = 2x^2 + 4x - 7', '2(x + 1)\u00b2 \u2212 9', null],
+        ['3x^2 - 7x + 2 = 0', '3(x \u2212 7/6)\u00b2 \u2212 25/12', '(x \u2212 2)(3x \u2212 1)'],
+        ['4x^2 - 12x + 9 = 0', '4(x \u2212 3/2)\u00b2', '(2x \u2212 3)(2x \u2212 3)'],
+        ['x^2 - 9 = 0', 'x\u00b2 \u2212 9', '(x \u2212 3)(x + 3)'],
+        /* Negative leading coefficients, where the bracket sign was inverted. */
+        ['y = -2x^2 + 4x + 1', '\u22122(x \u2212 1)\u00b2 + 3', null],
+        ['-3x^2 - 6x + 2 = 0', '\u22123(x + 1)\u00b2 + 5', null],
+        ['-x^2 + 3x - 2 = 0', '\u2212(x \u2212 3/2)\u00b2 + 1/4', '\u2212(x \u2212 1)(x \u2212 2)'],
+    ])('writes "%s" as %s', (question, completed, factorised) => {
+        const solved = solveQuadratic(question)!;
+        expect(solved.completedSquare).toBe(completed);
+        expect(solved.factorised).toBe(factorised);
+    });
+
+    /* And the bracket sign must agree with the vertex it is derived from. */
+    it.each([
+        'y = 2x^2 + 4x - 7',
+        'y = -2x^2 + 4x + 1',
+        '-3x^2 - 6x + 2 = 0',
+        '3x^2 - 7x + 2 = 0',
+        'x^2 - 5x + 6 = 0',
+    ])('the bracket in "%s" agrees with the vertex', (question) => {
+        const solved = solveQuadratic(question)!;
+        const bracketSign = /\(x \u2212 /.test(solved.completedSquare) ? 1 : -1;
+        /* (x \u2212 h) means h positive, (x + h) means h negative. */
+        expect(Math.sign(solved.vertex.x)).toBe(bracketSign);
+    });
+
     /* Every exact root must actually satisfy the equation, checked numerically
        so a tidy-looking but wrong surd cannot pass. */
     it.each([
@@ -142,6 +179,64 @@ describe('answerQuadratic', () => {
 
     it('says plainly when there are no real roots', () => {
         expect(answerQuadratic('x^2 + x + 5 = 0')).toContain('never crosses the x-axis');
+    });
+});
+
+/**
+ * Both rewritten forms are checked by expanding them back, which catches a wrong
+ * sign in a case nobody thought to assert. The brackets are read out of the
+ * printed string, so what is verified is exactly what a student would copy.
+ */
+describe('the rewritten forms expand back to the original', () => {
+    const CASES = [
+        'x^2 - 4x + 4', 'x^2 - 5x + 6 = 0', 'x^2 + 6x + 5 = 0', 'y = 2x^2 + 4x - 7',
+        '3x^2 - 7x + 2 = 0', '4x^2 - 12x + 9 = 0', 'x^2 - 9 = 0', 'y = -2x^2 + 4x + 1',
+        '-3x^2 - 6x + 2 = 0', '-x^2 + 3x - 2 = 0', '2x^2 + 4x + 1 = 0', '5x^2 + 3x - 8 = 0',
+        '6x^2 - 5x - 6 = 0', '-4x^2 + 8x - 3 = 0', 'x^2 + 10x + 25 = 0',
+    ];
+
+    /** Reads "−3(2x − 1)(x + 4)" back into numbers and expands it. */
+    function expandFactorised(text: string): ((x: number) => number) | null {
+        const lead = /^(\u2212?\d*)\(/.exec(text);
+        if (!lead) {
+            return null;
+        }
+        const leadText = lead[1].replace('\u2212', '-');
+        const multiplier = leadText === '' ? 1 : leadText === '-' ? -1 : Number(leadText);
+        const brackets = [...text.matchAll(/\((\d*)x\s*(?:([+\u2212])\s*(\d+))?\)/g)];
+        if (brackets.length !== 2) {
+            return null;
+        }
+        const factors = brackets.map(([, q, sign, p]) => ({
+            q: q === '' ? 1 : Number(q),
+            p: p === undefined ? 0 : (sign === '\u2212' ? Number(p) : -Number(p)),
+        }));
+        return (x: number) => multiplier
+            * (factors[0].q * x - factors[0].p)
+            * (factors[1].q * x - factors[1].p);
+    }
+
+    it.each(CASES)('the completed square of "%s" expands back', (question) => {
+        const solved = solveQuadratic(question)!;
+        const { a, b, c } = solved.quadratic;
+        const { x: h, y: k } = solved.vertex;
+        for (const x of [-4, -1, 0, 1.5, 3, 7]) {
+            expect(a * (x - h) ** 2 + k).toBeCloseTo(a * x * x + b * x + c, 9);
+        }
+    });
+
+    it.each(CASES)('the printed factorisation of "%s" expands back', (question) => {
+        const solved = solveQuadratic(question)!;
+        if (!solved.factorised) {
+            return;
+        }
+        const expand = expandFactorised(solved.factorised);
+        expect(expand, `could not read ${solved.factorised}`).not.toBeNull();
+        const { a, b, c } = solved.quadratic;
+        for (const x of [-4, -1, 0, 1.5, 3, 7]) {
+            expect(expand!(x), `${question} -> ${solved.factorised} at x=${x}`)
+                .toBeCloseTo(a * x * x + b * x + c, 9);
+        }
     });
 });
 

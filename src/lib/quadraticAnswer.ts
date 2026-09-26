@@ -43,6 +43,7 @@ export function answerQuadratic(question: string): string | null {
         return null;
     }
     const { quadratic, discriminant, exactRoots, decimalRoots, vertex, opensUpwards } = solved;
+    const { completedSquare, factorised } = solved;
     const { a, b, c } = quadratic;
 
     const sentences: string[] = [];
@@ -73,6 +74,16 @@ export function answerQuadratic(question: string): string | null {
         } else {
             sentences.push(`They are about ${decimalRoots.map(approx).join(' and ')}.`);
         }
+    }
+
+    /* Both rewritten forms, since a question about a quadratic is usually asking
+       for one of them: the completed square shows the vertex, and the factorised
+       form shows the roots. */
+    const written2 = writeQuadratic(quadratic);
+    if (factorised && factorised !== `(${written2})`) {
+        sentences.push(`It factorises as ${factorised}, and in completed square form it is ${completedSquare}.`);
+    } else {
+        sentences.push(`In completed square form that is ${completedSquare}.`);
     }
 
     /* The vertex is the point of writing it as a function, so only then. */
