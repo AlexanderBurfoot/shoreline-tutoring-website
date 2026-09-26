@@ -10,6 +10,7 @@ import { workedExampleMathsEntries } from './mathematics';
 import { workedExampleMathsAppliedEntries } from './mathematicsApplied';
 import { workedExampleMathsPrimaryEntries } from './mathematicsPrimary';
 import { workedExampleMathsSeniorEntries } from './mathematicsSenior';
+import { workedExampleMathsStandardEntries } from './mathematicsStandard';
 import { workedExampleNaplanEntries } from './naplan';
 import { workedExampleOcEntries } from './ocPrep';
 import { workedExampleOtherEntries } from './other';
@@ -36,4 +37,5 @@ export const workedExampleEntries: StudyEntry[] = [
     ...workedExampleChemistryMoreEntries,
     ...workedExampleBiologyMoreEntries,
     ...workedExampleEconomicsMoreEntries,
+    ...workedExampleMathsStandardEntries,
 ];
