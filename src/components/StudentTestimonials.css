@@ -287,7 +287,7 @@
 
 .student-testimonials__nav-btn:hover {
     background: var(--color-gold-primary);
-    color: var(--color-white);
+    color: var(--color-navy);
     border-color: var(--color-gold-primary);
     box-shadow: 0 6px 16px rgba(234, 197, 77, 0.2);
 }

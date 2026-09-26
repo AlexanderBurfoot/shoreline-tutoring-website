@@ -298,7 +298,7 @@ ol {
 
 .btn-primary {
   background: var(--color-gold-gradient);
-  color: var(--color-white);
+  color: var(--color-navy);
   box-shadow: var(--shadow-gold);
 }
 
@@ -330,7 +330,7 @@ ol {
 
 .btn-secondary:hover {
   background: var(--color-gold-primary);
-  color: var(--color-white);
+  color: var(--color-navy);
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(234, 197, 77, 0.25);
 }

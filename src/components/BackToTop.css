@@ -31,7 +31,7 @@
 
 .back-to-top:hover {
     background: var(--color-gold-primary);
-    color: var(--color-white);
+    color: var(--color-navy);
     border-color: var(--color-gold-primary);
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(234, 197, 77, 0.3);
