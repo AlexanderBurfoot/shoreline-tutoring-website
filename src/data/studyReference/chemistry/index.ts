@@ -3,6 +3,7 @@ import { chemistryPracticalInvestigationEntries } from './practicals';
 import { chemistryLaboratoryEntries } from './laboratory';
 import { chemistryComparisonEntries } from './comparisons';
 import { chemistryAcidsEquilibriumEntries } from './acidsEquilibrium';
+import { chemistryAdvancedEntries } from './advanced';
 import { chemistryAnalysisEntries } from './analysis';
 import { chemistryAppliedEntries } from './applied';
 import { chemistryCalculationEntries } from './calculations';
@@ -30,4 +31,5 @@ export const chemistryEntries: StudyEntry[] = [
     ...chemistryComparisonEntries,
     ...chemistryLaboratoryEntries,
     ...chemistryPracticalInvestigationEntries,
+    ...chemistryAdvancedEntries,
 ];
