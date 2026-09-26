@@ -6,6 +6,7 @@ import { workedExampleCoreEntries } from './core';
 import { workedExampleEnglishEntries } from './english';
 import { workedExampleEconomicsMoreEntries } from './economicsMore';
 import { workedExampleEnglishModelEntries } from './englishModels';
+import { workedExampleEnglishMoreEntries } from './englishMore';
 import { workedExampleMathsEntries } from './mathematics';
 import { workedExampleMathsAppliedEntries } from './mathematicsApplied';
 import { workedExampleMathsPrimaryEntries } from './mathematicsPrimary';
@@ -40,4 +41,5 @@ export const workedExampleEntries: StudyEntry[] = [
     ...workedExampleEconomicsMoreEntries,
     ...workedExampleMathsStandardEntries,
     ...workedExampleScientificSkillEntries,
+    ...workedExampleEnglishMoreEntries,
 ];
