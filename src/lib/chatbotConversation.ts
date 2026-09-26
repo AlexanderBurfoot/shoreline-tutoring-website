@@ -9,6 +9,7 @@ import { findEntryById, type KnowledgeLink } from '../data/chatbotKnowledge';
 import { findBestMatch, shortlist } from './chatbotMatching';
 import { MAX_CANDIDATES, MAX_QUESTION_LENGTH } from './chatbotFallback';
 import { answerArithmetic } from './arithmeticAnswer';
+import { answerQuadratic } from './quadraticAnswer';
 import { looksLikeAssessmentRequest } from './assessmentGuard';
 import { redactPersonalDetails } from './redactPersonalDetails';
 
@@ -124,7 +125,7 @@ export async function resolveQuestion(
     /* Before the bank, because no written answer says 63 and a sum that reaches
        the bank finds nothing. Only a question that is entirely an expression is
        taken, so a concept question containing a number still goes on below. */
-    const calculated = answerArithmetic(question);
+    const calculated = answerArithmetic(question) ?? answerQuadratic(question);
     if (calculated) {
         return {
             question,
