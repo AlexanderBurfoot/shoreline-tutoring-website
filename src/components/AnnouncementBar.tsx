@@ -6,6 +6,7 @@ import {
     ANNOUNCEMENT_DISMISSED_KEY,
     ANNOUNCEMENT_HIDDEN_CLASS,
     FIRST_LESSON_DATE_SHORT,
+    FIRST_PAID_LESSON_DATE_SHORT,
     FOUNDING_OFFER_SHORT,
     GROUP_CLASSES_PATH,
     IN_PERSON_DAY,
@@ -63,7 +64,11 @@ const AnnouncementBar = () => {
                     {dayPhrase ? (
                         <>
                             <span className="announcement__headline-detail"> · maths and science</span>
-                            {' '}start {FIRST_LESSON_DATE_SHORT}
+                            {' · '}free trial {FIRST_LESSON_DATE_SHORT}
+                            {/* Not a detail span: the point of the line is that the
+                                trial and the first paid lesson are different days,
+                                which a narrow screen needs as much as a wide one. */}
+                            {' · '}term starts {FIRST_PAID_LESSON_DATE_SHORT}
                         </>
                     ) : (
                         <span className="announcement__headline-detail"> · {ONGOING_DETAIL}</span>

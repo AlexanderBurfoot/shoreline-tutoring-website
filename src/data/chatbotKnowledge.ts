@@ -16,7 +16,9 @@ import {
     GROUP_CLASSES_PATH,
     GROUP_SCOPE_SUMMARY,
     IN_PERSON_DAY,
+    FIRST_PAID_LESSON_DATE_LONG,
     IN_PERSON_FIRST_CLASS,
+    ONLINE_FIRST_PAID_LESSON,
     LESSON_BREAK_MINUTES,
     LESSON_TEACHING_HOURS,
     ONE_ON_ONE_PATH,
@@ -151,8 +153,10 @@ const ASSISTANT_ENTRIES: KnowledgeEntry[] = [
         question: 'When do the small-group classes start?',
         keywords: ['classes start', 'start date', 'starting', 'first class', 'first lesson', 'when do classes begin', 'timetable', 'schedule', 'times', 'what time', 'saturday', 'sunday'],
         answer:
-            `In-person classes start ${IN_PERSON_FIRST_CLASS} in ${VENUE_SUBURB}, and online classes start ` +
-            `${ONLINE_FIRST_CLASS}. Sessions run at ${SESSION_TIMES_SUMMARY}, and which one you join depends on the course.`,
+            `The first lesson is a free trial: ${IN_PERSON_FIRST_CLASS} in ${VENUE_SUBURB}, or ` +
+            `${ONLINE_FIRST_CLASS} online. Paid term lessons begin the week after, on ` +
+            `${FIRST_PAID_LESSON_DATE_LONG} in person and ${ONLINE_FIRST_PAID_LESSON} online. ` +
+            `Sessions run at ${SESSION_TIMES_SUMMARY}, and which one you join depends on the course.`,
         link: { label: 'See group classes', href: GROUP_CLASSES_PATH },
     },
     {

@@ -9,11 +9,23 @@
 /** IANA zone for every class time on the site. */
 const SYDNEY_TIME_ZONE = 'Australia/Sydney';
 
-/** First lesson in ISO form, used for structured data and countdown maths. */
+/**
+ * The first lesson is a free trial, and paid term lessons begin the week after.
+ * Both dates are exported so copy can name them separately: saying only "classes
+ * start 3 October" led parents to expect the term to begin that day.
+ *
+ * The countdown and the structured-data event point at the trial, since that is
+ * what a visitor can book today.
+ */
 export const FIRST_LESSON_DATE_ISO = '2026-10-03';
 
 /** First online lesson in ISO form. Keep one day after the in-person date. */
 export const ONLINE_FIRST_LESSON_DATE_ISO = '2026-10-04';
+
+/** First paid lesson, a week after each trial. */
+export const FIRST_PAID_LESSON_DATE_LONG = 'Saturday 10 October';
+export const FIRST_PAID_LESSON_DATE_SHORT = 'Sat 10 Oct';
+export const ONLINE_FIRST_PAID_LESSON = 'Sunday 11 October';
 
 /**
  * First day of the NSW school term the classes run alongside (Term 4 2026,
@@ -23,7 +35,7 @@ export const ONLINE_FIRST_LESSON_DATE_ISO = '2026-10-04';
  */
 export const SCHOOL_TERM_START_ISO = '2026-10-12';
 
-/** Human-readable first lesson, used in body copy. */
+/** Human-readable trial lesson date, used in body copy. */
 export const FIRST_LESSON_DATE_LONG = 'Saturday 3 October';
 
 /** Compact form, used where space is tight (announcement bar, badges). */
