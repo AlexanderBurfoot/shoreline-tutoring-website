@@ -35,6 +35,7 @@ import {
 } from './groupClassLaunch';
 import { bundlePricing, hourlyPricing, LESSONS_PER_BUNDLE, perLessonRate } from './pricingData';
 import { faqs } from './faqData';
+import { aboutShorelineEntries } from './aboutShoreline';
 import { hscGuideEntries } from './hscGuide';
 import { nesaKeyWordEntries } from './nesaKeyWords';
 import { hscPathwayEntries } from './hscPathways';
@@ -253,6 +254,10 @@ const STUDY_SKILL_ENTRIES: KnowledgeEntry[] = [...studySkillEntries, ...studyHab
 }));
 
 export const knowledgeEntries: KnowledgeEntry[] = [
+    /* Ahead of the pricing and FAQ answers, because a question such as "why are
+       the group classes small" scores 1.000 against both the class price entry
+       and the one that answers it, and the tie falls to whichever comes first. */
+    ...aboutShorelineEntries,
     ...ASSISTANT_ENTRIES,
     ...FAQ_ENTRIES,
     /* Ahead of the subject bank deliberately. A student who types nothing but
