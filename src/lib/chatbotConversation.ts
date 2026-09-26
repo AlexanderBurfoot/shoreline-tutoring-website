@@ -8,6 +8,7 @@
 import { findEntryById, type KnowledgeLink } from '../data/chatbotKnowledge';
 import { findBestMatch, shortlist } from './chatbotMatching';
 import { MAX_CANDIDATES, MAX_QUESTION_LENGTH } from './chatbotFallback';
+import { answerArithmetic } from './arithmeticAnswer';
 import { looksLikeAssessmentRequest } from './assessmentGuard';
 import { redactPersonalDetails } from './redactPersonalDetails';
 
@@ -16,7 +17,7 @@ import { redactPersonalDetails } from './redactPersonalDetails';
  * site; they differ only in what chose it, keyword matching or the model, and
  * an AI choice is labelled so a visitor can tell.
  */
-export type ReplySource = 'knowledge' | 'ai' | 'fallback';
+export type ReplySource = 'knowledge' | 'ai' | 'calculated' | 'fallback';
 
 export interface ChatReply {
     text: string;
@@ -33,6 +34,9 @@ export interface ResolvedQuestion {
 }
 
 export const ENQUIRY_FALLBACK_LINK: KnowledgeLink = { label: 'Send an enquiry', href: '/#contact' };
+
+/** Where a worked sum points, since the method matters more than the number. */
+const MATHS_LINK: KnowledgeLink = { label: 'See mathematics tutoring', href: '/subjects/mathematics' };
 
 /**
  * Said to a student who asks for assessed work to be done. It offers the thing
@@ -114,6 +118,18 @@ export async function resolveQuestion(
             question,
             redacted,
             reply: { text: TOO_LONG_TEXT, link: ENQUIRY_FALLBACK_LINK, source: 'fallback' },
+        };
+    }
+
+    /* Before the bank, because no written answer says 63 and a sum that reaches
+       the bank finds nothing. Only a question that is entirely an expression is
+       taken, so a concept question containing a number still goes on below. */
+    const calculated = answerArithmetic(question);
+    if (calculated) {
+        return {
+            question,
+            redacted,
+            reply: { text: calculated, link: MATHS_LINK, source: 'calculated' },
         };
     }
 
