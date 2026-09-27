@@ -20,7 +20,9 @@ vi.mock('../../../lib/turnstile', () => ({ verifyHuman }));
 let visitorCount = 0;
 
 /** Every sendMail body the route posted to Graph, in order. */
-let sentMail: { to: string; subject: string; html: string; savesToSent: boolean }[] = [];
+let sentMail: {
+    to: string; subject: string; html: string; savesToSent: boolean; replyTo: string;
+}[] = [];
 
 /** Whatever was pushed to the store and to the webhook, for the shared reference. */
 let stored: string[] = [];
@@ -80,6 +82,7 @@ describe('POST /api/contact, the parent confirmation', () => {
                     subject: body?.message?.subject ?? '',
                     html: body?.message?.body?.content ?? '',
                     savesToSent: body?.saveToSentItems === true,
+                    replyTo: body?.message?.replyTo?.[0]?.emailAddress?.address ?? '',
                 });
             }
             if (href.includes('store.example.com')) stored.push(raw);
@@ -193,6 +196,84 @@ describe('POST /api/contact, the parent confirmation', () => {
 
         expect(sentMail[1].html).toMatch(/Received \d{1,2} \w+ \d{4}/);
         expect(sentMail[1].html).not.toMatch(/\d{4}-\d{2}-\d{2}T/);
+    });
+
+    /* Hitting reply must reach the parent, not the mailbox the site sends from.
+       Getting this wrong is invisible until someone replies into a void. */
+    it('sets Reply-To on the owner email to the enquirer', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({ email: 'parent@example.com' }));
+
+        expect(sentMail[0].replyTo).toBe('parent@example.com');
+    });
+
+    /* And a reply to the confirmation must reach Shoreline, not the sending account. */
+    it('sets Reply-To on the confirmation to the enquiry mailbox', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry());
+
+        expect(sentMail[1].replyTo).toBe('owner@example.com');
+    });
+
+    /* The subject is what you triage from in a full inbox, so it has to say the
+       format and which class, not just that something arrived. */
+    it('puts the format and the course in the subject for a group enquiry', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({
+            name: 'Jordan Lee', format: 'Small-group classes',
+            course: 'Chemistry', day: 'Saturdays',
+        }));
+
+        expect(sentMail[0].subject).toBe('New Small-group classes Enquiry: Jordan Lee (Chemistry, Saturdays)');
+    });
+
+    it('falls back to the subject list when there is no course', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({
+            name: 'Sam Patel', format: 'One-on-one tutoring',
+            subjects: ['Mathematics', 'Physics'],
+        }));
+
+        expect(sentMail[0].subject).toBe('New One-on-one tutoring Enquiry: Sam Patel (Mathematics, Physics)');
+    });
+
+    it('leaves the bracket off when there is nothing to put in it', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({ name: 'Casey Ng', format: '' }));
+
+        expect(sentMail[0].subject).toBe('New Tutoring Enquiry: Casey Ng');
+    });
+
+    /* An apostrophe in a name and an ampersand in a message are ordinary, and
+       both would break the HTML or inject markup if they went through raw. */
+    it('escapes quotes, ampersands and angle brackets rather than rendering them', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({
+            name: "O'Brien & Sons",
+            message: 'Maths & Physics <script>alert(1)</script> "urgent"',
+        }));
+
+        const owner = sentMail[0].html;
+        expect(owner).toContain('&#039;');
+        expect(owner).toContain('&amp;');
+        expect(owner).toContain('&lt;script&gt;');
+        expect(owner).not.toContain('<script>');
+    });
+
+    it('carries a long message through without truncating it in the email', async () => {
+        verifyHuman.mockResolvedValue('verified');
+        const long = 'My child is sitting Chemistry. '.repeat(80);
+
+        await POST(enquiry({ message: long }));
+
+        expect(sentMail[0].html).toContain('My child is sitting Chemistry.');
+        expect(sentMail[0].html.length).toBeGreaterThan(long.length);
     });
 
     /* Only a check that ran and failed marks the subject, so the prefix keeps
