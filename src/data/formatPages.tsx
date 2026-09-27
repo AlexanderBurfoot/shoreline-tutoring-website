@@ -6,6 +6,7 @@ import {
     LESSON_BREAK_MINUTES,
     LESSON_TEACHING_HOURS,
     FIRST_LESSON_DATE_LONG,
+    FIRST_PAID_LESSON_DATE_LONG,
     TRIAL_OFFER,
     SESSION_SLOTS,
     SESSION_START_TIMES,
@@ -377,13 +378,20 @@ export const groupHeroFacts = (courseId?: Course['id']): FormatFact[] => [
 export const groupClassesPage: FormatPageContent = {
     hero: {
         badge: 'Year 12 · Now enrolling',
-        title: { lead: 'Year 12 Small-Group Classes', accent: `Weekly from ${FIRST_LESSON_DATE_LONG}` },
+        title: {
+            lead: 'Year 12 Small-Group Classes',
+            accent: `Free trial ${FIRST_LESSON_DATE_LONG}`,
+        },
         subtitle: (
             <>
-                For Year 12 <strong>Mathematics Standard, Advanced and Extension 1, Physics,
-                Chemistry and Biology</strong>: one {LESSON_TEACHING_HOURS}-hour lesson a week working through
+                For Year 12 <strong>Mathematics Standard, Advanced and Extension 1, Physics
+                and Chemistry</strong>: one {LESSON_TEACHING_HOURS}-hour lesson a week working through
                 the course alongside school, in person at {VENUE_ADDRESS} on Saturdays or live
-                online on Sundays. <strong>The first lesson is free.</strong>
+                online on Sundays.{' '}
+                <strong>
+                    The first lesson, {FIRST_LESSON_DATE_LONG}, is a free trial. Paid term lessons
+                    begin the week after, on {FIRST_PAID_LESSON_DATE_LONG}.
+                </strong>
             </>
         ),
         facts: groupHeroFacts(),
@@ -399,7 +407,7 @@ export const groupClassesPage: FormatPageContent = {
             eyebrow: 'Six Courses',
             title: { lead: 'One class per', accent: 'course' },
             subtitle:
-                'Standard, Advanced, Extension 1, Physics, Chemistry and Biology each run as their own class. Nobody sits through content that is not on their paper, and nothing is watered down to suit a mixed room.',
+                'Standard, Advanced, Extension 1, Physics and Chemistry each run as their own class. Nobody sits through content that is not on their paper, and nothing is watered down to suit a mixed room.',
         },
         items: COURSES,
     },
@@ -454,7 +462,7 @@ export const groupClassesPage: FormatPageContent = {
             {
                 title: 'Every course runs as its own class',
                 description:
-                    'Standard, Advanced, Extension 1, Physics, Chemistry and Biology each have their own room and their own plan. Nobody sits through content that is not on their paper.',
+                    'Standard, Advanced, Extension 1, Physics and Chemistry each have their own room and their own plan. Nobody sits through content that is not on their paper.',
             },
             {
                 title: 'Alongside school, week by week',
@@ -485,7 +493,7 @@ export const groupClassesPage: FormatPageContent = {
                 step: '1',
                 title: 'Tell us your course',
                 description:
-                    'Standard, Advanced, Extension 1, Physics, Chemistry or Biology, and where you currently feel weakest. That determines which class you join and what we watch for in the first lesson.',
+                    'Standard, Advanced, Extension 1, Physics or Chemistry, and where you currently feel weakest. That determines which class you join and what we watch for in the first lesson.',
             },
             {
                 step: '2',
@@ -566,7 +574,7 @@ export const groupClassesPage: FormatPageContent = {
             {
                 question: 'Who are these classes for?',
                 answer:
-                    'Year 12 students sitting Mathematics Standard, Advanced or Extension 1, Physics, Chemistry or Biology. Each course runs as its own class. We do not currently run group classes for other year levels or subjects, though one-on-one tutoring is available across Years 1 to 12.',
+                    'Year 12 students sitting Mathematics Standard, Advanced or Extension 1, Physics or Chemistry. Each course runs as its own class. We do not currently run group classes for other year levels or subjects, though one-on-one tutoring is available across Years 1 to 12.',
             },
             {
                 question: 'Is the first lesson really free?',

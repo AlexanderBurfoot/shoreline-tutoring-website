@@ -23,7 +23,9 @@ import { mathsAdvancedOutline } from './mathsAdvanced';
 import { mathsExtension1Outline } from './mathsExtension1';
 import { physicsOutline } from './physics';
 import { chemistryOutline } from './chemistry';
-import { biologyOutline } from './biology';
+// Biology is not running as a group class this term; see COURSES in
+// src/data/groupClassLaunch.ts.
+// import { biologyOutline } from './biology';
 
 export type { CourseLesson, CourseOutline, LaterTerm } from './types';
 
@@ -43,7 +45,7 @@ const OUTLINES: CourseOutline[] = [
     mathsExtension1Outline,
     physicsOutline,
     chemistryOutline,
-    biologyOutline,
+    // biologyOutline,
 ];
 
 /** A course with its plan attached, in the same order as COURSES. */
