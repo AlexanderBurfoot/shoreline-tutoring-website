@@ -277,10 +277,14 @@ export async function POST(request: Request) {
 
         const htmlBody = ownerEnquiryEmailHtml({ enquiryLabel, name, email, phone, learningFormat, courseChoice, dayChoice, subjectsList, message });
 
-        // A failed check never turns an enquiry away, since a blocked script or a
-        // slow connection must not cost a real lead. It is delivered marked as
-        // unverified, and the confirmation email, the one thing a bot could use
-        // to send mail to a stranger, is not sent.
+        /* A failed check never turns an enquiry away, since a blocked script or
+           a slow connection must not cost a real lead. It is delivered marked as
+           unverified, and the confirmation email, the one thing a bot could use
+           to send mail to a stranger, is sent only on a positive 'verified'
+           below. The flag here drives the subject prefix alone, so it stays
+           'failed' only: with no key configured there is nothing to report, and
+           tagging every enquiry [Unverified] would teach the reader to ignore
+           the prefix. */
         const [token, humanCheck] = await Promise.all([
             getGraphToken(),
             verifyHuman(turnstileToken, ip, HUMAN_CHECK_TIMEOUT_MS),
@@ -340,10 +344,18 @@ export async function POST(request: Request) {
             throw lastError;
         }
 
-        // Only with time left over: the enquiry is delivered either way, and
-        // the webhook's reserve is not spent on a courtesy email.
+        /* Only with time left over: the enquiry is delivered either way, and the
+           webhook's reserve is not spent on a courtesy email.
+
+           This needs a positive 'verified', not merely the absence of 'failed'.
+           With no TURNSTILE_SECRET_KEY the check returns 'not-configured', which
+           is not a failure, so testing for `!isUnverified` let it through and
+           anyone could make this mailbox send a confirmation to any address they
+           typed. It fails closed instead: no verification, no outbound mail to a
+           stranger. Until the key is set that means no parent receives one, so
+           the reason is logged rather than passing silently. */
         const replyBudget = Math.min(AUTO_REPLY_TIMEOUT_MS, deadline - Date.now());
-        if (replyBudget > 0 && token && !isUnverified) {
+        if (replyBudget > 0 && token && humanCheck === 'verified') {
             const confirmed = await sendParentConfirmation(
                 token,
                 { name, email, learningFormat, subjectsList, courseChoice, dayChoice },
@@ -352,6 +364,11 @@ export async function POST(request: Request) {
             if (!confirmed) {
                 console.warn('[ENQUIRY_CONFIRMATION_FAILED] Enquiry delivered; the confirmation to the enquirer was not.');
             }
+        } else if (replyBudget > 0 && token) {
+            console.warn(
+                `[ENQUIRY_CONFIRMATION_SKIPPED] Human check was '${humanCheck}', so no confirmation was sent to the `
+                + 'enquirer. The enquiry itself was delivered. Set TURNSTILE_SECRET_KEY to turn confirmations on.',
+            );
         }
 
         // Mirrored on every enquiry, not just failures, so each lead has two
