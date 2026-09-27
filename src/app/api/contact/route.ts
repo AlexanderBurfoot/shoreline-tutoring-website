@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 import { CONTACT_EMAIL } from '../../../lib/site';
 import { ownerEnquiryEmailHtml, parentConfirmationEmailHtml, type ConfirmationFields } from '../../../lib/enquiryEmails';
+import { createEnquiryReceipt, type EnquiryReceipt } from '../../../lib/enquiryReceipt';
 import { verifyHuman } from '../../../lib/turnstile';
 import { createRateLimiter, getClientIp } from '../../../lib/rateLimit';
 
@@ -106,12 +107,12 @@ async function getGraphToken() {
 const ENQUIRY_LIST_KEY = 'enquiries';
 const PERSIST_TIMEOUT_MS = 3000;
 
-async function persistEnquiry(enquiry: Record<string, unknown>): Promise<boolean> {
+async function persistEnquiry(enquiry: Record<string, unknown>, receipt: EnquiryReceipt): Promise<boolean> {
     const restUrl = process.env.UPSTASH_REDIS_REST_URL;
     const token = process.env.UPSTASH_REDIS_REST_TOKEN;
     if (!restUrl || !token) return false;
 
-    const record = JSON.stringify({ receivedAt: new Date().toISOString(), ...enquiry });
+    const record = JSON.stringify({ receivedAt: receipt.receivedAt, reference: receipt.reference, ...enquiry });
     try {
         const response = await fetchWithTimeout(restUrl, {
             method: 'POST',
@@ -143,7 +144,7 @@ const FALLBACK_MAX_MESSAGE_CHARS = 1200;
 
 async function notifyWebhook(
     enquiry: Record<string, unknown>,
-    { emailDelivered }: { emailDelivered: boolean }
+    { emailDelivered, receipt }: { emailDelivered: boolean; receipt: EnquiryReceipt }
 ): Promise<boolean> {
     const webhookUrl = process.env.ENQUIRY_FALLBACK_WEBHOOK_URL;
     if (!webhookUrl) return false;
@@ -159,6 +160,7 @@ async function notifyWebhook(
         emailDelivered
             ? '🔔 New enquiry (also emailed to you)'
             : '🚨 New enquiry: EMAIL DELIVERY FAILED, please reply manually',
+        field('Reference', `${receipt.reference} (${receipt.receivedAtLocal})`),
         field('Name', enquiry.name),
         field('Email', enquiry.email),
         field('Phone', enquiry.phone),
@@ -214,7 +216,9 @@ async function sendParentConfirmation(
                         // Replies land in the enquiry mailbox, not the sending account.
                         replyTo: [{ emailAddress: { address: process.env.EMAIL_TO || CONTACT_EMAIL } }],
                     },
-                    saveToSentItems: false,
+                    /* Kept, so a confirmation that a parent says they never
+                       received can be checked against the mailbox. */
+                    saveToSentItems: true,
                 }),
             },
             timeoutMs,
@@ -232,6 +236,9 @@ export async function POST(request: Request) {
      */
     let submitted: Record<string, unknown> = {};
     let persisted = false;
+    /* Made once, then shared by both emails, the stored record, the webhook and
+       the logs, so one enquiry has a single identity everywhere it lands. */
+    const receipt = createEnquiryReceipt();
     const deadline = Date.now() + TOTAL_OUTBOUND_BUDGET_MS - WEBHOOK_RESERVE_MS;
 
     try {
@@ -258,7 +265,7 @@ export async function POST(request: Request) {
         // Written before delivery so a record exists even if everything after
         // this point fails. A store outage must never block a real enquiry, so
         // the result is recorded and the request continues either way.
-        persisted = await persistEnquiry(submitted);
+        persisted = await persistEnquiry(submitted, receipt);
         if (!persisted && process.env.UPSTASH_REDIS_REST_URL) {
             console.error('[ENQUIRY_PERSIST_FAILED] Store configured but write failed.');
         }
@@ -275,7 +282,7 @@ export async function POST(request: Request) {
         const enquiryDetail = [courseChoice, dayChoice].filter(Boolean).join(', ') || subjectsList;
         const subjectLine = `New ${enquiryLabel} Enquiry: ${name}${enquiryDetail ? ` (${enquiryDetail})` : ''}`;
 
-        const htmlBody = ownerEnquiryEmailHtml({ enquiryLabel, name, email, phone, learningFormat, courseChoice, dayChoice, subjectsList, message });
+        const htmlBody = ownerEnquiryEmailHtml({ receipt, enquiryLabel, name, email, phone, learningFormat, courseChoice, dayChoice, subjectsList, message });
 
         /* A failed check never turns an enquiry away, since a blocked script or
            a slow connection must not cost a real lead. It is delivered marked as
@@ -358,28 +365,32 @@ export async function POST(request: Request) {
         if (replyBudget > 0 && token && humanCheck === 'verified') {
             const confirmed = await sendParentConfirmation(
                 token,
-                { name, email, learningFormat, subjectsList, courseChoice, dayChoice },
+                { receipt, name, email, learningFormat, subjectsList, courseChoice, dayChoice },
                 replyBudget,
             );
             if (!confirmed) {
-                console.warn('[ENQUIRY_CONFIRMATION_FAILED] Enquiry delivered; the confirmation to the enquirer was not.');
+                console.warn(
+                    `[ENQUIRY_CONFIRMATION_FAILED] ${receipt.reference}: enquiry delivered; the confirmation to `
+                    + 'the enquirer was not.',
+                );
             }
         } else if (replyBudget > 0 && token) {
             console.warn(
-                `[ENQUIRY_CONFIRMATION_SKIPPED] Human check was '${humanCheck}', so no confirmation was sent to the `
-                + 'enquirer. The enquiry itself was delivered. Set TURNSTILE_SECRET_KEY to turn confirmations on.',
+                `[ENQUIRY_CONFIRMATION_SKIPPED] ${receipt.reference}: human check was '${humanCheck}', so no `
+                + 'confirmation was sent to the enquirer. The enquiry itself was delivered. Set '
+                + 'TURNSTILE_SECRET_KEY to turn confirmations on.',
             );
         }
 
         // Mirrored on every enquiry, not just failures, so each lead has two
         // independent copies in places a human actually reads.
-        await notifyWebhook(submitted, { emailDelivered: true });
+        await notifyWebhook(submitted, { emailDelivered: true, receipt });
 
         return NextResponse.json({ success: true, message: 'Your enquiry has been sent! We\'ll be in touch soon.' });
     } catch (err) {
         console.error('[ENQUIRY_EMAIL_FAILED] Cause:', err);
 
-        const notified = await notifyWebhook(submitted, { emailDelivered: false });
+        const notified = await notifyWebhook(submitted, { emailDelivered: false, receipt });
         if (notified) {
             console.warn('[ENQUIRY_VIA_WEBHOOK] Email failed; enquiry delivered to webhook instead.');
         }
@@ -401,7 +412,8 @@ export async function POST(request: Request) {
         // contact details in the runtime logs, so keep log access restricted
         // and retention short.
         console.error('[ENQUIRY_DELIVERY_FAILED] Recover manually:', JSON.stringify({
-            receivedAt: new Date().toISOString(),
+            receivedAt: receipt.receivedAt,
+            reference: receipt.reference,
             ...submitted,
         }));
         return NextResponse.json({ error: 'Something went wrong. Please try emailing us directly at contact@shorelinetutoring.com.au' }, { status: 500 });
