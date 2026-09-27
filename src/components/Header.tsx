@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import './Header.css';
 import { subjects } from '../data/subjectData';
-import { GROUP_CLASSES_PATH, HOMEPAGE_LEADS_WITH_GROUP, ONE_ON_ONE_PATH } from '../data/groupClassLaunch';
+import { GROUP_CLASSES_PATH, ONE_ON_ONE_PATH } from '../data/groupClassLaunch';
 import subjectIcons from './SubjectIcons';
 import { EnquiryLink, TrackedLink, type NavLocation } from './NavLinks';
 
@@ -39,15 +39,19 @@ const isCurrentPage = (pathname: string, href: string) =>
   pathname === href || pathname.startsWith(`${href}/`);
 
 /** Pages that open on a navy section, where the header starts light-on-dark. */
+/**
+ * Pages whose first section is dark, so the transparent header needs its light
+ * treatment until the user scrolls.
+ *
+ * The two format pages and the homepage are no longer here: .format-hero is now
+ * the same light gradient as the homepage hero, and a header styled for navy
+ * left the nav links and the logo nearly invisible on it.
+ */
 const hasDarkOpening = (pathname: string) =>
   pathname.startsWith('/subjects') ||
   pathname.startsWith('/resources') ||
   pathname === '/pricing' ||
-  pathname === '/thank-you' ||
-  pathname === GROUP_CLASSES_PATH ||
-  pathname === ONE_ON_ONE_PATH ||
-  // A group-first homepage opens on the navy group hero.
-  (pathname === '/' && HOMEPAGE_LEADS_WITH_GROUP);
+  pathname === '/thank-you';
 
 interface NavItemProps {
   link: PageLink;
