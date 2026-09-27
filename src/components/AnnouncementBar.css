@@ -16,7 +16,9 @@
     padding: 0 var(--space-14);
     overflow: hidden;
     background: linear-gradient(135deg, #0a1628 0%, var(--color-navy) 50%, #253552 100%);
-    border-bottom: 2px solid var(--color-gold-primary);
+    /* A heavier gold rule than the usual hairline, so the bar reads as its own
+       band rather than as part of the header below it. */
+    border-bottom: 7px solid var(--color-gold-primary);
     box-shadow: 0 4px 18px rgba(10, 22, 40, 0.35);
 }
 
@@ -187,6 +189,12 @@
 @media (max-width: 1100px) {
     .announcement__badge,
     .announcement__headline-detail {
+        display: none;
+    }
+
+    /* The founding pill goes too, rather than let the two rows overflow the
+       bar's fixed height; the pricing and class pages still carry the offer. */
+    .announcement__offer--founding {
         display: none;
     }
 

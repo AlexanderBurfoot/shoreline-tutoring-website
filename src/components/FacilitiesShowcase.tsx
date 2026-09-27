@@ -38,7 +38,7 @@ const FacilitiesShowcase = () => (
         <div className="facilities__highlights">
             {FACILITY_HIGHLIGHTS.map((highlight, index) => (
                 <ScrollReveal key={highlight.title} width="100%" delay={index * 90}>
-                    <div className="facilities__highlight">
+                    <div className="facilities__highlight spotlight">
                         <span className="facilities__highlight-check" aria-hidden="true">✓</span>
                         <h3 className="facilities__highlight-title">{highlight.title}</h3>
                         <p className="facilities__highlight-description">{highlight.description}</p>

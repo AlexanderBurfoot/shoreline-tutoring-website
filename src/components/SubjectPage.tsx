@@ -304,7 +304,7 @@ const SubjectPage = () => {
                                 </div>
                                 <div className="subject-page__related-grid">
                                     {displayPosts.map((post) => (
-                                        <Link href={`/resources/${post.slug}`} className="resource-card" key={post.id}>
+                                        <Link href={`/resources/${post.slug}`} className="resource-card spotlight" key={post.id}>
                                             <div className="resource-card__image-wrapper">
                                                 <Image
                                                     src={post.imageUrl}

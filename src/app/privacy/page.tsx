@@ -4,7 +4,7 @@ import { VENUE_ADDRESS } from '../../data/groupClassLaunch';
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, PRIVACY_PATH } from '../../lib/site';
 
 /** Change whenever the substance of the policy changes. */
-const LAST_UPDATED = '18 September 2026';
+const LAST_UPDATED = '23 September 2026';
 
 const OAIC_URL = 'https://www.oaic.gov.au';
 const GOOGLE_AD_CENTER_URL = 'https://myadcenter.google.com';
@@ -32,7 +32,8 @@ interface PolicySection {
 /**
  * Describes what the site actually does: the enquiry form fields, the services
  * that receive enquiries (see src/app/api/contact/route.ts), session storage
- * Google Tag Manager, and the Google Maps embed in the venue card
+ * Google Tag Manager, Cloudflare Turnstile on the enquiry form, and the Google
+ * Maps embed in the venue card
  * (src/components/VenueMap.tsx). Update this whenever any of those change.
  */
 const SECTIONS: PolicySection[] = [
@@ -85,6 +86,7 @@ const SECTIONS: PolicySection[] = [
                     <li>a team messaging service, such as Slack or Discord, which alerts us to new enquiries</li>
                     <li>our website hosting provider, whose server logs may hold an enquiry if it cannot be delivered</li>
                     <li>Google, which provides the measurement tools described below</li>
+                    <li>Cloudflare, which checks the enquiry form for automated submissions and answers chat questions our own content cannot</li>
                 </ul>
                 <p>Some of these providers may store information outside Australia.</p>
             </>
@@ -107,8 +109,22 @@ const SECTIONS: PolicySection[] = [
                     for ads at <ExternalLink href={GOOGLE_AD_CENTER_URL}>myadcenter.google.com</ExternalLink>.
                 </p>
                 <p>
+                    Our enquiry form uses Cloudflare Turnstile to check that a real person is sending
+                    it rather than an automated program. For that check, Cloudflare processes technical
+                    information about your browser and connection. It does not see what you type into
+                    the form.
+                </p>
+                <p>
                     The map of our St Leonards rooms is provided by Google Maps. It loads only if you choose to show
                     it, and Google may then set its own cookies.
+                </p>
+                <p>
+                    Our chat assistant answers most questions from the content of this website, without sending
+                    anything anywhere. If it cannot answer a typed question, that question alone is sent to
+                    Cloudflare Workers AI, which generates a reply. We remove email addresses, phone numbers and
+                    street addresses before sending, and we ask you not to type names or personal details into the
+                    chat. Cloudflare states that it does not use this content to train AI models. We do not keep a
+                    record of what you type.
                 </p>
             </>
         ),

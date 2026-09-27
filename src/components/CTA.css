@@ -385,3 +385,8 @@
         gap: var(--space-4);
     }
 }
+
+/* Invisible for most visitors; when Cloudflare needs a checkbox, it sits here. */
+.cta__turnstile:not(:empty) {
+    margin-bottom: var(--space-4);
+}

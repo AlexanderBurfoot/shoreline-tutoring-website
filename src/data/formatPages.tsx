@@ -6,6 +6,7 @@ import {
     LESSON_BREAK_MINUTES,
     LESSON_TEACHING_HOURS,
     FIRST_LESSON_DATE_LONG,
+    FIRST_PAID_LESSON_DATE_LONG,
     TRIAL_OFFER,
     SESSION_SLOTS,
     SESSION_START_TIMES,
@@ -15,7 +16,10 @@ import {
     ONE_ON_ONE_PATH,
     ONLINE_FIRST_CLASS,
     FOUNDING_HOURLY_RATE,
+    FOUNDING_OFFER_LINE,
     FOUNDING_PLACES_PER_CLASS,
+    FOUNDING_SAVING,
+    FOUNDING_SAVING_BADGE,
     FOUNDING_TERM_PRICE,
     SESSION_PRICE,
     TERM_HOURLY_RATE,
@@ -25,6 +29,8 @@ import {
     TERM_SAVING,
     VENUE_ADDRESS,
     anyFoundingPlaces,
+    hasFoundingPlaces,
+    type Course,
 } from './groupClassLaunch';
 import {
     LESSONS_PER_BUNDLE,
@@ -88,6 +94,10 @@ export interface FormatProgramPricing {
     label: string;
     price: string;
     caption: string;
+    /** The price this one replaces, shown struck through beside it while an offer runs. */
+    wasPrice?: string;
+    /** Who the price applies to, and what applies once the offer is gone. */
+    note?: string;
     inclusions: string[];
 }
 
@@ -322,7 +332,7 @@ export const oneOnOnePage: FormatPageContent = {
             {
                 question: 'Which year levels and subjects do you cover?',
                 answer:
-                    'English, Mathematics, Physics, Chemistry, Economics and Business Studies, plus NAPLAN, Selective High School and Opportunity Classes preparation across the tested year levels.',
+                    'English, Mathematics, Physics, Chemistry, Biology, Economics and Business Studies, plus NAPLAN, Selective High School and Opportunity Classes preparation across the tested year levels.',
             },
             {
                 question: 'How does this compare with small-group classes?',
@@ -344,29 +354,47 @@ export const oneOnOnePage: FormatPageContent = {
     },
 };
 
+/**
+ * The facts beside the group-classes hero. Class times are the same for every
+ * course, but the price is not: pass a course id on a page about that one
+ * course, and it shows the term rate once that class's founding places are
+ * taken, while the courses that still have them keep the offer. Without an id,
+ * for the page covering every course, the offer shows while any course has
+ * places left.
+ */
+export const groupHeroFacts = (courseId?: Course['id']): FormatFact[] => [
+    { label: 'Each week', value: `One ${LESSON_TEACHING_HOURS}-hour lesson · ${LESSON_BREAK_MINUTES}-minute break` },
+    { label: 'In person · St Leonards', value: `From ${IN_PERSON_FIRST_CLASS}, ${SESSION_START_TIMES}` },
+    { label: 'Online · live from home', value: `From ${ONLINE_FIRST_CLASS}, ${SESSION_START_TIMES}` },
+    {
+        label: 'Price',
+        value: (courseId ? hasFoundingPlaces(courseId) : anyFoundingPlaces())
+            ? `${TRIAL_OFFER}. Then ${FOUNDING_TERM_PRICE} instead of ${TERM_PRICE} for the term, `
+                + `for the first ${FOUNDING_PLACES_PER_CLASS} students in each class`
+            : `${TRIAL_OFFER}, then ${TERM_PRICE} for the term`,
+    },
+];
+
 export const groupClassesPage: FormatPageContent = {
     hero: {
         badge: 'Year 12 · Now enrolling',
-        title: { lead: 'Year 12 Small-Group Classes', accent: `Weekly from ${FIRST_LESSON_DATE_LONG}` },
+        title: {
+            lead: 'Year 12 Small-Group Classes',
+            accent: `Free trial ${FIRST_LESSON_DATE_LONG}`,
+        },
         subtitle: (
             <>
-                For Year 12 <strong>Mathematics Standard, Advanced and Extension 1, Physics and
-                Chemistry</strong>: one {LESSON_TEACHING_HOURS}-hour lesson a week working through
+                For Year 12 <strong>Mathematics Standard, Advanced and Extension 1, Physics,
+                Chemistry and Biology</strong>: one {LESSON_TEACHING_HOURS}-hour lesson a week working through
                 the course alongside school, in person at {VENUE_ADDRESS} on Saturdays or live
-                online on Sundays. <strong>The first lesson is free.</strong>
+                online on Sundays.{' '}
+                <strong>
+                    The first lesson, {FIRST_LESSON_DATE_LONG}, is a free trial. Paid term lessons
+                    begin the week after, on {FIRST_PAID_LESSON_DATE_LONG}.
+                </strong>
             </>
         ),
-        facts: [
-            { label: 'Each week', value: `One ${LESSON_TEACHING_HOURS}-hour lesson · ${LESSON_BREAK_MINUTES}-minute break` },
-            { label: 'In person · St Leonards', value: `From ${IN_PERSON_FIRST_CLASS}, ${SESSION_START_TIMES}` },
-            { label: 'Online · live from home', value: `From ${ONLINE_FIRST_CLASS}, ${SESSION_START_TIMES}` },
-            {
-                label: 'Price',
-                value: anyFoundingPlaces()
-                    ? `${TRIAL_OFFER}. Founding places ${FOUNDING_TERM_PRICE} for the term`
-                    : `${TRIAL_OFFER}, then ${TERM_PRICE} for the term`,
-            },
-        ],
+        facts: groupHeroFacts(),
         primaryCta: { href: GROUP_ENQUIRY_HREF, label: 'Book a Free Lesson' },
         // A route plus anchor rather than a bare anchor, so the same button works
         // on the homepage (which opens this page) and here (which jumps down).
@@ -376,10 +404,10 @@ export const groupClassesPage: FormatPageContent = {
     },
     courses: {
         header: {
-            eyebrow: 'Five Courses',
+            eyebrow: 'Six Courses',
             title: { lead: 'One class per', accent: 'course' },
             subtitle:
-                'Standard, Advanced, Extension 1, Physics and Chemistry each run as their own class. Nobody sits through content that is not on their paper, and nothing is watered down to suit a mixed room.',
+                'Standard, Advanced, Extension 1, Physics, Chemistry and Biology each run as their own class. Nobody sits through content that is not on their paper, and nothing is watered down to suit a mixed room.',
         },
         items: COURSES,
     },
@@ -434,7 +462,7 @@ export const groupClassesPage: FormatPageContent = {
             {
                 title: 'Every course runs as its own class',
                 description:
-                    'Standard, Advanced, Extension 1, Physics and Chemistry each have their own room and their own plan. Nobody sits through content that is not on their paper.',
+                    'Standard, Advanced, Extension 1, Physics, Chemistry and Biology each have their own room and their own plan. Nobody sits through content that is not on their paper.',
             },
             {
                 title: 'Alongside school, week by week',
@@ -465,7 +493,7 @@ export const groupClassesPage: FormatPageContent = {
                 step: '1',
                 title: 'Tell us your course',
                 description:
-                    'Standard, Advanced, Extension 1, Physics or Chemistry, and where you currently feel weakest. That determines which class you join and what we watch for in the first lesson.',
+                    'Standard, Advanced, Extension 1, Physics, Chemistry or Biology, and where you currently feel weakest. That determines which class you join and what we watch for in the first lesson.',
             },
             {
                 step: '2',
@@ -490,11 +518,15 @@ export const groupClassesPage: FormatPageContent = {
                     The first lesson is free.{' '}
                     {anyFoundingPlaces() && (
                         <>
-                            The first {FOUNDING_PLACES_PER_CLASS} students in each class take a founding
-                            place at {FOUNDING_TERM_PRICE} for the rest of {TERM_LABEL}.{' '}
+                            <strong>
+                                As a founding offer, {FOUNDING_OFFER_LINE}, a saving
+                                of {FOUNDING_SAVING}.
+                            </strong>{' '}
+                            Once a class has taken its first {FOUNDING_PLACES_PER_CLASS} students,{' '}
                         </>
                     )}
-                    After that it is {TERM_PRICE} for the {TERM_PAID_SESSIONS} paid lessons,
+                    {anyFoundingPlaces() ? 'the term is' : 'After that it is'}{' '}
+                    {TERM_PRICE} for the {TERM_PAID_SESSIONS} paid lessons,
                     saving {TERM_SAVING} on paying {SESSION_PRICE} a lesson each week. The price
                     is the same in person or online.
                 </>
@@ -504,9 +536,13 @@ export const groupClassesPage: FormatPageContent = {
             // Leads with founding places while any class has them, then the term rate.
             ...(anyFoundingPlaces()
                 ? {
-                    label: `Founding place · first ${FOUNDING_PLACES_PER_CLASS} students per class`,
+                    label: FOUNDING_SAVING_BADGE,
                     price: FOUNDING_TERM_PRICE,
-                    caption: `for ${TERM_LABEL} · ${FOUNDING_HOURLY_RATE} an hour · then ${TERM_PRICE} a term or ${SESSION_PRICE} a lesson`,
+                    wasPrice: TERM_PRICE,
+                    caption: `for ${TERM_LABEL} · ${FOUNDING_HOURLY_RATE} an hour`,
+                    note: `Only the first ${FOUNDING_PLACES_PER_CLASS} students in each class `
+                        + `pay ${FOUNDING_TERM_PRICE}. After those places are taken the term `
+                        + `is ${TERM_PRICE}, or ${SESSION_PRICE} a lesson paid weekly.`,
                 }
                 : {
                     label: `${TERM_LABEL}, paid up front`,
@@ -538,7 +574,7 @@ export const groupClassesPage: FormatPageContent = {
             {
                 question: 'Who are these classes for?',
                 answer:
-                    'Year 12 students sitting Mathematics Standard, Advanced or Extension 1, Physics or Chemistry. Each course runs as its own class. We do not currently run group classes for other year levels or subjects, though one-on-one tutoring is available across Years 1 to 12.',
+                    'Year 12 students sitting Mathematics Standard, Advanced or Extension 1, Physics, Chemistry or Biology. Each course runs as its own class. We do not currently run group classes for other year levels or subjects, though one-on-one tutoring is available across Years 1 to 12.',
             },
             {
                 question: 'Is the first lesson really free?',

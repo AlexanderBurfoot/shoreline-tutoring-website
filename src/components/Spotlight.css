@@ -1,0 +1,42 @@
+/* ===== Cursor spotlight =====
+   A soft gold glow that follows the pointer across any card marked with the
+   `spotlight` class. Only on devices with a mouse or trackpad; touch screens
+   have no pointer to follow.
+
+   The glow is layered between the card's background and its content: the card
+   becomes its own stacking context (isolation), and the glow sits at z-index -1
+   inside it. So it lights the card up without ever washing over the text. */
+
+@media (hover: hover) and (pointer: fine) {
+    .spotlight {
+        position: relative;
+        isolation: isolate;
+    }
+
+    .spotlight::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: inherit;
+        pointer-events: none;
+        /* --spot-x and --spot-y are set by Spotlight.tsx as the pointer moves. */
+        background: radial-gradient(
+            360px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+            rgba(234, 197, 77, 0.14),
+            transparent 60%
+        );
+        opacity: 0;
+        transition: opacity var(--transition-base);
+    }
+
+    .spotlight:hover::after {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spotlight::after {
+        display: none;
+    }
+}

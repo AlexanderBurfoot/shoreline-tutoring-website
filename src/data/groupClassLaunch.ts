@@ -9,13 +9,33 @@
 /** IANA zone for every class time on the site. */
 const SYDNEY_TIME_ZONE = 'Australia/Sydney';
 
-/** First lesson in ISO form, used for structured data and countdown maths. */
+/**
+ * The first lesson is a free trial, and paid term lessons begin the week after.
+ * Both dates are exported so copy can name them separately: saying only "classes
+ * start 3 October" led parents to expect the term to begin that day.
+ *
+ * The countdown and the structured-data event point at the trial, since that is
+ * what a visitor can book today.
+ */
 export const FIRST_LESSON_DATE_ISO = '2026-10-03';
 
 /** First online lesson in ISO form. Keep one day after the in-person date. */
 export const ONLINE_FIRST_LESSON_DATE_ISO = '2026-10-04';
 
-/** Human-readable first lesson, used in body copy. */
+/** First paid lesson, a week after each trial. */
+export const FIRST_PAID_LESSON_DATE_LONG = 'Saturday 10 October';
+export const FIRST_PAID_LESSON_DATE_SHORT = 'Sat 10 Oct';
+export const ONLINE_FIRST_PAID_LESSON = 'Sunday 11 October';
+
+/**
+ * First day of the NSW school term the classes run alongside (Term 4 2026,
+ * eastern division). Classes start before school goes back, so the copy that
+ * says how many lessons fall in the holidays counts from this rather than
+ * asserting a number that a change of start date would quietly falsify.
+ */
+export const SCHOOL_TERM_START_ISO = '2026-10-12';
+
+/** Human-readable trial lesson date, used in body copy. */
 export const FIRST_LESSON_DATE_LONG = 'Saturday 3 October';
 
 /** Compact form, used where space is tight (announcement bar, badges). */
@@ -140,7 +160,7 @@ export const VENUE_WALKING_ROUTES: WalkingRoute[] = [
  * What small-group classes currently cover, as one clause that reads inside a
  * sentence. Update it here and every section that scopes the offer follows.
  */
-export const GROUP_SCOPE_SUMMARY = 'Year 12 maths, physics and chemistry';
+export const GROUP_SCOPE_SUMMARY = 'Year 12 maths, physics, chemistry and biology';
 
 /** The term the published schedule runs to. */
 export const TERM_LABEL = 'Term 4';
@@ -205,6 +225,25 @@ export const TERM_PRICE = dollars(TERM_PRICE_DOLLARS);
 /** The founding term price, e.g. "$1,500". */
 export const FOUNDING_TERM_PRICE = dollars(FOUNDING_TERM_PRICE_DOLLARS);
 
+/** What a founding place saves against the term rate, e.g. "$500". */
+export const FOUNDING_SAVING = dollars(TERM_PRICE_DOLLARS - FOUNDING_TERM_PRICE_DOLLARS);
+
+/*
+ * The founding offer in words. Every surface uses one of these three, so the
+ * price, the number of places and the price they replace never drift apart:
+ *  - FOUNDING_OFFER_LINE for a sentence, and it reads correctly mid-sentence.
+ *  - FOUNDING_OFFER_SHORT where only a phrase fits, such as a pill or a chip.
+ *  - FOUNDING_SAVING_BADGE for the label above a price.
+ */
+export const FOUNDING_OFFER_LINE =
+    `the first ${FOUNDING_PLACES_PER_CLASS} students in each class pay ${FOUNDING_TERM_PRICE} ` +
+    `for ${TERM_LABEL} instead of ${TERM_PRICE}`;
+
+export const FOUNDING_OFFER_SHORT =
+    `${FOUNDING_TERM_PRICE} a term for the first ${FOUNDING_PLACES_PER_CLASS} per class`;
+
+export const FOUNDING_SAVING_BADGE = `Founding offer · save ${FOUNDING_SAVING}`;
+
 /** Paying weekly for the whole term, e.g. "$2,500", which the term rate is compared with. */
 export const WEEKLY_TERM_TOTAL = dollars(SESSION_PRICE_DOLLARS * TERM_PAID_SESSIONS);
 
@@ -220,7 +259,7 @@ export const FOUNDING_HOURLY_RATE = perTeachingHour(FOUNDING_TERM_PRICE_DOLLARS 
 export const TRIAL_OFFER = 'First lesson free';
 
 export interface Course {
-    id: 'maths-standard' | 'maths-advanced' | 'maths-extension-1' | 'physics' | 'chemistry';
+    id: 'maths-standard' | 'maths-advanced' | 'maths-extension-1' | 'physics' | 'chemistry' | 'biology';
     /** Full HSC course name. */
     name: string;
     /** Short form for chips and badges. */
@@ -230,9 +269,13 @@ export interface Course {
 }
 
 /**
- * The Year 12 courses classes run for. Each is a separate class, so each needs
- * its own session time once confirmed. A course that draws no interest is
- * removed from this list rather than advertised and quietly not run.
+ * The Year 12 courses classes run for. The maths descriptions follow the 2024
+ * syllabuses, first examined in the 2027 HSC; the science descriptions follow
+ * the 2017 syllabuses, which still apply to that HSC.
+ *
+ * Each is a separate class, so each needs its own session time once
+ * confirmed. A course that draws no interest is removed from this list rather
+ * than advertised and quietly not run.
  */
 export const COURSES: Course[] = [
     {
@@ -240,21 +283,21 @@ export const COURSES: Course[] = [
         name: 'Mathematics Standard',
         shortName: 'Standard',
         covers:
-            'Financial mathematics and annuities, bivariate data and the normal distribution, non-right-angled trigonometry, rates and ratios, and network diagrams including critical path analysis.',
+            'Investment, loans and annuities, probability, bivariate data and the normal distribution, trigonometry with the sine and cosine rules, algebraic models, rates and ratios, and network flow and critical path analysis.',
     },
     {
         id: 'maths-advanced',
         name: 'Mathematics Advanced',
         shortName: 'Advanced',
         covers:
-            'Graphing techniques and functions, trigonometric functions, differential and integral calculus, series and annuities, and statistical analysis including random variables and the normal distribution.',
+            'Graph transformations and modelling, sequences and series, differential and integral calculus and their applications, loans and annuities, and random variables including the normal distribution.',
     },
     {
         id: 'maths-extension-1',
         name: 'Mathematics Extension 1',
         shortName: 'Extension 1',
         covers:
-            'Proof by mathematical induction, vectors, trigonometric identities, further integration and differential equations, and the binomial distribution.',
+            'Proof by mathematical induction, vectors and projectile motion, inverse trigonometric functions, further calculus including volumes and differential equations, and the binomial and sampling distributions.',
     },
     {
         id: 'physics',
@@ -269,6 +312,13 @@ export const COURSES: Course[] = [
         shortName: 'Chemistry',
         covers:
             'Equilibrium and acid reactions, acid and base reactions including titration and buffers, organic chemistry from hydrocarbons to polymers, and applying chemical ideas through qualitative and instrumental analysis.',
+    },
+    {
+        id: 'biology',
+        name: 'Biology',
+        shortName: 'Biology',
+        covers:
+            'Heredity and reproduction, genetic change and biotechnology, infectious disease and how the body defends itself, and non-infectious disease, disorders and their treatment.',
     },
 ];
 
@@ -328,7 +378,7 @@ export interface ClassPreference {
  */
 export const ONE_ON_ONE_FORMAT = 'One-on-one tutoring';
 export const GROUP_FORMAT = 'Small-group classes';
-export const LEARNING_FORMATS = [ONE_ON_ONE_FORMAT, GROUP_FORMAT, 'Not sure yet'];
+export const LEARNING_FORMATS = [GROUP_FORMAT, ONE_ON_ONE_FORMAT, 'Not sure yet'];
 
 export interface FacilityHighlight {
     title: string;

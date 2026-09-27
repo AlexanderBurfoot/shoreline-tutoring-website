@@ -2,29 +2,16 @@ import { NextResponse } from 'next/server';
 
 import { CONTACT_EMAIL } from '../../../lib/site';
 import { ownerEnquiryEmailHtml, parentConfirmationEmailHtml, type ConfirmationFields } from '../../../lib/enquiryEmails';
+import { verifyHuman } from '../../../lib/turnstile';
+import { createRateLimiter, getClientIp } from '../../../lib/rateLimit';
 
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 
-// Best-effort in-memory rate limiter, scoped to a single server instance.
-// For multi-instance or serverless deployments, back this with a shared
-// store (e.g. Redis) so limits hold across instances.
-const requestTimestamps = new Map<string, number[]>();
-
-function getClientIp(request: Request) {
-    const forwarded = request.headers.get('x-forwarded-for');
-    return forwarded?.split(',')[0]?.trim() || 'unknown';
-}
-
-function isRateLimited(ip: string) {
-    const now = Date.now();
-    const recent = (requestTimestamps.get(ip) || []).filter(
-        (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS
-    );
-    recent.push(now);
-    requestTimestamps.set(ip, recent);
-    return recent.length > RATE_LIMIT_MAX_REQUESTS;
-}
+const isRateLimited = createRateLimiter({
+    windowMs: RATE_LIMIT_WINDOW_MS,
+    maxRequests: RATE_LIMIT_MAX_REQUESTS,
+});
 
 /** Transient failures worth retrying: throttling and gateway errors. */
 const RETRYABLE_STATUSES = new Set([408, 429, 500, 502, 503, 504]);
@@ -48,6 +35,9 @@ const GRAPH_SEND_TIMEOUT_MS = 3000;
  * gets one attempt on whatever time is left and never holds up the response.
  */
 const AUTO_REPLY_TIMEOUT_MS = 2500;
+
+/** Runs alongside the Graph token request, so it adds no waiting of its own. */
+const HUMAN_CHECK_TIMEOUT_MS = 2500;
 
 /**
  * fetch with a hard timeout. Without this, a hanging endpoint (as opposed to
@@ -254,7 +244,7 @@ export async function POST(request: Request) {
         }
 
         const body = await request.json();
-        const { name, email, phone, format, subjects, course, day, message, company } = body;
+        const { name, email, phone, format, subjects, course, day, message, company, turnstileToken } = body;
         submitted = { name, email, phone, format, subjects, course, day, message };
 
         // Honeypot: real users never fill this. Pretend success so bots get no signal.
@@ -287,11 +277,23 @@ export async function POST(request: Request) {
 
         const htmlBody = ownerEnquiryEmailHtml({ enquiryLabel, name, email, phone, learningFormat, courseChoice, dayChoice, subjectsList, message });
 
-        const token = await getGraphToken();
+        /* A failed check never turns an enquiry away, since a blocked script or
+           a slow connection must not cost a real lead. It is delivered marked as
+           unverified, and the confirmation email, the one thing a bot could use
+           to send mail to a stranger, is sent only on a positive 'verified'
+           below. The flag here drives the subject prefix alone, so it stays
+           'failed' only: with no key configured there is nothing to report, and
+           tagging every enquiry [Unverified] would teach the reader to ignore
+           the prefix. */
+        const [token, humanCheck] = await Promise.all([
+            getGraphToken(),
+            verifyHuman(turnstileToken, ip, HUMAN_CHECK_TIMEOUT_MS),
+        ]);
+        const isUnverified = humanCheck === 'failed';
 
         const msg = {
             message: {
-                subject: subjectLine,
+                subject: isUnverified ? `[Unverified] ${subjectLine}` : subjectLine,
                 body: {
                     contentType: 'HTML',
                     content: htmlBody,
@@ -342,10 +344,18 @@ export async function POST(request: Request) {
             throw lastError;
         }
 
-        // Only with time left over: the enquiry is delivered either way, and
-        // the webhook's reserve is not spent on a courtesy email.
+        /* Only with time left over: the enquiry is delivered either way, and the
+           webhook's reserve is not spent on a courtesy email.
+
+           This needs a positive 'verified', not merely the absence of 'failed'.
+           With no TURNSTILE_SECRET_KEY the check returns 'not-configured', which
+           is not a failure, so testing for `!isUnverified` let it through and
+           anyone could make this mailbox send a confirmation to any address they
+           typed. It fails closed instead: no verification, no outbound mail to a
+           stranger. Until the key is set that means no parent receives one, so
+           the reason is logged rather than passing silently. */
         const replyBudget = Math.min(AUTO_REPLY_TIMEOUT_MS, deadline - Date.now());
-        if (replyBudget > 0 && token) {
+        if (replyBudget > 0 && token && humanCheck === 'verified') {
             const confirmed = await sendParentConfirmation(
                 token,
                 { name, email, learningFormat, subjectsList, courseChoice, dayChoice },
@@ -354,6 +364,11 @@ export async function POST(request: Request) {
             if (!confirmed) {
                 console.warn('[ENQUIRY_CONFIRMATION_FAILED] Enquiry delivered; the confirmation to the enquirer was not.');
             }
+        } else if (replyBudget > 0 && token) {
+            console.warn(
+                `[ENQUIRY_CONFIRMATION_SKIPPED] Human check was '${humanCheck}', so no confirmation was sent to the `
+                + 'enquirer. The enquiry itself was delivered. Set TURNSTILE_SECRET_KEY to turn confirmations on.',
+            );
         }
 
         // Mirrored on every enquiry, not just failures, so each lead has two

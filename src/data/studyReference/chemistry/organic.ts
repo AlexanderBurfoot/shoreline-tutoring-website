@@ -1,0 +1,451 @@
+/**
+ * Chemistry Module 7: Organic Chemistry.
+ *
+ * Hydrocarbons, functional groups, the reactions between them, and polymers.
+ */
+import type { StudyEntry } from '../types';
+
+export const chemistryOrganicEntries: StudyEntry[] = [
+    {
+        id: 'chem-functional-groups',
+        subject: 'chemistry',
+        question: 'What are the main organic functional groups?',
+        aliases: ['functional groups', 'alcohol', 'ester'],
+        answer:
+            'Alkane (C−C), alkene (C=C), alkyne (C≡C), alcohol (−OH), aldehyde (−CHO), ketone (C=O in the chain), ' +
+            'carboxylic acid (−COOH), ester (−COO−), amine (−NH₂) and amide (−CONH₂). ' +
+            'The group decides the reactions and, with chain length, the boiling point.',
+    },
+    {
+        id: 'chem-esterification',
+        subject: 'chemistry',
+        question: 'What is esterification?',
+        aliases: ['esterification', 'making an ester', 'reflux', 'condensation reaction'],
+        answer:
+            'A carboxylic acid plus an alcohol makes an ester and water, with concentrated sulfuric acid as catalyst. ' +
+            'It is reversible and slow, so it is run under reflux to heat the mixture without losing volatile reactants.',
+    },
+    {
+        id: 'chem-organic-naming',
+        subject: 'chemistry',
+        question: 'How does IUPAC naming work?',
+        aliases: ['iupac naming', 'naming organic compounds', 'prefixes meth eth prop', 'alkane alkene names'],
+        answer:
+            'Count the longest carbon chain for the stem: meth, eth, prop, but, pent, hex. ' +
+            'The ending gives the functional group, such as -ane, -ene, -ol or -oic acid. ' +
+            'Number from the end that gives the group the lowest number, and list branches alphabetically.',
+    },
+    {
+        id: 'chem-alcohols-reactions',
+        subject: 'chemistry',
+        question: 'What reactions do alcohols undergo?',
+        aliases: ['alcohol reactions', 'oxidation of alcohols', 'dehydration', 'primary secondary tertiary'],
+        answer:
+            'Primary alcohols oxidise to aldehydes then carboxylic acids; secondary give ketones; tertiary resist ' +
+            'oxidation. Dehydration with acid gives an alkene. ' +
+            'Alcohols also react with carboxylic acids to form esters, and burn completely to carbon dioxide and water.',
+    },
+    {
+        id: 'chem-isomers',
+        subject: 'chemistry',
+        question: 'What are isomers?',
+        aliases: ['isomers', 'structural isomers', 'chain isomer', 'positional isomer', 'functional group isomer'],
+        answer:
+            'Isomers share a molecular formula but differ in structure. ' +
+            'Chain isomers branch differently, positional isomers move the functional group along the chain, and ' +
+            'functional group isomers have a different group entirely. Isomers can have very different properties.',
+    },
+    {
+        id: 'chem-alkene-addition',
+        subject: 'chemistry',
+        question: 'What are the addition reactions of alkenes?',
+        aliases: ['addition reaction', 'hydrogenation', 'hydration of alkenes', 'markovnikov'],
+        answer:
+            'The double bond opens and adds: hydrogen gives an alkane, a halogen gives a dihaloalkane, water with ' +
+            'acid gives an alcohol, and a hydrogen halide gives a haloalkane. ' +
+            'Markovnikov\u2019s rule says the hydrogen adds to the carbon that already has more hydrogens. ' +
+            'Decolourising bromine water is the test for a double bond.',
+    },
+    {
+        id: 'chem-carboxylic-acids',
+        subject: 'chemistry',
+        question: 'How do carboxylic acids behave?',
+        aliases: ['carboxylic acid', 'cooh', 'weak acid organic', 'neutralisation organic', 'boiling point carboxylic'],
+        answer:
+            'They are weak acids: they ionise partially, neutralise bases to give a salt and water, and react with ' +
+            'carbonates to give carbon dioxide. ' +
+            'With an alcohol they form an ester. Strong hydrogen bonding gives them high boiling points for their size.',
+    },
+    {
+        id: 'chem-aldehydes-ketones',
+        subject: 'chemistry',
+        question: 'What is the difference between an aldehyde and a ketone?',
+        aliases: ['aldehyde', 'ketone', 'carbonyl', 'oxidation of alcohols products', 'tollens fehlings'],
+        answer:
+            'Both contain C=O. In an aldehyde it sits at the end of the chain, in a ketone within it. ' +
+            'Primary alcohols oxidise to aldehydes then carboxylic acids; secondary alcohols give ketones, which ' +
+            'resist further oxidation. That difference is what Tollens\u2019 and Fehling\u2019s tests detect.',
+    },
+    {
+        id: 'chem-amines-amides',
+        subject: 'chemistry',
+        question: 'What are amines and amides?',
+        aliases: ['amine', 'amide', 'nitrogen functional group', 'peptide link', 'polyamide'],
+        answer:
+            'Amines contain nitrogen bonded to carbon and are weak bases, accepting a proton on the lone pair. ' +
+            'An amide forms when a carboxylic acid reacts with an amine, losing water. ' +
+            'That amide link joins amino acids into proteins and monomers into polyamides such as nylon.',
+    },
+    {
+        id: 'chem-homologous-trends',
+        subject: 'chemistry',
+        question: 'Why do boiling points rise along a homologous series?',
+        aliases: ['homologous series trends', 'boiling point organic', 'solubility organic', 'chain length'],
+        answer:
+            'A longer carbon chain has more electrons, so dispersion forces are stronger and more energy is needed to ' +
+            'separate the molecules. ' +
+            'Solubility in water moves the other way: the polar functional group dissolves, the non-polar chain does ' +
+            'not, so longer chains are less soluble.',
+    },
+    {
+        id: 'chem-organic-technique',
+        subject: 'chemistry',
+        question: 'What are reflux, distillation and a separating funnel for?',
+        aliases: ['fractional distillation', 'organic technique', 'purifying an ester'],
+        answer:
+            'Reflux heats a mixture for a long time without losing volatile substances, since vapour condenses and ' +
+            'returns. ' +
+            'Distillation then separates by boiling point. ' +
+            'A separating funnel splits immiscible layers, such as an ester from the aqueous mixture it formed in.',
+    },
+    {
+        id: 'chem-biofuels',
+        subject: 'chemistry',
+        question: 'How are biofuels made?',
+        aliases: ['biofuel', 'fermentation', 'ethanol fuel', 'biodiesel', 'carbon neutral'],
+        answer:
+            'Fermentation converts glucose to ethanol and carbon dioxide using yeast; biodiesel comes from ' +
+            'transesterifying plant oils. ' +
+            'They are renewable and closer to carbon neutral, since the crop absorbs carbon dioxide as it grows, but ' +
+            'they yield less energy per litre and compete with food crops for land.',
+    },
+    {
+        id: 'chem-structural-formulae',
+        subject: 'chemistry',
+        question: 'How do I read a structural formula?',
+        aliases: ['structural formula', 'condensed formula', 'skeletal structure', 'drawing organic structures', 'general formula', 'kekule structure'],
+        answer:
+            'Find the longest continuous carbon chain, then the functional group hanging off it: those two give the ' +
+            'name. A condensed formula groups each carbon with its hydrogens, and a skeletal one shows bonds as lines ' +
+            'with carbons at the corners. Members of a homologous series differ by one CH₂ and share a general formula.',
+    },
+    {
+        id: 'chem-reaction-pathways',
+        subject: 'chemistry',
+        question: 'How do I answer a reaction pathway question?',
+        aliases: ['reaction pathway', 'flowchart organic', 'synthesis route', 'converting one compound to another', 'reagents and conditions'],
+        answer:
+            'Each arrow needs a reagent and a condition. The standard steps: alkene to alcohol by hydration with ' +
+            'acid, alkane to haloalkane by halogen with ultraviolet light, haloalkane to alcohol by aqueous base, ' +
+            'alcohol to aldehyde or acid by acidified dichromate, and acid plus alcohol to ester with concentrated ' +
+            'sulfuric acid under reflux.',
+    },
+    {
+        id: 'chem-oxidising-organics',
+        subject: 'chemistry',
+        question: 'What oxidises alcohols, and what do you see?',
+        aliases: ['acidified dichromate', 'permanganate', 'oxidising agent organic', 'colour change oxidation', 'orange to green'],
+        answer:
+            'Acidified potassium dichromate turns from orange to green as it oxidises; acidified permanganate turns ' +
+            'from purple to colourless. ' +
+            'Primary alcohols oxidise to an aldehyde then a carboxylic acid, secondary to a ketone, and tertiary do ' +
+            'not oxidise, which is how the three classes are told apart.',
+    },
+    {
+        id: 'chem-functional-group-tests',
+        subject: 'chemistry',
+        question: 'How do I test which functional group a compound has?',
+        aliases: ['chemical test functional group', 'bromine water test', 'test for an acid', 'distinguishing compounds', 'wet test'],
+        answer:
+            'Bromine water decolourising shows a carbon-carbon double bond. ' +
+            'Fizzing with a carbonate shows a carboxylic acid. ' +
+            'Acidified dichromate changing colour shows a primary or secondary alcohol, and no change points to ' +
+            'tertiary. Say what you would observe, not just the reagent.',
+    },
+    {
+        id: 'chem-boiling-point-classes',
+        subject: 'chemistry',
+        question: 'Why do boiling points differ between functional groups?',
+        aliases: ['compare boiling points', 'boiling point across classes', 'why alcohols boil higher', 'solubility comparison'],
+        answer:
+            'At similar size, the order is alkane below aldehyde and ketone, below alcohol, below carboxylic acid. ' +
+            'Alkanes have only dispersion forces, carbonyls add dipole-dipole, alcohols hydrogen bond, and acids ' +
+            'hydrogen bond in pairs. Water solubility follows the same order and falls as the carbon chain lengthens.',
+    },
+    {
+        id: 'chem-combustion-greenhouse',
+        subject: 'chemistry',
+        question: 'What is the difference between complete and incomplete combustion?',
+        aliases: ['complete combustion', 'incomplete combustion', 'carbon monoxide', 'soot', 'greenhouse gas'],
+        answer:
+            'Complete combustion in plenty of oxygen gives carbon dioxide and water. ' +
+            'Limited oxygen gives carbon monoxide, which is toxic, and carbon as soot, releasing less energy. ' +
+            'Carbon dioxide, methane and water vapour absorb infrared radiation, which is the greenhouse effect.',
+    },
+    {
+        id: 'chem-ester-hydrolysis',
+        subject: 'chemistry',
+        question: 'What is ester hydrolysis?',
+        aliases: ['ester hydrolysis', 'breaking an ester', 'base hydrolysis', 'uses of esters'],
+        answer:
+            'Acid hydrolysis reverses esterification, giving back the carboxylic acid and alcohol, and is reversible. ' +
+            'Base hydrolysis gives the carboxylate salt and the alcohol, and is not reversible because the salt will ' +
+            'not react back. Esters are used as flavours, fragrances and solvents.',
+    },
+    {
+        id: 'chem-substitution-alkanes',
+        subject: 'chemistry',
+        question: 'How do alkanes react?',
+        aliases: ['substitution reaction alkane', 'halogenation', 'uv light reaction', 'radical substitution'],
+        answer:
+            'Alkanes are unreactive apart from combustion and substitution. ' +
+            'With a halogen and ultraviolet light, a hydrogen is replaced by a halogen atom, and because any hydrogen ' +
+            'can go, a mixture of products forms. That is the contrast with addition to an alkene, which is fast and ' +
+            'gives one product.',
+    },
+    {
+        id: 'chem-alkanes-properties',
+        subject: 'chemistry',
+        question: 'What are alkanes and why are they unreactive?',
+        aliases: ['alkanes', 'saturated hydrocarbon', 'cnh2n+2', 'why alkanes are unreactive', 'natural gas'],
+        answer:
+            'Alkanes are saturated hydrocarbons with only single bonds, general formula CₙH₂ₙ₊₂. ' +
+            'The C-C and C-H bonds are strong and non-polar, so few reagents attack them, which is why they are ' +
+            'useful as fuels and solvents but poor starting materials.',
+    },
+    {
+        id: 'chem-alkenes-alkynes',
+        subject: 'chemistry',
+        question: 'What are alkenes and alkynes?',
+        aliases: ['alkene', 'alkyne', 'unsaturated', 'double bond', 'triple bond', 'cnh2n'],
+        answer:
+            'Alkenes contain a carbon-carbon double bond, general formula CₙH₂ₙ; alkynes contain a triple bond, ' +
+            'CₙH₂ₙ₋₂. ' +
+            'Both are unsaturated and far more reactive than alkanes, since the extra bonds open readily in addition ' +
+            'reactions.',
+    },
+    {
+        id: 'chem-fractional-distillation',
+        subject: 'chemistry',
+        question: 'How is crude oil separated?',
+        aliases: ['fractional distillation crude oil', 'fractions', 'petroleum', 'cracking', 'refinery'],
+        answer:
+            'Crude oil is heated and fed into a column that is hotter at the bottom. ' +
+            'Each fraction condenses where the temperature matches its boiling range, so shorter chains rise higher. ' +
+            'Cracking then breaks long chains into the shorter, more valuable ones, including alkenes for plastics.',
+    },
+    {
+        id: 'chem-condensation-polymers-detail',
+        subject: 'chemistry',
+        question: 'How do condensation polymers form?',
+        aliases: ['condensation polymerisation', 'nylon formation', 'polyester formation', 'losing water polymer', 'monomers with two groups'],
+        answer:
+            'Each monomer carries two reactive groups, so a chain can grow at both ends, and a small molecule, ' +
+            'usually water, is released at each link. ' +
+            'A diacid with a diol gives a polyester; a diacid with a diamine gives a polyamide such as nylon. ' +
+            'Proteins form the same way from amino acids.',
+    },
+    {
+        id: 'chem-safety-organic',
+        subject: 'chemistry',
+        question: 'What safety precautions matter in organic chemistry?',
+        aliases: ['safety organic chemistry', 'flammable', 'fume cupboard', 'risk assessment chemistry', 'msds'],
+        answer:
+            'Most organic solvents are volatile and flammable, so heat with a water bath rather than a flame and work ' +
+            'in a fume cupboard. ' +
+            'Concentrated acids are corrosive and their dilution is strongly exothermic. ' +
+            'A risk assessment names each hazard, its risk and the control for it.',
+    },
+    {
+        id: 'chem-structural-isomer-drawing',
+        subject: 'chemistry',
+        question: 'How do I find all the isomers of a formula?',
+        aliases: ['drawing all isomers', 'how many isomers', 'systematic isomers', 'branching options'],
+        answer:
+            'Start with the longest straight chain, then shorten it by one carbon and move that carbon as a branch ' +
+            'to each possible position, avoiding repeats that are the same molecule drawn differently. ' +
+            'For compounds with a functional group, also move the group along the chain.',
+    },
+    {
+        id: 'chem-organic-solubility',
+        subject: 'chemistry',
+        question: 'Which organic compounds dissolve in water?',
+        aliases: ['organic solubility in water', 'like dissolves like', 'polar organic molecules', 'why hexane does not mix'],
+        answer:
+            'Like dissolves like. ' +
+            'Short-chain alcohols, acids, aldehydes and amines dissolve because their polar groups hydrogen bond with ' +
+            'water. ' +
+            'As the carbon chain lengthens the non-polar part dominates and solubility falls, which is why hexane and ' +
+            'water form layers.',
+    },
+    {
+        id: 'chem-fuels-comparison',
+        subject: 'chemistry',
+        question: 'How do fuels compare?',
+        aliases: ['comparing fuels', 'energy density', 'heat of combustion comparison', 'fuel choice'],
+        answer:
+            'Compare energy released per gram or per mole, the products of combustion, availability, cost, and ' +
+            'whether the source is renewable. ' +
+            'Longer-chain hydrocarbons release more energy per mole but less per gram than shorter ones, and ethanol ' +
+            'releases less than petrol for the same volume.',
+    },
+    {
+        id: 'chem-nmr-equivalent-environments',
+        subject: 'chemistry',
+        question: 'How do I count chemical environments?',
+        aliases: ['chemical environments', 'equivalent hydrogens', 'how many signals', 'symmetry in nmr'],
+        answer:
+            'Two atoms share an environment if swapping them leaves the molecule unchanged, usually because of ' +
+            'symmetry. ' +
+            'Count the distinct groups: each gives one signal. ' +
+            'In ethanol the three hydrogens of the CH₃ are equivalent, so they give a single peak, not three.',
+    },
+    {
+        id: 'chem-analysis-choosing-standards',
+        subject: 'chemistry',
+        question: 'Why does analysis need standards?',
+        aliases: ['why use standards', 'reference sample', 'comparing to a known', 'quality control analysis'],
+        answer:
+            'An instrument measures a signal, not a concentration, so the signal means nothing until it is compared ' +
+            'with samples of known concentration. ' +
+            'Standards also reveal drift: running one again partway through shows whether the instrument has shifted.',
+    },
+    {
+        id: 'chem-haloalkanes',
+        subject: 'chemistry',
+        question: 'How do haloalkanes form and react?',
+        aliases: ['haloalkane', 'halogenation of an alkane', 'uv and chlorine', 'substitution reaction'],
+        answer:
+            'An alkane reacts with a halogen in ultraviolet light by substitution, one hydrogen at a time, giving a ' +
+            'mixture of products. ' +
+            'The carbon-halogen bond is polar, so haloalkanes are far more reactive than alkanes and are used to build ' +
+            'other functional groups.',
+    },
+    {
+        id: 'chem-dehydration-alcohols',
+        subject: 'chemistry',
+        question: 'How is an alkene made from an alcohol?',
+        aliases: ['dehydration of an alcohol', 'making an alkene from ethanol', 'concentrated sulfuric acid dehydration'],
+        answer:
+            'Heat the alcohol with concentrated sulfuric acid, which removes water across two adjacent carbons and ' +
+            'leaves a double bond. ' +
+            'It is the reverse of the hydration that turns an alkene into an alcohol, so conditions decide which way ' +
+            'the reaction runs.',
+    },
+    {
+        id: 'chem-making-ethanol',
+        subject: 'chemistry',
+        question: 'What are the two ways of making ethanol?',
+        aliases: ['making ethanol', 'hydration of ethene', 'industrial ethanol'],
+        answer:
+            'Fermenting sugars with yeast, which is renewable but slow and dilute, or hydrating ethene from crude oil ' +
+            'with a catalyst, which is fast and gives pure product but uses a finite feedstock. ' +
+            'Fuel ethanol is usually fermented, industrial solvent usually hydrated.',
+    },
+    {
+        id: 'chem-improving-yield',
+        subject: 'chemistry',
+        question: 'How is yield improved in industry?',
+        aliases: ['improving yield', 'recycling unreacted material', 'excess of the cheaper reactant'],
+        answer:
+            'Use an excess of the cheapest reactant, remove the product as it forms so equilibrium keeps shifting, ' +
+            'recycle unreacted material, and choose conditions that favour the product without ruining the rate. ' +
+            'Purification losses matter as much as the reaction itself.',
+    },
+    {
+        id: 'chem-green-chemistry',
+        subject: 'chemistry',
+        question: 'What is green chemistry?',
+        aliases: ['green chemistry', 'reducing solvent waste', 'safer feedstocks'],
+        answer:
+            'Designing processes to prevent waste rather than treat it: high atom economy, catalysts instead of ' +
+            'stoichiometric reagents, safer solvents, renewable feedstocks, and products that break down after use. ' +
+            'The cheapest waste to deal with is the waste never made.',
+    },
+    {
+        id: 'chem-homologous-series-meaning',
+        subject: 'chemistry',
+        question: 'What makes a group of compounds a chemical family?',
+        aliases: ['homologous series', 'same functional group family', 'general formula of a series'],
+        answer:
+            'A family sharing a functional group and a general formula, each member differing by CH₂. Chemical ' +
+            'behaviour is similar throughout because the functional group is the same, while physical properties ' +
+            'change gradually with chain length.',
+    },
+    {
+        id: 'chem-iupac-numbering-rules',
+        subject: 'chemistry',
+        question: 'How do I number the carbon chain when naming?',
+        aliases: ['numbering the chain', 'lowest locant rule', 'which end to start from'],
+        answer:
+            'Number from whichever end gives the functional group, then the substituents, the lowest numbers. The ' +
+            'parent chain is the longest one containing the functional group, which is not always the longest chain ' +
+            'in the structure.',
+    },
+    {
+        id: 'chem-functional-group-priority',
+        subject: 'chemistry',
+        question: 'Which functional group takes priority in a name?',
+        aliases: ['functional group priority', 'which group names the compound', 'suffix or prefix'],
+        answer:
+            'Carboxylic acid ranks above ester, amide, aldehyde, ketone, alcohol and amine. The highest ranking group ' +
+            'gives the suffix and the rest appear as prefixes, which is why a hydroxy acid is named as an acid.',
+    },
+    {
+        id: 'chem-addition-vs-substitution',
+        subject: 'chemistry',
+        question: 'What is the difference between addition and substitution?',
+        aliases: ['addition versus substitution', 'unsaturated adds', 'saturated substitutes'],
+        answer:
+            'Addition opens a double or triple bond and adds across it, so nothing is lost. Substitution swaps an ' +
+            'atom for another and releases a small molecule. Alkenes add; alkanes can only substitute.',
+    },
+    {
+        id: 'chem-testing-unsaturation',
+        subject: 'chemistry',
+        question: 'How do I test for a carbon-carbon double bond?',
+        aliases: ['test for unsaturation', 'decolourising bromine'],
+        answer:
+            'Add bromine water: an alkene decolourises it rapidly in the dark by addition, while an alkane does not. ' +
+            'Acidified permanganate is also decolourised by an alkene.',
+    },
+    {
+        id: 'chem-esterification-conditions',
+        subject: 'chemistry',
+        question: 'What conditions does esterification need?',
+        aliases: ['esterification conditions', 'concentrated sulfuric acid catalyst', 'reflux for an ester'],
+        answer:
+            'An alcohol and a carboxylic acid heated under reflux with concentrated sulfuric acid as catalyst and ' +
+            'dehydrating agent. The reaction reaches equilibrium, so removing water or using an excess of one ' +
+            'reactant improves the yield.',
+    },
+    {
+        id: 'chem-organic-yield-losses',
+        subject: 'chemistry',
+        question: 'Why are organic yields often low?',
+        aliases: ['organic yield', 'losses in organic synthesis', 'multi step yield'],
+        answer:
+            'Reactions that reach equilibrium, competing side reactions, and losses at every transfer, extraction and ' +
+            'purification. In a multi-step synthesis the yields multiply, so three steps at 70% leave about a third ' +
+            'of the theoretical product.',
+    },
+    {
+        id: 'chem-identifying-unknown-steps',
+        subject: 'chemistry',
+        question: 'In what order should I use spectra to identify a compound?',
+        aliases: ['order of spectral analysis', 'identifying a compound from data'],
+        answer:
+            'Mass spectrum for the molar mass and fragments, infrared for which functional groups are present, then ' +
+            'carbon and proton NMR for how the skeleton is arranged. Each narrows what the next has to decide.',
+    },
+];
