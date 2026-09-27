@@ -18,7 +18,7 @@
     background: linear-gradient(135deg, #0a1628 0%, var(--color-navy) 50%, #253552 100%);
     /* A heavier gold rule than the usual hairline, so the bar reads as its own
        band rather than as part of the header below it. */
-    border-bottom: 5px solid var(--color-gold-primary);
+    border-bottom: 7px solid var(--color-gold-primary);
     box-shadow: 0 4px 18px rgba(10, 22, 40, 0.35);
 }
 
