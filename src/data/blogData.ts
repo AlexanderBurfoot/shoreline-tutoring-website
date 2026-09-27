@@ -48,8 +48,6 @@ export const blogPosts: BlogPost[] = [
         title: 'The Complete HSC Study Guide: Everything You Need to Know to Maximise Your ATAR',
         excerpt: 'The HSC is not a test of how hard you work, instead it is a test of how well you prepare. This guide covers every dimension of high-performance HSC preparation: how to study, when to study, what top students do differently, and how to walk into every exam with genuine confidence.',
         content: `
-# The complete HSC study guide: everything you need to know to maximise your ATAR
-
 The HSC is the most significant academic challenge most students have faced by the time they sit it. It rewards students who prepare strategically, not students who simply work the longest hours or fill the most notebooks without memorising, understanding and learning how to apply the content. This guide covers every major dimension of HSC preparation: from building effective study habits to managing exam nerves, from understanding how marking works to knowing when to ask for help.
 
 ## 1. Understand how your ATAR is actually calculated
@@ -133,8 +131,6 @@ At Shoreline, we work with students at every level, but starting sooner will alw
         title: 'Trial Exams: What They Actually Mean, How to Prepare for Them, and How to Use the Results',
         excerpt: 'Trial exams are the most misunderstood event in the HSC calendar. Students treat them as either a rehearsal that barely matters or a final verdict on their prospects. Neither is right, and understanding what they actually are changes how to approach them entirely.',
         content: `
-# Trial exams: what they actually mean, how to prepare for them, and how to use the results
-
 Trial exams, sometimes called mock exams or preliminary exams depending on the school, sit in a peculiar position in the HSC calendar. They are high-stakes enough that schools treat them seriously and students feel genuinely anxious about them, but their relationship to the actual HSC is frequently misunderstood. Some students treat them as a low-consequence rehearsal and prepare accordingly. Others treat them as a final verdict and collapse when the results are disappointing. Both responses are wrong, and both lead to preparation mistakes that are entirely avoidable once the actual mechanics are understood.
 
 Trial exams matter, but for specific reasons that most students cannot articulate. Understanding those reasons changes how to prepare, how to interpret the results, and what to do in the weeks between trials and the actual HSC exams.
@@ -201,8 +197,6 @@ At Shoreline, we treat trial exams as one of the most important diagnostic event
         title: 'How HSC Rankings Actually Work, Internal Marks, External Exams, and What Determines Your Final Score',
         excerpt: 'Most students misunderstand how their internal assessments and external HSC exams combine to produce a final mark. The mechanics are counterintuitive, and understanding them changes how you should think about every assessment task across Year 12.',
         content: `
-# How HSC rankings actually work: internal marks, external exams, and what determines your final score
-
 The HSC assessment system is one of the most consistently misunderstood aspects of Year 12. Many students spend the year believing that their raw marks in school assessments are what matters to NESA. Others assume that a poor run of internal tasks has permanently damaged their position. Both are wrong, and the actual system works in ways that, once understood, give students considerably more control over their outcomes than they typically realise.
 
 Understanding how internal ranks, external marks, and moderation interact changes how a student should approach every assessment task, how they should think about their position in the cohort, and what they should prioritise in the final months before the HSC exams.
@@ -287,8 +281,6 @@ At Shoreline, we walk through the ranking system with students early in Year 12,
         title: 'How to Choose Your HSC Subjects, The Decision That Shapes Everything That Follows',
         excerpt: 'Subject selection is the most consequential decision of the HSC journey, made at the point when students know the least about what lies ahead. Here is how to make it well.',
         content: `
-# How to choose your HSC subjects, the decision that shapes everything that follows
-
 Subject selection happens at the end of Year 10, when most students have little sense of what Year 12 will demand, limited understanding of how different subjects interact with ATAR calculations, and significant social pressure from peers making different choices. The decisions made in those weeks shape two years of sustained effort, the range of university programs available at the end of it, and the adjustment factors a student qualifies for at competitive institutions.
 
 The principles for making good subject choices are not complicated, they are simply not taught explicitly, which is why students so frequently make decisions they later regret, not from bad intentions but from incomplete information.
@@ -353,8 +345,6 @@ At Shoreline, subject selection conversations happen in Year 10, before the choi
         title: 'Supporting Your Child Through the HSC: What Helps, What Doesn\'t, and What Your Role Actually Is',
         excerpt: 'Parents want to help their children through the HSC, but the most helpful thing is not always the most instinctive thing. Here is an honest guide to what support actually looks like across two demanding years.',
         content: `
-# Supporting your child through the HSC: what helps, what doesn't, and what your role actually is
-
 The HSC is a two-year undertaking, and parents live through it alongside their children. Most parents want to help to reduce the stress, to provide the right environment, to know when to push and when to back off. The difficulty is that the most helpful forms of support are not always the most intuitive ones, and some well-intentioned parental involvement actively increases the pressure students experience rather than relieving it.
 
 This article is written directly for parents. It does not contain advice about study techniques or exam strategy, your child's teachers, tutors, and the other articles on this site address those. It addresses the question that sits underneath all of those: what is your role in all of this, and how do you play it well?
@@ -411,8 +401,6 @@ At Shoreline, we work closely with students through the HSC, but we are aware th
         title: 'Why the Extra Hour of Sleep Beats the Extra Hour of Study Every Time',
         excerpt: 'The instinct to sacrifice sleep for study time is one of the most common and most counterproductive habits in HSC culture. Here is what the science actually says, and why the students who sleep well consistently outperform the ones who do not.',
         content: `
-# Why the extra hour of sleep beats the extra hour of study every time
-
 There is a particular kind of HSC student who treats exhaustion as evidence of effort. Late nights, early mornings, studying past midnight as though the number of hours spent awake is itself a measure of how seriously they are taking the exam. It feels like discipline. In almost every measurable sense, it is making their performance worse.
 
 The relationship between sleep and academic performance is one of the most well-established findings in cognitive science, and one of the most consistently ignored by students under pressure. A student who is chronically sleep-deprived is not studying less efficiently. They are, in important respects, not retaining what they study at all. Understanding the mechanism makes this impossible to dismiss.
@@ -468,8 +456,6 @@ At Shoreline, when a student arrives at a session visibly exhausted, the session
         title: 'Burnout Prevention: Adapting the Pomodoro Technique for the HSC',
         excerpt: 'Studying for 4 hours straight is inefficient and leads to burnout. Learn how to structure your study sessions using the Pomodoro technique to maximise retention.',
         content: `
-# The Myth of the Marathon Study Session
-
 Many students believe that locking themselves in a room for four hours of uninterrupted study is the key to success. In reality, the human brain is not designed for prolonged, intense focus without breaks. The result is usually diminishing returns: the first hour is highly productive, and the fourth hour is mostly staring blankly at a page.
 
 ## Enter the Pomodoro Technique
@@ -504,8 +490,6 @@ While 25 minutes is great for notes or textbook questions, it's too short for pr
         title: 'How to Ace HSC English: Six Habits That Take You from Band 5 to Band 6',
         excerpt: 'Most students prepare for HSC English by memorising quotes and naming techniques. The students who reach Band 6 do something different, they build six specific habits that turn close reading into genuine argument. Here is what those habits are and how to develop them.',
         content: `
-# How to ace HSC English: six habits that take you from Band 5 to Band 6
-
 There is a particular misunderstanding that shapes how most students approach HSC English, and it begins early, usually in Year 11 when a teacher tells a class to "embed their quotes." Students take this seriously. They fill their study notes with highlighted passages. They memorise lines and techniques. They produce responses made dense with textual evidence, each quote followed faithfully by the name of the technique it contains.
 
 And then they receive their marks back, and the feedback says the same thing it says every year: *more analysis needed*. *Not enough depth*. *Descriptive rather than evaluative*.
@@ -574,8 +558,6 @@ At Shoreline, English sessions are structured around one consistent discipline: 
         title: 'How to Ace HSC Mathematics: Stop Memorising, Start Understanding',
         excerpt: 'The biggest mistake students make in HSC Maths is treating it like a memory test. Here is how to shift your approach to true comprehension and secure Band 6 marks.',
         content: `
-# Stop Memorising, Start Understanding
-
 Mathematics is often perceived as a subject of infinite formulas to be memorised. However, the top-performing students in HSC Mathematics (Standard, Advanced, and Extension) share a common secret: they don't memorise; they *understand*.
 
 ## The Problem with Rote Learning
@@ -616,7 +598,6 @@ Once the foundation is solid, the practice questions become a breeze, and you'll
         title: 'HSC Physics: The Difference Between Band 5 and Band 6 Is Not Calculation Speed',
         excerpt: 'Most students who plateau at Band 5 are competent with equations. What separates them from the top cohort is something subtler: the ability to reason about a physical situation before writing a single number.',
         content: `
-# The difference between Band 5 and Band 6 is not calculation speed
  
 There is a particular kind of HSC Physics student who does everything right and still cannot break through to Band 6. They complete past papers. They have the formula sheet memorised. They can execute a multi-step kinematics calculation without error. And yet, when a question introduces an unfamiliar context, a satellite in an elliptical orbit, a charged particle moving through combined fields, they stall.
  
@@ -666,7 +647,6 @@ At Shoreline, we spend the opening minutes of every Physics session on one quest
         title: 'HSC Chemistry: Why the Students Who Memorise the Most Reactions Often Score the Least',
         excerpt: 'There is a paradox at the heart of HSC Chemistry: the students who work hardest at memorising content are often the ones most exposed when exam questions deviate from what they have seen before.',
         content: `
-# Why the students who memorise the most reactions often score the least
  
 HSC Chemistry is genuinely content-heavy. The syllabus spans equilibrium, thermochemistry, electrochemistry, acid-base theory, and a substantial sweep of organic chemistry. Faced with that volume, most students do the rational thing: they memorise. Reaction lists, mechanisms written out repeatedly, equations drilled until automatic.
  
@@ -719,8 +699,6 @@ The question we come back to most often in Chemistry sessions at Shoreline is a 
         title: 'HSC Economics: How to Move from Band 5 to Band 6 and Stay There',
         excerpt: 'HSC Economics is one of the few subjects where being well-informed about the real world is as important as knowing the theory. Here is how to build the analytical habits, current data fluency, and essay discipline that the top mark range actually requires.',
         content: `
-# HSC Economics: how to move from Band 5 to Band 6 and stay there
-
 HSC Economics is unusual among the humanities subjects in that it has a moving target. The syllabus is fixed, but the economy is not, and the students who score in Band 6 are not just the ones who know the theory best. They are the ones who can apply current, accurate data to that theory fluently, construct a clear causal chain under time pressure, and evaluate the limitations of policy in a way that demonstrates genuine analytical thinking rather than recall.
 
 Most students who plateau at Band 5 are not missing theoretical knowledge. They are missing the habits that convert knowledge into the kind of written argument that the top of the mark range requires. Those habits are specific, they are learnable, and they are what separate a response that describes economics from one that practises it.
@@ -784,8 +762,6 @@ At Shoreline, Economics is the subject where we spend the most session time on c
         title: 'Mastering the Economics Essay: Structure, Stats, and Synthesis',
         excerpt: 'Writing a Band 6 Economics essay isn\'t just about knowing the theory. It requires synthesising current data, structured arguments, and demonstrating cause-and-effect.',
         content: `
-# Writing Like an Economist
-
 The HSC Economics syllabus is unique because it is constantly evolving. A textbook published two years ago is already out of date regarding monetary policy decisions or global economic growth figures. To achieve a Band 6, your essays must reflect this dynamic reality.
 
 ## The Three Pillars of a Band 6 Essay
@@ -820,8 +796,6 @@ At Shoreline, we dedicate significant session time to reviewing current affairs 
         title: 'HSC Business Studies: Why Real Business Examples Are Worth More Than Textbook Theory',
         excerpt: 'Most HSC Business Studies students study the theory and neglect the examples. The marking guidelines consistently reward the opposite balance. Here is how to build the business awareness, structured writing, and case study fluency that Band 6 actually requires.',
         content: `
-# HSC Business Studies: why real business examples are worth more than textbook theory
-
 HSC Business Studies has a reputation among students as a subject that rewards memorisation, learn the definitions, learn the strategies, reproduce them in the exam. Students who approach it this way find a ceiling somewhere around Band 5 that is difficult to push through, because the top of the mark range requires something memorisation cannot produce: the ability to apply concepts to real businesses fluently, under timed conditions, in response to the specific question asked.
 
 The gap between Band 5 and Band 6 in Business Studies is almost always the same gap. Band 5 students know the content. Band 6 students know the content and can deploy it, supported by specific, current business examples, to construct a genuine argument. Building that capability is the work of the year, and it is more deliberate than most students realise.
@@ -886,8 +860,6 @@ At Shoreline, Business Studies sessions are built around one discipline: applica
         title: 'How to Choose, Learn, and Deploy Case Studies for HSC Business Studies and Economics',
         excerpt: 'A well-chosen case study, deeply understood and fluently applied, is worth more in HSC Economics and Business Studies than any amount of additional theory. Here is a systematic approach to building the case study bank that separates Band 5 from Band 6.',
         content: `
-# How to choose, learn, and deploy case studies for HSC Economics and Business Studies
-
 In both HSC Economics and Business Studies, the same knowledge gap separates Band 5 from Band 6. It is not the theory, most students who reach Band 5 have the theory well covered. It is the evidence: the specific, accurate, current examples that ground theory in the real world and demonstrate to markers that a student understands not just how economic concepts work in textbooks, but how they operate in actual businesses and economies.
 
 Case studies are what close that gap. But the word "case study" is misleading if it suggests a set of facts to be memorised. The most effective case studies are not collected, they are understood. The student who understands why Toyota's production system works, or why the RBA's 2022–2024 tightening cycle unfolded the way it did, can apply that understanding to any question that touches on the relevant concepts. The student who has memorised a bullet-point summary of the same material is exposed the moment the question asks something unexpected.
@@ -960,8 +932,6 @@ At Shoreline, we treat case study development as a core part of preparation for 
         title: 'How to Prepare for STEM at University While You Are Still in High School',
         excerpt: 'University STEM is a significant step up from the HSC, not because the content is impossibly harder, but because the nature of the work changes entirely. The students who arrive prepared for that shift find their footing quickly. The ones who do not spend their first year catching up.',
         content: `
-# How to prepare for STEM at university while you are still in high school
-
 The transition from HSC to university STEM is one that surprises more students than it should. The gap between Year 12 and first-year engineering, computer science, or mathematics is not primarily about content, it is about how you are expected to engage with it. In the HSC, the curriculum is clearly defined, the assessment structure is known well in advance, and a well-organised student can prepare methodically for almost every question they will face. At university, that scaffolding is largely gone. Lectures move quickly, problem sets are open-ended, and the expectation is that students will fill significant gaps independently.
 
 The students who handle this transition best are not necessarily the ones with the highest ATARs. They are the ones who arrived already thinking like STEM students, curious about problems beyond the syllabus, comfortable with being stuck, and practised at learning without being told to. These are habits that can be built deliberately in Year 11 and 12, before the transition happens.
@@ -1024,8 +994,6 @@ At Shoreline, the students we work with who go on to thrive in university STEM s
         title: 'How to Prepare for Business, Commerce, and Finance at University While You Are Still in High School',
         excerpt: 'A business or commerce degree rewards students who arrive with more than HSC Economics under their belt. The ones who thrive earliest are those who have already started thinking about how the world works, financially, analytically, and professionally.',
         content: `
-# How to prepare for business, commerce, and finance at university while you are still in high school
-
 The assumption many students make about a business or commerce degree is that the transition from high school will be gentler than it would be for engineering or medicine. University business and commerce programs move faster than most students expect, they demand a level of quantitative fluency that the HSC does not fully develop, and, particularly in finance, they assume a working familiarity with how markets, institutions, and economic systems actually function that classroom economics rarely provides.
 
 The students who perform best in their first year are not those who coasted in on a high ATAR. They are the ones who arrived curious about the real world their degree was preparing them to operate in, and who had already begun engaging with it.
@@ -1086,8 +1054,6 @@ At Shoreline, commerce students often arrive focused almost entirely on the subj
         title: 'How to Prepare for Computer Science, Software Development, and IT at University While You Are Still in High School',
         excerpt: 'The students who arrive at a computer science degree already able to code do not just have an easier first semester, they use that advantage to go deeper, faster, for the entire duration of their degree. Here is how to build that foundation before university begins.',
         content: `
-# How to prepare for computer science, software development, and IT at university while you are still in high school
-
 Of all the university disciplines a high school student can prepare for in advance, computer science is the one where early preparation pays off most visibly and most immediately. The reason is straightforward: programming is a skill, and like all skills it is built through accumulated practice over time. A student who begins university already fluent in at least one programming language and familiar with the core concepts of computer science is not simply ahead in the first week, they can focus on new ideas rather than on the mechanics of expressing them in code, and that difference compounds across every subsequent semester.
 
 The gap between students who arrive with prior experience and those who arrive without it is one of the most consistently observed disparities in first-year computer science. It is also one of the most preventable. Unlike the mathematical depth required for engineering or the clinical exposure required for medicine, the core skills of programming are genuinely accessible to any motivated high school student with a laptop and a reliable internet connection. The preparation is available. Most students simply do not know where to start.
@@ -1152,8 +1118,6 @@ At Shoreline, computer science students are often surprised by how much ground c
         title: 'UNSW HSC Plus Explained: How Bonus Points Work and How to Make the Most of Them',
         excerpt: 'Your ATAR is not the only number that determines whether you get into your preferred UNSW degree. HSC Plus can add up to five points to your selection rank automatically, if you understand how the scheme works and perform well in the right subjects.',
         content: `
-# UNSW HSC Plus explained: how bonus points work and how to make the most of them
-
 Most HSC students know that their ATAR determines which university courses they can access. Fewer know that the number UNSW actually uses to assess their application, their selection rank, can be higher than their raw ATAR, sometimes by enough to make the difference between receiving an offer and missing out.
 
 HSC Plus is UNSW's scheme for rewarding strong performance in HSC subjects that are relevant to a student's preferred degree. It is automatic, it requires no separate application, and it can add up to five points to a student's selection rank for each UNSW preference they list. For a student whose ATAR falls just short of a course's cut-off, those points can be decisive. Understanding how the scheme works, and how to position yourself to benefit from it, is straightforward once the mechanics are clear.
@@ -1214,8 +1178,6 @@ At Shoreline, understanding the full picture of how HSC performance translates i
         title: 'The University of Sydney Academic Excellence Scheme Explained: How Bonus Points Work and Who Qualifies',
         excerpt: 'A Band 5 or Band 6 in the right HSC subjects can add up to five points to your selection rank at the University of Sydney, automatically, with no separate application required. Here is exactly how the scheme works and what it means for your university prospects.',
         content: `
-# The University of Sydney Academic Excellence Scheme explained: how bonus points work and who qualifies
-
 Most HSC students applying to the University of Sydney focus on the ATAR cut-off for their preferred course and treat that number as fixed. What many do not realise is that the number Sydney actually uses to assess their application, their selection rank, can be higher than their raw ATAR, and for students who perform strongly in English or mathematics, it often is.
 
 The Academic Excellence Scheme is Sydney's mechanism for recognising that performance. It adds up to five adjustment factors to a student's selection rank for eligible courses, based entirely on their HSC result in high-level English or mathematics. It requires no application, no supporting documents, and no circumstance beyond strong academic performance. For a student a few points short of a competitive degree, it can be decisive, and understanding it clearly, before the HSC rather than after, is what allows students to make the most of it.
@@ -1278,8 +1240,6 @@ At Shoreline, we work through these mechanics with students in Year 11, which su
         title: 'UTS Year 12 Subject Scheme Explained: How Adjustment Factors Work and How to Qualify',
         excerpt: 'UTS awards up to five adjustment factors to students who perform well in HSC subjects relevant to their chosen degree, automatically, with no separate application. Here is how the scheme works, who qualifies, and what makes it distinct from the adjustment factor schemes at Sydney and UNSW.',
         content: `
-# UTS Year 12 Subject Scheme explained: how adjustment factors work and how to qualify
-
 The University of Technology Sydney takes a different approach to recognising HSC performance than its Sydney counterparts. Rather than rewarding general academic excellence in English or mathematics, UTS's Year 12 Subject Scheme rewards strong performance in the HSC subjects most directly relevant to the specific degree a student has applied for. A student applying for Engineering is rewarded for performance in different subjects from one applying for Communication or Business, and the adjustment factors follow from that performance automatically, without any additional application.
 
 Understanding how the scheme works, who qualifies, and how it fits alongside UTS's other entry pathways gives students a clearer picture of the full range of factors that will determine their selection rank, and that picture is worth having in Year 11, not the week results are released.
@@ -1346,8 +1306,6 @@ At Shoreline, we work through these mechanics with students in Year 11, so that 
         title: 'Navigating the New Selective High School Test Format, What Changed, How It Works, and What It Means for Preparation',
         excerpt: 'The NSW Selective High School Placement Test has changed significantly in recent years. Understanding the current format, what each section tests, how it is scored, and what the changes mean for preparation, is the starting point for every family approaching this process.',
         content: `
-# Navigating the new Selective High School test format, what changed, how it works, and what it means for preparation
-
 The NSW Selective High School Placement Test has changed substantially over the past few years, enough that advice, preparation materials, or personal experience from before 2021 may describe a test that no longer exists. The most significant overhaul occurred in 2021, when the NSW Department of Education replaced the General Ability section with a new Thinking Skills section and restructured the test into a Cambridge Assessment-style format. A further change came in 2025, when the weighting across all four sections was equalised. The test has also moved from paper-based to fully computer-based delivery.
 
 For families approaching this process, the gap between the old and new formats creates real confusion about what to prepare and which resources to trust. This article sets out what the current test looks like, what each section assesses, and what the structural changes mean for how preparation time should be spent.
@@ -1415,8 +1373,6 @@ At Shoreline, Selective High School preparation starts from where each student a
         title: 'How to Ace Selective High School Reading Comprehension: The Skills That Actually Get Tested',
         excerpt: 'Selective school reading comprehension is not a vocabulary test or a memory exercise. It tests a specific set of reasoning skills that can be developed systematically, if students understand what they are actually being asked to do.',
         content: `
-# How to ace Selective High School reading comprehension, the skills that actually get tested
-
 Reading comprehension is the section of the Selective High School Placement Test that students most often underestimate in preparation and most often underperform in on the day. The assumption is that reading is passive, that a student who reads widely will naturally do well. In practice, the test rewards a specific and active set of skills: the ability to identify what a text is actually saying, distinguish it from what the text implies, and reason about an author's choices with precision and speed under significant time pressure.
 
 Students who prepare well for reading comprehension do not spend their time memorising vocabulary lists or reading more novels. They learn to read differently, to interrogate a text rather than absorb it. The difference in approach produces a difference in marks, and it is a difference that can be built deliberately over several months of focused practice.
@@ -1481,8 +1437,6 @@ At Shoreline, Selective school reading comprehension preparation focuses on maki
         title: 'How to Ace Selective High School Mathematics: What the Test Is Really Testing and How to Prepare',
         excerpt: 'The mathematics section of the Selective High School Placement Test rewards problem-solving flexibility over rote calculation. Here is how to build the reasoning skills, speed, and strategic approach that the top scorers use.',
         content: `
-# How to ace Selective High School mathematics, what the test is really testing and how to prepare
-
 The mathematics section of the Selective High School Placement Test is not a curriculum assessment. It does not test whether a student has memorised Year 6 content, it tests whether a student can think mathematically under pressure. The distinction matters because students who prepare by reviewing school topics often find themselves well-equipped for the straightforward questions but unprepared for the ones that require lateral thinking, pattern recognition, and the ability to approach an unfamiliar problem without a ready-made method.
 
 The students who perform best on Selective school mathematics are not necessarily those who are furthest ahead in the curriculum. They are those who have developed genuine mathematical flexibility, the ability to look at a problem from multiple angles, try a different approach when the first fails, and work efficiently enough that time pressure does not become the deciding factor. These qualities are built through a specific kind of practice that most students are not doing.
@@ -1555,8 +1509,6 @@ At Shoreline, mathematics preparation for the Selective test is built around one
         title: 'How to Ace Selective High School Thinking Skills: What the Section Tests and How to Build the Abilities It Rewards',
         excerpt: 'Thinking Skills is the section of the Selective placement test that most students find hardest to prepare for, because it explicitly resists the kind of content-based revision that works elsewhere. Here is what it actually tests and how to develop the reasoning abilities that produce top scores.',
         content: `
-# How to ace Selective High School Thinking Skills, what the section tests and how to build the abilities it rewards
-
 When the NSW Department of Education replaced the General Ability section of the Selective placement test with Thinking Skills, the intent was explicit: to assess how students reason, not what they have been taught to recall. The Thinking Skills section is designed to reward students who can evaluate an argument, identify a logical flaw, and solve a novel problem, regardless of whether they have been drilled on similar question formats. In practice, this makes it the section that most resists conventional preparation and most rewards genuine intellectual development.
 
 The students who perform best in Thinking Skills are not those who have completed the most practice papers. They are those who have developed the underlying habits of mind that the section is designed to measure: careful reading, structured reasoning, comfort with uncertainty, and the discipline to follow an argument to its logical conclusion rather than the conclusion that feels right. These habits can be built deliberately, but the preparation looks quite different from studying for mathematics or reading comprehension.
@@ -1623,8 +1575,6 @@ At Shoreline, Thinking Skills preparation is built around a simple observation: 
         title: 'How to Ace the Selective High School Writing Exam: What Markers Look For and How to Deliver It',
         excerpt: 'The writing component of the Selective placement test is the section where preparation makes the most visible difference, but only if students understand what is actually being rewarded. Most do not.',
         content: `
-# How to ace the Selective High School writing exam, what markers look for and how to deliver it
-
 The writing component of the Selective High School Placement Test gives students thirty minutes to produce a piece of writing in response to a prompt. It is the only section of the test that requires extended production rather than selection, and it is the section where deliberate preparation produces the most visible improvement. It is also the section most commonly misunderstood, both by students who believe that writing well means writing a lot, and by those who believe that practising a fixed essay template is sufficient preparation for any prompt they might encounter.
 
 What the writing component actually rewards is neither length nor formula. It rewards a student who reads the prompt carefully, forms a genuine idea in response to it, expresses that idea with control and precision, and does so within a structure that a reader can follow. These qualities are developed through a specific kind of writing practice, not writing frequently, but writing deliberately and reviewing honestly.
@@ -1695,8 +1645,6 @@ At Shoreline, writing preparation starts from the observation that most students
         title: 'How to Ace OC Test Reading Comprehension: A Guide for Year 4 Students and Their Parents',
         excerpt: 'The reading section of the Opportunity Class placement test rewards students who read actively and purposefully, who approach a text with questions in mind rather than absorbing it passively. Here is how to develop those habits at the right pace for a ten-year-old.',
         content: `
-# How to ace OC test reading comprehension, a guide for Year 4 students and their parents
-
 The Opportunity Class placement test has three sections, Reading, Mathematical Reasoning, and Thinking Skills. There is no Writing component. The Reading section gives students 30 minutes to answer approximately 25 questions across a range of text types including fiction, poetry, factual texts, and short passages. All questions are multiple-choice. Some question sets have multiple parts; others ask a single question about a text.
 
 The section draws on curriculum content up to Year 4 level, which means the texts themselves are accessible to a well-prepared student. What separates the top scores from the rest is not a wider vocabulary or more background knowledge, it is the quality of the reading habits a student brings to each passage. Those habits are developable, and they develop most reliably through consistent, purposeful reading rather than concentrated drilling.
@@ -1743,8 +1691,6 @@ Reading preparation at Shoreline for OC students is built around developing genu
         title: 'How to Ace OC Test Mathematical Reasoning: Building Problem-Solving Confidence in Year 4',
         excerpt: 'The Mathematical Reasoning section of the OC placement test has 35 questions in 40 minutes, and rewards students who can think flexibly about problems, not just execute procedures they have been taught. Here is how to build the foundations and the reasoning disposition that produce strong results.',
         content: `
-# How to ace OC test Mathematical Reasoning, building problem-solving confidence in Year 4
-
 The Mathematical Reasoning section of the OC placement test presents 35 multiple-choice questions, each with five answer options, to be completed in 40 minutes. No calculator is available, though students can use paper for working out. Questions are drawn from number, patterns, measurement, space, data, chance, and working mathematically, content areas covered in the NSW curriculum up to Year 4. Each question gives some information and asks one question about it; that information may be presented in words, a diagram, a graph, or a table.
 
 The section is not a curriculum check. It is a reasoning assessment. The content is Year 4 level, but the questions are designed to present that content in unfamiliar ways, to test whether a student can apply what they know to a new situation, not whether they can reproduce a taught procedure. This distinction is what makes the section genuinely demanding and what determines how preparation should be structured.
@@ -1793,8 +1739,6 @@ Mathematical Reasoning preparation at Shoreline for OC students begins from what
         title: 'How to Ace OC Test Thinking Skills: Developing Reasoning Ability in Year 4',
         excerpt: 'The Thinking Skills section of the OC placement test has 30 questions in 30 minutes, and is explicitly designed to assess how a student reasons rather than what they know. Here is what it tests, why conventional preparation often misses the point, and how to develop the abilities that actually produce strong results.',
         content: `
-# How to ace OC test Thinking Skills, developing reasoning ability in Year 4
-
 The Thinking Skills section of the OC placement test presents 30 multiple-choice questions, four options each, to be completed in 30 minutes. No prior knowledge is required. Questions integrate literacy, numeracy, spatial awareness, and logic, and they are designed to be genuinely unfamiliar, to present a student with something they have not specifically prepared for and to assess whether they can reason through it from scratch.
 
 This design intent has a practical implication: the section explicitly resists the kind of preparation that works for content-based sections. A student who has drilled extensively on practice papers may gain familiarity with some question formats, but the section is specifically constructed to reward students who can think, not students who have memorised the most templates. Understanding this changes what effective preparation looks like.
