@@ -160,7 +160,7 @@ export const VENUE_WALKING_ROUTES: WalkingRoute[] = [
  * What small-group classes currently cover, as one clause that reads inside a
  * sentence. Update it here and every section that scopes the offer follows.
  */
-export const GROUP_SCOPE_SUMMARY = 'Year 12 maths, physics and chemistry';
+export const GROUP_SCOPE_SUMMARY = 'Year 12 maths, physics, chemistry and biology';
 
 /** The term the published schedule runs to. */
 export const TERM_LABEL = 'Term 4';
@@ -313,17 +313,13 @@ export const COURSES: Course[] = [
         covers:
             'Equilibrium and acid reactions, acid and base reactions including titration and buffers, organic chemistry from hydrocarbons to polymers, and applying chemical ideas through qualitative and instrumental analysis.',
     },
-    /* Biology is not running as a group class this term. Kept here rather than
-       deleted so it can be restored by uncommenting this entry, the outline in
-       src/data/courseOutlines/index.ts, and the course lists in the copy that
-       names each class. One-on-one Biology tutoring is unaffected. */
-    // {
-    //     id: 'biology',
-    //     name: 'Biology',
-    //     shortName: 'Biology',
-    //     covers:
-    //         'Heredity and reproduction, genetic change and biotechnology, infectious disease and how the body defends itself, and non-infectious disease, disorders and their treatment.',
-    // },
+    {
+        id: 'biology',
+        name: 'Biology',
+        shortName: 'Biology',
+        covers:
+            'Heredity and reproduction, genetic change and biotechnology, infectious disease and how the body defends itself, and non-infectious disease, disorders and their treatment.',
+    },
 ];
 
 /** Whether any class still has founding places, for copy about all classes at once. */

@@ -22,7 +22,7 @@ export const faqs: FaqEntry[] = [
     {
         id: 'subjects-and-years',
         question: 'What subjects and year levels do you cover?',
-        answer: 'We offer one-on-one tutoring in English, Mathematics, Physics, Chemistry, Biology, Economics and Business Studies for Years 7 to 12 (including HSC), and weekly small-group classes for Year 12 maths, physics and chemistry. We also provide targeted preparation programs for Selective High School entry, Opportunity Classes (OC), and NAPLAN across all tested year levels.',
+        answer: 'We offer one-on-one tutoring in English, Mathematics, Physics, Chemistry, Biology, Economics and Business Studies for Years 7 to 12 (including HSC), and weekly small-group classes for Year 12 maths, physics, chemistry and biology. We also provide targeted preparation programs for Selective High School entry, Opportunity Classes (OC), and NAPLAN across all tested year levels.',
     },
     {
         id: 'online-or-in-person',

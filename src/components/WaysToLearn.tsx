@@ -54,7 +54,7 @@ const formats: LearningFormat[] = [
             `Weekly ${LESSON_TEACHING_HOURS}-hour classes working through the Year 12 course alongside school. Every course runs as its own class, so nobody sits through content meant for a different one.`,
         points: [
             `Weekly from ${FIRST_LESSON_DATE_LONG}`,
-            'Maths Standard, Advanced and Extension 1, Physics and Chemistry',
+            'Maths Standard, Advanced and Extension 1, Physics, Chemistry and Biology',
             'In person on Saturdays or online on Sundays',
         ],
         flash: TRIAL_OFFER,
