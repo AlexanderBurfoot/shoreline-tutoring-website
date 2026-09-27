@@ -4,6 +4,7 @@
  * src/app/api/contact/route.ts so the wording can be read and tested on its own.
  */
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, SITE_URL } from './site';
+import type { EnquiryReceipt } from './enquiryReceipt';
 import { VENUE_ADDRESS } from '../data/groupClassLaunch';
 
 function escapeHtml(text: string) {
@@ -33,6 +34,8 @@ function greetingName(name: string) {
 }
 
 export interface EnquiryFields {
+    /** Shared with the confirmation, the stored record, the webhook and the logs. */
+    receipt: EnquiryReceipt;
     enquiryLabel: string;
     name: string;
     email: string;
@@ -45,11 +48,17 @@ export interface EnquiryFields {
 }
 
 /** The enquiry as it arrives in the Shoreline inbox. */
-export function ownerEnquiryEmailHtml({ enquiryLabel, name, email, phone, learningFormat, courseChoice, dayChoice, subjectsList, message }: EnquiryFields) {
+export function ownerEnquiryEmailHtml({ receipt, enquiryLabel, name, email, phone, learningFormat, courseChoice, dayChoice, subjectsList, message }: EnquiryFields) {
     return `        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb;">
             <div style="background: linear-gradient(135deg, #1a2332 0%, #243447 100%); padding: 32px; text-align: center;">
                 <h1 style="color: #EAC54D; margin: 0; font-size: 22px; font-weight: 600;">New ${escapeHtml(enquiryLabel)} Enquiry</h1>
                 <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0; font-size: 14px;">Submitted via shorelinetutoring.com.au</p>
+                <!-- The reference and time also appear in the confirmation, the
+                     stored record, the webhook and the logs, so one enquiry can
+                     be matched across all of them. They also make two enquiries
+                     from the same person differ, which stops a mail client
+                     treating the second as a duplicate of the first. -->
+                <p style="color: rgba(255,255,255,0.55); margin: 6px 0 0; font-size: 12px; letter-spacing: 0.4px;">${escapeHtml(receipt.receivedAtLocal)} &middot; Ref ${escapeHtml(receipt.reference)}</p>
             </div>
             <div style="padding: 32px;">
                 <table style="width: 100%; border-collapse: collapse;">
@@ -109,6 +118,7 @@ function nextStepRow(position: number, title: string, text: string) {
 }
 
 export interface ConfirmationFields {
+    receipt: EnquiryReceipt;
     name: string;
     learningFormat: string;
     subjectsList: string;
@@ -126,7 +136,7 @@ export interface ConfirmationFields {
  * else. Laid out in tables with inline styles, which is what email clients
  * render reliably.
  */
-export function parentConfirmationEmailHtml({ name, learningFormat, subjectsList, courseChoice, dayChoice }: ConfirmationFields) {
+export function parentConfirmationEmailHtml({ receipt, name, learningFormat, subjectsList, courseChoice, dayChoice }: ConfirmationFields) {
     const summary = [
         summaryRow('Learning format', learningFormat),
         summaryRow('Course', courseChoice),
@@ -159,6 +169,7 @@ export function parentConfirmationEmailHtml({ name, learningFormat, subjectsList
                 <td style="padding: 32px 32px 8px; color: #1a2332; font-size: 15px; line-height: 1.7;">
                     <p style="margin: 0 0 16px;">Hi ${greetingName(name)},</p>
                     <p style="margin: 0 0 8px;">Thank you for getting in touch with Shoreline Tutoring. Here is what you asked about, so you have it on record.</p>
+                    <p style="margin: 12px 0 0; color: #6b7280; font-size: 13px;">Received ${escapeHtml(receipt.receivedAtLocal)}. Your reference is <strong style="color: #1a2332;">${escapeHtml(receipt.reference)}</strong>, which is worth quoting if you write to us again.</p>
                 </td>
             </tr>
             ${summary ? `

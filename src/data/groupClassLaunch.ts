@@ -180,14 +180,19 @@ export const TERM_SESSIONS = 11;
  *    FOUNDING_FULL_COURSES once a class has taken its founding students.
  *  - The term rate: TERM_PRICE paid up front, the main price once founding
  *    places are gone.
- *  - Weekly: SESSION_PRICE per lesson, for families who would rather not
- *    commit to the term.
+ *
+ * There is no weekly option: a group class is paid for the term up front. The
+ * per-lesson constants below are kept only so the hourly rate can be worked out,
+ * and must not be shown as a price a family can choose.
  *
  * The site cannot see enrolments, so it never shows a count of places left;
  * a number it cannot keep accurate would mislead parents.
  */
 
-/** Price of a single lesson paid weekly, in whole dollars. */
+/**
+ * Notional value of one lesson, used only to derive an hourly rate. Not a price
+ * anyone can pay: classes are sold by the term.
+ */
 export const SESSION_PRICE_DOLLARS = 250;
 
 /** The first lesson is free, so every other lesson in the term is paid. */
@@ -216,8 +221,9 @@ export const hasFoundingPlaces = (courseId: Course['id']) =>
 const dollars = (amount: number) => `$${amount.toLocaleString('en-AU')}`;
 const perTeachingHour = (lessonCost: number) => dollars(Math.round(lessonCost / LESSON_TEACHING_HOURS));
 
-/** A single lesson, e.g. "$250". */
-export const SESSION_PRICE = dollars(SESSION_PRICE_DOLLARS);
+/* SESSION_PRICE and TERM_SAVING are deliberately not exported. Both describe a
+   weekly option that is not offered, and TERM_SAVING measured the term against
+   it, so "saves $500" compared the real price with one no family could pay. */
 
 /** The term paid up front, e.g. "$2,000". */
 export const TERM_PRICE = dollars(TERM_PRICE_DOLLARS);
@@ -245,10 +251,10 @@ export const FOUNDING_OFFER_SHORT =
 export const FOUNDING_SAVING_BADGE = `Founding offer · save ${FOUNDING_SAVING}`;
 
 /** Paying weekly for the whole term, e.g. "$2,500", which the term rate is compared with. */
-export const WEEKLY_TERM_TOTAL = dollars(SESSION_PRICE_DOLLARS * TERM_PAID_SESSIONS);
+/* Was WEEKLY_TERM_TOTAL: the term's worth of weekly lessons, now meaningless. */
 
 /** What the term rate saves over paying weekly, e.g. "$500". */
-export const TERM_SAVING = dollars(SESSION_PRICE_DOLLARS * TERM_PAID_SESSIONS - TERM_PRICE_DOLLARS);
+/* Was TERM_SAVING: the term price against the weekly one, which is not offered. */
 
 /** Per teaching hour for each way of paying, e.g. "$83", "$67", "$50". */
 export const SESSION_HOURLY_RATE = perTeachingHour(SESSION_PRICE_DOLLARS);

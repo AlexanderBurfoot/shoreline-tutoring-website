@@ -20,7 +20,13 @@ vi.mock('../../../lib/turnstile', () => ({ verifyHuman }));
 let visitorCount = 0;
 
 /** Every sendMail body the route posted to Graph, in order. */
-let sentMail: { to: string; subject: string }[] = [];
+let sentMail: {
+    to: string; subject: string; html: string; savesToSent: boolean; replyTo: string;
+}[] = [];
+
+/** Whatever was pushed to the store and to the webhook, for the shared reference. */
+let stored: string[] = [];
+let webhookPosts: string[] = [];
 
 function enquiry(overrides: Record<string, unknown> = {}) {
     return new Request('https://shorelinetutoring.com.au/api/contact', {
@@ -54,24 +60,33 @@ function graphFetch(url: string | URL | Request) {
 describe('POST /api/contact, the parent confirmation', () => {
     beforeEach(() => {
         sentMail = [];
+        stored = [];
+        webhookPosts = [];
         verifyHuman.mockReset();
         vi.stubEnv('AZURE_TENANT_ID', 'tenant');
         vi.stubEnv('AZURE_CLIENT_ID', 'client');
         vi.stubEnv('AZURE_CLIENT_SECRET', 'secret');
         vi.stubEnv('EMAIL_FROM', 'noreply@example.com');
         vi.stubEnv('EMAIL_TO', 'owner@example.com');
-        vi.stubEnv('ENQUIRY_FALLBACK_WEBHOOK_URL', '');
-        vi.stubEnv('UPSTASH_REDIS_REST_URL', '');
+        vi.stubEnv('ENQUIRY_FALLBACK_WEBHOOK_URL', 'https://hooks.example.com/enquiries');
+        vi.stubEnv('UPSTASH_REDIS_REST_URL', 'https://store.example.com');
+        vi.stubEnv('UPSTASH_REDIS_REST_TOKEN', 'store-token');
 
         vi.spyOn(globalThis, 'fetch').mockImplementation(async (url, init) => {
             const href = typeof url === 'string' ? url : url.toString();
+            const raw = String((init as RequestInit)?.body ?? '');
             if (href.includes('/sendMail')) {
-                const body = JSON.parse(String((init as RequestInit)?.body ?? '{}'));
+                const body = JSON.parse(raw || '{}');
                 sentMail.push({
                     to: body?.message?.toRecipients?.[0]?.emailAddress?.address ?? '',
                     subject: body?.message?.subject ?? '',
+                    html: body?.message?.body?.content ?? '',
+                    savesToSent: body?.saveToSentItems === true,
+                    replyTo: body?.message?.replyTo?.[0]?.emailAddress?.address ?? '',
                 });
             }
+            if (href.includes('store.example.com')) stored.push(raw);
+            if (href.includes('hooks.example.com')) webhookPosts.push(raw);
             return graphFetch(url);
         });
         vi.spyOn(console, 'warn').mockImplementation(() => {});
@@ -134,6 +149,132 @@ describe('POST /api/contact, the parent confirmation', () => {
             expect(sentMail[0]?.to).toBe('owner@example.com');
         },
     );
+
+    /* One enquiry, one identity. Before this the two emails carried no date at
+       all, so a repeat enquirer received messages identical in every byte and a
+       mail client could treat the later ones as duplicates of the first. */
+    it('puts the same reference on both emails, the stored record and the webhook', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry());
+
+        const [owner, confirmation] = sentMail;
+        const reference = /Ref ([A-Z2-9]{6})/.exec(owner.html)?.[1];
+        expect(reference, 'the owner email should carry a reference').toBeDefined();
+
+        expect(confirmation.html).toContain(reference!);
+        expect(stored.join(' ')).toContain(reference!);
+        expect(webhookPosts.join(' ')).toContain(reference!);
+    });
+
+    it('gives two enquiries from the same person different bodies', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry());
+        const first = sentMail.map((mail) => mail.html);
+        sentMail = [];
+        await POST(enquiry());
+        const second = sentMail.map((mail) => mail.html);
+
+        expect(second[0]).not.toBe(first[0]);
+        expect(second[1]).not.toBe(first[1]);
+    });
+
+    /* A parent who says they never got it can now be checked against the mailbox. */
+    it('keeps a sent copy of the confirmation', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry());
+
+        expect(sentMail[1].savesToSent).toBe(true);
+    });
+
+    it('shows the enquirer a readable Sydney time, not a UTC stamp', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry());
+
+        expect(sentMail[1].html).toMatch(/Received \d{1,2} \w+ \d{4}/);
+        expect(sentMail[1].html).not.toMatch(/\d{4}-\d{2}-\d{2}T/);
+    });
+
+    /* Hitting reply must reach the parent, not the mailbox the site sends from.
+       Getting this wrong is invisible until someone replies into a void. */
+    it('sets Reply-To on the owner email to the enquirer', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({ email: 'parent@example.com' }));
+
+        expect(sentMail[0].replyTo).toBe('parent@example.com');
+    });
+
+    /* And a reply to the confirmation must reach Shoreline, not the sending account. */
+    it('sets Reply-To on the confirmation to the enquiry mailbox', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry());
+
+        expect(sentMail[1].replyTo).toBe('owner@example.com');
+    });
+
+    /* The subject is what you triage from in a full inbox, so it has to say the
+       format and which class, not just that something arrived. */
+    it('puts the format and the course in the subject for a group enquiry', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({
+            name: 'Jordan Lee', format: 'Small-group classes',
+            course: 'Chemistry', day: 'Saturdays',
+        }));
+
+        expect(sentMail[0].subject).toBe('New Small-group classes Enquiry: Jordan Lee (Chemistry, Saturdays)');
+    });
+
+    it('falls back to the subject list when there is no course', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({
+            name: 'Sam Patel', format: 'One-on-one tutoring',
+            subjects: ['Mathematics', 'Physics'],
+        }));
+
+        expect(sentMail[0].subject).toBe('New One-on-one tutoring Enquiry: Sam Patel (Mathematics, Physics)');
+    });
+
+    it('leaves the bracket off when there is nothing to put in it', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({ name: 'Casey Ng', format: '' }));
+
+        expect(sentMail[0].subject).toBe('New Tutoring Enquiry: Casey Ng');
+    });
+
+    /* An apostrophe in a name and an ampersand in a message are ordinary, and
+       both would break the HTML or inject markup if they went through raw. */
+    it('escapes quotes, ampersands and angle brackets rather than rendering them', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({
+            name: "O'Brien & Sons",
+            message: 'Maths & Physics <script>alert(1)</script> "urgent"',
+        }));
+
+        const owner = sentMail[0].html;
+        expect(owner).toContain('&#039;');
+        expect(owner).toContain('&amp;');
+        expect(owner).toContain('&lt;script&gt;');
+        expect(owner).not.toContain('<script>');
+    });
+
+    it('carries a long message through without truncating it in the email', async () => {
+        verifyHuman.mockResolvedValue('verified');
+        const long = 'My child is sitting Chemistry. '.repeat(80);
+
+        await POST(enquiry({ message: long }));
+
+        expect(sentMail[0].html).toContain('My child is sitting Chemistry.');
+        expect(sentMail[0].html.length).toBeGreaterThan(long.length);
+    });
 
     /* Only a check that ran and failed marks the subject, so the prefix keeps
        meaning something once a key is set. */
