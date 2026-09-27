@@ -24,7 +24,6 @@ import {
     ONE_ON_ONE_PATH,
     ONLINE_DAY,
     ONLINE_FIRST_CLASS,
-    SESSION_PRICE,
     SESSION_TIMES_SUMMARY,
     TERM_LABEL,
     TERM_PRICE,
@@ -91,8 +90,8 @@ function groupPriceAnswer(): string {
         ? ` As a founding offer, ${FOUNDING_OFFER_LINE}, a saving of ${FOUNDING_SAVING}.`
         : '';
     return (
-        `Small-group classes are ${SESSION_PRICE} a session, or ${TERM_PRICE} for the ${TERM_LABEL} term of ` +
-        `${TERM_SESSIONS} lessons.${founding} Each session is ${LESSON_TEACHING_HOURS} hours of teaching with a ` +
+        `Small-group classes are ${TERM_PRICE} for the ${TERM_LABEL} term of ` +
+        `${TERM_SESSIONS} lessons, paid up front.${founding} Each session is ${LESSON_TEACHING_HOURS} hours of teaching with a ` +
         `${LESSON_BREAK_MINUTES}-minute break.`
     );
 }

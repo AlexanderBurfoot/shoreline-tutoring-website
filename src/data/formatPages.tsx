@@ -21,12 +21,10 @@ import {
     FOUNDING_SAVING,
     FOUNDING_SAVING_BADGE,
     FOUNDING_TERM_PRICE,
-    SESSION_PRICE,
     TERM_HOURLY_RATE,
     TERM_LABEL,
     TERM_PAID_SESSIONS,
     TERM_PRICE,
-    TERM_SAVING,
     VENUE_ADDRESS,
     anyFoundingPlaces,
     hasFoundingPlaces,
@@ -512,7 +510,7 @@ export const groupClassesPage: FormatPageContent = {
     pricing: {
         header: {
             eyebrow: 'What It Costs',
-            title: { lead: 'Pay for the term,', accent: 'or week by week' },
+            title: { lead: 'One price for', accent: 'the whole term' },
             subtitle: (
                 <>
                     The first lesson is free.{' '}
@@ -526,9 +524,8 @@ export const groupClassesPage: FormatPageContent = {
                         </>
                     )}
                     {anyFoundingPlaces() ? 'the term is' : 'After that it is'}{' '}
-                    {TERM_PRICE} for the {TERM_PAID_SESSIONS} paid lessons,
-                    saving {TERM_SAVING} on paying {SESSION_PRICE} a lesson each week. The price
-                    is the same in person or online.
+                    {TERM_PRICE} for the {TERM_PAID_SESSIONS} paid lessons, paid up front. The
+                    price is the same in person or online.
                 </>
             ),
         },
@@ -542,12 +539,12 @@ export const groupClassesPage: FormatPageContent = {
                     caption: `for ${TERM_LABEL} · ${FOUNDING_HOURLY_RATE} an hour`,
                     note: `Only the first ${FOUNDING_PLACES_PER_CLASS} students in each class `
                         + `pay ${FOUNDING_TERM_PRICE}. After those places are taken the term `
-                        + `is ${TERM_PRICE}, or ${SESSION_PRICE} a lesson paid weekly.`,
+                        + `is ${TERM_PRICE}.`,
                 }
                 : {
                     label: `${TERM_LABEL}, paid up front`,
                     price: TERM_PRICE,
-                    caption: `${TERM_HOURLY_RATE} an hour · saves ${TERM_SAVING} · or ${SESSION_PRICE} a lesson weekly`,
+                    caption: `${TERM_HOURLY_RATE} an hour · paid up front`,
                 }),
             inclusions: [
                 `${LESSON_TEACHING_HOURS} hours of teaching every lesson`,

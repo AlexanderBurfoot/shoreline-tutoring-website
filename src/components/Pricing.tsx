@@ -14,12 +14,10 @@ import {
     FOUNDING_TERM_PRICE,
     GROUP_CLASSES_PATH,
     LESSON_TEACHING_HOURS,
-    SESSION_PRICE,
     TERM_HOURLY_RATE,
     TERM_LABEL,
     TERM_PAID_SESSIONS,
     TERM_PRICE,
-    TERM_SAVING,
     TRIAL_OFFER,
     anyFoundingPlaces,
 } from '../data/groupClassLaunch';
@@ -162,8 +160,8 @@ const Pricing = () => {
                         <span className="pricing-table-badge">{TRIAL_OFFER}</span>
                         <h3 className="pricing-table-title">Weekly Classes</h3>
                         <p className="pricing-table-subtitle">
-                            Pay for the term or week by week, the same whether you attend in person
-                            on Saturdays or online on Sundays. Sit the first lesson free and only pay
+                            The term is paid up front, the same whether you attend in person on
+                            Saturdays or online on Sundays. Sit the first lesson free and only pay
                             if you decide to stay.{' '}
                             {anyFoundingPlaces() && (
                                 <strong>
@@ -195,8 +193,7 @@ const Pricing = () => {
                                         Only the first {FOUNDING_PLACES_PER_CLASS} students in each class
                                         pay {FOUNDING_TERM_PRICE}.
                                     </strong>{' '}
-                                    After those places are taken the term is {TERM_PRICE}, which still
-                                    saves {TERM_SAVING} on paying {SESSION_PRICE} a lesson weekly.{' '}
+                                    After those places are taken the term is {TERM_PRICE}.{' '}
                                     {TERM_PAID_SESSIONS} paid {LESSON_TEACHING_HOURS}-hour lessons
                                     in {TERM_LABEL}.
                                 </p>
@@ -208,7 +205,6 @@ const Pricing = () => {
                                     <small>for {TERM_LABEL}, paid up front · {TERM_HOURLY_RATE} an hour</small>
                                 </div>
                                 <p className="pricing-program__alternatives">
-                                    Saves {TERM_SAVING} on paying {SESSION_PRICE} a lesson each week.{' '}
                                     {TERM_PAID_SESSIONS} paid {LESSON_TEACHING_HOURS}-hour lessons
                                     in {TERM_LABEL}.
                                 </p>
