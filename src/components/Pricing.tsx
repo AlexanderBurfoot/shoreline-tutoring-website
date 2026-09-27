@@ -341,9 +341,12 @@ const Pricing = () => {
             <section className="pricing-bottom-cta">
                 <div className="container">
                     <div className="pricing-bottom-cta__inner">
-                        <h1 className="pricing-bottom-cta__title">
+                        {/* An h2: the page already has its h1 in the hero, and a
+                            second one leaves a screen reader with two competing
+                            titles for the same page. */}
+                        <h2 className="pricing-bottom-cta__title">
                             Ready to Get Started?
-                        </h1>
+                        </h2>
                         <p className="pricing-bottom-cta__text">
                             Book a free lesson in whichever format suits, one-on-one or small-group, and discover the Shoreline difference. No obligation, no pressure; just results.
                         </p>

@@ -118,6 +118,11 @@ gtag('config', '${GOOGLE_ADS_ID}');`}
           id="announcement-dismiss-state"
           dangerouslySetInnerHTML={{ __html: ANNOUNCEMENT_DISMISS_SCRIPT }}
         />
+        {/* First focusable thing on the page, so a keyboard user can jump the
+            announcement bar, the logo and the whole nav. The styles have been in
+            index.css all along; nothing rendered the anchor. #main-content stays
+            a div because six pages render their own <main> inside it. */}
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <ScrollProgress />
         <AnnouncementBar />
         <Header />
