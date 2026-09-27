@@ -326,8 +326,8 @@ ol {
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-gold-primary);
-  border: 2px solid var(--color-gold-primary);
+  color: var(--btn-outline-color);
+  border: 2px solid var(--btn-outline-color);
 }
 
 .btn-secondary:hover {
@@ -364,6 +364,10 @@ button:hover .icon-arrow {
 :root {
   --focus-ring-color: var(--color-navy);
   --accent-text-color: var(--color-navy);
+  /* Outline buttons follow the same rule as accent text: gold reads on the dark
+     sections at 9.46:1 but only 1.58:1 on cream, so on light backgrounds both
+     the text and the border go navy. */
+  --btn-outline-color: var(--color-navy);
   --accent-underline: linear-gradient(var(--color-gold-primary), var(--color-gold-primary));
   --label-color: var(--color-navy);
 }
@@ -398,6 +402,7 @@ button:hover .icon-arrow {
 .footer {
   --focus-ring-color: var(--color-gold-primary);
   --accent-text-color: var(--color-gold-primary);
+  --btn-outline-color: var(--color-gold-primary);
   --accent-underline: none;
   --label-color: var(--color-gold-primary);
 }
