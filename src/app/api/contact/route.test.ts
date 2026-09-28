@@ -22,6 +22,10 @@ let visitorCount = 0;
 /** Every sendMail body the route posted to Graph, in order. */
 let sentMail: {
     to: string; subject: string; html: string; savesToSent: boolean; replyTo: string;
+    /* Distinct from replyTo === '': a header carrying an empty address is not
+       the same as no header, and reading the address alone cannot tell them
+       apart. */
+    hasReplyTo: boolean;
 }[] = [];
 
 /** Whatever was pushed to the store and to the webhook, for the shared reference. */
@@ -37,6 +41,9 @@ function enquiry(overrides: Record<string, unknown> = {}) {
         },
         body: JSON.stringify({
             name: 'Parent Name',
+            /* Phone is the required contact point; the email is the optional
+               one, so it is the email these tests take away rather than add. */
+            phone: '0412 345 678',
             email: 'stranger@example.com',
             message: 'Please call me.',
             turnstileToken: 'a-token',
@@ -83,6 +90,7 @@ describe('POST /api/contact, the parent confirmation', () => {
                     html: body?.message?.body?.content ?? '',
                     savesToSent: body?.saveToSentItems === true,
                     replyTo: body?.message?.replyTo?.[0]?.emailAddress?.address ?? '',
+                    hasReplyTo: body?.message?.replyTo !== undefined,
                 });
             }
             if (href.includes('store.example.com')) stored.push(raw);
@@ -274,6 +282,82 @@ describe('POST /api/contact, the parent confirmation', () => {
 
         expect(sentMail[0].html).toContain('My child is sitting Chemistry.');
         expect(sentMail[0].html.length).toBeGreaterThan(long.length);
+    });
+
+    /*
+     * Phone is the required contact point and the email is optional. The email
+     * used to be the required one, and three separate things downstream wrote
+     * to it without checking it existed: the Reply-To header, the parent
+     * confirmation, and the Email row of the enquiry. These pin all three.
+     */
+    it('refuses an enquiry with no phone number', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        const response = await POST(enquiry({ phone: '' }));
+
+        expect(response.status).toBe(400);
+        expect((await response.json()).error).toMatch(/phone/i);
+        expect(sentMail).toHaveLength(0);
+    });
+
+    it('accepts an enquiry with no email address', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        const response = await POST(enquiry({ email: '' }));
+
+        expect(response.status).toBe(200);
+        expect(sentMail.map((mail) => mail.to)).toEqual(['owner@example.com']);
+    });
+
+    it('accepts an enquiry with no email field at all', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        const response = await POST(enquiry({ email: undefined }));
+
+        expect(response.status).toBe(200);
+        expect(sentMail[0]?.to).toBe('owner@example.com');
+    });
+
+    /* Replying to a header built from an empty address would bounce, or worse
+       go somewhere unrelated. With no address the header is left off entirely. */
+    it('sets no Reply-To when the enquirer left no email', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({ email: '' }));
+
+        /* The header must be absent, not present and empty: an empty address
+           bounces on reply, which is the failure this guards. */
+        expect(sentMail[0].hasReplyTo).toBe(false);
+        expect(sentMail[0].replyTo).toBe('');
+    });
+
+    it('still sends no confirmation when there is no address to send it to', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({ email: '' }));
+
+        expect(sentMail).toHaveLength(1);
+        expect(sentMail.map((mail) => mail.to)).not.toContain('');
+    });
+
+    /* A blank Email row reads as a broken template, so it says what happened. */
+    it('says the email was not given rather than leaving the row blank', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        await POST(enquiry({ email: '' }));
+
+        expect(sentMail[0].html).toContain('Not given');
+        expect(sentMail[0].html).toContain('0412 345 678');
+    });
+
+    /* Optional does not mean unchecked: a typed address still has to be one. */
+    it('rejects an email that was given but is malformed', async () => {
+        verifyHuman.mockResolvedValue('verified');
+
+        const response = await POST(enquiry({ email: 'not-an-address' }));
+
+        expect(response.status).toBe(400);
+        expect((await response.json()).error).toMatch(/valid email/i);
     });
 
     /* Only a check that ran and failed marks the subject, so the prefix keeps

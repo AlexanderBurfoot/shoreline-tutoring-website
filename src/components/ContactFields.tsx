@@ -9,9 +9,13 @@ import { isPlausiblePhoneNumber } from '../lib/phoneNumber';
 export type PhoneAttention = 'none' | 'blurred' | 'submitted';
 
 const PHONE_NOTE_ID = 'phone-note';
-const PHONE_NOTE = "That number doesn't look quite right. Check it, or leave it blank and we'll email you.";
+const PHONE_NOTE = "That number doesn't look quite right. Mind checking it?";
 
-/** True for a number worth querying. A blank field is fine: the phone is optional. */
+/**
+ * True for a number worth querying. A blank field is left alone here: the field
+ * is required, so the browser already refuses to send without it, and colouring
+ * an untouched empty box red as the form opens is not the way to say so.
+ */
 export const phoneLooksWrong = (phone: string) => phone.trim() !== '' && !isPlausiblePhoneNumber(phone);
 
 /** Marks a field the enquiry can be sent without. */
@@ -34,9 +38,7 @@ const PhoneField = ({ phone, attention, onChange, onBlur, inputRef }: PhoneField
 
     return (
         <div className="cta__input-group">
-            <label htmlFor="phone" className="cta__label-text">
-                Phone Number <OptionalTag />
-            </label>
+            <label htmlFor="phone" className="cta__label-text">Phone Number</label>
             <input
                 type="tel"
                 id="phone"
@@ -46,6 +48,7 @@ const PhoneField = ({ phone, attention, onChange, onBlur, inputRef }: PhoneField
                 value={phone}
                 onChange={onChange}
                 onBlur={onBlur}
+                required
                 aria-invalid={isFirm}
                 aria-describedby={showNote ? PHONE_NOTE_ID : undefined}
             />
@@ -81,8 +84,11 @@ const ContactFields = ({ values, onChange, phoneAttention, onPhoneBlur, phoneInp
             />
         </div>
         <div className="cta__input-group cta__input-group--full">
-            <label htmlFor="email" className="cta__label-text">Email Address</label>
-            <input type="email" id="email" className="cta__input" placeholder="john@example.com" value={values.email} onChange={onChange} required />
+            <label htmlFor="email" className="cta__label-text">
+                Email Address <OptionalTag />
+            </label>
+            {/* Optional, but still type="email" so a typed address is checked. */}
+            <input type="email" id="email" className="cta__input" placeholder="john@example.com" value={values.email} onChange={onChange} />
         </div>
     </>
 );
