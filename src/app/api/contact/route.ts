@@ -260,7 +260,9 @@ export async function POST(request: Request) {
         }
 
         if (!name || !name.trim()) return NextResponse.json({ error: 'Name is required.' }, { status: 400 });
-        if (!email || !email.trim()) return NextResponse.json({ error: 'Email is required.' }, { status: 400 });
+        if (!phone || !String(phone).trim()) {
+            return NextResponse.json({ error: 'Phone number is required.' }, { status: 400 });
+        }
 
         // Written before delivery so a record exists even if everything after
         // this point fails. A store outage must never block a real enquiry, so
@@ -270,8 +272,15 @@ export async function POST(request: Request) {
             console.error('[ENQUIRY_PERSIST_FAILED] Store configured but write failed.');
         }
 
+        /* The email is optional now that the phone is the required contact
+           point, so it is only checked when one was actually typed. Everything
+           downstream that writes to this address, the Reply-To and the parent
+           confirmation, tests this same value rather than assuming one exists. */
+        const enquirerEmail = typeof email === 'string' ? email.trim() : '';
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 });
+        if (enquirerEmail && !emailRegex.test(enquirerEmail)) {
+            return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 });
+        }
 
         const subjectsList = Array.isArray(subjects) && subjects.length > 0 ? subjects.join(', ') : '';
         const learningFormat = typeof format === 'string' ? format.trim() : '';
@@ -282,7 +291,7 @@ export async function POST(request: Request) {
         const enquiryDetail = [courseChoice, dayChoice].filter(Boolean).join(', ') || subjectsList;
         const subjectLine = `New ${enquiryLabel} Enquiry: ${name}${enquiryDetail ? ` (${enquiryDetail})` : ''}`;
 
-        const htmlBody = ownerEnquiryEmailHtml({ receipt, enquiryLabel, name, email, phone, learningFormat, courseChoice, dayChoice, subjectsList, message });
+        const htmlBody = ownerEnquiryEmailHtml({ receipt, enquiryLabel, name, email: enquirerEmail, phone, learningFormat, courseChoice, dayChoice, subjectsList, message });
 
         /* A failed check never turns an enquiry away, since a blocked script or
            a slow connection must not cost a real lead. It is delivered marked as
@@ -306,7 +315,12 @@ export async function POST(request: Request) {
                     content: htmlBody,
                 },
                 toRecipients: [{ emailAddress: { address: process.env.EMAIL_TO || 'contact@shorelinetutoring.com.au' } }],
-                replyTo: [{ emailAddress: { address: email } }],
+                /* Reply reaches the parent when they left an address. With no
+                   address there is nothing to point at, and naming any other
+                   mailbox here would send a reply meant for them somewhere they
+                   will never see, so the header is left off and the reply falls
+                   back to our own mailbox. Their phone number leads the email. */
+                ...(enquirerEmail ? { replyTo: [{ emailAddress: { address: enquirerEmail } }] } : {}),
             },
             saveToSentItems: true,
         };
@@ -362,10 +376,10 @@ export async function POST(request: Request) {
            stranger. Until the key is set that means no parent receives one, so
            the reason is logged rather than passing silently. */
         const replyBudget = Math.min(AUTO_REPLY_TIMEOUT_MS, deadline - Date.now());
-        if (replyBudget > 0 && token && humanCheck === 'verified') {
+        if (replyBudget > 0 && token && humanCheck === 'verified' && enquirerEmail) {
             const confirmed = await sendParentConfirmation(
                 token,
-                { receipt, name, email, learningFormat, subjectsList, courseChoice, dayChoice },
+                { receipt, name, email: enquirerEmail, learningFormat, subjectsList, courseChoice, dayChoice },
                 replyBudget,
             );
             if (!confirmed) {
@@ -374,6 +388,15 @@ export async function POST(request: Request) {
                     + 'the enquirer was not.',
                 );
             }
+        } else if (replyBudget > 0 && token && !enquirerEmail) {
+            /* Not a fault: the email is optional, so plenty of enquiries will
+               have nowhere to send a confirmation. Logged at a different level
+               from the check failure so a quiet mailbox is not mistaken for a
+               misconfigured key. */
+            console.info(
+                `[ENQUIRY_CONFIRMATION_NOT_APPLICABLE] ${receipt.reference}: no email address was given, so there `
+                + 'was no confirmation to send. The enquiry itself was delivered and carries a phone number.',
+            );
         } else if (replyBudget > 0 && token) {
             console.warn(
                 `[ENQUIRY_CONFIRMATION_SKIPPED] ${receipt.reference}: human check was '${humanCheck}', so no `

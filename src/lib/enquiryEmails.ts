@@ -66,15 +66,21 @@ export function ownerEnquiryEmailHtml({ receipt, enquiryLabel, name, email, phon
                         <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; width: 140px;">Name</td>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;">${escapeHtml(name)}</td>
                     </tr>
-                    <tr>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Email</td>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;"><a href="mailto:${escapeHtml(email)}" style="color: #EAC54D; text-decoration: none;">${escapeHtml(email)}</a></td>
-                    </tr>
+                    <!-- Phone leads, because it is the one contact point every
+                         enquiry carries. The email is optional, so when it is
+                         missing the row says so rather than sitting blank and
+                         reading as a rendering fault. -->
                     ${phone ? `
                     <tr>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Phone</td>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;"><a href="tel:${escapeHtml(phone)}" style="color: #EAC54D; text-decoration: none;">${escapeHtml(phone)}</a></td>
                     </tr>` : ''}
+                    <tr>
+                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Email</td>
+                        <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a2332; font-size: 15px;">${email
+                            ? `<a href="mailto:${escapeHtml(email)}" style="color: #EAC54D; text-decoration: none;">${escapeHtml(email)}</a>`
+                            : '<span style="color: #9ca3af;">Not given &middot; reply by phone</span>'}</td>
+                    </tr>
                     ${emailDetailRow('Format', learningFormat)}
                     ${emailDetailRow('Course', courseChoice)}
                     ${emailDetailRow('Day', dayChoice)}
