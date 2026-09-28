@@ -181,6 +181,41 @@
         column-gap: var(--space-6);
     }
 
+    .footer__logo {
+        min-height: 44px;
+    }
+
+    /*
+     * A single line of small text is a 17px target with a 12px gap either side,
+     * so nineteen footer links sat at a 29px pitch. Each link now fills a 44px
+     * row and the gap between them goes, which turns the dead space between
+     * targets into part of the target rather than adding it all on top.
+     */
+    .footer__list,
+    .footer__contact-list {
+        row-gap: 0;
+    }
+
+    .footer__list a,
+    .footer__contact-list a,
+    .footer__legal-link {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+    }
+
+    /* The phone number and the email address sit alone in their row, so their
+       icon centres against the taller target rather than floating above it.
+       The address is the odd one out: its icon stays level with the label
+       printed above the link. */
+    .footer__contact-list li:has(> a) {
+        align-items: center;
+    }
+
+    .footer__contact-list li:has(> a) .footer__icon {
+        margin-top: 0;
+    }
+
     .footer__bottom {
         flex-direction: column;
         align-items: flex-start;

@@ -130,10 +130,14 @@ html.announcement-dismissed {
 }
 
 /* On narrow screens the bar wraps to two rows. The dismissed rule above still
-   wins, since html.class outranks :root. */
+   wins, since html.class outranks :root.
+
+   Sized to the two rows plus the gold rule, and no more: on a 390x844 phone the
+   bar and the header together were taking a fifth of the screen before a word
+   of the page showed. */
 @media (max-width: 768px) {
   :root {
-    --announcement-height: 104px;
+    --announcement-height: 88px;
   }
 }
 
@@ -274,7 +278,9 @@ ol {
   background-size: 100% 3px;
   background-position: 0 100%;
   background-repeat: no-repeat;
-  padding-bottom: 0.1em;
+  /* Enough to clear the descenders. At 0.1em the rule ran through the tail of
+     the "y" in "Saturday", which is most of what made it look blunt. */
+  padding-bottom: 0.26em;
 }
 
 .text-center {
@@ -368,7 +374,19 @@ button:hover .icon-arrow {
      sections at 9.46:1 but only 1.58:1 on cream, so on light backgrounds both
      the text and the border go navy. */
   --btn-outline-color: var(--color-navy);
-  --accent-underline: linear-gradient(var(--color-gold-primary), var(--color-gold-primary));
+  /* Tapered rather than a flat bar: a rule that stops dead in two square
+     corners reads as blunt beside the Garamond headings, where every stroke
+     thins out at its ends. The end stops are the gold at zero alpha rather than
+     `transparent`, which some engines interpolate through transparent black and
+     leave a grey cast at the fade. */
+  --accent-underline: linear-gradient(
+    90deg,
+    rgba(234, 197, 77, 0) 0%,
+    var(--color-gold-primary) 14%,
+    var(--color-gold-dark) 50%,
+    var(--color-gold-primary) 86%,
+    rgba(234, 197, 77, 0) 100%
+  );
   --label-color: var(--color-navy);
 }
 

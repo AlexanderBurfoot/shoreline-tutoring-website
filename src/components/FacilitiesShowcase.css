@@ -95,6 +95,17 @@
     white-space: nowrap;
 }
 
+/* The toggle and the maps link are the only two controls in this section, and
+   both were sized by their text alone: 36px and 23px tall. */
+@media (pointer: coarse), (max-width: 768px) {
+    .facilities__map-toggle,
+    .facilities__address-cta {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+}
+
 .facilities__address-cta:hover {
     color: var(--color-navy);
 }

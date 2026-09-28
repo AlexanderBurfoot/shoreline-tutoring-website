@@ -174,6 +174,15 @@
     background: rgba(255, 255, 255, 0.12);
 }
 
+/* The circle behind the cross only appears on hover, so widening the target to
+   44px costs nothing visually on the phones this is aimed at. */
+@media (pointer: coarse), (max-width: 768px) {
+    .announcement__close {
+        width: 44px;
+        height: 44px;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .announcement::before,
     .announcement__pulse::after {
@@ -207,7 +216,9 @@
    button. The close control stays pinned to the right edge. */
 @media (max-width: 768px) {
     .announcement {
-        padding: 0 var(--space-12) 0 var(--space-3);
+        /* The close control is a 44px target set 8px in, so the text has to
+           stop clear of 52px or it runs underneath it. */
+        padding: 0 var(--space-14) 0 var(--space-3);
     }
 
     .announcement__link {
@@ -234,10 +245,49 @@
     }
 }
 
-/* Very narrow: the day phrase goes last, so the offer and button still fit on
-   the second row. */
-@media (max-width: 400px) {
+/*
+ * The day phrase is the first thing to go, because the pill, the phrase and the
+ * button need about 480px between them and anything less splits them over two
+ * rows. This used to cut off at 400px, which covered a 390px phone but not a
+ * 414 or 430 one, so the larger phones were the ones showing a four-row bar
+ * clipped through the middle of the button.
+ */
+@media (max-width: 520px) {
     .announcement__countdown {
+        display: none;
+    }
+}
+
+/*
+ * Very narrow, meaning a 360px phone: the offer pill and the button are pared
+ * back until they still share the second row.
+ */
+@media (max-width: 400px) {
+    .announcement {
+        /* Tight to the close control rather than clear of it, since every pixel
+           here is one the second row needs. */
+        padding: 0 52px 0 var(--space-2);
+    }
+
+    .announcement__link {
+        gap: var(--space-2);
+    }
+
+    .announcement__offer,
+    .announcement__cta {
+        padding-left: var(--space-2);
+        padding-right: var(--space-2);
+    }
+}
+
+/*
+ * Smallest phones still in use, around 320px: even pared back, the pill and the
+ * button cannot share a row. The pill goes rather than the button, since the
+ * headline beside it already says the first lesson is a free trial, and a bar
+ * that advertises an offer with no way to take it up is the wrong half to keep.
+ */
+@media (max-width: 340px) {
+    .announcement__offer {
         display: none;
     }
 }

@@ -154,6 +154,18 @@
     text-underline-offset: 3px;
 }
 
+/* A single line of small text is a 17px target, so on touch screens the box
+   grows around the label rather than the label growing with it. */
+@media (pointer: coarse), (max-width: 768px) {
+    .student-testimonial-card__more {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        /* The taller box already leaves a gap above the label, so the margin goes. */
+        margin-top: 0;
+    }
+}
+
 /* ===== Carousel Controls ===== */
 .student-testimonials__controls {
     display: flex;
@@ -190,25 +202,51 @@
     transform: scale(1.2);
 }
 
-/* Pause/Play button */
-.student-testimonials__pause-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid rgba(234, 197, 77, 0.4);
-    background: rgba(234, 197, 77, 0.1);
-    color: var(--color-gold-primary);
-    cursor: pointer;
-    padding: 0;
-    transition: all 0.3s ease;
-}
+/*
+ * Touch screens and narrow windows: at 10px these dots were the smallest
+ * targets on the site, and the prev/next arrows are hidden below 768px, so they
+ * are the only way to pick a story without swiping.
+ *
+ * Each dot keeps its 10px look but sits inside a 44px square. The visual circle
+ * moves to ::before, since growing the button itself would turn the active dot
+ * into a large gold disc, and the row's gap drops to zero so the targets sit
+ * side by side without overlapping. Three dots come to 132px, well inside a
+ * 390px screen.
+ */
+@media (pointer: coarse), (max-width: 768px) {
+    .student-testimonials__dots {
+        gap: 0;
+    }
 
-.student-testimonials__pause-btn:hover {
-    background: rgba(234, 197, 77, 0.15);
-    border-color: var(--color-gold-primary);
+    .student-testimonials__dot {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .student-testimonials__dot::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 2px solid rgba(234, 197, 77, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .student-testimonials__dot--active {
+        background: transparent;
+        transform: none;
+    }
+
+    .student-testimonials__dot--active::before {
+        background: var(--color-gold-primary);
+        border-color: var(--color-gold-primary);
+        transform: scale(1.2);
+    }
 }
 
 /* Progress bar */

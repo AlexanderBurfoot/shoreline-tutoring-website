@@ -228,6 +228,17 @@
     margin-right: 4px;
 }
 
+/* The chips are how a parent tells us what they need, and at 13px with 6px of
+   padding each one was a 31px target with fourteen of them stacked close
+   together, which is where a mis-tap costs the most. */
+@media (pointer: coarse), (max-width: 768px) {
+    .cta__subject-chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+}
+
 .cta__textarea {
     resize: vertical;
     min-height: 100px;
@@ -269,6 +280,14 @@
 
 .cta__option:hover {
     color: var(--color-gold-primary);
+}
+
+/* A phone number and an email address, the two things a parent taps when they
+   would rather not fill in a form. */
+@media (pointer: coarse), (max-width: 768px) {
+    .cta__option {
+        min-height: 44px;
+    }
 }
 
 .cta__option-icon {

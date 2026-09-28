@@ -32,11 +32,13 @@ export const ArrowIcon = ({ size }: { size: number }) => (
     </svg>
 );
 
-const HeadingText = ({ lead, accent, trail }: Heading) => (
+const HeadingText = ({ lead, accent, accentOnOwnLine, trail }: Heading) => (
     <>
         {lead}
-        {/* The space sits outside the span so the underline covers only the words. */}
-        {accent && <>{' '}<span className="gold-text">{accent}</span></>}
+        {/* The separator sits outside the span so the underline covers only the
+            words, and a real break rather than a block span keeps that underline
+            the width of the text instead of the width of the heading. */}
+        {accent && <>{accentOnOwnLine ? <br /> : ' '}<span className="gold-text">{accent}</span></>}
         {trail && ` ${trail}`}
     </>
 );

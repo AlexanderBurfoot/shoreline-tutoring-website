@@ -51,6 +51,14 @@ export interface Heading {
     lead: string;
     accent?: string;
     trail?: string;
+    /**
+     * Starts the accent on a line of its own, for a heading that is two
+     * statements rather than one sentence. "Year 12 Small-Group Classes" and
+     * "Free trial Saturday 3 October" are separate claims and read better
+     * apart; "Every Session, Built Around One Student" is a single clause and
+     * would be cut in half by the same break.
+     */
+    accentOnOwnLine?: boolean;
 }
 
 export interface SectionHeader {
@@ -379,6 +387,7 @@ export const groupClassesPage: FormatPageContent = {
         title: {
             lead: 'Year 12 Small-Group Classes',
             accent: `Free trial ${FIRST_LESSON_DATE_LONG}`,
+            accentOnOwnLine: true,
         },
         subtitle: (
             <>

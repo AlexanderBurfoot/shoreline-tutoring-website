@@ -478,19 +478,64 @@
     }
 }
 
-@media (max-width: 560px) {
+/*
+ * Phones: the dialog was 793px of an 844px screen, so it read as a takeover of
+ * the page rather than an offer on top of it, and the first thing it asks for,
+ * the choice of day, sat below the fold inside its own scroll.
+ *
+ * Nothing is dropped. The brand half is set in the space it needs rather than
+ * the space it had: smaller logo and headline, tighter padding, and a countdown
+ * sized like a row of figures instead of four cards. That is enough to bring
+ * the first choice into view on opening.
+ */
+@media (max-width: 768px) {
+    .promo-popup {
+        max-height: 88vh;
+    }
+
+    .promo-panel {
+        padding: var(--space-5);
+    }
+
+    .promo-panel--brand {
+        padding-top: var(--space-6);
+    }
+
     .promo-popup__logo {
-        height: 52px;
+        height: 40px;
+        margin-bottom: var(--space-3);
+    }
+
+    .promo-popup__title {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--space-3);
+    }
+
+    .promo-popup__percent {
+        font-size: 48px;
+    }
+
+    .promo-popup__off {
+        font-size: var(--text-xl);
+    }
+
+    .promo-popup__countdown-label {
+        margin-bottom: var(--space-2);
     }
 
     .promo-popup__unit {
-        min-width: 0;
-        flex: 1;
-        padding: var(--space-2) var(--space-1);
+        padding: var(--space-1) var(--space-1);
     }
 
     .promo-popup__unit-value {
-        font-size: var(--text-2xl);
+        font-size: var(--text-lg);
+    }
+}
+
+@media (max-width: 560px) {
+    .promo-popup__unit {
+        min-width: 0;
+        flex: 1;
     }
 
     .promo-popup__days {
