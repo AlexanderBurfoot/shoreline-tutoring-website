@@ -15,6 +15,7 @@ import {
     ONE_ON_ONE_FORMAT,
     ONE_ON_ONE_PATH,
     ONLINE_FIRST_CLASS,
+    ONLINE_FIRST_PAID_LESSON,
     FOUNDING_HOURLY_RATE,
     FOUNDING_OFFER_LINE,
     FOUNDING_PLACES_PER_CLASS,
@@ -370,8 +371,17 @@ export const oneOnOnePage: FormatPageContent = {
  */
 export const groupHeroFacts = (courseId?: Course['id']): FormatFact[] => [
     { label: 'Each week', value: `One ${LESSON_TEACHING_HOURS}-hour lesson · ${LESSON_BREAK_MINUTES}-minute break` },
-    { label: 'In person · St Leonards', value: `From ${IN_PERSON_FIRST_CLASS}, ${SESSION_START_TIMES}` },
-    { label: 'Online · live from home', value: `From ${ONLINE_FIRST_CLASS}, ${SESSION_START_TIMES}` },
+    /* "From 3 October" reads as the course starting that day. It does not: the
+       3rd is the free trial and the paid term begins the week after, so both
+       dates are named rather than leaving the reader to infer the second. */
+    {
+        label: 'In person · St Leonards',
+        value: `Free trial ${IN_PERSON_FIRST_CLASS}, then weekly from ${FIRST_PAID_LESSON_DATE_LONG} · ${SESSION_START_TIMES}`,
+    },
+    {
+        label: 'Online · live from home',
+        value: `Free trial ${ONLINE_FIRST_CLASS}, then weekly from ${ONLINE_FIRST_PAID_LESSON} · ${SESSION_START_TIMES}`,
+    },
     {
         label: 'Price',
         value: (courseId ? hasFoundingPlaces(courseId) : anyFoundingPlaces())
@@ -440,7 +450,7 @@ export const groupClassesPage: FormatPageContent = {
                 description:
                     `Each session is ${LESSON_TEACHING_HOURS} hours of teaching with a ${LESSON_BREAK_MINUTES}-minute break, in our quiet, distraction-free rooms at ${VENUE_ADDRESS}, working through problems on the board with written work marked on the spot.`,
                 points: [
-                    `First session ${IN_PERSON_FIRST_CLASS}`,
+                    `Free trial ${IN_PERSON_FIRST_CLASS}, then weekly from ${FIRST_PAID_LESSON_DATE_LONG}`,
                     ...SESSION_SLOTS.map((slot) => `${slot.name} ${slot.time}`),
                     'Quiet teaching rooms, minutes from St Leonards train station and Crows Nest metro station',
                 ],
@@ -451,7 +461,7 @@ export const groupClassesPage: FormatPageContent = {
                 description:
                     `The same ${LESSON_TEACHING_HOURS}-hour sessions as a live video class with a shared whiteboard, not a recording. Students ask questions out loud and work through the same material as the Saturday group.`,
                 points: [
-                    `First session ${ONLINE_FIRST_CLASS}`,
+                    `Free trial ${ONLINE_FIRST_CLASS}, then weekly from ${ONLINE_FIRST_PAID_LESSON}`,
                     ...SESSION_SLOTS.map((slot) => `${slot.name} ${slot.time}`),
                     'Live and interactive, never pre-recorded',
                 ],
@@ -613,7 +623,7 @@ export const groupClassesPage: FormatPageContent = {
         ],
     },
     finalCta: {
-        title: `Classes run weekly from ${FIRST_LESSON_DATE_LONG}`,
+        title: `Free trial ${FIRST_LESSON_DATE_LONG}, classes weekly from ${FIRST_PAID_LESSON_DATE_LONG}`,
         text: (
             <>
                 Tell us which course you are sitting and whether Saturdays or Sundays suit, and we
