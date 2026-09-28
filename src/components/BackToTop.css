@@ -42,12 +42,13 @@
 }
 
 /* Position adjustment on mobile */
+/* Hidden on phones. The right edge already carries the chat launcher and the
+   bottom carries the enquiry bar, so a third floating control left the corner
+   crowded and pushed the launcher over the card text behind it. Scrolling up is
+   cheap on a touch screen; on desktop, where the pointer has further to travel,
+   the button stays. */
 @media (max-width: 768px) {
     .back-to-top {
-        bottom: 172px;
-        /* Centred above the 72px chat launcher, which sits 20px from the edge. */
-        right: 35px;
-        width: 42px;
-        height: 42px;
+        display: none;
     }
 }
