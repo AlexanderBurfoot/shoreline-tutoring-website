@@ -91,6 +91,22 @@
     margin-bottom: var(--space-5);
 }
 
+/*
+ * Phones: the 2.25rem floor put this title over three lines, and because the
+ * gold phrase ran on from the black one the break landed mid-thought, on
+ * "Classes Free trial". At 1.875rem each half fits a line of its own, which is
+ * both shorter and easier to read.
+ */
+@media (max-width: 768px) {
+    .format-hero__title {
+        font-size: 1.875rem;
+    }
+
+    .format-hero__title .gold-text {
+        display: block;
+    }
+}
+
 .format-hero__subtitle {
     font-size: var(--text-lg);
     color: var(--color-navy-light);
