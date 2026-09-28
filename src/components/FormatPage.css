@@ -291,10 +291,59 @@
 /* ===== FAQs ===== */
 .format-faqs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--space-6);
     max-width: 960px;
     margin: 0 auto;
+}
+
+/*
+ * Two columns of equal-height tiles.
+ *
+ * A grid row stretches its tiles to the tallest one, so with answers of very
+ * different lengths each row took its own height and the short tile in each
+ * pair was left with a band of cream below the text: 109px in the worst case.
+ * grid-auto-rows: 1fr takes that further and makes every row the height of the
+ * tallest tile in the section, which turns a ragged stack into a block of equal
+ * rectangles. The empty space is still there, but it is regular, and regular
+ * space reads as layout rather than as a mistake.
+ *
+ * The column count is set explicitly instead of by auto-fit, so it can never
+ * disagree with the rules below about how many tiles are in a row.
+ */
+@media (min-width: 768px) {
+    .format-faqs {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+    }
+
+    /* An odd number of questions leaves the last tile alone in its row with a
+       gap beside it. It takes the full width instead. The grid items are the
+       ScrollReveal wrappers, not the tiles, so the span has to go on those. */
+    .format-faqs > .scroll-reveal:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        /* Across the full width its answer needs far fewer lines, so it is let
+           out of the equal-height rule. Stretching it would trade the gap
+           beside it for the same gap inside it. */
+        align-self: start;
+    }
+}
+
+/*
+ * The tile fills its cell rather than stopping at its text.
+ *
+ * Each tile sits inside a ScrollReveal wrapper, and it was the wrapper that the
+ * grid stretched to the row height. The cream tile inside kept the height of
+ * its own content, so a short answer left up to 82px of the white page showing
+ * through below it, inside a cell that looked like it should be filled. That is
+ * the gap, and it is there at any row height, so it needs fixing whether or not
+ * the rows are equalised above.
+ */
+.format-faqs > .scroll-reveal {
+    display: flex;
+}
+
+.format-faq {
+    flex: 1;
 }
 
 .format-faq {
