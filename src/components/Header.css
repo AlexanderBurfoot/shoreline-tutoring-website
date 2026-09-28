@@ -60,6 +60,14 @@
     transition: transform var(--transition-base);
 }
 
+/* The wordmark is the way back to the home page, and its box was only as tall
+   as the text: 36px. */
+@media (pointer: coarse), (max-width: 768px) {
+    .header__logo {
+        min-height: 44px;
+    }
+}
+
 /* Scaled rather than resized, so each breakpoint's logo size shrinks in
    proportion without restating every size. */
 .header--scrolled .header__logo {
@@ -320,8 +328,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     gap: 6px;
     cursor: pointer;
     z-index: 1001;

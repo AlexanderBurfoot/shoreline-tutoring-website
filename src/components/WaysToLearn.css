@@ -156,6 +156,14 @@
     transition: gap 0.3s ease;
 }
 
+/* One line of text, so a 26px target. The link already sits at the foot of the
+   card with room below it. */
+@media (pointer: coarse), (max-width: 768px) {
+    .ways__card-link {
+        min-height: 44px;
+    }
+}
+
 .ways__card-link:hover {
     gap: var(--space-3);
 }
