@@ -3,6 +3,11 @@
 The source is the mark we already use everywhere. It is only cropped to its own
 ink and placed on navy: no rescaling of one axis, no redrawing, so the artwork
 is pixel-for-pixel the logo the site already uses.
+
+The gold does not shift on navy. Every fully opaque pixel of the mark is
+identical over navy and over white, and only the antialiased outline differs,
+which is about 0.8% of the artwork and is meant to blend into whatever sits
+behind it.
 """
 from PIL import Image
 
@@ -10,7 +15,10 @@ SOURCE = 'public/Shoreline-Logo.png'
 OUT = 'public/Shoreline-Logo-Google.png'
 CANVAS = 1024
 NAVY = (26, 35, 50)          # --color-navy, #1A2332
-MARK_WIDTH_RATIO = 0.86      # leaves an even margin on the long axis
+
+# Google renders this at roughly 32-48px, where a generous margin costs more
+# legibility than it buys safety, so the mark is set wide in the square.
+MARK_WIDTH_RATIO = 0.95
 
 art = Image.open(SOURCE).convert('RGBA')
 print(f'source            {art.size[0]}x{art.size[1]}')
