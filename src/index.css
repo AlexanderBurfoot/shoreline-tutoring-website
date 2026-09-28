@@ -130,10 +130,14 @@ html.announcement-dismissed {
 }
 
 /* On narrow screens the bar wraps to two rows. The dismissed rule above still
-   wins, since html.class outranks :root. */
+   wins, since html.class outranks :root.
+
+   Sized to the two rows plus the gold rule, and no more: on a 390x844 phone the
+   bar and the header together were taking a fifth of the screen before a word
+   of the page showed. */
 @media (max-width: 768px) {
   :root {
-    --announcement-height: 104px;
+    --announcement-height: 88px;
   }
 }
 
