@@ -12,13 +12,27 @@ const HEADLINE_MAX_LENGTH = 110;
 
 const absolute = (path: string) => (path.startsWith('http') ? path : `${SITE_URL}${path}`);
 
+/**
+ * The square logo Google shows beside the site, and its pixel size so the
+ * proportions are declared rather than guessed at.
+ *
+ * This is deliberately not /Shoreline-Logo.png, the mark used on the site
+ * itself. That file is 1966x1289, and Google fits the organisation logo into a
+ * square slot, so it arrived squashed horizontally. It is also transparent, and
+ * the colour stored underneath the transparency is a dark green, so flattening
+ * the alpha turned the surround black. The file here is the same artwork at its
+ * own proportions on an opaque navy square, which both problems disappear into.
+ */
+const LOGO_PATH = '/Shoreline-Logo-Google.png';
+const LOGO_SIZE = 1024;
+
 /** The business itself, for search results and map listings. */
 export const ORGANIZATION_SCHEMA = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     name: 'Shoreline Tutoring',
     url: SITE_URL,
-    logo: `${SITE_URL}/Shoreline-Logo.png`,
+    logo: `${SITE_URL}${LOGO_PATH}`,
     email: CONTACT_EMAIL,
     telephone: CONTACT_PHONE_E164,
     address: VENUE_POSTAL_ADDRESS,
@@ -29,7 +43,12 @@ const PUBLISHER = {
     '@type': 'Organization',
     name: ORGANIZATION_SCHEMA.name,
     url: SITE_URL,
-    logo: { '@type': 'ImageObject', url: ORGANIZATION_SCHEMA.logo },
+    logo: {
+        '@type': 'ImageObject',
+        url: ORGANIZATION_SCHEMA.logo,
+        width: LOGO_SIZE,
+        height: LOGO_SIZE,
+    },
 };
 
 /**
