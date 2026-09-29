@@ -17,7 +17,12 @@
        of them and is one rule instead of a list of routes. */
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(234, 197, 77, 0.2);
+    /* A visible gold rule, not the old hairline at 20% opacity, which over a
+       white bar computed to roughly #FBF6E3 and disappeared against the cream
+       sections below. Two pixels: enough to give the bar a definite bottom
+       edge, and deliberately lighter than the announcement bar's 7px rule above
+       it, so the two read as a heading and a subheading rather than competing. */
+    border-bottom: 2px solid var(--color-gold-primary);
 }
 
 .header--scrolled {
@@ -148,7 +153,7 @@
 .header--menu-open {
     background: var(--color-white) !important;
     backdrop-filter: none;
-    border-bottom: 1px solid rgba(234, 197, 77, 0.2);
+    border-bottom: 2px solid var(--color-gold-primary);
 }
 
 .header--menu-open .header__logo-text {
