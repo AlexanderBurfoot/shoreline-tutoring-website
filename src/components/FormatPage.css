@@ -5,11 +5,7 @@
 /* The hero matches the pricing page's dark treatment so the two read as a set. */
 .format-hero {
     position: relative;
-    background: linear-gradient(135deg,
-            var(--color-white) 0%,
-            var(--color-cream) 40%,
-            var(--color-gold-light) 70%,
-            rgba(234, 197, 77, 0.25) 100%);
+    background: linear-gradient(135deg, #0a1628 0%, var(--color-navy) 40%, #1a2744 70%, #253552 100%);
     padding: calc(var(--header-height) + var(--space-16)) 0 var(--space-16);
     text-align: center;
     overflow: hidden;
@@ -19,8 +15,8 @@
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(circle at 20% 80%, rgba(234, 197, 77, 0.22) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(234, 197, 77, 0.16) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(234, 197, 77, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(234, 197, 77, 0.1) 0%, transparent 50%);
 }
 
 .format-hero__content {
@@ -28,8 +24,8 @@
     z-index: 1;
 }
 
-/* Logo centrepiece behind the hero content. Kept faint so the navy text on top
-   stays fully readable; the hero's overflow: hidden clips
+/* Logo centrepiece behind the hero content. Kept faint so the white text and
+   gold accents on top stay fully readable; the hero's overflow: hidden clips
    whatever extends past its edges. */
 .format-hero__logo {
     position: absolute;
@@ -40,10 +36,10 @@
        masked span the ratio has to be stated so the box has a height. */
     aspect-ratio: 1966 / 1289;
     transform: translate(-50%, -46%);
-    /* The logo file is gold, which all but vanishes on this hero's cream. A
-       navy block with the logo masked out of it recolours the mark exactly,
-       where a filter chain would only approximate it. */
-    background-color: var(--color-navy);
+    /* The mask stays even though the logo file is already gold: painting the
+       colour here keeps the mark on one token, so the hero follows a change to
+       the brand gold instead of whatever colour is baked into the PNG. */
+    background-color: var(--color-gold-primary);
     -webkit-mask-image: url('/Shoreline-Logo.png');
     mask-image: url('/Shoreline-Logo.png');
     -webkit-mask-size: contain;
@@ -87,7 +83,7 @@
     font-size: clamp(2.25rem, 5vw, 3.75rem);
     font-weight: 600;
     line-height: 1.12;
-    color: var(--color-navy);
+    color: var(--color-white);
     margin-bottom: var(--space-5);
 }
 
@@ -106,7 +102,7 @@
 
 .format-hero__subtitle {
     font-size: var(--text-lg);
-    color: var(--color-navy-light);
+    color: rgba(255, 255, 255, 0.75);
     max-width: 620px;
     margin: 0 auto var(--space-10);
     line-height: 1.7;
@@ -124,9 +120,9 @@
 
 .format-hero__fact {
     padding: var(--space-4) var(--space-5);
-    border: 1px solid rgba(26, 35, 50, 0.14);
+    border: 1px solid rgba(234, 197, 77, 0.25);
     border-radius: var(--border-radius-lg);
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .format-hero__fact dt {
@@ -134,14 +130,14 @@
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-navy-light);
+    color: var(--color-gold-primary);
     margin-bottom: var(--space-1);
 }
 
 .format-hero__fact dd {
     font-size: var(--text-base);
     font-weight: 600;
-    color: var(--color-navy);
+    color: var(--color-white);
     line-height: 1.45;
 }
 
@@ -155,7 +151,7 @@
 
 .format-hero__reassurance {
     font-size: var(--text-sm);
-    color: var(--color-navy-light);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 /* ===== Shared section shell ===== */
