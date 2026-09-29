@@ -23,6 +23,7 @@ import {
     VENUE_SUBURB,
     firstLessonCountdown,
     type GroupClassDay,
+    FREE_TRIAL_LESSONS,
 } from '../data/groupClassLaunch';
 
 import { trackEvent } from '../lib/analytics';
@@ -54,6 +55,7 @@ const SELLING_POINTS = [
     'Works through the Year 12 course alongside school',
     'Every course runs as its own class',
     `In person at ${VENUE_SUBURB} or live online`,
+    'Two free lessons before you decide anything',
     'No payment up front, no obligation to continue',
 ];
 
@@ -276,7 +278,7 @@ const PromoPopup = () => {
 
                         <div className="promo-popup__discount">
                             <span className="promo-popup__percent">FREE</span>
-                            <span className="promo-popup__off">first&nbsp;lesson</span>
+                            <span className="promo-popup__off">first&nbsp;2&nbsp;weeks</span>
                         </div>
 
                         {!countdown.hasStarted && (
@@ -360,8 +362,8 @@ const PromoPopup = () => {
                         <p className={`promo-popup__rate ${chosenCourse ? 'promo-popup__rate--shown' : ''}`} aria-live="polite">
                             {chosenCourse
                                 ? foundingPlacesOpen()
-                                    ? <>Year 12 {chosenCourse.name}: <strong>{FOUNDING_TERM_PRICE} instead of {TERM_PRICE}</strong> for {TERM_LABEL} ({FOUNDING_HOURLY_RATE} an hour) for the first {FOUNDING_PLACES} to sign up, first lesson free.</>
-                                    : <>Year 12 {chosenCourse.name}: <strong>{TERM_PRICE}</strong> for {TERM_LABEL} ({TERM_HOURLY_RATE} an hour), paid up front, first lesson free.</>
+                                    ? <>Year 12 {chosenCourse.name}: first {FREE_TRIAL_LESSONS} lessons free, then <strong>{FOUNDING_TERM_PRICE} instead of {TERM_PRICE}</strong> for the rest of {TERM_LABEL} ({FOUNDING_HOURLY_RATE} an hour) for the first {FOUNDING_PLACES} to sign up.</>
+                                    : <>Year 12 {chosenCourse.name}: first {FREE_TRIAL_LESSONS} lessons free, then <strong>{TERM_PRICE}</strong> for the rest of {TERM_LABEL} ({TERM_HOURLY_RATE} an hour), paid up front.</>
                                 : `One ${LESSON_TEACHING_HOURS}-hour lesson a week, working through the Year 12 course alongside school. ${TRIAL_OFFER}.`}
                         </p>
                     </div>

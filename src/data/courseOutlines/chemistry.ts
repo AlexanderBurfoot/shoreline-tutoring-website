@@ -116,17 +116,6 @@ export const chemistryOutline: CourseOutline = {
             keySkill: 'Multi-step Ksp calculations, including the dilution step students most often miss.',
         },
         {
-            topic: 'Module 5 review',
-            title: 'Equilibrium in review, and a first look at acids',
-            syllabusRefs: ['Module 5', 'Module 6 preview'],
-            points: [
-                'Designing and evaluating an equilibrium investigation for a depth study',
-                'Structuring extended responses that bring several ideas together',
-                'Arrhenius and Brønsted–Lowry definitions of acids and bases, ready for Term 1',
-            ],
-            keySkill: 'Judging the validity and reliability of an investigation.',
-        },
-        {
             topic: 'Term review',
             title: 'Consolidation and term test',
             syllabusRefs: ['Module 5'],

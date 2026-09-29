@@ -114,17 +114,6 @@ export const biologyOutline: CourseOutline = {
             keySkill: 'Evaluating the reliability and usefulness of secondary sources.',
         },
         {
-            topic: 'Module 5 review',
-            title: 'Heredity in review, and a first look at mutation',
-            syllabusRefs: ['Module 5', 'Module 6 preview'],
-            points: [
-                'Analysing secondary data for a Module 5 depth study',
-                'Mutagens, and point mutations compared with chromosomal mutations, ready for Term 1',
-                'Reading the genetic code table to work out how one base change alters a protein',
-            ],
-            keySkill: 'Identifying trends and limitations in a data set.',
-        },
-        {
             topic: 'Term review',
             title: 'Consolidation and term test',
             syllabusRefs: ['Module 5'],

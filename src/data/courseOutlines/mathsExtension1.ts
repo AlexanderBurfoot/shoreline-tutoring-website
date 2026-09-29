@@ -118,17 +118,6 @@ export const mathsExtension1Outline: CourseOutline = {
             keySkill: 'Splitting motion into horizontal and vertical components.',
         },
         {
-            topic: 'Inverse trigonometric functions',
-            title: 'Getting ahead: inverse trigonometric functions',
-            syllabusRefs: ['Inverse trigonometric functions', 'ME1-12-03'],
-            points: [
-                'Restricting the domain so a trigonometric function has an inverse',
-                'The graphs, domains and ranges of the inverse sine, cosine and tangent functions',
-                'Exact values and the key properties of each function',
-            ],
-            keySkill: 'Evaluating inverse trigonometric expressions exactly.',
-        },
-        {
             topic: 'Term review',
             title: 'Consolidation and term test',
             syllabusRefs: ['ME1-12-01 to ME1-12-03'],

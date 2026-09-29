@@ -121,18 +121,6 @@ export const mathsAdvancedOutline: CourseOutline = {
             keySkill: 'Simplifying with the log laws first, so the derivative is short.',
         },
         {
-            topic: 'Differential calculus',
-            title: 'Differentiating trigonometric functions',
-            syllabusRefs: ['Differential calculus', 'MAV-12-04'],
-            points: [
-                'The derivatives of sin x, cos x and tan x',
-                'The chain rule with trigonometric functions',
-                'Products and quotients that mix exponential, logarithmic and trigonometric functions',
-                'Equations of tangents and normals',
-            ],
-            keySkill: 'Deciding which of the product, quotient and chain rules a question needs.',
-        },
-        {
             topic: 'Term review',
             title: 'Consolidation and term test',
             syllabusRefs: ['MAV-12-01 to MAV-12-04'],

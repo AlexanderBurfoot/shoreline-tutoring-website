@@ -16,8 +16,8 @@ export interface FaqEntry {
 export const faqs: FaqEntry[] = [
     {
         id: 'free-trial',
-        question: 'How does the free trial lesson work?',
-        answer: 'Your first lesson is completely free with no obligation. We use it to understand your child\'s current level, identify specific areas for improvement, and show you exactly how our tutoring approach works. After the session, we\'ll provide honest feedback and a recommended learning plan.',
+        question: 'How does the free trial work?',
+        answer: 'For one-on-one tutoring, your first lesson is completely free with no obligation. For Year 12 small-group classes, the first two lessons are free: you sit two full classes and decide afterwards, paying for the rest of the term only if you want to continue. Either way we use the trial to understand your child\'s current level, identify specific areas for improvement, and show you how our approach works, then provide honest feedback and a recommended learning plan.',
     },
     {
         id: 'subjects-and-years',

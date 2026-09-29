@@ -116,18 +116,6 @@ export const mathsStandardOutline: CourseOutline = {
             keySkill: 'Finding the minimum cut in a network.',
         },
         {
-            topic: 'Investment',
-            title: 'Getting ahead: interest and investment',
-            syllabusRefs: ['Investment and loans', 'MST-12-S2-02'],
-            points: [
-                'Simple interest',
-                'Compound interest and the future value formula',
-                'Comparing simple and compound interest with a spreadsheet',
-                'Shares and dividends',
-            ],
-            keySkill: 'Matching the interest rate and number of periods to how often interest is paid.',
-        },
-        {
             topic: 'Term review',
             title: 'Consolidation and term test',
             syllabusRefs: ['MST-12-S2-02', 'MST-12-S2-04', 'MST-12-S2-06', 'MST-12-S2-09'],
