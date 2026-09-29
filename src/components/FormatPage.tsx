@@ -83,13 +83,14 @@ export const FormatHero = ({ hero }: { hero: FormatPageContent['hero'] }) => {
 
     return (
         <ParallaxScene as="section" className="format-hero">
-            <div className="format-hero__bg" aria-hidden="true"></div>
+            <div className="format-hero__bg parallax-layer" aria-hidden="true"></div>
             {hero.logoBackdrop && (
                 /* Decorative only: the logo is already named in the header. A
-                   span rather than an img because the hero is light now and the
-                   logo file is gold, so the CSS paints a navy block and masks
-                   the logo out of it. Nothing is lost for assistive technology,
-                   which was already told to ignore this. */
+                   span rather than an img so the mark's colour comes from a CSS
+                   token: the PNG is masked out of a painted block, which follows
+                   a change to the brand gold instead of baking it in. Nothing is
+                   lost for assistive technology, which was already told to
+                   ignore this. */
                 <span aria-hidden="true" className="format-hero__logo parallax-layer" />
             )}
             <div className="container format-hero__content">

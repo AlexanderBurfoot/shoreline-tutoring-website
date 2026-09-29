@@ -13,7 +13,13 @@
 
 .format-hero__bg {
     position: absolute;
-    inset: 0;
+    /* Overhangs top and bottom so the layer can travel without its edge
+       sliding into view. */
+    inset: -20% 0;
+    /* The nearer of the two moving layers. The logo behind it lags far more,
+       and it is the difference between the two rates that reads as depth: with
+       only one layer moving there was nothing to measure it against. */
+    --parallax-depth: 110px;
     background-image:
         radial-gradient(circle at 20% 80%, rgba(234, 197, 77, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(234, 197, 77, 0.1) 0%, transparent 50%);
@@ -32,6 +38,10 @@
     top: 50%;
     left: 50%;
     width: min(78vw, 980px);
+    /* Sized against the hero as well as the viewport. The one-on-one hero is
+       shorter than the group one, whose facts carry long dates, so a
+       width-only rule overflowed it and the mark was clipped top and bottom. */
+    max-height: 86%;
     /* The img's width and height attributes used to hold the shape; with a
        masked span the ratio has to be stated so the box has a height. */
     aspect-ratio: 1966 / 1289;
@@ -55,7 +65,7 @@
        starts at the top of the page, so the logo only travels through the
        second half of its pass, and it needs to visibly lag the text to read as
        a backdrop. It is faint enough that the larger movement stays calm. */
-    --parallax-depth: 200px;
+    --parallax-depth: 340px;
 }
 
 @media (max-width: 768px) {
