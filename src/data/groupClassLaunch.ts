@@ -209,7 +209,7 @@ export const FOUNDING_TERM_PRICE_DOLLARS = 1000;
  * in each one. Whoever signs up first gets them, whichever course they are
  * sitting, so the offer ends for everyone at the same moment.
  */
-export const FOUNDING_PLACES = 3;
+export const FOUNDING_PLACES = 5;
 
 /** Turns the founding offer off everywhere, once those places are taken. */
 export const FOUNDING_OFFER_OPEN = true;
