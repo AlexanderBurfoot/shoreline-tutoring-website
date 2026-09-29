@@ -11,9 +11,12 @@ const SYDNEY_TIME_ZONE = 'Australia/Sydney';
 
 /**
  * The first FREE_TRIAL_LESSONS lessons are a free trial, and paid term lessons
- * begin the week after the trial ends. Every date is exported so copy can name
- * them separately: saying only "classes start 10 October" led parents to expect
- * the term to begin that day.
+ * begin the week after the trial ends.
+ *
+ * These two dates are the only ones written down. Every other lesson date below
+ * is counted forward from them, so moving the start moves the whole schedule in
+ * one edit rather than nine, and the trial and the first paid lesson cannot
+ * drift out of step with each other.
  *
  * The countdown and the structured-data event point at the first trial lesson,
  * since that is what a visitor can book today.
@@ -24,16 +27,61 @@ export const FIRST_LESSON_DATE_ISO = '2026-10-10';
 export const ONLINE_FIRST_LESSON_DATE_ISO = '2026-10-11';
 
 /**
- * Last lesson of the free trial, a week after the first. Named in copy so the
- * trial reads as a window a family can decide inside, rather than a single date.
+ * Lessons a student may sit before deciding, at no cost. The trial is a
+ * decision window rather than a discount: a family that continues pays the full
+ * term price, and one that does not pays nothing and stops.
  */
-export const TRIAL_LAST_LESSON_LONG = 'Saturday 17 October';
-export const ONLINE_TRIAL_LAST_LESSON = 'Sunday 18 October';
+export const FREE_TRIAL_LESSONS = 2;
+
+const MILLISECONDS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
+
+/*
+ * Dates are formatted in UTC because an ISO date parses as UTC midnight. The
+ * classes are Sydney-local, but a whole calendar date has no clock time to
+ * shift, so no zone conversion is wanted here. Times of day go through
+ * sydneyInstant() further down, which does account for the zone.
+ */
+const LONG_DATE = new Intl.DateTimeFormat('en-AU', {
+    timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long',
+});
+const SHORT_DATE = new Intl.DateTimeFormat('en-AU', {
+    timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short',
+});
+
+/** "Saturday 10 October" / "Sat 10 Oct", without the comma en-AU adds. */
+const formatWeeksOn = (format: Intl.DateTimeFormat, isoDate: string, weeks: number): string => {
+    const parts = format.formatToParts(Date.parse(isoDate) + weeks * MILLISECONDS_PER_WEEK);
+    const part = (type: Intl.DateTimeFormatPartTypes) =>
+        parts.find((piece) => piece.type === type)?.value ?? '';
+    return `${part('weekday')} ${part('day')} ${part('month')}`;
+};
+
+const longDate = (isoDate: string, weeks = 0) => formatWeeksOn(LONG_DATE, isoDate, weeks);
+const shortDate = (isoDate: string, weeks = 0) => formatWeeksOn(SHORT_DATE, isoDate, weeks);
+
+/** The trial runs to its last lesson, so the paid term starts the week after. */
+const WEEKS_TO_FIRST_PAID_LESSON = FREE_TRIAL_LESSONS;
+
+/** Human-readable first trial lesson, used in body copy. */
+export const FIRST_LESSON_DATE_LONG = longDate(FIRST_LESSON_DATE_ISO);
+
+/** Compact form, used where space is tight (announcement bar, badges). */
+export const FIRST_LESSON_DATE_SHORT = shortDate(FIRST_LESSON_DATE_ISO);
+
+/**
+ * Last lesson of the free trial. Named in copy so the trial reads as a window a
+ * family can decide inside, rather than a single date.
+ */
+export const TRIAL_LAST_LESSON_LONG = longDate(FIRST_LESSON_DATE_ISO, FREE_TRIAL_LESSONS - 1);
+export const TRIAL_LAST_LESSON_SHORT = shortDate(FIRST_LESSON_DATE_ISO, FREE_TRIAL_LESSONS - 1);
+export const ONLINE_TRIAL_LAST_LESSON = longDate(ONLINE_FIRST_LESSON_DATE_ISO, FREE_TRIAL_LESSONS - 1);
+export const ONLINE_TRIAL_LAST_LESSON_SHORT = shortDate(ONLINE_FIRST_LESSON_DATE_ISO, FREE_TRIAL_LESSONS - 1);
 
 /** First paid lesson, the week after the trial ends. */
-export const FIRST_PAID_LESSON_DATE_LONG = 'Saturday 24 October';
-export const FIRST_PAID_LESSON_DATE_SHORT = 'Sat 24 Oct';
-export const ONLINE_FIRST_PAID_LESSON = 'Sunday 25 October';
+export const FIRST_PAID_LESSON_DATE_LONG = longDate(FIRST_LESSON_DATE_ISO, WEEKS_TO_FIRST_PAID_LESSON);
+export const FIRST_PAID_LESSON_DATE_SHORT = shortDate(FIRST_LESSON_DATE_ISO, WEEKS_TO_FIRST_PAID_LESSON);
+export const ONLINE_FIRST_PAID_LESSON = longDate(ONLINE_FIRST_LESSON_DATE_ISO, WEEKS_TO_FIRST_PAID_LESSON);
+export const ONLINE_FIRST_PAID_LESSON_SHORT = shortDate(ONLINE_FIRST_LESSON_DATE_ISO, WEEKS_TO_FIRST_PAID_LESSON);
 
 /**
  * First day of the NSW school term the classes run alongside (Term 4 2026,
@@ -43,23 +91,17 @@ export const ONLINE_FIRST_PAID_LESSON = 'Sunday 25 October';
  */
 export const SCHOOL_TERM_START_ISO = '2026-10-12';
 
-/** Human-readable trial lesson date, used in body copy. */
-export const FIRST_LESSON_DATE_LONG = 'Saturday 10 October';
-
-/** Compact form, used where space is tight (announcement bar, badges). */
-export const FIRST_LESSON_DATE_SHORT = 'Sat 10 Oct';
-
 /**
  * Classes run on different days by format: in person at St Leonards on
  * Saturdays, and online the following day on Sundays. One-on-one tutoring,
  * at home or online, is scheduled around the family and has no fixed day.
  */
 export const IN_PERSON_DAY = 'Saturdays';
-export const IN_PERSON_FIRST_CLASS = 'Saturday 10 October';
+export const IN_PERSON_FIRST_CLASS = FIRST_LESSON_DATE_LONG;
 
-/** Keep one day after the in-person date above. */
 export const ONLINE_DAY = 'Sundays';
-export const ONLINE_FIRST_CLASS = 'Sunday 11 October';
+export const ONLINE_FIRST_CLASS = longDate(ONLINE_FIRST_LESSON_DATE_ISO);
+export const ONLINE_FIRST_CLASS_SHORT = shortDate(ONLINE_FIRST_LESSON_DATE_ISO);
 
 /** Hours of teaching in each weekly lesson, not counting the break. */
 export const LESSON_TEACHING_HOURS = 3;
@@ -177,13 +219,6 @@ export const TERM_LAST_LESSON_LONG = 'Saturday 12 December';
 
 /** Lessons in the published schedule, counting the free trial ones. */
 export const TERM_SESSIONS = 10;
-
-/**
- * Lessons a student may sit before deciding, at no cost. The trial is a
- * decision window rather than a discount: a family that continues pays the full
- * term price, and one that does not pays nothing and stops.
- */
-export const FREE_TRIAL_LESSONS = 2;
 
 /*
  * Group class pricing: three ways to pay for the same term.
