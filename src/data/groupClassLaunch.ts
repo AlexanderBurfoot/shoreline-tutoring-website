@@ -199,18 +199,18 @@ export const SESSION_PRICE_DOLLARS = 250;
 export const TERM_PAID_SESSIONS = TERM_SESSIONS - 1;
 
 /** The whole term paid up front, in whole dollars. */
-export const TERM_PRICE_DOLLARS = 2000;
+export const TERM_PRICE_DOLLARS = 1500;
 
 /** Founding places: the reduced term price for each class's first students. */
-export const FOUNDING_TERM_PRICE_DOLLARS = 1500;
-export const FOUNDING_PLACES_PER_CLASS = 5;
+export const FOUNDING_TERM_PRICE_DOLLARS = 1000;
+export const FOUNDING_PLACES_PER_CLASS = 3;
 
 /** Turns the founding offer off everywhere, for when it has run its course. */
 export const FOUNDING_OFFER_OPEN = true;
 
 /**
  * Courses whose founding places are all taken. Add a course's id here when
- * its fifth founding student enrols, and it shows the term rate instead.
+ * its third founding student enrols, and it shows the term rate instead.
  */
 export const FOUNDING_FULL_COURSES: Course['id'][] = [];
 
@@ -225,10 +225,10 @@ const perTeachingHour = (lessonCost: number) => dollars(Math.round(lessonCost / 
    weekly option that is not offered, and TERM_SAVING measured the term against
    it, so "saves $500" compared the real price with one no family could pay. */
 
-/** The term paid up front, e.g. "$2,000". */
+/** The term paid up front, e.g. "$1,500". */
 export const TERM_PRICE = dollars(TERM_PRICE_DOLLARS);
 
-/** The founding term price, e.g. "$1,500". */
+/** The founding term price, e.g. "$1,000". */
 export const FOUNDING_TERM_PRICE = dollars(FOUNDING_TERM_PRICE_DOLLARS);
 
 /** What a founding place saves against the term rate, e.g. "$500". */
