@@ -8,6 +8,18 @@ import subjectIcons from './SubjectIcons';
 const CARD_STAGGER_MS = 60;
 
 /**
+ * What the group classes add to a subject, or nothing for the seven subjects
+ * that only run one-on-one. Maths is three separate Year 12 classes, which the
+ * subtitle's "Year 12 maths" hides, so the count is named rather than implied.
+ */
+const groupClassNote = (courseIds?: string[]): string | null => {
+    if (!courseIds?.length) return null;
+    return courseIds.length === 1
+        ? 'Also a Year 12 group class'
+        : `Also ${courseIds.length} Year 12 group classes`;
+};
+
+/**
  * Every subject as a compact card: icon, name, year levels and a link. The full
  * description lives on each subject's own page.
  */
@@ -20,6 +32,11 @@ const SubjectGrid = () => (
                     <span className="subject-card__icon">{subjectIcons[subject.slug] ?? subject.icon}</span>
                     <h2 className="subject-card__title">{subject.title}</h2>
                     <span className="subject-card__level-value">{subject.level}</span>
+                    {groupClassNote(subject.groupCourseIds) && (
+                        <span className="subject-card__group-note">
+                            {groupClassNote(subject.groupCourseIds)}
+                        </span>
+                    )}
                     <span className="subject-card__link">
                         Explore
                         <svg className="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

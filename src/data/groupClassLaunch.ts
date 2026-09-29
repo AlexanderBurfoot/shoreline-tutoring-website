@@ -10,22 +10,78 @@
 const SYDNEY_TIME_ZONE = 'Australia/Sydney';
 
 /**
- * The first lesson is a free trial, and paid term lessons begin the week after.
- * Both dates are exported so copy can name them separately: saying only "classes
- * start 3 October" led parents to expect the term to begin that day.
+ * The first FREE_TRIAL_LESSONS lessons are a free trial, and paid term lessons
+ * begin the week after the trial ends.
  *
- * The countdown and the structured-data event point at the trial, since that is
- * what a visitor can book today.
+ * These two dates are the only ones written down. Every other lesson date below
+ * is counted forward from them, so moving the start moves the whole schedule in
+ * one edit rather than nine, and the trial and the first paid lesson cannot
+ * drift out of step with each other.
+ *
+ * The countdown and the structured-data event point at the first trial lesson,
+ * since that is what a visitor can book today.
  */
-export const FIRST_LESSON_DATE_ISO = '2026-10-03';
+export const FIRST_LESSON_DATE_ISO = '2026-10-10';
 
 /** First online lesson in ISO form. Keep one day after the in-person date. */
-export const ONLINE_FIRST_LESSON_DATE_ISO = '2026-10-04';
+export const ONLINE_FIRST_LESSON_DATE_ISO = '2026-10-11';
 
-/** First paid lesson, a week after each trial. */
-export const FIRST_PAID_LESSON_DATE_LONG = 'Saturday 10 October';
-export const FIRST_PAID_LESSON_DATE_SHORT = 'Sat 10 Oct';
-export const ONLINE_FIRST_PAID_LESSON = 'Sunday 11 October';
+/**
+ * Lessons a student may sit before deciding, at no cost. The trial is a
+ * decision window rather than a discount: a family that continues pays the full
+ * term price, and one that does not pays nothing and stops.
+ */
+export const FREE_TRIAL_LESSONS = 2;
+
+const MILLISECONDS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
+
+/*
+ * Dates are formatted in UTC because an ISO date parses as UTC midnight. The
+ * classes are Sydney-local, but a whole calendar date has no clock time to
+ * shift, so no zone conversion is wanted here. Times of day go through
+ * sydneyInstant() further down, which does account for the zone.
+ */
+const LONG_DATE = new Intl.DateTimeFormat('en-AU', {
+    timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long',
+});
+const SHORT_DATE = new Intl.DateTimeFormat('en-AU', {
+    timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short',
+});
+
+/** "Saturday 10 October" / "Sat 10 Oct", without the comma en-AU adds. */
+const formatWeeksOn = (format: Intl.DateTimeFormat, isoDate: string, weeks: number): string => {
+    const parts = format.formatToParts(Date.parse(isoDate) + weeks * MILLISECONDS_PER_WEEK);
+    const part = (type: Intl.DateTimeFormatPartTypes) =>
+        parts.find((piece) => piece.type === type)?.value ?? '';
+    return `${part('weekday')} ${part('day')} ${part('month')}`;
+};
+
+const longDate = (isoDate: string, weeks = 0) => formatWeeksOn(LONG_DATE, isoDate, weeks);
+const shortDate = (isoDate: string, weeks = 0) => formatWeeksOn(SHORT_DATE, isoDate, weeks);
+
+/** The trial runs to its last lesson, so the paid term starts the week after. */
+const WEEKS_TO_FIRST_PAID_LESSON = FREE_TRIAL_LESSONS;
+
+/** Human-readable first trial lesson, used in body copy. */
+export const FIRST_LESSON_DATE_LONG = longDate(FIRST_LESSON_DATE_ISO);
+
+/** Compact form, used where space is tight (announcement bar, badges). */
+export const FIRST_LESSON_DATE_SHORT = shortDate(FIRST_LESSON_DATE_ISO);
+
+/**
+ * Last lesson of the free trial. Named in copy so the trial reads as a window a
+ * family can decide inside, rather than a single date.
+ */
+export const TRIAL_LAST_LESSON_LONG = longDate(FIRST_LESSON_DATE_ISO, FREE_TRIAL_LESSONS - 1);
+export const TRIAL_LAST_LESSON_SHORT = shortDate(FIRST_LESSON_DATE_ISO, FREE_TRIAL_LESSONS - 1);
+export const ONLINE_TRIAL_LAST_LESSON = longDate(ONLINE_FIRST_LESSON_DATE_ISO, FREE_TRIAL_LESSONS - 1);
+export const ONLINE_TRIAL_LAST_LESSON_SHORT = shortDate(ONLINE_FIRST_LESSON_DATE_ISO, FREE_TRIAL_LESSONS - 1);
+
+/** First paid lesson, the week after the trial ends. */
+export const FIRST_PAID_LESSON_DATE_LONG = longDate(FIRST_LESSON_DATE_ISO, WEEKS_TO_FIRST_PAID_LESSON);
+export const FIRST_PAID_LESSON_DATE_SHORT = shortDate(FIRST_LESSON_DATE_ISO, WEEKS_TO_FIRST_PAID_LESSON);
+export const ONLINE_FIRST_PAID_LESSON = longDate(ONLINE_FIRST_LESSON_DATE_ISO, WEEKS_TO_FIRST_PAID_LESSON);
+export const ONLINE_FIRST_PAID_LESSON_SHORT = shortDate(ONLINE_FIRST_LESSON_DATE_ISO, WEEKS_TO_FIRST_PAID_LESSON);
 
 /**
  * First day of the NSW school term the classes run alongside (Term 4 2026,
@@ -35,23 +91,17 @@ export const ONLINE_FIRST_PAID_LESSON = 'Sunday 11 October';
  */
 export const SCHOOL_TERM_START_ISO = '2026-10-12';
 
-/** Human-readable trial lesson date, used in body copy. */
-export const FIRST_LESSON_DATE_LONG = 'Saturday 3 October';
-
-/** Compact form, used where space is tight (announcement bar, badges). */
-export const FIRST_LESSON_DATE_SHORT = 'Sat 3 Oct';
-
 /**
  * Classes run on different days by format: in person at St Leonards on
  * Saturdays, and online the following day on Sundays. One-on-one tutoring,
  * at home or online, is scheduled around the family and has no fixed day.
  */
 export const IN_PERSON_DAY = 'Saturdays';
-export const IN_PERSON_FIRST_CLASS = 'Saturday 3 October';
+export const IN_PERSON_FIRST_CLASS = FIRST_LESSON_DATE_LONG;
 
-/** Keep one day after the in-person date above. */
 export const ONLINE_DAY = 'Sundays';
-export const ONLINE_FIRST_CLASS = 'Sunday 4 October';
+export const ONLINE_FIRST_CLASS = longDate(ONLINE_FIRST_LESSON_DATE_ISO);
+export const ONLINE_FIRST_CLASS_SHORT = shortDate(ONLINE_FIRST_LESSON_DATE_ISO);
 
 /** Hours of teaching in each weekly lesson, not counting the break. */
 export const LESSON_TEACHING_HOURS = 3;
@@ -142,7 +192,7 @@ const walkingDirectionsUrl = (origin: string) =>
  *
  * The 144 is by far the most frequent route here: about 85 buses each way on a
  * Saturday between 7am and 7pm, against 35 for the next busiest, the 114
- * (Transport for NSW timetable for Saturday 3 October 2026, checked September
+ * (Transport for NSW timetable for Saturday 10 October 2026, checked September
  * 2026). Stand C is 53 m from the venue on the same side, with no road to
  * cross. Stand D is closer but has no Saturday services. Riders coming from
  * Chatswood arrive at Stand A, across the highway.
@@ -156,11 +206,10 @@ export const VENUE_WALKING_ROUTES: WalkingRoute[] = [
     },
 ];
 
-/**
- * What small-group classes currently cover, as one clause that reads inside a
- * sentence. Update it here and every section that scopes the offer follows.
+/*
+ * GROUP_SCOPE_SUMMARY is declared below COURSES, since it is built from them.
+ * See "What small-group classes currently cover".
  */
-export const GROUP_SCOPE_SUMMARY = 'Year 12 maths, physics, chemistry and biology';
 
 /** The term the published schedule runs to. */
 export const TERM_LABEL = 'Term 4';
@@ -168,8 +217,8 @@ export const TERM_LABEL = 'Term 4';
 /** Last lesson of the published schedule, in body copy. */
 export const TERM_LAST_LESSON_LONG = 'Saturday 12 December';
 
-/** Lessons in the published schedule, counting the free first one. */
-export const TERM_SESSIONS = 11;
+/** Lessons in the published schedule, counting the free trial ones. */
+export const TERM_SESSIONS = 10;
 
 /*
  * Group class pricing: three ways to pay for the same term.
@@ -178,6 +227,10 @@ export const TERM_SESSIONS = 11;
  *    FOUNDING_TERM_PRICE for the term. One pool across every class, not a few
  *    places in each, so the offer ends for everyone at once. Switch it off with
  *    FOUNDING_OFFER_OPEN when those places are taken.
+ *
+ * Both prices are paid only after the free trial, and both buy the same
+ * TERM_PAID_SESSIONS lessons, so the hourly rates below divide by those rather
+ * than by every lesson a student sits.
  *  - The term rate: TERM_PRICE paid up front, the main price once founding
  *    places are gone.
  *
@@ -195,8 +248,8 @@ export const TERM_SESSIONS = 11;
  */
 export const SESSION_PRICE_DOLLARS = 250;
 
-/** The first lesson is free, so every other lesson in the term is paid. */
-export const TERM_PAID_SESSIONS = TERM_SESSIONS - 1;
+/** The trial lessons are free, so the rest of the term is what the price buys. */
+export const TERM_PAID_SESSIONS = TERM_SESSIONS - FREE_TRIAL_LESSONS;
 
 /** The whole term paid up front, in whole dollars. */
 export const TERM_PRICE_DOLLARS = 1500;
@@ -267,8 +320,19 @@ export const SESSION_HOURLY_RATE = perTeachingHour(SESSION_PRICE_DOLLARS);
 export const TERM_HOURLY_RATE = perTeachingHour(TERM_PRICE_DOLLARS / TERM_PAID_SESSIONS);
 export const FOUNDING_HOURLY_RATE = perTeachingHour(FOUNDING_TERM_PRICE_DOLLARS / TERM_PAID_SESSIONS);
 
-/** The trial offer, phrased consistently everywhere it appears. */
-export const TRIAL_OFFER = 'First lesson free';
+/**
+ * The trial offer, phrased consistently everywhere it appears. Short enough for
+ * a badge, and it still reads correctly in front of a "then ..." clause.
+ */
+export const TRIAL_OFFER = 'Try 2 weeks free';
+
+/**
+ * The trial in a sentence, for the places with room to explain it. Says what
+ * happens either way, because the decision, not the saving, is the point.
+ */
+export const TRIAL_EXPLAINER =
+    `Sit the first ${FREE_TRIAL_LESSONS} lessons free and decide afterwards. If the class suits, `
+    + `pay for the rest of the term; if it does not, there is nothing to pay.`;
 
 export interface Course {
     id: 'maths-standard' | 'maths-advanced' | 'maths-extension-1' | 'physics' | 'chemistry' | 'biology';
@@ -276,6 +340,12 @@ export interface Course {
     name: string;
     /** Short form for chips and badges. */
     shortName: string;
+    /**
+     * The school subject this course belongs to. Year 12 maths is three
+     * separate courses, so the subject is what a parent searches for and the
+     * course is what they enrol in. GROUP_SCOPE_SUMMARY is built from these.
+     */
+    discipline: 'maths' | 'physics' | 'chemistry' | 'biology';
     /** What the class covers for this course. */
     covers: string;
 }
@@ -294,6 +364,7 @@ export const COURSES: Course[] = [
         id: 'maths-standard',
         name: 'Mathematics Standard',
         shortName: 'Standard',
+        discipline: 'maths',
         covers:
             'Investment, loans and annuities, probability, bivariate data and the normal distribution, trigonometry with the sine and cosine rules, algebraic models, rates and ratios, and network flow and critical path analysis.',
     },
@@ -301,6 +372,7 @@ export const COURSES: Course[] = [
         id: 'maths-advanced',
         name: 'Mathematics Advanced',
         shortName: 'Advanced',
+        discipline: 'maths',
         covers:
             'Graph transformations and modelling, sequences and series, differential and integral calculus and their applications, loans and annuities, and random variables including the normal distribution.',
     },
@@ -308,6 +380,7 @@ export const COURSES: Course[] = [
         id: 'maths-extension-1',
         name: 'Mathematics Extension 1',
         shortName: 'Extension 1',
+        discipline: 'maths',
         covers:
             'Proof by mathematical induction, vectors and projectile motion, inverse trigonometric functions, further calculus including volumes and differential equations, and the binomial and sampling distributions.',
     },
@@ -315,6 +388,7 @@ export const COURSES: Course[] = [
         id: 'physics',
         name: 'Physics',
         shortName: 'Physics',
+        discipline: 'physics',
         covers:
             'Advanced mechanics including projectile and circular motion, electromagnetism, the nature of light from electromagnetic waves to special relativity, and from the universe to the atom.',
     },
@@ -322,6 +396,7 @@ export const COURSES: Course[] = [
         id: 'chemistry',
         name: 'Chemistry',
         shortName: 'Chemistry',
+        discipline: 'chemistry',
         covers:
             'Equilibrium and acid reactions, acid and base reactions including titration and buffers, organic chemistry from hydrocarbons to polymers, and applying chemical ideas through qualitative and instrumental analysis.',
     },
@@ -329,10 +404,28 @@ export const COURSES: Course[] = [
         id: 'biology',
         name: 'Biology',
         shortName: 'Biology',
+        discipline: 'biology',
         covers:
             'Heredity and reproduction, genetic change and biotechnology, infectious disease and how the body defends itself, and non-infectious disease, disorders and their treatment.',
     },
 ];
+
+/** "a, b and c" — the list separator English actually uses. */
+const sentenceList = (items: string[]): string =>
+    items.length <= 1
+        ? items.join('')
+        : `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+
+/**
+ * What small-group classes currently cover, as one clause that reads inside a
+ * sentence, e.g. "Year 12 maths, physics, chemistry and biology".
+ *
+ * Built from COURSES rather than written out, so adding or dropping a course
+ * updates every section that scopes the offer. Disciplines are listed in the
+ * order the courses appear, and the three maths courses collapse to one word:
+ * a parent searches for the subject and enrols in the course.
+ */
+export const GROUP_SCOPE_SUMMARY = `Year 12 ${sentenceList([...new Set(COURSES.map((course) => course.discipline))])}`;
 
 export interface GroupClassDay {
     id: 'in-person' | 'online';
@@ -484,14 +577,19 @@ function sydneyOffsetMilliseconds(instant: number): number {
  * The instant at which a Sydney wall-clock date and time occurs.
  *
  * The offset cannot be hardcoded. Daylight saving begins at 2am on Sunday
- * 4 October 2026, so the Saturday in-person class is +10:00 and the Sunday
- * online class the very next morning is +11:00. Written as a fixed offset, one
- * of the two is always an hour wrong.
+ * 4 October 2026, so a class either side of that Sunday sits on a different
+ * offset: written as a fixed number, one of the two is always an hour wrong.
+ * The current dates both fall after the change, at +11:00, but a start date
+ * moved back a week would straddle it again, which is why this is computed.
  *
  * Worked values, which a change here must keep true:
- *   10:00 on Sat 3 Oct 2026 is 2026-10-03T00:00:00Z
- *   10:00 on Sun 4 Oct 2026 is 2026-10-03T23:00:00Z
+ *   10:00 on Sat 3 Oct 2026 is 2026-10-03T00:00:00Z  (+10:00, before the change)
+ *   10:00 on Sun 4 Oct 2026 is 2026-10-03T23:00:00Z  (+11:00, after it)
  * Twenty-four hours apart on the clock, twenty-three in elapsed time.
+ *
+ * And for the dates in use, both on the far side of the change:
+ *   10:00 on Sat 10 Oct 2026 is 2026-10-09T23:00:00Z
+ *   10:00 on Sun 11 Oct 2026 is 2026-10-10T23:00:00Z
  */
 export function sydneyInstant(isoDate: string, time24h: string): number {
     const asIfUtc = Date.parse(`${isoDate}T${time24h}:00Z`);

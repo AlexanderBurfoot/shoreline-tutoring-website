@@ -116,18 +116,6 @@ export const physicsOutline: CourseOutline = {
             keySkill: 'Using work and energy to find the speed of an accelerated charge.',
         },
         {
-            topic: 'Charged particles in fields',
-            title: 'Charged particles in magnetic fields',
-            syllabusRefs: ['Module 6', 'Charged Particles'],
-            points: [
-                'The force on a moving charge in a magnetic field: F = qvB sinθ',
-                'Finding the direction of the force with the right-hand rule',
-                'Circular paths and the radius r = mv/qB',
-                'Comparing the effects of electric and magnetic fields',
-            ],
-            keySkill: 'Combining direction rules with circular motion algebra.',
-        },
-        {
             topic: 'Term review',
             title: 'Consolidation and term test',
             syllabusRefs: ['Module 5', 'Module 6'],

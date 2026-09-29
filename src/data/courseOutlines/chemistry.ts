@@ -10,7 +10,7 @@ import type { CourseOutline } from './types';
 export const chemistryOutline: CourseOutline = {
     courseId: 'chemistry',
     overview:
-        'Module 5, Equilibrium and Acid Reactions, from why some reactions never finish to calculating Keq and Ksp, with a first look at Module 6.',
+        'Module 5, Equilibrium and Acid Reactions, from why some reactions never finish to calculating Keq and Ksp.',
     metaFocus: 'Equilibrium and Acid Reactions, including Keq and Ksp calculations',
     syllabusNote:
         'Follows the NESA Chemistry Stage 6 Syllabus (2017), which the 2027 HSC examines, in the order most schools teach it.',
@@ -116,22 +116,11 @@ export const chemistryOutline: CourseOutline = {
             keySkill: 'Multi-step Ksp calculations, including the dilution step students most often miss.',
         },
         {
-            topic: 'Module 5 review',
-            title: 'Equilibrium in review, and a first look at acids',
-            syllabusRefs: ['Module 5', 'Module 6 preview'],
-            points: [
-                'Designing and evaluating an equilibrium investigation for a depth study',
-                'Structuring extended responses that bring several ideas together',
-                'Arrhenius and Brønsted–Lowry definitions of acids and bases, ready for Term 1',
-            ],
-            keySkill: 'Judging the validity and reliability of an investigation.',
-        },
-        {
             topic: 'Term review',
             title: 'Consolidation and term test',
             syllabusRefs: ['Module 5'],
             points: [
-                'HSC-style multiple choice and extended response on equilibrium, Keq and Ksp, and acid and base reactions',
+                'HSC-style multiple choice and extended response on equilibrium, Keq and Ksp, and solubility',
                 'A short test under exam conditions, marked with written feedback',
                 'A plan for the summer holidays, built around the titration and buffer work that opens Term 1',
             ],

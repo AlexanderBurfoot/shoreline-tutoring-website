@@ -28,6 +28,10 @@ import {
     TERM_PRICE,
     VENUE_ADDRESS,
     foundingPlacesOpen,
+    FREE_TRIAL_LESSONS,
+    TRIAL_EXPLAINER,
+    TRIAL_LAST_LESSON_LONG,
+    ONLINE_TRIAL_LAST_LESSON,
 } from './groupClassLaunch';
 import {
     LESSONS_PER_BUNDLE,
@@ -53,7 +57,7 @@ export interface Heading {
     /**
      * Starts the accent on a line of its own, for a heading that is two
      * statements rather than one sentence. "Year 12 Small-Group Classes" and
-     * "Free trial Saturday 3 October" are separate claims and read better
+     * "Try 2 weeks free from 10 October" are separate claims and read better
      * apart; "Every Session, Built Around One Student" is a single clause and
      * would be cut in half by the same break.
      */
@@ -369,16 +373,16 @@ export const oneOnOnePage: FormatPageContent = {
  */
 export const groupHeroFacts = (): FormatFact[] => [
     { label: 'Each week', value: `One ${LESSON_TEACHING_HOURS}-hour lesson · ${LESSON_BREAK_MINUTES}-minute break` },
-    /* "From 3 October" reads as the course starting that day. It does not: the
-       3rd is the free trial and the paid term begins the week after, so both
-       dates are named rather than leaving the reader to infer the second. */
+    /* "From 10 October" reads as the course starting that day. It does not: the
+       10th opens a two-lesson free trial and the paid term begins after it, so
+       every date is named rather than leaving the reader to infer the others. */
     {
         label: 'In person · St Leonards',
-        value: `Free trial ${IN_PERSON_FIRST_CLASS}, then weekly from ${FIRST_PAID_LESSON_DATE_LONG} · ${SESSION_START_TIMES}`,
+        value: `Free ${IN_PERSON_FIRST_CLASS} and ${TRIAL_LAST_LESSON_LONG}, then weekly from ${FIRST_PAID_LESSON_DATE_LONG} · ${SESSION_START_TIMES}`,
     },
     {
         label: 'Online · live from home',
-        value: `Free trial ${ONLINE_FIRST_CLASS}, then weekly from ${ONLINE_FIRST_PAID_LESSON} · ${SESSION_START_TIMES}`,
+        value: `Free ${ONLINE_FIRST_CLASS} and ${ONLINE_TRIAL_LAST_LESSON}, then weekly from ${ONLINE_FIRST_PAID_LESSON} · ${SESSION_START_TIMES}`,
     },
     {
         label: 'Price',
@@ -394,7 +398,7 @@ export const groupClassesPage: FormatPageContent = {
         badge: 'Year 12 · Now enrolling',
         title: {
             lead: 'Year 12 Small-Group Classes',
-            accent: `Free trial ${FIRST_LESSON_DATE_LONG}`,
+            accent: `Try 2 weeks free from ${FIRST_LESSON_DATE_LONG}`,
             accentOnOwnLine: true,
         },
         subtitle: (
@@ -404,8 +408,9 @@ export const groupClassesPage: FormatPageContent = {
                 the course alongside school, in person at {VENUE_ADDRESS} on Saturdays or live
                 online on Sundays.{' '}
                 <strong>
-                    The first lesson, {FIRST_LESSON_DATE_LONG}, is a free trial. Paid term lessons
-                    begin the week after, on {FIRST_PAID_LESSON_DATE_LONG}.
+                    The first two lessons, {FIRST_LESSON_DATE_LONG} and {TRIAL_LAST_LESSON_LONG},
+                    are free. Decide afterwards: if the class suits, the term is paid from
+                    {' '}{FIRST_PAID_LESSON_DATE_LONG}; if it does not, there is nothing to pay.
                 </strong>
             </>
         ),
@@ -414,7 +419,7 @@ export const groupClassesPage: FormatPageContent = {
         // A route plus anchor rather than a bare anchor, so the same button works
         // on the homepage (which opens this page) and here (which jumps down).
         secondaryCta: { href: `${GROUP_CLASSES_PATH}#${PRICING_SECTION_ID}`, label: 'See Pricing & What’s Included' },
-        reassurance: 'The first lesson is free. No payment up front, and no obligation to continue.',
+        reassurance: `${TRIAL_EXPLAINER} No payment up front.`,
         logoBackdrop: true,
     },
     courses: {
@@ -498,10 +503,10 @@ export const groupClassesPage: FormatPageContent = {
     },
     steps: {
         header: {
-            eyebrow: 'First Lesson Free',
+            eyebrow: 'First Two Lessons Free',
             title: { lead: 'What actually', accent: 'happens' },
             subtitle:
-                'No trial-lesson theatre. Your first lesson is an ordinary week of the class, and you decide afterwards whether to keep coming.',
+                'No trial-lesson theatre. Your first two lessons are ordinary weeks of the class, and you decide afterwards whether to keep coming.',
         },
         items: [
             {
@@ -530,7 +535,7 @@ export const groupClassesPage: FormatPageContent = {
             title: { lead: 'One price for', accent: 'the whole term' },
             subtitle: (
                 <>
-                    The first lesson is free.{' '}
+                    The first {FREE_TRIAL_LESSONS} lessons are free.{' '}
                     {foundingPlacesOpen() && (
                         <>
                             <strong>
@@ -607,7 +612,7 @@ export const groupClassesPage: FormatPageContent = {
             },
             {
                 question: 'Can I join partway through the term?',
-                answer: 'Yes. Classes run every week through the term, so you can start whenever suits and still sit your first lesson free. Tell us which course you are in and we will let you know what the class has covered so far.',
+                answer: 'Yes. Classes run every week through the term, so you can start whenever suits and still sit your first two lessons free. Tell us which course you are in and we will let you know what the class has covered so far.',
             },
             {
                 question: 'What time is my class?',
@@ -621,7 +626,7 @@ export const groupClassesPage: FormatPageContent = {
         ],
     },
     finalCta: {
-        title: `Free trial ${FIRST_LESSON_DATE_LONG}, classes weekly from ${FIRST_PAID_LESSON_DATE_LONG}`,
+        title: `Free ${FIRST_LESSON_DATE_LONG} and ${TRIAL_LAST_LESSON_LONG}, then weekly from ${FIRST_PAID_LESSON_DATE_LONG}`,
         text: (
             <>
                 Tell us which course you are sitting and whether Saturdays or Sundays suit, and we

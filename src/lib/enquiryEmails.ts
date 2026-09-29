@@ -155,7 +155,7 @@ export function parentConfirmationEmailHtml({ receipt, name, learningFormat, sub
         ['We read your enquiry', 'One of our tutors goes through your goals and the subjects you asked about.'],
         ['We get in touch', 'You will hear from us within 24 hours to arrange a time that suits you.'],
         isGroup
-            ? ['Your first lesson is free', 'Sit in on a full class before you decide. No payment up front, and no obligation to continue.']
+            ? ['Your first two lessons are free', 'Sit two full classes before you decide. If they suit, you pay for the rest of the term; if not, there is nothing to pay.']
             : ['Your first lesson is free', 'Meet your tutor and see how a session runs. No payment up front, and no obligation to continue.'],
     ];
 

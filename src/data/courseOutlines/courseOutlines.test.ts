@@ -56,15 +56,15 @@ describe('courseMetaDescription', () => {
 
 describe('courseOverview', () => {
     it('counts the lessons that fall before school goes back', () => {
-        /* Classes start Sat 3 October; NSW Term 4 starts Mon 12 October. */
-        expect(lessonsBeforeSchoolTerm()).toBe(2);
+        /* Classes start Sat 10 October; NSW Term 4 starts Mon 12 October. */
+        expect(lessonsBeforeSchoolTerm()).toBe(1);
     });
 
     it('adds the holidays line to every course, without it being written into the copy', () => {
         for (const course of COURSES_WITH_OUTLINES) {
             expect(course.outline.overview, course.name).not.toContain('school holidays');
             expect(courseOverview(course), course.name).toContain(
-                'The first two lessons fall in the school holidays',
+                'The first lesson falls in the school holidays',
             );
         }
     });
@@ -79,8 +79,8 @@ describe('courseOverview', () => {
 describe('termRangeSummary', () => {
     it('gives each cohort its own dates', () => {
         expect(termRangeSummary()).toBe(
-            'In person Saturday 3 October to Saturday 12 December, ' +
-                'online Sunday 4 October to Sunday 13 December.',
+            'In person Saturday 10 October to Saturday 12 December, ' +
+                'online Sunday 11 October to Sunday 13 December.',
         );
     });
 

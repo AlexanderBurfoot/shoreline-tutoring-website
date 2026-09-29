@@ -33,6 +33,10 @@ import {
     VENUE_POSTCODE,
     VENUE_STATE,
     VENUE_SUBURB,
+    FREE_TRIAL_LESSONS,
+    TERM_PAID_SESSIONS,
+    TRIAL_LAST_LESSON_LONG,
+    ONLINE_TRIAL_LAST_LESSON,
 } from './groupClassLaunch';
 import { bundlePricing, hourlyPricing, LESSONS_PER_BUNDLE, perLessonRate } from './pricingData';
 import { faqs } from './faqData';
@@ -90,8 +94,9 @@ function groupPriceAnswer(): string {
         ? ` As a founding offer, ${FOUNDING_OFFER_LINE}, a saving of ${FOUNDING_SAVING}.`
         : '';
     return (
-        `Small-group classes are ${TERM_PRICE} for the ${TERM_LABEL} term of ` +
-        `${TERM_SESSIONS} lessons, paid up front.${founding} Each session is ${LESSON_TEACHING_HOURS} hours of teaching with a ` +
+        `Small-group classes run ${TERM_SESSIONS} lessons in ${TERM_LABEL}. The first ` +
+        `${FREE_TRIAL_LESSONS} are free, and the remaining ${TERM_PAID_SESSIONS} are ${TERM_PRICE}, ` +
+        `paid up front once you decide to stay.${founding} Each session is ${LESSON_TEACHING_HOURS} hours of teaching with a ` +
         `${LESSON_BREAK_MINUTES}-minute break.`
     );
 }
@@ -152,8 +157,9 @@ const ASSISTANT_ENTRIES: KnowledgeEntry[] = [
         question: 'When do the small-group classes start?',
         keywords: ['classes start', 'start date', 'starting', 'first class', 'first lesson', 'when do classes begin', 'timetable', 'schedule', 'times', 'what time', 'saturday', 'sunday'],
         answer:
-            `The first lesson is a free trial: ${IN_PERSON_FIRST_CLASS} in ${VENUE_SUBURB}, or ` +
-            `${ONLINE_FIRST_CLASS} online. Paid term lessons begin the week after, on ` +
+            `The first ${FREE_TRIAL_LESSONS} lessons are a free trial: ${IN_PERSON_FIRST_CLASS} and ` +
+            `${TRIAL_LAST_LESSON_LONG} in ${VENUE_SUBURB}, or ${ONLINE_FIRST_CLASS} and ` +
+            `${ONLINE_TRIAL_LAST_LESSON} online. Paid term lessons begin after that, on ` +
             `${FIRST_PAID_LESSON_DATE_LONG} in person and ${ONLINE_FIRST_PAID_LESSON} online. ` +
             `Sessions run at ${SESSION_TIMES_SUMMARY}, and which one you join depends on the course.`,
         link: { label: 'See group classes', href: GROUP_CLASSES_PATH },

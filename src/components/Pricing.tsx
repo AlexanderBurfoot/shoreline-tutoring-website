@@ -20,6 +20,9 @@ import {
     TERM_PRICE,
     TRIAL_OFFER,
     foundingPlacesOpen,
+    FREE_TRIAL_LESSONS,
+    TRIAL_EXPLAINER,
+    TRIAL_LAST_LESSON_LONG,
 } from '../data/groupClassLaunch';
 import {
     LESSONS_PER_BUNDLE,
@@ -44,7 +47,7 @@ const faqs = [
     },
     {
         question: 'Who are the small-group classes for?',
-        answer: `Small-group classes run weekly for Year 12 Mathematics Standard, Advanced and Extension 1, Physics, Chemistry and Biology, from ${FIRST_LESSON_DATE_LONG}. Each course runs as its own class, so nobody sits through content meant for a different course. The first lesson is free. One-on-one tutoring remains available across Years 1 to 12 in all our subjects.`,
+        answer: `Small-group classes run weekly for Year 12 Mathematics Standard, Advanced and Extension 1, Physics, Chemistry and Biology, from ${FIRST_LESSON_DATE_LONG}. Each course runs as its own class, so nobody sits through content meant for a different course. ${TRIAL_EXPLAINER} One-on-one tutoring remains available across Years 1 to 12 in all our subjects.`,
     },
     {
         question: 'Do you offer sibling discounts?',
@@ -147,8 +150,9 @@ const Pricing = () => {
                     <p className="pricing-category-heading__text">
                         One {LESSON_TEACHING_HOURS}-hour lesson a week working through the Year 12
                         course alongside school, for Mathematics Standard, Advanced and Extension 1,
-                        Physics, Chemistry and Biology. Every course runs as its own class. The first lesson,{' '}
-                        {FIRST_LESSON_DATE_LONG}, is free; paid term lessons begin{' '}
+                        Physics, Chemistry and Biology. Every course runs as its own class. The
+                        first {FREE_TRIAL_LESSONS} lessons, {FIRST_LESSON_DATE_LONG} and{' '}
+                        {TRIAL_LAST_LESSON_LONG}, are free; paid term lessons begin{' '}
                         {FIRST_PAID_LESSON_DATE_LONG}.
                     </p>
                 </div>
@@ -161,8 +165,8 @@ const Pricing = () => {
                         <h3 className="pricing-table-title">Weekly Classes</h3>
                         <p className="pricing-table-subtitle">
                             The term is paid up front, the same whether you attend in person on
-                            Saturdays or online on Sundays. Sit the first lesson free and only pay
-                            if you decide to stay.{' '}
+                            Saturdays or online on Sundays. Sit the first {FREE_TRIAL_LESSONS}{' '}
+                            lessons free and only pay if you decide to stay.{' '}
                             {foundingPlacesOpen() && (
                                 <strong>
                                     As a founding offer, {FOUNDING_OFFER_LINE}.

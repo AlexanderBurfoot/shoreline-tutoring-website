@@ -13,8 +13,8 @@ import type { CourseOutline } from './types';
 export const mathsExtension1Outline: CourseOutline = {
     courseId: 'maths-extension-1',
     overview:
-        'Proof by mathematical induction and vectors in two and three dimensions, with a head start on inverse trigonometric functions.',
-    metaFocus: 'proof by induction, vectors, and inverse trigonometric functions',
+        'Proof by mathematical induction and vectors in two and three dimensions.',
+    metaFocus: 'proof by induction, and vectors in two and three dimensions',
     syllabusNote:
         'Follows the new NESA Mathematics Extension 1 11–12 Syllabus (2024), which this cohort is the first to sit in the 2027 HSC, in the order most schools teach it.',
     lessons: [
@@ -118,22 +118,11 @@ export const mathsExtension1Outline: CourseOutline = {
             keySkill: 'Splitting motion into horizontal and vertical components.',
         },
         {
-            topic: 'Inverse trigonometric functions',
-            title: 'Getting ahead: inverse trigonometric functions',
-            syllabusRefs: ['Inverse trigonometric functions', 'ME1-12-03'],
-            points: [
-                'Restricting the domain so a trigonometric function has an inverse',
-                'The graphs, domains and ranges of the inverse sine, cosine and tangent functions',
-                'Exact values and the key properties of each function',
-            ],
-            keySkill: 'Evaluating inverse trigonometric expressions exactly.',
-        },
-        {
             topic: 'Term review',
             title: 'Consolidation and term test',
             syllabusRefs: ['ME1-12-01 to ME1-12-03'],
             points: [
-                'Mixed HSC-style questions on proof by induction, vectors and inverse trigonometric functions, including the mistakes that cost marks most often',
+                'Mixed HSC-style questions on proof by induction and vectors, including the mistakes that cost marks most often',
                 'A short test under exam conditions, marked with written feedback',
                 'A plan for the summer holidays, built around the further calculus that opens Term 1',
             ],

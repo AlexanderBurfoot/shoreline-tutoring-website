@@ -38,21 +38,6 @@ const itemIndexStyle = (index: number) => ({ '--item-index': index }) as CSSProp
 const isCurrentPage = (pathname: string, href: string) =>
   pathname === href || pathname.startsWith(`${href}/`);
 
-/** Pages that open on a navy section, where the header starts light-on-dark. */
-/**
- * Pages whose first section is dark, so the transparent header needs its light
- * treatment until the user scrolls.
- *
- * The two format pages and the homepage are no longer here: .format-hero is now
- * the same light gradient as the homepage hero, and a header styled for navy
- * left the nav links and the logo nearly invisible on it.
- */
-const hasDarkOpening = (pathname: string) =>
-  pathname.startsWith('/subjects') ||
-  pathname.startsWith('/resources') ||
-  pathname === '/pricing' ||
-  pathname === '/thank-you';
-
 interface NavItemProps {
   link: PageLink;
   index: number;
@@ -193,7 +178,6 @@ const Header = () => {
   const headerClassName = [
     'header',
     isScrolled && 'header--scrolled',
-    hasDarkOpening(pathname) && !isScrolled && 'header--dark',
     pathname.startsWith('/resources/') && 'header--solid-navy',
     isMobileMenuOpen && 'header--menu-open',
   ].filter(Boolean).join(' ');

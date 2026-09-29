@@ -6,7 +6,7 @@ import { GROUP_CLASSES_PATH } from '../data/groupClassLaunch';
 import { trackEvent } from '../lib/analytics';
 
 /** Where a navigation link sits, reported with each click. */
-export type NavLocation = 'header' | 'mobile_menu' | 'footer' | 'reserve_strip';
+export type NavLocation = 'header' | 'mobile_menu' | 'footer' | 'group_summary';
 
 /** Anchor of the enquiry form on the pages that have one. */
 const ENQUIRY_SECTION_ID = 'contact';

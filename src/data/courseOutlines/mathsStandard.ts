@@ -9,7 +9,7 @@ import type { CourseOutline } from './types';
 export const mathsStandardOutline: CourseOutline = {
     courseId: 'maths-standard',
     overview:
-        'Probability, trigonometry with the sine and cosine rules and bearings, and network flow, with a head start on investment.',
+        'Probability, trigonometry with the sine and cosine rules and bearings, and network flow.',
     metaFocus: 'probability, trigonometry and bearings, and network flow',
     syllabusNote:
         'Follows the new NESA Mathematics Standard 11–12 Syllabus (2024) for Standard 2, which this cohort is the first to sit in the 2027 HSC, in the order most schools teach it.',
@@ -114,18 +114,6 @@ export const mathsStandardOutline: CourseOutline = {
                 'Deciding whether a network can meet demand',
             ],
             keySkill: 'Finding the minimum cut in a network.',
-        },
-        {
-            topic: 'Investment',
-            title: 'Getting ahead: interest and investment',
-            syllabusRefs: ['Investment and loans', 'MST-12-S2-02'],
-            points: [
-                'Simple interest',
-                'Compound interest and the future value formula',
-                'Comparing simple and compound interest with a spreadsheet',
-                'Shares and dividends',
-            ],
-            keySkill: 'Matching the interest rate and number of periods to how often interest is paid.',
         },
         {
             topic: 'Term review',

@@ -64,7 +64,7 @@ const AnnouncementBar = () => {
                     {dayPhrase ? (
                         <>
                             <span className="announcement__headline-detail"> · maths and science</span>
-                            {' · '}free trial {FIRST_LESSON_DATE_SHORT}
+                            {' · '}free from {FIRST_LESSON_DATE_SHORT}
                             {/* Not a detail span: the point of the line is that the
                                 trial and the first paid lesson are different days,
                                 which a narrow screen needs as much as a wide one. */}

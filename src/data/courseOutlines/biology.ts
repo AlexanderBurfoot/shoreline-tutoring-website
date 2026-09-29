@@ -8,7 +8,7 @@ import type { CourseOutline } from './types';
 export const biologyOutline: CourseOutline = {
     courseId: 'biology',
     overview:
-        'Module 5, Heredity, from how living things reproduce to how DNA is copied, read and passed on, with a first look at Module 6.',
+        'Module 5, Heredity, from how living things reproduce to how DNA is copied, read and passed on.',
     metaFocus: 'Heredity, from reproduction to how DNA is copied and passed on',
     syllabusNote:
         'Follows the NESA Biology Stage 6 Syllabus (2017), which the 2027 HSC examines, in the order most schools teach it.',
@@ -112,17 +112,6 @@ export const biologyOutline: CourseOutline = {
                 'How allele frequencies shift in a population, and what a shift suggests about selection',
             ],
             keySkill: 'Evaluating the reliability and usefulness of secondary sources.',
-        },
-        {
-            topic: 'Module 5 review',
-            title: 'Heredity in review, and a first look at mutation',
-            syllabusRefs: ['Module 5', 'Module 6 preview'],
-            points: [
-                'Analysing secondary data for a Module 5 depth study',
-                'Mutagens, and point mutations compared with chromosomal mutations, ready for Term 1',
-                'Reading the genetic code table to work out how one base change alters a protein',
-            ],
-            keySkill: 'Identifying trends and limitations in a data set.',
         },
         {
             topic: 'Term review',

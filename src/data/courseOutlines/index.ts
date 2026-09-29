@@ -100,7 +100,7 @@ const SHORT_DATE_FORMAT = new Intl.DateTimeFormat('en-AU', {
     month: 'short',
 });
 
-/** "Sat 3 Oct", without the comma en-AU puts after the weekday. */
+/** "Sat 10 Oct", without the comma en-AU puts after the weekday. */
 const shortDate = (isoDate: string, weeksLater: number) => {
     const instant = Date.parse(isoDate) + weeksLater * DAYS_PER_WEEK * MILLISECONDS_PER_DAY;
     const parts = SHORT_DATE_FORMAT.formatToParts(instant);
@@ -114,7 +114,7 @@ export const lessonDates = (index: number) => ({
     online: shortDate(ONLINE_FIRST_LESSON_DATE_ISO, index),
 });
 
-/** "Saturday 3 October", for prose that names a date in full. */
+/** "Saturday 10 October", for prose that names a date in full. */
 const LONG_DATE_FORMAT = new Intl.DateTimeFormat('en-AU', {
     timeZone: 'UTC',
     weekday: 'long',
@@ -167,10 +167,12 @@ const schoolHolidayNote = (): string => {
         return '';
     }
 
-    const count = NUMBER_WORDS[lessons] ?? String(lessons);
-    const plural = lessons === 1 ? 'lesson falls' : 'lessons fall';
+    // "The first one lesson falls" reads wrong, so the single case drops the count.
+    const opening = lessons === 1
+        ? 'The first lesson falls'
+        : `The first ${NUMBER_WORDS[lessons] ?? String(lessons)} lessons fall`;
     return (
-        `The first ${count} ${plural} in the school holidays, so students start ` +
+        `${opening} in the school holidays, so students start ` +
         `${TERM_LABEL} already ahead of their class.`
     );
 };
