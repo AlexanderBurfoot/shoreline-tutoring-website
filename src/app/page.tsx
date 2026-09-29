@@ -1,12 +1,10 @@
 import Hero from '../components/Hero';
-import ReserveStrip from '../components/ReserveStrip';
-import { FormatIntro } from '../components/FormatPage';
+import GroupClassesSummary from '../components/GroupClassesSummary';
 import WaysToLearn from '../components/WaysToLearn';
 import Services from '../components/Services';
 import TrustBadges from '../components/TrustBadges';
 import CTA from '../components/CTA';
 import JsonLd from '../components/JsonLd';
-import { groupClassesPage } from '../data/formatPages';
 import { HOMEPAGE_LEADS_WITH_GROUP } from '../data/groupClassLaunch';
 import { ORGANIZATION_SCHEMA } from '../lib/structuredData';
 
@@ -48,12 +46,12 @@ export default function HomePage() {
       <JsonLd data={ORGANIZATION_SCHEMA} />
       {HOMEPAGE_LEADS_WITH_GROUP ? (
         <>
-          {/* Group-first layout: the exact opening of the group classes page
-              (hero, courses, session times, St Leonards rooms), then the
-              one-on-one half opens with the hero in section mode.
+          {/* Group-first layout: the launch summarised in one block that
+              routes to /group-classes, then the one-on-one half opens with the
+              hero in section mode. This used to render the group page's whole
+              opening, which left the two pages sharing several hundred words.
               Switch off with HOMEPAGE_LEADS_WITH_GROUP in groupClassLaunch.ts. */}
-          <FormatIntro content={groupClassesPage} />
-          <ReserveStrip />
+          <GroupClassesSummary />
           <Hero asSection />
         </>
       ) : (
