@@ -8,7 +8,7 @@ import type { CourseOutline } from './types';
 export const biologyOutline: CourseOutline = {
     courseId: 'biology',
     overview:
-        'Module 5, Heredity, from how living things reproduce to how DNA is copied, read and passed on, with a first look at Module 6.',
+        'Module 5, Heredity, from how living things reproduce to how DNA is copied, read and passed on.',
     metaFocus: 'Heredity, from reproduction to how DNA is copied and passed on',
     syllabusNote:
         'Follows the NESA Biology Stage 6 Syllabus (2017), which the 2027 HSC examines, in the order most schools teach it.',

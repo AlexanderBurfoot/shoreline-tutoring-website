@@ -86,18 +86,6 @@ export const mathsAdvancedOutline: CourseOutline = {
             keySkill: 'Testing whether a series has a limiting sum before using the formula.',
         },
         {
-            topic: 'Sequences and series',
-            title: 'Applying series',
-            syllabusRefs: ['Sequences and series', 'MAV-12-03'],
-            points: [
-                'Growth and decay problems modelled with arithmetic and geometric series',
-                'Mixed word problems that need both kinds of series',
-                'Using logarithms to find the number of terms',
-                'How series lead into loans and annuities later in the year',
-            ],
-            keySkill: 'Turning a worded problem into a series and solving it.',
-        },
-        {
             topic: 'Differential calculus',
             title: 'Differentiating exponential functions',
             syllabusRefs: ['Differential calculus', 'MAV-12-04'],
@@ -119,6 +107,18 @@ export const mathsAdvancedOutline: CourseOutline = {
                 'Using the log laws to simplify before differentiating',
             ],
             keySkill: 'Simplifying with the log laws first, so the derivative is short.',
+        },
+        {
+            topic: 'Differential calculus',
+            title: 'Differentiating trigonometric functions',
+            syllabusRefs: ['Differential calculus', 'MAV-12-04'],
+            points: [
+                'The derivatives of sin x, cos x and tan x',
+                'The chain rule with trigonometric functions',
+                'Products and quotients that mix exponential, logarithmic and trigonometric functions',
+                'Equations of tangents and normals',
+            ],
+            keySkill: 'Deciding which of the product, quotient and chain rules a question needs.',
         },
         {
             topic: 'Term review',
