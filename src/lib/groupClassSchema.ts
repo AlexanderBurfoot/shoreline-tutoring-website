@@ -11,7 +11,6 @@ import {
     FOUNDING_TERM_PRICE_DOLLARS,
     LESSON_TEACHING_HOURS,
     ONLINE_FIRST_LESSON_DATE_ISO,
-    SESSION_PRICE_DOLLARS,
     TERM_PRICE_DOLLARS,
     VENUE_POSTAL_ADDRESS,
     VENUE_SUBURB,
@@ -24,7 +23,7 @@ import {
 const SCHEDULE_TIME_ZONE = 'Australia/Sydney';
 
 /** One way of paying for the classes, as schema.org describes a price. */
-const offer = (name: string, price: number, unitText: 'term' | 'lesson', url: string) => ({
+const offer = (name: string, price: number, unitText: 'term', url: string) => ({
     '@type': 'Offer',
     name,
     category: 'Paid',
@@ -45,7 +44,10 @@ export const groupClassOffers = (url: string, courseId?: Course['id']) => {
     return [
         ...(foundingOpen ? [offer('Founding place, whole term', FOUNDING_TERM_PRICE_DOLLARS, 'term', url)] : []),
         offer('Whole term, paid up front', TERM_PRICE_DOLLARS, 'term', url),
-        offer('Pay weekly', SESSION_PRICE_DOLLARS, 'lesson', url),
+        /* No per-lesson offer. A group class is sold by the term and cannot be
+           paid week by week, so publishing a weekly price advertised something
+           we do not sell. SESSION_PRICE_DOLLARS exists only to derive an hourly
+           rate for comparison and is not a price anyone can pay. */
     ];
 };
 
