@@ -3,6 +3,7 @@ import ReserveStrip from '../components/ReserveStrip';
 import { FormatIntro } from '../components/FormatPage';
 import WaysToLearn from '../components/WaysToLearn';
 import Services from '../components/Services';
+import TrustBadges from '../components/TrustBadges';
 import CTA from '../components/CTA';
 import JsonLd from '../components/JsonLd';
 import { groupClassesPage } from '../data/formatPages';
@@ -24,7 +25,6 @@ import { ORGANIZATION_SCHEMA } from '../lib/structuredData';
  * Restore a section by uncommenting its import and its tag below together.
  *
  * import dynamic from 'next/dynamic';
- * import TrustBadges from '../components/TrustBadges';
  * import Features from '../components/Features';
  * import Facilities from '../components/Facilities';
  * import Approach from '../components/Approach';
@@ -59,7 +59,6 @@ export default function HomePage() {
       ) : (
         <Hero />
       )}
-      {/* <TrustBadges /> */}
       {/* <Features /> */}
       {/* Ways to Learn sits directly after "Why Us" so both formats are
           established early, rather than two-thirds down the page. Swapped with
@@ -74,6 +73,10 @@ export default function HomePage() {
       {/* <Approach /> */}
       {/* <RecentArticles /> */}
       {/* <FAQ /> */}
+      {/* Reassurance last, directly above the form: these answer "how does it
+          work", which is a question asked at the point of enquiring rather than
+          on arrival. The navy band also separates the two cream sections. */}
+      <TrustBadges />
       <CTA />
     </>
   );
