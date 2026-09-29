@@ -1,3 +1,5 @@
+import type { Course } from './groupClassLaunch';
+
 export interface SubjectStat {
     label: string;
     value: string;
@@ -28,6 +30,12 @@ export interface SubjectData {
     whatYouLearn: string[];
     examTips: string[];
     whyUs: string[];
+    /**
+     * The Year 12 group classes that also teach this subject, if any. Only four
+     * of the subjects below run as classes, and maths runs as three separate
+     * ones, so the subject card reads this rather than asserting a count.
+     */
+    groupCourseIds?: Course['id'][];
     /** Omitted until a real student quote exists for the subject. */
     testimonial?: SubjectTestimonial;
     sessionStructure: SessionStep[];
@@ -96,6 +104,7 @@ export const subjects: SubjectData[] = [
     },
     {
         slug: 'mathematics',
+        groupCourseIds: ['maths-standard', 'maths-advanced', 'maths-extension-1'],
         icon: '📐',
         title: 'Mathematics',
         shortDescription: 'From Year 7 foundations to HSC Extension 1, we build real understanding, not just memorisation.',
@@ -155,6 +164,7 @@ export const subjects: SubjectData[] = [
     // ─── Row 2 (Physics + Chemistry) ───
     {
         slug: 'physics',
+        groupCourseIds: ['physics'],
         icon: '⚛️',
         title: 'Physics',
         shortDescription: 'Build real understanding of mechanics, waves, and modern physics, then nail the HSC.',
@@ -213,6 +223,7 @@ export const subjects: SubjectData[] = [
     // ─── Row 2 (3) ───
     {
         slug: 'chemistry',
+        groupCourseIds: ['chemistry'],
         icon: '🧪',
         title: 'Chemistry',
         shortDescription: 'From moles to organic reactions, we make every concept clear, memorable, and exam-ready.',
@@ -448,6 +459,7 @@ export const subjects: SubjectData[] = [
     */
     {
         slug: 'biology',
+        groupCourseIds: ['biology'],
         icon: '🧬',
         title: 'Biology',
         shortDescription: 'Understand how living systems work, then write the answers that turn that understanding into marks.',

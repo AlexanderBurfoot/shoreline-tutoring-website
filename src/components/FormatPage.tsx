@@ -323,13 +323,20 @@ export const FormatIntro = ({ content }: { content: FormatPageContent }) => (
     </>
 );
 
-const FormatPage = ({ content }: { content: FormatPageContent }) => (
+/**
+ * `children` render between the page's detail sections and its enquiry form,
+ * for anything that belongs to one format rather than to both. The one-on-one
+ * page puts its student testimonials here, so the proof sits with the format
+ * the students actually studied under.
+ */
+const FormatPage = ({ content, children }: { content: FormatPageContent; children?: ReactNode }) => (
     <div className="format-page">
         <FormatIntro content={content} />
         <SectionList
             sections={buildDetailSections(content)}
             startIndex={buildIntroSections(content).length}
         />
+        {children}
         <EnquiryForm finalCta={content.finalCta} />
     </div>
 );

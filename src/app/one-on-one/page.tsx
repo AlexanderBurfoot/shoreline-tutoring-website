@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import FormatPage from '../../components/FormatPage';
+import StudentTestimonials from '../../components/StudentTestimonials';
 import { oneOnOnePage } from '../../data/formatPages';
 import { SHARE_IMAGE } from '../../lib/site';
 
@@ -23,5 +24,11 @@ export const metadata: Metadata = {
 };
 
 export default function OneOnOneRoute() {
-    return <FormatPage content={oneOnOnePage} />;
+    return (
+        <FormatPage content={oneOnOnePage}>
+            {/* Every quote we hold is from a one-on-one student, so the proof
+                sits on the page for the format they actually studied under. */}
+            <StudentTestimonials />
+        </FormatPage>
+    );
 }

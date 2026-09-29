@@ -164,11 +164,10 @@ export const VENUE_WALKING_ROUTES: WalkingRoute[] = [
     },
 ];
 
-/**
- * What small-group classes currently cover, as one clause that reads inside a
- * sentence. Update it here and every section that scopes the offer follows.
+/*
+ * GROUP_SCOPE_SUMMARY is declared below COURSES, since it is built from them.
+ * See "What small-group classes currently cover".
  */
-export const GROUP_SCOPE_SUMMARY = 'Year 12 maths, physics, chemistry and biology';
 
 /** The term the published schedule runs to. */
 export const TERM_LABEL = 'Term 4';
@@ -306,6 +305,12 @@ export interface Course {
     name: string;
     /** Short form for chips and badges. */
     shortName: string;
+    /**
+     * The school subject this course belongs to. Year 12 maths is three
+     * separate courses, so the subject is what a parent searches for and the
+     * course is what they enrol in. GROUP_SCOPE_SUMMARY is built from these.
+     */
+    discipline: 'maths' | 'physics' | 'chemistry' | 'biology';
     /** What the class covers for this course. */
     covers: string;
 }
@@ -324,6 +329,7 @@ export const COURSES: Course[] = [
         id: 'maths-standard',
         name: 'Mathematics Standard',
         shortName: 'Standard',
+        discipline: 'maths',
         covers:
             'Investment, loans and annuities, probability, bivariate data and the normal distribution, trigonometry with the sine and cosine rules, algebraic models, rates and ratios, and network flow and critical path analysis.',
     },
@@ -331,6 +337,7 @@ export const COURSES: Course[] = [
         id: 'maths-advanced',
         name: 'Mathematics Advanced',
         shortName: 'Advanced',
+        discipline: 'maths',
         covers:
             'Graph transformations and modelling, sequences and series, differential and integral calculus and their applications, loans and annuities, and random variables including the normal distribution.',
     },
@@ -338,6 +345,7 @@ export const COURSES: Course[] = [
         id: 'maths-extension-1',
         name: 'Mathematics Extension 1',
         shortName: 'Extension 1',
+        discipline: 'maths',
         covers:
             'Proof by mathematical induction, vectors and projectile motion, inverse trigonometric functions, further calculus including volumes and differential equations, and the binomial and sampling distributions.',
     },
@@ -345,6 +353,7 @@ export const COURSES: Course[] = [
         id: 'physics',
         name: 'Physics',
         shortName: 'Physics',
+        discipline: 'physics',
         covers:
             'Advanced mechanics including projectile and circular motion, electromagnetism, the nature of light from electromagnetic waves to special relativity, and from the universe to the atom.',
     },
@@ -352,6 +361,7 @@ export const COURSES: Course[] = [
         id: 'chemistry',
         name: 'Chemistry',
         shortName: 'Chemistry',
+        discipline: 'chemistry',
         covers:
             'Equilibrium and acid reactions, acid and base reactions including titration and buffers, organic chemistry from hydrocarbons to polymers, and applying chemical ideas through qualitative and instrumental analysis.',
     },
@@ -359,10 +369,28 @@ export const COURSES: Course[] = [
         id: 'biology',
         name: 'Biology',
         shortName: 'Biology',
+        discipline: 'biology',
         covers:
             'Heredity and reproduction, genetic change and biotechnology, infectious disease and how the body defends itself, and non-infectious disease, disorders and their treatment.',
     },
 ];
+
+/** "a, b and c" — the list separator English actually uses. */
+const sentenceList = (items: string[]): string =>
+    items.length <= 1
+        ? items.join('')
+        : `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+
+/**
+ * What small-group classes currently cover, as one clause that reads inside a
+ * sentence, e.g. "Year 12 maths, physics, chemistry and biology".
+ *
+ * Built from COURSES rather than written out, so adding or dropping a course
+ * updates every section that scopes the offer. Disciplines are listed in the
+ * order the courses appear, and the three maths courses collapse to one word:
+ * a parent searches for the subject and enrols in the course.
+ */
+export const GROUP_SCOPE_SUMMARY = `Year 12 ${sentenceList([...new Set(COURSES.map((course) => course.discipline))])}`;
 
 export interface GroupClassDay {
     id: 'in-person' | 'online';
