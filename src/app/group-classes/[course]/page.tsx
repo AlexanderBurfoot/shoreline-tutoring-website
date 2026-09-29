@@ -67,7 +67,7 @@ const courseSchema = (course: CourseWithOutline) => {
         educationalLevel: 'Year 12',
         teaches: [...new Set(course.outline.lessons.map((lesson) => lesson.topic))],
         provider: { '@type': 'EducationalOrganization', name: 'Shoreline Tutoring', url: SITE_URL },
-        offers: groupClassOffers(url, course.id),
+        offers: groupClassOffers(url),
         hasCourseInstance: groupClassInstances(),
     };
 };

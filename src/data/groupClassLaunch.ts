@@ -174,10 +174,10 @@ export const TERM_SESSIONS = 11;
 /*
  * Group class pricing: three ways to pay for the same term.
  *
- *  - Founding places: the first FOUNDING_PLACES_PER_CLASS students in each
- *    class pay FOUNDING_TERM_PRICE for the term. Offered to fill the first
- *    classes; switch it off with FOUNDING_OFFER_OPEN, or per course with
- *    FOUNDING_FULL_COURSES once a class has taken its founding students.
+ *  - Founding places: the first FOUNDING_PLACES students to sign up pay
+ *    FOUNDING_TERM_PRICE for the term. One pool across every class, not a few
+ *    places in each, so the offer ends for everyone at once. Switch it off with
+ *    FOUNDING_OFFER_OPEN when those places are taken.
  *  - The term rate: TERM_PRICE paid up front, the main price once founding
  *    places are gone.
  *
@@ -201,22 +201,28 @@ export const TERM_PAID_SESSIONS = TERM_SESSIONS - 1;
 /** The whole term paid up front, in whole dollars. */
 export const TERM_PRICE_DOLLARS = 1500;
 
-/** Founding places: the reduced term price for each class's first students. */
+/** Founding places: the reduced term price for the first students to sign up. */
 export const FOUNDING_TERM_PRICE_DOLLARS = 1000;
-export const FOUNDING_PLACES_PER_CLASS = 3;
 
-/** Turns the founding offer off everywhere, for when it has run its course. */
+/**
+ * How many founding places there are in total, across every class rather than
+ * in each one. Whoever signs up first gets them, whichever course they are
+ * sitting, so the offer ends for everyone at the same moment.
+ */
+export const FOUNDING_PLACES = 3;
+
+/** Turns the founding offer off everywhere, once those places are taken. */
 export const FOUNDING_OFFER_OPEN = true;
 
 /**
- * Courses whose founding places are all taken. Add a course's id here when
- * its third founding student enrols, and it shows the term rate instead.
+ * Whether the founding offer still has places.
+ *
+ * Takes no course, because there is one pool rather than a few places per
+ * class. It replaces a pair of functions, one asking about a single course and
+ * one asking whether any course still had places, which under a shared pool
+ * could only ever have returned the same answer.
  */
-export const FOUNDING_FULL_COURSES: Course['id'][] = [];
-
-/** Whether a course still has founding places to offer. */
-export const hasFoundingPlaces = (courseId: Course['id']) =>
-    FOUNDING_OFFER_OPEN && !FOUNDING_FULL_COURSES.includes(courseId);
+export const foundingPlacesOpen = () => FOUNDING_OFFER_OPEN;
 
 const dollars = (amount: number) => `$${amount.toLocaleString('en-AU')}`;
 const perTeachingHour = (lessonCost: number) => dollars(Math.round(lessonCost / LESSON_TEACHING_HOURS));
@@ -242,11 +248,11 @@ export const FOUNDING_SAVING = dollars(TERM_PRICE_DOLLARS - FOUNDING_TERM_PRICE_
  *  - FOUNDING_SAVING_BADGE for the label above a price.
  */
 export const FOUNDING_OFFER_LINE =
-    `the first ${FOUNDING_PLACES_PER_CLASS} students in each class pay ${FOUNDING_TERM_PRICE} ` +
+    `the first ${FOUNDING_PLACES} students to sign up pay ${FOUNDING_TERM_PRICE} ` +
     `for ${TERM_LABEL} instead of ${TERM_PRICE}`;
 
 export const FOUNDING_OFFER_SHORT =
-    `${FOUNDING_TERM_PRICE} a term for the first ${FOUNDING_PLACES_PER_CLASS} per class`;
+    `${FOUNDING_TERM_PRICE} a term for the first ${FOUNDING_PLACES} to sign up`;
 
 export const FOUNDING_SAVING_BADGE = `Founding offer · save ${FOUNDING_SAVING}`;
 
@@ -327,9 +333,6 @@ export const COURSES: Course[] = [
             'Heredity and reproduction, genetic change and biotechnology, infectious disease and how the body defends itself, and non-infectious disease, disorders and their treatment.',
     },
 ];
-
-/** Whether any class still has founding places, for copy about all classes at once. */
-export const anyFoundingPlaces = () => COURSES.some((course) => hasFoundingPlaces(course.id));
 
 export interface GroupClassDay {
     id: 'in-person' | 'online';

@@ -12,7 +12,7 @@ import {
     IN_PERSON_DAY,
     ONLINE_DAY,
     TRIAL_OFFER,
-    anyFoundingPlaces,
+    foundingPlacesOpen,
     firstLessonDayPhrase,
 } from '../data/groupClassLaunch';
 
@@ -79,7 +79,7 @@ const AnnouncementBar = () => {
 
                 {/* The bar is a fixed height, so the founding pill is the first
                     thing dropped when the row runs out of room. */}
-                {anyFoundingPlaces() && (
+                {foundingPlacesOpen() && (
                     <span className="announcement__offer announcement__offer--founding">
                         {FOUNDING_OFFER_SHORT}
                     </span>
