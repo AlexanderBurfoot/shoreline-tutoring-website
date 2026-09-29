@@ -4,7 +4,7 @@ import {
     FOUNDING_OFFER_LINE,
     GROUP_CLASSES_PATH,
     TRIAL_OFFER,
-    anyFoundingPlaces,
+    foundingPlacesOpen,
 } from '../data/groupClassLaunch';
 import { TrackedLink } from './NavLinks';
 
@@ -26,7 +26,7 @@ const ReserveStrip = () => (
                 <span className="reserve-strip__detail">
                     {TRIAL_OFFER} · Every course runs as its own class
                 </span>
-                {anyFoundingPlaces() && (
+                {foundingPlacesOpen() && (
                     <span className="reserve-strip__offer">
                         Founding offer: {FOUNDING_OFFER_LINE}
                     </span>

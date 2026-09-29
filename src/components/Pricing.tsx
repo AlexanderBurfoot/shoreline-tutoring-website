@@ -9,7 +9,7 @@ import {
     FIRST_PAID_LESSON_DATE_LONG,
     FOUNDING_HOURLY_RATE,
     FOUNDING_OFFER_LINE,
-    FOUNDING_PLACES_PER_CLASS,
+    FOUNDING_PLACES,
     FOUNDING_SAVING_BADGE,
     FOUNDING_TERM_PRICE,
     GROUP_CLASSES_PATH,
@@ -19,7 +19,7 @@ import {
     TERM_PAID_SESSIONS,
     TERM_PRICE,
     TRIAL_OFFER,
-    anyFoundingPlaces,
+    foundingPlacesOpen,
 } from '../data/groupClassLaunch';
 import {
     LESSONS_PER_BUNDLE,
@@ -163,7 +163,7 @@ const Pricing = () => {
                             The term is paid up front, the same whether you attend in person on
                             Saturdays or online on Sundays. Sit the first lesson free and only pay
                             if you decide to stay.{' '}
-                            {anyFoundingPlaces() && (
+                            {foundingPlacesOpen() && (
                                 <strong>
                                     As a founding offer, {FOUNDING_OFFER_LINE}.
                                 </strong>
@@ -175,7 +175,7 @@ const Pricing = () => {
                         {/* While any class has founding places, the price they replace sits
                             beside the offer, so it reads as a discount rather than as the
                             ordinary price. */}
-                        {anyFoundingPlaces() ? (
+                        {foundingPlacesOpen() ? (
                             <>
                                 <span className="pricing-program__badge">{FOUNDING_SAVING_BADGE}</span>
                                 <div className="pricing-program__price">
@@ -190,7 +190,7 @@ const Pricing = () => {
                                 </div>
                                 <p className="pricing-program__alternatives">
                                     <strong>
-                                        Only the first {FOUNDING_PLACES_PER_CLASS} students in each class
+                                        Only the first {FOUNDING_PLACES} students to sign up
                                         pay {FOUNDING_TERM_PRICE}.
                                     </strong>{' '}
                                     After those places are taken the term is {TERM_PRICE}.{' '}

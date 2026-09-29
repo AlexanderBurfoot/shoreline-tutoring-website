@@ -14,9 +14,7 @@ import {
     TERM_PRICE_DOLLARS,
     VENUE_POSTAL_ADDRESS,
     VENUE_SUBURB,
-    anyFoundingPlaces,
-    hasFoundingPlaces,
-    type Course,
+    foundingPlacesOpen,
 } from '../data/groupClassLaunch';
 
 /** Zone the published class times are given in, for the schedule below. */
@@ -35,11 +33,12 @@ const offer = (name: string, price: number, unitText: 'term', url: string) => ({
 
 /**
  * Every way of paying that is currently open, so search results never show a
- * price the page no longer offers. Pass a course id on a page about that one
- * course: its founding places may be gone while other classes still have them.
+ * price the page no longer offers. The same everywhere: the founding places are
+ * one pool shared across the classes, so no page can be offering them while
+ * another is not.
  */
-export const groupClassOffers = (url: string, courseId?: Course['id']) => {
-    const foundingOpen = courseId ? hasFoundingPlaces(courseId) : anyFoundingPlaces();
+export const groupClassOffers = (url: string) => {
+    const foundingOpen = foundingPlacesOpen();
 
     return [
         ...(foundingOpen ? [offer('Founding place, whole term', FOUNDING_TERM_PRICE_DOLLARS, 'term', url)] : []),

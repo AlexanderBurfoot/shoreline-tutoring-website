@@ -18,7 +18,7 @@ import {
     ONLINE_FIRST_PAID_LESSON,
     FOUNDING_HOURLY_RATE,
     FOUNDING_OFFER_LINE,
-    FOUNDING_PLACES_PER_CLASS,
+    FOUNDING_PLACES,
     FOUNDING_SAVING,
     FOUNDING_SAVING_BADGE,
     FOUNDING_TERM_PRICE,
@@ -27,9 +27,7 @@ import {
     TERM_PAID_SESSIONS,
     TERM_PRICE,
     VENUE_ADDRESS,
-    anyFoundingPlaces,
-    hasFoundingPlaces,
-    type Course,
+    foundingPlacesOpen,
 } from './groupClassLaunch';
 import {
     LESSONS_PER_BUNDLE,
@@ -369,7 +367,7 @@ export const oneOnOnePage: FormatPageContent = {
  * for the page covering every course, the offer shows while any course has
  * places left.
  */
-export const groupHeroFacts = (courseId?: Course['id']): FormatFact[] => [
+export const groupHeroFacts = (): FormatFact[] => [
     { label: 'Each week', value: `One ${LESSON_TEACHING_HOURS}-hour lesson · ${LESSON_BREAK_MINUTES}-minute break` },
     /* "From 3 October" reads as the course starting that day. It does not: the
        3rd is the free trial and the paid term begins the week after, so both
@@ -384,9 +382,9 @@ export const groupHeroFacts = (courseId?: Course['id']): FormatFact[] => [
     },
     {
         label: 'Price',
-        value: (courseId ? hasFoundingPlaces(courseId) : anyFoundingPlaces())
+        value: foundingPlacesOpen()
             ? `${TRIAL_OFFER}. Then ${FOUNDING_TERM_PRICE} instead of ${TERM_PRICE} for the term, `
-                + `for the first ${FOUNDING_PLACES_PER_CLASS} students in each class`
+                + `for the first ${FOUNDING_PLACES} students to sign up`
             : `${TRIAL_OFFER}, then ${TERM_PRICE} for the term`,
     },
 ];
@@ -533,32 +531,32 @@ export const groupClassesPage: FormatPageContent = {
             subtitle: (
                 <>
                     The first lesson is free.{' '}
-                    {anyFoundingPlaces() && (
+                    {foundingPlacesOpen() && (
                         <>
                             <strong>
                                 As a founding offer, {FOUNDING_OFFER_LINE}, a saving
                                 of {FOUNDING_SAVING}.
                             </strong>{' '}
-                            Once a class has taken its first {FOUNDING_PLACES_PER_CLASS} students,{' '}
+                            Once those first {FOUNDING_PLACES} places are taken,{' '}
                         </>
                     )}
-                    {anyFoundingPlaces() ? 'the term is' : 'After that it is'}{' '}
+                    {foundingPlacesOpen() ? 'the term is' : 'After that it is'}{' '}
                     {TERM_PRICE} for the {TERM_PAID_SESSIONS} paid lessons, paid up front. The
                     price is the same in person or online.
                 </>
             ),
         },
         program: {
-            // Leads with founding places while any class has them, then the term rate.
-            ...(anyFoundingPlaces()
+            // Leads with the founding offer while places remain, then the term rate.
+            ...(foundingPlacesOpen()
                 ? {
                     label: FOUNDING_SAVING_BADGE,
                     price: FOUNDING_TERM_PRICE,
                     wasPrice: TERM_PRICE,
                     caption: `for ${TERM_LABEL} · ${FOUNDING_HOURLY_RATE} an hour`,
-                    note: `Only the first ${FOUNDING_PLACES_PER_CLASS} students in each class `
-                        + `pay ${FOUNDING_TERM_PRICE}. After those places are taken the term `
-                        + `is ${TERM_PRICE}.`,
+                    note: `Only the first ${FOUNDING_PLACES} students to sign up `
+                        + `pay ${FOUNDING_TERM_PRICE}, whichever course they are sitting. After `
+                        + `those places are taken the term is ${TERM_PRICE}.`,
                 }
                 : {
                     label: `${TERM_LABEL}, paid up front`,

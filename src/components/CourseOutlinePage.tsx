@@ -152,7 +152,7 @@ const buildHero = (course: CourseWithOutline): FormatPageContent['hero'] => ({
     subtitle: courseOverview(course),
     /* This course's own facts: the price follows whether this class still has
        founding places, not whether any class does. */
-    facts: groupHeroFacts(course.id),
+    facts: groupHeroFacts(),
     primaryCta: { href: ENQUIRY_HREF, label: 'Book a Free Lesson' },
     secondaryCta: { href: `#${COURSE_PLAN_SECTION_ID}`, label: 'See the Lesson Plan' },
     reassurance: groupClassesPage.hero.reassurance,
